@@ -1,0 +1,60 @@
+#menucontain {
+  position:fixed; 
+  width: 20%;
+  height: 100vh;
+  background: black;
+  color: white;
+  
+  #menu {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    margin-top: 15vh;
+    
+    .menutabs {
+      background: darkred;
+      height: 60px;
+      margin-bottom: 10px;
+      width: 60%;
+    }
+  }
+}
+
+#contentcontain {
+  position: absolute;
+  left: 20%;
+  width: 80%;
+  background: blue;
+  
+  #canvas {
+    height: 100vh;
+    width: 100%;
+    display: block;
+  }
+
+
+  #titlecard {
+    position: absolute;
+    top: 30vh;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 100%;
+    background-color: rgba(255,255,255,0.4);
+    width: 40%;
+    text-align: center;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    #nametitle {
+      width: 100%;
+    }
+
+    #namemotto {
+      width: 100%;
+    }
+  }
+}
