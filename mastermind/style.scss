@@ -1,0 +1,86 @@
+$color0: #ee799f;
+
+  // "", //pink
+  // "#da70d6", //purple
+  // "#000080", //dark blue
+  // "#48d1cc", //light blue
+  // "#A2B5CD", //grey
+  // "#006400", //forest green
+  // "#caff70", //bright green
+  // "#8b2323", //dark red
+  // "#ff4040", //bright red
+  // "#ff7f24", //orange
+  // "#ffff00", //yellow
+
+
+#mastermind {
+  background-color: #8b7355;
+  width: 40%;
+  height: 800px;
+  margin: 40px auto;
+}
+
+#title {
+  text-align: center;
+  font-size: 3em;
+  padding: 10px;
+  width: 100%; 
+}  
+
+.boardcontain {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.row {
+  width: 50%;
+  height: 50px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.onerow{
+  width: 100%;
+  display:flex;
+  margin-bottom: 20px;
+}
+
+.cell {
+  border: 1px solid black;
+  height: 50px;
+  width: 25%;
+}
+
+.cellanswer {
+  width: 20%;
+  border: 1px solid black;
+}
+
+.choicerow{ 
+  width: 100%;
+}
+
+.cellright {
+  width: 12%;
+  float: right;
+}
+
+.button {
+  height: 48px;
+  width: 48px;
+  border-radius: 25px;
+  background-color: #cdaa7d;
+}
+
+.choicebutton {
+  width: 15px;
+  height: 30px;
+  border-radius: 15px;
+  border: 1px solid black;
+  
+  &#0 {
+    background-color: $color0;  
+  }
+}
