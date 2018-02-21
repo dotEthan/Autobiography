@@ -1,21 +1,17 @@
 $color0: #ee799f;
-
-  // "", //pink
-  // "#da70d6", //purple
-  // "#000080", //dark blue
-  // "#48d1cc", //light blue
-  // "#A2B5CD", //grey
-  // "#006400", //forest green
-  // "#caff70", //bright green
-  // "#8b2323", //dark red
-  // "#ff4040", //bright red
-  // "#ff7f24", //orange
-  // "#ffff00", //yellow
-
+$color1: #660066;
+$color2: #000080;
+$color3: #48d1cc;
+$color4: #006400;
+$color5: #caff70;
+$color6: #800000;
+$color7: #ff0000;
+$color8: #663300;
+$color9: #ffff00;
 
 #mastermind {
   background-color: #8b7355;
-  width: 40%;
+  width: 500px;
   height: 800px;
   margin: 40px auto;
 }
@@ -27,6 +23,10 @@ $color0: #ee799f;
   width: 100%; 
 }  
 
+#resetdiv {
+  text-align: center;
+}
+
 .boardcontain {
   display: flex;
   width: 100%;
@@ -35,7 +35,7 @@ $color0: #ee799f;
 }
 
 .row {
-  width: 50%;
+  width: 250px;
   height: 50px;
   display: flex;
   flex-wrap: wrap;
@@ -50,21 +50,7 @@ $color0: #ee799f;
 .cell {
   border: 1px solid black;
   height: 50px;
-  width: 25%;
-}
-
-.cellanswer {
-  width: 20%;
-  border: 1px solid black;
-}
-
-.choicerow{ 
-  width: 100%;
-}
-
-.cellright {
-  width: 12%;
-  float: right;
+  width: 62px;
 }
 
 .button {
@@ -74,13 +60,85 @@ $color0: #ee799f;
   background-color: #cdaa7d;
 }
 
+.cellanswer {
+  width: 100px;
+  border: 1px solid black;
+}
+
+.choicerow{ 
+  width: 100%;
+}
+
+.cellright {
+  width: 75px;
+  float: right;
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .choicebutton {
-  width: 15px;
+  width: 30px;
   height: 30px;
   border-radius: 15px;
   border: 1px solid black;
-  
-  &#0 {
+  margin-right: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+  cursor: pointer;
+
+  &#color0 {
     background-color: $color0;  
+    color: $color0;  
   }
+  
+  &#color1 {
+    background-color: $color1; 
+    color: $color1;   
+  }
+  
+  &#color2 {
+    background-color: $color2;  
+    color: $color2;  
+  }
+  
+  &#color3 {
+    background-color: $color3;  
+    color: $color3;  
+  }
+  
+  &#color4 {
+    background-color: $color4;  
+    color: $color4;  
+  }
+  
+  &#color5 {
+    background-color: $color5;  
+    color: $color5;  
+  }
+  
+  &#color6 {
+    background-color: $color6;  
+    color: $color6;  
+  }
+  
+  &#color7 {
+    background-color: $color7;  
+    color: $color7;  
+  }
+  
+  &#color8 {
+    background-color: $color8;  
+    color: $color8;  
+  }
+  
+  &#color9 {
+    background-color: $color9;  
+    color: $color9;  
+  }
+}
+
+#choicetext {
+  width: 30px;
+  font-size: 0.6em;
+  margin-right: 5px;
 }
