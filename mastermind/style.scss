@@ -25,6 +25,8 @@ $color9: #ffff00;
 
 #resetdiv {
   text-align: center;
+  display: flex;
+  justify-content: space-around;
 }
 
 .boardcontain {
@@ -35,7 +37,7 @@ $color9: #ffff00;
 }
 
 .row {
-  width: 250px;
+  width: 200px;
   height: 50px;
   display: flex;
   flex-wrap: wrap;
@@ -50,10 +52,10 @@ $color9: #ffff00;
 .cell {
   border: 1px solid black;
   height: 50px;
-  width: 62px;
+  width: 50px;
 }
 
-.button {
+.row0,.row1,.row2 {
   height: 48px;
   width: 48px;
   border-radius: 25px;
@@ -63,10 +65,46 @@ $color9: #ffff00;
 .cellanswer {
   width: 100px;
   border: 1px solid black;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .choicerow{ 
-  width: 100%;
+  width: 100px;
+  height: 50px;
+  display:flex;
+  justify-content: space-around;
+  align-items:center;
+}
+
+.done{
+  width: 40px;
+  font-size: 0.7em;
+  text-align: center;
+  color: grey;
+}
+
+.check {
+  font-size: 2em;
+}
+
+.ready{ 
+  color: black;
+}
+
+.guide{
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hintcell0,.hintcell1 {
+  border: 1px solid black;
+  width: 10px;
+  height: 10px;
+  border-radius: 6px;
+  margin: 4px;  
 }
 
 .cellright {
@@ -141,4 +179,16 @@ $color9: #ffff00;
   width: 30px;
   font-size: 0.6em;
   margin-right: 5px;
+}
+
+#gameover {
+  display: none;
+  position: absolute;
+  background-color: rgba(84, 84, 84, 0.5);
+  top: 150px;
+  left: 0;
+  height: 250px;
+  width: 100%;
+  justify-content:center;
+  align-items:center;
 }
