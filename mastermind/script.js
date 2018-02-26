@@ -77,7 +77,7 @@ function submitAnswer() {
   for (let i=0; i<cellList.length; i++){
     guess[i] = colors[cellList[i].value];
   }
-  answer = ["#ee799f", "#660066", "#660066", "#660066"]
+  answer = ["#ee799f", "#660066", "#660066", "#660066"]; // REMOVE
   checkAnswer(guess, answer);
 }
 
@@ -86,14 +86,27 @@ function checkAnswer(guess, answer) {
   let rightWrong = 0;
   let answerPair= [];
   let hintList = document.querySelectorAll('.hintcell'+depth);
-  console.log(answer);
-  answer.forEach((item, i) => {
-    console.log(item);
-    answerPair.push({'item': i})
+  let done;
+                             
+  answer.forEach((item, ind) => {
+    done=false;
+    if (answerPair.length === 0) {
+      answerPair.push([item,ind]);
+    } else {
+      for(let i=0; i<answerPair.length; i++) {
+        if (answerPair[i].indexOf(item) === 0) {
+          answerPair[i].push(ind);
+          done = true;
+        }
+      }
+      if (!done) {
+        answerPair.push([item,ind]);
+      }
+    }
   });
-  console.log(answerPair);
-  for(let i=0; i<answer.length; i++) {
-    if(guess[i]==answer[i]){
+    
+  for(let i=0; i<answerPair.length; i++) {
+    if(guess[i]==answerPair[i]){
       rightRight++;
     } else if(answer.indexOf(guess[i])>=0 && answer.indexOf(guess[i])!==i){
       rightWrong++;
