@@ -1,74 +1,331 @@
 <body>
   <div id="mastermind">
-    <div id="title">
-      MasterMind
-    </div>
-    <div id="resetdiv">
-      <button id="reset">Reset</button>
-      <div id="levelSelect">
-        Level: 
-        <select id="level">
-          <option value="0">0</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-        </select>
+    <div id="banner">
+      <div id="title">
+        MasterMind
+      </div>
+      <div id="resetdiv">
+        <div class="select" id="coloursselect">
+          # of Colours: 
+          <select id="colours">
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+          </select>
+        </div>
+        <div class="select" id="squaresselect">
+          # of Squares: 
+          <select id="level">
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+        <div class="select" id="turnsselect">
+          # of Turns: 
+          <select id="level">
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+        </div>
+        <button id="reset">Reset</button>
       </div>
     </div>
     <div class="boardcontain">
       <div class ="row">
         <div class="onerow">
           <div class="cell">
-            <div class="row0"></div>
+            <div class="rows row0"></div>
           </div>
           <div class="cell">
-            <div class="row0"></div>
+            <div class="rows row0"></div>
           </div>
           <div class="cell">
-            <div class="row0"></div>
+            <div class="rows row0"></div>
           </div>
           <div class="cell">
-            <div class="row0"></div>
+            <div class="rows row0"></div>
+          </div>
+          <div class="cell">
+            <div class="rows row0"></div>
+          </div>
+          <div class="choicerow">
+            <div class="done">
+              <i class="fas fa-check-circle check check0"></i>
+              <div class="ready">Ready?</div>
+            </div>
+            <div class="guide">
+              <div class="hints hintcell0"></div>
+              <div class="hints hintcell0"></div>
+              <div class="hints hintcell0"></div>
+              <div class="hints hintcell0"></div>            
+            </div>
           </div>
         </div>
         <div class="onerow">
           <div class="cell">
-            <div class="row1"></div>
+            <div class="rows row1"></div>
           </div>
           <div class="cell">
-            <div class="row1"></div>
+            <div class="rows row1"></div>
           </div>
           <div class="cell">
-            <div class="row1"></div>
+            <div class="rows row1"></div>
           </div>
           <div class="cell">
-            <div class="row1"></div>
+            <div class="rows row1"></div>
+          </div>
+          <div class="cell">
+            <div class="rows row1"></div>
+          </div>
+          <div class="choicerow">
+            <div class="done">
+              <i class="fas fa-check-circle check check1"></i>
+              <div class="ready">Ready?</div>
+            </div>
+            <div class="guide">
+              <div class="hints hintcell1"></div>
+              <div class="hints hintcell1"></div>
+              <div class="hints hintcell1"></div>
+              <div class="hints hintcell1"></div>            
+            </div>
           </div>
         </div>
-      </div>
-      <div class="cellanswer">
-        <div class="choicerow">
-          <div class="done">
-            <i class="fas fa-check-circle check"></i>
-            <div class="ready">Ready?</div>
+        <div class="onerow">
+          <div class="cell">
+            <div class="rows row2"></div>
           </div>
-          <div class="guide">
-            <div class="hintcell0"></div>
-            <div class="hintcell0"></div>
-            <div class="hintcell0"></div>
-            <div class="hintcell0"></div>            
+          <div class="cell">
+            <div class="rows row2"></div>
+          </div>
+          <div class="cell">
+            <div class="rows row2"></div>
+          </div>
+          <div class="cell">
+            <div class="rows row2"></div>
+          </div>
+          <div class="cell">
+            <div class="rows row2"></div>
+          </div>
+          <div class="choicerow">
+            <div class="done">
+              <i class="fas fa-check-circle check check2"></i>
+              <div class="ready">Ready?</div>
+            </div>
+            <div class="guide">
+              <div class="hints hintcell2"></div>
+              <div class="hints hintcell2"></div>
+              <div class="hints hintcell2"></div>
+              <div class="hints hintcell2"></div>            
+            </div>
           </div>
         </div>
-        <div class="choicerow">
-          <div class="done">
-            <i class="fas fa-check-circle check"></i>
-            <div class="ready">Ready?</div>
+        <div class="onerow">
+          <div class="cell">
+            <div class="rows row3"></div>
           </div>
-          <div class="guide">
-            <div class="hintcell1"></div>
-            <div class="hintcell1"></div>
-            <div class="hintcell1"></div>
-            <div class="hintcell1"></div>            
+          <div class="cell">
+            <div class="rows row3"></div>
+          </div>
+          <div class="cell">
+            <div class="rows row3"></div>
+          </div>
+          <div class="cell">
+            <div class="rows row3"></div>
+          </div>
+          <div class="cell">
+            <div class="rows row3"></div>
+          </div>
+          <div class="choicerow">
+            <div class="done">
+              <i class="fas fa-check-circle check check3"></i>
+              <div class="ready">Ready?</div>
+            </div>
+            <div class="guide">
+              <div class="hints hintcell3"></div>
+              <div class="hints hintcell3"></div>
+              <div class="hints hintcell3"></div>
+              <div class="hints hintcell3"></div>            
+            </div>
+          </div>
+        </div>
+        <div class="onerow">
+          <div class="cell">
+            <div class="rows row4"></div>
+          </div>
+          <div class="cell">
+            <div class="rows row4"></div>
+          </div>
+          <div class="cell">
+            <div class="rows row4"></div>
+          </div>
+          <div class="cell">
+            <div class="rows row4"></div>
+          </div>
+          <div class="cell">
+            <div class="rows row4"></div>
+          </div>
+          <div class="choicerow">
+            <div class="done">
+              <i class="fas fa-check-circle check check4"></i>
+              <div class="ready">Ready?</div>
+            </div>
+            <div class="guide">
+              <div class="hints hintcell4"></div>
+              <div class="hints hintcell4"></div>
+              <div class="hints hintcell4"></div>
+              <div class="hints hintcell4"></div>            
+            </div>
+          </div>
+        </div>
+        <div class="onerow">
+          <div class="cell">
+            <div class="rows row5"></div>
+          </div>
+          <div class="cell">
+            <div class="rows row5"></div>
+          </div>
+          <div class="cell">
+            <div class="rows row5"></div>
+          </div>
+          <div class="cell">
+            <div class="rows row5"></div>
+          </div>
+          <div class="cell">
+            <div class="rows row5"></div>
+          </div>
+          <div class="choicerow">
+            <div class="done">
+              <i class="fas fa-check-circle check check5"></i>
+              <div class="ready">Ready?</div>
+            </div>
+            <div class="guide">
+              <div class="hints hintcell5"></div>
+              <div class="hints hintcell5"></div>
+              <div class="hints hintcell5"></div>
+              <div class="hints hintcell5"></div>            
+            </div>
+          </div>
+        </div>
+        <div class="onerow">
+          <div class="cell">
+            <div class="rows row6"></div>
+          </div>
+          <div class="cell">
+            <div class="rows row6"></div>
+          </div>
+          <div class="cell">
+            <div class="rows row6"></div>
+          </div>
+          <div class="cell">
+            <div class="rows row6"></div>
+          </div>
+          <div class="cell">
+            <div class="rows row6"></div>
+          </div>
+          <div class="choicerow">
+            <div class="done">
+              <i class="fas fa-check-circle check check6"></i>
+              <div class="ready">Ready?</div>
+            </div>
+            <div class="guide">
+              <div class="hints hintcell6"></div>
+              <div class="hints hintcell6"></div>
+              <div class="hints hintcell6"></div>
+              <div class="hints hintcell6"></div>            
+            </div>
+          </div>
+        </div>
+        <div class="onerow">
+          <div class="cell">
+            <div class="rows row7"></div>
+          </div>
+          <div class="cell">
+            <div class="rows row7"></div>
+          </div>
+          <div class="cell">
+            <div class="rows row7"></div>
+          </div>
+          <div class="cell">
+            <div class="rows row7"></div>
+          </div>
+          <div class="cell">
+            <div class="rows row7"></div>
+          </div>
+          <div class="choicerow">
+            <div class="done">
+              <i class="fas fa-check-circle check check7"></i>
+              <div class="ready">Ready?</div>
+            </div>
+            <div class="guide">
+              <div class="hints hintcell7"></div>
+              <div class="hints hintcell7"></div>
+              <div class="hints hintcell7"></div>
+              <div class="hints hintcell7"></div>            
+            </div>
+          </div>
+        </div>
+        <div class="onerow">
+          <div class="cell">
+            <div class="rows row8"></div>
+          </div>
+          <div class="cell">
+            <div class="rows row8"></div>
+          </div>
+          <div class="cell">
+            <div class="rows row8"></div>
+          </div>
+          <div class="cell">
+            <div class="rows row8"></div>
+          </div>
+          <div class="cell">
+            <div class="rows row8"></div>
+          </div>
+          <div class="choicerow">
+            <div class="done">
+              <i class="fas fa-check-circle check check8"></i>
+              <div class="ready">Ready?</div>
+            </div>
+            <div class="guide">
+              <div class="hints hintcell8"></div>
+              <div class="hints hintcell8"></div>
+              <div class="hints hintcell8"></div>
+              <div class="hints hintcell8"></div>            
+            </div>
+          </div>
+        </div>
+        <div class="onerow">
+          <div class="cell">
+            <div class="rows row9"></div>
+          </div>
+          <div class="cell">
+            <div class="rows row9"></div>
+          </div>
+          <div class="cell">
+            <div class="rows row9"></div>
+          </div>
+          <div class="cell">
+            <div class="rows row9"></div>
+          </div>
+          <div class="cell">
+            <div class="rows row9"></div>
+          </div>
+          <div class="choicerow">
+            <div class="done">
+              <i class="fas fa-check-circle check check9"></i>
+              <div class="ready">Ready?</div>
+            </div>
+            <div class="guide">
+              <div class="hints hintcell9"></div>
+              <div class="hints hintcell9"></div>
+              <div class="hints hintcell9"></div>
+              <div class="hints hintcell9"></div>            
+            </div>
           </div>
         </div>
       </div>
