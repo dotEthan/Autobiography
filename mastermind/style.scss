@@ -1,13 +1,16 @@
+.aCell {
+  width: 80px;
+  height: 80px;
+  border: 1px solid black;
+}
 $color0: #ee799f;
 $color1: #660066;
 $color2: #000080;
 $color3: #48d1cc;
 $color4: #006400;
-$color5: #caff70;
-$color6: #800000;
+$color5: #ffff00;
+$color6: #614126;
 $color7: #ff0000;
-$color8: #663300;
-$color9: #ffff00;
 
 #mastermind {
   background-color: #8b7355;
@@ -81,7 +84,7 @@ $color9: #ffff00;
   height: 48px;
   width: 48px;
   border-radius: 15px;
-  background-color: #cdaa7d;
+  background-color: #666;
 }
 
 .choicerow{ 
@@ -180,16 +183,6 @@ $color9: #ffff00;
     background-color: $color7;  
     color: $color7;  
   }
-  
-  &#color8 {
-    background-color: $color8;  
-    color: $color8;  
-  }
-  
-  &#color9 {
-    background-color: $color9;  
-    color: $color9;  
-  }
 }
 
 #choicetext {
@@ -202,10 +195,19 @@ $color9: #ffff00;
   display: none;
   position: absolute;
   background-color: rgba(84, 84, 84, 0.5);
-  top: 150px;
+  top: 250px;
   left: 0;
   height: 250px;
   width: 100%;
   justify-content:center;
   align-items:center;
+}
+
+.choicebutton {
+  margin: 0 auto;
+  width: 24px;
+  height: 24px;
+  background-color: #24E0FF;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #006 0 -1px 9px, #3F8CFF 0 2px 14px;
 }
