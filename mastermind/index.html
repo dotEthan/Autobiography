@@ -5,9 +5,9 @@
         MasterMind
       </div>
       <div id="resetdiv">
-        <div class="select" id="coloursselect">
+        <div class="select" id="colorsselect">
           # of Colours: 
-          <select id="colours">
+          <select id="levelcolors">
             <option value="4">4</option>
             <option value="5">5</option>
             <option value="6">6</option>
@@ -17,20 +17,20 @@
         </div>
         <div class="select" id="squaresselect">
           # of Squares: 
-          <select id="level">
+          <select id="levelsquares">
             <option value="4">4</option>
             <option value="5">5</option>
           </select>
         </div>
         <div class="select" id="turnsselect">
-          # of Turns: 
-          <select id="level">
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
+          # of Tries: 
+          <select id="levelturns">
             <option value="10">10</option>
+            <option value="9">9</option>
+            <option value="8">8</option>
+            <option value="7">7</option>
+            <option value="6">6</option>
+            <option value="5">5</option>
           </select>
         </div>
         <button id="reset">Reset</button>
@@ -63,6 +63,7 @@
               <div class="hints hintcell0"></div>
               <div class="hints hintcell0"></div>
               <div class="hints hintcell0"></div>
+              <div class="hints hintcell0"></div> 
               <div class="hints hintcell0"></div>            
             </div>
           </div>
@@ -92,7 +93,8 @@
               <div class="hints hintcell1"></div>
               <div class="hints hintcell1"></div>
               <div class="hints hintcell1"></div>
-              <div class="hints hintcell1"></div>            
+              <div class="hints hintcell1"></div>  
+              <div class="hints hintcell1"></div>           
             </div>
           </div>
         </div>
@@ -121,7 +123,8 @@
               <div class="hints hintcell2"></div>
               <div class="hints hintcell2"></div>
               <div class="hints hintcell2"></div>
-              <div class="hints hintcell2"></div>            
+              <div class="hints hintcell2"></div>   
+              <div class="hints hintcell2"></div>           
             </div>
           </div>
         </div>
@@ -147,6 +150,7 @@
               <div class="ready">Ready?</div>
             </div>
             <div class="guide">
+              <div class="hints hintcell3"></div>
               <div class="hints hintcell3"></div>
               <div class="hints hintcell3"></div>
               <div class="hints hintcell3"></div>
@@ -179,6 +183,7 @@
               <div class="hints hintcell4"></div>
               <div class="hints hintcell4"></div>
               <div class="hints hintcell4"></div>
+              <div class="hints hintcell4"></div>
               <div class="hints hintcell4"></div>            
             </div>
           </div>
@@ -205,6 +210,7 @@
               <div class="ready">Ready?</div>
             </div>
             <div class="guide">
+              <div class="hints hintcell5"></div>
               <div class="hints hintcell5"></div>
               <div class="hints hintcell5"></div>
               <div class="hints hintcell5"></div>
@@ -237,6 +243,7 @@
               <div class="hints hintcell6"></div>
               <div class="hints hintcell6"></div>
               <div class="hints hintcell6"></div>
+              <div class="hints hintcell6"></div>
               <div class="hints hintcell6"></div>            
             </div>
           </div>
@@ -263,6 +270,7 @@
               <div class="ready">Ready?</div>
             </div>
             <div class="guide">
+              <div class="hints hintcell7"></div>
               <div class="hints hintcell7"></div>
               <div class="hints hintcell7"></div>
               <div class="hints hintcell7"></div>
@@ -295,6 +303,7 @@
               <div class="hints hintcell8"></div>
               <div class="hints hintcell8"></div>
               <div class="hints hintcell8"></div>
+              <div class="hints hintcell8"></div>
               <div class="hints hintcell8"></div>            
             </div>
           </div>
@@ -324,6 +333,7 @@
               <div class="hints hintcell9"></div>
               <div class="hints hintcell9"></div>
               <div class="hints hintcell9"></div>
+              <div class="hints hintcell9"></div>
               <div class="hints hintcell9"></div>            
             </div>
           </div>
@@ -340,12 +350,22 @@
         <div id="color5" class="choicebutton">5</div>
         <div id="color6" class="choicebutton">6</div>
         <div id="color7" class="choicebutton">7</div>
-        <div id="color8" class="choicebutton">8</div>
-        <div id="color9" class="choicebutton">9</div>
       </div>
     </div>
   </div>
   <div id="gameover">
     Game Over
+  </div>
+  <div style="border: 1px solid black; width: 800px; height: 200px; display: flex;">
+    <div class="aCell">
+    </div>
+    <div class="aCell">
+    </div>
+    <div class="aCell">
+    </div>
+    <div class="aCell">
+    </div>
+    <div class="aCell">
+    </div>
   </div>
 </body>
