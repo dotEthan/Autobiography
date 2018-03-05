@@ -65,7 +65,7 @@ function turnInit() {
     }
   }
   for (let x=49;x>=(50-(10-levelTurns)*5); x--){
-    rowsList[x].style.border = "1px solid grey";
+    rowsList[x].style.border = "1px solid rgb(58, 58, 62)";
   }
 }
 turnInit();
@@ -162,8 +162,8 @@ function setColor(e) {
   if(e.target.id && choiceColor>=0) {
     eChild[0].style.backgroundColor = colors[choiceColor];
     eChild[0].value = choiceColor;
-    eChild[0].style.width = "25px";
-    eChild[0].style.height = "25px";
+    eChild[0].style.width = "28px";
+    eChild[0].style.height = "28px";
     eChild[0].style.border = "none";
   } else if (choiceColor>=0) {
     e.target.style.backgroundColor = colors[choiceColor]; 
@@ -267,8 +267,8 @@ function resetFunc() {
   document.getElementById('gameover').style.display = "none";
   checkMark.style.color = "grey";
   
-  cellList2 = document.getElementsByClassName('cell');
-  rList2 = document.getElementsByClassName('rows');
+  let cellList2 = document.getElementsByClassName('cell');
+  let rList2 = document.getElementsByClassName('rows');
   for (let i=0; i<cellList2.length; i++){
     cellList2[i].style.cursor = "auto"
     rList2[i].style.border = "1px solid #3a3a3e";
@@ -278,19 +278,20 @@ function resetFunc() {
     cellList2[i].removeEventListener('click', setColor);
   }
   
-  hintList2 = document.getElementsByClassName('hints');
+  let hintList2 = document.getElementsByClassName('hints');
   for (let i=0; i<hintList2.length; i++){
     hintList2[i].style.backgroundColor = "transparent"
   }
   
-  rowList2 = document.getElementsByClassName('cell');
+  let rowList2 = document.getElementsByClassName('cell');
   for (let i=0; i<(rowList2.length * levelSq); i++){
-    rowList2[i].style.backgroundColor = "RGBA(147, 123, 94, 0.4);"
+    rowList2[i].style.backgroundColor = "rgba(147, 123, 94, 0.4)";
   }
   
   let rowList = document.getElementsByClassName('cell');
   for (let i=0;i<50;i++){
-    rowList[i].style.backgroundColor = "grey";
+    rowList[i].style.backgroundColor = "rgba(58, 58, 58, 0.6)";
+    rList2[i]
   }
   
   depth = 0;
