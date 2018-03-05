@@ -4,6 +4,7 @@ let currentColors;
 let choiceColor;
 let depth;
 let cellList;
+let rlist;
 let chosenColor;
 
 let score = document.getElementById('score').innerText;
@@ -43,11 +44,13 @@ let reset = document.getElementById('reset');
 reset.addEventListener('click', resetFunc);
 
 function squareInit() {
-  cellList = document.querySelectorAll('.row' + ((!depth) ? 0 : depth));
+  cellList = document.querySelectorAll('.cell' + ((!depth) ? 0 : depth));
+  rList = document.querySelectorAll('.row' + ((!depth) ? 0 : depth));
   for (let i=0;i<levelSquares;i++){
+    rList[i].style.border = "1px solid white";
     cellList[i].style.cursor = "pointer";
-    cellList[i].style.border = "1px solid red";
     cellList[i].addEventListener('click', setColor);
+    rList[i].addEventListener('click', setColor);
   }
 }
 squareInit(); 
@@ -56,9 +59,9 @@ function turnInit() {
   let rowList = document.getElementsByClassName('cell');
   let rowsList = document.getElementsByClassName('rows');
   for (let i=0;i<(levelTurns * 5);i++){
-    rowList[i].style.backgroundColor = "white";
+    rowList[i].style.backgroundColor = "rgba(147, 123, 94, 0.4)";
     if(!rowsList[i].style.border){
-      rowsList[i].style.border = "1px solid white";
+      rowsList[i].style.border = "1px solid #3a3a3e";
     }
   }
   for (let x=49;x>=(50-(10-levelTurns)*5); x--){
@@ -153,12 +156,24 @@ function rgbToHex(col) {
 }
 
 function setColor(e) {
-  let full = 0;
   if( !e ) e = window.event;
-  e.target.style.backgroundColor = colors[choiceColor];
-  e.target.value = choiceColor;
+  let full = 0;
+  let eChild = e.target.children;
+  if(e.target.id && choiceColor>=0) {
+    eChild[0].style.backgroundColor = colors[choiceColor];
+    eChild[0].value = choiceColor;
+    eChild[0].style.width = "25px";
+    eChild[0].style.height = "25px";
+    eChild[0].style.border = "none";
+  } else if (choiceColor>=0) {
+    e.target.style.backgroundColor = colors[choiceColor]; 
+    e.target.value = choiceColor;  
+    e.target.style.width = "25px";
+    e.target.style.height = "25px";
+    e.target.style.border = "none"; 
+  }
   for(let i=0; i<=levelSquares-1; i++) {
-    if (cellList[i].style.backgroundColor && cellList[i].style.backgroundColor !== "rgb(102, 102, 102)") {
+    if (rList[i].style.backgroundColor && rList[i].style.backgroundColor !== "rgb(58, 58, 62)") {
       full++;
     }
   }
@@ -177,10 +192,11 @@ function submitAnswer() {
   
   for (let i=0;i<cellList.length;i++){
     cellList[i].removeEventListener('click', setColor);
+    cellList[i].style.cursor = "auto";
   }
   
   for (let i=0; i<levelSquares; i++){
-    guess[i] = colors[cellList[i].value];
+    guess[i] = colors[rList[i].value];
   }
   
   answer = (levelSquares == 4) ? ["#f066f4", "#660066", "#660066", "#660066"] : ["#f066f4", "#660066", "#660066", "#660066", "#660066"]; // REMOVE
@@ -240,7 +256,7 @@ function checkAnswer(guess, answer) {
     document.getElementById('gameover').style.display = "none";
   }
   if (document.getElementById('gameover').style.display == "none") {
-    cellList = document.querySelectorAll('.row' + ((!depth) ? 0 : depth));
+    cellList = document.querySelectorAll('.cell' + ((!depth) ? 0 : depth));
     squareInit(levelSquares);
   }
 }
@@ -251,11 +267,14 @@ function resetFunc() {
   document.getElementById('gameover').style.display = "none";
   checkMark.style.color = "grey";
   
-  cellList2 = document.getElementsByClassName('rows');
+  cellList2 = document.getElementsByClassName('cell');
+  rList2 = document.getElementsByClassName('rows');
   for (let i=0; i<cellList2.length; i++){
     cellList2[i].style.cursor = "auto"
-    cellList2[i].style.border = "1px solid white";
-    cellList2[i].style.backgroundColor = "#666";
+    rList2[i].style.border = "1px solid #3a3a3e";
+    rList2[i].style.backgroundColor = "#3a3a3e";
+    rList2[i].style.width = "20px";
+    rList2[i].style.height = "20px";
     cellList2[i].removeEventListener('click', setColor);
   }
   
@@ -277,7 +296,7 @@ function resetFunc() {
   depth = 0;
   answer = [];
   createAnswer();
-  cellList = document.querySelectorAll('.row' + ((!depth) ? 0 : depth));
+  cellList = document.querySelectorAll('.cell' + ((!depth) ? 0 : depth));
   turnInit();
   squareInit((levelSquares === 4) ? 3 : 4);
 }
