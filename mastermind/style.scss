@@ -106,15 +106,17 @@ body {
   width: 40px;
   font-size: 0.7em;
   text-align: center;
-  color: grey;
 }
 
 .check {
   font-size: 2em;
+  color: rgba(139, 168, 138, 0.4);
 }
 
 .ready{ 
-  color: black;
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 1.2em;
+  padding-top: 3px;
 }
 
 .guide{
@@ -189,43 +191,34 @@ body {
 
   &#color0 {
     background-color: #f066f4;  
-    box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #006 0 -1px 9px, #f2a8f4 0 2px 14px;
   }
   
   &#color1 {
     background-color: #660066;
-    box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #006 0 -1px 9px, #5e345e 0 2px 14px;
   }
   
   &#color2 {
     background-color: #000080; 
-    box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #006 0 -1px 9px, #3f3f7a 0 2px 14px;
   }
   
   &#color3 {
     background-color: #48d1cc;
-    box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #006 0 -1px 9px, #8cd1ce 0 2px 14px;
   }
   
   &#color4 {
     background-color: #006400; 
-    box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #006 0 -1px 9px, #468946 0 2px 10px;
   }
   
   &#color5 {
     background-color: #ffff00;
-    box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #006 0 -1px 9px, #fcfc7b 0 2px 10px;
   }
   
   &#color6 {
     background-color: #614126;  
-    color: #614126;  
-    box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #006 0 -1px 9px, #684a32 0 2px 10px;
   }
   
   &#color7 {
     background-color: #ff0000;  
-    box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #006 0 -1px 9px, #684a32 0 2px 10px;
   }
   
 }
