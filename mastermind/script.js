@@ -73,12 +73,10 @@ turnInit();
 function colorsInit() {
   for(let x=0; x<choices.length; x++) {
     choices[x].addEventListener('click', chooseColor);
-    choices[x].style.boxShadow = "rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #006 0 -1px 9px, #3f3f7a 0 2px 14px";
     choices[x].style.backgroundColor = colors[x];
   }
   for (let i=7;i>(levelColors-1);i--) {
     choices[i].removeEventListener('click', chooseColor)
-    choices[i].style.boxShadow = "none";
     choices[i].style.backgroundColor = "#2f4f4f";
   }
 }
@@ -129,10 +127,8 @@ function chooseColor(e) {
   if( !e ) e = window.event;
   let former = e.target;
   let bg = window.getComputedStyle(former, null).getPropertyValue("background-color");
-  let bgShadow = window.getComputedStyle(former, null).getPropertyValue("box-shadow");
   chosenColor = document.querySelector('.chosen');
   chosenColor.style.backgroundColor = bg;
-  chosenColor.style.boxShadow = bgShadow;
   let rgbColor = chosenColor.style.backgroundColor;
   hexColor = rgbToHex(rgbColor);
   for(let i=0;i<colors.length;i++){
@@ -162,14 +158,14 @@ function setColor(e) {
   if(e.target.id && choiceColor>=0) {
     eChild[0].style.backgroundColor = colors[choiceColor];
     eChild[0].value = choiceColor;
-    eChild[0].style.width = "28px";
-    eChild[0].style.height = "28px";
+    eChild[0].style.width = "27px";
+    eChild[0].style.height = "27px";
     eChild[0].style.border = "none";
   } else if (choiceColor>=0) {
     e.target.style.backgroundColor = colors[choiceColor]; 
     e.target.value = choiceColor;  
-    e.target.style.width = "25px";
-    e.target.style.height = "25px";
+    e.target.style.width = "27px";
+    e.target.style.height = "27px";
     e.target.style.border = "none"; 
   }
   for(let i=0; i<=levelSquares-1; i++) {
@@ -179,15 +175,18 @@ function setColor(e) {
   }
   
   if (full == levelSquares) {
-    checkMark = document.querySelector('.check' + ((!depth) ? 0 : depth))
-    checkMark.style.color = "green";
+    checkMark = document.querySelector('.check' + ((!depth) ? 0 : depth));
+    readyMark = document.querySelector('.ready' + ((!depth) ? 0 : depth));
+    checkMark.style.color = "#29ba1f";
     checkMark.style.cursor = "pointer";
     checkMark.addEventListener('click', submitAnswer);    
+    readyMark.style.color = "black";
   }
 }
 
 function submitAnswer() {
-  checkMark.style.color = "grey";
+  checkMark.style.color = "rgba(139, 168, 138, 0.4)";   
+  readyMark.style.color = "rgba(0, 0, 0, 0.4)"
   checkMark.removeEventListener('click', submitAnswer);
   
   for (let i=0;i<cellList.length;i++){
@@ -198,31 +197,33 @@ function submitAnswer() {
   for (let i=0; i<levelSquares; i++){
     guess[i] = colors[rList[i].value];
   }
-  
-  answer = (levelSquares == 4) ? ["#f066f4", "#660066", "#660066", "#660066"] : ["#f066f4", "#660066", "#660066", "#660066", "#660066"]; // REMOVE
   checkAnswer(guess, answer);
 }
 
-function checkAnswer(guess, answer) {
+function checkAnswer(g, a) {
+  let answerT = JSON.parse(JSON.stringify(a));
+  console.log(guess);
+  console.log(a);
+  console.log(answer);
   let rightRight = 0;
   let rightWrong = 0;
   let hintList = document.querySelectorAll('.hintcell'+ ((!depth) ? 0 : depth));
   let done;
   
   for(let i=0; i<guess.length; i++) {
-    if (guess[i]===answer[i]){
+    if (guess[i]===answerT[i]){
       rightRight++;
-      answer.splice(i,1);
-      guess.splice(i,1);
+      answerT.splice(i,1);
+      g.splice(i,1);
       i--;
     }
   }
   
   for(let i=0; i<guess.length; i++) {
-    for (let x=0; x<answer.length; x++) {
-      if (guess[i]===answer[x]){
+    for (let x=0; x<answerT.length; x++) {
+      if (guess[i]===answerT[x]){
         rightWrong++;
-        answer.splice(x,1);
+        answerT.splice(x,1);
         guess.splice(i,1);
         i--;
       }
@@ -251,11 +252,10 @@ function checkAnswer(guess, answer) {
       rightWrong--;
     }
   }
+  console.log(answer);
+  console.log(a);
   
-  if (!document.getElementById('gameover').style.display) {
-    document.getElementById('gameover').style.display = "none";
-  }
-  if (document.getElementById('gameover').style.display == "none") {
+  if (document.getElementById('gameover').style.display == "none" || !document.getElementById('gameover').style.display) {
     cellList = document.querySelectorAll('.cell' + ((!depth) ? 0 : depth));
     squareInit(levelSquares);
   }
@@ -265,7 +265,8 @@ function resetFunc() {
   score = 0;
   document.getElementById('score').innerText = 0;
   document.getElementById('gameover').style.display = "none";
-  checkMark.style.color = "grey";
+  checkMark.style.color = "rgba(139, 168, 138, 0.4)";  
+  readyMark.style.color = "rgba(0, 0, 0, 0.4)";
   
   let cellList2 = document.getElementsByClassName('cell');
   let rList2 = document.getElementsByClassName('rows');
