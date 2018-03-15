@@ -93,6 +93,9 @@
 
       #namemotto {
         width: 100%;
+        font-family: 'Lato', sans-serif;
+        font-size: 1.5em;
+        margin-top: 20px;
       }
     }
     
@@ -115,5 +118,40 @@
   .slice {
     height: 500px;
     background: white;
+  }
+}
+
+#projectcont {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  
+  .project{
+    border: 1px solid black;
+    width: 20%;
+    padding: 10px;
+    background-image: url('http://www.freggie.ca/images/sideveggiedip.png');
+    background-size: cover;
+    height: 150px;
+    margin-bottom: 50px;
+  }
+}
+
+#footer {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  background-color: grey !important;
+  border: 1px solid grey;
+  height: 150px !important;
+  align-items: center;
+  
+  .contacttype{
+    width: 35%;
+    text-align: center;
+    font-size: 4em;
+    color: silver;
   }
 }
