@@ -1,5 +1,7 @@
 //font-family: 'Oswald', sans-serif; font-family: 'Limelight', cursive;
+$headertext: 'Oswald', sans-serif;
 
+$regulartext: 'Lato', sans-serif;
 
 
 #menucontain {
@@ -21,7 +23,7 @@
     justify-content: center;
     padding-top: 50px;
     color: black;
-    font-family: 'Oswald', sans-serif;
+    font-family: $headertext;
     font-size: 1.5em;
     
     @media screen and (min-width: 800px) {
@@ -87,13 +89,13 @@
 
       #nametitle {
         width: 100%;              
-        font-family: 'Oswald', sans-serif;
+        font-family: $headertext;
         font-size: 3em;
       }
 
       #namemotto {
         width: 100%;
-        font-family: 'Lato', sans-serif;
+        font-family: $regulartext;
         font-size: 1.5em;
         margin-top: 20px;
       }
@@ -116,9 +118,17 @@
   }
   
   .slice {
-    height: 500px;
     background: white;
   }
+}
+
+#protitle {
+  font-family: $headertext;
+  width: 100%;
+  text-align: center;
+  font-size: 3em;
+  text-decoration: underline;
+  margin-bottom: 50px;
 }
 
 #projectcont {
@@ -129,29 +139,19 @@
   align-items: center;
   
   .project{
-    width: 300px;
-    height: 200px;
+    width: 20%;
     padding: 10px;
-    background-image: url('http://www.freggie.ca/images/sideveggiedip.png');
-    background-size: 100% 100% !important;
-    background-repeat: no-repeat;
     margin-bottom: 50px;
     position: relative;
-    overflow: hidden;
+    // overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid black;
+    background-size: cover;
+    background-repeat: no-repeat;  
   }
   
-  #protext {
-    text-align: center;
-    font-size: 0em;
-    transition: all 1s;
-    z-index: 999;
-  }
-  
-  #bottom {
+  .bottom {
     height:0px; 
     width:0px; 
     background:transparent; 
@@ -160,11 +160,11 @@
     left:300px; 
     border-style: solid; 
     border-width: 0 0 220px 320px; 
-    border-color: transparent transparent rgba(219, 67, 67, 0.65);
+    border-color: transparent transparent rgba(255, 0, 0, 0.8);
     transition: all 1s;
     
   }
-  #top {
+  .top {
     height:0px; 
     width:0px; 
     background:transparent; 
@@ -173,9 +173,40 @@
     left:-320px; 
     border-style: solid; 
     border-width: 220px 320px 0px 0px; 
-    border-color: rgba(219, 67, 67, 0.65) transparent transparent; 
-    z-index: 99;
+    border-color: rgba(255, 0, 0, 0.8) transparent transparent; 
+    z-index: 98;
     transition: all 1s;
+  }
+}
+
+.protext {
+  margin-top: 50px;
+  margin-bottom: 10px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0em;
+  transition: all 1s;
+  background-color: transparent;
+  z-index: 99;
+  
+  .protextt{
+    transition: all 1s;
+    z-index: 999;
+    font-family: $headertext;
+    width: 100%;
+  }
+  
+  .protextw{
+    transition: all 1s;
+    z-index: 999;
+    font-family: $regulartext;
+    text-align: center;
+    width: 100%;
+    padding: 15px;
   }
 }
 
