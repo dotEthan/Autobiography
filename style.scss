@@ -1,8 +1,9 @@
-//font-family: 'Oswald', sans-serif; font-family: 'Limelight', cursive;
 $headertext: 'Oswald', sans-serif;
-
 $regulartext: 'Lato', sans-serif;
 
+.animate {
+  transition: all 1s;
+}
 
 #menucontain {
   position: fixed; 
@@ -13,7 +14,7 @@ $regulartext: 'Lato', sans-serif;
   
   @media screen and (min-width: 800px) {
     position: fixed;
-    width: 15%;
+    width: 10%;
     height: 100vh;
     
   }
@@ -34,26 +35,26 @@ $regulartext: 'Lato', sans-serif;
       margin-top: 10vh;
       padding-top: 0;
     }
-    
-    .menutabs {
-      width: 20%;
-      text-align: center;
-      
-      @media screen and (min-width: 800px) {
-      height: 60px;
-      margin-bottom: 50px;
-      width: 60%;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
-      }
-      
-      .menutitle {
-        margin-bottom: 25px;
-      }
-    }
   }
+}
+    
+.menutabs {
+  width: 20%;
+  text-align: center;
+
+  @media screen and (min-width: 800px) {
+    height: 60px;
+    margin-bottom: 50px;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.menutitle {
+  margin-bottom: 25px;
 }
 
 #contentcontain {
@@ -63,63 +64,69 @@ $regulartext: 'Lato', sans-serif;
   
   @media screen and (min-width: 800px) {
   position: absolute;
-  left: 15%;
-  width: 85%;    
+  left: 10%;
+  width: 90%;    
   }
+}
   
-  #splashcont {
-    height: 100vh;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: space-around;
+#splashcont {
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-around;
+}
 
-    #titlecard {
-      margin-left: auto; 
-      margin-right: auto; 
-      width: 100%;
-      background-color: rgba(255,255,255,0.6);
-      width: 40%;
-      text-align: center;
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      padding: 50px;
-      border-radius: 10px;
+#titlecard {
+  margin-left: auto; 
+  margin-right: auto; 
+  width: 100%;
+  background-color: rgba(255,255,255,0.6);
+  width: 40%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 50px;
+  border-radius: 10px;
+}
 
-      #nametitle {
-        width: 100%;              
-        font-family: $headertext;
-        font-size: 3em;
-      }
+#nametitle {
+  width: 100%;              
+  font-family: $headertext;
+  font-size: 3em;
+}
 
-      #namemotto {
-        width: 100%;
-        font-family: $regulartext;
-        font-size: 1.5em;
-        margin-top: 20px;
-      }
-    }
+#namemotto {
+  width: 100%;
+  font-family: $regulartext;
+  font-size: 1.5em;
+  margin-top: 20px;
+}
     
-    #choices {
-      display: flex;
-      justify-content: space-around;
-      width: 80%;
-      margin: 0 auto;
+#choices {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  margin: 0 auto;
+}
 
-      .choicesbox {
-        background: white;
-        border: 1px solid #aeaeae;
-        border-radius: 5%;
-        padding: 20px 50px;
-        box-shadow: 0px 0px 3px 0px #aeaeae inset;
-      }
-    }
-  }
-  
-  .slice {
-    background: white;
-  }
+.choicesbox {
+  background: white;
+  border: 1px solid #aeaeae;
+  border-radius: 5%;
+  padding: 20px 50px;
+  box-shadow: 0px 0px 3px 0px #aeaeae inset;
+}
+
+.slice {
+  background: white;
+  padding: 25px;
+}
+
+#bioinfo {
+  display: flex;
+  justify-content: center;
 }
 
 #protitle {
@@ -129,54 +136,96 @@ $regulartext: 'Lato', sans-serif;
   font-size: 3em;
   text-decoration: underline;
   margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+#biotext {
+  width: 60%;
+  padding: 40px;
+}
+
+#name {
+  font-size: 2em;
+  margin-bottom: 40px;
+}
+
+#biowriting {
+  width: 80%;
+}
+
+#portimage {
+  width: 15%;
+  margin-bottom: 20px;
+}
+
+#biolinks {
+  display: flex; 
+  justify-content: space-around;
+  font-size: 2.5em;
+  margin: 50px auto;
+  width: 50%;
+}
+
+#history {
+  display: flex;
+  flex-direction: column;
+}
+
+#historyslice {
+  background-color: gray;
+}
+
+#historytoc {
+  display: flex;
+  justify-content: space-around;
 }
 
 #projectcont {
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
+  margin-right: auto;
+  margin-left: auto;
+}
   
-  .project{
-    width: 20%;
-    padding: 10px;
-    margin-bottom: 50px;
-    position: relative;
-    // overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-size: cover;
-    background-repeat: no-repeat;  
-  }
-  
-  .bottom {
-    height:0px; 
-    width:0px; 
-    background:transparent; 
-    position:absolute; 
-    top:200px; 
-    left:300px; 
-    border-style: solid; 
-    border-width: 0 0 220px 320px; 
-    border-color: transparent transparent rgba(255, 0, 0, 0.8);
-    transition: all 1s;
-    
-  }
-  .top {
-    height:0px; 
-    width:0px; 
-    background:transparent; 
-    position:absolute; 
-    top:-220px; 
-    left:-320px; 
-    border-style: solid; 
-    border-width: 220px 320px 0px 0px; 
-    border-color: rgba(255, 0, 0, 0.8) transparent transparent; 
-    z-index: 98;
-    transition: all 1s;
-  }
+.project{
+  width: 20%;
+  margin-bottom: 50px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-right: 10px;
+}
+
+.bottom {
+  height:0px; 
+  width:0px; 
+  background:transparent; 
+  position:absolute; 
+  top:200px; 
+  left:300px; 
+  border-style: solid; 
+  border-width: 0 0 220px 320px; 
+  border-color: transparent transparent rgba(255, 0, 0, 0.8);
+
+}
+.top {
+  height:0px; 
+  width:0px; 
+  background:transparent; 
+  position:absolute; 
+  top:-220px; 
+  left:-320px; 
+  border-style: solid; 
+  border-width: 220px 320px 0px 0px; 
+  border-color: rgba(255, 0, 0, 0.8) transparent transparent; 
+  z-index: 98;
 }
 
 .protext {
@@ -218,11 +267,19 @@ $regulartext: 'Lato', sans-serif;
   border: 1px solid grey;
   height: 150px !important;
   align-items: center;
+}
   
-  .contacttype{
-    width: 35%;
-    text-align: center;
-    font-size: 4em;
-    color: silver;
-  }
+.contacttype{
+  width: 35%;
+  text-align: center;
+  font-size: 4em;
+  color: silver;
+}
+
+.footertext {
+  font-size: 0.4em;
+}
+
+.hidden {
+  visibility: hidden;
 }
