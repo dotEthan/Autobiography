@@ -1,13 +1,19 @@
 $headertext: 'Oswald', sans-serif;
 $regulartext: 'Lato', sans-serif;
+$darkblue: #9099a7;
+$lightblue: #b9bdc5;
 
 .animate {
   transition: all 1s;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 #menucontain {
   position: fixed; 
-  background: #cacaca;
+  background: $darkblue;
   color: white;
   width: 100%;
   z-index: 99;
@@ -38,6 +44,14 @@ $regulartext: 'Lato', sans-serif;
   }
 }
     
+a {
+  color: black;
+}
+
+.menunow {
+  color: silver;
+}
+
 .menutabs {
   width: 20%;
   text-align: center;
@@ -51,6 +65,8 @@ $regulartext: 'Lato', sans-serif;
     flex-direction: column;
     align-items: center;
   }
+  
+  
 }
 
 .menutitle {
@@ -124,11 +140,6 @@ $regulartext: 'Lato', sans-serif;
   padding: 25px;
 }
 
-#bioinfo {
-  display: flex;
-  justify-content: center;
-}
-
 #protitle {
   font-family: $headertext;
   width: 100%;
@@ -139,9 +150,19 @@ $regulartext: 'Lato', sans-serif;
   margin-top: 50px;
 }
 
+#bioinfo {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+
 #biotext {
-  width: 60%;
+  width: 80%;
   padding: 40px;
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 #name {
@@ -149,19 +170,35 @@ $regulartext: 'Lato', sans-serif;
   margin-bottom: 40px;
 }
 
+#biocontain {
+  background-color: grey;
+  display: flex; 
+  width: 70%;
+  position:relative;
+  padding: 50px;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
 #biowriting {
   width: 80%;
 }
 
 #portimage {
-  width: 15%;
+  width: 20%;
   margin-bottom: 20px;
+  border: 3px solid white;
+  border-radius: 45%;
+  position: absolute;
+  right: -60px;
+  top: -15px;
+  overflow: hidden;
 }
 
 #biolinks {
   display: flex; 
-  justify-content: space-around;
-  font-size: 2.5em;
+  justify-content: space-between;
+  font-size: 1em;
   margin: 50px auto;
   width: 50%;
 }
@@ -172,12 +209,26 @@ $regulartext: 'Lato', sans-serif;
 }
 
 #historyslice {
-  background-color: gray;
+  background-color: $lightblue;
 }
 
-#historytoc {
+#historynames {
+  width: 80%;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  margin-bottom: 25px;
+  font-size: 1.3em;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.historytitles {
+  width: 20%;
+  text-align: center;
+}
+
+.historydates {
+  font-size: 0.6em;
 }
 
 #projectcont {
@@ -188,6 +239,10 @@ $regulartext: 'Lato', sans-serif;
   align-items: center;
   margin-right: auto;
   margin-left: auto;
+}
+
+#freggietext {
+  font-family: 'Lobster', cursive;
 }
   
 .project{
@@ -201,61 +256,85 @@ $regulartext: 'Lato', sans-serif;
   background-size: cover;
   background-repeat: no-repeat;
   margin-right: 10px;
-}
+  border-radius: 10px;
 
-.bottom {
-  height:0px; 
-  width:0px; 
-  background:transparent; 
-  position:absolute; 
-  top:200px; 
-  left:300px; 
-  border-style: solid; 
-  border-width: 0 0 220px 320px; 
-  border-color: transparent transparent rgba(255, 0, 0, 0.8);
+  .bottom {
+    height:0px; 
+    width:0px; 
+    background:transparent; 
+    position:absolute; 
+    top:200px; 
+    left:300px; 
+    border-style: solid; 
+    border-width: 0 0 220px 320px; 
+    border-color: transparent transparent rgba(255, 0, 0, 0.8);
+  }
 
-}
-.top {
-  height:0px; 
-  width:0px; 
-  background:transparent; 
-  position:absolute; 
-  top:-220px; 
-  left:-320px; 
-  border-style: solid; 
-  border-width: 220px 320px 0px 0px; 
-  border-color: rgba(255, 0, 0, 0.8) transparent transparent; 
-  z-index: 98;
-}
+  .top {
+    height:0px; 
+    width:0px; 
+    background:transparent; 
+    position:absolute; 
+    top:-220px; 
+    left:-320px; 
+    border-style: solid; 
+    border-width: 220px 320px 0px 0px; 
+    border-color: rgba(255, 0, 0, 0.8) transparent transparent; 
+    z-index: 98;
+  }
 
-.protext {
-  margin-top: 50px;
-  margin-bottom: 10px;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  text-align: center;
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 0em;
-  transition: all 1s;
-  background-color: transparent;
-  z-index: 99;
-  
-  .protextt{
-    transition: all 1s;
-    z-index: 999;
-    font-family: $headertext;
+  .protext {
+    margin-top: 50px;
+    margin-bottom: 10px;
     width: 100%;
+    position: absolute;
+    top: 0;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 0em;
+    transition: all 1s;
+    background-color: transparent;
+    z-index: 99;
+
+    .protextt{
+      transition: all 1s;
+      z-index: 999;
+      font-family: $headertext;
+      width: 100%;
+    }
+
+    .protextw{
+      transition: all 1s;
+      z-index: 999;
+      font-family: $regulartext;
+      text-align: center;
+      width: 100%;
+      padding: 15px;
+    }
   }
   
-  .protextw{
-    transition: all 1s;
-    z-index: 999;
-    font-family: $regulartext;
-    text-align: center;
-    width: 100%;
-    padding: 15px;
+  &:hover {
+    .top{
+      top: 0px;
+      left: 0px;
+    }
+    
+    .bottom {
+      top: 0px;
+      left: 0px;
+    }
+    
+    .protext {
+      font-size: 1.7em;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      background-color: rgba(255, 218, 218, 0.8);
+    }
+    
+    .protextw {
+      font-size: 0.7em;
+    }
   }
 }
 
@@ -274,12 +353,142 @@ $regulartext: 'Lato', sans-serif;
   text-align: center;
   font-size: 4em;
   color: silver;
+
+  .footertext {
+    font-size: .5em;
+    visibility: hidden;
+  }
+  
+  &:hover {
+    
+    color: #3a3463;
+    
+    .footertext {
+      visibility: visible;
+    }
+  }
 }
 
-.footertext {
-  font-size: 0.4em;
-}
-
-.hidden {
+//----------------------------
+// History Slider
+//----------------------------
+.flexbox-slider {
+  display: flex;
+  width: 80%;
+  height: 500px;
   visibility: hidden;
+  margin-right: auto;
+  margin-left: auto;
+  
+  .flexbox-slide {
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+    transition-delay: 0s;
+    width: 20%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    visibility: visible;
+    
+    //overlay
+    &:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(#fff, 0.6);
+      z-index: 2;
+      
+      opacity: 0;
+    }
+    
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      height: auto;
+      width: auto;
+      min-width: 100%;
+      min-height: 100%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+    
+    .text-block {
+      position: absolute;
+      right: 30px;
+      bottom: 30px;
+      max-width: 400px;
+      padding: 20px;
+      border-radius: 5px;
+      background-color: rgba(#000, 0.4);
+      color: #000;
+      
+      z-index: 4;
+      
+      // visibility: hidden;
+      opacity: 0;
+      
+      h3 {
+        font: {
+          size: 20px;
+          weight: 700;
+        }
+      }
+    }
+  }
+  
+    &:hover {
+    
+    .flexbox-slide:hover {
+      flex-shrink: 0;
+      width: 60%;
+    }
+  }
+}
+
+.flexbox-slider.flexbox-slider-3 {
+  
+  .flexbox-slide {
+    
+    &:after {
+      transform: scale(.5);
+      transform-origin: center center;
+    }
+    
+    .text-block {
+      transform: rotate(-20deg);
+    }
+  }
+  
+  &:hover {
+    
+    .flexbox-slide:hover {
+      
+      &:after {
+        transition-property: all;
+        transition-duration: 0.2s;
+        transition-timing-function: linear;
+        transition-delay: 0.4s;
+        transform: scale(1);
+        opacity: 1;
+        visibility: visible;
+      }
+      
+      .text-block {
+        transition-property: all;
+        transition-duration: 0.2s;
+        transition-timing-function: linear;
+        transition-delay: 0.6s;
+        transform: rotate(0deg);
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
 }
