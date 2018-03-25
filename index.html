@@ -2,32 +2,26 @@
   
   <div id="menucontain">
     <div id ="menu">
-      <div class="menutabs">
-        <div class="menutitle">Bio</div>
-        <i class="fas fa-id-card fa-lg"></i>
+      <div id="biomenu" class="menutabs">
+        <a href="#bioslice" class="menulink"><i class="fas fa-id-card fa-lg"></i>
+          <div class="menutitle">Bio</a></div>
       </div>
-      <div class="menutabs">
-        
-        <div class="menutitle">Portfolio</div>
-        <i class="fas fa-briefcase fa-lg"></i>
+      <div id="historymenu" class="menutabs">
+        <a href="#historyslice" class="menulink"><i class="fas fa-calendar-alt fa-lg"></i>
+          <div class="menutitle">History</a></div>
       </div>
-      <div class="menutabs">
-        
-        <div class="menutitle">History</div>
-        <i class="fas fa-calendar-alt fa-lg"></i>
+      <div id="projectmenu" class="menutabs">
+        <a href="#projectslice" class="menulink"><i class="fas fa-briefcase fa-lg"></i>
+        <div class="menutitle">Projects</a></div>
       </div>
-      <div class="menutabs">
-        
-        <div class="menutitle">Contact Me</div>
-        <i class="fas fa-envelope fa-lg"></i>
+      <div id="contactmenu" class="menutabs">
+        <a href="#contactslice" class="menulink"><i class="fas fa-envelope fa-lg"></i>
+          <div class="menutitle">Contact Me</a></div>
       </div>
     </div>
   </div>
-  
   <div id="contentcontain">
     <div id="splashcont">
-<!--       <canvas id="canvas">
-      </canvas> -->
       <div id="titlecard">
         <div id="nametitle">Ethan Strauss</div>
         <div id="namemotto">Student, Programmer, Entrepreneur</div>
@@ -48,11 +42,16 @@
       <div id="protitle">Bio</div>
       <div id="bioinfo">
         <div id="biotext">
-          <div id="name">Ethan Strauss</div>
-          <div id="biowriting">
-            Ethan is a smart man. Big brains and lots of heart. You should hire him because if you don't, your competitors will and you'll feel sad when he develops the next Facebook. IN YOUR FACEBOOK!
-            <p>
-            Ethan is a smart man. Big brains and lots of heart. You should hire him because if you don't, your competitors will and you'll feel sad when he develops the next Facebook. IN YOUR FACEBOOK!
+          <div id="biocontain">
+            <div id="name">Ethan Strauss</div>
+            <div id="biowriting">
+              Ethan is a smart man. Big brains and lots of heart. You should hire him because if you don't, your competitors will and you'll feel sad when he develops the next Facebook. IN YOUR FACEBOOK!
+              <p>
+                Ethan is a smart man. Big brains and lots of heart. You should hire him because if you don't, your competitors will and you'll feel sad when he develops the next Facebook. IN YOUR FACEBOOK!
+            </div>
+            <div id="portimage">
+              <img alt="Ethans Photo" src="http://www.freggie.ca/pimages/test.jpg">
+            </div>
           </div>
           <div id="biolinks">
             <div class="contacttype">
@@ -66,34 +65,75 @@
             </div>
           </div>
         </div>
-        <div id="portimage">
-          <img alt="Ethans Photo" src="http://www.freggie.ca/pimages/bio.png">
-        </div>
       </div>
     </div>  
     <div id ="historyslice" class="slice">
       <div id="protitle">History</div>
-      <div id="history">
-        <div id="historyinfo">
-          <div id="historypic">
-          </div>  
-          Here's where all the info on the job will go.
+      <div id="historynames">
+        <div class="historytitles">
+          Inscriber<p>
+          <span class="historydates">2002-2003</span>
         </div>
-        <div id="historytoc">
-          <div id="inscriber" class="historic">
-            Inscriber
+        <div class="historytitles">
+          Professor
+        </div>
+        <div class="historytitles">
+          Ethan's English Cafe
+        </div>
+        <div class="historytitles">
+          Freggie Food Delivery
+        </div>
+        <div class="historytitles">
+          Winter Gardens
+        </div>
+      </div>
+      <div class="slider-container">
+        <div class="flexbox-slider flexbox-slider-3">
+          <div class="flexbox-slide">
+            <img src="http://www.freggie.ca/pimages/inscriber.jpg" alt="Slide Image">
+            <div class="text-block">
+              <h3>Slide #1 is here</h3>
+              <div class="text">
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren</p>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren</p>
+              </div>
+            </div>
           </div>
-          <div id="universities" class="historic">
-            universities
+          <div class="flexbox-slide">
+            <img src="http://www.freggie.ca/pimages/china.jpg" alt="Slide Image">
+            <div class="text-block">
+              <h3>Slide #2 is here</h3>
+              <div class="text">
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren</p>
+              </div>
+            </div>
           </div>
-          <div id="eec" class="historic">
-            Ethan English Cafe/School
+          <div class="flexbox-slide">
+            <img src="http://www.freggie.ca/pimages/english.jpg" alt="Slide Image">
+            <div class="text-block">
+              <h3>Slide #3 is here</h3>
+              <div class="text">
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren</p>
+              </div>
+            </div>
           </div>
-          <div id="freggie" class="historic">
-            Freggie
+          <div class="flexbox-slide">
+            <img src="http://www.freggie.ca/pimages/freggie.jpg" alt="Slide Image">
+            <div class="text-block">
+              <h3>Slide #4 is here</h3>
+              <div class="text">
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren</p>
+              </div>
+            </div>
           </div>
-          <div id="wintergardens" class="historic">
-            Winter Gardens
+          <div class="flexbox-slide">
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/694606/eff-9.jpg" alt="Slide Image">
+            <div class="text-block">
+              <h3>Slide #5 is here</h3>
+              <div class="text">
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -104,16 +144,16 @@
         <div id="freggie" class="project">
           <img alt="Freggie Logo" src="http://www.freggie.ca/pimages/freggie.png">
           <div class="protext">
-            <div class="protextt">
+            <div id="freggietext" class="protextt">
               Freggie
             </div>
             <div class="protextw">
               An online ordering portal for a Toronto based food delivery startup.
             </div>
           </div>
-          <div class="top">
+          <div class="top animate">
           </div>
-          <div class="bottom">
+          <div class="bottom animate">
           </div>
         </div>
         <div id="winter" class="project">
@@ -126,9 +166,9 @@
               A medical marijuana and industrial hemp research and productio company.
             </div>
           </div>
-          <div class="top">
+          <div class="top animate">
           </div>
-          <div class="bottom">
+          <div class="bottom animate">
           </div>
         </div>
         <div id="portfolio" class="project">
@@ -141,9 +181,9 @@
               The website you're currently reading. Welcome!
             </div>
           </div>
-          <div class="top">
+          <div class="top animate">
           </div>
-          <div class="bottom">
+          <div class="bottom animate">
           </div>
         </div>
         <div id="uffda" class="project">
@@ -156,9 +196,9 @@
               Online shop front for a mail order, home-made soap company.
             </div>
           </div>
-          <div class="top">
+          <div class="top animate">
           </div>
-          <div class="bottom">
+          <div class="bottom animate">
           </div>
         </div>
         <div id="sanatio" class="project">
@@ -171,9 +211,9 @@
               Online research database regarding medical marijuana and industrial hemp uses.
             </div>
           </div>
-          <div class="top">
+          <div class="top animate">
           </div>
-          <div class="bottom">
+          <div class="bottom animate">
           </div>
         </div>
         <div id="ese" class="project">
@@ -186,9 +226,9 @@
               Online education, tutorial and language service website catering to Chinese English learners.
             </div>
           </div>
-          <div class="top">
+          <div class="top animate">
           </div>
-          <div class="bottom">
+          <div class="bottom animate">
           </div>
         </div>
         <div id="cafe" class="project">
@@ -201,9 +241,9 @@
               Online English learning community and online classroom.
             </div>
           </div>
-          <div class="top">
+          <div class="top animate">
           </div>
-          <div class="bottom">
+          <div class="bottom animate">
           </div>
         </div>
         <div id="js" class="project">
@@ -216,50 +256,55 @@
               A variety of Javascript and Javascript Library projects I have built during my studies.
             </div>
           </div>
-          <div class="top">
+          <div class="top animate">
           </div>
-          <div class="bottom">
+          <div class="bottom animate">
           </div>
         </div>
       </div>
     </div>
+    <div id ="contactslice" class="slice">
+
+    </div>  
     <div id ="footer" class="slice">
       <div class="contacttype">
-        <i class="fas fa-at footericon"></i>
-        <div class="footertext hidden">
+        <div class="fi">
+          <i class="fas fa-at footericon"></i>
+        </div>
+        <div class="footertext">
           Contact Me
         </div>
       </div>
       <div class="contacttype">
-        <div class="footericon">
-          <i class="fab fa-github"></i>
-          <div class="footertext hidden">
-            Github
-          </div>
+        <div class="fi">
+          <i class="fab fa-github footericon"></i>
+        </div>
+        <div class="footertext">
+          Github
         </div>
       </div>
       <div class="contacttype">
-        <div class="footericon">
-          <i class="fab fa-codepen"></i>
+        <div class="fi">
+          <i class="fab fa-codepen footericon"></i>
           <div class="footertext hidden">
             Codepen
           </div>
         </div>
       </div>
       <div class="contacttype">
-        <div class="footericon">
-          <i class="fab fa-free-code-camp"></i>
+        <div class="fi">
+          <i class="fab fa-free-code-camp footericon"></i>
         </div>
-        <div class="footertext hidden animate">
+        <div class="footertext">
           Free Code Camp
         </div>
       </div>
       <div class="contacttype">
-        <div class="footericon">
-          <i class="fab fa-linkedin-in"></i>
-          <div class="footertext hidden">
-            Linked In
-          </div>
+        <div class="fi">
+          <i class="fab fa-linkedin-in footericon"></i>
+        </div>
+        <div class="footertext hidden">
+          Linked In
         </div>
       </div>
     </div>
