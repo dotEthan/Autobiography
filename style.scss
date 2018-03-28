@@ -8,7 +8,7 @@ $menufontsize: 1em;
 $menubackground: #6D7993;
 $menuhighlight: silver; 
 $smallmenupaddingtop: 20px;
-$frontimage: url('http://www.freggie.ca/pimages/body.jpg');
+$frontimage: url('http://www.freggie.ca/pimages/body.jpeg');
 $darkslice: #9099A2;
 $topc: rgba(255, 0, 0, 0.8);
 $bottomc: rgba(255, 0, 0, 0.8);
@@ -35,6 +35,10 @@ $regulartext: 'Lato', sans-serif;
 
 .gone {
   display: none !important;
+}
+
+body {
+  font-family: $regulartext;
 }
 
 #menucontain {
@@ -106,6 +110,7 @@ a {
   height: 100vh;
   background-image: $frontimage;
   background-size: cover;
+  background-position: left bottom;
   
   @media screen and (min-width: 800px) {
   position: absolute;
@@ -176,11 +181,10 @@ a {
 }
 
 #biotext {
-  width: 80%;
-  padding: 40px;
+  width: 100%;
   display:flex;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
 }
 
@@ -188,12 +192,12 @@ a {
   background-color: #6D7993;
   display: flex; 
   width: 90%;
-  height: 400px;
   position:relative;
   padding: 75px;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
+  height: 420px;
   
 }
 
@@ -232,30 +236,58 @@ a {
   padding: 50px;
   align-items: center;
   position: absolute;
-  top: 0;
+  top: 25px;
   left: 0;
+  flex-direction: column;
 }
 
-#biopersonalt {
-  font-size: 1.3em;
-  padding: 50px;
+#biotop {
+  display: flex;
+  flex-direction: row;
+}
+
+#biotext {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
 }
 
 #biotitle {
   font-size: 2em;
   text-decoration: underline;
-  margin-bottom: 30px;
+  margin-left: 20px;
+  font-family: $headertext;
+}
+
+#biotextw {
+  padding: 50px 50px 50px 40px;
+  font-size: 1.4em;
 }
 
 #portimage {
+  max-width: 100%;
 }
 
-#biolinks {
-  display: flex; 
-  justify-content: space-between;
-  font-size: 1em;
-  margin: 50px auto;
-  width: 50%;
+#biobottom {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+
+#thanksright {
+  width: 85%;
+  padding: 5px;
+  
+  a {
+    color: $brightcolor
+  }
+}
+
+#thanksleft {
+  width: 15%;
+  padding: 5px;
+  text-align: right;
 }
 
 #history {
