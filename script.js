@@ -1,4 +1,16 @@
 //-----------------------
+//Alterations
+//-----------------------
+
+ $("#body").click(function() { 
+   console.log("hi!");
+   $("link[rel=stylesheet]").attr({href : "http://www.freggie.ca/pimages/style2.css"}); });
+
+ $("#mind").click(function() { 
+   console.log("ho!");
+   $("link[rel=stylesheet]").attr({href : "style.css"}); });
+
+//-----------------------
 //Text Fade
 //-----------------------
 
