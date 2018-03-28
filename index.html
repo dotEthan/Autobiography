@@ -3,19 +3,19 @@
   <div id="menucontain">
     <div id ="menu">
       <div id="biomenu" class="menutabs">
-        <a href="#bioslice" class="menulink"><i class="fas fa-id-card fa-lg"></i>
-          <div class="menutitle">Bio</a></div>
+        <a href="#bioslice"><i class="fas fa-id-card fa-lg faicon"></i>
+        <div class="menutitle">Bio</a></div>
       </div>
       <div id="historymenu" class="menutabs">
-        <a href="#historyslice" class="menulink"><i class="fas fa-calendar-alt fa-lg"></i>
+        <a href="#historyslice"><i class="fas fa-calendar-alt fa-lg faicon"></i>
           <div class="menutitle">History</a></div>
       </div>
       <div id="projectmenu" class="menutabs">
-        <a href="#projectslice" class="menulink"><i class="fas fa-briefcase fa-lg"></i>
+        <a href="#projectslice"><i class="fas fa-briefcase fa-lg faicon"></i>
         <div class="menutitle">Projects</a></div>
       </div>
       <div id="contactmenu" class="menutabs">
-        <a href="#contactslice" class="menulink"><i class="fas fa-envelope fa-lg"></i>
+        <a href="#contactslice"><i class="fas fa-envelope fa-lg faicon"></i>
           <div class="menutitle">Contact Me</a></div>
       </div>
     </div>
@@ -24,7 +24,7 @@
     <div id="splashcont">
       <div id="titlecard">
         <div id="nametitle">Ethan Strauss</div>
-        <div id="namemotto">Student, Programmer, Entrepreneur</div>
+        <div id="namemotto"></div>
       </div>
       <div id="choices">
         <div id="body" class="choicesbox">
@@ -39,52 +39,50 @@
       </div>
     </div>
     <div id ="bioslice" class="slice">
-      <div id="protitle">Bio</div>
       <div id="bioinfo">
         <div id="biotext">
           <div id="biocontain">
-            <div id="name">Ethan Strauss</div>
             <div id="biowriting">
-              Ethan is a smart man. Big brains and lots of heart. You should hire him because if you don't, your competitors will and you'll feel sad when he develops the next Facebook. IN YOUR FACEBOOK!
-              <p>
-                Ethan is a smart man. Big brains and lots of heart. You should hire him because if you don't, your competitors will and you'll feel sad when he develops the next Facebook. IN YOUR FACEBOOK!
+              "Ethan has a natural talent for finding where the problems exist and stopping them before they can grow"<br><span id="quotename">-Laura Dahl</span>
             </div>
-            <div id="portimage">
-              <img alt="Ethans Photo" src="http://www.freggie.ca/pimages/test.jpg">
-            </div>
-          </div>
-          <div id="biolinks">
-            <div class="contacttype">
-              <i class="fab fa-github"></i>
-            </div>
-            <div class="contacttype">
-              <i class="fab fa-codepen"></i>
-            </div>
-            <div class="contacttype">
-              <i class="fab fa-free-code-camp"></i>
+            <div id="bioquestion"><span>Want to know more?</span></div>
+            <div id="biopersonal">
+              <div id="biopersonalt">
+                <div id="biotitle">About Me</div>
+                My name is Ethan Strauss, I'm a passionate and endlessly curious front end developer. Over the last two decades I have traveled two continents using my understanding of HTML, CSS, Javascript and more to design and implement solutions to the problems I came across.
+                <br><br><br>
+                I have now settled in Toronto and reinvigorated my programming learning by diving into Node.js, React and more. I'd love to find a company where I can both contribute to solving any problems they have while also working and learning with people as dedicated and passionate as me.
+              </div>
+              <div id="portimage">
+                <img alt="Ethans Photo" src="http://www.freggie.ca/pimages/test.jpg">
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>  
     <div id ="historyslice" class="slice">
-      <div id="protitle">History</div>
+      <div id="protitle">Work History</div>
       <div id="historynames">
         <div class="historytitles">
-          Inscriber<p>
+          Inscriber<br/>
           <span class="historydates">2002-2003</span>
         </div>
         <div class="historytitles">
-          Professor
+          Professor<br/>
+          <span class="historydates">2003-2013</span>
         </div>
         <div class="historytitles">
-          Ethan's English Cafe
+          Ethan's English Cafe<br/>
+          <span class="historydates">2008-2015</span>
         </div>
         <div class="historytitles">
-          Freggie Food Delivery
+          Freggie Food Delivery<br/>
+          <span class="historydates">2015-2016</span>
         </div>
         <div class="historytitles">
-          Winter Gardens
+          Winter Gardens<br/>
+          <span class="historydates">2015-2017</span>
         </div>
       </div>
       <div class="slider-container">
@@ -92,10 +90,14 @@
           <div class="flexbox-slide">
             <img src="http://www.freggie.ca/pimages/inscriber.jpg" alt="Slide Image">
             <div class="text-block">
-              <h3>Slide #1 is here</h3>
+              <h3><a href="http://www.imaginecommunications.com/">Inscriber Technology</a></h3>
+              (Now called Imagine Communications)
               <div class="text">
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren</p>
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren</p>
+                Title: Customer Service Technician<br>
+                Duties: <li>Co-Developed and populated an automated support database</li>
+                <li>Assessed client problems and formulated appropriate solutions</li>
+                <li>Tracked and reviewed testing on 5 beta programs to ensure UI/UX integration</li>
+                <li>99th percentile in client satisfaction</li>
               </div>
             </div>
           </div>
@@ -137,8 +139,28 @@
           </div>
         </div>
       </div>
-    </div>  
+    </div>
     <div id="projectslice" class="slice">
+      <div id="projectoverlay">
+        <div id="closeover">X</div>
+        <div id="overlayleft">
+          <div id="overlaytitle">Freggie Delivery</div>
+          <div id="overlaytext">
+            Founded: 2016<br><br>
+            Freggie Delivery was a vegetarian/vegan food delivery service I started after learning many University of Toronto students did not have access to fresh, healthy food during their studies.
+          </div>
+          <div id="overlayskills">
+            Skills Used:<br><br>
+            HTML, CSS, Javascript, Organization, Chef Skills, Customer Service 
+          </div>
+          <div id="overlayurl">
+            <a href="http://www.freggie.ca">http://www.freggie.ca</a>
+          </div>
+        </div>
+        <div id="overlayright">
+          <img alt="Freggie page screenshot" src="http://www.freggie.ca/pimages/freggiesmpage.jpg">
+        </div>
+      </div>
       <div id="protitle">Projects</div>
       <div id="projectcont">
         <div id="freggie" class="project">
@@ -263,49 +285,64 @@
         </div>
       </div>
     </div>
-    <div id ="contactslice" class="slice">
-
+    <div id ="availableslice" class="slice">
+      <div id="availablehalf">
+        I have just recently finished my work at Winter Gardens and am available for any remote or onsite (in Toronto) work.
+        <br><br>
+        <button class="buttonstyle">Contact Me</button>
+      </div>
+      <div id="resumehalf">
+        Download my resume in PDF format.
+        <br><br><br><br>
+        <button class="buttonstyle">Resume Download</button>
+        <div id="update">Last Updated: March 26th, 2018</div>
+      </div>
     </div>  
     <div id ="footer" class="slice">
-      <div class="contacttype">
-        <div class="fi">
-          <i class="fas fa-at footericon"></i>
+      <div id="footercont">
+        <div class="contacttype">
+          <div class="fi">
+            <i class="fas fa-at footericon"></i>
+          </div>
+          <div class="footertext">
+            Contact Me
+          </div>
         </div>
-        <div class="footertext">
-          Contact Me
+        <div class="contacttype">
+          <div class="fi">
+            <i class="fab fa-github footericon"></i>
+          </div>
+          <div class="footertext">
+            Github
+          </div>
         </div>
-      </div>
-      <div class="contacttype">
-        <div class="fi">
-          <i class="fab fa-github footericon"></i>
+        <div class="contacttype">
+          <div class="fi">
+            <i class="fab fa-codepen footericon"></i>
+            <div class="footertext">
+              Codepen
+            </div>
+          </div>
         </div>
-        <div class="footertext">
-          Github
+        <div class="contacttype">
+          <div class="fi">
+            <i class="fab fa-free-code-camp footericon"></i>
+          </div>
+          <div class="footertext">
+            Free Code Camp
+          </div>
         </div>
-      </div>
-      <div class="contacttype">
-        <div class="fi">
-          <i class="fab fa-codepen footericon"></i>
-          <div class="footertext hidden">
-            Codepen
+        <div class="contacttype">
+          <div class="fi">
+            <i class="fab fa-linkedin-in footericon"></i> 
+          </div>
+          <div class="footertext">
+            Linked In
           </div>
         </div>
       </div>
-      <div class="contacttype">
-        <div class="fi">
-          <i class="fab fa-free-code-camp footericon"></i>
-        </div>
-        <div class="footertext">
-          Free Code Camp
-        </div>
-      </div>
-      <div class="contacttype">
-        <div class="fi">
-          <i class="fab fa-linkedin-in footericon"></i>
-        </div>
-        <div class="footertext hidden">
-          Linked In
-        </div>
+      <div id="footmessage">
+        © 2018 Ethan Strauss. This site <span id="sitebuild">has been pieced together in my travels</span>. Want to use it for your own portfolio? Get the source on <span class="footlink"><a href="https://github.com/Uberche/porfolioweb">GitHub</a></span>.
       </div>
     </div>
   </div>
