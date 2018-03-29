@@ -7,8 +7,65 @@
 .gone {
   display: none !important; }
 
-body {
+* {
   font-family: "Lato", sans-serif; }
+
+body {
+  margin: 0; }
+
+#load {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite; }
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg); } }
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
+#contents {
+  display: none; }
+
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s; }
+
+@-webkit-keyframes animatebottom {
+  from {
+    bottom: -100px;
+    opacity: 0; }
+  to {
+    bottom: 0px;
+    opacity: 1; } }
+
+@keyframes animatebottom {
+  from {
+    bottom: -100px;
+    opacity: 0; }
+  to {
+    bottom: 0;
+    opacity: 1; } }
 
 #menucontain {
   position: fixed;
@@ -21,26 +78,29 @@ body {
       position: fixed;
       width: 10%;
       height: 100vh; } }
-  #menucontain #menu {
-    display: flex;
-    justify-content: center;
-    padding-top: 20px;
-    color: black;
-    font-family: "Oswald", sans-serif; }
-    @media screen and (min-width: 800px) {
-      #menucontain #menu {
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        height: 80vh;
-        margin-top: 10vh;
-        padding-top: 0; } }
+
+#menu {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  color: black;
+  font-family: "Oswald", sans-serif; }
+  @media screen and (min-width: 800px) {
+    #menu {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 80vh;
+      margin-top: 10vh;
+      padding-top: 0; } }
 
 a {
   color: black; }
 
 .menunow {
-  color: silver; }
+  color: silver;
+  font-size: 1.3em;
+  transition: all 1s; }
 
 .menutabs {
   width: 20%;
@@ -53,18 +113,23 @@ a {
       display: flex;
       justify-content: center;
       flex-direction: column;
-      align-items: center; } }
+      align-items: center;
+      transition: all 0.5s; }
+      .menutabs:hover {
+        font-size: 1.2em; } }
 
 .faicon {
-  font-size: 2.5em; }
+  font-size: 2em; }
 
 .menutitle {
-  margin-bottom: 25px;
+  margin: 15px 0;
   font-size: 1em; }
+  .menutitle a {
+    text-decoration: none; }
 
 #contentcontain {
   height: 100vh;
-  background-image: url("http://www.freggie.ca/pimages/body.jpeg");
+  background-image: url("../images/mind.jpg");
   background-size: cover;
   background-position: left bottom; }
   @media screen and (min-width: 800px) {
@@ -90,7 +155,8 @@ a {
   align-items: center;
   flex-wrap: wrap;
   padding: 50px;
-  border-radius: 10px; }
+  border-radius: 10px;
+  color: white; }
 
 #nametitle {
   width: 100%;

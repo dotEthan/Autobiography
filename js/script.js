@@ -1,14 +1,52 @@
+let bioDist, historyDist, projectDist;
+let bodyDone = 0,
+soulDone = 0;
+//-----------------------
+//Loading
+//-----------------------
+
+var myVar;
+
+function myFunction() {
+    myVar = setTimeout(showPage, 500);
+}
+
+function showPage() {
+  $("#load").css({"display": "none"});
+  $("#contents").css({"display": "block"});
+  resizeDist();
+  resizeHover();
+}
+
+myFunction();
+
 //-----------------------
 //Alterations
 //-----------------------
 
- $("#body").click(function() { 
-   console.log("hi!");
-   $("link[rel=stylesheet]").attr({href : "http://www.freggie.ca/pimages/style2.css"}); });
+$("#bodyb").click(function() {
+  if (bodyDone == 0) {
+    $("#load").css({"display": "block"});
+    $("#contents").css({"display": "none"});
+    myFunction();
+    bodyDone++;
+  }
+  $("link[rel=stylesheet]").attr({href : "../css/bodystyle.css"}); 
+});
 
- $("#mind").click(function() { 
-   console.log("ho!");
-   $("link[rel=stylesheet]").attr({href : "style.css"}); });
+$("#mindb").click(function() {
+  $("link[rel=stylesheet]").attr({href : "css/style.css"}); 
+});
+  
+$("#soulb").click(function() { 
+  if (soulDone == 0) {
+    $("#load").css({"display": "block"});
+    $("#contents").css({"display": "none"});
+    myFunction();
+    soulDone++;
+  }
+  $("link[rel=stylesheet]").attr({href : "css/soulstyle.css"}); 
+});
 
 //-----------------------
 //Text Fade
@@ -44,21 +82,23 @@ $('#biocontain').hover(function () {
 //-----------------------
 // Scrolling Position
 //-----------------------
-let historydist = $('#historyslice').offset().top;
-let biodist = $('#bioslice').offset().top;
-let projectdist = $('#projectslice').offset().top;
-
-
+function resizeDist() {
+  historyDist = $('#historyslice').offset().top;
+  bioDist = $('#bioslice').offset().top;
+  projectDist = $('#projectslice').offset().top;
+}
+  
+  
 document.addEventListener('scroll', function (event) {
-  if (event.pageY < biodist) {
+  if (event.pageY < bioDist) {
     $('a').removeClass();
-  } else if (event.pageY > biodist && event.pageY < historydist) {
+  } else if (event.pageY > bioDist && event.pageY < historyDist) {
     $('a').removeClass();
     $('a[href="#bioslice"]').addClass('menunow');
-  } else if (event.pageY > historydist && event.pageY < projectdist) {
+  } else if (event.pageY > historyDist && event.pageY < projectDist) {
     $('a').removeClass();
     $('a[href="#historyslice"]').addClass('menunow');
-  } else if (event.pageY > projectdist) {
+  } else if (event.pageY > projectDist) {
     $('a').removeClass();
     $('a[href="#projectslice"]').addClass('menunow');
   }
@@ -79,35 +119,14 @@ $('#freggie').click(function() {
 });
 
 //------------------------
-//Maybe for Changing styles
-//------------------------
-
-//reload css keep dom
-//reappropriated and adjusted from 
-//http://www.vidalquevedo.com/how-to-load-css-stylesheets-dynamically-with-jquery
-
-// $(document).ready(function(){
-
-//   if($("#container").size()>0){
-//     if (document.createStyleSheet){
-//       document.createStyleSheet('style.css');
-//     }
-//     else {
-//       $("head").append($("<link rel='stylesheet' href='style.css' type='text/css' media='screen' />"));
-//     }
-//   }
-// });
-
-//------------------------
 //Resizing Hovers
 //------------------------
-
-$(window).bind("load", function() {
-  let projectWidth = $(".project").width().toString();
-  let projectHeight = $(".project").height().toString();
-  $('.bottom').css({ borderBottomWidth: projectHeight + 'px', borderLeftWidth: projectWidth + 'px' });
-  $('.top').css({ borderRightWidth: projectWidth + 'px', borderTopWidth: projectHeight + 'px' });
-});
+function resizeHover() {
+    let projectWidth = $(".project").width().toString();
+    let projectHeight = $(".project").height().toString();
+    $('.bottom').css({ borderBottomWidth: projectHeight + 'px', borderLeftWidth: projectWidth + 'px' });
+    $('.top').css({ borderRightWidth: projectWidth + 'px', borderTopWidth: projectHeight + 'px' });
+}
 
 //------------------------
 //Typewrite
