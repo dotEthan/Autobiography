@@ -267,10 +267,12 @@ a {
 }
 
 #biowriting {
-  width: 100%;
+  width: 90%;
   font-size: $biowritings;
   font-style: italic;
   color: $biowritingc;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 #quotename {
@@ -283,8 +285,8 @@ a {
   text-align:center;
   width: 100%;
   animation: textgrowth 1s infinite alternate;
-  height: 75px;
-  margin-top: 40px;
+  height: 40px;
+  margin-top: 90px;
 }
 
 @keyframes textgrowth {
@@ -328,6 +330,7 @@ a {
 #biotextw {
   padding: 50px 50px 50px 40px;
   font-size: 1.4em;
+  text-align: left;
 }
 
 #portimage {
