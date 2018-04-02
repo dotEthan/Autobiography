@@ -6,6 +6,9 @@
   font-weight: normal;
   font-style: normal; }
 
+img {
+  max-width: 100%; }
+
 .animate {
   transition: all 1.2s; }
 
@@ -90,20 +93,28 @@ body {
       width: 7%;
       height: 100vh;
       padding-top: 70px; } }
-  #menucontain #menu {
-    display: flex;
-    justify-content: center;
-    padding-top: 20px;
-    color: white;
-    font-family: "indie_flowerregular", cursive; }
-    @media screen and (min-width: 800px) {
-      #menucontain #menu {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 80vh;
-        margin-top: 10vh;
-        padding-top: 0; } }
+
+#particles-js {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh; }
+
+#menu {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  color: white;
+  font-family: "indie_flowerregular", cursive; }
+  @media screen and (min-width: 800px) {
+    #menu {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 80vh;
+      margin-top: 10vh;
+      padding-top: 0; } }
 
 a {
   color: white; }
@@ -127,7 +138,8 @@ a {
       flex-direction: column;
       align-items: center;
       transition: all 1s;
-      margin-bottom: 30px; }
+      margin-bottom: 30px;
+      z-index: 99; }
       .menutabs:hover {
         font-size: 1.2em; }
         .menutabs:hover a {
@@ -343,13 +355,8 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-between; }
-  .flexbox-slide img {
-    max-width: 100%;
-    margin: 0 auto 20px; }
   .flexbox-slide:hover {
     width: 80%; }
-    .flexbox-slide:hover .historytext {
-      visibility: visible; }
 
 .textblock {
   width: 90%;
@@ -358,7 +365,8 @@ a {
   height: 500px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; }
+  justify-content: space-between;
+  position: relative; }
 
 .historytitles {
   text-align: center;
@@ -374,7 +382,7 @@ a {
 
 .historytext {
   padding: 0px 20px;
-  visibility: hidden;
+  display: block;
   text-align: left;
   background: rgba(255, 255, 255, 0.6);
   overflow: hidden;
@@ -385,6 +393,23 @@ a {
 .historydates {
   font-weight: normal;
   width: 100%; }
+
+.historyicons {
+  width: 90px;
+  height: 200px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%); }
+
+.historylogo {
+  max-width: 200px;
+  margin: 0 auto 20px; }
 
 .nowcalled {
   font-size: 0.6em; }
@@ -497,12 +522,13 @@ a {
     font-size: 0.7em; }
 
 #projectoverlay {
-  position: absolute;
-  top: 100px;
-  left: 50%;
+  position: fixed;
+  top: 50%;
+  left: 55%;
   transform: translate(-50%, 0);
-  height: 720px;
+  height: 600px;
   width: 80%;
+  margin-top: -300px;
   background-color: rgba(255, 255, 255, 0.9);
   z-index: 9999;
   display: flex; }
@@ -520,7 +546,7 @@ a {
   align-items: center;
   color: red;
   background: white;
-  border: 1px solid black;
+  border: 1px solid grey;
   border-radius: 25px;
   cursor: pointer; }
 
@@ -548,9 +574,11 @@ a {
 
 #overlayright {
   width: 50%;
-  padding: 40px; }
+  padding: 40px;
+  margin-bottom: 20px; }
   #overlayright img {
-    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
     border: 2px dashed #96858F;
     padding: 10px; }
 
@@ -587,7 +615,7 @@ a {
   text-align: right;
   font-size: 1.5em;
   background: linear-gradient(to top right, transparent 50%, #018ec8 50%) no-repeat, linear-gradient(to top right, transparent 0.1%, #018ec8 0.1%) no-repeat;
-  background-size: 60% 100%, 40% 100%;
+  background-size: 60.5% 100%, 40% 100%;
   background-position: 0% 0%, 100% 0%;
   display: flex;
   flex-direction: column;
@@ -601,6 +629,51 @@ a {
   font-size: 0.4em;
   margin-top: 10px;
   margin-right: 10px; }
+
+#contactslice {
+  display: none;
+  position: relative; }
+
+#inquiryform {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 0 auto;
+  justify-content: space-between; }
+
+#titlereturn {
+  width: 100%; }
+
+#contactclose {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  font-size: 2em;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: red;
+  background: white;
+  border: 1px solid grey;
+  border-radius: 25px;
+  cursor: pointer; }
+
+#contactleft {
+  width: 45%;
+  display: flex;
+  flex-direction: column; }
+
+#contactright {
+  width: 45%;
+  display: flex;
+  flex-direction: column; }
+
+#contactmessage {
+  width: 100%;
+  margin-top: 20px; }
 
 #footer {
   display: flex;
@@ -629,6 +702,12 @@ a {
     .contacttype:hover .footertext {
       visibility: visible;
       color: #018ec8; }
+
+.fi {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
 
 #footmessage {
   font-size: 0.9em; }

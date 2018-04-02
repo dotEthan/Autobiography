@@ -1,32 +1,50 @@
-//Change sitebuild in the footer for each button
+@font-face {
+  font-family: 'indie_flowerregular';
+  src: url('IndieFlower-webfont.eot');
+  src: url('IndieFlower-webfont.eot?#iefix') format('embedded-opentype'),
+       url('IndieFlower-webfont.woff2') format('woff2'),
+       url('IndieFlower-webfont.woff') format('woff'),
+       url('IndieFlower-webfont.ttf') format('truetype'),
+       url('IndieFlower-webfont.svg#indie_flowerregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+$brightcolor: #fdf829;
+$shirtcolor: #afadb0;
+$menubgcolor: #31c2fe;
+$headertext:'indie_flowerregular', cursive;
+$regulartext: 'Lobster', cursive;
+$childtext: 'indie_flowerregular', cursive;
+
 
 // colors for testing
 
-$menutextc: black;
-$menuiconsize: 2em;
-$menufontsize: 1em;
-$menubackground: #6D7993;
-$menuhighlight: silver; 
+$menutextc: white;
+$menuiconsize: 1.5em;
+$menufontsize: 0.9em;
+$menubackground: $menubgcolor;
+$menuhighlight: #d8db12; 
 $smallmenupaddingtop: 20px;
-$frontimage: url('../images/mind.jpg');
+$frontimage: url('../images/body.jpg');
 $darkslice: #9099A2;
-$topc: rgba(255, 0, 0, 0.8);
-$bottomc: rgba(255, 0, 0, 0.8);
+$topc: $menubgcolor;
+$bottomc: $menubgcolor;
 $biocontainbg: grey;
 $biowritingc: black;
-$biowritings: 3em;
-$bioquestions: 1.7em;
-$bioquestionc: #b4b4b4;
-
+$biowritings: 2.7em;
+$bioquestions: 2.5em;
+$bioquestionc: $menubgcolor;
+$footercolor: darken($brightcolor, 20%);
 
 // fonts
-$brightcolor: #3a3463;
-$headertext: 'Oswald', sans-serif;
-$regulartext: 'Lato', sans-serif;
-
+img{
+  max-width: 100%;
+}
 
 .animate {
-  transition: all 2s;
+  transition: all 1.2s;
 }
 
 .hidden {
@@ -38,7 +56,7 @@ $regulartext: 'Lato', sans-serif;
 }
 
 * {
-  font-family: $regulartext;
+  font-family: $headertext;
 }
 
 body {
@@ -74,6 +92,7 @@ body {
 
 #contents {
   display: none;
+  text-align: center;
 }
 
 .animate-bottom {
@@ -95,7 +114,7 @@ body {
 }
 
 #menucontain {
-  position: fixed; 
+  position: fixed;
   background: $menubackground;
   color: white;
   width: 100%;
@@ -103,10 +122,20 @@ body {
   
   @media screen and (min-width: 800px) {
     position: fixed;
-    width: 10%;
+    top: 0;
+    left: 0; 
+    width: 7%;
     height: 100vh;
-    
+    padding-top: 70px;
   }
+}
+
+#particles-js {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
 }
 
 #menu {
@@ -131,9 +160,10 @@ a {
 }
 
 .menunow {
-  color: $menuhighlight;
+  color: $brightcolor;
   font-size: 1.3em;
   transition: all 1s;
+  font-weight: bold;
 }
 
 .menutabs {
@@ -142,16 +172,22 @@ a {
 
   @media screen and (min-width: 800px) {
     height: 60px;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
     width: 60%;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    transition: all 0.5s;
+    transition: all 1s;
+    margin-bottom: 30px;
+    z-index: 99;
 
     &:hover {
       font-size: 1.2em;
+      
+      a {
+        color: $brightcolor;
+      }
     }
    
   }
@@ -162,53 +198,56 @@ a {
 }
 
 .menutitle {
-  margin: 15px 0;
+  margin: 5px 0;
   font-size: $menufontsize;
 
-  a{
+  a {
     text-decoration: none;
   }
 }
 
+#contactme {
+  cursor: pointer;
+}
+
 #contentcontain {
-  height: 100vh;
-  background-image: $frontimage;
-  background-size: cover;
-  background-position: left bottom;
   
   @media screen and (min-width: 800px) {
   position: absolute;
-  left: 10%;
-  width: 90%;    
+  left: 7%;
+  width: 93%;
   }
 }
   
 #splashcont {
   height: 100vh;
+  background-image: $frontimage;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 #titlecard {
   margin-left: auto; 
   margin-right: auto; 
+  padding-top: 30px;
   width: 100%;
-  // background-color: rgba(255,255,255,0.6);
   width: 40%;
   text-align: center;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  padding: 50px;
-  border-radius: 10px;
   color: white;
 }
 
 #nametitle {
   width: 100%;              
   font-family: $headertext;
+  font-weight: bold;
   font-size: 3em;
 }
 
@@ -217,26 +256,52 @@ a {
   font-family: $regulartext;
   font-size: 1.5em;
   margin-top: 20px;
+  color: black;
 }
     
 #choices {
   display: flex;
   justify-content: space-around;
   width: 80%;
-  margin: 0 auto;
+  margin: 0 auto 30px auto;
+  align-items: center;
 }
 
+
 .choicesbox {
-  background: white;
-  border: 1px solid #aeaeae;
-  border-radius: 5%;
-  padding: 20px 50px;
-  box-shadow: 0px 0px 3px 0px #aeaeae inset;
+  height: 48px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  font-family: $childtext;
+  font-weight: bold;
+  color: white;
+}
+
+.lego {
+  width: 100px;
+  height: 56px;
+  background-image: url("../images/legor.png");
+  background-size: cover;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+#soulb {
+  background-image: url("../images/legob.png");
+}
+
+#mindb {
+  background-image: url("../images/legog.png");
 }
 
 .slice {
-  background: #D5D5D5;
+  background: $brightcolor;
   padding: 25px;
+}
+
+#bioslice {
+  background-color: $brightcolor;
 }
 
 #bioinfo {
@@ -254,58 +319,41 @@ a {
 }
 
 #biocontain {
-  background-color: #6D7993;
   display: flex; 
-  width: 90%;
+  width: 80%;
   position:relative;
-  padding: 75px;
+  padding: 0 50px;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   height: 420px;
+  margin: 0 auto;
   
 }
 
 #biowriting {
-  width: 90%;
+  width: 100%;
   font-size: $biowritings;
-  font-style: italic;
   color: $biowritingc;
-  margin-right: auto;
-  margin-left: auto;
+  font-family: $childtext;
 }
 
 #quotename {
   font-size: 0.6em;
-}
-
-#bioquestion {
-  font-size:$bioquestions;
-  color: $bioquestionc;
-  text-align:center;
-  width: 100%;
-  animation: textgrowth 1s infinite alternate;
-  height: 40px;
-  margin-top: 90px;
-}
-
-@keyframes textgrowth {
-    0% {
-    font-size: 1.7em;
-    }
-    100% {
-    font-size: 2em;
-    }
+  text-align: right;
+  margin-top: 20px;
+  font-family: $childtext;
 }
 
 #biopersonal {
   display:flex;
-  padding: 50px;
+  // padding: 50px;
   align-items: center;
   position: absolute;
   top: 25px;
   left: 0;
   flex-direction: column;
+  text-align: left;
 }
 
 #biotop {
@@ -320,17 +368,9 @@ a {
   align-items: left;
 }
 
-#biotitle {
-  font-size: 2em;
-  text-decoration: underline;
-  margin-left: 20px;
-  font-family: $headertext;
-}
-
 #biotextw {
-  padding: 50px 50px 50px 40px;
-  font-size: 1.4em;
-  text-align: left;
+  padding-right: 50px;
+  font-size: 1.2em;
 }
 
 #portimage {
@@ -346,9 +386,10 @@ a {
 #thanksright {
   width: 85%;
   padding: 5px;
+  text-align: left;
   
   a {
-    color: $brightcolor
+    color: $menubgcolor;
   }
 }
 
@@ -364,7 +405,7 @@ a {
 }
 
 #historyslice {
-  background-color: $darkslice;
+  background-color: white;
 }
 
 #protitle {
@@ -373,32 +414,141 @@ a {
   text-align: center;
   font-size: 3em;
   text-decoration: underline;
-  margin-bottom: 50px;
-  margin-top: 50px;
+  margin: 20px 0;
+  font-weight: bold;
+  color: darken($menubgcolor, 20%);
+  text-decoration: none;
 }
 
+//----------------------------
+// History Slider
+//----------------------------
 
-#historynames {
-  width: 80%;
+.slider-container {
+  margin-bottom: 20px;
+}
+
+.flexbox-slider {
   display: flex;
-  justify-content: center;
-  margin-bottom: 25px;
-  font-size: 1.3em;
+  width: 90%;
+  height: 500px;
+  // visibility: hidden;
   margin-right: auto;
   margin-left: auto;
 }
+  
+.flexbox-slide {
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: linear;
+  transition-delay: 0s;
+  width: 20%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  visibility: visible;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+
+  &:hover {
+    width: 80%;
+  }
+}
+
+.textblock {
+  width: 90%;
+  margin: 10px auto 10px;
+  z-index: 2;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+     
 
 .historytitles {
-  width: 20%;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: #000000;
+  padding: 10px;
+  font-weight: bold;
+  background: rgba(255,255,255,0.6);
+  height: 80px;
+  font-size: 1.2em;
+}
+
+.historytext {
+  padding: 0px 20px;
+  display: block;
+  text-align: left;
+  background: rgba(255,255,255,0.6);
+  overflow: hidden;
+  height: 200px;
+  margin-bottom: 15px;
+  font-size: 0.9em;
 }
 
 .historydates {
+  font-weight: normal;
+  width: 100%;
+}
+
+.historyicons {
+  width: 90px;
+  height: 200px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.historylogo {
+  max-width: 200px; 
+  margin: 0 auto 20px;  
+}
+
+.nowcalled {
   font-size: 0.6em;
+  
+  a {
+    color: $menubgcolor;
+  }
+
+}
+
+#inscriberslide {
+  background: #ff0000;
+}
+
+#teachingslide {
+  background: #ffff00;
+}
+
+#englishslide {
+  background: #0000ff;
+}
+
+#freggieslide {
+  background: #00ff00;
+}
+
+#winterslide {
+  background: #ad00ad;
 }
 
 #projectslice {
   position: relative;
+  background: $brightcolor;
 }
 
 #projectcont {
@@ -416,7 +566,7 @@ a {
 }
   
 .project{
-  width: 30%;
+  width: 20%;
   margin-bottom: 50px;
   position: relative;
   overflow: hidden;
@@ -439,7 +589,7 @@ a {
     left:300px; 
     border-style: solid; 
     border-width: 0 0 151px 260px; 
-    border-color: transparent transparent #3a3463;
+    border-color: transparent transparent $brightcolor;
   }
 
   .top {
@@ -451,7 +601,7 @@ a {
     left:-320px; 
     border-style: solid; 
     border-width: 151px 260px 0px 0px; 
-    border-color: #3a3463 transparent transparent; 
+    border-color: $brightcolor transparent transparent; 
     z-index: 98;
   }
 
@@ -501,7 +651,7 @@ a {
       font-size: 1.7em;
       margin-top: 10px;
       margin-bottom: 10px;
-      background-color: rgba(255, 218, 218, 0.8);
+      background-color: rgba(2, 204, 255, 0.8);
     }
     
     .protextw {
@@ -511,12 +661,13 @@ a {
 }
 
 #projectoverlay {
-  position: absolute;
-  top:100px;
-  left: 50%;
+  position: fixed;
+  top:50%;
+  left: 55%;
   transform: translate(-50%, 0);
-  height: 720px;
+  height: 600px;
   width: 80%;
+  margin-top:-300px;
   background-color: rgba(255,255,255,0.9);
   z-index: 9999;
   display: flex;
@@ -535,7 +686,7 @@ a {
   align-items: center;
   color: red;
   background: white;
-  border: 1px solid black;
+  border: 1px solid grey;
   border-radius: 25px;
   cursor: pointer;
 }
@@ -569,9 +720,11 @@ a {
 #overlayright {
   width: 50%;
   padding: 40px;
+  margin-bottom: 20px;
   
   img {
-    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
     border: 2px dashed #96858F;
     padding: 10px;
   }
@@ -581,55 +734,114 @@ a {
   height: 300px;
   display: flex;
   padding: 0px;
-  background-color: $darkslice;
+  background-color: lighten($menubgcolor, 10%);
+  width: 100%;
 }
 
 #availablehalf {
   width: 50%;
   padding: 50px 0 50px 50px;
   font-size: 1.5em;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
 }
 
 .buttonstyle{
-  background-color: $darkslice;
+  background-color: $menubgcolor;
   padding: 15px;
   border-radius: 10px;
   font-size: 0.7em;
-  border: 2px solid darken($darkslice,40%);
-  color: darken($darkslice,40%);
+  border: 2px solid darken($menubgcolor,40%);
+  color: darken($menubgcolor,40%);
   cursor: pointer;
 }
 
 #resumehalf {
   width: 50%;
   padding: 50px 50px 50px 100px;
-  background-color: darken($darkslice,20%);
+  background-color: darken($menubgcolor,20%);
   color: white;
   text-align: right;
   font-size: 1.5em;
-  background: linear-gradient(to top right, transparent 50%, darken($darkslice,20%) 50%) no-repeat, linear-gradient(to top right, transparent 0.1%, darken($darkslice,20%) 0.1%) no-repeat;
-  background-size: 60% 100%, 40% 100%;
+  background: linear-gradient(to top right, transparent 50%, darken($menubgcolor,20%) 50%) no-repeat, linear-gradient(to top right, transparent 0.1%, darken($menubgcolor,20%) 0.1%) no-repeat;
+  background-size: 60.5% 100%, 40% 100%;
   background-position: 0% 0%, 100% 0%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
   
   .buttonstyle{
-    background-color: darken($darkslice,20%);
-    border: 2px solid lighten($darkslice,20%);
+    background-color: darken($menubgcolor,20%);
+    border: 2px solid lighten($menubgcolor,20%);
     color: lighten($darkslice,20%);
   }
 }
 
 #update{
-  font-size: 0.6em;
+  font-size: 0.4em;
   margin-top: 10px;
+  margin-right:10px;
+}
+
+#contactslice {
+  display: none;
+  position: relative;
+}
+
+#inquiryform {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+#titlereturn {
+  width: 100%;
+}
+
+#contactclose {
+  width: 50px;
+  height: 50px;
+  position: absolute; 
+  top: 50px;
+  right: 50px;
+  font-size: 2em;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: red;
+  background: white;
+  border: 1px solid grey;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+#contactleft {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+}
+
+#contactright {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+}
+
+#contactmessage {
+  width: 100%;
+  margin-top: 20px;
 }
 
 #footer {
   display: flex;
-  width: 100%;
   justify-content: space-around;
   flex-wrap: wrap;
-  background-color: grey !important;
-  border: 1px solid grey;
+  background-color: $brightcolor !important;
   height: 150px !important;
   align-items: center;
 }
@@ -643,8 +855,8 @@ a {
 .contacttype{
   width: 35%;
   text-align: center;
-  font-size: 4em;
-  color: silver;
+  font-size: 3.5em;
+  color: $menubgcolor;
 
   .footertext {
     font-size: .35em;
@@ -653,145 +865,92 @@ a {
   }
   
   &:hover {
-    
-    color: #3a3463;
+    color: darken($menubgcolor,20%);
     
     .footertext {
       visibility: visible;
+      color: darken($menubgcolor,20%);
     }
   }
+}
+
+.fi {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #footmessage{
   font-size: 0.9em;
 }
 
+#sitebuild {
+  color: black;
+}
+
 .footlink a{
-  color: $brightcolor;
+  color: $menubgcolor;
   font-weight: bold;
 }
 
-//----------------------------
-// History Slider
-//----------------------------
-.flexbox-slider {
-  display: flex;
-  width: 80%;
-  height: 500px;
-  visibility: hidden;
-  margin-right: auto;
-  margin-left: auto;
-  
-  .flexbox-slide {
-    transition-property: all;
-    transition-duration: 0.3s;
-    transition-timing-function: linear;
-    transition-delay: 0s;
-    width: 20%;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    visibility: visible;
-    
-    //overlay
-    &:after {
-      position: absolute;
-      top: 0;
-      left: 0;
-      content: "";
-      display: block;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(#fff, 0.8);
-      z-index: 2;
-      
-      opacity: 0;
-    }
-    
-    img {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      height: auto;
-      width: auto;
-      min-width: 100%;
-      min-height: 100%;
-      transform: translate(-50%, -50%);
-      z-index: 1;
-    }
-    
-    .text-block {
-      // position: absolute;
-      // right: 30px;
-      // bottom: 30px;
-      margin: 30px;
-      height: 410px;
-      padding: 20px;
-      border-radius: 5px;
-      // background-color: rgba(#fff, 0.4);
-      color: #000;
-      
-      z-index: 4;
-      
-      // visibility: hidden;
-      opacity: 0;
-      
-      h3 {
-        font: {
-          size: 20px;
-          weight: 700;
-        }
-      }
-    }
-  }
-  
-    &:hover {
-    
-    .flexbox-slide:hover {
-      flex-shrink: 0;
-      width: 60%;
-    }
-  }
-}
 
-.flexbox-slider.flexbox-slider-3 {
-  
-  .flexbox-slide {
-    
-    &:after {
-      transform: scale(.5);
-      transform-origin: center center;
-    }
-    
-    .text-block {
-      transform: rotate(-20deg);
-    }
-  }
-  
-  &:hover {
-    
-    .flexbox-slide:hover {
-      
-      &:after {
-        transition-property: all;
-        transition-duration: 0.2s;
-        transition-timing-function: linear;
-        transition-delay: 0.4s;
-        transform: scale(1);
-        opacity: 1;
-        visibility: visible;
-      }
-      
-      .text-block {
-        transition-property: all;
-        transition-duration: 0.2s;
-        transition-timing-function: linear;
-        transition-delay: 0.6s;
-        transform: rotate(0deg);
-        opacity: 1;
-        visibility: visible;
-      }
-    }
-  }
+
+@import url(http://fonts.googleapis.com/css?family=Fauna+One|Muli);
+#mainform{
+width:960px;
+margin:20px auto;
+padding-top:20px;
+font-family: 'Fauna One', serif;
+}
+#form{
+border-radius:2px;
+padding:20px 30px;
+box-shadow:0 0 15px;
+font-size:14px;
+font-weight:bold;
+width:350px;
+margin:20px 250px 0 35px;
+float:left;
+
+}
+h3{
+text-align:center;
+font-size:20px;
+}
+input{
+width:100%;
+height:35px;
+margin-top:5px;
+border:1px solid #999;
+border-radius:3px;
+padding:5px;
+}
+input[type=button]{
+background-color:#123456;
+border:1px solid white;
+font-family: 'Fauna One', serif;
+font-Weight:bold;
+font-size:18px;
+color:white;
+}
+textarea{
+width:100%;
+height:80px;
+margin-top:5px;
+border-radius:3px;
+padding:5px;
+resize:none;
+}
+span{
+color:red;
+}
+#note{
+color:black;
+font-Weight:400;
+}
+#returnmessage{
+font-size:14px;
+color:green;
+text-align:center;
 }

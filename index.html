@@ -6,6 +6,7 @@
   <meta charset="UTF-8">
   <title>Ethan Strauss: Front End Specialist</title>
   <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+  <script src="../particles.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Just+Another+Hand|Lobster|Lato:300|Oswald|Gochi+Hand" rel="stylesheet"> 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="css/style.css">
@@ -16,6 +17,8 @@
   <div id="load" class="animate-bottom"></div>
   <div id="contents">
     <div id="menucontain">
+      <!-- <div id="particles-js"></div> -->
+      <canvas id="particles-js"></canvas>
       <div id ="menu">
         <div id="biomenu" class="menutabs">
           <a href="#bioslice"><i class="fas fa-id-card fa-lg faicon"></i>
@@ -78,7 +81,7 @@
                     <img alt="Ethans Photo" src="images/bio.jpg">
                   </div>
                 </div>
-                <div id='biobottom'>
+                <div id="biobottom">
                   <div id="thanksleft">
                     Special Thanks to:
                   </div>
@@ -103,6 +106,7 @@
                   Inscriber Technology
                   <div class="historydates">2002-2003</div>
                 </div>
+                <div class="historyicons"><img src="../images/support.png"></div>
                 <div class="historytext">
                   Now called <a href="http://www.imaginecommunications.com/">Imagine Communications</a><br>
                   Title: Customer Service Technician<br>
@@ -115,17 +119,20 @@
                   </ul>
                 </div>
               </div>
-              <img src="images/inscriber.jpg" alt="Slide Image">
+              <div class="historylogo">
+                <img src="images/inscriber.jpg" alt="Slide Image">
+              </div>
             </div>
             <div id="teachingslide" class="flexbox-slide">
               <div class="textblock">
                 <div class="historytitles">
-                  English Professor
+                  Chinese Universities
                   <div class="historydates">2002-2003</div>
                 </div>
+                <div class="historyicons"><img src="../images/teacher.png"></div>
                 <div class="historytext">
-                  Now called <a href="http://www.imaginecommunications.com/">Imagine Communications</a><br>
-                  Title: Customer Service Technician<br>
+                  Worked at a variety of top level Chinese Universities.<br>
+                  Title: English Professor<br>
                   Duties: 
                   <ul>
                     <li>Co-Developed and populated an automated support database</li>
@@ -135,17 +142,19 @@
                   </ul>
                 </div>
               </div>
-              <img src="images/china.jpg" alt="Slide Image">
+              <div class="historylogo">
+                <img src="images/china.jpg" alt="Slide Image">
+              </div>
             </div>
             <div id="englishslide" class="flexbox-slide">
               <div class="textblock">
                 <div class="historytitles">
-                  Founder & CEO
+                  Ethan's English School
                   <div class="historydates">2002-2003</div>
                 </div>
+                <div class="historyicons"><img src="../images/onlineteacher.png"></div>
                 <div class="historytext">
-                  Now called <a href="http://www.imaginecommunications.com/">Imagine Communications</a><br>
-                  Title: Customer Service Technician<br>
+                  Title: Founder & CEO<br>
                   Duties: 
                   <ul>
                     <li>Co-Developed and populated an automated support database</li>
@@ -155,17 +164,19 @@
                   </ul>
                 </div>
               </div>
-              <img src="images/english.jpg" alt="Slide Image">
+              <div class="historylogo">
+                <img src="images/english.jpg" alt="Slide Image">
+              </div>
             </div>
             <div id="freggieslide" class="flexbox-slide">
               <div class="textblock">
                 <div class="historytitles">
-                  Founder & CEO
+                  Freggie Delivery
                   <div class="historydates">2002-2003</div>
                 </div>
+                <div class="historyicons"><img src="../images/chef.png"></div>
                 <div class="historytext">
-                  Now called <a href="http://www.imaginecommunications.com/">Imagine Communications</a><br>
-                  Title: Customer Service Technician<br>
+                  Title: Founder & CEO<br>
                   Duties: 
                   <ul>
                     <li>Co-Developed and populated an automated support database</li>
@@ -175,17 +186,19 @@
                   </ul>
                 </div>
               </div>
-              <img src="images/freggie.jpg" alt="Slide Image">
+              <div class="historylogo">
+                <img src="images/freggie.jpg" alt="Slide Image">
+              </div>
             </div>
             <div id="winterslide" class="flexbox-slide">
               <div class="textblock">
                 <div class="historytitles">
-                  Co-Founder & CTO
+                  Winter Gardens
                   <div class="historydates">2002-2003</div>
                 </div>
+                <div class="historyicons"><img src="../images/manager.png"></div>
                 <div class="historytext">
-                  Now called <a href="http://www.imaginecommunications.com/">Imagine Communications</a><br>
-                  Title: Customer Service Technician<br>
+                  Title: Founder & CTO<br>
                   Duties: 
                   <ul>
                     <li>Co-Developed and populated an automated support database</li>
@@ -195,7 +208,9 @@
                   </ul>
                 </div>
               </div>
-              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/694606/eff-9.jpg" alt="Slide Image">
+              <div class="historylogo">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/694606/eff-9.jpg" alt="Slide Image">
+              </div>
             </div>
           </div>
         </div>
@@ -336,7 +351,7 @@
             I have just recently finished my work at Winter Gardens and am available for any remote or onsite work in the Toronto area.
           </div>
           <div class="bottombuttons">
-            <button id="contactmebut" class="buttonstyle">Contact Me</button>
+            <a href="#contactslice"><button id="contactmebut" class="buttonstyle">Contact Me</button></a>
           </div>
         </div>
         <div id="resumehalf">
@@ -352,23 +367,32 @@
       <div id="contactslice" class="slice">
         <div id="contactform">
             <form id="inquiryform">
-              <h3>Contact Form</h3>
-              <p id="returnmessage"></p>
-              <label>Name: <span>*</span></label>
-              <input type="text" id="name" placeholder="Name"/>
-              <label>Email: <span>*</span></label>
-              <input type="text" id="email" placeholder="Email"/>
-              <label>Contact No: <span>*</span></label>
-              <input type="text" id="phone" placeholder="10 digit Mobile no."/>
-              <label>Message:</label>
-              <textarea id="inquiry" placeholder="Message......."></textarea>
-              <input type="button" id="submit" value="Send Message"/>
+              <div id="titlereturn">
+                <div id="protitle">Contact Form</div>
+                <div id="contactclose">X</div>
+                <p id="returnmessage">Only hit send ONCE. Once complete, this message will change.</p>
+              </div>
+              <div id="contactleft">
+                <label>Name: <span>*</span></label>
+                <input type="text" id="name" placeholder="Name"/>
+                <label>Email: <span>*</span></label>
+                <input type="text" id="email" placeholder="Email"/>
+              </div>
+              <div id="contactright">
+                <label>Contact No: <span>*</span></label>
+                <input type="text" id="phone" placeholder="10 digit Mobile no."/>
+              </div>
+              <div id="contactmessage">
+                <label>Message:</label>
+                <textarea id="inquiry" placeholder="Message......."></textarea>
+                <input type="button" id="submit" value="Send Message"/>
+              </div>
             </form>
         </div>
       </div>
       <div id ="footer" class="slice">
         <div id="footercont">
-          <div class="contacttype">
+          <div id="footercontact" class="contacttype">
             <div class="fi">
               <i class="fas fa-at footericon"></i>
             </div>
