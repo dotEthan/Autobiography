@@ -91,14 +91,25 @@ body {
       top: 0;
       left: 0;
       width: 7%;
-      height: 100vh;
-      padding-top: 70px; } }
+      height: 100vh; } }
 
 #particles-js {
   width: 100%;
   position: absolute;
   top: 0;
   left: 0;
+  height: 100vh; }
+
+.leftcanvas {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh; }
+
+#mycanvas {
+  display: none;
+  width: 100%;
   height: 100vh; }
 
 #menu {
@@ -121,7 +132,7 @@ a {
 
 .menunow {
   color: #fdf829;
-  font-size: 1.3em;
+  font-size: 1.2em;
   transition: all 1s;
   font-weight: bold; }
 
@@ -131,15 +142,17 @@ a {
   @media screen and (min-width: 800px) {
     .menutabs {
       height: 60px;
-      margin-bottom: 10px;
       width: 60%;
       display: flex;
       justify-content: center;
       flex-direction: column;
       align-items: center;
       transition: all 1s;
-      margin-bottom: 30px;
-      z-index: 99; }
+      margin: 15px 0;
+      z-index: 99;
+      background: rgba(43, 142, 181, 0.6);
+      padding: 5px 3px;
+      border-radius: 10px; }
       .menutabs:hover {
         font-size: 1.2em; }
         .menutabs:hover a {
@@ -149,7 +162,6 @@ a {
   font-size: 1.5em; }
 
 .menutitle {
-  margin: 5px 0;
   font-size: 0.9em; }
   .menutitle a {
     text-decoration: none; }
@@ -211,7 +223,7 @@ a {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  font-family: "indie_flowerregular", cursive;
+  font-family: "Lobster", cursive;
   font-weight: bold;
   color: white; }
 
@@ -223,10 +235,10 @@ a {
   margin-top: 20px;
   cursor: pointer; }
 
-#soulb {
+#programmerb {
   background-image: url("../images/legob.png"); }
 
-#mindb {
+#entreb {
   background-image: url("../images/legog.png"); }
 
 .slice {
@@ -263,13 +275,13 @@ a {
   width: 100%;
   font-size: 2.7em;
   color: black;
-  font-family: "indie_flowerregular", cursive; }
+  font-family: "Lobster", cursive; }
 
 #quotename {
-  font-size: 0.6em;
+  font-size: 1.5em;
   text-align: right;
   margin-top: 20px;
-  font-family: "indie_flowerregular", cursive; }
+  font-family: "Lobster", cursive; }
 
 #biopersonal {
   display: flex;

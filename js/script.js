@@ -1,7 +1,8 @@
 let bioDist, historyDist, projectDist;
 let bodyDone = 0,
 soulDone = 0;
-
+let timeOut;
+let animating;
 
 //-----------------------
 //Loading
@@ -18,6 +19,7 @@ function showPage() {
   $('#contents').css({'display': 'block'});
   resizeDist();
   resizeHover();
+  party();
 }
 
 pageDelay(showPage);
@@ -30,35 +32,53 @@ function setTextContent(element, text) {
       element.removeChild(element.firstChild); // remove all existing content
   element.appendChild(document.createTextNode(text));
 }
-let textChange = document.getElementById('sitebuild');
 
-$('#bodyb').click(function() {
+let textChange = document.getElementById('sitebuild');
+let quoteChange = document.getElementById('biowriting');
+let quoteNameChange = document.getElementById('quotename');
+
+$('#studentb').click(function() {
   if (bodyDone == 0) {
     $('#load').css({'display': 'block'});
     $('#contents').css({'display': 'none'});
-    setTextContent(textChange, 'has been built using lego. If you want to play with the blocks,');
     pageDelay(showPage);
     bodyDone++;
   }
+  $('#particles-js').css({'display': 'none'});
   $('link[rel=stylesheet]').attr({href : '../css/bodystyle.css'}); 
-  setTimeout(circles, 1000);
+  $('#mycanvas').css({'display': 'block'});
+  setTextContent(textChange, 'has been built using lego. If you want to play with the blocks,');
+  setTextContent(quoteChange, '“When I became a man I put away childish things, including the fear of childishness and the desire to be very grown up.”');
+  setTextContent(quoteNameChange, '- C.S. Lewis');
+  timeOut = setTimeout(circles, 1000);
 });
 
-$('#mindb').click(function() {
-  $('link[rel=stylesheet]').attr({href : 'css/style.css'}); 
+$('#entreb').click(function() {
   setTextContent(textChange, 'was designed and built to facilitate entrepreneurial success. If you want a leg up on the competition,');
-  setTimeout(party, 1000);
+  clearTimeout(timeOut);
+  timeOut = null;
+  window.cancelAnimationFrame(animating); 
+  $('#particles-js').css({'display': 'none'});
+  $('#mycanvas').css({'display': 'block'});
+  $('link[rel=stylesheet]').attr({href : 'css/style.css'});
+  timeOut = setTimeout(spirals, 1000); 
 });
   
-$('#soulb').click(function() { 
+$('#programmerb').click(function() {
   if (soulDone == 0) {
     $('#load').css({'display': 'block'});
     $('#contents').css({'display': 'none'});
     setTextContent(textChange, 'was developed using Javascript, Jquery, HTML, and SCSS. If you want to look at the code,');
-    pageDelay();
+    pageDelay(showPage);
     soulDone++;
   }
+  clearTimeout(timeOut);
+  timeOut = null;
+  $('#particles-js').css({'display': 'block'});
+  $('mycanvas').css({'display': 'none'});
+  window.cancelAnimationFrame(animating); 
   $('link[rel=stylesheet]').attr({href : 'css/soulstyle.css'}); 
+  timeOut = setTimeout(party, 1000); 
 });
 
 //-----------------------
@@ -70,14 +90,14 @@ $(biopersonal).stop().animate({
 }, 0);
 
 $('#biocontain').hover(function () {
-    $(biowriting).stop().animate({
+    $(bioquote).stop().animate({
         'opacity': 0
     }, 1500);
     $(biopersonal).stop().animate({
         'opacity': 1
     }, 1000);
 }, function () {
-    $(biowriting).stop().animate({
+    $(bioquote).stop().animate({
         'opacity': 1
     }, 1000);
     $(biopersonal).stop().animate({
@@ -248,7 +268,7 @@ function party() {
   particlesJS("particles-js", {
     "particles": {
       "number": {
-        "value": 300,
+        "value": 100,
         "density": {
           "enable": true,
           "value_area": 400
@@ -338,17 +358,18 @@ function party() {
 }
 
 function circles() {
-  let canvas = document.querySelector('canvas');
-  canvas.width = document.querySelector('canvas').offsetWidth;
-  canvas.height = document.querySelector('canvas').offsetHeight;
-  let c = canvas.getContext('2d');
-  let topRadius = 30;
-  let colorArray = [
+  const canvas = document.querySelector('#mycanvas');
+  canvas.width = document.querySelector('#mycanvas').scrollWidth;
+  canvas.height = window.innerHeight;;
+  const c = canvas.getContext('2d');
+  const topRadius = 30;
+  const colorArray = [
     '#ff0000',
     '#00ff00',
     '#0000ff',
   ]
 
+  console.log($('#menucontain').css('width'));
   let mouse = {
     x: undefined,
     y: undefined
@@ -360,8 +381,8 @@ function circles() {
   })
 
   window.addEventListener('resize', function() {
-    canvas.width = document.querySelector('canvas').offsetWidth;
-    canvas.height = document.querySelector('canvas').offsetHeight;
+    canvas.width = document.querySelector('#mycanvas').offsetWidth;
+    canvas.height = document.querySelector('#mycanvas').offsetHeight;
     init();
   });
 
@@ -375,6 +396,9 @@ function circles() {
     this.color = colorArray[Math.floor(Math.random() * colorArray.length)];
 
     this.draw = function() {
+      if (this.radius <= 0) {
+        this.radius = this.minRadius;
+      }
       c.beginPath();
       c.arc(this.x, this.y, this.radius, 0, Math.PI*2, false);
       c.fillStyle = this.color;
@@ -406,20 +430,21 @@ function circles() {
   let circleArray = [];
   function init() {
     circleArray = [];
-    for (let i =0; i<150; i++) {
+    for (let i =0; i<50; i++) {
       let radius = Math.random() * 10;
       let x = Math.random() * (canvas.width - radius*2) + radius;
       let y = Math.random() * (canvas.height - radius * 2) + radius;
-      let dx = (Math.random() - 0.5) * 4;
-      let dy = (Math.random() - 0.5 )* 4;
+      let dx = (Math.random() - 0.5) * 3;
+      let dy = (Math.random() - 0.5 )* 3;
       circleArray.push(new Circle(x, y, dx, dy, radius));
     }
   }
 
   function animate() {
-    requestAnimationFrame(animate);
+    animating = requestAnimationFrame(animate);
     c.clearRect(0,0, canvas.width, innerHeight);
-
+    console.log(timeOut);
+    if (!timeOut) return;
     for(let i=0; i < circleArray.length; i++) {
       circleArray[i].update();
     }
@@ -427,3 +452,70 @@ function circles() {
   init();
   animate();
 }
+
+function spirals() {
+  const canvas2 = document.getElementById('mycanvas');
+  canvas2.width = document.getElementById('mycanvas').scrollWidth;
+  canvas2.height = document.getElementById('mycanvas').scrollHeight;
+  const c2 = canvas2.getContext('2d');
+
+  const spiralColorArray = [
+    '#ff0000',
+    '#00ff00',
+    '#0000ff'
+  ];
+
+  addEventListener('resize', () => {
+    canvas2.width = document.getElementById('mycanvas').scrollWidth;
+    canvas2.height = document.getElementById('mycanvas').scrollHeight;
+
+    init();
+  });
+
+  function SpinnerIcon(h, v, radius, color) {
+    this.h = h;
+    this.v = v;
+    this.color = color;
+    this.radius = radius;
+    
+    this.update = () => {
+      this.h += 1;
+      this.draw();
+    };
+  
+    this.draw = () => {
+      c2.beginPath;
+      c2.arc(this.h, this.v, this.radius, 0, Math.PI*2, false);
+      c2.fillStyle = this.color;
+      c2.fill();
+      c2.closePath();
+    }
+  }
+
+  function init() {
+    spinnerArray = [];
+
+    for(let i=0; i < 1; i++) {
+      spinnerArray.push(new SpinnerIcon(canvas2.width/2, canvas2.height/2, 5, 'red'))
+    }
+  }
+  
+  let spinnerArray;
+
+  function animate() {
+    requestAnimationFrame(animate);
+
+    c2.clearRect(0, 0, canvas2.width, canvas2.height);
+
+    spinnerArray.forEach(parti => {
+      parti.update();
+    });
+  }
+
+  init();
+  animate();
+}
+
+
+
+// const partyKill = window.pJSDom[0].pJS.fn.vendors.destroypJS();

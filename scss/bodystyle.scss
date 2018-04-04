@@ -16,11 +16,6 @@ $shirtcolor: #afadb0;
 $menubgcolor: #31c2fe;
 $headertext:'indie_flowerregular', cursive;
 $regulartext: 'Lobster', cursive;
-$childtext: 'indie_flowerregular', cursive;
-
-
-// colors for testing
-
 $menutextc: white;
 $menuiconsize: 1.5em;
 $menufontsize: 0.9em;
@@ -126,7 +121,6 @@ body {
     left: 0; 
     width: 7%;
     height: 100vh;
-    padding-top: 70px;
   }
 }
 
@@ -135,6 +129,20 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  height: 100vh;
+}
+
+.leftcanvas {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+}
+
+#mycanvas {
+  display: none;
+  width: 100%;
   height: 100vh;
 }
 
@@ -161,7 +169,7 @@ a {
 
 .menunow {
   color: $brightcolor;
-  font-size: 1.3em;
+  font-size: 1.2em;
   transition: all 1s;
   font-weight: bold;
 }
@@ -172,15 +180,17 @@ a {
 
   @media screen and (min-width: 800px) {
     height: 60px;
-    margin-bottom: 10px;
     width: 60%;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     transition: all 1s;
-    margin-bottom: 30px;
+    margin: 15px 0;
     z-index: 99;
+    background: rgba(43,142,181,0.6);
+    padding: 5px 3px;
+    border-radius: 10px;
 
     &:hover {
       font-size: 1.2em;
@@ -198,7 +208,6 @@ a {
 }
 
 .menutitle {
-  margin: 5px 0;
   font-size: $menufontsize;
 
   a {
@@ -273,7 +282,7 @@ a {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  font-family: $childtext;
+  font-family: $regulartext;
   font-weight: bold;
   color: white;
 }
@@ -287,11 +296,11 @@ a {
   cursor: pointer;
 }
 
-#soulb {
+#programmerb {
   background-image: url("../images/legob.png");
 }
 
-#mindb {
+#entreb {
   background-image: url("../images/legog.png");
 }
 
@@ -335,14 +344,14 @@ a {
   width: 100%;
   font-size: $biowritings;
   color: $biowritingc;
-  font-family: $childtext;
+  font-family: $regulartext;
 }
 
 #quotename {
-  font-size: 0.6em;
+  font-size: 1.5em;
   text-align: right;
   margin-top: 20px;
-  font-family: $childtext;
+  font-family: $regulartext;
 }
 
 #biopersonal {
