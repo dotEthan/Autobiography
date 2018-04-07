@@ -93,16 +93,14 @@ body {
       width: 7%;
       height: 100vh; } }
 
+#mycanvas {
+  display: none; }
+
 .leftcanvas {
   width: 100%;
   position: absolute;
-  top: 50px;
+  top: 0;
   left: 0;
-  height: 100vh; }
-
-#mycanvas {
-  display: none;
-  width: 100%;
   height: 100vh; }
 
 #menu {
@@ -124,7 +122,7 @@ a {
   color: white; }
 
 .menunow {
-  color: #ff0000;
+  color: #fff000;
   font-size: 1.2em;
   transition: all 1s;
   font-weight: bold; }
@@ -149,7 +147,7 @@ a {
       .menutabs:hover {
         font-size: 1.2em; }
         .menutabs:hover a {
-          color: #ff0000; } }
+          color: #fff000; } }
 
 .faicon {
   font-size: 1.5em; }
@@ -235,11 +233,11 @@ a {
   background-image: url("../images/legog.png"); }
 
 .slice {
-  background: #ff0000;
+  background: #fff000;
   padding: 25px; }
 
 #bioslice {
-  background-color: #ff0000; }
+  background-color: #fff000; }
 
 #bioinfo {
   display: flex;
@@ -438,7 +436,7 @@ a {
 
 #projectslice {
   position: relative;
-  background: #ff0000; }
+  background: #fff000; }
 
 #projectcont {
   width: 90%;
@@ -475,7 +473,7 @@ a {
     left: 300px;
     border-style: solid;
     border-width: 0 0 151px 260px;
-    border-color: transparent transparent #ff0000; }
+    border-color: transparent transparent #fff000; }
   .project .top {
     height: 0px;
     width: 0px;
@@ -485,7 +483,7 @@ a {
     left: -320px;
     border-style: solid;
     border-width: 151px 260px 0px 0px;
-    border-color: #ff0000 transparent transparent;
+    border-color: #fff000 transparent transparent;
     z-index: 98; }
   .project .protext {
     margin-top: 50px;
@@ -684,7 +682,7 @@ a {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  background-color: #ff0000 !important;
+  background-color: #fff000 !important;
   height: 150px !important;
   align-items: center; }
 
