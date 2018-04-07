@@ -1,8 +1,9 @@
 let bioDist, historyDist, projectDist;
-let bodyDone = 0,
-soulDone = 0;
+let studentDone = 0,
+entreDone = 0;
 let timeOut;
 let animating;
+let theme = "programmer";
 
 //-----------------------
 //Loading
@@ -38,14 +39,16 @@ let quoteChange = document.getElementById('biowriting');
 let quoteNameChange = document.getElementById('quotename');
 
 $('#studentb').click(function() {
-  if (bodyDone == 0) {
+  theme = "student";
+  window.cancelAnimationFrame(animating); 
+  $('#particles-js').css({'display': 'none'});
+  if (studentDone == 0) {
     $('#load').css({'display': 'block'});
     $('#contents').css({'display': 'none'});
     pageDelay(showPage);
-    bodyDone++;
+    studentDone++;
   }
-  $('#particles-js').css({'display': 'none'});
-  $('link[rel=stylesheet]').attr({href : '../css/bodystyle.css'}); 
+  $('link[rel=stylesheet]').attr({href : '../css/studentstyle.css'}); 
   $('#mycanvas').css({'display': 'block'});
   setTextContent(textChange, 'has been built using lego. If you want to play with the blocks,');
   setTextContent(quoteChange, '“When I became a man I put away childish things, including the fear of childishness and the desire to be very grown up.”');
@@ -54,30 +57,31 @@ $('#studentb').click(function() {
 });
 
 $('#entreb').click(function() {
-  setTextContent(textChange, 'was designed and built to facilitate entrepreneurial success. If you want a leg up on the competition,');
-  clearTimeout(timeOut);
-  timeOut = null;
+  theme = "entre";
   window.cancelAnimationFrame(animating); 
   $('#particles-js').css({'display': 'none'});
+  if (entreDone == 0) {
+    $('#load').css({'display': 'block'});
+    $('#contents').css({'display': 'none'});
+    pageDelay(showPage);
+    entreDone++;
+  }
+  setTextContent(textChange, 'was designed and built to facilitate entrepreneurial success. If you want a leg up on the competition,');
   $('#mycanvas').css({'display': 'block'});
-  $('link[rel=stylesheet]').attr({href : 'css/style.css'});
-  timeOut = setTimeout(spirals, 1000); 
+  $('link[rel=stylesheet]').attr({href : 'css/entrestyle.css'});
+  timeOut = setTimeout(spirals, 1000);
+  let menuDiv = $('#menucontain');
+  console.log(menuDiv.css('position')); 
 });
   
 $('#programmerb').click(function() {
-  if (soulDone == 0) {
-    $('#load').css({'display': 'block'});
-    $('#contents').css({'display': 'none'});
-    setTextContent(textChange, 'was developed using Javascript, Jquery, HTML, and SCSS. If you want to look at the code,');
-    pageDelay(showPage);
-    soulDone++;
-  }
-  clearTimeout(timeOut);
-  timeOut = null;
-  $('#particles-js').css({'display': 'block'});
-  $('mycanvas').css({'display': 'none'});
+  theme = 'programmer';
+  $('#mycanvas').css({'display': 'none'});
   window.cancelAnimationFrame(animating); 
-  $('link[rel=stylesheet]').attr({href : 'css/soulstyle.css'}); 
+  setTextContent(textChange, 'was developed using Javascript, Jquery, HTML, and SCSS. If you want to look at the code,');
+  pageDelay(showPage);
+  $('#particles-js').css({'display': 'block'});
+  $('link[rel=stylesheet]').attr({href : 'css/style.css'}); 
   timeOut = setTimeout(party, 1000); 
 });
 
@@ -133,6 +137,12 @@ $('.flexbox-slide').hover(function (e) {
 }); 
 
 //-----------------------
+// Menu Scrolling Position
+//-----------------------
+
+
+
+//-----------------------
 // Scrolling Position
 //-----------------------
 function resizeDist() {
@@ -141,7 +151,7 @@ function resizeDist() {
   projectDist = $('#projectslice').offset().top;
 }
   
-  
+
 document.addEventListener('scroll', function () {
   if ($(window).scrollTop() < bioDist) {
     $('.menutabs a').removeClass('menunow');
@@ -155,9 +165,24 @@ document.addEventListener('scroll', function () {
     $('.menutabs a').removeClass('menunow');
     $('a[href="#projectslice"]').addClass('menunow');
   }
+
+  // Menu
+  let menuContainTop;
+  console.log($(this).scrollTop());
+  if ($('#menucontain').position().top != 0){
+    menuContainTop = $('#menucontain').position().top;
+  }
+
+  if ($(this).scrollTop() >= menuContainTop && theme == 'entre') {
+		menu.removeClass('bottom').addClass('top');
+    // console.log(menuContainTop);
+  } else if ($(this).scrollTop() < menuContainTop) {
+    // console.log("now");
+		menu.removeClass('top').addClass('bottom');
+  }
 }, true);
 
-//------------------------
+//------------------------ 
 // Project Overlay
 //------------------------
 
@@ -369,7 +394,6 @@ function circles() {
     '#0000ff',
   ]
 
-  console.log($('#menucontain').css('width'));
   let mouse = {
     x: undefined,
     y: undefined
@@ -441,9 +465,8 @@ function circles() {
   }
 
   function animate() {
-    animating = requestAnimationFrame(animate);
     c.clearRect(0,0, canvas.width, innerHeight);
-    console.log(timeOut);
+    animating = requestAnimationFrame(animate);
     if (!timeOut) return;
     for(let i=0; i < circleArray.length; i++) {
       circleArray[i].update();
@@ -454,64 +477,108 @@ function circles() {
 }
 
 function spirals() {
-  const canvas2 = document.getElementById('mycanvas');
-  canvas2.width = document.getElementById('mycanvas').scrollWidth;
-  canvas2.height = document.getElementById('mycanvas').scrollHeight;
-  const c2 = canvas2.getContext('2d');
+  const canvas = document.getElementById('mycanvas');
+  const c = canvas.getContext('2d');
+  canvas.width = innerWidth;
+  canvas.height = 150;
+  const numDots = 5;
+  const outDistance = randomInt(20, 40);
+  const inDistance = randomInt(5, 10);
 
-  const spiralColorArray = [
+
+  
+  const mouse = {
+    x: innerWidth/2,
+    y: innerHeight/2
+  };
+
+  const colorArray = [
     '#ff0000',
+    '#ffff00',
     '#00ff00',
-    '#0000ff'
+    '#00ffff'
   ];
-
+  
+  addEventListener('mousemove', event => {
+    mouse.x = event.clientX; //Changeing?
+    mouse.y = event.clientY;
+  });
+  
   addEventListener('resize', () => {
-    canvas2.width = document.getElementById('mycanvas').scrollWidth;
-    canvas2.height = document.getElementById('mycanvas').scrollHeight;
-
+    canvas.width = innerWidth;
+    canvas.height = 150;
     init();
   });
-
-  function SpinnerIcon(h, v, radius, color) {
-    this.h = h;
-    this.v = v;
-    this.color = color;
-    this.radius = radius;
+  
+  
+  function randomColor() {
+    return colorArray[Math.floor(Math.random() * colorArray.length)];
+  }
+  
+  function randomInt(min,max) {
+    return Math.floor(Math.random() * (max-min+1) + min);
+  }
+  
+  function Dot(x, y, radius) {
+    this.x = x;
+    this.y = y;
+    this.radius = randomInt(3,7);
+    this.color = randomColor();
+    this.radians = Math.random() * (Math.PI*2);
+    this.velocity = randomInt(15, 40)/1000;
+    this.distance = randomInt(10, 40);
     
     this.update = () => {
-      this.h += 1;
+      if (mouse.x - x < 50 && mouse.y - y < 50) {
+        this.distance = inDistance;
+      } else {
+        this.distance = outDistance;
+      }
+      this.radians += this.velocity;
+      this.x = x + Math.cos(this.radians) * this.distance;
+      this.y = y + Math.sin(this.radians) * this.distance;
       this.draw();
     };
-  
+    
     this.draw = () => {
-      c2.beginPath;
-      c2.arc(this.h, this.v, this.radius, 0, Math.PI*2, false);
-      c2.fillStyle = this.color;
-      c2.fill();
-      c2.closePath();
-    }
-  }
-
-  function init() {
-    spinnerArray = [];
-
-    for(let i=0; i < 1; i++) {
-      spinnerArray.push(new SpinnerIcon(canvas2.width/2, canvas2.height/2, 5, 'red'))
+      c.beginPath();
+      c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+      c.fillStyle = this.color;
+      c.fill();
+      c.closePath();
     }
   }
   
-  let spinnerArray;
+  let dotArray1,dotArray2,dotArray3,dotArray4;
+  function init() {
+    dotArray1 = [];
+    dotArray2 = [];
+    // dotArray3 = [];
+    // dotArray4 = [];
+    let bioDiv2 = $('#menu'); 
+    let bioCenter2 = new Array( bioDiv2.width() * 0.16, bioDiv2.height() / 2 );
+    let bioDiv = $('#biotab'); 
+    let bioCenter = new Array( bioDiv.width() / 2 , bioDiv.height() / 2 );
 
+    for(let i=0; i < numDots; i++) {
+      dotArray1.push(new Dot(canvas.width/2, canvas.height/2, this.radius));
+      dotArray2.push(new Dot(bioCenter2[0], bioCenter2[1], this.radius));
+    }
+  }
+  
   function animate() {
     requestAnimationFrame(animate);
+    c.clearRect(0, 0, canvas.width, canvas.height);
+    
+    dotArray1.forEach(singleDot => {
+      singleDot.update();
+    });
 
-    c2.clearRect(0, 0, canvas2.width, canvas2.height);
-
-    spinnerArray.forEach(parti => {
-      parti.update();
+    dotArray2.forEach(singleDot => {
+      singleDot.update();
     });
   }
-
+  
   init();
   animate();
 }
