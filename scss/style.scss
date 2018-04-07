@@ -11,7 +11,7 @@
 
 }
 
-$brightcolor: #ff0000;
+$brightcolor: #fff000;
 $shirtcolor: #afadb0;
 $menubgcolor: #31c2fe;
 $headertext:'indie_flowerregular', cursive;
@@ -124,17 +124,15 @@ body {
   }
 }
 
+#mycanvas {
+  display: none;
+}
+
 .leftcanvas {
   width: 100%;
   position: absolute;
-  top: 50px;
+  top: 0;
   left: 0;
-  height: 100vh;
-}
-
-#mycanvas {
-  display: none;
-  width: 100%;
   height: 100vh;
 }
 
