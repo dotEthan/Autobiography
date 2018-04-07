@@ -11,7 +11,9 @@
 
 }
 
-$brightcolor: #00ff00;
+$entrebottomtabs: blue;
+$entretabsbg: rgb(150,150,150);
+$brightcolor: #0000ff;
 $shirtcolor: #afadb0;
 $menubgcolor: #31c2fe;
 $headertext:'indie_flowerregular', cursive;
@@ -19,7 +21,7 @@ $regulartext: 'Lobster', cursive;
 $menutextc: white;
 $menuiconsize: 1.5em;
 $menufontsize: 0.9em;
-$menubackground: $menubgcolor;
+$menubackground: 'transparent';
 $menuhighlight: #d8db12; 
 $smallmenupaddingtop: 20px;
 $frontimage: url('../images/body.jpg');
@@ -108,6 +110,18 @@ body {
   to{ bottom:0; opacity:1 }
 }
 
+.top{
+  position:fixed;
+  top: 0;
+  left: 0;
+}
+
+.bottom {
+  position:absolute;
+  bottom: 0;
+  left: 0;
+}
+
 #menucontain {
   position: fixed;
   background: $menubackground;
@@ -116,21 +130,22 @@ body {
   z-index: 99;
   
   @media screen and (min-width: 800px) {
-    position: fixed;
-    top: 0;
-    left: 0; 
-    width: 7%;
-    height: 100vh;
-    padding-top: 70px;
+    width: 100vw;
+    height: 150px;
   }
+} 
+
+#mycanvas {
+  display: none;
+  z-index: 9;
 }
 
-#particles-js {
-  width: 100%;
+.leftcanvas {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
-  height: 100vh;
+  width: 100%;
+  height: 150px;
 }
 
 #menu {
@@ -141,12 +156,14 @@ body {
   font-family: $headertext;
   
   @media screen and (min-width: 800px) {
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    height: 80vh;
-    margin-top: 10vh;
+    height: 100%;
+    margin-top: 0;
     padding-top: 0;
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
   }
 }
     
@@ -164,10 +181,15 @@ a {
 .menutabs {
   width: 20%;
   text-align: center;
+  // background: $entrebottomtabs;
+
+  a {
+    color: black;
+  }
 
   @media screen and (min-width: 800px) {
-    height: 60px;
-    width: 60%;
+    height: 150px;
+    width: 20%;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -175,9 +197,9 @@ a {
     transition: all 1s;
     margin: 15px 0;
     z-index: 99;
-    background: rgba(43,142,181,0.6);
+    // background: $entretabsbg;
     padding: 5px 3px;
-    border-radius: 10px;
+    // border-radius: 10px;
 
     &:hover {
       font-size: 1.2em;
@@ -188,6 +210,10 @@ a {
     }
    
   }
+}
+
+.lefttabs {
+  z-index: 999;
 }
 
 .faicon{
@@ -210,8 +236,8 @@ a {
   
   @media screen and (min-width: 800px) {
   position: absolute;
-  left: 7%;
-  width: 93%;
+  left: 0;
+  width: 100%;
   }
 }
   
@@ -223,8 +249,8 @@ a {
   height: 100vh;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: space-between;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
 }
 
 #titlecard {
