@@ -79,27 +79,37 @@ body {
     bottom: 0;
     opacity: 1; } }
 
+.top {
+  position: fixed;
+  top: 0;
+  left: 0; }
+
+.bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0; }
+
 #menucontain {
   position: fixed;
-  background: #31c2fe;
+  background: "transparent";
   color: white;
   width: 100%;
   z-index: 99; }
   @media screen and (min-width: 800px) {
     #menucontain {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 7%;
-      height: 100vh;
-      padding-top: 70px; } }
+      width: 100vw;
+      height: 150px; } }
 
-#particles-js {
-  width: 100%;
+#mycanvas {
+  display: none;
+  z-index: 9; }
+
+.leftcanvas {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
-  height: 100vh; }
+  width: 100%;
+  height: 150px; }
 
 #menu {
   display: flex;
@@ -109,18 +119,20 @@ body {
   font-family: "indie_flowerregular", cursive; }
   @media screen and (min-width: 800px) {
     #menu {
-      flex-direction: column;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      height: 80vh;
-      margin-top: 10vh;
-      padding-top: 0; } }
+      height: 100%;
+      margin-top: 0;
+      padding-top: 0;
+      width: 90%;
+      margin-right: auto;
+      margin-left: auto; } }
 
 a {
   color: white; }
 
 .menunow {
-  color: #00ff00;
+  color: #0000ff;
   font-size: 1.2em;
   transition: all 1s;
   font-weight: bold; }
@@ -128,10 +140,12 @@ a {
 .menutabs {
   width: 20%;
   text-align: center; }
+  .menutabs a {
+    color: black; }
   @media screen and (min-width: 800px) {
     .menutabs {
-      height: 60px;
-      width: 60%;
+      height: 150px;
+      width: 20%;
       display: flex;
       justify-content: center;
       flex-direction: column;
@@ -139,13 +153,14 @@ a {
       transition: all 1s;
       margin: 15px 0;
       z-index: 99;
-      background: rgba(43, 142, 181, 0.6);
-      padding: 5px 3px;
-      border-radius: 10px; }
+      padding: 5px 3px; }
       .menutabs:hover {
         font-size: 1.2em; }
         .menutabs:hover a {
-          color: #00ff00; } }
+          color: #0000ff; } }
+
+.lefttabs {
+  z-index: 999; }
 
 .faicon {
   font-size: 1.5em; }
@@ -161,8 +176,8 @@ a {
 @media screen and (min-width: 800px) {
   #contentcontain {
     position: absolute;
-    left: 7%;
-    width: 93%; } }
+    left: 0;
+    width: 100%; } }
 
 #splashcont {
   height: 100vh;
@@ -172,8 +187,8 @@ a {
   height: 100vh;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: space-between; }
+  flex-direction: column-reverse;
+  justify-content: flex-end; }
 
 #titlecard {
   margin-left: auto;
@@ -231,11 +246,11 @@ a {
   background-image: url("../images/legog.png"); }
 
 .slice {
-  background: #00ff00;
+  background: #0000ff;
   padding: 25px; }
 
 #bioslice {
-  background-color: #00ff00; }
+  background-color: #0000ff; }
 
 #bioinfo {
   display: flex;
@@ -434,7 +449,7 @@ a {
 
 #projectslice {
   position: relative;
-  background: #00ff00; }
+  background: #0000ff; }
 
 #projectcont {
   width: 90%;
@@ -471,7 +486,7 @@ a {
     left: 300px;
     border-style: solid;
     border-width: 0 0 151px 260px;
-    border-color: transparent transparent #00ff00; }
+    border-color: transparent transparent #0000ff; }
   .project .top {
     height: 0px;
     width: 0px;
@@ -481,7 +496,7 @@ a {
     left: -320px;
     border-style: solid;
     border-width: 151px 260px 0px 0px;
-    border-color: #00ff00 transparent transparent;
+    border-color: #0000ff transparent transparent;
     z-index: 98; }
   .project .protext {
     margin-top: 50px;
@@ -680,7 +695,7 @@ a {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  background-color: #00ff00 !important;
+  background-color: #0000ff !important;
   height: 150px !important;
   align-items: center; }
 
