@@ -1,3 +1,5 @@
+'use strict';
+
 let bioDist, historyDist, projectDist;
 let studentDone = 0,
 entreDone = 0;
@@ -39,7 +41,6 @@ let quoteChange = document.getElementById('biowriting');
 let quoteNameChange = document.getElementById('quotename');
 
 $('#studentb').click(function() {
-  theme = "student";
   window.cancelAnimationFrame(animating); 
   $('#particles-js').css({'display': 'none'});
   if (studentDone == 0) {
@@ -49,6 +50,7 @@ $('#studentb').click(function() {
     studentDone++;
   }
   $('link[rel=stylesheet]').attr({href : '../css/studentstyle.css'}); 
+  theme = "student";
   $('#mycanvas').css({'display': 'block'});
   setTextContent(textChange, 'has been built using lego. If you want to play with the blocks,');
   setTextContent(quoteChange, '“When I became a man I put away childish things, including the fear of childishness and the desire to be very grown up.”');
@@ -57,7 +59,6 @@ $('#studentb').click(function() {
 });
 
 $('#entreb').click(function() {
-  theme = "entre";
   window.cancelAnimationFrame(animating); 
   $('#particles-js').css({'display': 'none'});
   if (entreDone == 0) {
@@ -70,18 +71,21 @@ $('#entreb').click(function() {
   $('#mycanvas').css({'display': 'block'});
   $('link[rel=stylesheet]').attr({href : 'css/entrestyle.css'});
   timeOut = setTimeout(spirals, 1000);
-  let menuDiv = $('#menucontain');
-  console.log(menuDiv.css('position')); 
+  let timeOut2 = setTimeout(change, 1000);
 });
+
+function change() {
+  theme = 'entre';
+}
   
 $('#programmerb').click(function() {
-  theme = 'programmer';
   $('#mycanvas').css({'display': 'none'});
   window.cancelAnimationFrame(animating); 
   setTextContent(textChange, 'was developed using Javascript, Jquery, HTML, and SCSS. If you want to look at the code,');
   pageDelay(showPage);
   $('#particles-js').css({'display': 'block'});
   $('link[rel=stylesheet]').attr({href : 'css/style.css'}); 
+  theme = 'programmer';
   timeOut = setTimeout(party, 1000); 
 });
 
@@ -137,12 +141,6 @@ $('.flexbox-slide').hover(function (e) {
 }); 
 
 //-----------------------
-// Menu Scrolling Position
-//-----------------------
-
-
-
-//-----------------------
 // Scrolling Position
 //-----------------------
 function resizeDist() {
@@ -151,34 +149,31 @@ function resizeDist() {
   projectDist = $('#projectslice').offset().top;
 }
   
-
+// jQuery  UI Animations?
 document.addEventListener('scroll', function () {
+  const menuTabs = $('.menutabs a'); 
   if ($(window).scrollTop() < bioDist) {
-    $('.menutabs a').removeClass('menunow');
+    menuTabs.removeClass('menunow');
   } else if ($(window).scrollTop() > bioDist && ($(window).scrollTop() < historyDist)) {
-    $('.menutabs a').removeClass('menunow');
+    menuTabs.removeClass('menunow');
     $('a[href="#bioslice"]').addClass('menunow');
   } else if ($(window).scrollTop() > historyDist && $(window).scrollTop() < projectDist) {
-    $('.menutabs a').removeClass('menunow');
+    menuTabs.removeClass('menunow');
     $('a[href="#historyslice"]').addClass('menunow');
   } else if ($(window).scrollTop() > projectDist) {
-    $('.menutabs a').removeClass('menunow');
+    menuTabs.removeClass('menunow');
     $('a[href="#projectslice"]').addClass('menunow');
   }
 
-  // Menu
-  let menuContainTop;
-  console.log($(this).scrollTop());
-  if ($('#menucontain').position().top != 0){
-    menuContainTop = $('#menucontain').position().top;
-  }
+  if(theme=='entre') {
+    const menuDiv = $('#menucontain');
+    const bottomSpot = bioDist - parseInt(menuDiv.css('height'));
 
-  if ($(this).scrollTop() >= menuContainTop && theme == 'entre') {
-		menu.removeClass('bottom').addClass('top');
-    // console.log(menuContainTop);
-  } else if ($(this).scrollTop() < menuContainTop) {
-    // console.log("now");
-		menu.removeClass('top').addClass('bottom');
+    if ($(this).scrollTop() >= bottomSpot) {
+      menuDiv.removeClass('menubottom').addClass('menutop');
+    } else if ($(this).scrollTop() < bottomSpot) {
+      menuDiv.removeClass('menutop').addClass('menubottom');
+    }
   }
 }, true);
 
@@ -477,13 +472,15 @@ function circles() {
 }
 
 function spirals() {
+ 
   const canvas = document.getElementById('mycanvas');
   const c = canvas.getContext('2d');
   canvas.width = innerWidth;
   canvas.height = 150;
   const numDots = 5;
   const outDistance = randomInt(20, 40);
-  const inDistance = randomInt(5, 10);
+  const inDistance = 5;
+  let testLineY;
 
 
   
@@ -502,6 +499,10 @@ function spirals() {
   addEventListener('mousemove', event => {
     mouse.x = event.clientX; //Changeing?
     mouse.y = event.clientY;
+    
+    if (theme == 'entre') {
+      testLineY = event.pageY - ($('#bioslice').position().top - 150);
+    }
   });
   
   addEventListener('resize', () => {
@@ -519,24 +520,31 @@ function spirals() {
     return Math.floor(Math.random() * (max-min+1) + min);
   }
   
-  function Dot(x, y, radius) {
+  function Dot(x, y) {
     this.x = x;
     this.y = y;
     this.radius = randomInt(3,7);
     this.color = randomColor();
-    this.radians = Math.random() * (Math.PI*2);
+    this.radians = Math.random() * Math.PI*2;
     this.velocity = randomInt(15, 40)/1000;
-    this.distance = randomInt(10, 40);
+    this.distance = randomInt(30, 50);
+    let origDist = JSON.parse(JSON.stringify(this.distance))
     
     this.update = () => {
-      if (mouse.x - x < 50 && mouse.y - y < 50) {
-        this.distance = inDistance;
+      if (testLineY - y < 30 && testLineY - y > -60 && mouse.x - x < 40 && x - mouse.x < 40) {
+        if (this.distance > inDistance) {
+          this.distance = this.distance - 2;
+        }
       } else {
-        this.distance = outDistance;
+        if (this.distance < origDist) {
+          this.distance++;
+        }
       }
+      
       this.radians += this.velocity;
       this.x = x + Math.cos(this.radians) * this.distance;
       this.y = y + Math.sin(this.radians) * this.distance;
+      
       this.draw();
     };
     
@@ -553,16 +561,18 @@ function spirals() {
   function init() {
     dotArray1 = [];
     dotArray2 = [];
-    // dotArray3 = [];
+    dotArray3 = [];
     // dotArray4 = [];
-    let bioDiv2 = $('#menu'); 
-    let bioCenter2 = new Array( bioDiv2.width() * 0.16, bioDiv2.height() / 2 );
-    let bioDiv = $('#biotab'); 
-    let bioCenter = new Array( bioDiv.width() / 2 , bioDiv.height() / 2 );
 
+    let bioDiv2 = $('#menu'); 
+    let bioCenter2 = new Array( bioDiv2.width() * 0.16, bioDiv2.height() / 1.8 );
+    let bioDiv = $('#biotab'); 
+    let bioCenter = new Array( bioDiv.width() / 2 , bioDiv.height() / 1.8 );
+    
     for(let i=0; i < numDots; i++) {
-      dotArray1.push(new Dot(canvas.width/2, canvas.height/2, this.radius));
-      dotArray2.push(new Dot(bioCenter2[0], bioCenter2[1], this.radius));
+      dotArray1.push(new Dot(canvas.width/2, canvas.height/2));
+      dotArray2.push(new Dot(canvas.width/3, canvas.height/2));
+      dotArray3.push(new Dot(canvas.width/1.5, canvas.height/2));
     }
   }
   
@@ -577,10 +587,15 @@ function spirals() {
     dotArray2.forEach(singleDot => {
       singleDot.update();
     });
+
+    dotArray3.forEach(singleDot => {
+      singleDot.update();
+    });
   }
   
   init();
   animate();
+
 }
 
 
