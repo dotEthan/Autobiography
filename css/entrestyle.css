@@ -79,15 +79,15 @@ body {
     bottom: 0;
     opacity: 1; } }
 
-.top {
-  position: fixed;
-  top: 0;
-  left: 0; }
+.menutop {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important; }
 
-.bottom {
-  position: absolute;
-  bottom: 0;
-  left: 0; }
+.menubottom {
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important; }
 
 #menucontain {
   position: fixed;
