@@ -295,7 +295,7 @@ function party() {
         }
       },
       "color": {
-        "value": "#ffff00"
+        "value": "#ff00ff"
       },
       "shape": {
         "type": "circle",
@@ -327,8 +327,8 @@ function party() {
       "line_linked": {
         "enable": true,
         "distance": 150,
-        "color": "#ffff00",
-        "opacity": 0.4,
+        "color": "#ff00ff",
+        "opacity": 0.5,
         "width": 1
       },
       "move": {
@@ -387,6 +387,7 @@ function circles() {
     '#ff0000',
     '#00ff00',
     '#0000ff',
+    '#ff00ff',
   ]
 
   let mouse = {
@@ -481,8 +482,6 @@ function spirals() {
   const outDistance = randomInt(20, 40);
   const inDistance = 5;
   let testLineY;
-
-
   
   const mouse = {
     x: innerWidth/2,
@@ -578,7 +577,11 @@ function spirals() {
   
   function animate() {
     requestAnimationFrame(animate);
-    c.clearRect(0, 0, canvas.width, canvas.height);
+    c.beginPath();
+    c.rect(canvas.width /2, 50, 200,400);
+    c.fillStyle = 'red';
+    c.fill();
+    c.closePath();
     
     dotArray1.forEach(singleDot => {
       singleDot.update();
@@ -598,6 +601,3 @@ function spirals() {
 
 }
 
-
-
-// const partyKill = window.pJSDom[0].pJS.fn.vendors.destroypJS();
