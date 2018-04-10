@@ -81,7 +81,7 @@ body {
 
 #menucontain {
   position: fixed;
-  background: #31c2fe;
+  background: #7d8f9f;
   color: white;
   width: 100%;
   z-index: 99; }
@@ -310,7 +310,7 @@ a {
   padding: 5px;
   text-align: left; }
   #thanksright a {
-    color: #31c2fe; }
+    color: #7d8f9f; }
 
 #thanksleft {
   width: 15%;
@@ -332,7 +332,7 @@ a {
   text-decoration: underline;
   margin: 20px 0;
   font-weight: bold;
-  color: #018ec8;
+  color: #4d5c69;
   text-decoration: none; }
 
 .slider-container {
@@ -417,7 +417,7 @@ a {
 .nowcalled {
   font-size: 0.6em; }
   .nowcalled a {
-    color: #31c2fe; }
+    color: #7d8f9f; }
 
 #inscriberslide {
   background: #ff0000; }
@@ -589,7 +589,7 @@ a {
   height: 300px;
   display: flex;
   padding: 0px;
-  background-color: #64d1fe;
+  background-color: #9aa8b5;
   width: 100%; }
 
 #availablehalf {
@@ -602,30 +602,30 @@ a {
   justify-content: space-between; }
 
 .buttonstyle {
-  background-color: #31c2fe;
+  background-color: #7d8f9f;
   padding: 15px;
   border-radius: 10px;
   font-size: 0.7em;
-  border: 2px solid #004663;
-  color: #004663;
+  border: 2px solid #22282e;
+  color: #22282e;
   cursor: pointer; }
 
 #resumehalf {
   width: 50%;
   padding: 50px 50px 50px 100px;
-  background-color: #018ec8;
+  background-color: #4d5c69;
   color: white;
   text-align: right;
   font-size: 1.5em;
-  background: linear-gradient(to top right, transparent 50%, #018ec8 50%) no-repeat, linear-gradient(to top right, transparent 0.1%, #018ec8 0.1%) no-repeat;
+  background: linear-gradient(to top right, transparent 50%, #4d5c69 50%) no-repeat, linear-gradient(to top right, transparent 0.1%, #4d5c69 0.1%) no-repeat;
   background-size: 60.5% 100%, 40% 100%;
   background-position: 0% 0%, 100% 0%;
   display: flex;
   flex-direction: column;
   justify-content: space-between; }
   #resumehalf .buttonstyle {
-    background-color: #018ec8;
-    border: 2px solid #97e0fe;
+    background-color: #4d5c69;
+    border: 2px solid #b8c2ca;
     color: #c8ccd1; }
 
 #update {
@@ -695,16 +695,16 @@ a {
   width: 35%;
   text-align: center;
   font-size: 3.5em;
-  color: #31c2fe; }
+  color: #7d8f9f; }
   .contacttype .footertext {
     font-size: .35em;
     visibility: hidden;
     font-weight: bold; }
   .contacttype:hover {
-    color: #018ec8; }
+    color: #4d5c69; }
     .contacttype:hover .footertext {
       visibility: visible;
-      color: #018ec8; }
+      color: #4d5c69; }
 
 .fi {
   display: flex;
@@ -719,7 +719,7 @@ a {
   color: black; }
 
 .footlink a {
-  color: #31c2fe;
+  color: #7d8f9f;
   font-weight: bold; }
 
 #mainform {
