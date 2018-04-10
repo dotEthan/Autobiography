@@ -11,6 +11,7 @@
 
 }
 
+$highlightcolor: #ad00ad;
 $brightcolor: #ffff00;
 $shirtcolor: #afadb0;
 $menubgcolor: #31c2fe;
@@ -128,6 +129,11 @@ body {
   display: none;
 }
 
+#entrebgcanvas {
+  display: none;
+  z-index: 7;
+}
+
 .leftcanvas {
   width: 100%;
   position: absolute;
@@ -178,15 +184,16 @@ a {
     transition: all 1s;
     margin: 15px 0;
     z-index: 99;
-    background: rgba(43,142,181,0.6);
+    background: rgba(43,142,181,0.8);
     padding: 5px 3px;
     border-radius: 10px;
+    font-size: 0.8em;
 
     &:hover {
-      font-size: 1.2em;
+      font-size: 1.1em;
       
       a {
-        color: $brightcolor;
+        color: $highlightcolor;
       }
     }
    
@@ -560,10 +567,6 @@ a {
   margin-left: auto;
 }
 
-#freggietext {
-  font-family: 'Lobster', cursive;
-}
-  
 .project{
   width: 20%;
   margin-bottom: 50px;
@@ -588,7 +591,7 @@ a {
     left:300px; 
     border-style: solid; 
     border-width: 0 0 151px 260px; 
-    border-color: transparent transparent $brightcolor;
+    border-color: transparent transparent $highlightcolor;
   }
 
   .top {
@@ -600,7 +603,7 @@ a {
     left:-320px; 
     border-style: solid; 
     border-width: 151px 260px 0px 0px; 
-    border-color: $brightcolor transparent transparent; 
+    border-color: $highlightcolor transparent transparent; 
     z-index: 98;
   }
 
@@ -631,7 +634,7 @@ a {
       font-family: $regulartext;
       text-align: center;
       width: 100%;
-      padding: 15px;
+      padding: 5px;
     }
   }
   
@@ -647,14 +650,14 @@ a {
     }
     
     .protext {
-      font-size: 1.7em;
+      font-size: 1.5em;
       margin-top: 10px;
       margin-bottom: 10px;
       background-color: rgba(2, 204, 255, 0.8);
     }
     
     .protextw {
-      font-size: 0.7em;
+      font-size: 0.6em;
     }
   }
 }
@@ -864,11 +867,13 @@ a {
   }
   
   &:hover {
-    color: darken($menubgcolor,20%);
+    color: $highlightcolor;
+    // color: darken($menubgcolor,20%);
     
     .footertext {
       visibility: visible;
-      color: darken($menubgcolor,20%);
+      color: $highlightcolor;
+      // color: darken($menubgcolor,20%);
     }
   }
 }

@@ -136,8 +136,13 @@ body {
 }
 
 #mycanvas {
-  display: none;
+  display: block;
   z-index: 9;
+}
+
+#entrebgcanvas {
+  display: block;
+  z-index: 7;
 }
 
 .leftcanvas {
@@ -583,9 +588,6 @@ a {
   margin-left: auto;
 }
 
-#freggietext {
-  font-family: 'Lobster', cursive;
-}
   
 .project{
   width: 20%;
@@ -654,7 +656,7 @@ a {
       font-family: $regulartext;
       text-align: center;
       width: 100%;
-      padding: 15px;
+      padding: 10px;
     }
   }
   
@@ -677,7 +679,7 @@ a {
     }
     
     .protextw {
-      font-size: 0.7em;
+      font-size: 1em;
     }
   }
 }

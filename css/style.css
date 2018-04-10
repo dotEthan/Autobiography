@@ -96,6 +96,10 @@ body {
 #mycanvas {
   display: none; }
 
+#entrebgcanvas {
+  display: none;
+  z-index: 7; }
+
 .leftcanvas {
   width: 100%;
   position: absolute;

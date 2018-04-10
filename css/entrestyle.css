@@ -101,8 +101,12 @@ body {
       height: 100px; } }
 
 #mycanvas {
-  display: none;
+  display: block;
   z-index: 9; }
+
+#entrebgcanvas {
+  display: block;
+  z-index: 7; }
 
 .leftcanvas {
   position: absolute;
@@ -460,9 +464,6 @@ a {
   margin-right: auto;
   margin-left: auto; }
 
-#freggietext {
-  font-family: 'Lobster', cursive; }
-
 .project {
   width: 20%;
   margin-bottom: 50px;
@@ -522,7 +523,7 @@ a {
       font-family: "Lobster", cursive;
       text-align: center;
       width: 100%;
-      padding: 15px; }
+      padding: 10px; }
   .project:hover .top {
     top: 0px;
     left: 0px; }
@@ -535,7 +536,7 @@ a {
     margin-bottom: 10px;
     background-color: rgba(2, 204, 255, 0.8); }
   .project:hover .protextw {
-    font-size: 0.7em; }
+    font-size: 1em; }
 
 #projectoverlay {
   position: fixed;

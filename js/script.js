@@ -51,6 +51,7 @@ $('#studentb').click(function() {
   }
   $('link[rel=stylesheet]').attr({href : '../css/studentstyle.css'}); 
   theme = "student";
+  $('#entrebgcanvas').css({'display': 'block'});
   $('#mycanvas').css({'display': 'block'});
   setTextContent(textChange, 'has been built using lego. If you want to play with the blocks,');
   setTextContent(quoteChange, '“When I became a man I put away childish things, including the fear of childishness and the desire to be very grown up.”');
@@ -67,8 +68,9 @@ $('#entreb').click(function() {
     pageDelay(showPage);
     entreDone++;
   }
-  setTextContent(textChange, 'was designed and built to facilitate entrepreneurial success. If you want a leg up on the competition,');
+  $('#entrebgcanvas').css({'display': 'block'});
   $('#mycanvas').css({'display': 'block'});
+  setTextContent(textChange, 'was designed and built to facilitate entrepreneurial success. If you want a leg up on the competition,');
   $('link[rel=stylesheet]').attr({href : 'css/entrestyle.css'});
   timeOut = setTimeout(spirals, 1000);
   let timeOut2 = setTimeout(change, 1000);
@@ -377,6 +379,10 @@ function party() {
   });
 }
 
+//------------------------
+// circles
+//------------------------
+
 function circles() {
   const canvas = document.querySelector('#mycanvas');
   canvas.width = document.querySelector('#mycanvas').scrollWidth;
@@ -472,7 +478,18 @@ function circles() {
   animate();
 }
 
+//------------------------
+// Spinning balls
+//------------------------
+
 function spirals() {
+  // (ctx, x, y, width, height, radius, fill, stroke)
+  const canvas2 = document.getElementById('entrebgcanvas');
+  const c2 = canvas2.getContext('2d');
+  c2.fillStyle = 'blue';
+  c2.fill();
+  roundRect(c2, 0, 0, 50, 50, 10, 'blue', false);
+
  
   const canvas = document.getElementById('mycanvas');
   const c = canvas.getContext('2d');
@@ -556,33 +573,32 @@ function spirals() {
     }
   }
   
-  let dotArray1,dotArray2,dotArray3,dotArray4;
+  let dotArray1,dotArray2,dotArray3,dotArray4, bioCenter1, bioCenter2, bioCenter3, bioCenter4;
+  const bioDiv1 = $('#menu');
+
   function init() {
     dotArray1 = [];
     dotArray2 = [];
     dotArray3 = [];
-    // dotArray4 = [];
+    dotArray4 = []; 
+    bioCenter1 = new Array( bioDiv1.width() * 0.16, bioDiv1.height() / 1.8 );
+    bioCenter2 = new Array( bioDiv1.width() * 0.428, bioDiv1.height() / 1.8 );
+    bioCenter3 = new Array( bioDiv1.width() * 0.697, bioDiv1.height() / 1.8 );
+    bioCenter4 = new Array( bioDiv1.width() * 0.964, bioDiv1.height() / 1.8 );
 
-    let bioDiv2 = $('#menu'); 
-    let bioCenter2 = new Array( bioDiv2.width() * 0.16, bioDiv2.height() / 1.8 );
-    let bioDiv = $('#biotab'); 
-    let bioCenter = new Array( bioDiv.width() / 2 , bioDiv.height() / 1.8 );
-    
+
     for(let i=0; i < numDots; i++) {
-      dotArray1.push(new Dot(canvas.width/2, canvas.height/2));
-      dotArray2.push(new Dot(canvas.width/3, canvas.height/2));
-      dotArray3.push(new Dot(canvas.width/1.5, canvas.height/2));
+      dotArray1.push(new Dot(bioCenter1[0], bioCenter1[1]));
+      dotArray2.push(new Dot(bioCenter2[0], bioCenter2[1]));
+      dotArray3.push(new Dot(bioCenter3[0], bioCenter3[1]));
+      dotArray4.push(new Dot(bioCenter4[0], bioCenter4[1]));
     }
   }
   
   function animate() {
     requestAnimationFrame(animate);
-    c.beginPath();
-    c.rect(canvas.width /2, 50, 200,400);
-    c.fillStyle = 'red';
-    c.fill();
-    c.closePath();
-    
+    c.clearRect(0,0,canvas.width, canvas.height);
+
     dotArray1.forEach(singleDot => {
       singleDot.update();
     });
@@ -594,6 +610,10 @@ function spirals() {
     dotArray3.forEach(singleDot => {
       singleDot.update();
     });
+
+    dotArray4.forEach(singleDot => {
+      singleDot.update();
+    });
   }
   
   init();
@@ -601,3 +621,28 @@ function spirals() {
 
 }
 
+function roundRect(ctx, x, y, width, height, radius, fill, stroke) {
+  if (typeof stroke == "undefined" ) {
+    stroke = true;
+  }
+  if (typeof radius === "undefined") {
+    radius = 5;
+  }
+  ctx.beginPath();
+  ctx.moveTo(x + radius, y);
+  ctx.lineTo(x + width - radius, y);
+  ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+  ctx.lineTo(x + width, y + height - radius);
+  ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+  ctx.lineTo(x + radius, y + height);
+  ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+  ctx.lineTo(x, y + radius);
+  ctx.quadraticCurveTo(x, y, x + radius, y);
+  ctx.closePath();
+  if (stroke) {
+    ctx.stroke();
+  }
+  if (fill) {
+    ctx.fill();
+  }        
+}
