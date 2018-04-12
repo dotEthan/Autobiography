@@ -1,5 +1,26 @@
 'use strict';
 
+// USING?
+
+
+
+//------------------------
+// Typewrite
+//------------------------
+
+(function($){$.fn.typeWrite=function(s){
+  let o={content:$(this).text(),delay:50,t:this,i:0};
+  if(s){$.extend(o,s);}o.t.text('');
+  let i=setInterval(function() {
+      o.t.text(o.t.text()+o.content.charAt(o.i++));    
+      if(o.i==o.content.length){clearInterval(i);}}
+  ,o.delay);
+return o.t;  
+};})(jQuery);
+$('#namemotto').typeWrite({content:'Student, Programmer, Entrepreneur'});
+
+/// /USING?
+
 let bioDist, historyDist, projectDist;
 let studentDone = 0,
 entreDone = 0;
@@ -39,6 +60,9 @@ function setTextContent(element, text) {
 let textChange = document.getElementById('sitebuild');
 let quoteChange = document.getElementById('biowriting');
 let quoteNameChange = document.getElementById('quotename');
+let languageChange = document.getElementById('languagetitle');
+let languageChange2 = document.getElementById('languagetitlec');
+let bioChange = document.getElementById('ageinfo');
 
 $('#studentb').click(function() {
   window.cancelAnimationFrame(animating); 
@@ -51,11 +75,14 @@ $('#studentb').click(function() {
   }
   $('link[rel=stylesheet]').attr({href : '../css/studentstyle.css'}); 
   theme = "student";
-  $('#entrebgcanvas').css({'display': 'block'});
+  $('#entrebgcanvas').css({'display': 'none'});
   $('#mycanvas').css({'display': 'block'});
   setTextContent(textChange, 'has been built using lego. If you want to play with the blocks,');
   setTextContent(quoteChange, '“When I became a man I put away childish things, including the fear of childishness and the desire to be very grown up.”');
   setTextContent(quoteNameChange, '- C.S. Lewis');
+  setTextContent(languageChange, 'Languages: English'); 
+  setTextContent(languageChange2, '');
+  setTextContent(bioChange, 'I grew up in small town Ontario, than big city BC, then small town BC, then small town Manitoba, than back to BC for a couple cities and then back to Ontario, we moved a lot. I think it is one of the reasons I find I am able to easily adapt to the various environments I find myself in.');
   timeOut = setTimeout(circles, 1000);
 });
 
@@ -71,6 +98,11 @@ $('#entreb').click(function() {
   $('#entrebgcanvas').css({'display': 'block'});
   $('#mycanvas').css({'display': 'block'});
   setTextContent(textChange, 'was designed and built to facilitate entrepreneurial success. If you want a leg up on the competition,');
+  setTextContent(quoteChange, '“From my very first day as an entrepreneur, I\'ve felt the only mission worth pursuing in business is to make people\'s lives better.”');
+  setTextContent(quoteNameChange, '- Richard Branson');
+  setTextContent(languageChange, 'Languages: English, Chinese');
+  setTextContent(languageChange2, 'Languages: HTML, CSS, Wordpress');
+  setTextContent(bioChange, 'I spent my 20s in China, learning a new culture, language and how to develop long term plans and put them into action. I had numerous jobs from Bar Manager to Radio Host. And I developed and opened a number of different entreprenerial ventures that pushed me to learn web development, leadership skills and to hone my customer service techniques.');
   $('link[rel=stylesheet]').attr({href : 'css/entrestyle.css'});
   timeOut = setTimeout(spirals, 1000);
   let timeOut2 = setTimeout(change, 1000);
@@ -81,9 +113,15 @@ function change() {
 }
   
 $('#programmerb').click(function() {
+  $('#entrebgcanvas').css({'display': 'none'});
   $('#mycanvas').css({'display': 'none'});
   window.cancelAnimationFrame(animating); 
   setTextContent(textChange, 'was developed using Javascript, Jquery, HTML, and SCSS. If you want to look at the code,');
+  setTextContent(quoteChange, '"The most effective debugging tool is still careful thought, coupled with judiciously placed print statements."');
+  setTextContent(quoteNameChange, '- Brian W. Kernighan');
+  setTextContent(languageChange, 'Languages: English, Chinese');  
+  setTextContent(languageChange2, 'Languages: Javascript, React, Jquery, HTML, CSS, SCSS, Wordpress, Liquid, Gulp, Git, npm');
+  setTextContent(bioChange, 'Since returning to Canada I have opened two successful entreprenuerial ventures and learned a number of new langauges including Javascript, SCSS, React, Liquid and more. I\'ve devoted the last six months to brushing up on HTML 5, SCSS, Javascript ES6 and learning React to ensure I have a firm grasp of the tools needed to succeed in Front End Development or Javavscript programming.');
   pageDelay(showPage);
   $('#particles-js').css({'display': 'block'});
   $('link[rel=stylesheet]').attr({href : 'css/style.css'}); 
@@ -197,7 +235,6 @@ function PopupCenter(url, title, w, h) {
   var top = ((height / 2) - (h / 2)) + dualScreenTop;
   var newWindow = window.open(url, title, 'scrollbars=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
 
-  // Puts focus on the newWindow
   if (window.focus) {
       newWindow.focus();
   }
@@ -220,23 +257,6 @@ function resizeHover() {
     $('.bottom').css({ borderBottomWidth: projectHeight + 'px', borderLeftWidth: projectWidth + 'px' });
     $('.top').css({ borderRightWidth: projectWidth + 'px', borderTopWidth: projectHeight + 'px' });
 }
-
-//------------------------
-// Typewrite
-//------------------------
-
-(function($){$.fn.typeWrite=function(s){
-        let o={content:$(this).text(),delay:50,t:this,i:0};
-        if(s){$.extend(o,s);}o.t.text('');
-        let i=setInterval(function() {
-            o.t.text(o.t.text()+o.content.charAt(o.i++));    
-            if(o.i==o.content.length){clearInterval(i);}}
-        ,o.delay);
-      return o.t;  
-    };})(jQuery);
-    $('#namemotto').typeWrite({content:'Student, Programmer, Entrepreneur'});
-
-
 //------------------------
 // Contact Appear
 //------------------------
@@ -484,11 +504,11 @@ function circles() {
 
 function spirals() {
   // (ctx, x, y, width, height, radius, fill, stroke)
-  const canvas2 = document.getElementById('entrebgcanvas');
-  const c2 = canvas2.getContext('2d');
-  c2.fillStyle = 'blue';
-  c2.fill();
-  roundRect(c2, 0, 0, 50, 50, 10, 'blue', false);
+  // const canvas2 = document.getElementById('entrebgcanvas');
+  // const c2 = canvas2.getContext('2d');
+  // c2.fillStyle = 'blue';
+  // c2.fill();
+  // roundRect(c2, 0, 0, 50, 50, 10, 'blue', false);
 
  
   const canvas = document.getElementById('mycanvas');

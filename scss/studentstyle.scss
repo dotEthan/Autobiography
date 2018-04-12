@@ -10,33 +10,42 @@
   font-style: normal;
 
 }
+// 16
+$rgba: rgba(13,201,247, 0.5);
+$lightblue: #0dc9f7;
+$grey: #7f7f7f;
+$orange: #f05b47;
+$red: #ed1c24;
 
-$highlightcolor: #ad00ad;
-$brightcolor: #ffff00;
-$shirtcolor: #afadb0;
-$menubgcolor: #31c2fe;
+$thirdcolorrgba: rgba(173,0,173, 0.8);
+$firstcolor: #ffff00;
+$secondcolor: #31c2fe;
+$thirdcolor: #ad00ad;
+$fourthcolor: #f05b47;
+
+$projectoverlayradius: 5px;
 $headertext:'indie_flowerregular', cursive;
 $regulartext: 'Lobster', cursive;
 $menutextc: white;
 $menuiconsize: 1.5em;
 $menufontsize: 0.9em;
-$menubackground: $menubgcolor;
-$menuhighlight: #d8db12; 
+$menubackground: $secondcolor;
 $smallmenupaddingtop: 20px;
 $frontimage: url('../images/body.jpg');
 $darkslice: #9099A2;
-$topc: $menubgcolor;
-$bottomc: $menubgcolor;
+$topc: $secondcolor;
+$bottomc: $secondcolor;
 $biocontainbg: grey;
 $biowritingc: black;
 $biowritings: 2.7em;
 $bioquestions: 2.5em;
-$bioquestionc: $menubgcolor;
-$footercolor: darken($brightcolor, 20%);
+$bioquestionc: $secondcolor;
+$footercolor: darken($firstcolor, 20%);
 
 // fonts
 img{
   max-width: 100%;
+  max-height: 100%;
 }
 
 .animate {
@@ -164,7 +173,7 @@ a {
 }
 
 .menunow {
-  color: $brightcolor;
+  color: $firstcolor;
   font-size: 1.2em;
   transition: all 1s;
   font-weight: bold;
@@ -193,7 +202,7 @@ a {
       font-size: 1.1em;
       
       a {
-        color: $highlightcolor;
+        color: $firstcolor;
       }
     }
    
@@ -257,6 +266,11 @@ a {
   font-size: 3em;
 }
 
+#languagetitle{
+  width: 100%;              
+  font-family: $headertext;
+}
+
 #namemotto {
   width: 100%;
   font-family: $regulartext;
@@ -275,13 +289,14 @@ a {
 
 
 .choicesbox {
-  height: 48px;
+  height: 44px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
   font-family: $regulartext;
   font-weight: bold;
   color: white;
+  font-size: 0.85em;
 }
 
 .lego {
@@ -302,12 +317,12 @@ a {
 }
 
 .slice {
-  background: $brightcolor;
+  background: $firstcolor;
   padding: 25px;
 }
 
 #bioslice {
-  background-color: $brightcolor;
+  background-color: $firstcolor;
 }
 
 #bioinfo {
@@ -395,7 +410,7 @@ a {
   text-align: left;
   
   a {
-    color: $menubgcolor;
+    color: $secondcolor;
   }
 }
 
@@ -422,7 +437,7 @@ a {
   text-decoration: underline;
   margin: 20px 0;
   font-weight: bold;
-  color: darken($menubgcolor, 20%);
+  color: darken($secondcolor, 20%);
   text-decoration: none;
 }
 
@@ -527,7 +542,7 @@ a {
   font-size: 0.6em;
   
   a {
-    color: $menubgcolor;
+    color: $secondcolor;
   }
 
 }
@@ -554,7 +569,7 @@ a {
 
 #projectslice {
   position: relative;
-  background: $brightcolor;
+  background: $firstcolor;
 }
 
 #projectcont {
@@ -566,100 +581,92 @@ a {
   margin-right: auto;
   margin-left: auto;
 }
-
+  
 .project{
   width: 20%;
   margin-bottom: 50px;
   position: relative;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: inline-block;
+  // align-items: stetch;
   background-size: cover;
   background-repeat: no-repeat;
   margin-right: 10px;
   border-radius: 10px;
   background-color: white;
   cursor: pointer;
+  transition: all 800ms;
 
-  .bottom {
-    height:0px; 
-    width:0px; 
-    background:transparent; 
-    position:absolute; 
-    top:200px; 
-    left:300px; 
-    border-style: solid; 
-    border-width: 0 0 151px 260px; 
-    border-color: transparent transparent $highlightcolor;
-  }
-
-  .top {
-    height:0px; 
-    width:0px; 
-    background:transparent; 
-    position:absolute; 
-    top:-220px; 
-    left:-320px; 
-    border-style: solid; 
-    border-width: 151px 260px 0px 0px; 
-    border-color: $highlightcolor transparent transparent; 
-    z-index: 98;
+  img{
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
   }
 
   .protext {
-    margin-top: 50px;
-    margin-bottom: 10px;
     width: 100%;
     position: absolute;
     top: 0;
-    text-align: center;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: 50px 0;
     display: flex;
     flex-wrap: wrap;
     font-size: 0em;
-    transition: all 1s;
     background-color: transparent;
-    z-index: 99;
+    font-family: $headertext;
+    transition: all 800ms;
 
     .protextt{
-      transition: all 1s;
-      z-index: 999;
-      font-family: $headertext;
       width: 100%;
     }
 
     .protextw{
-      transition: all 1s;
-      z-index: 999;
-      font-family: $regulartext;
-      text-align: center;
       width: 100%;
-      padding: 5px;
+      padding: 10px;
     }
   }
   
   &:hover {
-    .top{
-      top: 0px;
-      left: 0px;
-    }
-    
-    .bottom {
-      top: 0px;
-      left: 0px;
-    }
     
     .protext {
-      font-size: 1.5em;
-      margin-top: 10px;
-      margin-bottom: 10px;
-      background-color: rgba(2, 204, 255, 0.8);
+      font-size: 1.3em;
+      background-color: $thirdcolor;
+      margin: 15px 0;
+      
     }
     
     .protextw {
       font-size: 0.6em;
     }
+
+    .protextcont {
+      background: rgba(255,255,255,0.6);
+    }
   }
+}
+
+.project:after{
+  padding-top: 56.25%;
+  display: block;
+  content: '';
+}
+
+.protextcont {
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+  width: 100%;
+  margin:10px;
+  background:  rgba(255,255,255,0.0);
+  border-radius: $projectoverlayradius;
 }
 
 #projectoverlay {
@@ -736,7 +743,7 @@ a {
   height: 300px;
   display: flex;
   padding: 0px;
-  background-color: lighten($menubgcolor, 10%);
+  background-color: lighten($secondcolor, 10%);
   width: 100%;
 }
 
@@ -751,23 +758,27 @@ a {
 }
 
 .buttonstyle{
-  background-color: $menubgcolor;
+  background-color: $secondcolor;
   padding: 15px;
   border-radius: 10px;
   font-size: 0.7em;
-  border: 2px solid darken($menubgcolor,40%);
-  color: darken($menubgcolor,40%);
+  border: 2px solid darken($secondcolor,40%);
+  color: black;
   cursor: pointer;
+
+  &:hover {
+    background-color: $thirdcolor;
+  }
 }
 
 #resumehalf {
   width: 50%;
   padding: 50px 50px 50px 100px;
-  background-color: darken($menubgcolor,20%);
+  background-color: darken($secondcolor,20%);
   color: white;
   text-align: right;
   font-size: 1.5em;
-  background: linear-gradient(to top right, transparent 50%, darken($menubgcolor,20%) 50%) no-repeat, linear-gradient(to top right, transparent 0.1%, darken($menubgcolor,20%) 0.1%) no-repeat;
+  background: linear-gradient(to top right, transparent 50%, darken($secondcolor,20%) 50%) no-repeat, linear-gradient(to top right, transparent 0.1%, darken($secondcolor,20%) 0.1%) no-repeat;
   background-size: 60.5% 100%, 40% 100%;
   background-position: 0% 0%, 100% 0%;
   display: flex;
@@ -775,9 +786,13 @@ a {
   justify-content: space-between; 
   
   .buttonstyle{
-    background-color: darken($menubgcolor,20%);
-    border: 2px solid lighten($menubgcolor,20%);
+    background-color: darken($secondcolor,20%);
+    border: 2px solid lighten($secondcolor,20%);
     color: lighten($darkslice,20%);
+
+    &:hover {
+      background-color: darken($thirdcolor,20%);
+    }
   }
 }
 
@@ -843,7 +858,7 @@ a {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  background-color: $brightcolor !important;
+  background-color: $firstcolor !important;
   height: 150px !important;
   align-items: center;
 }
@@ -858,7 +873,7 @@ a {
   width: 35%;
   text-align: center;
   font-size: 3.5em;
-  color: $menubgcolor;
+  color: $secondcolor;
 
   .footertext {
     font-size: .35em;
@@ -867,13 +882,11 @@ a {
   }
   
   &:hover {
-    color: $highlightcolor;
-    // color: darken($menubgcolor,20%);
+    color: $thirdcolor;
     
     .footertext {
       visibility: visible;
-      color: $highlightcolor;
-      // color: darken($menubgcolor,20%);
+      color: $thirdcolor;
     }
   }
 }
@@ -894,8 +907,12 @@ a {
 }
 
 .footlink a{
-  color: $menubgcolor;
+  color: $secondcolor;
   font-weight: bold;
+
+  &:hover {
+    color: $thirdcolor;
+  }
 }
 
 

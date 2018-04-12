@@ -136,7 +136,7 @@ a {
   color: white; }
 
 .menunow {
-  color: #0000ff;
+  color: #0dc9f7;
   font-size: 1.2em;
   transition: all 1s;
   font-weight: bold; }
@@ -161,7 +161,7 @@ a {
       .menutabs:hover {
         font-size: 1.2em; }
         .menutabs:hover a {
-          color: #0000ff; } }
+          color: #ed1c24; } }
 
 .lefttabs {
   z-index: 999; }
@@ -212,6 +212,9 @@ a {
   font-weight: bold;
   font-size: 3em; }
 
+.languages {
+  width: 100%; }
+
 #namemotto {
   width: 100%;
   font-family: "Lobster", cursive;
@@ -226,35 +229,28 @@ a {
   margin: 0 auto 30px auto;
   align-items: center; }
 
+.lego {
+  width: 100px;
+  background: #0dc9f7;
+  background-size: cover;
+  margin-top: 20px;
+  cursor: pointer;
+  padding: 25px;
+  border-radius: 5px; }
+
 .choicesbox {
-  height: 48px;
   display: flex;
-  align-items: flex-end;
   justify-content: center;
   font-family: "Lobster", cursive;
   font-weight: bold;
   color: white; }
 
-.lego {
-  width: 100px;
-  height: 56px;
-  background-image: url("../images/legor.png");
-  background-size: cover;
-  margin-top: 20px;
-  cursor: pointer; }
-
-#programmerb {
-  background-image: url("../images/legob.png"); }
-
-#entreb {
-  background-image: url("../images/legog.png"); }
-
 .slice {
-  background: #0000ff;
+  background: #0dc9f7;
   padding: 25px; }
 
 #bioslice {
-  background-color: #0000ff; }
+  background-color: #0dc9f7; }
 
 #bioinfo {
   display: flex;
@@ -327,7 +323,7 @@ a {
   padding: 5px;
   text-align: left; }
   #thanksright a {
-    color: #31c2fe; }
+    color: #ed1c24; }
 
 #thanksleft {
   width: 15%;
@@ -349,7 +345,7 @@ a {
   text-decoration: underline;
   margin: 20px 0;
   font-weight: bold;
-  color: #018ec8;
+  color: #4c4c4c;
   text-decoration: none; }
 
 .slider-container {
@@ -434,26 +430,25 @@ a {
 .nowcalled {
   font-size: 0.6em; }
   .nowcalled a {
-    color: #31c2fe; }
+    color: #7f7f7f; }
 
 #inscriberslide {
-  background: #ff0000; }
+  background: #3d427c; }
 
 #teachingslide {
-  background: #ffff00; }
+  background: #5f68c7; }
 
 #englishslide {
-  background: #0000ff; }
+  background: #3d427c; }
 
 #freggieslide {
-  background: #00ff00; }
+  background: #5f68c7; }
 
 #winterslide {
-  background: #ad00ad; }
+  background: #3d427c; }
 
 #projectslice {
-  position: relative;
-  background: #0000ff; }
+  position: relative; }
 
 #projectcont {
   width: 90%;
@@ -469,74 +464,65 @@ a {
   margin-bottom: 50px;
   position: relative;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: inline-block;
   background-size: cover;
   background-repeat: no-repeat;
   margin-right: 10px;
   border-radius: 10px;
   background-color: white;
-  cursor: pointer; }
-  .project .bottom {
-    height: 0px;
-    width: 0px;
-    background: transparent;
+  cursor: pointer;
+  transition: all 800ms; }
+  .project img {
+    max-width: 100%;
+    max-height: 100%;
     position: absolute;
-    top: 200px;
-    left: 300px;
-    border-style: solid;
-    border-width: 0 0 151px 260px;
-    border-color: transparent transparent #0000ff; }
-  .project .top {
-    height: 0px;
-    width: 0px;
-    background: transparent;
-    position: absolute;
-    top: -220px;
-    left: -320px;
-    border-style: solid;
-    border-width: 151px 260px 0px 0px;
-    border-color: #0000ff transparent transparent;
-    z-index: 98; }
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0; }
   .project .protext {
-    margin-top: 50px;
-    margin-bottom: 10px;
     width: 100%;
     position: absolute;
     top: 0;
-    text-align: center;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: 50px 0;
     display: flex;
     flex-wrap: wrap;
     font-size: 0em;
-    transition: all 1s;
     background-color: transparent;
-    z-index: 99; }
+    font-family: "indie_flowerregular", cursive;
+    transition: all 800ms; }
     .project .protext .protextt {
-      transition: all 1s;
-      z-index: 999;
-      font-family: "indie_flowerregular", cursive;
       width: 100%; }
     .project .protext .protextw {
-      transition: all 1s;
-      z-index: 999;
-      font-family: "Lobster", cursive;
-      text-align: center;
       width: 100%;
       padding: 10px; }
-  .project:hover .top {
-    top: 0px;
-    left: 0px; }
-  .project:hover .bottom {
-    top: 0px;
-    left: 0px; }
   .project:hover .protext {
-    font-size: 1.7em;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    background-color: rgba(2, 204, 255, 0.8); }
+    font-size: 1.3em;
+    background-color: #ed1c24;
+    margin: 15px 0; }
   .project:hover .protextw {
-    font-size: 1em; }
+    font-size: 0.6em; }
+  .project:hover .protextcont {
+    background: rgba(255, 255, 255, 0.6); }
+
+.project:after {
+  padding-top: 56.25%;
+  display: block;
+  content: ''; }
+
+.protextcont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+  width: 100%;
+  margin: 10px;
+  background: rgba(255, 255, 255, 0);
+  border-radius: 5px; }
 
 #projectoverlay {
   position: fixed;
@@ -603,7 +589,7 @@ a {
   height: 300px;
   display: flex;
   padding: 0px;
-  background-color: #64d1fe;
+  background-color: #999999;
   width: 100%; }
 
 #availablehalf {
@@ -616,31 +602,35 @@ a {
   justify-content: space-between; }
 
 .buttonstyle {
-  background-color: #31c2fe;
+  background-color: #7f7f7f;
   padding: 15px;
   border-radius: 10px;
   font-size: 0.7em;
-  border: 2px solid #004663;
-  color: #004663;
+  border: 2px solid #191919;
+  color: #191919;
   cursor: pointer; }
+  .buttonstyle:hover {
+    background-color: #ed1c24; }
 
 #resumehalf {
   width: 50%;
   padding: 50px 50px 50px 100px;
-  background-color: #018ec8;
+  background-color: #4c4c4c;
   color: white;
   text-align: right;
   font-size: 1.5em;
-  background: linear-gradient(to top right, transparent 50%, #018ec8 50%) no-repeat, linear-gradient(to top right, transparent 0.1%, #018ec8 0.1%) no-repeat;
+  background: linear-gradient(to top right, transparent 50%, #4c4c4c 50%) no-repeat, linear-gradient(to top right, transparent 0.1%, #4c4c4c 0.1%) no-repeat;
   background-size: 60.5% 100%, 40% 100%;
   background-position: 0% 0%, 100% 0%;
   display: flex;
   flex-direction: column;
   justify-content: space-between; }
   #resumehalf .buttonstyle {
-    background-color: #018ec8;
-    border: 2px solid #97e0fe;
-    color: #c8ccd1; }
+    background-color: #4c4c4c;
+    border: 2px solid #b2b2b2;
+    color: #b2b2b2; }
+    #resumehalf .buttonstyle:hover {
+      background-color: #970c11; }
 
 #update {
   font-size: 0.4em;
@@ -696,7 +686,7 @@ a {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  background-color: #0000ff !important;
+  background-color: #0dc9f7 !important;
   height: 150px !important;
   align-items: center; }
 
@@ -709,16 +699,16 @@ a {
   width: 35%;
   text-align: center;
   font-size: 3.5em;
-  color: #31c2fe; }
+  color: #7f7f7f; }
   .contacttype .footertext {
     font-size: .35em;
     visibility: hidden;
     font-weight: bold; }
   .contacttype:hover {
-    color: #018ec8; }
+    color: #970c11; }
     .contacttype:hover .footertext {
       visibility: visible;
-      color: #018ec8; }
+      color: #970c11; }
 
 .fi {
   display: flex;
@@ -733,8 +723,10 @@ a {
   color: black; }
 
 .footlink a {
-  color: #31c2fe;
+  color: #7f7f7f;
   font-weight: bold; }
+  .footlink a:hover {
+    color: #ed1c24; }
 
 #mainform {
   width: 960px;
