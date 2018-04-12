@@ -569,10 +569,6 @@ a {
   margin-right: auto;
   margin-left: auto;
 }
-
-#freggietext {
-  font-family: 'Lobster', cursive;
-}
   
 .project{
   width: 20%;
@@ -671,7 +667,13 @@ a {
   margin-top:-300px;
   background-color: rgba(255,255,255,0.9);
   z-index: 9999;
-  display: flex;
+}
+
+.allovers {
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 #closeover {

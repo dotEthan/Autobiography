@@ -449,15 +449,6 @@ a {
   position: relative;
   background: #ffff00; }
 
-#projectcont {
-  width: 90%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  margin-right: auto;
-  margin-left: auto; }
-
 .project {
   width: 20%;
   margin-bottom: 50px;
@@ -532,8 +523,13 @@ a {
   width: 80%;
   margin-top: -300px;
   background-color: rgba(255, 255, 255, 0.9);
-  z-index: 9999;
-  display: flex; }
+  z-index: 9999; }
+
+.allovers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center; }
 
 #closeover {
   width: 50px;

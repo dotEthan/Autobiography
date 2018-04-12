@@ -221,6 +221,26 @@ document.addEventListener('scroll', function () {
 // Project Overlay
 //------------------------
 
+function changeOverlay(theme) {
+  if (theme=="freggie"){
+    $('#freggieover').show().siblings('.allovers').hide();
+  } else if (theme=="winter"){
+    $('#winterover').show().siblings('.allovers').hide();
+  } else if (theme=="portfolio"){
+    $('#portfolioover').show().siblings('.allovers').hide();
+  } else if (theme=="uffda"){
+    $('#uffdaover').show().siblings('.allovers').hide();
+  } else if (theme=="easylife"){
+    $('#easyover').show().siblings('.allovers').hide();
+  } else if (theme=="sanatio"){
+    $('#sanatioover').show().siblings('.allovers').hide();
+  } else if (theme=="ese"){
+    $('#ethansover').show().siblings('.allovers').hide();
+  } else {
+    $('#javascriptover').show().siblings('.allovers').hide();
+  }
+}
+
 $('#projectoverlay').hide();
 
 function PopupCenter(url, title, w, h) {
@@ -244,9 +264,25 @@ $('#closeover').click(function() {
   $('#projectoverlay').hide();
 });
 
-$('#freggie').click(function() {
-  $('#projectoverlay').show();
-});
+$('.project').click(function(e){
+  let par = $(e.target).parent();
+  if (par[0].id == "freggie" || par[0].id == "winter" || par[0].id == "portfolio" || par[0].id == "uffda" || par[0].id == "easylife" || par[0].id == "sanatio" || par[0].id == "ese" || par[0].id == "js") {
+    changeOverlay(par[0].id);
+    $('#projectoverlay').show();
+  } else {
+    let parPar = par.parent();
+    if (parPar[0].id == "freggie" || parPar[0].id == "winter" || parPar[0].id == "portfolio" || parPar[0].id == "uffda" || parPar[0].id == "easylife" || parPar[0].id == "sanatio" || parPar[0].id == "ese" || parPar[0].id == "js"){
+      changeOverlay(parPar[0].id);
+      $('#projectoverlay').show();
+    } else {
+      let parParPar = parPar.parent();
+      if (parParPar[0].id == "freggie" || parParPar[0].id == "winter" || parParPar[0].id == "portfolio" || parParPar[0].id == "uffda" || parParPar[0].id == "easylife" || parParPar[0].id == "sanatio" || parParPar[0].id == "ese" || parParPar[0].id == "js"){
+        changeOverlay(parParPar[0].id);
+        $('#projectoverlay').show();
+      }
+    }
+  }
+})
 
 //------------------------
 // Resizing Hovers
