@@ -1,17 +1,13 @@
 @font-face {
-  font-family: 'indie_flowerregular';
-  src: url('IndieFlower-webfont.eot');
-  src: url('IndieFlower-webfont.eot?#iefix') format('embedded-opentype'),
-       url('IndieFlower-webfont.woff2') format('woff2'),
-       url('IndieFlower-webfont.woff') format('woff'),
-       url('IndieFlower-webfont.ttf') format('truetype'),
-       url('IndieFlower-webfont.svg#indie_flowerregular') format('svg');
-  font-weight: normal;
-  font-style: normal;
-
+  font-family: 'Lato';
+  src: url('fonts/lato-regular.woff') format('woff')
 }
 
-@import url(http://fonts.googleapis.com/css?family=Fauna+One|Muli); // ALL FONTS?!
+@font-face {
+  font-family: 'Raleway';
+  src: url('fonts/raleway-regular.woff') format('woff')
+}
+
 
 // $firstcolor: #bff073;
 $rgba: rgba(13,201,247, 0.5);
@@ -22,6 +18,7 @@ $red: #ed1c24;
 
 // $firstcolor: #bff073;
 $thirdcolorrgba: rgba(237,28,36, 0.8);
+$secondcolorrgba: rgba(127, 127, 127, 0.7);
 $firstcolor: #0dc9f7;
 $secondcolor: #7f7f7f;
 $thirdcolor: #ed1c24;
@@ -29,25 +26,19 @@ $fourthcolor: #3d427c;
 $fifthcolor: #5f68c7;
 
 $projectoverlayradius: 5px;
-$headertext:'indie_flowerregular', cursive;
-$regulartext: 'Lobster', cursive;
+// $headertext: 'Open-Sans', sans-serif;
+$headertext: 'Raleway', serif;
+$regulartext: 'Lato', sans-serif;
 $menutextc: white;
 $menuiconsize: 1.5em;
 $menufontsize: 0.9em;
 $menubackground: 'transparent';
-$menuhighlight: #d8db12; 
 $smallmenupaddingtop: 20px;
 $frontimage: url('../images/body.jpg');
-$darkslice: #9099A2;
-$topc: $secondcolor;
-$bottomc: $secondcolor;
 $biocontainbg: grey;
 $biowritingc: black;
 $biowritings: 2.7em;
 $bioquestions: 2.5em;
-$bioquestionc: $secondcolor;
-$footercolor: darken($firstcolor, 20%);
-
 // fonts
 img{
   max-width: 100%;
@@ -66,7 +57,7 @@ img{
 }
 
 * {
-  font-family: $headertext;
+  font-family: $regulartext;
 }
 
 body {
@@ -172,6 +163,7 @@ body {
   padding-top: $smallmenupaddingtop;
   color: $menutextc;
   font-family: $headertext;
+  background: $secondcolorrgba;
   
   @media screen and (min-width: 800px) {
     justify-content: space-between;
@@ -182,11 +174,9 @@ body {
     width: 90%;
     margin-right: auto;
     margin-left: auto;
+    border-radius: 10px 10px 0 0;
+    transition: all 1s;
   }
-}
-    
-a {
-  color: $menutextc;
 }
 
 .menunow {
@@ -217,7 +207,7 @@ a {
     padding: 5px 3px;
 
     &:hover {
-      font-size: 1.2em;
+      font-size: 1.3em;
       
       a {
         color: $thirdcolor;
@@ -225,10 +215,6 @@ a {
     }
    
   }
-}
-
-.lefttabs {
-  z-index: 999;
 }
 
 .faicon{
@@ -289,17 +275,11 @@ a {
 }
 
 .languages{
-  width: 100%;
+  width: 100%;  
 }
 
-
-
-#namemotto {
-  width: 100%;
-  font-family: $regulartext;
-  font-size: 1.5em;
-  margin-top: 20px;
-  color: black;
+#languagetitle {
+  margin-top: 30px;
 }
     
 #choices {
@@ -323,7 +303,6 @@ a {
 .choicesbox {
   display: flex;
   justify-content: center;
-  font-family: $regulartext;
   font-weight: bold;
   color: white;
 }
@@ -333,8 +312,16 @@ a {
   padding: 25px;
 }
 
-#bioslice {
-  background-color: $firstcolor;
+.protitle {
+  font-family: $headertext;
+  width: 100%;
+  text-align: center;
+  font-size: 3em;
+  text-decoration: underline;
+  margin: 20px 0;
+  font-weight: bold;
+  color: darken($secondcolor, 20%);
+  text-decoration: none;
 }
 
 #bioinfo {
@@ -360,7 +347,7 @@ a {
   flex-direction: column;
   justify-content: center;
   height: 420px;
-  margin: 0 auto;
+  margin: 50px auto;
   
 }
 
@@ -368,22 +355,21 @@ a {
   width: 100%;
   font-size: $biowritings;
   color: $biowritingc;
-  font-family: $regulartext;
+  font-family: $headertext;
 }
 
 #quotename {
   font-size: 1.5em;
   text-align: right;
   margin-top: 20px;
-  font-family: $regulartext;
+  font-family: $headertext;
 }
 
 #biopersonal {
   display:flex;
-  // padding: 50px;
   align-items: center;
   position: absolute;
-  top: 25px;
+  top: 0;
   left: 0;
   flex-direction: column;
   text-align: left;
@@ -394,16 +380,13 @@ a {
   flex-direction: row;
 }
 
-#biotext {
-  margin-bottom: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-}
-
 #biotextw {
   padding-right: 50px;
   font-size: 1.2em;
+}
+
+#asa {
+  margin-top: 15px;
 }
 
 #portimage {
@@ -422,7 +405,11 @@ a {
   text-align: left;
   
   a {
-    color: $thirdcolor;
+    color: $secondcolor;
+
+    &:hover {
+      color: $thirdcolor;
+    }
   }
 }
 
@@ -441,22 +428,6 @@ a {
   background-color: white;
 }
 
-#protitle {
-  font-family: $headertext;
-  width: 100%;
-  text-align: center;
-  font-size: 3em;
-  text-decoration: underline;
-  margin: 20px 0;
-  font-weight: bold;
-  color: darken($secondcolor, 20%);
-  text-decoration: none;
-}
-
-//----------------------------
-// History Slider
-//----------------------------
-
 .slider-container {
   margin-bottom: 20px;
 }
@@ -465,7 +436,6 @@ a {
   display: flex;
   width: 90%;
   height: 500px;
-  // visibility: hidden;
   margin-right: auto;
   margin-left: auto;
 }
@@ -500,12 +470,12 @@ a {
   justify-content: space-between;
   position: relative;
 }
-     
 
 .historytitles {
   text-align: center;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   color: #000000;
   padding: 10px;
@@ -513,17 +483,18 @@ a {
   background: rgba(255,255,255,0.6);
   height: 80px;
   font-size: 1.2em;
+  font-family: $headertext;
 }
 
 .historytext {
-  padding: 0px 20px;
+  padding: 10px 20px;
   display: block;
   text-align: left;
   background: rgba(255,255,255,0.6);
   overflow: hidden;
   height: 200px;
   margin-bottom: 15px;
-  font-size: 0.9em;
+  font-size: 0.8em;
 }
 
 .historydates {
@@ -630,11 +601,11 @@ a {
     flex-wrap: wrap;
     font-size: 0em;
     background-color: transparent;
-    font-family: $headertext;
     transition: all 800ms;
 
     .protextt{
       width: 100%;
+      font-family: $headertext;
     }
 
     .protextw{
@@ -727,8 +698,7 @@ a {
 
 #overlaytitle{
   font-size: 3em;
-  font-family: 'Lobster', cursive;
-  text-decoration: underline;
+  font-family: $headertext;
   margin-bottom: 50px;
   text-align: center;
 }
@@ -805,7 +775,7 @@ a {
   .buttonstyle{
     background-color: darken($secondcolor,20%);
     border: 2px solid lighten($secondcolor,20%);
-    color: lighten($secondcolor,20%);
+    color: white;
 
     &:hover {
       background-color: darken($thirdcolor,20%);
@@ -815,7 +785,7 @@ a {
 
 #update{
   font-size: 0.4em;
-  margin-top: 10px;
+  margin-bottom: 5px;
   margin-right:10px;
 }
 
@@ -891,19 +861,22 @@ a {
   text-align: center;
   font-size: 3.5em;
   color: $secondcolor;
+  cursor: pointer;
 
   .footertext {
     font-size: .35em;
     visibility: hidden;
     font-weight: bold;
+    font-family: $headertext;
+    margin-top: 5px;
   }
   
   &:hover {
-    color: darken($thirdcolor,20%);
+    color: darken($thirdcolor,5%);
     
     .footertext {
       visibility: visible;
-      color: darken($thirdcolor,20%);
+      color: darken($thirdcolor,5%);
     }
   }
 }
@@ -932,13 +905,17 @@ a {
   }
 }
 
+#third {
+  background: $thirdcolor;
+  display: none;
+}
+
 
 
 #mainform{
   width:960px;
   margin:20px auto;
   padding-top:20px;
-  font-family: 'Fauna One', serif;
 }
 #form{
   border-radius:2px;
@@ -966,7 +943,6 @@ input{
 input[type=button]{
   background-color:#123456;
   border:1px solid white;
-  font-family: 'Fauna One', serif;
   font-Weight:bold;
   font-size:18px;
   color:white;

@@ -1,10 +1,10 @@
-@import url(http://fonts.googleapis.com/css?family=Fauna+One|Muli);
 @font-face {
-  font-family: 'indie_flowerregular';
-  src: url("IndieFlower-webfont.eot");
-  src: url("IndieFlower-webfont.eot?#iefix") format("embedded-opentype"), url("IndieFlower-webfont.woff2") format("woff2"), url("IndieFlower-webfont.woff") format("woff"), url("IndieFlower-webfont.ttf") format("truetype"), url("IndieFlower-webfont.svg#indie_flowerregular") format("svg");
-  font-weight: normal;
-  font-style: normal; }
+  font-family: 'Lato';
+  src: url("fonts/lato-regular.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Raleway';
+  src: url("fonts/raleway-regular.woff") format("woff"); }
 
 img {
   max-width: 100%; }
@@ -19,7 +19,7 @@ img {
   display: none !important; }
 
 * {
-  font-family: "indie_flowerregular", cursive; }
+  font-family: "Lato", sans-serif; }
 
 body {
   margin: 0; }
@@ -120,7 +120,8 @@ body {
   justify-content: center;
   padding-top: 20px;
   color: white;
-  font-family: "indie_flowerregular", cursive; }
+  font-family: "Raleway", serif;
+  background: rgba(127, 127, 127, 0.7); }
   @media screen and (min-width: 800px) {
     #menu {
       justify-content: space-between;
@@ -130,10 +131,9 @@ body {
       padding-top: 0;
       width: 90%;
       margin-right: auto;
-      margin-left: auto; } }
-
-a {
-  color: white; }
+      margin-left: auto;
+      border-radius: 10px 10px 0 0;
+      transition: all 1s; } }
 
 .menunow {
   color: #0dc9f7;
@@ -159,12 +159,9 @@ a {
       z-index: 99;
       padding: 5px 3px; }
       .menutabs:hover {
-        font-size: 1.2em; }
+        font-size: 1.3em; }
         .menutabs:hover a {
           color: #ed1c24; } }
-
-.lefttabs {
-  z-index: 999; }
 
 .faicon {
   font-size: 1.5em; }
@@ -208,19 +205,15 @@ a {
 
 #nametitle {
   width: 100%;
-  font-family: "indie_flowerregular", cursive;
+  font-family: "Raleway", serif;
   font-weight: bold;
   font-size: 3em; }
 
 .languages {
   width: 100%; }
 
-#namemotto {
-  width: 100%;
-  font-family: "Lobster", cursive;
-  font-size: 1.5em;
-  margin-top: 20px;
-  color: black; }
+#languagetitle {
+  margin-top: 30px; }
 
 #choices {
   display: flex;
@@ -241,7 +234,6 @@ a {
 .choicesbox {
   display: flex;
   justify-content: center;
-  font-family: "Lobster", cursive;
   font-weight: bold;
   color: white; }
 
@@ -249,8 +241,16 @@ a {
   background: #0dc9f7;
   padding: 25px; }
 
-#bioslice {
-  background-color: #0dc9f7; }
+.protitle {
+  font-family: "Raleway", serif;
+  width: 100%;
+  text-align: center;
+  font-size: 3em;
+  text-decoration: underline;
+  margin: 20px 0;
+  font-weight: bold;
+  color: #4c4c4c;
+  text-decoration: none; }
 
 #bioinfo {
   display: flex;
@@ -273,25 +273,25 @@ a {
   flex-direction: column;
   justify-content: center;
   height: 420px;
-  margin: 0 auto; }
+  margin: 50px auto; }
 
 #biowriting {
   width: 100%;
   font-size: 2.7em;
   color: black;
-  font-family: "Lobster", cursive; }
+  font-family: "Raleway", serif; }
 
 #quotename {
   font-size: 1.5em;
   text-align: right;
   margin-top: 20px;
-  font-family: "Lobster", cursive; }
+  font-family: "Raleway", serif; }
 
 #biopersonal {
   display: flex;
   align-items: center;
   position: absolute;
-  top: 25px;
+  top: 0;
   left: 0;
   flex-direction: column;
   text-align: left; }
@@ -300,15 +300,12 @@ a {
   display: flex;
   flex-direction: row; }
 
-#biotext {
-  margin-bottom: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: left; }
-
 #biotextw {
   padding-right: 50px;
   font-size: 1.2em; }
+
+#asa {
+  margin-top: 15px; }
 
 #portimage {
   max-width: 100%; }
@@ -323,7 +320,9 @@ a {
   padding: 5px;
   text-align: left; }
   #thanksright a {
-    color: #ed1c24; }
+    color: #7f7f7f; }
+    #thanksright a:hover {
+      color: #ed1c24; }
 
 #thanksleft {
   width: 15%;
@@ -336,17 +335,6 @@ a {
 
 #historyslice {
   background-color: white; }
-
-#protitle {
-  font-family: "indie_flowerregular", cursive;
-  width: 100%;
-  text-align: center;
-  font-size: 3em;
-  text-decoration: underline;
-  margin: 20px 0;
-  font-weight: bold;
-  color: #4c4c4c;
-  text-decoration: none; }
 
 .slider-container {
   margin-bottom: 20px; }
@@ -388,23 +376,25 @@ a {
   text-align: center;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   color: #000000;
   padding: 10px;
   font-weight: bold;
   background: rgba(255, 255, 255, 0.6);
   height: 80px;
-  font-size: 1.2em; }
+  font-size: 1.2em;
+  font-family: "Raleway", serif; }
 
 .historytext {
-  padding: 0px 20px;
+  padding: 10px 20px;
   display: block;
   text-align: left;
   background: rgba(255, 255, 255, 0.6);
   overflow: hidden;
   height: 200px;
   margin-bottom: 15px;
-  font-size: 0.9em; }
+  font-size: 0.8em; }
 
 .historydates {
   font-weight: normal;
@@ -492,10 +482,10 @@ a {
     flex-wrap: wrap;
     font-size: 0em;
     background-color: transparent;
-    font-family: "indie_flowerregular", cursive;
     transition: all 800ms; }
     .project .protext .protextt {
-      width: 100%; }
+      width: 100%;
+      font-family: "Raleway", serif; }
     .project .protext .protextw {
       width: 100%;
       padding: 10px; }
@@ -567,8 +557,7 @@ a {
 
 #overlaytitle {
   font-size: 3em;
-  font-family: 'Lobster', cursive;
-  text-decoration: underline;
+  font-family: "Raleway", serif;
   margin-bottom: 50px;
   text-align: center; }
 
@@ -633,13 +622,13 @@ a {
   #resumehalf .buttonstyle {
     background-color: #4c4c4c;
     border: 2px solid #b2b2b2;
-    color: #b2b2b2; }
+    color: white; }
     #resumehalf .buttonstyle:hover {
       background-color: #970c11; }
 
 #update {
   font-size: 0.4em;
-  margin-top: 10px;
+  margin-bottom: 5px;
   margin-right: 10px; }
 
 #contactslice {
@@ -704,16 +693,19 @@ a {
   width: 35%;
   text-align: center;
   font-size: 3.5em;
-  color: #7f7f7f; }
+  color: #7f7f7f;
+  cursor: pointer; }
   .contacttype .footertext {
     font-size: .35em;
     visibility: hidden;
-    font-weight: bold; }
+    font-weight: bold;
+    font-family: "Raleway", serif;
+    margin-top: 5px; }
   .contacttype:hover {
-    color: #970c11; }
+    color: #de1219; }
     .contacttype:hover .footertext {
       visibility: visible;
-      color: #970c11; }
+      color: #de1219; }
 
 .fi {
   display: flex;
@@ -733,11 +725,14 @@ a {
   .footlink a:hover {
     color: #ed1c24; }
 
+#third {
+  background: #ed1c24;
+  display: none; }
+
 #mainform {
   width: 960px;
   margin: 20px auto;
-  padding-top: 20px;
-  font-family: 'Fauna One', serif; }
+  padding-top: 20px; }
 
 #form {
   border-radius: 2px;
@@ -764,7 +759,6 @@ input {
 input[type=button] {
   background-color: #123456;
   border: 1px solid white;
-  font-family: 'Fauna One', serif;
   font-Weight: bold;
   font-size: 18px;
   color: white; }

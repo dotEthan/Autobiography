@@ -1,15 +1,8 @@
 @font-face {
   font-family: 'indie_flowerregular';
-  src: url('IndieFlower-webfont.eot');
-  src: url('IndieFlower-webfont.eot?#iefix') format('embedded-opentype'),
-       url('IndieFlower-webfont.woff2') format('woff2'),
-       url('IndieFlower-webfont.woff') format('woff'),
-       url('IndieFlower-webfont.ttf') format('truetype'),
-       url('IndieFlower-webfont.svg#indie_flowerregular') format('svg');
-  font-weight: normal;
-  font-style: normal;
-
+  src: url('fonts/IndieFlower-webfont.woff') format('woff')
 }
+
 // 16
 $rgba: rgba(13,201,247, 0.5);
 $lightblue: #0dc9f7;
@@ -25,7 +18,7 @@ $fourthcolor: #f05b47;
 
 $projectoverlayradius: 5px;
 $headertext:'indie_flowerregular', cursive;
-$regulartext: 'Lobster', cursive;
+$regulartext: $headertext;
 $menutextc: white;
 $menuiconsize: 1.5em;
 $menufontsize: 0.9em;
@@ -266,17 +259,8 @@ a {
   font-size: 3em;
 }
 
-#languagetitle{
-  width: 100%;              
-  font-family: $headertext;
-}
-
-#namemotto {
-  width: 100%;
-  font-family: $regulartext;
-  font-size: 1.5em;
-  margin-top: 20px;
-  color: black;
+.languages{
+  width: 100%;  
 }
     
 #choices {
@@ -293,7 +277,6 @@ a {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  font-family: $regulartext;
   font-weight: bold;
   color: white;
   font-size: 0.85em;
@@ -319,10 +302,6 @@ a {
 .slice {
   background: $firstcolor;
   padding: 25px;
-}
-
-#bioslice {
-  background-color: $firstcolor;
 }
 
 #bioinfo {
@@ -356,22 +335,19 @@ a {
   width: 100%;
   font-size: $biowritings;
   color: $biowritingc;
-  font-family: $regulartext;
 }
 
 #quotename {
   font-size: 1.5em;
   text-align: right;
   margin-top: 20px;
-  font-family: $regulartext;
 }
 
 #biopersonal {
   display:flex;
-  // padding: 50px;
   align-items: center;
   position: absolute;
-  top: 25px;
+  top: 0;
   left: 0;
   flex-direction: column;
   text-align: left;
@@ -382,16 +358,13 @@ a {
   flex-direction: row;
 }
 
-#biotext {
-  margin-bottom: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-}
-
 #biotextw {
   padding-right: 50px;
   font-size: 1.2em;
+}
+
+#asa {
+  margin-top: 15px;
 }
 
 #portimage {
@@ -411,6 +384,10 @@ a {
   
   a {
     color: $secondcolor;
+
+    &:hover {
+      color: $thirdcolor;
+    }
   }
 }
 
@@ -429,7 +406,7 @@ a {
   background-color: white;
 }
 
-#protitle {
+.protitle {
   font-family: $headertext;
   width: 100%;
   text-align: center;
@@ -488,12 +465,12 @@ a {
   justify-content: space-between;
   position: relative;
 }
-     
 
 .historytitles {
   text-align: center;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   color: #000000;
   padding: 10px;
@@ -501,6 +478,7 @@ a {
   background: rgba(255,255,255,0.6);
   height: 80px;
   font-size: 1.2em;
+  font-family: $headertext;
 }
 
 .historytext {
@@ -511,7 +489,7 @@ a {
   overflow: hidden;
   height: 200px;
   margin-bottom: 15px;
-  font-size: 0.9em;
+  font-size: 0.8em;
 }
 
 .historydates {
@@ -784,7 +762,7 @@ a {
   .buttonstyle{
     background-color: darken($secondcolor,20%);
     border: 2px solid lighten($secondcolor,20%);
-    color: lighten($darkslice,20%);
+    color: white;
 
     &:hover {
       background-color: darken($thirdcolor,20%);
@@ -794,8 +772,8 @@ a {
 
 #update{
   font-size: 0.4em;
-  margin-top: 10px;
   margin-right:10px;
+  margin-bottom: 5px;
 }
 
 #contactslice {
@@ -870,11 +848,13 @@ a {
   text-align: center;
   font-size: 3.5em;
   color: $secondcolor;
+  cursor: pointer;
 
   .footertext {
     font-size: .35em;
     visibility: hidden;
     font-weight: bold;
+    margin-top: 5px;
   }
   
   &:hover {

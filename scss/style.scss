@@ -1,17 +1,12 @@
 @font-face {
-  font-family: 'indie_flowerregular';
-  src: url('IndieFlower-webfont.eot');
-  src: url('IndieFlower-webfont.eot?#iefix') format('embedded-opentype'),
-       url('IndieFlower-webfont.woff2') format('woff2'),
-       url('IndieFlower-webfont.woff') format('woff'),
-       url('IndieFlower-webfont.ttf') format('truetype'),
-       url('IndieFlower-webfont.svg#indie_flowerregular') format('svg');
-  font-weight: normal;
-  font-style: normal;
-
+  font-family: 'Merriweather';
+  src: url('fonts/Merriweather-webfont.woff') format('woff')
 }
 
-@import url(http://fonts.googleapis.com/css?family=Fauna+One|Muli);
+@font-face {
+  font-family: 'Monserrat';
+  src: url('fonts/Montserrat-Regular.woff') format('woff')
+}
 
 $limecolor: #bff073;
 $rgba: rgba(13,201,247, 0.5);
@@ -29,24 +24,16 @@ $fourthcolor: #f05b47;
 $fifthcolor: #852c20;
 
 $projectoverlayradius: 5px;
-$headertext:'indie_flowerregular', cursive;
-$regulartext: 'Lobster', cursive;
+$headertext:'Merriweather', serif;
+$regulartext: 'Monserrat', sans-serif;
 $menutextc: white;
 $menuiconsize: 1.5em;
 $menufontsize: 0.9em;
-$menubackground: $secondcolor;
-$menuhighlight: #d8db12; 
 $smallmenupaddingtop: 20px;
 $frontimage: url('../images/body.jpg');
-$darkslice: #9099A2;
-$topc: $secondcolor;
-$bottomc: $secondcolor;
-$biocontainbg: grey;
 $biowritingc: black;
 $biowritings: 2.7em;
 $bioquestions: 2.5em;
-$bioquestionc: $secondcolor;
-$footercolor: darken($firstcolor, 20%);
 
 // fonts
 img{
@@ -66,7 +53,7 @@ img{
 }
 
 * {
-  font-family: $headertext;
+  font-family: $regulartext;
 }
 
 body {
@@ -125,7 +112,7 @@ body {
 
 #menucontain {
   position: fixed;
-  background: $menubackground;
+  background: $secondcolor;
   color: white;
   width: 100%;
   z-index: 99;
@@ -160,7 +147,6 @@ body {
   display: flex;
   justify-content: center;
   padding-top: $smallmenupaddingtop;
-  color: $menutextc;
   font-family: $headertext;
   
   @media screen and (min-width: 800px) {
@@ -171,10 +157,6 @@ body {
     margin-top: 10vh;
     padding-top: 0;
   }
-}
-    
-a {
-  color: $menutextc;
 }
 
 .menunow {
@@ -203,7 +185,7 @@ a {
     border-radius: 10px;
 
     &:hover {
-      font-size: 1.2em;
+      font-size: 1.3em;
       
       a {
         color: $firstcolor;
@@ -255,7 +237,7 @@ a {
   margin-right: auto; 
   padding-top: 30px;
   width: 100%;
-  width: 40%;
+  width: 50%;
   text-align: center;
   display: flex;
   align-items: center;
@@ -270,12 +252,12 @@ a {
   font-size: 3em;
 }
 
-#namemotto {
-  width: 100%;
-  font-family: $regulartext;
-  font-size: 1.5em;
+.languages{
+  width: 100%;  
+}
+
+#languagetitle {
   margin-top: 20px;
-  color: black;
 }
     
 #choices {
@@ -292,7 +274,6 @@ a {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  font-family: $regulartext;
   font-weight: bold;
   color: white;
 }
@@ -317,10 +298,6 @@ a {
 .slice {
   background: $firstcolor;
   padding: 25px;
-}
-
-#bioslice {
-  background-color: $firstcolor;
 }
 
 #bioinfo {
@@ -354,14 +331,14 @@ a {
   width: 100%;
   font-size: $biowritings;
   color: $biowritingc;
-  font-family: $regulartext;
+  font-family: $headertext;
 }
 
 #quotename {
   font-size: 1.5em;
   text-align: right;
   margin-top: 20px;
-  font-family: $regulartext;
+  font-family: $headertext;
 }
 
 #biopersonal {
@@ -369,10 +346,11 @@ a {
   // padding: 50px;
   align-items: center;
   position: absolute;
-  top: 25px;
+  top: 0;
   left: 0;
   flex-direction: column;
   text-align: left;
+  justify-content: center;
 }
 
 #biotop {
@@ -380,16 +358,13 @@ a {
   flex-direction: row;
 }
 
-#biotext {
-  margin-bottom: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-}
-
 #biotextw {
   padding-right: 50px;
   font-size: 1.2em;
+}
+
+#asa {
+  margin-top: 15px;
 }
 
 #portimage {
@@ -409,6 +384,10 @@ a {
   
   a {
     color: $secondcolor;
+
+    &:hover {
+      color: $thirdcolor;
+    }
   }
 }
 
@@ -427,7 +406,7 @@ a {
   background-color: white;
 }
 
-#protitle {
+.protitle {
   font-family: $headertext;
   width: 100%;
   text-align: center;
@@ -486,12 +465,12 @@ a {
   justify-content: space-between;
   position: relative;
 }
-     
 
 .historytitles {
   text-align: center;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   color: #000000;
   padding: 10px;
@@ -499,6 +478,7 @@ a {
   background: rgba(255,255,255,0.6);
   height: 80px;
   font-size: 1.2em;
+  font-family: $headertext;
 }
 
 .historytext {
@@ -509,7 +489,7 @@ a {
   overflow: hidden;
   height: 200px;
   margin-bottom: 15px;
-  font-size: 0.9em;
+  font-size: 0.8em;
 }
 
 .historydates {
@@ -607,11 +587,11 @@ a {
     flex-wrap: wrap;
     font-size: 0em;
     background-color: transparent;
-    font-family: $headertext;
     transition: all 800ms;
 
     .protextt{
       width: 100%;
+      font-family: $headertext;
     }
 
     .protextw{
@@ -704,7 +684,7 @@ a {
 
 #overlaytitle{
   font-size: 3em;
-  font-family: 'Lobster', cursive;
+  font-family: $headertext;
   text-decoration: underline;
   margin-bottom: 50px;
   text-align: center;
@@ -782,7 +762,7 @@ a {
   .buttonstyle{
     background-color: darken($secondcolor,20%);
     border: 2px solid lighten($secondcolor,20%);
-    color: lighten($darkslice,20%);
+    color: white;
 
     &:hover {
       background-color: darken($thirdcolor,20%);
@@ -792,8 +772,8 @@ a {
 
 #update{
   font-size: 0.4em;
-  margin-top: 10px;
   margin-right:10px;
+  margin-bottom: 5px;
 }
 
 #contactslice {
@@ -868,11 +848,14 @@ a {
   text-align: center;
   font-size: 3.5em;
   color: $secondcolor;
+  cursor: pointer;
 
   .footertext {
     font-size: .35em;
     visibility: hidden;
     font-weight: bold;
+    font-family: $headertext;
+    margin-top: 5px;
   }
   
   &:hover {
@@ -913,7 +896,6 @@ a {
   width:960px;
   margin:20px auto;
   padding-top:20px;
-  font-family: 'Fauna One', serif;
 }
 
 #form{
@@ -945,7 +927,6 @@ input{
 input[type=button]{
   background-color:#123456;
   border:1px solid white;
-  font-family: 'Fauna One', serif;
   font-Weight:bold;
   font-size:18px;
   color:white;

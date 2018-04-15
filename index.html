@@ -7,7 +7,7 @@
   <title>Ethan Strauss: Front End Specialist</title>
   <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
   <script src="../particles.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Just+Another+Hand|Lobster|Lato:300|Oswald|Gochi+Hand" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Just+Another+Hand|Lobster|Open+Sans" rel="stylesheet"> 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="css/style.css">
 
@@ -22,29 +22,32 @@
       <div id ="menu">
         <canvas id="entrebgcanvas" class="leftcanvas"></canvas>
         <canvas id="mycanvas" class="leftcanvas"></canvas>
+        <a href="#bioslice">
         <div id="biomenu" class="menutabs">
-          <div id="biotab" class="lefttabs">
-            <a href="#bioslice"><i class="fas fa-id-card fa-lg faicon"></i>
-            <div class="menutitle">BIO</a></div>
-          </div>
+          <div id="biotab" class="lefttabs"><i class="fas fa-id-card fa-lg faicon"></i>
+            <div class="menutitle">BIO</div>
+          </div></a>
         </div>
         <div id="historymenu" class="menutabs">
+          <a href="#historyslice">
           <div id="historytab" class="lefttabs">
-            <a href="#historyslice"><i class="fas fa-calendar-alt fa-lg faicon"></i>
-            <div class="menutitle">HISTORY</a></div>
-          </div>
+            <i class="fas fa-calendar-alt fa-lg faicon"></i>
+          <div class="menutitle">HISTORY</div>
+          </div></a>
         </div>
         <div id="projectmenu" class="menutabs">
+          <a href="#projectslice">
           <div id="projectstab" class="lefttabs">
-            <a href="#projectslice"><i class="fas fa-briefcase fa-lg faicon"></i>
-            <div class="menutitle">PROJECTS</a></div>
-          </div>
+            <i class="fas fa-briefcase fa-lg faicon"></i>
+            <div class="menutitle">PROJECTS</div>
+          </div></a>
         </div>
         <div id="contactme" class="menutabs">
+          <a href="#footer">
           <div id="contacttab" class="lefttabs">
-            <a href="#contactslice"><i class="fas fa-envelope fa-lg faicon"></i>
-            <div class="menutitle">CONTACT ME</a></div>
-          </div>
+            <i class="fas fa-envelope fa-lg faicon"></i>
+            <div class="menutitle">CONTACT ME</div>
+          </div></a>
         </div>
       </div>
     </div>
@@ -52,8 +55,8 @@
       <div id="splashcont">
         <div id="titlecard">
           <div id="nametitle">Ethan Strauss</div>
-          <div id="languagetitle" class="languages">>Languages: English, Chinese</div>
-          <div id="languagetitlec" class="languages">Languages: Javascript, React, Jquery, HTML, CSS, SCSS, Wordpress, Liquid, Gulp, Git, npm</div>
+          <div id="languagetitle" class="languages">Languages: English, Chinese</div>
+          <div id="languagetitlec" class="languages">Languages: Javascript, React, Jquery, HTML, CSS, SCSS, Wordpress, Handlebars, Liquid, Gulp, Git, npm</div>
         </div>
         <div id="choices">
           <div id="studentb" class="lego">
@@ -87,8 +90,8 @@
                 <div id="biotop">
                   <div id="biotext">                    
                     <div id="biotextw">
-                      My name is Ethan Strauss, I'm a passionate and endlessly curious front end developer. Over the last two decades I have traveled two continents using my understanding of HTML, CSS, Javascript and more to design and implement solutions to the problems I came across.
-                      <br><br><br>
+                      My name is Ethan Strauss, I'm a passionate and endlessly curious front end developer. Over the last two decades I have lived and worked across two continents using my understanding of HTML, CSS, Javascript and more to design and implement solutions to the problems I came across.
+                      <div id="asa">As a Programmer:</div>
                       <div id="ageinfo">Over the past decade back in Canada I have opened two successful entreprenuerial ventures and learned a number of new langauges including Javascript, SCSS, React, Liquid and more. I\'ve devoted the last six months to brushing up on HTML 5, SCSS, Javascript ES6 and learning React to ensure I have a firm grasp of the tools needed to succeed in Front End Development or Javavscript programming.</div>
                     </div>
                   </div>
@@ -112,7 +115,7 @@
         </div>
       </div>  
       <div id ="historyslice" class="slice">
-        <div id="protitle">Work History</div>
+        <div class="protitle">Work History</div>
         <div class="slider-container">
           <div class="flexbox-slider">
             <div id="inscriberslide" class="flexbox-slide">
@@ -151,9 +154,9 @@
                   Duties: 
                   <ul>
                     <li>Researched, designed and implemented a usage based English curriculum</li>
-                    <li>Strengthened cultural and language understanding of 10,000 + students (BA, Master, PHD, MBA, EMBA) </li>
-                    <li>Pioneered a Business English & Cultural Consultancy program for State Owned Enterprises such as Agricultural Bank of China, the State Grid Corporation, and state owned technology firms </li>
-                    <li>Organized and ran multiple extracuricular activities each week including English Corners, Book Clubs, Movie Night and Music Appreciation Groups</li>
+                    <li>Strengthened cultural and language understanding of 10,000 + students (BA - PHD) </li>
+                    <li>Pioneered and delivered a Business English & Cultural Consultancy program for many State Owned Enterprises including the Agricultural Bank of China, the State Grid Corporation, and more</li>
+                    <li>Organized and ran extracuricular activities each week including English Corners, Book/Movie/Music Clubs, and more</li>
                   </ul>
                 </div>
               </div>
@@ -385,7 +388,7 @@
             </div>
           </div>
         </div>
-        <div id="protitle">Projects</div>
+        <div class="protitle">Projects</div>
         <div id="projectcont">
           <div id="freggie" class="project">
             <img alt="Freggie Logo" src="images/freggie169.png">
@@ -516,7 +519,7 @@
         <div id="contactform">
             <form id="inquiryform">
               <div id="titlereturn">
-                <div id="protitle">Contact Form</div>
+                <div class="protitle">Contact Form</div>
                 <div id="contactclose">X</div>
                 <p id="returnmessage">Only hit send ONCE. Once complete, this message will change.</p>
               </div>
@@ -583,6 +586,7 @@
         </div>
         <div id="footmessage">
           © 2018 Ethan Strauss. This site <span id="sitebuild">was developed using Javascript, Jquery, HTML, and SCSS. If you want to look at the code,</span> get the source on <span class="footlink"><a href="https://github.com/Uberche/porfolioweb">GitHub</a></span>.
+          <div id="third"></div>
         </div>
       </div>
     </div>

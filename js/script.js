@@ -42,7 +42,6 @@ function showPage() {
   $('#load').css({'display': 'none'});
   $('#contents').css({'display': 'block'});
   resizeDist();
-  resizeHover();
   party();
 }
 
@@ -59,6 +58,7 @@ function setTextContent(element, text) {
 
 let textChange = document.getElementById('sitebuild');
 let quoteChange = document.getElementById('biowriting');
+let asaChange = document.getElementById('asa');
 let quoteNameChange = document.getElementById('quotename');
 let languageChange = document.getElementById('languagetitle');
 let languageChange2 = document.getElementById('languagetitlec');
@@ -81,8 +81,11 @@ $('#studentb').click(function() {
   setTextContent(quoteChange, '“When I became a man I put away childish things, including the fear of childishness and the desire to be very grown up.”');
   setTextContent(quoteNameChange, '- C.S. Lewis');
   setTextContent(languageChange, 'Languages: English'); 
-  setTextContent(languageChange2, '');
+  setTextContent(languageChange2, 'Languages: Lego');
+  setTextContent(asaChange, 'As a Student:');
   setTextContent(bioChange, 'I grew up in small town Ontario, than big city BC, then small town BC, then small town Manitoba, than back to BC for a couple cities and then back to Ontario, we moved a lot. I think it is one of the reasons I find I am able to easily adapt to the various environments I find myself in.');
+
+  setTextContent(bioChange, '');
   timeOut = setTimeout(circles, 1000);
 });
 
@@ -102,6 +105,7 @@ $('#entreb').click(function() {
   setTextContent(quoteNameChange, '- Richard Branson');
   setTextContent(languageChange, 'Languages: English, Chinese');
   setTextContent(languageChange2, 'Languages: HTML, CSS, Wordpress');
+  setTextContent(asaChange, 'As an Entrepreneur:');
   setTextContent(bioChange, 'I spent my 20s in China, learning a new culture, language and how to develop long term plans and put them into action. I had numerous jobs from Bar Manager to Radio Host. And I developed and opened a number of different entreprenerial ventures that pushed me to learn web development, leadership skills and to hone my customer service techniques.');
   $('link[rel=stylesheet]').attr({href : 'css/entrestyle.css'});
   timeOut = setTimeout(spirals, 1000);
@@ -121,6 +125,7 @@ $('#programmerb').click(function() {
   setTextContent(quoteNameChange, '- Brian W. Kernighan');
   setTextContent(languageChange, 'Languages: English, Chinese');  
   setTextContent(languageChange2, 'Languages: Javascript, React, Jquery, HTML, CSS, SCSS, Wordpress, Liquid, Gulp, Git, npm');
+  setTextContent(asaChange, 'As a Programmer:');
   setTextContent(bioChange, 'Since returning to Canada I have opened two successful entreprenuerial ventures and learned a number of new langauges including Javascript, SCSS, React, Liquid and more. I\'ve devoted the last six months to brushing up on HTML 5, SCSS, Javascript ES6 and learning React to ensure I have a firm grasp of the tools needed to succeed in Front End Development or Javavscript programming.');
   pageDelay(showPage);
   $('#particles-js').css({'display': 'block'});
@@ -207,12 +212,15 @@ document.addEventListener('scroll', function () {
 
   if(theme=='entre') {
     const menuDiv = $('#menucontain');
+    const menu = $('#menu');
     const bottomSpot = bioDist - parseInt(menuDiv.css('height'));
 
     if ($(this).scrollTop() >= bottomSpot) {
       menuDiv.removeClass('menubottom').addClass('menutop');
+      menu.css({"borderRadius": "0 0 10px 10px"});
     } else if ($(this).scrollTop() < bottomSpot) {
       menuDiv.removeClass('menutop').addClass('menubottom');
+      menu.css({"borderRadius": "10px 10px 0 0"});
     }
   }
 }, true);
@@ -284,15 +292,6 @@ $('.project').click(function(e){
   }
 })
 
-//------------------------
-// Resizing Hovers
-//------------------------
-function resizeHover() {
-    let projectWidth = $('.project').width().toString();
-    let projectHeight = $('.project').height().toString();
-    $('.bottom').css({ borderBottomWidth: projectHeight + 'px', borderLeftWidth: projectWidth + 'px' });
-    $('.top').css({ borderRightWidth: projectWidth + 'px', borderTopWidth: projectHeight + 'px' });
-}
 //------------------------
 // Contact Appear
 //------------------------
@@ -512,12 +511,12 @@ function circles() {
   let circleArray = [];
   function init() {
     circleArray = [];
-    for (let i =0; i<50; i++) {
+    for (let i =0; i<30; i++) {
       let radius = Math.random() * 10;
       let x = Math.random() * (canvas.width - radius*2) + radius;
       let y = Math.random() * (canvas.height - radius * 2) + radius;
-      let dx = (Math.random() - 0.5) * 3;
-      let dy = (Math.random() - 0.5 )* 3;
+      let dx = (Math.random() - 0.4) * 3;
+      let dy = (Math.random() - 0.4)* 3;
       circleArray.push(new Circle(x, y, dx, dy, radius));
     }
   }
@@ -539,13 +538,6 @@ function circles() {
 //------------------------
 
 function spirals() {
-  // (ctx, x, y, width, height, radius, fill, stroke)
-  // const canvas2 = document.getElementById('entrebgcanvas');
-  // const c2 = canvas2.getContext('2d');
-  // c2.fillStyle = 'blue';
-  // c2.fill();
-  // roundRect(c2, 0, 0, 50, 50, 10, 'blue', false);
-
  
   const canvas = document.getElementById('mycanvas');
   const c = canvas.getContext('2d');
@@ -562,10 +554,11 @@ function spirals() {
   };
 
   const colorArray = [
-    '#ff0000',
-    '#ffff00',
-    '#00ff00',
-    '#00ffff'
+    $('#studentb').css( "background-color" ),
+    $('#availableslice').css( "background-color" ),
+    $('#third').css( "background-color" ),
+    $('#inscriberslide').css( "background-color" ),
+    $('#teachingslide').css( "background-color" )
   ];
   
   addEventListener('mousemove', event => {
@@ -622,7 +615,7 @@ function spirals() {
     
     this.draw = () => {
       c.beginPath();
-      c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+      c.arc(this.x, this.y+30, this.radius, 0, Math.PI * 2, false);
       c.fillStyle = this.color;
       c.fill();
       c.closePath();
@@ -637,10 +630,10 @@ function spirals() {
     dotArray2 = [];
     dotArray3 = [];
     dotArray4 = []; 
-    bioCenter1 = new Array( bioDiv1.width() * 0.16, bioDiv1.height() / 1.8 );
-    bioCenter2 = new Array( bioDiv1.width() * 0.428, bioDiv1.height() / 1.8 );
-    bioCenter3 = new Array( bioDiv1.width() * 0.697, bioDiv1.height() / 1.8 );
-    bioCenter4 = new Array( bioDiv1.width() * 0.964, bioDiv1.height() / 1.8 );
+    bioCenter1 = new Array( bioDiv1.width() * 0.205, bioDiv1.height() / 1.8 );
+    bioCenter2 = new Array( bioDiv1.width() * 0.458, bioDiv1.height() / 1.8 );
+    bioCenter3 = new Array( bioDiv1.width() * 0.711, bioDiv1.height() / 1.8 );
+    bioCenter4 = new Array( bioDiv1.width() * 0.966, bioDiv1.height() / 1.8 );
 
 
     for(let i=0; i < numDots; i++) {
@@ -675,30 +668,4 @@ function spirals() {
   init();
   animate();
 
-}
-
-function roundRect(ctx, x, y, width, height, radius, fill, stroke) {
-  if (typeof stroke == "undefined" ) {
-    stroke = true;
-  }
-  if (typeof radius === "undefined") {
-    radius = 5;
-  }
-  ctx.beginPath();
-  ctx.moveTo(x + radius, y);
-  ctx.lineTo(x + width - radius, y);
-  ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
-  ctx.lineTo(x + width, y + height - radius);
-  ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
-  ctx.lineTo(x + radius, y + height);
-  ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
-  ctx.lineTo(x, y + radius);
-  ctx.quadraticCurveTo(x, y, x + radius, y);
-  ctx.closePath();
-  if (stroke) {
-    ctx.stroke();
-  }
-  if (fill) {
-    ctx.fill();
-  }        
 }

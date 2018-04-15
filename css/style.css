@@ -1,10 +1,10 @@
-@import url(http://fonts.googleapis.com/css?family=Fauna+One|Muli);
 @font-face {
-  font-family: 'indie_flowerregular';
-  src: url("IndieFlower-webfont.eot");
-  src: url("IndieFlower-webfont.eot?#iefix") format("embedded-opentype"), url("IndieFlower-webfont.woff2") format("woff2"), url("IndieFlower-webfont.woff") format("woff"), url("IndieFlower-webfont.ttf") format("truetype"), url("IndieFlower-webfont.svg#indie_flowerregular") format("svg");
-  font-weight: normal;
-  font-style: normal; }
+  font-family: 'Merriweather';
+  src: url("fonts/Merriweather-webfont.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Monserrat';
+  src: url("fonts/Montserrat-Regular.woff") format("woff"); }
 
 img {
   max-width: 100%; }
@@ -19,7 +19,7 @@ img {
   display: none !important; }
 
 * {
-  font-family: "indie_flowerregular", cursive; }
+  font-family: "Monserrat", sans-serif; }
 
 body {
   margin: 0; }
@@ -111,8 +111,7 @@ body {
   display: flex;
   justify-content: center;
   padding-top: 20px;
-  color: white;
-  font-family: "indie_flowerregular", cursive; }
+  font-family: "Merriweather", serif; }
   @media screen and (min-width: 800px) {
     #menu {
       flex-direction: column;
@@ -121,9 +120,6 @@ body {
       height: 80vh;
       margin-top: 10vh;
       padding-top: 0; } }
-
-a {
-  color: white; }
 
 .menunow {
   color: #3d427c;
@@ -149,7 +145,7 @@ a {
       padding: 5px 3px;
       border-radius: 10px; }
       .menutabs:hover {
-        font-size: 1.2em; }
+        font-size: 1.3em; }
         .menutabs:hover a {
           color: #3d427c; } }
 
@@ -186,7 +182,7 @@ a {
   margin-right: auto;
   padding-top: 30px;
   width: 100%;
-  width: 40%;
+  width: 50%;
   text-align: center;
   display: flex;
   align-items: center;
@@ -195,16 +191,15 @@ a {
 
 #nametitle {
   width: 100%;
-  font-family: "indie_flowerregular", cursive;
+  font-family: "Merriweather", serif;
   font-weight: bold;
   font-size: 3em; }
 
-#namemotto {
-  width: 100%;
-  font-family: "Lobster", cursive;
-  font-size: 1.5em;
-  margin-top: 20px;
-  color: black; }
+.languages {
+  width: 100%; }
+
+#languagetitle {
+  margin-top: 20px; }
 
 #choices {
   display: flex;
@@ -218,7 +213,6 @@ a {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  font-family: "Lobster", cursive;
   font-weight: bold;
   color: white; }
 
@@ -239,9 +233,6 @@ a {
 .slice {
   background: #3d427c;
   padding: 25px; }
-
-#bioslice {
-  background-color: #3d427c; }
 
 #bioinfo {
   display: flex;
@@ -270,36 +261,34 @@ a {
   width: 100%;
   font-size: 2.7em;
   color: black;
-  font-family: "Lobster", cursive; }
+  font-family: "Merriweather", serif; }
 
 #quotename {
   font-size: 1.5em;
   text-align: right;
   margin-top: 20px;
-  font-family: "Lobster", cursive; }
+  font-family: "Merriweather", serif; }
 
 #biopersonal {
   display: flex;
   align-items: center;
   position: absolute;
-  top: 25px;
+  top: 0;
   left: 0;
   flex-direction: column;
-  text-align: left; }
+  text-align: left;
+  justify-content: center; }
 
 #biotop {
   display: flex;
   flex-direction: row; }
 
-#biotext {
-  margin-bottom: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: left; }
-
 #biotextw {
   padding-right: 50px;
   font-size: 1.2em; }
+
+#asa {
+  margin-top: 15px; }
 
 #portimage {
   max-width: 100%; }
@@ -315,6 +304,8 @@ a {
   text-align: left; }
   #thanksright a {
     color: #7f7f7f; }
+    #thanksright a:hover {
+      color: #ed1c24; }
 
 #thanksleft {
   width: 15%;
@@ -328,8 +319,8 @@ a {
 #historyslice {
   background-color: white; }
 
-#protitle {
-  font-family: "indie_flowerregular", cursive;
+.protitle {
+  font-family: "Merriweather", serif;
   width: 100%;
   text-align: center;
   font-size: 3em;
@@ -379,13 +370,15 @@ a {
   text-align: center;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   color: #000000;
   padding: 10px;
   font-weight: bold;
   background: rgba(255, 255, 255, 0.6);
   height: 80px;
-  font-size: 1.2em; }
+  font-size: 1.2em;
+  font-family: "Merriweather", serif; }
 
 .historytext {
   padding: 0px 20px;
@@ -395,7 +388,7 @@ a {
   overflow: hidden;
   height: 200px;
   margin-bottom: 15px;
-  font-size: 0.9em; }
+  font-size: 0.8em; }
 
 .historydates {
   font-weight: normal;
@@ -474,10 +467,10 @@ a {
     flex-wrap: wrap;
     font-size: 0em;
     background-color: transparent;
-    font-family: "indie_flowerregular", cursive;
     transition: all 800ms; }
     .project .protext .protextt {
-      width: 100%; }
+      width: 100%;
+      font-family: "Merriweather", serif; }
     .project .protext .protextw {
       width: 100%;
       padding: 10px; }
@@ -549,7 +542,7 @@ a {
 
 #overlaytitle {
   font-size: 3em;
-  font-family: 'Lobster', cursive;
+  font-family: "Merriweather", serif;
   text-decoration: underline;
   margin-bottom: 50px;
   text-align: center; }
@@ -615,14 +608,14 @@ a {
   #resumehalf .buttonstyle {
     background-color: #4c4c4c;
     border: 2px solid #b2b2b2;
-    color: #c8ccd1; }
+    color: white; }
     #resumehalf .buttonstyle:hover {
       background-color: #970c11; }
 
 #update {
   font-size: 0.4em;
-  margin-top: 10px;
-  margin-right: 10px; }
+  margin-right: 10px;
+  margin-bottom: 5px; }
 
 #contactslice {
   display: none;
@@ -686,11 +679,14 @@ a {
   width: 35%;
   text-align: center;
   font-size: 3.5em;
-  color: #7f7f7f; }
+  color: #7f7f7f;
+  cursor: pointer; }
   .contacttype .footertext {
     font-size: .35em;
     visibility: hidden;
-    font-weight: bold; }
+    font-weight: bold;
+    font-family: "Merriweather", serif;
+    margin-top: 5px; }
   .contacttype:hover {
     color: #970c11; }
     .contacttype:hover .footertext {
@@ -718,8 +714,7 @@ a {
 #mainform {
   width: 960px;
   margin: 20px auto;
-  padding-top: 20px;
-  font-family: 'Fauna One', serif; }
+  padding-top: 20px; }
 
 #form {
   border-radius: 2px;
@@ -746,7 +741,6 @@ input {
 input[type=button] {
   background-color: #123456;
   border: 1px solid white;
-  font-family: 'Fauna One', serif;
   font-Weight: bold;
   font-size: 18px;
   color: white; }
