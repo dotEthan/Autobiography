@@ -121,7 +121,7 @@ body {
   padding-top: 20px;
   color: white;
   font-family: "Raleway", serif;
-  background: rgba(127, 127, 127, 0.7); }
+  background: rgba(134, 194, 50, 0.7); }
   @media screen and (min-width: 800px) {
     #menu {
       justify-content: space-between;
@@ -136,7 +136,7 @@ body {
       transition: all 1s; } }
 
 .menunow {
-  color: #0dc9f7;
+  color: #d1c7ba;
   font-size: 1.2em;
   transition: all 1s;
   font-weight: bold; }
@@ -161,7 +161,7 @@ body {
       .menutabs:hover {
         font-size: 1.3em; }
         .menutabs:hover a {
-          color: #ed1c24; } }
+          color: #e66c0b; } }
 
 .faicon {
   font-size: 1.5em; }
@@ -182,14 +182,14 @@ body {
 
 #splashcont {
   height: 100vh;
-  background-image: url("../images/body.jpg");
+  background-image: url("../images/entrebg.jpg");
   background-size: cover;
   background-position: center;
   height: 100vh;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column-reverse;
-  justify-content: flex-end; }
+  flex-direction: column;
+  justify-content: space-between; }
 
 #titlecard {
   margin-left: auto;
@@ -201,7 +201,8 @@ body {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  color: white; }
+  color: white;
+  margin-top: 30px; }
 
 #nametitle {
   width: 100%;
@@ -219,17 +220,26 @@ body {
   display: flex;
   justify-content: space-around;
   width: 80%;
-  margin: 0 auto 30px auto;
+  margin: 0 auto 150px auto;
   align-items: center; }
 
 .lego {
-  width: 100px;
-  background: #0dc9f7;
+  height: 80px;
+  width: 80px;
+  background-image: url("../images/reading.svg");
   background-size: cover;
   margin-top: 20px;
   cursor: pointer;
   padding: 25px;
   border-radius: 5px; }
+
+#entreb {
+  background-image: url("../images/teacher.svg");
+  background-size: cover; }
+
+#programmerb {
+  background-image: url("../images/learning.svg");
+  background-size: cover; }
 
 .choicesbox {
   display: flex;
@@ -238,7 +248,7 @@ body {
   color: white; }
 
 .slice {
-  background: #0dc9f7;
+  background: #d1c7ba;
   padding: 25px; }
 
 .protitle {
@@ -249,7 +259,7 @@ body {
   text-decoration: underline;
   margin: 20px 0;
   font-weight: bold;
-  color: #4c4c4c;
+  color: black;
   text-decoration: none; }
 
 #bioinfo {
@@ -320,9 +330,9 @@ body {
   padding: 5px;
   text-align: left; }
   #thanksright a {
-    color: #7f7f7f; }
+    color: #86C232; }
     #thanksright a:hover {
-      color: #ed1c24; }
+      color: #e66c0b; }
 
 #thanksleft {
   width: 15%;
@@ -334,7 +344,7 @@ body {
   flex-direction: column; }
 
 #historyslice {
-  background-color: white; }
+  background-color: #86C232; }
 
 .slider-container {
   margin-bottom: 20px; }
@@ -420,22 +430,22 @@ body {
 .nowcalled {
   font-size: 0.6em; }
   .nowcalled a {
-    color: #7f7f7f; }
+    color: #86C232; }
 
 #inscriberslide {
-  background: #3d427c; }
+  background: #6B7A8F; }
 
 #teachingslide {
-  background: #5f68c7; }
+  background: #F7C331; }
 
 #englishslide {
-  background: #3d427c; }
+  background: #6B7A8F; }
 
 #freggieslide {
-  background: #5f68c7; }
+  background: #F7C331; }
 
 #winterslide {
-  background: #3d427c; }
+  background: #6B7A8F; }
 
 #projectslice {
   position: relative; }
@@ -491,7 +501,7 @@ body {
       padding: 10px; }
   .project:hover .protext {
     font-size: 1.3em;
-    background-color: #ed1c24;
+    background-color: #e66c0b;
     margin: 15px 0; }
   .project:hover .protextw {
     font-size: 0.6em; }
@@ -583,7 +593,7 @@ body {
   height: 300px;
   display: flex;
   padding: 0px;
-  background-color: #999999;
+  background-color: #9ed354;
   width: 100%; }
 
 #availablehalf {
@@ -596,35 +606,35 @@ body {
   justify-content: space-between; }
 
 .buttonstyle {
-  background-color: #7f7f7f;
+  background-color: #86C232;
   padding: 15px;
   border-radius: 10px;
   font-size: 0.7em;
-  border: 2px solid #191919;
-  color: #191919;
+  border: 2px solid #162008;
+  color: #162008;
   cursor: pointer; }
   .buttonstyle:hover {
-    background-color: #ed1c24; }
+    background-color: #e66c0b; }
 
 #resumehalf {
   width: 50%;
   padding: 50px 50px 50px 100px;
-  background-color: #4c4c4c;
+  background-color: #6a9928;
   color: white;
   text-align: right;
   font-size: 1.5em;
-  background: linear-gradient(to top right, transparent 50%, #4c4c4c 50%) no-repeat, linear-gradient(to top right, transparent 0.1%, #4c4c4c 0.1%) no-repeat;
+  background: linear-gradient(to top right, transparent 50%, #6a9928 50%) no-repeat, linear-gradient(to top right, transparent 0.1%, #6a9928 0.1%) no-repeat;
   background-size: 60.5% 100%, 40% 100%;
   background-position: 0% 0%, 100% 0%;
   display: flex;
   flex-direction: column;
   justify-content: space-between; }
   #resumehalf .buttonstyle {
-    background-color: #4c4c4c;
-    border: 2px solid #b2b2b2;
+    background-color: #4e711d;
+    border: 2px solid #b5dd7d;
     color: white; }
     #resumehalf .buttonstyle:hover {
-      background-color: #970c11; }
+      background-color: #e66c0b; }
 
 #update {
   font-size: 0.4em;
@@ -680,7 +690,7 @@ body {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  background-color: #0dc9f7 !important;
+  background-color: #d1c7ba !important;
   height: 150px !important;
   align-items: center; }
 
@@ -693,7 +703,7 @@ body {
   width: 35%;
   text-align: center;
   font-size: 3.5em;
-  color: #7f7f7f;
+  color: #86C232;
   cursor: pointer; }
   .contacttype .footertext {
     font-size: .35em;
@@ -702,10 +712,10 @@ body {
     font-family: "Raleway", serif;
     margin-top: 5px; }
   .contacttype:hover {
-    color: #de1219; }
+    color: #ce610a; }
     .contacttype:hover .footertext {
       visibility: visible;
-      color: #de1219; }
+      color: #ce610a; }
 
 .fi {
   display: flex;
@@ -720,13 +730,13 @@ body {
   color: black; }
 
 .footlink a {
-  color: #7f7f7f;
+  color: #86C232;
   font-weight: bold; }
   .footlink a:hover {
-    color: #ed1c24; }
+    color: #e66c0b; }
 
 #third {
-  background: #ed1c24;
+  background: #e66c0b;
   display: none; }
 
 #mainform {

@@ -20,8 +20,6 @@ $projectoverlayradius: 5px;
 $headertext:'indie_flowerregular', cursive;
 $regulartext: $headertext;
 $menutextc: white;
-$menuiconsize: 1.5em;
-$menufontsize: 0.9em;
 $menubackground: $secondcolor;
 $smallmenupaddingtop: 20px;
 $frontimage: url('../images/body.jpg');
@@ -191,6 +189,10 @@ a {
     border-radius: 10px;
     font-size: 0.8em;
 
+    a {
+      text-decoration: none;
+    }
+
     &:hover {
       font-size: 1.1em;
       
@@ -203,15 +205,11 @@ a {
 }
 
 .faicon{
-  font-size: $menuiconsize;
+  font-size: 1.5;
 }
 
 .menutitle {
-  font-size: $menufontsize;
-
-  a {
-    text-decoration: none;
-  }
+  font-size: 0.9em;
 }
 
 #contactme {
@@ -273,7 +271,7 @@ a {
 
 
 .choicesbox {
-  height: 44px;
+  height: 46px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -765,7 +763,7 @@ a {
     color: white;
 
     &:hover {
-      background-color: darken($thirdcolor,20%);
+      background-color: $thirdcolor;
     }
   }
 }

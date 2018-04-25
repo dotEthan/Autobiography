@@ -193,24 +193,36 @@ function resizeDist() {
   bioDist = $('#bioslice').offset().top;
   projectDist = $('#projectslice').offset().top;
 }
+
+function addRemove(nameClass, atClass) {
+  let menuTabArray = $('.menutabs');
+  for (let i=0; i< menuTabArray.length; i++) {
+    // menuTabArray[i].removeClass(nameClass);
+    if (menuTabArray[i].id == atClass){
+      menuTabArray[i].addClass(nameClass);
+    }
+  }
+}
   
 // jQuery  UI Animations?
 document.addEventListener('scroll', function () {
-  const menuTabs = $('.menutabs a'); 
-  if ($(window).scrollTop() < bioDist) {
-    menuTabs.removeClass('menunow');
-  } else if ($(window).scrollTop() > bioDist && ($(window).scrollTop() < historyDist)) {
-    menuTabs.removeClass('menunow');
-    $('a[href="#bioslice"]').addClass('menunow');
-  } else if ($(window).scrollTop() > historyDist && $(window).scrollTop() < projectDist) {
-    menuTabs.removeClass('menunow');
-    $('a[href="#historyslice"]').addClass('menunow');
-  } else if ($(window).scrollTop() > projectDist) {
-    menuTabs.removeClass('menunow');
-    $('a[href="#projectslice"]').addClass('menunow');
-  }
 
-  if(theme=='entre') {
+  if(theme=='student') { 
+    const menuTabs = $('.menutabs a');
+
+    if ($(window).scrollTop() < bioDist) {
+      menuTabs.removeClass('menunow');
+    } else if ($(window).scrollTop() > bioDist && ($(window).scrollTop() < historyDist)) {
+      menuTabs.removeClass('menunow');
+      $('a[href="#bioslice"]').addClass('menunow');
+    } else if ($(window).scrollTop() > historyDist && $(window).scrollTop() < projectDist) {
+      menuTabs.removeClass('menunow');
+      $('a[href="#historyslice"]').addClass('menunow');
+    } else if ($(window).scrollTop() > projectDist) {
+      menuTabs.removeClass('menunow');
+      $('a[href="#projectslice"]').addClass('menunow');
+    }
+  } else if(theme=='entre') {
     const menuDiv = $('#menucontain');
     const menu = $('#menu');
     const bottomSpot = bioDist - parseInt(menuDiv.css('height'));
@@ -222,6 +234,19 @@ document.addEventListener('scroll', function () {
       menuDiv.removeClass('menutop').addClass('menubottom');
       menu.css({"borderRadius": "10px 10px 0 0"});
     }
+  } else {
+    const menuTabs = $('.menutabs a');
+    if ($(window).scrollTop() < bioDist) {
+      // menuTabs.removeClass('menudark');
+    } else if ($(window).scrollTop() > bioDist && ($(window).scrollTop() < historyDist)) {
+      addRemove('menudark', "biomenu");
+    } else if ($(window).scrollTop() > historyDist && $(window).scrollTop() < projectDist) {
+      // menuTabs.removeClass('menudark');
+      // $('a[href="#historyslice"]').addClass('menudark');
+    } else if ($(window).scrollTop() > projectDist) {
+      // menuTabs.removeClass('menudark');
+      // $('a[href="#projectslice"]').addClass('menudark');
+    }    
   }
 }, true);
 
@@ -511,9 +536,9 @@ function circles() {
   let circleArray = [];
   function init() {
     circleArray = [];
-    for (let i =0; i<30; i++) {
+    for (let i =0; i<30; i++) { 
       let radius = Math.random() * 10;
-      let x = Math.random() * (canvas.width - radius*2) + radius;
+      let x = Math.random() * ((canvas.width - radius*2) + radius)*2;
       let y = Math.random() * (canvas.height - radius * 2) + radius;
       let dx = (Math.random() - 0.4) * 3;
       let dy = (Math.random() - 0.4)* 3;
@@ -546,7 +571,6 @@ function spirals() {
   const numDots = 5;
   const outDistance = randomInt(20, 40);
   const inDistance = 5;
-  let testLineY;
   
   const mouse = {
     x: innerWidth/2,
@@ -565,9 +589,6 @@ function spirals() {
     mouse.x = event.clientX; //Changeing?
     mouse.y = event.clientY;
     
-    if (theme == 'entre') {
-      testLineY = event.pageY - ($('#bioslice').position().top - 150);
-    }
   });
   
   addEventListener('resize', () => {
@@ -596,6 +617,8 @@ function spirals() {
     let origDist = JSON.parse(JSON.stringify(this.distance))
     
     this.update = () => {
+      console.log(mouse.y);
+      let testLineY = mouse.y;
       if (testLineY - y < 30 && testLineY - y > -60 && mouse.x - x < 40 && x - mouse.x < 40) {
         if (this.distance > inDistance) {
           this.distance = this.distance - 2;
