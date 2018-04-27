@@ -345,7 +345,8 @@ a {
   display:flex;
   align-items: center;
   position: absolute;
-  top: 0;
+  top: 50%;
+  transform: translateY(-50%);
   left: 0;
   flex-direction: column;
   text-align: left;
@@ -362,7 +363,81 @@ a {
 }
 
 #asa {
-  margin-top: 15px;
+  margin: 15px 0;
+
+#projectoverlay {
+  position: fixed;
+  top:50%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  max-height: 800px;
+  width: 80%;
+  background-color: rgba(255,255,255,0.9);
+  z-index: 9999;
+  padding: 30px;
+}
+
+.allovers {
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#closeover {
+  width: 50px;
+  height: 50px;
+  position: absolute; 
+  top: -20px;
+  right: -20px;
+  font-size: 2em;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: red;
+  background: white;
+  border: 1px solid grey;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+#overlayleft {
+  width: 50%;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px;
+}
+
+#overlaytitle{
+  font-size: 3em;
+  font-family: $headertext;
+  text-decoration: underline;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+#overlaytext {
+  font-size: 1.3em;
+}
+
+#overlayskills {
+  margin-top: 30px;
+  font-size: 1.3em;
+  margin-bottom: 30px;
+}
+
+#overlayright {
+  width: 50%;
+  border: 2px dashed #96858F;
+  
+  img {
+    max-width: 95%;
+    max-height: 100%;
+    margin: 10px;
+  }
+}
 }
 
 #portimage {
@@ -373,6 +448,7 @@ a {
   width: 80%;
   display: flex;
   justify-content: center;
+  margin-top: 10px;
 }
 
 #thanksright {
@@ -639,12 +715,12 @@ a {
   position: fixed;
   top:50%;
   left: 55%;
-  transform: translate(-50%, 0);
-  height: 600px;
+  transform: translate(-50%, -50%);
+  max-height: 800px;
   width: 80%;
-  margin-top:-300px;
   background-color: rgba(255,255,255,0.9);
   z-index: 9999;
+  padding: 30px;
 }
 
 .allovers {
@@ -674,15 +750,15 @@ a {
 
 #overlayleft {
   width: 50%;
-  padding: 40px;
   display:flex;
   flex-direction: column;
   justify-content: center;
+  padding: 15px;
 }
 
 #overlaytitle{
   font-size: 3em;
-  font-family: 'Lobster', cursive;
+  font-family: $headertext;
   text-decoration: underline;
   margin-bottom: 50px;
   text-align: center;
@@ -698,16 +774,19 @@ a {
   margin-bottom: 30px;
 }
 
+#overlayurl a {
+  color: $thirdcolor;
+  font-size: 1.2em;
+}
+
 #overlayright {
   width: 50%;
-  padding: 40px;
-  margin-bottom: 20px;
+  border: 2px dashed #96858F;
   
   img {
-    max-width: 100%;
+    max-width: 95%;
     max-height: 100%;
-    border: 2px dashed #96858F;
-    padding: 10px;
+    margin: 10px;
   }
 }
 

@@ -2,6 +2,8 @@
 
 // USING?
 
+// Call everything same order?
+
 
 
 //------------------------
@@ -83,9 +85,8 @@ $('#studentb').click(function() {
   setTextContent(languageChange, 'Languages: English'); 
   setTextContent(languageChange2, 'Languages: Lego');
   setTextContent(asaChange, 'As a Student:');
-  setTextContent(bioChange, 'I grew up in small town Ontario, than big city BC, then small town BC, then small town Manitoba, than back to BC for a couple cities and then back to Ontario, we moved a lot. I think it is one of the reasons I find I am able to easily adapt to the various environments I find myself in.');
-
-  setTextContent(bioChange, '');
+  setTextContent(bioChange, 'I grew up in small town Ontario, than big city BC, then small town BC, then small town Manitoba, than back to BC for a couple cities and then back to Ontario. We moved a lot. It is one of the reasons I am able to easily adapt to the various environments left takes me to.');
+  $("#personalimg").attr("src","../images/bios.jpg");
   timeOut = setTimeout(circles, 1000);
 });
 
@@ -98,6 +99,7 @@ $('#entreb').click(function() {
     pageDelay(showPage);
     entreDone++;
   }
+  $('link[rel=stylesheet]').attr({href : 'css/entrestyle.css'});
   $('#entrebgcanvas').css({'display': 'block'});
   $('#mycanvas').css({'display': 'block'});
   setTextContent(textChange, 'was designed and built to facilitate entrepreneurial success. If you want a leg up on the competition,');
@@ -106,8 +108,8 @@ $('#entreb').click(function() {
   setTextContent(languageChange, 'Languages: English, Chinese');
   setTextContent(languageChange2, 'Languages: HTML, CSS, Wordpress');
   setTextContent(asaChange, 'As an Entrepreneur:');
-  setTextContent(bioChange, 'I spent my 20s in China, learning a new culture, language and how to develop long term plans and put them into action. I had numerous jobs from Bar Manager to Radio Host. And I developed and opened a number of different entreprenerial ventures that pushed me to learn web development, leadership skills and to hone my customer service techniques.');
-  $('link[rel=stylesheet]').attr({href : 'css/entrestyle.css'});
+  setTextContent(bioChange, 'I spent my 20s in China, learning a new culture, language and how to develop long term plans and put them into action. I had numerous jobs including Bar Manager, University professor, Radio Host and more. And I developed and opened a number of different entreprenerial ventures that pushed me to learn web development, leadership skills and to hone my customer service techniques.');
+  $("#personalimg").attr("src","../images/bioe.jpg");
   timeOut = setTimeout(spirals, 1000);
   let timeOut2 = setTimeout(change, 1000);
 });
@@ -117,6 +119,7 @@ function change() {
 }
   
 $('#programmerb').click(function() {
+  $('link[rel=stylesheet]').attr({href : 'css/style.css'}); 
   $('#entrebgcanvas').css({'display': 'none'});
   $('#mycanvas').css({'display': 'none'});
   window.cancelAnimationFrame(animating); 
@@ -127,9 +130,9 @@ $('#programmerb').click(function() {
   setTextContent(languageChange2, 'Languages: Javascript, React, Jquery, HTML, CSS, SCSS, Wordpress, Liquid, Gulp, Git, npm');
   setTextContent(asaChange, 'As a Programmer:');
   setTextContent(bioChange, 'Since returning to Canada I have opened two successful entreprenuerial ventures and learned a number of new langauges including Javascript, SCSS, React, Liquid and more. I\'ve devoted the last six months to brushing up on HTML 5, SCSS, Javascript ES6 and learning React to ensure I have a firm grasp of the tools needed to succeed in Front End Development or Javavscript programming.');
+  $("#personalimg").attr("src","../images/biop.jpg");
   pageDelay(showPage);
   $('#particles-js').css({'display': 'block'});
-  $('link[rel=stylesheet]').attr({href : 'css/style.css'}); 
   theme = 'programmer';
   timeOut = setTimeout(party, 1000); 
 });
@@ -159,30 +162,57 @@ $('#biocontain').hover(function () {
 
 }); 
 
-$('.historytext').stop().animate({
-  'opacity': 0
-}, 0);
+//------------------------ 
+// History Hover
+//------------------------
+
+// $('.historytext').stop().animate({
+//   'opacity': 0
+// }, 0);
 
 $('.flexbox-slide').hover(function (e) {
-  let icons = $(this).find('.historyicons');
-  let text = $(this).find('.historytext');
+  // const icons = $(this).find('.historyicons');
+  // const text = $(this).find('.historytext');
+  const slideArray = $('.flexbox-slide');
 
-  icons.stop().animate({
-      'opacity': 0
-  }, 500);
-  text.stop().animate({
-      'opacity': 1
-  }, 1000);
+  // const textBlock = $(this).find('textblock');
+
+  // icons.stop().animate({
+  //     'opacity': 0
+  // }, 500);
+  // textBlock.stop().animate({
+  //     'height': 500
+  // }, 500);
+
+  // $(this).find("textblock").toggleClass('open');
+
+  for(let i=0; i<slideArray.length; i++) {
+    if (slideArray[i].id !== this.id) {
+      slideArray[i].style.fontSize = '0.5em';
+    }
+  }
+
 }, function () {
-  let icons = $(this).find('.historyicons');
-  let text = $(this).find('.historytext');
-  icons.stop().animate({
-      'opacity': 1
-  }, 1000);
-  text.stop().animate({
-      'opacity': 0
-  }, 1000);
+  // const icons = $(this).find('.historyicons');
+  // const text = $(this).find('.historytext');
+  const slideArray = $('.flexbox-slide');
 
+  // const textBlock = $(this).find('textblock');
+  
+  // icons.stop().animate({
+  //     'opacity': 1
+  // }, 500);
+  // textBlock.stop().animate({
+  //     'height': 0
+  // }, 500);
+
+  // $(this).find("textblock").toggleClass('open');
+
+  for(let i=0; i<slideArray.length; i++) {
+    if (slideArray[i].id !== this.id) {
+      slideArray[i].style.fontSize = '1em';
+    }
+  }
 }); 
 
 //-----------------------
@@ -195,13 +225,13 @@ function resizeDist() {
 }
 
 function addRemove(nameClass, atClass) {
-  let menuTabArray = $('.menutabs');
-  for (let i=0; i< menuTabArray.length; i++) {
-    // menuTabArray[i].removeClass(nameClass);
-    if (menuTabArray[i].id == atClass){
-      menuTabArray[i].addClass(nameClass);
-    }
-  }
+//   let menuTabArray = $('.menutabs');
+//   for (let i=0; i< menuTabArray.length; i++) {
+//     // menuTabArray[i].removeClass(nameClass);
+//     if (menuTabArray[i].id == atClass){
+//       menuTabArray[i].addClass(nameClass);
+//     }
+//   }
 }
   
 // jQuery  UI Animations?
@@ -377,7 +407,7 @@ function party() {
         }
       },
       "color": {
-        "value": "#ff00ff"
+        "value": "#7d1577"
       },
       "shape": {
         "type": "circle",
@@ -409,7 +439,7 @@ function party() {
       "line_linked": {
         "enable": true,
         "distance": 150,
-        "color": "#ff00ff",
+        "color": "#0000ff",
         "opacity": 0.5,
         "width": 1
       },
@@ -617,9 +647,11 @@ function spirals() {
     let origDist = JSON.parse(JSON.stringify(this.distance))
     
     this.update = () => {
-      console.log(mouse.y);
-      let testLineY = mouse.y;
-      if (testLineY - y < 30 && testLineY - y > -60 && mouse.x - x < 40 && x - mouse.x < 40) {
+      let scrollTop     = $(window).scrollTop(),
+          elementOffset = $('#menu').offset().top,
+          eleDistance      = (elementOffset - scrollTop);
+
+      if (mouse.y - (eleDistance + y) < 30 && mouse.y - (eleDistance + y) > -60 && mouse.x - x < 40 && x - mouse.x < 40) {
         if (this.distance > inDistance) {
           this.distance = this.distance - 2;
         }
@@ -653,10 +685,10 @@ function spirals() {
     dotArray2 = [];
     dotArray3 = [];
     dotArray4 = []; 
-    bioCenter1 = new Array( bioDiv1.width() * 0.205, bioDiv1.height() / 1.8 );
-    bioCenter2 = new Array( bioDiv1.width() * 0.458, bioDiv1.height() / 1.8 );
-    bioCenter3 = new Array( bioDiv1.width() * 0.711, bioDiv1.height() / 1.8 );
-    bioCenter4 = new Array( bioDiv1.width() * 0.966, bioDiv1.height() / 1.8 );
+    bioCenter1 = new Array( bioDiv1.width() * 0.16, bioDiv1.height() / 1.8 );
+    bioCenter2 = new Array( bioDiv1.width() * 0.426, bioDiv1.height() / 1.8 );
+    bioCenter3 = new Array( bioDiv1.width() * 0.695, bioDiv1.height() / 1.8 );
+    bioCenter4 = new Array( bioDiv1.width() * 0.964, bioDiv1.height() / 1.8 );
 
 
     for(let i=0; i < numDots; i++) {

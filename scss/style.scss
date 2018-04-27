@@ -36,7 +36,7 @@ $menutextc: white;
 $menuiconsize: 1.5em;
 $menufontsize: 0.9em;
 $smallmenupaddingtop: 20px;
-$frontimage: url('../images/programmer.jpg');
+$frontimage: url('../images/programmera.jpg');
 $biowritingc: black;
 $biowritings: 2.7em;
 $bioquestions: 2.5em;
@@ -252,7 +252,7 @@ body {
   height: 100vh;
   background-image: $frontimage;
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
   height: 100vh;
   display: flex;
   flex-wrap: wrap;
@@ -263,8 +263,7 @@ body {
 #titlecard {
   margin-left: auto; 
   margin-right: auto; 
-  padding-top: 30px;
-  width: 100%;
+  padding-top: 130px;
   width: 50%;
   text-align: center;
   display: flex;
@@ -285,7 +284,7 @@ body {
 }
 
 #languagetitle {
-  margin-top: 20px;
+  margin-top: 270px;
 }
     
 #choices {
@@ -388,10 +387,10 @@ body {
 
 #biopersonal {
   display:flex;
-  // padding: 50px;
   align-items: center;
   position: absolute;
-  top: 0;
+  top: 50%;
+  transform: translateY(-50%);
   left: 0;
   flex-direction: column;
   text-align: left;
@@ -409,7 +408,7 @@ body {
 }
 
 #asa {
-  margin-top: 15px;
+  margin: 15px 0;
 }
 
 #portimage {
@@ -420,6 +419,7 @@ body {
   width: 80%;
   display: flex;
   justify-content: center;
+  margin-top: 10px;
 }
 
 #thanksright {
@@ -463,10 +463,6 @@ body {
   text-decoration: none;
 }
 
-//----------------------------
-// History Slider
-//----------------------------
-
 .slider-container {
   margin-bottom: 20px;
 }
@@ -475,7 +471,6 @@ body {
   display: flex;
   width: 90%;
   height: 500px;
-  // visibility: hidden;
   margin-right: auto;
   margin-left: auto;
 }
@@ -492,11 +487,17 @@ body {
   visibility: visible;
   display: flex;
   flex-direction: column-reverse;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
 
 
   &:hover {
     width: 80%;
+
+    .historytext {
+      height: 200px;
+      transition: height, 0.5s linear;
+    }
   }
 }
 
@@ -504,7 +505,6 @@ body {
   width: 90%;
   margin: 10px auto 10px;
   z-index: 2;
-  height: 500px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -519,7 +519,6 @@ body {
   flex-wrap: wrap;
   color: #000000;
   padding: 10px;
-  font-weight: bold;
   background: rgba(255,255,255,0.6);
   height: 80px;
   font-size: 1.2em;
@@ -532,12 +531,15 @@ body {
   text-align: left;
   background: rgba(255,255,255,0.6);
   overflow: hidden;
-  height: 200px;
-  margin-bottom: 15px;
+  height: 0px;
+  margin-bottom: 10px;
   font-size: 0.8em;
+  transition: none;
+  transition: height, 0.5s linear;
 }
 
 .historydates {
+  font-size: 0.7em;
   font-weight: normal;
   width: 100%;
 }
@@ -548,7 +550,7 @@ body {
 
 .historylogo {
   max-width: 200px; 
-  margin: 20px auto 20px;  
+  // margin: 20px auto 20px;  
 }
 
 .nowcalled {
@@ -648,14 +650,14 @@ body {
   &:hover {
     
     .protext {
-      font-size: 1.3em;
+      font-size: 1.1em;
       background-color: $thirdcolor;
       margin: 15px 0;
       
     }
     
     .protextw {
-      font-size: 0.6em;
+      font-size: 0.7em;
     }
 
     .protextcont {
@@ -686,12 +688,12 @@ body {
   position: fixed;
   top:50%;
   left: 55%;
-  transform: translate(-50%, 0);
-  height: 600px;
+  transform: translate(-50%, -50%);
+  max-height: 800px;
   width: 80%;
-  margin-top:-300px;
   background-color: rgba(255,255,255,0.9);
   z-index: 9999;
+  padding: 30px;
 }
 
 .allovers {
@@ -721,10 +723,10 @@ body {
 
 #overlayleft {
   width: 50%;
-  padding: 40px;
   display:flex;
   flex-direction: column;
   justify-content: center;
+  padding: 15px;
 }
 
 #overlaytitle{
@@ -745,16 +747,19 @@ body {
   margin-bottom: 30px;
 }
 
+#overlayurl a {
+  color: $thirdcolor;
+  font-size: 1.2em;
+}
+
 #overlayright {
   width: 50%;
-  padding: 40px;
-  margin-bottom: 20px;
+  border: 2px dashed #96858F;
   
   img {
-    max-width: 100%;
+    max-width: 95%;
     max-height: 100%;
-    border: 2px dashed #96858F;
-    padding: 10px;
+    margin: 10px;
   }
 }
 
@@ -770,7 +775,7 @@ body {
 #availablehalf {
   width: 50%;
   padding: 50px 0 50px 50px;
-  font-size: 1.5em;
+  font-size: 1.3em;
   text-align: left;
   display: flex;
   flex-direction: column;
@@ -796,7 +801,7 @@ body {
   padding: 50px 50px 50px 100px;
   background-color: darken($secondcolor,20%);
   text-align: right;
-  font-size: 1.5em;
+  font-size: 1.3em;
   background: linear-gradient(to top right, transparent 50%, darken($secondcolor,10%) 50%) no-repeat, linear-gradient(to top right, transparent 0.1%, darken($secondcolor,10%) 0.1%) no-repeat;
   background-size: 60.5% 100%, 40% 100%;
   background-position: 0% 0%, 100% 0%;

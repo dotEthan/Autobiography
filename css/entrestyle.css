@@ -136,7 +136,7 @@ body {
       transition: all 1s; } }
 
 .menunow {
-  color: #d1c7ba;
+  color: #e0e6ed;
   font-size: 1.2em;
   transition: all 1s;
   font-weight: bold; }
@@ -158,6 +158,8 @@ body {
       margin: 15px 0;
       z-index: 99;
       padding: 5px 3px; }
+      .menutabs a {
+        text-decoration: none; }
       .menutabs:hover {
         font-size: 1.3em; }
         .menutabs:hover a {
@@ -248,7 +250,7 @@ body {
   color: white; }
 
 .slice {
-  background: #d1c7ba;
+  background: #e0e6ed;
   padding: 25px; }
 
 .protitle {
@@ -301,7 +303,8 @@ body {
   display: flex;
   align-items: center;
   position: absolute;
-  top: 0;
+  top: 50%;
+  transform: translateY(-50%);
   left: 0;
   flex-direction: column;
   text-align: left; }
@@ -315,7 +318,7 @@ body {
   font-size: 1.2em; }
 
 #asa {
-  margin-top: 15px; }
+  margin: 15px 0; }
 
 #portimage {
   max-width: 100%; }
@@ -371,6 +374,13 @@ body {
   justify-content: space-between; }
   .flexbox-slide:hover {
     width: 80%; }
+    .flexbox-slide:hover .historyicons {
+      opacity: 0;
+      visibility: hidden;
+      transition: visibility 0s linear 0.3s, opacity, 0.3s linear; }
+    .flexbox-slide:hover .historytext {
+      height: 200px;
+      transition: height, 0.5s linear; }
 
 .textblock {
   width: 90%;
@@ -379,7 +389,6 @@ body {
   height: 500px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   position: relative; }
 
 .historytitles {
@@ -390,27 +399,28 @@ body {
   flex-wrap: wrap;
   color: #000000;
   padding: 10px;
-  font-weight: bold;
   background: rgba(255, 255, 255, 0.6);
   height: 80px;
   font-size: 1.2em;
   font-family: "Raleway", serif; }
 
 .historytext {
-  padding: 10px 20px;
+  padding: 0 20px;
   display: block;
   text-align: left;
   background: rgba(255, 255, 255, 0.6);
   overflow: hidden;
-  height: 200px;
+  height: 0px;
   margin-bottom: 15px;
-  font-size: 0.8em; }
+  font-size: 0.8em;
+  transition: height, 0.5s linear; }
 
 .historydates {
   font-weight: normal;
   width: 100%; }
 
 .historyicons {
+  opacity: 1;
   width: 90px;
   height: 200px;
   margin-right: auto;
@@ -421,7 +431,8 @@ body {
   position: absolute;
   top: 100px;
   left: 50%;
-  transform: translateX(-50%); }
+  transform: translateX(-50%);
+  transition: opacity 0.3s; }
 
 .historylogo {
   max-width: 200px;
@@ -500,11 +511,11 @@ body {
       width: 100%;
       padding: 10px; }
   .project:hover .protext {
-    font-size: 1.3em;
+    font-size: 1.1em;
     background-color: #e66c0b;
     margin: 15px 0; }
   .project:hover .protextw {
-    font-size: 0.6em; }
+    font-size: 0.7em; }
   .project:hover .protextcont {
     background: rgba(255, 255, 255, 0.6); }
 
@@ -528,12 +539,12 @@ body {
   position: fixed;
   top: 50%;
   left: 55%;
-  transform: translate(-50%, 0);
-  height: 600px;
+  transform: translate(-50%, -50%);
+  max-height: 800px;
   width: 80%;
-  margin-top: -300px;
   background-color: rgba(255, 255, 255, 0.9);
-  z-index: 9999; }
+  z-index: 9999;
+  padding: 30px; }
 
 .allovers {
   display: flex;
@@ -560,14 +571,15 @@ body {
 
 #overlayleft {
   width: 50%;
-  padding: 40px;
   display: flex;
   flex-direction: column;
-  justify-content: center; }
+  justify-content: center;
+  padding: 15px; }
 
 #overlaytitle {
   font-size: 3em;
   font-family: "Raleway", serif;
+  text-decoration: underline;
   margin-bottom: 50px;
   text-align: center; }
 
@@ -579,15 +591,17 @@ body {
   font-size: 1.3em;
   margin-bottom: 30px; }
 
+#overlayurl a {
+  color: #e66c0b;
+  font-size: 1.2em; }
+
 #overlayright {
   width: 50%;
-  padding: 40px;
-  margin-bottom: 20px; }
+  border: 2px dashed #96858F; }
   #overlayright img {
-    max-width: 100%;
+    max-width: 95%;
     max-height: 100%;
-    border: 2px dashed #96858F;
-    padding: 10px; }
+    margin: 10px; }
 
 #availableslice {
   height: 300px;
@@ -690,7 +704,7 @@ body {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  background-color: #d1c7ba !important;
+  background-color: #e0e6ed !important;
   height: 150px !important;
   align-items: center; }
 

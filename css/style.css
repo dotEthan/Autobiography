@@ -181,9 +181,9 @@ body {
 
 #splashcont {
   height: 100vh;
-  background-image: url("../images/programmer.jpg");
+  background-image: url("../images/programmera.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
   height: 100vh;
   display: flex;
   flex-wrap: wrap;
@@ -193,8 +193,7 @@ body {
 #titlecard {
   margin-left: auto;
   margin-right: auto;
-  padding-top: 30px;
-  width: 100%;
+  padding-top: 130px;
   width: 50%;
   text-align: center;
   display: flex;
@@ -212,7 +211,7 @@ body {
   width: 100%; }
 
 #languagetitle {
-  margin-top: 20px; }
+  margin-top: 270px; }
 
 #choices {
   display: flex;
@@ -296,7 +295,8 @@ body {
   display: flex;
   align-items: center;
   position: absolute;
-  top: 0;
+  top: 50%;
+  transform: translateY(-50%);
   left: 0;
   flex-direction: column;
   text-align: left;
@@ -311,7 +311,7 @@ body {
   font-size: 1.2em; }
 
 #asa {
-  margin-top: 15px; }
+  margin: 15px 0; }
 
 #portimage {
   max-width: 100%; }
@@ -319,7 +319,8 @@ body {
 #biobottom {
   width: 80%;
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  margin-top: 10px; }
 
 #thanksright {
   width: 85%;
@@ -375,15 +376,18 @@ body {
   visibility: visible;
   display: flex;
   flex-direction: column-reverse;
-  justify-content: space-between; }
+  justify-content: space-around;
+  align-items: center; }
   .flexbox-slide:hover {
     width: 80%; }
+    .flexbox-slide:hover .historytext {
+      height: 200px;
+      transition: height, 0.5s linear; }
 
 .textblock {
   width: 90%;
   margin: 10px auto 10px;
   z-index: 2;
-  height: 500px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -397,7 +401,6 @@ body {
   flex-wrap: wrap;
   color: #000000;
   padding: 10px;
-  font-weight: bold;
   background: rgba(255, 255, 255, 0.6);
   height: 80px;
   font-size: 1.2em;
@@ -409,11 +412,14 @@ body {
   text-align: left;
   background: rgba(255, 255, 255, 0.6);
   overflow: hidden;
-  height: 200px;
-  margin-bottom: 15px;
-  font-size: 0.8em; }
+  height: 0px;
+  margin-bottom: 10px;
+  font-size: 0.8em;
+  transition: none;
+  transition: height, 0.5s linear; }
 
 .historydates {
+  font-size: 0.7em;
   font-weight: normal;
   width: 100%; }
 
@@ -421,8 +427,7 @@ body {
   display: none; }
 
 .historylogo {
-  max-width: 200px;
-  margin: 20px auto 20px; }
+  max-width: 200px; }
 
 .nowcalled {
   font-size: 0.6em; }
@@ -498,11 +503,11 @@ body {
       width: 100%;
       padding: 10px; }
   .project:hover .protext {
-    font-size: 1.3em;
+    font-size: 1.1em;
     background-color: #40a7f3;
     margin: 15px 0; }
   .project:hover .protextw {
-    font-size: 0.6em; }
+    font-size: 0.7em; }
   .project:hover .protextcont {
     background: rgba(255, 255, 255, 0.6); }
 
@@ -526,12 +531,12 @@ body {
   position: fixed;
   top: 50%;
   left: 55%;
-  transform: translate(-50%, 0);
-  height: 600px;
+  transform: translate(-50%, -50%);
+  max-height: 800px;
   width: 80%;
-  margin-top: -300px;
   background-color: rgba(255, 255, 255, 0.9);
-  z-index: 9999; }
+  z-index: 9999;
+  padding: 30px; }
 
 .allovers {
   display: flex;
@@ -558,10 +563,10 @@ body {
 
 #overlayleft {
   width: 50%;
-  padding: 40px;
   display: flex;
   flex-direction: column;
-  justify-content: center; }
+  justify-content: center;
+  padding: 15px; }
 
 #overlaytitle {
   font-size: 3em;
@@ -578,15 +583,17 @@ body {
   font-size: 1.3em;
   margin-bottom: 30px; }
 
+#overlayurl a {
+  color: #40a7f3;
+  font-size: 1.2em; }
+
 #overlayright {
   width: 50%;
-  padding: 40px;
-  margin-bottom: 20px; }
+  border: 2px dashed #96858F; }
   #overlayright img {
-    max-width: 100%;
+    max-width: 95%;
     max-height: 100%;
-    border: 2px dashed #96858F;
-    padding: 10px; }
+    margin: 10px; }
 
 #availableslice {
   height: 300px;
@@ -599,7 +606,7 @@ body {
 #availablehalf {
   width: 50%;
   padding: 50px 0 50px 50px;
-  font-size: 1.5em;
+  font-size: 1.3em;
   text-align: left;
   display: flex;
   flex-direction: column;
@@ -621,7 +628,7 @@ body {
   padding: 50px 50px 50px 100px;
   background-color: #1a181d;
   text-align: right;
-  font-size: 1.5em;
+  font-size: 1.3em;
   background: linear-gradient(to top right, transparent 50%, #332e3a 50%) no-repeat, linear-gradient(to top right, transparent 0.1%, #332e3a 0.1%) no-repeat;
   background-size: 60.5% 100%, 40% 100%;
   background-position: 0% 0%, 100% 0%;

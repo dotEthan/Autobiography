@@ -15,17 +15,10 @@ $lightblue: #0dc9f7;
 $grey: #7f7f7f;
 $orange: #f05b47;
 $red: #ed1c24;
-// 30
-// $firstcolor: #123C69;
-// $secondcolor: #BAB2B5;
-// $thirdcolor: #AC3B61;
-// $fourthcolor: #ECD7B7;
-// $fifthcolor: #EEE2DC;
 
-// $firstcolor: #bff073;
 $thirdcolorrgba: rgba(237,28,36, 0.8);
 $secondcolorrgba: rgba(134, 194, 50, 0.7);
-$firstcolor: #d1c7ba;
+$firstcolor: #e0e6ed;
 $secondcolor: #86C232;
 $thirdcolor: #e66c0b;
 $fourthcolor: #6B7A8F;
@@ -212,6 +205,10 @@ body {
     z-index: 99;
     padding: 5px 3px;
 
+    a {
+      text-decoration: none;
+    }
+
     &:hover {
       font-size: 1.3em;
       
@@ -387,7 +384,8 @@ body {
   display:flex;
   align-items: center;
   position: absolute;
-  top: 0;
+  top: 50%;
+  transform: translateY(-50%);
   left: 0;
   flex-direction: column;
   text-align: left;
@@ -404,7 +402,7 @@ body {
 }
 
 #asa {
-  margin-top: 15px;
+  margin: 15px 0;
 }
 
 #portimage {
@@ -475,6 +473,17 @@ body {
 
   &:hover {
     width: 80%;
+
+    .historyicons {
+      opacity: 0; 
+      visibility: hidden;
+      transition: visibility 0s linear 0.3s, opacity, 0.3s linear;
+    }
+
+    .historytext {
+      height: 200px;
+      transition: height, 0.5s linear;
+    }
   }
 }
 
@@ -485,7 +494,6 @@ body {
   height: 500px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   position: relative;
 }
 
@@ -497,7 +505,6 @@ body {
   flex-wrap: wrap;
   color: #000000;
   padding: 10px;
-  font-weight: bold;
   background: rgba(255,255,255,0.6);
   height: 80px;
   font-size: 1.2em;
@@ -505,14 +512,15 @@ body {
 }
 
 .historytext {
-  padding: 10px 20px;
+  padding: 0 20px;
   display: block;
   text-align: left;
   background: rgba(255,255,255,0.6);
   overflow: hidden;
-  height: 200px;
+  height: 0px;
   margin-bottom: 15px;
   font-size: 0.8em;
+  transition: height, 0.5s linear;
 }
 
 .historydates {
@@ -521,6 +529,7 @@ body {
 }
 
 .historyicons {
+  opacity: 1;
   width: 90px;
   height: 200px;
   margin-right: auto;
@@ -532,6 +541,7 @@ body {
   top: 100px;
   left: 50%;
   transform: translateX(-50%);
+  transition: opacity 0.3s;
 }
 
 .historylogo {
@@ -588,7 +598,6 @@ body {
   position: relative;
   overflow: hidden;
   display: inline-block;
-  // align-items: stetch;
   background-size: cover;
   background-repeat: no-repeat;
   margin-right: 10px;
@@ -635,14 +644,14 @@ body {
   &:hover {
     
     .protext {
-      font-size: 1.3em;
+      font-size: 1.1em;
       background-color: $thirdcolor;
       margin: 15px 0;
       
     }
     
     .protextw {
-      font-size: 0.6em;
+      font-size: 0.7em;
     }
 
     .protextcont {
@@ -673,12 +682,12 @@ body {
   position: fixed;
   top:50%;
   left: 55%;
-  transform: translate(-50%, 0);
-  height: 600px;
+  transform: translate(-50%, -50%);
+  max-height: 800px;
   width: 80%;
-  margin-top:-300px;
   background-color: rgba(255,255,255,0.9);
   z-index: 9999;
+  padding: 30px;
 }
 
 .allovers {
@@ -708,15 +717,16 @@ body {
 
 #overlayleft {
   width: 50%;
-  padding: 40px;
   display:flex;
   flex-direction: column;
   justify-content: center;
+  padding: 15px;
 }
 
 #overlaytitle{
   font-size: 3em;
   font-family: $headertext;
+  text-decoration: underline;
   margin-bottom: 50px;
   text-align: center;
 }
@@ -731,16 +741,19 @@ body {
   margin-bottom: 30px;
 }
 
+#overlayurl a {
+  color: $thirdcolor;
+  font-size: 1.2em;
+}
+
 #overlayright {
   width: 50%;
-  padding: 40px;
-  margin-bottom: 20px;
+  border: 2px dashed #96858F;
   
   img {
-    max-width: 100%;
+    max-width: 95%;
     max-height: 100%;
-    border: 2px dashed #96858F;
-    padding: 10px;
+    margin: 10px;
   }
 }
 
