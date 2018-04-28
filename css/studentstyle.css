@@ -411,6 +411,13 @@ a {
   justify-content: space-between; }
   .flexbox-slide:hover {
     width: 80%; }
+    .flexbox-slide:hover .historyicons {
+      opacity: 0;
+      visibility: hidden;
+      transition: visibility 0s linear 0.3s, opacity, 0.3s linear; }
+    .flexbox-slide:hover .historytext {
+      height: 200px;
+      transition: height, 0.5s linear; }
 
 .textblock {
   width: 90%;

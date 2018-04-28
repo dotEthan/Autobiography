@@ -526,6 +526,17 @@ a {
 
   &:hover {
     width: 80%;
+
+    .historyicons {
+      opacity: 0; 
+      visibility: hidden;
+      transition: visibility 0s linear 0.3s, opacity, 0.3s linear;
+    }
+
+    .historytext {
+      height: 200px;
+      transition: height, 0.5s linear;
+    }
   }
 }
 

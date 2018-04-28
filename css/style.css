@@ -7,7 +7,8 @@
   src: url("fonts/Montserrat-Regular.woff") format("woff"); }
 
 img {
-  max-width: 100%; }
+  max-width: 100%;
+  display: block; }
 
 .animate {
   transition: all 1.2s; }
@@ -19,10 +20,24 @@ img {
   display: none !important; }
 
 * {
-  font-family: "Monserrat", sans-serif; }
+  font-family: "Monserrat", sans-serif;
+  box-sizing: border-box; }
 
 body {
   margin: 0; }
+
+a:link {
+  color: #e5e5e5;
+  text-decoration: none; }
+
+a:visited {
+  color: #e5e5e5; }
+
+a:hover {
+  color: #40a7f3; }
+
+a:active {
+  color: #e5e5e5; }
 
 #load {
   position: absolute;
@@ -84,8 +99,9 @@ body {
   background: #4c4556;
   color: white;
   width: 100%;
-  z-index: 99; }
-  @media screen and (min-width: 800px) {
+  z-index: 99;
+  height: 70px; }
+  @media screen and (min-width: 992px) {
     #menucontain {
       position: fixed;
       top: 0;
@@ -101,18 +117,22 @@ body {
   z-index: 7; }
 
 .leftcanvas {
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100vh; }
+  display: none; }
+  @media screen and (min-width: 992px) {
+    .leftcanvas {
+      height: 100vh;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block; } }
 
 #menu {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   padding-top: 20px;
   font-family: "Merriweather", serif; }
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 992px) {
     #menu {
       flex-direction: column;
       justify-content: center;
@@ -133,10 +153,10 @@ body {
 
 .menutabs {
   width: 20%;
-  text-align: center; }
-  @media screen and (min-width: 800px) {
+  text-align: center;
+  font-size: 0.6em; }
+  @media screen and (min-width: 992px) {
     .menutabs {
-      height: 50px;
       width: 100%;
       display: flex;
       justify-content: center;
@@ -145,7 +165,8 @@ body {
       transition: all 1s;
       z-index: 99;
       background: #40a7f3;
-      font-size: 0.9em; }
+      font-size: 0.9em;
+      padding: 5px; }
       .menutabs a {
         color: black;
         text-decoration: none; }
@@ -154,26 +175,36 @@ body {
         .menutabs:hover a {
           color: #e5e5e5; } }
 
-#historymenu, #projectmenu, #contactme {
-  border-top: 1px solid #0c74c1; }
+@media screen and (min-width: 992px) {
+  #historymenu, #projectmenu, #contactme {
+    border-top: 1px solid #0c74c1; } }
 
 .lefttabs {
   display: flex;
-  align-items: center; }
+  align-items: center;
+  flex-direction: column; }
+  @media screen and (min-width: 992px) {
+    .lefttabs {
+      flex-direction: row; } }
+  .lefttabs a {
+    color: black; }
 
 .faicon {
   font-size: 1.5em; }
 
 .menutitle {
   font-size: 0.9em;
-  margin-left: 5px; }
-  .menutitle a {
-    text-decoration: none; }
+  margin-left: 0;
+  margin-top: 5px; }
+  @media screen and (min-width: 992px) {
+    .menutitle {
+      margin-left: 5px;
+      margin-top: 0; } }
 
 #contactme {
   cursor: pointer; }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 992px) {
   #contentcontain {
     position: absolute;
     left: 7%;
@@ -182,43 +213,75 @@ body {
 #splashcont {
   height: 100vh;
   background-image: url("../images/programmera.jpg");
-  background-size: cover;
-  background-position: bottom;
+  background-size: auto 100%;
+  background-position: center;
+  background-repeat: no-repeat;
   height: 100vh;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-between; }
+  @media screen and (min-width: 992px) {
+    #splashcont {
+      background-size: cover;
+      background-position: center; } }
 
 #titlecard {
+  margin-top: 100px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 130px;
-  width: 50%;
   text-align: center;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   color: white; }
+  @media screen and (min-width: 992px) {
+    #titlecard {
+      padding-top: 10%;
+      width: 50%; } }
 
 #nametitle {
   width: 100%;
   font-family: "Merriweather", serif;
   font-weight: bold;
-  font-size: 3em; }
+  font-size: 1.8em; }
+  @media screen and (min-width: 992px) {
+    #nametitle {
+      font-size: 3em; } }
+
+#mobilewarning {
+  width: 80%;
+  border-radius: 15px;
+  background: rgba(64, 167, 243, 0.8);
+  margin: 50px auto;
+  padding: 10px;
+  font-size: 0.8em; }
+  @media screen and (min-width: 992px) {
+    #mobilewarning {
+      display: none; } }
 
 .languages {
-  width: 100%; }
+  width: 80%;
+  font-size: 0.6em;
+  margin: 0 auto; }
+  @media screen and (min-width: 992px) {
+    .languages {
+      width: 100%;
+      font-size: 1em; } }
 
 #languagetitle {
-  margin-top: 270px; }
+  margin-top: 10px; }
 
 #choices {
-  display: flex;
-  justify-content: space-around;
-  width: 80%;
-  margin: 0 auto 30px auto;
-  align-items: center; }
+  display: none; }
+  @media screen and (min-width: 992px) {
+    #choices {
+      display: flex;
+      justify-content: space-around;
+      width: 80%;
+      margin: 0 auto 30px auto;
+      align-items: center; } }
 
 .lego {
   width: 80px;
@@ -258,8 +321,10 @@ body {
 
 #bioinfo {
   display: flex;
-  justify-content: center;
-  padding: 30px; }
+  justify-content: center; }
+  @media screen and (min-width: 992px) {
+    #bioinfo {
+      padding: 30px; } }
 
 #biotext {
   width: 100%;
@@ -270,26 +335,35 @@ body {
 
 #biocontain {
   display: flex;
-  width: 80%;
+  width: 100%;
   position: relative;
-  padding: 0 50px;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
-  height: 420px;
-  margin: 0 auto; }
+  margin: 100px auto; }
+  @media screen and (min-width: 992px) {
+    #biocontain {
+      padding: 0 50px;
+      height: 420px; } }
 
 #biowriting {
   width: 100%;
-  font-size: 2.7em;
   color: black;
-  font-family: "Merriweather", serif; }
+  font-family: "Merriweather", serif;
+  font-size: 1em; }
+  @media screen and (min-width: 992px) {
+    #biowriting {
+      font-size: 2.7em;
+      width: 100%; } }
 
 #quotename {
-  font-size: 1.5em;
+  font-size: 0.8em;
   text-align: right;
   margin-top: 20px;
   font-family: "Merriweather", serif; }
+  @media screen and (min-width: 992px) {
+    #quotename {
+      font-size: 1.5; } }
 
 #biopersonal {
   display: flex;
@@ -304,20 +378,42 @@ body {
 
 #biotop {
   display: flex;
-  flex-direction: row; }
+  flex-direction: column-reverse; }
+  @media screen and (min-width: 992px) {
+    #biotop {
+      flex-direction: row;
+      font-size: 1.5; } }
 
 #biotextw {
-  padding-right: 50px;
-  font-size: 1.2em; }
+  font-size: 0.8em;
+  text-align: center; }
+  @media screen and (min-width: 992px) {
+    #biotextw {
+      font-size: 1.2em;
+      text-align: left; } }
 
 #asa {
-  margin: 15px 0; }
+  margin: 15px 0;
+  display: none; }
+  @media screen and (min-width: 992px) {
+    #asa {
+      display: block; } }
+
+#ageinfo {
+  display: none; }
+  @media screen and (min-width: 992px) {
+    #ageinfo {
+      display: block; } }
 
 #portimage {
-  max-width: 100%; }
+  display: none; }
+  @media screen and (min-width: 992px) {
+    #portimage {
+      display: block;
+      padding: 10px; } }
 
 #biobottom {
-  width: 80%;
+  width: 95%;
   display: flex;
   justify-content: center;
   margin-top: 10px; }
@@ -325,7 +421,11 @@ body {
 #thanksright {
   width: 85%;
   padding: 5px;
-  text-align: left; }
+  text-align: left;
+  font-size: 0.5em; }
+  @media screen and (min-width: 992px) {
+    #thanksright {
+      font-size: 1em; } }
   #thanksright a {
     color: #4c4556; }
     #thanksright a:hover {
@@ -334,7 +434,11 @@ body {
 #thanksleft {
   width: 15%;
   padding: 5px;
-  text-align: right; }
+  text-align: right;
+  font-size: 0.5em; }
+  @media screen and (min-width: 992px) {
+    #thanksleft {
+      font-size: 1em; } }
 
 #history {
   display: flex;
@@ -347,12 +451,15 @@ body {
   font-family: "Merriweather", serif;
   width: 100%;
   text-align: center;
-  font-size: 3em;
+  font-size: 1.5em;
   text-decoration: underline;
   margin: 20px 0;
   font-weight: bold;
   color: #1a181d;
   text-decoration: none; }
+  @media screen and (min-width: 992px) {
+    .protitle {
+      font-size: 2.5em; } }
 
 .slider-container {
   margin-bottom: 20px; }
@@ -360,38 +467,63 @@ body {
 .flexbox-slider {
   display: flex;
   width: 90%;
-  height: 500px;
   margin-right: auto;
-  margin-left: auto; }
+  margin-left: auto;
+  flex-direction: column; }
+  @media screen and (min-width: 992px) {
+    .flexbox-slider {
+      font-size: 2.5em;
+      flex-direction: row;
+      height: 500px; } }
 
 .flexbox-slide {
   transition-property: all;
   transition-duration: 0.3s;
   transition-timing-function: linear;
   transition-delay: 0s;
-  width: 20%;
-  height: 100%;
   position: relative;
   overflow: hidden;
   visibility: visible;
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: row;
   justify-content: space-around;
-  align-items: center; }
-  .flexbox-slide:hover {
-    width: 80%; }
-    .flexbox-slide:hover .historytext {
-      height: 200px;
-      transition: height, 0.5s linear; }
+  flex-wrap: wrap;
+  padding: 10px; }
+  @media screen and (min-width: 992px) {
+    .flexbox-slide {
+      width: 20%;
+      flex-direction: column-reverse;
+      padding: 10px;
+      align-items: center; }
+      .flexbox-slide:hover {
+        width: 80%; }
+        .flexbox-slide:hover .historytext {
+          height: 200px;
+          transition: height, 0.5s linear; } }
+  .flexbox-slide:hover .textblock {
+    height: 220px;
+    transition: height, 0.5s linear; }
+  .flexbox-slide:hover .historytext {
+    border-top: 1px solid rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    height: 220px;
+    transition: height, 0.5s linear;
+    font-size: 0.6em; }
 
 .textblock {
-  width: 90%;
-  margin: 10px auto 10px;
+  width: 100%;
   z-index: 2;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative; }
+  position: relative;
+  flex-direction: row;
+  height: 0px;
+  transition: height, 0.5s linear; }
+  @media screen and (min-width: 992px) {
+    .textblock {
+      width: 90%;
+      flex-direction: column;
+      justify-content: space-between;
+      margin: 10px auto 10px; } }
 
 .historytitles {
   text-align: center;
@@ -400,39 +532,54 @@ body {
   align-items: center;
   flex-wrap: wrap;
   color: #000000;
-  padding: 10px;
   background: rgba(255, 255, 255, 0.6);
-  height: 80px;
-  font-size: 1.2em;
-  font-family: "Merriweather", serif; }
+  font-size: 0.8em;
+  font-family: "Merriweather", serif;
+  width: 50%;
+  padding: 20px; }
+  @media screen and (min-width: 992px) {
+    .historytitles {
+      font-size: 1.2em;
+      margin: 10px;
+      padding: 10px; } }
 
 .historytext {
-  padding: 0px 20px;
   display: block;
   text-align: left;
   background: rgba(255, 255, 255, 0.6);
   overflow: hidden;
-  height: 0px;
   margin-bottom: 10px;
   font-size: 0.8em;
-  transition: none;
-  transition: height, 0.5s linear; }
+  height: 0px;
+  transition: height, 0.3s linear;
+  font-size: 0em;
+  width: 100%; }
 
 .historydates {
   font-size: 0.7em;
-  font-weight: normal;
   width: 100%; }
 
 .historyicons {
   display: none; }
 
+.imgtitle {
+  display: flex;
+  height: 100px; }
+
 .historylogo {
-  max-width: 200px; }
+  width: 50%; }
+  .historylogo img {
+    height: 100px; }
+  @media screen and (min-width: 992px) {
+    .historylogo {
+      max-width: 200px; } }
 
 .nowcalled {
-  font-size: 0.6em; }
+  font-size: 0.8em; }
   .nowcalled a {
     color: #4c4556; }
+    .nowcalled a:hover {
+      color: #40a7f3; }
 
 #inscriberslide {
   background: #8a96a5; }
@@ -463,18 +610,21 @@ body {
   margin-left: auto; }
 
 .project {
-  width: 20%;
+  width: 80%;
   margin-bottom: 50px;
   position: relative;
   overflow: hidden;
   display: inline-block;
   background-size: cover;
   background-repeat: no-repeat;
-  margin-right: 10px;
   border-radius: 10px;
   background-color: white;
   cursor: pointer;
   transition: all 800ms; }
+  @media screen and (min-width: 992px) {
+    .project {
+      width: 20%;
+      margin-right: 10px; } }
   .project img {
     max-width: 100%;
     max-height: 100%;
@@ -530,13 +680,18 @@ body {
 #projectoverlay {
   position: fixed;
   top: 50%;
-  left: 55%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  max-height: 800px;
-  width: 80%;
   background-color: rgba(255, 255, 255, 0.9);
   z-index: 9999;
-  padding: 30px; }
+  padding: 30px;
+  width: 90%;
+  max-height: 80vh; }
+  @media screen and (min-width: 992px) {
+    #projectoverlay {
+      max-height: 800px;
+      width: 80%;
+      left: 55%; } }
 
 .allovers {
   display: flex;
@@ -545,12 +700,12 @@ body {
   text-align: center; }
 
 #closeover {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   position: absolute;
-  top: -20px;
-  right: -20px;
-  font-size: 2em;
+  top: -10px;
+  right: -10px;
+  font-size: 0.8em;
   font-weight: bold;
   display: flex;
   justify-content: center;
@@ -560,6 +715,13 @@ body {
   border: 1px solid grey;
   border-radius: 25px;
   cursor: pointer; }
+  @media screen and (min-width: 992px) {
+    #closeover {
+      width: 50px;
+      height: 50px;
+      top: -20px;
+      right: -20px;
+      font-size: 2em; } }
 
 #overlayleft {
   width: 50%;
@@ -569,23 +731,35 @@ body {
   padding: 15px; }
 
 #overlaytitle {
-  font-size: 3em;
+  font-size: 1em;
   font-family: "Merriweather", serif;
   text-decoration: underline;
   margin-bottom: 50px;
   text-align: center; }
+  @media screen and (min-width: 992px) {
+    #overlaytitle {
+      font-size: 3em; } }
 
 #overlaytext {
-  font-size: 1.3em; }
+  font-size: 0.7em; }
+  @media screen and (min-width: 992px) {
+    #overlaytext {
+      font-size: 1.3em; } }
 
 #overlayskills {
   margin-top: 30px;
-  font-size: 1.3em;
+  font-size: 0.7em;
   margin-bottom: 30px; }
+  @media screen and (min-width: 992px) {
+    #overlayskills {
+      font-size: 1.3em; } }
 
 #overlayurl a {
   color: #40a7f3;
-  font-size: 1.2em; }
+  font-size: 0.6em; }
+  @media screen and (min-width: 992px) {
+    #overlayurl a {
+      font-size: 1.2em; } }
 
 #overlayright {
   width: 50%;
@@ -604,13 +778,17 @@ body {
   color: white; }
 
 #availablehalf {
-  width: 50%;
-  padding: 50px 0 50px 50px;
-  font-size: 1.3em;
+  width: 40%;
+  padding: 30px 0 30px 30px;
+  font-size: 0.9em;
   text-align: left;
   display: flex;
   flex-direction: column;
   justify-content: space-between; }
+  @media screen and (min-width: 992px) {
+    #availablehalf {
+      font-size: 1.3em;
+      padding: 50px 0 50px 50px; } }
 
 .buttonstyle {
   background-color: #4c4556;
@@ -624,21 +802,26 @@ body {
     background-color: #40a7f3; }
 
 #resumehalf {
-  width: 50%;
-  padding: 50px 50px 50px 100px;
+  width: 60%;
+  padding: 30px 20px 30px 20px;
   background-color: #1a181d;
   text-align: right;
-  font-size: 1.3em;
+  font-size: 0.9em;
   background: linear-gradient(to top right, transparent 50%, #332e3a 50%) no-repeat, linear-gradient(to top right, transparent 0.1%, #332e3a 0.1%) no-repeat;
   background-size: 60.5% 100%, 40% 100%;
   background-position: 0% 0%, 100% 0%;
   display: flex;
   flex-direction: column;
   justify-content: space-between; }
+  @media screen and (min-width: 992px) {
+    #resumehalf {
+      font-size: 1.3em;
+      padding: 50px 50px 50px 30px; } }
   #resumehalf .buttonstyle {
     background-color: #332e3a;
     border: 2px solid #655c72;
-    color: white; }
+    color: white;
+    width: 50%; }
     #resumehalf .buttonstyle:hover {
       background-color: #40a7f3; }
 
@@ -662,12 +845,12 @@ body {
   width: 100%; }
 
 #contactclose {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   position: absolute;
-  top: 50px;
-  right: 50px;
-  font-size: 2em;
+  top: 40px;
+  right: 30px;
+  font-size: 1em;
   font-weight: bold;
   display: flex;
   justify-content: center;
@@ -677,6 +860,11 @@ body {
   border: 1px solid grey;
   border-radius: 25px;
   cursor: pointer; }
+  @media screen and (min-width: 992px) {
+    #contactclose {
+      width: 50px;
+      height: 50px;
+      font-size: 2em; } }
 
 #contactleft {
   width: 45%;
@@ -697,7 +885,6 @@ body {
   justify-content: space-around;
   flex-wrap: wrap;
   background-color: #e5e5e5 !important;
-  height: 150px !important;
   align-items: center; }
 
 #footercont {
@@ -708,9 +895,12 @@ body {
 .contacttype {
   width: 35%;
   text-align: center;
-  font-size: 3.5em;
+  font-size: 2em;
   color: #4c4556;
   cursor: pointer; }
+  @media screen and (min-width: 992px) {
+    .contacttype {
+      font-size: 3.5em; } }
   .contacttype .footertext {
     font-size: .35em;
     visibility: hidden;
@@ -730,7 +920,10 @@ body {
   align-items: center; }
 
 #footmessage {
-  font-size: 0.9em; }
+  font-size: 0.6em; }
+  @media screen and (min-width: 992px) {
+    #footmessage {
+      font-size: 0.9em; } }
 
 #sitebuild {
   color: black; }

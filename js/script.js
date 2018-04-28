@@ -170,50 +170,52 @@ $('#biocontain').hover(function () {
 //   'opacity': 0
 // }, 0);
 
-$('.flexbox-slide').hover(function (e) {
-  // const icons = $(this).find('.historyicons');
-  // const text = $(this).find('.historytext');
-  const slideArray = $('.flexbox-slide');
+if (theme !== 'programmer') {
+  $('.flexbox-slide').hover(function (e) {
+    // const icons = $(this).find('.historyicons');
+    // const text = $(this).find('.historytext');
+    const slideArray = $('.flexbox-slide');
 
-  // const textBlock = $(this).find('textblock');
+    // const textBlock = $(this).find('textblock');
 
-  // icons.stop().animate({
-  //     'opacity': 0
-  // }, 500);
-  // textBlock.stop().animate({
-  //     'height': 500
-  // }, 500);
+    // icons.stop().animate({
+    //     'opacity': 0
+    // }, 500);
+    // textBlock.stop().animate({
+    //     'height': 500
+    // }, 500);
 
-  // $(this).find("textblock").toggleClass('open');
+    // $(this).find("textblock").toggleClass('open');
 
-  for(let i=0; i<slideArray.length; i++) {
-    if (slideArray[i].id !== this.id) {
-      slideArray[i].style.fontSize = '0.5em';
+    for(let i=0; i<slideArray.length; i++) {
+      if (slideArray[i].id !== this.id) {
+        slideArray[i].style.fontSize = '0.5em';
+      }
     }
-  }
 
-}, function () {
-  // const icons = $(this).find('.historyicons');
-  // const text = $(this).find('.historytext');
-  const slideArray = $('.flexbox-slide');
+  }, function () {
+    // const icons = $(this).find('.historyicons');
+    // const text = $(this).find('.historytext');
+    const slideArray = $('.flexbox-slide');
 
-  // const textBlock = $(this).find('textblock');
-  
-  // icons.stop().animate({
-  //     'opacity': 1
-  // }, 500);
-  // textBlock.stop().animate({
-  //     'height': 0
-  // }, 500);
+    // const textBlock = $(this).find('textblock');
+    
+    // icons.stop().animate({
+    //     'opacity': 1
+    // }, 500);
+    // textBlock.stop().animate({
+    //     'height': 0
+    // }, 500);
 
-  // $(this).find("textblock").toggleClass('open');
+    // $(this).find("textblock").toggleClass('open');
 
-  for(let i=0; i<slideArray.length; i++) {
-    if (slideArray[i].id !== this.id) {
-      slideArray[i].style.fontSize = '1em';
+    for(let i=0; i<slideArray.length; i++) {
+      if (slideArray[i].id !== this.id) {
+        slideArray[i].style.fontSize = '1em';
+      }
     }
-  }
-}); 
+  }); 
+}
 
 //-----------------------
 // Scrolling Position
