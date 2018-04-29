@@ -3,7 +3,7 @@
 // USING?
 
 // Call everything same order?
-
+// Programmer mobile animation doesn't stop when you go to student then back.
 
 
 //------------------------
@@ -145,22 +145,22 @@ $(biopersonal).stop().animate({
   'opacity': 0
 }, 0);
 
-$('#biocontain').hover(function () {
-    $(bioquote).stop().animate({
-        'opacity': 0
-    }, 1500);
-    $(biopersonal).stop().animate({
-        'opacity': 1
-    }, 1000);
-}, function () {
-    $(bioquote).stop().animate({
-        'opacity': 1
-    }, 1000);
-    $(biopersonal).stop().animate({
-        'opacity': 0
-    }, 1000);
+// $('#biocontain').hover(function () {
+//     $(bioquote).stop().animate({
+//         'opacity': 0
+//     }, 1500);
+//     $(biopersonal).stop().animate({
+//         'opacity': 1
+//     }, 1000);
+// }, function () {
+//     $(bioquote).stop().animate({
+//         'opacity': 1
+//     }, 1000);
+//     $(biopersonal).stop().animate({
+//         'opacity': 0
+//     }, 1000);
 
-}); 
+// }); 
 
 //------------------------ 
 // History Hover

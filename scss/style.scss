@@ -138,14 +138,6 @@ a:active {
   width: 100%;
   z-index: 99;
   height: 70px;
-  
-  @media screen and (min-width: 992px) {
-    position: fixed;
-    top: 0;
-    left: 0; 
-    width: 7%;
-    height: 100vh;
-  }
 }
 
 #mycanvas {
@@ -159,15 +151,6 @@ a:active {
 
 .leftcanvas {
   display: none;
-  
-  @media screen and (min-width: 992px) {
-    height: 100vh;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-  }
 }
 
 #menu {
@@ -175,15 +158,7 @@ a:active {
   justify-content: space-around;
   padding-top: $smallmenupaddingtop;
   font-family: $headertext;
-  
-  @media screen and (min-width: 992px) {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-    margin-top: 30vh;
-    padding-top: 0;
-  }
+
 }
 
 .menunow {
@@ -204,51 +179,13 @@ a:active {
   width: 20%;
   text-align: center;
   font-size: 0.6em;
-
-  @media screen and (min-width: 992px) {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    transition: all 1s;
-    z-index: 99;
-    background: $thirdcolor;
-    font-size: 0.9em;
-    padding: 5px;
-
-
-    a {
-      color: black;
-      text-decoration: none;
-    }
-
-    &:hover {
-      background: darken($thirdcolor, 20%);
-      
-      a {
-        color: $firstcolor;
-      }
-    }
-   
-  }
-}
-
-#historymenu, #projectmenu, #contactme { 
-
-  @media screen and (min-width: 992px) {
-    border-top: 1px solid darken($thirdcolor, 20%);
-  }
+  cursor: pointer;
 }
 
 .lefttabs {
   display: flex; 
   align-items: center;
   flex-direction: column;
-
-  @media screen and (min-width: 992px) {
-    flex-direction: row;
-  }
 
   a {
     color: black;
@@ -264,25 +201,6 @@ a:active {
   font-size: 0.9em;
   margin-left: 0;
   margin-top: 5px;
-
-  @media screen and (min-width: 992px) {
-    margin-left: 5px;
-    margin-top: 0;
-  }
-
-}
-
-#contactme {
-  cursor: pointer;
-}
-
-#contentcontain {
-  
-  @media screen and (min-width: 992px) {
-  position: absolute;
-  left: 7%;
-  width: 93%;
-  }
 }
   
 #splashcont {
@@ -295,29 +213,19 @@ a:active {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  justify-content: space-between;
-  
-  @media screen and (min-width: 992px) {
-    background-size: cover;
-    background-position: center;
-  }
+  justify-content: center;
 }
-
+// align items center container then pull the texts apart from the middle. 
 #titlecard {
-  margin-top: 100px;
+  margin-bottom: 200px;
   width: 100%;
   margin-left: auto; 
   margin-right: auto; 
   text-align: center;
   display: flex;
-  align-items: center;
+  // align-items: center;
   flex-wrap: wrap;
   color: white;
-  
-  @media screen and (min-width: 992px) {
-  padding-top: 10%;
-  width: 50%;
-  }
 }
 
 #nametitle {
@@ -325,34 +233,22 @@ a:active {
   font-family: $headertext;
   font-weight: bold;
   font-size: 1.8em;
-  
-  @media screen and (min-width: 992px) {
-  font-size: 3em;
-  }
+  margin-bottom: 20px;
 }
 
 #mobilewarning {
   width: 80%;
   border-radius: 15px;
-  background: $thirdcolorrgba;
-  margin: 50px auto;
+  background: rgba(255,0,0, 0.7);
+  margin: 30px auto;
   padding: 10px;
   font-size: 0.8em;
-
-  @media screen and (min-width: 992px) {
-    display: none;
-  }
 }
 
 .languages{
   width: 80%; 
   font-size: 0.6em;
   margin: 0 auto;
-
-  @media screen and (min-width: 992px) {
-    width: 100%;
-    font-size: 1em;
-  } 
 }
 
 #languagetitle {
@@ -361,15 +257,6 @@ a:active {
     
 #choices {
   display: none;
-
-  @media screen and (min-width: 992px) {
-    display: flex;
-    justify-content: space-around;
-    width: 80%;
-    margin: 0 auto 30px auto;
-    align-items: center;
-  } 
-
 }
 
 .lego {
@@ -424,10 +311,6 @@ a:active {
 #bioinfo {
   display: flex;
   justify-content: center;
-
-  @media screen and (min-width: 992px) {
-  padding: 30px;
-  }
 }
 
 #biotext {
@@ -445,13 +328,20 @@ a:active {
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
-  margin: 100px auto;
+  margin: 100px auto;  
 
-  @media screen and (min-width: 992px) {
-    padding: 0 50px;
-  height: 420px;
+  &:hover {
+
+    #biopersonal {
+      opacity: 1;
+      transition: height, 0.5s linear;
+    }
+
+    #bioquote {
+      opacity: 0;
+      transition: height, 0.5s linear;
+    }
   }
-  
 }
 
 #biowriting {
@@ -459,13 +349,6 @@ a:active {
   color: $biowritingc;
   font-family: $headertext;
   font-size: 1em;
-
-  @media screen and (min-width: 992px) {
-    font-size: $biowritings;
-    width: 100%;
-  } 
-
-
 }
 
 #quotename {
@@ -473,10 +356,6 @@ a:active {
   text-align: right;
   margin-top: 20px;
   font-family: $headertext;
-
-  @media screen and (min-width: 992px) {
-    font-size: 1.5;
-  } 
 }
 
 #biopersonal {
@@ -494,69 +373,41 @@ a:active {
 #biotop {
   display: flex;
   flex-direction: column-reverse;
-
-  @media screen and (min-width: 992px) {
-    flex-direction: row;
-    font-size: 1.5;
-  } 
-
 }
 
 #biotextw {
   font-size: 0.8em;
   text-align: center;
-
-  @media screen and (min-width: 992px) {
-    font-size: 1.2em;
-    text-align: left;
-  }
 }
 
 #asa {
   margin: 15px 0;
   display: none;
-
-  @media screen and (min-width: 992px) {
-    display: block;
-  }
 }
 
 #ageinfo {
   display: none;
-
-  @media screen and (min-width: 992px) {
-    display: block;
-  }
 }
 
 #portimage {
   display: none;
-
-  @media screen and (min-width: 992px) {
-    display: block;
-    padding: 10px;
-  }
 }
 
 #biobottom {
   width: 95%;
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: 20px;
+  font-size: 0.5em;
 }
 
 #thanksright {
   width: 85%;
   padding: 5px;
   text-align: left;
-  font-size: 0.5em;
 
-  @media screen and (min-width: 992px) {
-    font-size: 1em;
-  }
-  
   a {
-    color: $secondcolor;
+  color: $secondcolor;
 
     &:hover {
       color: $thirdcolor;
@@ -568,11 +419,6 @@ a:active {
   width: 15%;
   padding: 5px;
   text-align: right;
-  font-size: 0.5em;
-
-  @media screen and (min-width: 992px) {
-    font-size: 1em;
-  }
 }
 
 #history {
@@ -592,12 +438,8 @@ a:active {
   text-decoration: underline;
   margin: 20px 0;
   font-weight: bold;
-  color: darken($secondcolor, 20%);
+  color: white;
   text-decoration: none;
-
-  @media screen and (min-width: 992px) {
-    font-size: 2.5em;
-  }
 }
 
 .slider-container {
@@ -610,12 +452,6 @@ a:active {
   margin-right: auto;
   margin-left: auto;
   flex-direction: column;
-
-  @media screen and (min-width: 992px) {
-    font-size: 2.5em;
-    flex-direction: row;
-    height: 500px;
-  }
 }
   
 .flexbox-slide {
@@ -631,22 +467,6 @@ a:active {
   justify-content: space-around;
   flex-wrap: wrap;
   padding: 10px;
-
-  @media screen and (min-width: 992px) {
-    width: 20%;
-    flex-direction: column-reverse;
-    padding: 10px;
-    align-items: center;
-
-    &:hover {
-      width: 80%;
-
-      .historytext {
-        height: 200px;
-        transition: height, 0.5s linear;
-      }
-    }
-  }
 
   &:hover {
     
@@ -673,13 +493,6 @@ a:active {
   flex-direction: row;
   height: 0px;
   transition: height, 0.5s linear;
-
-  @media screen and (min-width: 992px) {
-    width: 90%;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: 10px auto 10px;
-  }
 }
 
 .historytitles {
@@ -694,12 +507,6 @@ a:active {
   font-family: $headertext;
   width: 50%;
   padding: 20px;
-
-  @media screen and (min-width: 992px) {
-    font-size: 1.2em;
-    margin: 10px;
-    padding: 10px;
-  }
 }
 
 .historytext {
@@ -735,10 +542,6 @@ a:active {
   img {
     height: 100px;
   }
-
-  @media screen and (min-width: 992px) {
-    max-width: 200px; 
-  }  
 }
 
 .nowcalled {
@@ -801,10 +604,6 @@ a:active {
   cursor: pointer;
   transition: all 800ms;
 
-  @media screen and (min-width: 992px) {
-    width: 20%;
-    margin-right: 10px;
-  }  
 
   img{
     max-width: 100%;
@@ -835,7 +634,7 @@ a:active {
       font-family: $headertext;
     }
 
-    .protextw{
+    .protextw {
       width: 100%;
       padding: 10px;
     }
@@ -888,12 +687,6 @@ a:active {
   padding: 30px;
   width: 90%;
   max-height: 80vh;
-
-  @media screen and (min-width: 992px) {
-    max-height: 800px;
-    width: 80%;
-    left: 55%;
-  }  
 }
 
 .allovers {
@@ -919,14 +712,6 @@ a:active {
   border: 1px solid grey;
   border-radius: 25px;
   cursor: pointer;
-
-  @media screen and (min-width: 992px) {
-    width: 50px;
-    height: 50px;
-    top: -20px;
-    right: -20px;
-    font-size: 2em;
-  }  
 }
 
 #overlayleft {
@@ -943,37 +728,21 @@ a:active {
   text-decoration: underline;
   margin-bottom: 50px;
   text-align: center;
-
-  @media screen and (min-width: 992px) {
-  font-size: 3em;
-  }  
 }
 
 #overlaytext {
   font-size: 0.7em;
-
-  @media screen and (min-width: 992px) {
-  font-size: 1.3em;
-  }  
 }
 
 #overlayskills {
   margin-top: 30px;
   font-size: 0.7em;
   margin-bottom: 30px;
-
-  @media screen and (min-width: 992px) {
-  font-size: 1.3em;
-  }  
 }
 
 #overlayurl a {
   color: $thirdcolor;
   font-size: 0.6em;
-
-  @media screen and (min-width: 992px) {
-  font-size: 1.2em;
-  }  
 }
 
 #overlayright {
@@ -1005,10 +774,6 @@ a:active {
   flex-direction: column;
   justify-content: space-between; 
 
-  @media screen and (min-width: 992px) {
-    font-size: 1.3em;
-    padding: 50px 0 50px 50px;
-  }  
 }
 
 .buttonstyle{
@@ -1038,11 +803,6 @@ a:active {
   flex-direction: column;
   justify-content: space-between;  
 
-  @media screen and (min-width: 992px) {
-    font-size: 1.3em;
-    padding: 50px 50px 50px 30px;
-  }  
-  
   .buttonstyle{
     background-color: darken($secondcolor,10%);
     border: 2px solid lighten($secondcolor,10%);
@@ -1056,7 +816,7 @@ a:active {
 }
 
 #update{
-  font-size: 0.4em;
+  font-size: 0.6em;
   margin-right:10px;
   margin-bottom: 5px;
 }
@@ -1094,12 +854,6 @@ a:active {
   border: 1px solid grey;
   border-radius: 25px;
   cursor: pointer;
-
-  @media screen and (min-width: 992px) {
-    width: 50px;
-    height: 50px;
-    font-size: 2em;
-  }  
 }
 
 #contactleft {
@@ -1140,9 +894,6 @@ a:active {
   color: $secondcolor;
   cursor: pointer;
 
-  @media screen and (min-width: 992px) {
-  font-size: 3.5em;
-  }  
 
   .footertext {
     font-size: .35em;
@@ -1171,10 +922,7 @@ a:active {
 
 #footmessage{
   font-size: 0.6em;
-
-  @media screen and (min-width: 992px) {
-  font-size: 0.9em;
-  }  
+  margin-top: 10px;
 }
 
 #sitebuild {
@@ -1252,4 +1000,416 @@ span{
   font-size:14px;
   color:green;
   text-align:center;
+}
+
+@media screen and (min-width: 576px) {
+
+  #mobilewarning {
+    width: 60%;
+  }
+
+  #biocontain {
+    width: 75%;
+  }
+
+  #biowriting {
+    font-size: 1.5em;
+  }
+
+  #biotextw {
+    font-size: 1em;
+  }
+
+  #quotename {
+    font-size: 1.1em;
+  }
+
+  #biobottom {
+    font-size: 0.7em;
+  }
+
+  .flexbox-slide {
+
+    &:hover {
+
+      .textblock {
+        height: 170px;
+        transition: height, 0.5s linear;
+      }
+
+      .historytext {
+        height: 170px;
+        transition: height, 0.5s linear;
+      }
+    }
+  }
+
+  .project {
+    width: 40%;
+
+    &:hover {
+      .protextt {
+        font-size: 0.8em;
+      }
+
+      .protextw {
+        font-size: 0.6em !important;
+      }
+    }
+  }
+
+  .contacttype {
+    font-size: 2.5em;
+  }
+
+  #footmessage {
+    font-size: 0.7em;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  
+  #menucontain {
+    position: fixed;
+    top: 0;
+    left: 0; 
+    width: 10%;
+    height: 100vh;
+  }
+
+  .leftcanvas {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+  }
+
+  
+  #titlecard {
+
+  }
+
+  #mobilewarning {
+    display: none;
+  }
+
+  #choices {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  #menu {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    margin-top: 30vh;
+    padding-top: 0;
+  }
+
+  .menutabs {
+    width: 120%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    transition: all 1s;
+    z-index: 99;
+    background: $thirdcolor;
+    font-size: 0.6em;
+    padding: 10px;
+
+
+    a {
+      color: black;
+      text-decoration: none;
+    }
+
+    &:hover {
+      background: darken($thirdcolor, 20%);
+      
+      a {
+        color: $firstcolor;
+      }
+    }
+  }
+
+  #historymenu, #projectmenu, #contactme {
+    border-top: 1px solid darken($thirdcolor, 20%);
+  }
+  
+  .lefttabs {
+    flex-direction: row;
+  }
+
+  .menutitle {
+    margin-left: 5px;
+    margin-top: 0;
+  }
+  
+  #contentcontain {
+    position: absolute;
+    left: 10%;
+    width: 90%;
+  }
+  
+  #splashcont {
+    align-items: center;
+  }
+
+  #titlecard {
+    padding-top: 4%;
+    width: 50%;
+    margin-bottom: 0;
+  }
+  
+  #nametitle {
+    font-size: 3em;
+  }
+  
+  #mobilewarning {
+    display: none;
+  }
+
+  .languages {
+    width: 100%;
+    font-size: 1em;
+  }
+
+  #languagetitle {
+    margin-top: 130px;
+  }
+  
+  #choices {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin: 120px auto 0;
+    align-items: center;
+  }
+
+  #bioinfo {
+    padding: 30px;
+  }
+  
+  #biocontain {
+    width: 85%;
+    margin: 0;
+    height: 420px;
+  }
+  
+  #biowriting {
+    font-size: 2em;
+    width: 100%;
+  }
+  
+  #quotename {
+    font-size: 1.2em;
+  }
+
+  #biotop {
+    flex-direction: row;
+  }
+  
+  #biotextw {
+    font-size: 0.8em;
+    text-align: left;
+  }
+  
+  #asa {
+    display: block;
+  }
+
+  #ageinfo {
+    display: block;
+  }
+
+  #portimage {
+    display: block;
+    padding: 10px;
+    width: 30%;
+  }
+
+  #thanksright a {
+    font-size: 1.2em;
+    color: $secondcolor;
+
+    &:hover {
+      color: $thirdcolor;
+    }
+  }
+  
+  #thanksleft {
+    font-size: 1.2em;
+  }
+
+  .protitle {
+    font-size: 2.5em;
+  }
+  
+  .flexbox-slider {
+    font-size: 2.5em;
+    flex-direction: row;
+    height: 500px;
+  }
+
+  .flexbox-slide {
+    width: 20%;
+    flex-direction: row;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+        transition: all, 0.5s linear;
+
+    &:hover {
+      width: 80%;
+
+      .textblock {
+        height: 230px;
+      }
+      
+      .historytitles {
+        font-size: 0.4em
+      }
+
+      .historytext {
+        height: 400px;
+        transition: height, 0.5s linear;
+        font-size: 0.22em;
+        text-align: justify;
+        padding: 15px;
+        opacity: 1;
+      }
+
+      .historylogo {
+    transition: all, 0.5s linear;
+      }
+
+      img {
+        max-width: 200px;
+      }
+    }
+  }
+
+  .imgtitle {
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  .historytext {
+    padding: 15px;
+    opacity: 0;
+  }
+  
+  .textblock {
+    width: 90%;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px auto 10px;
+  }
+  
+  .historytitles {
+    font-size: 0.25em;
+    // margin: 10px;
+    padding: 5px;
+    width: 100%;
+    height: 70px;
+  }
+  
+  .historylogo {
+    width: auto; 
+    margin: 0 auto;
+    transition: all, 0.5s linear;
+
+    img {
+      height: auto;
+    }
+  }
+
+  .project {
+    width: 30%;
+    margin-right: 10px;
+
+    &:hover {
+
+      .protext {
+        margin: 10px 0;
+      }
+    }
+  }
+
+  #projectoverlay {
+    max-height: 800px;
+    width: 80%;
+    left: 55%;
+  }
+
+  #closeover {
+    width: 50px;
+    height: 50px;
+    top: -20px;
+    right: -20px;
+    font-size: 2em;
+  }  
+
+  #overlaytitle {
+    font-size: 3em;
+  }
+
+  #overlaytext {
+    font-size: 1.3em;
+  }
+  
+  #overlayskills {
+    font-size: 1.3em;
+  }
+  
+  #overlayurl a{ 
+    font-size: 1.2em;
+  }
+
+  #availablehalf {
+    font-size: 1em;
+    padding: 50px 0 50px 50px;
+  }
+
+  #resumehalf {
+    font-size: 1em;
+    padding: 50px 50px 50px 30px;
+
+    .buttonstyle {
+      width: auto;
+    }
+  }
+
+  #contactclose {
+    width: 50px;
+    height: 50px;
+    font-size: 2em;
+  }
+
+  .contacttype {
+    font-size: 3em;
+  }
+
+  #footmessage {
+    font-size: 0.9em;
+  }
+
+}
+
+@media screen and (min-width: 992px) {
+
+  #menucontain {
+    width: 7%;
+  }
+
+  .menutabs {
+    font-size: 0.9em;
+  }
 }
