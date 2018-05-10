@@ -153,6 +153,11 @@ a:active {
   display: none;
 }
 
+#ethan {
+  font-family: $headertext;
+  font-size: 1.5em;
+}
+
 #menu {
   display: flex;
   justify-content: space-around;
@@ -165,14 +170,6 @@ a:active {
   font-size: 1.2em;
   transition: all 1s;
   font-weight: bold;
-}
-
-.menudark {
-  background: darken($thirdcolor, 20%);
-      
-      a {
-        color: $firstcolor;
-      }
 }
 
 .menutabs {
@@ -215,15 +212,14 @@ a:active {
   flex-direction: column;
   justify-content: center;
 }
-// align items center container then pull the texts apart from the middle. 
+
 #titlecard {
-  margin-bottom: 200px;
+  margin-bottom: 180px;
   width: 100%;
   margin-left: auto; 
   margin-right: auto; 
   text-align: center;
   display: flex;
-  // align-items: center;
   flex-wrap: wrap;
   color: white;
 }
@@ -438,7 +434,7 @@ a:active {
   text-decoration: underline;
   margin: 20px 0;
   font-weight: bold;
-  color: white;
+  color: $thirdcolor;
   text-decoration: none;
 }
 
@@ -451,48 +447,48 @@ a:active {
   width: 90%;
   margin-right: auto;
   margin-left: auto;
-  flex-direction: column;
+  flex-direction: column-reverse;
 }
   
 .flexbox-slide {
-  transition-property: all;
-  transition-duration: 0.3s;
-  transition-timing-function: linear;
-  transition-delay: 0s;
+  transition: height 0.5s ease;
   position: relative;
   overflow: hidden;
   visibility: visible;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: flex-start;
   flex-wrap: wrap;
-  padding: 10px;
 
   &:hover {
     
+    height:340px;
+
     .textblock {
-      height: 220px;
-      transition: height, 0.5s linear;
+      height: auto;
     }
 
     .historytext {
-      border-top: 1px solid rgba(0,0,0,0.6);
-      padding: 10px;
-      height: 220px;
-      transition: height, 0.5s linear;
+      padding: 15px;
+      flex: 1;
       font-size: 0.6em;
     }
   }
 }
 
-.textblock {
-  width: 100%;
-  z-index: 2;
+.imgtitle {
   display: flex;
-  position: relative;
-  flex-direction: row;
-  height: 0px;
-  transition: height, 0.5s linear;
+  justify-content: space-around;
+  height: 100px;
+}
+
+.historylogo {
+  width: 50%;
+
+  img {
+    height: 100px;
+    margin: 0 auto;
+  }
 }
 
 .historytitles {
@@ -509,39 +505,45 @@ a:active {
   padding: 20px;
 }
 
-.historytext {
-  display: block;
-  text-align: left;
-  background: rgba(255,255,255,0.6);
-  overflow: hidden;
-  margin-bottom: 10px;
-  font-size: 0.8em;
-  height: 0px;
-  transition: height, 0.3s linear;
-  font-size: 0em;
-  width: 100%;
-}
-
 .historydates {
   font-size: 0.7em;
   width: 100%;
+}
+
+.textblock {
+  border-top: 1px solid rgba(0,0,0,0.6);
+  width: 100%;
+  z-index: 2;
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  height: 0px;
+  transition: height, 0.5s linear;
+  background: rgba(255,255,255,0.6);
 }
 
 .historyicons {
   display: none;
 }
 
-.imgtitle {
-  display: flex;
-  height: 100px;
+.historytext { 
+  display: block;
+  text-align: left;
+  overflow: hidden;
+  margin: 0 auto 10px;
+  flex: 0;
+  transition: height, 0.5s linear;
+  font-size: 0em;
+  width: 100%;
 }
 
-.historylogo {
-  width: 50%;
+.jobtitle {
+  margin-bottom: 10px;
+  text-align: center;
+}
 
-  img {
-    height: 100px;
-  }
+.dutylist ul {
+  padding-left: 20px;
 }
 
 .nowcalled {
@@ -684,7 +686,7 @@ a:active {
   transform: translate(-50%, -50%);
   background-color: rgba(255,255,255,0.9);
   z-index: 9999;
-  padding: 30px;
+  padding: 15px;
   width: 90%;
   max-height: 80vh;
 }
@@ -694,6 +696,7 @@ a:active {
   justify-content: center;
   align-items: center;
   text-align: center;
+  flex-direction: column-reverse;
 }
 
 #closeover {
@@ -715,7 +718,7 @@ a:active {
 }
 
 #overlayleft {
-  width: 50%;
+  width: 100%;
   display:flex;
   flex-direction: column;
   justify-content: center;
@@ -726,7 +729,7 @@ a:active {
   font-size: 1em;
   font-family: $headertext;
   text-decoration: underline;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
   text-align: center;
 }
 
@@ -735,9 +738,8 @@ a:active {
 }
 
 #overlayskills {
-  margin-top: 30px;
+  margin: 10px 0;
   font-size: 0.7em;
-  margin-bottom: 30px;
 }
 
 #overlayurl a {
@@ -767,7 +769,7 @@ a:active {
 
 #availablehalf {
   width: 40%;
-  padding: 30px 0 30px 30px;
+  padding: 15px 0 15px 15px;
   font-size: 0.9em;
   text-align: left;
   display: flex;
@@ -792,7 +794,7 @@ a:active {
 
 #resumehalf {
   width: 60%;
-  padding: 30px 20px 30px 20px;
+  padding: 15px 15px 15px 0px;
   background-color: darken($secondcolor,20%);
   text-align: right;
   font-size: 0.9em;
@@ -1033,11 +1035,13 @@ span{
     &:hover {
 
       .textblock {
+        width: 100%;
         height: 170px;
         transition: height, 0.5s linear;
       }
 
       .historytext {
+        width: 100%;
         height: 170px;
         transition: height, 0.5s linear;
       }
@@ -1136,6 +1140,14 @@ span{
         color: $firstcolor;
       }
     }
+  }
+
+  .menudark {
+    background: darken($thirdcolor, 20%);
+        
+        a {
+          color: $firstcolor;
+        }
   }
 
   #historymenu, #projectmenu, #contactme {
@@ -1253,7 +1265,7 @@ span{
   
   .flexbox-slider {
     font-size: 2.5em;
-    flex-direction: row;
+    flex-direction: row-reverse;
     height: 500px;
   }
 

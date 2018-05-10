@@ -7,6 +7,126 @@
 
 
 //------------------------
+// Modernizr
+//------------------------
+
+function doneResizing() {
+  if (Modernizr.mq('screen and (min-width:576px)')) {
+    
+  } else if(Modernizr.mq('screen and (min-width:768px)')) {
+      console.log("now");
+
+    //------------------------
+    // Particles
+    //------------------------
+
+    function party() {
+      particlesJS("particles-js", {
+        "particles": {
+          "number": {
+            "value": 100,
+            "density": {
+              "enable": true,
+              "value_area": 400
+            }
+          },
+          "color": {
+            "value": "#7d1577"
+          },
+          "shape": {
+            "type": "circle",
+            "stroke": {
+              "width": 0,
+              "color": "#000"
+            }
+          },
+          "opacity": {
+            "value": 0.5,
+            "random": true,
+            "anim": {
+              "enable": false,
+              "speed": 1,
+              "opacity_min": 0.1,
+              "sync": false
+            }
+          },
+          "size": {
+            "value": 5,
+            "random": true,
+            "anim": {
+              "enable": false,
+              "speed": 20,
+              "size_min": 0.1,
+              "sync": false
+            }
+          },
+          "line_linked": {
+            "enable": true,
+            "distance": 150,
+            "color": "#0000ff",
+            "opacity": 0.5,
+            "width": 1
+          },
+          "move": {
+            "enable": true,
+            "speed": 4,
+            "direction": "none",
+            "random": false,
+            "straight": false,
+            "out_mode": "out",
+            "bounce": false,
+            "attract": {
+              "enable": false,
+              "rotateX": 600,
+              "rotateY": 1200
+            }
+          }
+        },
+        "interactivity": {
+          "detect_on": "canvas",
+          "events": {
+            "onhover": {
+              "enable": true,
+              "mode": "bubble"
+            },
+            "onclick": {
+              "enable": true,
+              "mode": "repulse"
+            },
+            "resize": true
+          },
+          "modes": {
+            "bubble": {
+              "distance": 100,
+              "size": 20,
+              "duration": 2,
+              "opacity": 2,
+              "speed": 3
+            },
+            "repulse": {
+              "distance": 100,
+              "duration": 0.4
+            }
+          }
+        },
+        "retina_detect": true
+      });
+    }
+
+  } else {
+    console.log("small");
+  }
+}
+
+var id5;
+$(window).resize(function() {
+  clearTimeout(id5);
+  id5 = setTimeout(doneResizing, 0);
+});
+
+doneResizing();
+
+//------------------------
 // Typewrite
 //------------------------
 
@@ -145,22 +265,22 @@ $(biopersonal).stop().animate({
   'opacity': 0
 }, 0);
 
-// $('#biocontain').hover(function () {
-//     $(bioquote).stop().animate({
-//         'opacity': 0
-//     }, 1500);
-//     $(biopersonal).stop().animate({
-//         'opacity': 1
-//     }, 1000);
-// }, function () {
-//     $(bioquote).stop().animate({
-//         'opacity': 1
-//     }, 1000);
-//     $(biopersonal).stop().animate({
-//         'opacity': 0
-//     }, 1000);
+$('#biocontain').hover(function () {
+    $(bioquote).stop().animate({
+        'opacity': 0
+    }, 1500);
+    $(biopersonal).stop().animate({
+        'opacity': 1
+    }, 1000);
+}, function () {
+    $(bioquote).stop().animate({
+        'opacity': 1
+    }, 1000);
+    $(biopersonal).stop().animate({
+        'opacity': 0
+    }, 1000);
 
-// }); 
+}); 
 
 //------------------------ 
 // History Hover
@@ -226,14 +346,14 @@ function resizeDist() {
   projectDist = $('#projectslice').offset().top;
 }
 
-function addRemove(nameClass, atClass) {
-//   let menuTabArray = $('.menutabs');
-//   for (let i=0; i< menuTabArray.length; i++) {
-//     // menuTabArray[i].removeClass(nameClass);
-//     if (menuTabArray[i].id == atClass){
-//       menuTabArray[i].addClass(nameClass);
-//     }
-//   }
+function addRemove(atClass) {
+  let menuTabArray = $('.menutabs');
+  for (let i=0; i< menuTabArray.length; i++) {
+    menuTabArray.eq(i).removeClass('menudark');
+    if (menuTabArray[i].id == atClass){
+      menuTabArray.eq(i).addClass('menudark');
+    }
+  }
 }
   
 // jQuery  UI Animations?
@@ -269,15 +389,13 @@ document.addEventListener('scroll', function () {
   } else {
     const menuTabs = $('.menutabs a');
     if ($(window).scrollTop() < bioDist) {
-      // menuTabs.removeClass('menudark');
+      addRemove("top");
     } else if ($(window).scrollTop() > bioDist && ($(window).scrollTop() < historyDist)) {
-      addRemove('menudark', "biomenu");
+      addRemove("biomenu");
     } else if ($(window).scrollTop() > historyDist && $(window).scrollTop() < projectDist) {
-      // menuTabs.removeClass('menudark');
-      // $('a[href="#historyslice"]').addClass('menudark');
+      addRemove("historymenu");
     } else if ($(window).scrollTop() > projectDist) {
-      // menuTabs.removeClass('menudark');
-      // $('a[href="#projectslice"]').addClass('menudark');
+      addRemove("projectmenu");
     }    
   }
 }, true);
@@ -355,9 +473,13 @@ $('.project').click(function(e){
 
 $('#contactme, #contactmebut, #footercontact').on('click', () => {
   $('#contactslice').show();
+  addRemove('contactme');
 });
 
-$('#contactclose').on('click', () => $('#contactslice').hide());
+$('#contactclose').on('click', () => {
+  $('#contactslice').hide();
+  addRemove('projectmenu');
+});
 
 //------------------------
 // Contact Form
@@ -393,104 +515,6 @@ $('#submit').click(function(e) {
     e.preventDefault();
   }
 });
-
-//------------------------
-// Particles
-//------------------------
-
-function party() {
-  particlesJS("particles-js", {
-    "particles": {
-      "number": {
-        "value": 100,
-        "density": {
-          "enable": true,
-          "value_area": 400
-        }
-      },
-      "color": {
-        "value": "#7d1577"
-      },
-      "shape": {
-        "type": "circle",
-        "stroke": {
-          "width": 0,
-          "color": "#000"
-        }
-      },
-      "opacity": {
-        "value": 0.5,
-        "random": true,
-        "anim": {
-          "enable": false,
-          "speed": 1,
-          "opacity_min": 0.1,
-          "sync": false
-        }
-      },
-      "size": {
-        "value": 5,
-        "random": true,
-        "anim": {
-          "enable": false,
-          "speed": 20,
-          "size_min": 0.1,
-          "sync": false
-        }
-      },
-      "line_linked": {
-        "enable": true,
-        "distance": 150,
-        "color": "#0000ff",
-        "opacity": 0.5,
-        "width": 1
-      },
-      "move": {
-        "enable": true,
-        "speed": 4,
-        "direction": "none",
-        "random": false,
-        "straight": false,
-        "out_mode": "out",
-        "bounce": false,
-        "attract": {
-          "enable": false,
-          "rotateX": 600,
-          "rotateY": 1200
-        }
-      }
-    },
-    "interactivity": {
-      "detect_on": "canvas",
-      "events": {
-        "onhover": {
-          "enable": true,
-          "mode": "bubble"
-        },
-        "onclick": {
-          "enable": true,
-          "mode": "repulse"
-        },
-        "resize": true
-      },
-      "modes": {
-        "bubble": {
-          "distance": 100,
-          "size": 20,
-          "duration": 2,
-          "opacity": 2,
-          "speed": 3
-        },
-        "repulse": {
-          "distance": 100,
-          "duration": 0.4
-        }
-      }
-    },
-    "retina_detect": true
-  });
-}
-
 //------------------------
 // circles
 //------------------------
