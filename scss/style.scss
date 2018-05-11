@@ -451,7 +451,6 @@ a:active {
 }
   
 .flexbox-slide {
-  transition: height 0.5s ease;
   position: relative;
   overflow: hidden;
   visibility: visible;
@@ -459,21 +458,6 @@ a:active {
   flex-direction: column;
   justify-content: flex-start;
   flex-wrap: wrap;
-
-  &:hover {
-    
-    height:340px;
-
-    .textblock {
-      height: auto;
-    }
-
-    .historytext {
-      padding: 15px;
-      flex: 1;
-      font-size: 0.6em;
-    }
-  }
 }
 
 .imgtitle {
@@ -484,6 +468,7 @@ a:active {
 
 .historylogo {
   width: 50%;
+  max-width: 150px;
 
   img {
     height: 100px;
@@ -501,6 +486,7 @@ a:active {
   background: rgba(255,255,255,0.6);
   font-size: 0.8em;
   font-family: $headertext;
+  max-width: 150px;
   width: 50%;
   padding: 20px;
 }
@@ -511,15 +497,19 @@ a:active {
 }
 
 .textblock {
-  border-top: 1px solid rgba(0,0,0,0.6);
   width: 100%;
   z-index: 2;
   display: flex;
   position: relative;
   flex-direction: row;
-  height: 0px;
-  transition: height, 0.5s linear;
-  background: rgba(255,255,255,0.6);
+  overflow: hidden;
+  height: 0;
+  justify-content: center;
+  transition: height 1s;
+}
+
+.tbopen {
+  height: 230px;
 }
 
 .historyicons {
@@ -527,14 +517,20 @@ a:active {
 }
 
 .historytext { 
-  display: block;
+  border-top: 1px solid rgba(0,0,0,0.6);
   text-align: left;
   overflow: hidden;
-  margin: 0 auto 10px;
-  flex: 0;
-  transition: height, 0.5s linear;
-  font-size: 0em;
+  margin: 0 5px 10px;
+  padding: 15px;
+  font-size: 0.55em;
   width: 100%;
+  background: rgba(255,255,255,0.6);
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.hton {
+  opacity: 1;
 }
 
 .jobtitle {
@@ -547,7 +543,7 @@ a:active {
 }
 
 .nowcalled {
-  font-size: 0.8em;
+  font-size: 0.9em;
   
   a {
     color: $secondcolor;
@@ -1030,24 +1026,6 @@ span{
     font-size: 0.7em;
   }
 
-  .flexbox-slide {
-
-    &:hover {
-
-      .textblock {
-        width: 100%;
-        height: 170px;
-        transition: height, 0.5s linear;
-      }
-
-      .historytext {
-        width: 100%;
-        height: 170px;
-        transition: height, 0.5s linear;
-      }
-    }
-  }
-
   .project {
     width: 40%;
 
@@ -1275,72 +1253,54 @@ span{
     padding: 10px;
     align-items: center;
     justify-content: center;
-        transition: all, 0.5s linear;
+    display: flex;
+    transition: width 1s;
+    overflow: hidden;
+  }
 
-    &:hover {
-      width: 80%;
-
-      .textblock {
-        height: 230px;
-      }
-      
-      .historytitles {
-        font-size: 0.4em
-      }
-
-      .historytext {
-        height: 400px;
-        transition: height, 0.5s linear;
-        font-size: 0.22em;
-        text-align: justify;
-        padding: 15px;
-        opacity: 1;
-      }
-
-      .historylogo {
-    transition: all, 0.5s linear;
-      }
-
-      img {
-        max-width: 200px;
-      }
-    }
+  .flexopen{
+    width: 80%;
   }
 
   .imgtitle {
     flex-direction: row;
     flex-wrap: wrap;
-    height: auto;
-  }
-
-  .historytext {
-    padding: 15px;
-    opacity: 0;
-  }
-  
-  .textblock {
-    width: 90%;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: 10px auto 10px;
-  }
-  
-  .historytitles {
-    font-size: 0.25em;
-    // margin: 10px;
-    padding: 5px;
-    width: 100%;
-    height: 70px;
+    height: 200px;
   }
   
   .historylogo {
     width: auto; 
     margin: 0 auto;
-    transition: all, 0.5s linear;
 
     img {
       height: auto;
     }
+  }
+  
+  .historytitles {
+    font-size: 0.25em;
+    padding: 5px;
+    width: 100%;
+    height: 70px;
+  }
+
+  .textblock {
+    width: 90%;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px auto 10px;
+    height: 300px;
+  }
+
+  .historytext {
+    padding: 15px;
+    opacity: 0;
+    font-size: 0.25em;
+    height: 260px;
+  }
+
+  .hton {
+    opacity: 1;
   }
 
   .project {
@@ -1350,7 +1310,7 @@ span{
     &:hover {
 
       .protext {
-        margin: 10px 0;
+        margin: 15px 0;
       }
     }
   }
@@ -1419,6 +1379,11 @@ span{
 
   #menucontain {
     width: 7%;
+  }
+
+  #contentcontain {
+    width: 93%;
+    left: 7%;
   }
 
   .menutabs {

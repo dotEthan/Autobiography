@@ -349,7 +349,6 @@ a:active {
   flex-direction: column-reverse; }
 
 .flexbox-slide {
-  transition: height 0.5s ease;
   position: relative;
   overflow: hidden;
   visibility: visible;
@@ -357,14 +356,6 @@ a:active {
   flex-direction: column;
   justify-content: flex-start;
   flex-wrap: wrap; }
-  .flexbox-slide:hover {
-    height: 340px; }
-    .flexbox-slide:hover .textblock {
-      height: auto; }
-    .flexbox-slide:hover .historytext {
-      padding: 15px;
-      flex: 1;
-      font-size: 0.6em; }
 
 .imgtitle {
   display: flex;
@@ -372,7 +363,8 @@ a:active {
   height: 100px; }
 
 .historylogo {
-  width: 50%; }
+  width: 50%;
+  max-width: 150px; }
   .historylogo img {
     height: 100px;
     margin: 0 auto; }
@@ -387,6 +379,7 @@ a:active {
   background: rgba(255, 255, 255, 0.6);
   font-size: 0.8em;
   font-family: "Merriweather", serif;
+  max-width: 150px;
   width: 50%;
   padding: 20px; }
 
@@ -395,28 +388,36 @@ a:active {
   width: 100%; }
 
 .textblock {
-  border-top: 1px solid rgba(0, 0, 0, 0.6);
   width: 100%;
   z-index: 2;
   display: flex;
   position: relative;
   flex-direction: row;
-  height: 0px;
-  transition: height, 0.5s linear;
-  background: rgba(255, 255, 255, 0.6); }
+  overflow: hidden;
+  height: 0;
+  justify-content: center;
+  transition: height 1s; }
+
+.tbopen {
+  height: 230px; }
 
 .historyicons {
   display: none; }
 
 .historytext {
-  display: block;
+  border-top: 1px solid rgba(0, 0, 0, 0.6);
   text-align: left;
   overflow: hidden;
-  margin: 0 auto 10px;
-  flex: 0;
-  transition: height, 0.5s linear;
-  font-size: 0em;
-  width: 100%; }
+  margin: 0 5px 10px;
+  padding: 15px;
+  font-size: 0.55em;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.6);
+  opacity: 0;
+  transition: opacity 1s; }
+
+.hton {
+  opacity: 1; }
 
 .jobtitle {
   margin-bottom: 10px;
@@ -426,7 +427,7 @@ a:active {
   padding-left: 20px; }
 
 .nowcalled {
-  font-size: 0.8em; }
+  font-size: 0.9em; }
   .nowcalled a {
     color: #4c4556; }
     .nowcalled a:hover {
@@ -806,14 +807,6 @@ span {
     font-size: 1.1em; }
   #biobottom {
     font-size: 0.7em; }
-  .flexbox-slide:hover .textblock {
-    width: 100%;
-    height: 170px;
-    transition: height, 0.5s linear; }
-  .flexbox-slide:hover .historytext {
-    width: 100%;
-    height: 170px;
-    transition: height, 0.5s linear; }
   .project {
     width: 40%; }
     .project:hover .protextt {
@@ -950,52 +943,43 @@ span {
     padding: 10px;
     align-items: center;
     justify-content: center;
-    transition: all, 0.5s linear; }
-    .flexbox-slide:hover {
-      width: 80%; }
-      .flexbox-slide:hover .textblock {
-        height: 230px; }
-      .flexbox-slide:hover .historytitles {
-        font-size: 0.4em; }
-      .flexbox-slide:hover .historytext {
-        height: 400px;
-        transition: height, 0.5s linear;
-        font-size: 0.22em;
-        text-align: justify;
-        padding: 15px;
-        opacity: 1; }
-      .flexbox-slide:hover .historylogo {
-        transition: all, 0.5s linear; }
-      .flexbox-slide:hover img {
-        max-width: 200px; }
+    display: flex;
+    transition: width 1s;
+    overflow: hidden; }
+  .flexopen {
+    width: 80%; }
   .imgtitle {
     flex-direction: row;
     flex-wrap: wrap;
-    height: auto; }
-  .historytext {
-    padding: 15px;
-    opacity: 0; }
-  .textblock {
-    width: 90%;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: 10px auto 10px; }
+    height: 200px; }
+  .historylogo {
+    width: auto;
+    margin: 0 auto; }
+    .historylogo img {
+      height: auto; }
   .historytitles {
     font-size: 0.25em;
     padding: 5px;
     width: 100%;
     height: 70px; }
-  .historylogo {
-    width: auto;
-    margin: 0 auto;
-    transition: all, 0.5s linear; }
-    .historylogo img {
-      height: auto; }
+  .textblock {
+    width: 90%;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px auto 10px;
+    height: 300px; }
+  .historytext {
+    padding: 15px;
+    opacity: 0;
+    font-size: 0.25em;
+    height: 260px; }
+  .hton {
+    opacity: 1; }
   .project {
     width: 30%;
     margin-right: 10px; }
     .project:hover .protext {
-      margin: 10px 0; }
+      margin: 15px 0; }
   #projectoverlay {
     max-height: 800px;
     width: 80%;
@@ -1034,5 +1018,8 @@ span {
 @media screen and (min-width: 992px) {
   #menucontain {
     width: 7%; }
+  #contentcontain {
+    width: 93%;
+    left: 7%; }
   .menutabs {
     font-size: 0.9em; } }

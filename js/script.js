@@ -6,125 +6,6 @@
 // Programmer mobile animation doesn't stop when you go to student then back.
 
 
-//------------------------
-// Modernizr
-//------------------------
-
-function doneResizing() {
-  if (Modernizr.mq('screen and (min-width:576px)')) {
-    
-  } else if(Modernizr.mq('screen and (min-width:768px)')) {
-      console.log("now");
-
-    //------------------------
-    // Particles
-    //------------------------
-
-    function party() {
-      particlesJS("particles-js", {
-        "particles": {
-          "number": {
-            "value": 100,
-            "density": {
-              "enable": true,
-              "value_area": 400
-            }
-          },
-          "color": {
-            "value": "#7d1577"
-          },
-          "shape": {
-            "type": "circle",
-            "stroke": {
-              "width": 0,
-              "color": "#000"
-            }
-          },
-          "opacity": {
-            "value": 0.5,
-            "random": true,
-            "anim": {
-              "enable": false,
-              "speed": 1,
-              "opacity_min": 0.1,
-              "sync": false
-            }
-          },
-          "size": {
-            "value": 5,
-            "random": true,
-            "anim": {
-              "enable": false,
-              "speed": 20,
-              "size_min": 0.1,
-              "sync": false
-            }
-          },
-          "line_linked": {
-            "enable": true,
-            "distance": 150,
-            "color": "#0000ff",
-            "opacity": 0.5,
-            "width": 1
-          },
-          "move": {
-            "enable": true,
-            "speed": 4,
-            "direction": "none",
-            "random": false,
-            "straight": false,
-            "out_mode": "out",
-            "bounce": false,
-            "attract": {
-              "enable": false,
-              "rotateX": 600,
-              "rotateY": 1200
-            }
-          }
-        },
-        "interactivity": {
-          "detect_on": "canvas",
-          "events": {
-            "onhover": {
-              "enable": true,
-              "mode": "bubble"
-            },
-            "onclick": {
-              "enable": true,
-              "mode": "repulse"
-            },
-            "resize": true
-          },
-          "modes": {
-            "bubble": {
-              "distance": 100,
-              "size": 20,
-              "duration": 2,
-              "opacity": 2,
-              "speed": 3
-            },
-            "repulse": {
-              "distance": 100,
-              "duration": 0.4
-            }
-          }
-        },
-        "retina_detect": true
-      });
-    }
-
-  } else {
-    console.log("small");
-  }
-}
-
-var id5;
-$(window).resize(function() {
-  clearTimeout(id5);
-  id5 = setTimeout(doneResizing, 0);
-});
-
-doneResizing();
 
 //------------------------
 // Typewrite
@@ -149,6 +30,7 @@ entreDone = 0;
 let timeOut;
 let animating;
 let theme = "programmer";
+let extraJ;
 
 //-----------------------
 //Loading
@@ -207,7 +89,7 @@ $('#studentb').click(function() {
   setTextContent(asaChange, 'As a Student:');
   setTextContent(bioChange, 'I grew up in small town Ontario, than big city BC, then small town BC, then small town Manitoba, than back to BC for a couple cities and then back to Ontario. We moved a lot. It is one of the reasons I am able to easily adapt to the various environments left takes me to.');
   $("#personalimg").attr("src","../images/bios.jpg");
-  timeOut = setTimeout(circles, 1000);
+doneResizing();
 });
 
 $('#entreb').click(function() {
@@ -220,6 +102,7 @@ $('#entreb').click(function() {
     entreDone++;
   }
   $('link[rel=stylesheet]').attr({href : 'css/entrestyle.css'});
+  theme = 'entre';
   $('#entrebgcanvas').css({'display': 'block'});
   $('#mycanvas').css({'display': 'block'});
   setTextContent(textChange, 'was designed and built to facilitate entrepreneurial success. If you want a leg up on the competition,');
@@ -230,16 +113,12 @@ $('#entreb').click(function() {
   setTextContent(asaChange, 'As an Entrepreneur:');
   setTextContent(bioChange, 'I spent my 20s in China, learning a new culture, language and how to develop long term plans and put them into action. I had numerous jobs including Bar Manager, University professor, Radio Host and more. And I developed and opened a number of different entreprenerial ventures that pushed me to learn web development, leadership skills and to hone my customer service techniques.');
   $("#personalimg").attr("src","../images/bioe.jpg");
-  timeOut = setTimeout(spirals, 1000);
-  let timeOut2 = setTimeout(change, 1000);
+doneResizing();
 });
-
-function change() {
-  theme = 'entre';
-}
   
 $('#programmerb').click(function() {
   $('link[rel=stylesheet]').attr({href : 'css/style.css'}); 
+  theme = 'programmer';
   $('#entrebgcanvas').css({'display': 'none'});
   $('#mycanvas').css({'display': 'none'});
   window.cancelAnimationFrame(animating); 
@@ -253,8 +132,7 @@ $('#programmerb').click(function() {
   $("#personalimg").attr("src","../images/biop.jpg");
   pageDelay(showPage);
   $('#particles-js').css({'display': 'block'});
-  theme = 'programmer';
-  timeOut = setTimeout(party, 1000); 
+doneResizing();
 });
 
 //-----------------------
@@ -281,61 +159,6 @@ $('#biocontain').hover(function () {
     }, 1000);
 
 }); 
-
-//------------------------ 
-// History Hover
-//------------------------
-
-// $('.historytext').stop().animate({
-//   'opacity': 0
-// }, 0);
-
-if (theme !== 'programmer') {
-  $('.flexbox-slide').hover(function (e) {
-    // const icons = $(this).find('.historyicons');
-    // const text = $(this).find('.historytext');
-    const slideArray = $('.flexbox-slide');
-
-    // const textBlock = $(this).find('textblock');
-
-    // icons.stop().animate({
-    //     'opacity': 0
-    // }, 500);
-    // textBlock.stop().animate({
-    //     'height': 500
-    // }, 500);
-
-    // $(this).find("textblock").toggleClass('open');
-
-    for(let i=0; i<slideArray.length; i++) {
-      if (slideArray[i].id !== this.id) {
-        slideArray[i].style.fontSize = '0.5em';
-      }
-    }
-
-  }, function () {
-    // const icons = $(this).find('.historyicons');
-    // const text = $(this).find('.historytext');
-    const slideArray = $('.flexbox-slide');
-
-    // const textBlock = $(this).find('textblock');
-    
-    // icons.stop().animate({
-    //     'opacity': 1
-    // }, 500);
-    // textBlock.stop().animate({
-    //     'height': 0
-    // }, 500);
-
-    // $(this).find("textblock").toggleClass('open');
-
-    for(let i=0; i<slideArray.length; i++) {
-      if (slideArray[i].id !== this.id) {
-        slideArray[i].style.fontSize = '1em';
-      }
-    }
-  }); 
-}
 
 //-----------------------
 // Scrolling Position
@@ -750,3 +573,190 @@ function spirals() {
   animate();
 
 }
+
+//------------------------
+// Particles
+//------------------------
+
+function party() {
+  particlesJS("particles-js", {
+    "particles": {
+      "number": {
+        "value": 100,
+        "density": {
+          "enable": true,
+          "value_area": 400
+        }
+      },
+      "color": {
+        "value": "#7d1577"
+      },
+      "shape": {
+        "type": "circle",
+        "stroke": {
+          "width": 0,
+          "color": "#000"
+        }
+      },
+      "opacity": {
+        "value": 0.5,
+        "random": true,
+        "anim": {
+          "enable": false,
+          "speed": 1,
+          "opacity_min": 0.1,
+          "sync": false
+        }
+      },
+      "size": {
+        "value": 5,
+        "random": true,
+        "anim": {
+          "enable": false,
+          "speed": 20,
+          "size_min": 0.1,
+          "sync": false
+        }
+      },
+      "line_linked": {
+        "enable": true,
+        "distance": 150,
+        "color": "#0000ff",
+        "opacity": 0.5,
+        "width": 1
+      },
+      "move": {
+        "enable": true,
+        "speed": 4,
+        "direction": "none",
+        "random": false,
+        "straight": false,
+        "out_mode": "out",
+        "bounce": false,
+        "attract": {
+          "enable": false,
+          "rotateX": 600,
+          "rotateY": 1200
+        }
+      }
+    },
+    "interactivity": {
+      "detect_on": "canvas",
+      "events": {
+        "onhover": {
+          "enable": true,
+          "mode": "bubble"
+        },
+        "onclick": {
+          "enable": true,
+          "mode": "repulse"
+        },
+        "resize": true
+      },
+      "modes": {
+        "bubble": {
+          "distance": 100,
+          "size": 20,
+          "duration": 2,
+          "opacity": 2,
+          "speed": 3
+        },
+        "repulse": {
+          "distance": 100,
+          "duration": 0.4
+        }
+      }
+    },
+    "retina_detect": true
+  });
+}
+
+//------------------------
+// Modernizr
+//------------------------
+
+function doneResizing() {
+  if (Modernizr.mq('screen and (min-width:768px)')) {
+
+    if (theme === 'programmer') {
+      timeOut = setTimeout(party, 1000); 
+    } else if (theme === 'entre') {
+      timeOut = setTimeout(spirals, 1000);
+    } else if (theme === 'student') {
+      timeOut = setTimeout(circles, 1000);
+    }
+    extraJ = true;
+
+  } else {
+
+    extraJ = false;
+
+  }
+}
+
+var id5;
+$(window).resize(function() {
+  clearTimeout(id5);
+  id5 = setTimeout(doneResizing, 0);
+});
+
+doneResizing();
+
+//------------------------ 
+// History Hover
+//------------------------
+
+$('.flexbox-slide').hover(function (e) {
+  const thisSlide = $(this);
+  const slideArray = $('.flexbox-slide');
+  const textBlock = $(this).find('.textblock');
+  const text = $(this).find('.historytext');
+
+  if (!extraJ) {
+
+
+    textBlock.addClass('tbopen');
+    text.addClass('hton');
+
+  } else {
+
+    thisSlide.addClass('flexopen');
+    setTimeout(function() {
+      text.addClass('hton');
+    }, 800);
+
+    for(let i=0; i<slideArray.length; i++) {
+      if (slideArray[i].id !== this.id) {
+        slideArray[i].style.fontSize = '0.8em';
+      }
+    }
+
+  }
+
+}, function () {
+  const thisSlide = $(this);
+  const slideArray = $('.flexbox-slide');
+  const textBlock = $(this).find('.textblock');
+  const text = $(this).find('.historytext');
+
+  if (!extraJ) {
+
+    textBlock.removeClass('tbopen');
+    text.removeClass('hton');
+
+  } else {
+
+    text.removeClass('hton');
+    setTimeout(function() {
+      thisSlide.removeClass('flexopen');
+    }, 300);
+
+    for(let i=0; i<slideArray.length; i++) {
+      if (slideArray[i].id !== this.id) {
+        slideArray[i].style.fontSize = '1em';
+      }
+    }
+
+  }
+
+}); 
