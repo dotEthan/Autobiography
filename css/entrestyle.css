@@ -163,7 +163,7 @@ body {
       .menutabs:hover {
         font-size: 1.3em; }
         .menutabs:hover a {
-          color: #e66c0b; } }
+          color: #fb7e19; } }
 
 .faicon {
   font-size: 1.5em; }
@@ -335,7 +335,7 @@ body {
   #thanksright a {
     color: #86C232; }
     #thanksright a:hover {
-      color: #e66c0b; }
+      color: #fb7e19; }
 
 #thanksleft {
   width: 15%;
@@ -512,7 +512,7 @@ body {
       padding: 10px; }
   .project:hover .protext {
     font-size: 1.1em;
-    background-color: #e66c0b;
+    background-color: #fb7e19;
     margin: 15px 0; }
   .project:hover .protextw {
     font-size: 0.7em; }
@@ -592,7 +592,7 @@ body {
   margin-bottom: 30px; }
 
 #overlayurl a {
-  color: #e66c0b;
+  color: #fb7e19;
   font-size: 1.2em; }
 
 #overlayright {
@@ -628,7 +628,7 @@ body {
   color: #162008;
   cursor: pointer; }
   .buttonstyle:hover {
-    background-color: #e66c0b; }
+    background-color: #fb7e19; }
 
 #resumehalf {
   width: 50%;
@@ -648,7 +648,7 @@ body {
     border: 2px solid #b5dd7d;
     color: white; }
     #resumehalf .buttonstyle:hover {
-      background-color: #e66c0b; }
+      background-color: #fb7e19; }
 
 #update {
   font-size: 0.4em;
@@ -726,10 +726,10 @@ body {
     font-family: "Raleway", serif;
     margin-top: 5px; }
   .contacttype:hover {
-    color: #ce610a; }
+    color: #f67004; }
     .contacttype:hover .footertext {
       visibility: visible;
-      color: #ce610a; }
+      color: #f67004; }
 
 .fi {
   display: flex;
@@ -747,10 +747,10 @@ body {
   color: #86C232;
   font-weight: bold; }
   .footlink a:hover {
-    color: #e66c0b; }
+    color: #fb7e19; }
 
 #third {
-  background: #e66c0b;
+  background: #fb7e19;
   display: none; }
 
 #mainform {

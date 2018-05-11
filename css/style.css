@@ -102,6 +102,9 @@ a:active {
   z-index: 99;
   height: 70px; }
 
+#ethan {
+  display: none; }
+
 #mycanvas {
   display: none; }
 
@@ -150,7 +153,7 @@ a:active {
 
 #splashcont {
   height: 100vh;
-  background-image: url("../images/programmera.jpg");
+  background-image: url("../images/programmer.jpg");
   background-size: auto 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -603,7 +606,7 @@ a:active {
 
 #availablehalf {
   width: 40%;
-  padding: 15px 0 15px 15px;
+  padding: 35px 0 35px 15px;
   font-size: 0.9em;
   text-align: left;
   display: flex;
@@ -623,7 +626,7 @@ a:active {
 
 #resumehalf {
   width: 60%;
-  padding: 15px 15px 15px 0px;
+  padding: 35px 15px 35px 0px;
   background-color: #1a181d;
   text-align: right;
   font-size: 0.9em;
@@ -795,6 +798,16 @@ span {
   text-align: center; }
 
 @media screen and (min-width: 576px) {
+  #menucontain {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+  #ethan {
+    display: block;
+    margin-left: 25px; }
+  #menu {
+    width: 100%;
+    padding-top: 0; }
   #mobilewarning {
     width: 60%; }
   #biocontain {
@@ -807,12 +820,20 @@ span {
     font-size: 1.1em; }
   #biobottom {
     font-size: 0.7em; }
+  .historytext {
+    font-size: 0.65em; }
+  .dutylist ul li {
+    margin-bottom: 10px; }
   .project {
     width: 40%; }
     .project:hover .protextt {
       font-size: 0.8em; }
     .project:hover .protextw {
       font-size: 0.6em !important; }
+  #resumehalf {
+    padding-right: 20px; }
+  #availablehalf {
+    padding-left: 20px; }
   .contacttype {
     font-size: 2.5em; }
   #footmessage {
@@ -820,11 +841,19 @@ span {
 
 @media screen and (min-width: 768px) {
   #menucontain {
-    position: fixed;
+    flex-direction: column;
+    justify-content: space-around;
     top: 0;
     left: 0;
     width: 10%;
     height: 100vh; }
+  #ethan {
+    margin-left: 40px;
+    margin-bottom: 150px;
+    background: #40a7f3;
+    border-radius: 25%;
+    padding: 20px;
+    z-index: 99; }
   .leftcanvas {
     height: 100vh;
     width: 100%;
@@ -832,20 +861,10 @@ span {
     top: 0;
     left: 0;
     display: block; }
-  #mobilewarning {
-    display: none; }
-  #choices {
-    display: flex;
-    justify-content: space-around;
-    width: 80%;
-    margin: 0 auto; }
   #menu {
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    height: 80vh;
-    margin-top: 30vh;
-    padding-top: 0; }
+    align-items: center; }
   .menutabs {
     width: 120%;
     display: flex;
@@ -870,6 +889,13 @@ span {
       color: #e5e5e5; }
   #historymenu, #projectmenu, #contactme {
     border-top: 1px solid #0c74c1; }
+  #mobilewarning {
+    display: none; }
+  #choices {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin: 0 auto; }
   .lefttabs {
     flex-direction: row; }
   .menutitle {
@@ -947,7 +973,7 @@ span {
     transition: width 1s;
     overflow: hidden; }
   .flexopen {
-    width: 80%; }
+    width: 90%; }
   .imgtitle {
     flex-direction: row;
     flex-wrap: wrap;
@@ -975,6 +1001,8 @@ span {
     height: 260px; }
   .hton {
     opacity: 1; }
+  .dutylist ul li {
+    margin-bottom: 5px; }
   .project {
     width: 30%;
     margin-right: 10px; }
@@ -1022,4 +1050,7 @@ span {
     width: 93%;
     left: 7%; }
   .menutabs {
-    font-size: 0.9em; } }
+    font-size: 0.9em; }
+  #splashcont {
+    background-position: center;
+    background-size: 100%; } }

@@ -721,9 +721,9 @@ $('.flexbox-slide').hover(function (e) {
   } else {
 
     thisSlide.addClass('flexopen');
-    setTimeout(function() {
+    // setTimeout(function() {
       text.addClass('hton');
-    }, 800);
+    // }, 500);
 
     for(let i=0; i<slideArray.length; i++) {
       if (slideArray[i].id !== this.id) {
@@ -747,9 +747,9 @@ $('.flexbox-slide').hover(function (e) {
   } else {
 
     text.removeClass('hton');
-    setTimeout(function() {
+    // setTimeout(function() {
       thisSlide.removeClass('flexopen');
-    }, 300);
+    // }, 200);
 
     for(let i=0; i<slideArray.length; i++) {
       if (slideArray[i].id !== this.id) {

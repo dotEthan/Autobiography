@@ -36,7 +36,7 @@ $menutextc: white;
 $menuiconsize: 1.5em;
 $menufontsize: 0.9em;
 $smallmenupaddingtop: 20px;
-$frontimage: url('../images/programmera.jpg');
+$frontimage: url('../images/programmer.jpg');
 $biowritingc: black;
 $biowritings: 2.7em;
 $bioquestions: 2.5em;
@@ -138,6 +138,10 @@ a:active {
   width: 100%;
   z-index: 99;
   height: 70px;
+}
+
+#ethan {
+  display: none;
 }
 
 #mycanvas {
@@ -765,7 +769,7 @@ a:active {
 
 #availablehalf {
   width: 40%;
-  padding: 15px 0 15px 15px;
+  padding: 35px 0 35px 15px;
   font-size: 0.9em;
   text-align: left;
   display: flex;
@@ -790,7 +794,7 @@ a:active {
 
 #resumehalf {
   width: 60%;
-  padding: 15px 15px 15px 0px;
+  padding: 35px 15px 35px 0px;
   background-color: darken($secondcolor,20%);
   text-align: right;
   font-size: 0.9em;
@@ -1002,6 +1006,22 @@ span{
 
 @media screen and (min-width: 576px) {
 
+  #menucontain {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #ethan {
+    display: block;
+    margin-left: 25px;
+  }
+
+  #menu {
+    width: 100%;
+    padding-top: 0;
+  }
+
   #mobilewarning {
     width: 60%;
   }
@@ -1026,6 +1046,14 @@ span{
     font-size: 0.7em;
   }
 
+  .historytext {
+    font-size: 0.65em;
+  }
+
+  .dutylist ul li {
+    margin-bottom: 10px;
+  }
+
   .project {
     width: 40%;
 
@@ -1040,6 +1068,14 @@ span{
     }
   }
 
+  #resumehalf {
+    padding-right: 20px;
+  }
+
+  #availablehalf {
+    padding-left: 20px;
+  }
+
   .contacttype {
     font-size: 2.5em;
   }
@@ -1052,11 +1088,21 @@ span{
 @media screen and (min-width: 768px) {
   
   #menucontain {
-    position: fixed;
+    flex-direction: column;
+    justify-content: space-around;
     top: 0;
     left: 0; 
     width: 10%;
     height: 100vh;
+  }
+
+  #ethan {
+    margin-left: 40px;
+    margin-bottom: 150px;
+    background: $thirdcolor;
+    border-radius: 25%;
+    padding: 20px;
+    z-index: 99;
   }
 
   .leftcanvas {
@@ -1068,29 +1114,10 @@ span{
     display: block;
   }
 
-  
-  #titlecard {
-
-  }
-
-  #mobilewarning {
-    display: none;
-  }
-
-  #choices {
-    display: flex;
-    justify-content: space-around;
-    width: 80%;
-    margin: 0 auto;
-  }
-
   #menu {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 80vh;
-    margin-top: 30vh;
-    padding-top: 0;
   }
 
   .menutabs {
@@ -1130,6 +1157,17 @@ span{
 
   #historymenu, #projectmenu, #contactme {
     border-top: 1px solid darken($thirdcolor, 20%);
+  }
+
+  #mobilewarning {
+    display: none;
+  }
+
+  #choices {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin: 0 auto;
   }
   
   .lefttabs {
@@ -1259,7 +1297,7 @@ span{
   }
 
   .flexopen{
-    width: 80%;
+    width: 90%;
   }
 
   .imgtitle {
@@ -1301,6 +1339,10 @@ span{
 
   .hton {
     opacity: 1;
+  }
+
+  .dutylist ul li {
+    margin-bottom: 5px;
   }
 
   .project {
@@ -1388,5 +1430,10 @@ span{
 
   .menutabs {
     font-size: 0.9em;
+  }
+
+  #splashcont {
+    background-position: center;
+    background-size: 100%;
   }
 }
