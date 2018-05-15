@@ -87,7 +87,7 @@ $('#studentb').click(function() {
   setTextContent(languageChange, 'Languages: English'); 
   setTextContent(languageChange2, 'Languages: Lego');
   setTextContent(asaChange, 'As a Student:');
-  setTextContent(bioChange, 'I grew up in small town Ontario, than big city BC, then small town BC, then small town Manitoba, than back to BC for a couple cities and then back to Ontario. We moved a lot. It is one of the reasons I am able to easily adapt to the various environments left takes me to.');
+  setTextContent(bioChange, 'I grew up in small town Ontario, than big city BC, then small town BC, then small town Manitoba, than back to BC for a couple cities and then back to Ontario. We moved a lot. It is likely one of the reasons I am able to easily adapt to the various environments life takes me to.');
   $("#personalimg").attr("src","../images/bios.jpg");
 doneResizing();
 });
@@ -711,6 +711,8 @@ $('.flexbox-slide').hover(function (e) {
   const slideArray = $('.flexbox-slide');
   const textBlock = $(this).find('.textblock');
   const text = $(this).find('.historytext');
+  const image = $(this).find('.historylogo');
+  const titles = $(this).find('.historytitles');
 
   if (!extraJ) {
 
@@ -721,9 +723,9 @@ $('.flexbox-slide').hover(function (e) {
   } else {
 
     thisSlide.addClass('flexopen');
-    // setTimeout(function() {
-      text.addClass('hton');
-    // }, 500);
+    text.addClass('hton');
+    image.addClass('historylogoside');
+    titles.addClass('historytitlesside');
 
     for(let i=0; i<slideArray.length; i++) {
       if (slideArray[i].id !== this.id) {
@@ -738,6 +740,8 @@ $('.flexbox-slide').hover(function (e) {
   const slideArray = $('.flexbox-slide');
   const textBlock = $(this).find('.textblock');
   const text = $(this).find('.historytext');
+  const image = $(this).find('.historylogo');
+  const titles = $(this).find('.historytitles');
 
   if (!extraJ) {
 
@@ -747,9 +751,9 @@ $('.flexbox-slide').hover(function (e) {
   } else {
 
     text.removeClass('hton');
-    // setTimeout(function() {
-      thisSlide.removeClass('flexopen');
-    // }, 200);
+    thisSlide.removeClass('flexopen');
+    image.removeClass('historylogoside');
+    titles.removeClass('historytitlesside');
 
     for(let i=0; i<slideArray.length; i++) {
       if (slideArray[i].id !== this.id) {

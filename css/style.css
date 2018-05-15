@@ -13,12 +13,6 @@ img {
 .animate {
   transition: all 1.2s; }
 
-.hidden {
-  visibility: hidden !important; }
-
-.gone {
-  display: none !important; }
-
 * {
   font-family: "Monserrat", sans-serif;
   box-sizing: border-box; }
@@ -200,14 +194,16 @@ a:active {
   display: none; }
 
 .lego {
-  width: 80px;
-  height: 80px;
-  background-image: url("../images/reading.svg");
-  background-size: cover;
+  width: 50px;
+  height: 50px;
   margin: 30px 0;
   cursor: pointer; }
   .lego:hover .choicesbox {
     color: #40a7f3; }
+
+#studentb {
+  background-image: url("../images/reading.svg");
+  background-size: cover; }
 
 #entreb {
   background-image: url("../images/teacher.svg");
@@ -218,8 +214,8 @@ a:active {
   background-size: cover; }
 
 #filler {
-  width: 80px;
-  height: 80px; }
+  width: 50px;
+  height: 50px; }
 
 .choicesbox {
   margin-top: 10px;
@@ -238,6 +234,12 @@ a:active {
 #bioinfo {
   display: flex;
   justify-content: center; }
+  #bioinfo:hover #biopersonal {
+    opacity: 1;
+    transition: height, 0.5s linear; }
+  #bioinfo:hover #bioquote {
+    opacity: 0;
+    transition: height, 0.5s linear; }
 
 #biotext {
   width: 100%;
@@ -254,12 +256,6 @@ a:active {
   flex-direction: column;
   justify-content: center;
   margin: 100px auto; }
-  #biocontain:hover #biopersonal {
-    opacity: 1;
-    transition: height, 0.5s linear; }
-  #biocontain:hover #bioquote {
-    opacity: 0;
-    transition: height, 0.5s linear; }
 
 #biowriting {
   width: 100%;
@@ -484,38 +480,26 @@ a:active {
     bottom: 0;
     right: 0;
     left: 0; }
-  .project .protext {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    margin: 50px 0;
-    display: flex;
-    flex-wrap: wrap;
-    font-size: 0em;
-    background-color: transparent;
-    transition: all 800ms; }
-    .project .protext .protextt {
-      width: 100%;
-      font-family: "Merriweather", serif; }
-    .project .protext .protextw {
-      width: 100%;
-      padding: 10px; }
   .project:hover .protext {
-    font-size: 1.1em;
     background-color: #40a7f3;
     margin: 15px 0; }
-  .project:hover .protextw {
-    font-size: 0.7em; }
-  .project:hover .protextcont {
-    background: rgba(255, 255, 255, 0.6); }
 
 .project:after {
   padding-top: 56.25%;
   display: block;
   content: ''; }
+
+.protext {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: 100px 0;
+  display: flex;
+  background-color: transparent;
+  transition: all 800ms; }
 
 .protextcont {
   display: flex;
@@ -525,8 +509,16 @@ a:active {
   text-align: center;
   width: 100%;
   margin: 10px;
-  background: rgba(255, 255, 255, 0);
-  border-radius: 5px; }
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 5px;
+  overflow: hidden; }
+
+.protextt {
+  width: 100%;
+  font-family: "Merriweather", serif; }
+
+.protextw {
+  font-size: 0.7em; }
 
 #projectoverlay {
   position: fixed;
@@ -826,16 +818,16 @@ span {
     margin-bottom: 10px; }
   .project {
     width: 40%; }
-    .project:hover .protextt {
-      font-size: 0.8em; }
-    .project:hover .protextw {
-      font-size: 0.6em !important; }
+  .protextt {
+    font-size: 0.8em; }
+  .protextw {
+    font-size: 0.6em; }
   #resumehalf {
     padding-right: 20px; }
   #availablehalf {
     padding-left: 20px; }
   .contacttype {
-    font-size: 2.5em; }
+    font-size: 2.2em; }
   #footmessage {
     font-size: 0.7em; } }
 
@@ -874,8 +866,7 @@ span {
     transition: all 1s;
     z-index: 99;
     background: #40a7f3;
-    font-size: 0.6em;
-    padding: 10px; }
+    font-size: 0.6em; }
     .menutabs a {
       color: black;
       text-decoration: none; }
@@ -891,13 +882,16 @@ span {
     border-top: 1px solid #0c74c1; }
   #mobilewarning {
     display: none; }
+  #titlecard {
+    margin-bottom: 50px; }
   #choices {
     display: flex;
     justify-content: space-around;
     width: 80%;
     margin: 0 auto; }
   .lefttabs {
-    flex-direction: row; }
+    flex-direction: row;
+    padding: 10px; }
   .menutitle {
     margin-left: 5px;
     margin-top: 0; }
@@ -908,37 +902,36 @@ span {
   #splashcont {
     align-items: center; }
   #titlecard {
-    padding-top: 4%;
+    padding-top: 0;
     width: 50%;
     margin-bottom: 0; }
   #nametitle {
-    font-size: 3em; }
+    font-size: 2.5em; }
   #mobilewarning {
     display: none; }
   .languages {
     width: 100%;
-    font-size: 1em; }
+    font-size: 0.8em; }
   #languagetitle {
-    margin-top: 130px; }
+    margin-top: 100px; }
   #choices {
     display: flex;
     justify-content: space-around;
     width: 80%;
-    margin: 120px auto 0;
+    margin: 30px auto 0;
     align-items: center; }
-  #bioinfo {
-    padding: 30px; }
   #biocontain {
-    width: 85%;
+    width: 90%;
     margin: 0;
     height: 420px; }
   #biowriting {
-    font-size: 2em;
+    font-size: 1.8em;
     width: 100%; }
   #quotename {
-    font-size: 1.2em; }
+    font-size: 1em; }
   #biotop {
-    flex-direction: row; }
+    flex-direction: row;
+    align-items: center; }
   #biotextw {
     font-size: 0.8em;
     text-align: left; }
@@ -946,10 +939,12 @@ span {
     display: block; }
   #ageinfo {
     display: block; }
+  #biopersonaltext {
+    width: 75%; }
   #portimage {
     display: block;
-    padding: 10px;
-    width: 30%; }
+    margin: 0 15px;
+    width: 25%; }
   #thanksright a {
     font-size: 1.2em;
     color: #4c4556; }
@@ -973,7 +968,7 @@ span {
     transition: width 1s;
     overflow: hidden; }
   .flexopen {
-    width: 90%; }
+    width: 80%; }
   .imgtitle {
     flex-direction: row;
     flex-wrap: wrap;
@@ -1009,7 +1004,7 @@ span {
     .project:hover .protext {
       margin: 15px 0; }
   #projectoverlay {
-    max-height: 800px;
+    max-height: 80vh;
     width: 80%;
     left: 55%; }
   #closeover {
@@ -1018,14 +1013,20 @@ span {
     top: -20px;
     right: -20px;
     font-size: 2em; }
+  .allovers {
+    flex-direction: row; }
+  #overlayleft {
+    width: 50%; }
+  #overlayright {
+    width: 46%; }
   #overlaytitle {
-    font-size: 3em; }
+    font-size: 1.3em; }
   #overlaytext {
-    font-size: 1.3em; }
+    font-size: 0.8em; }
   #overlayskills {
-    font-size: 1.3em; }
+    font-size: 0.8em; }
   #overlayurl a {
-    font-size: 1.2em; }
+    font-size: 0.9em; }
   #availablehalf {
     font-size: 1em;
     padding: 50px 0 50px 50px; }
@@ -1039,7 +1040,7 @@ span {
     height: 50px;
     font-size: 2em; }
   .contacttype {
-    font-size: 3em; }
+    font-size: 2.3em; }
   #footmessage {
     font-size: 0.9em; } }
 
@@ -1050,7 +1051,32 @@ span {
     width: 93%;
     left: 7%; }
   .menutabs {
-    font-size: 0.9em; }
+    font-size: 0.6em; }
   #splashcont {
-    background-position: center;
-    background-size: 100%; } }
+    background-position: top center;
+    background-size: cover; }
+  #biopersonaltext {
+    padding-right: 10px; }
+  #portimage {
+    width: 20%; }
+  .flexbox-slide {
+    font-size: 1em; }
+    .flexbox-slide:hover .imgtitle {
+      height: 100px;
+      overflow: hidden; }
+    .flexbox-slide:hover .historytitles, .flexbox-slide:hover .historylogo {
+      height: 100px; }
+  .historylogo img {
+    height: 100px; }
+  .historylogoside {
+    width: 50%; }
+  .historytitlesside {
+    width: 50%; }
+  .project {
+    width: 20%; }
+  #overlaytext {
+    margin: 50px 0; }
+  .protextt {
+    font-size: 0.7em; }
+  .protextw {
+    font-size: 0.5em; } }

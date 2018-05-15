@@ -51,14 +51,6 @@ img{
   transition: all 1.2s;
 }
 
-.hidden {
-  visibility: hidden !important;
-}
-
-.gone {
-  display: none !important;
-}
-
 * {
   font-family: $regulartext;
   box-sizing: border-box;
@@ -260,10 +252,8 @@ a:active {
 }
 
 .lego {
-  width: 80px;
-  height: 80px;
-  background-image: url("../images/reading.svg");
-  background-size: cover;
+  width: 50px;
+  height: 50px;
   margin: 30px 0;
   cursor: pointer;
 
@@ -272,6 +262,11 @@ a:active {
       color: $thirdcolor;
     }
   }
+}
+
+#studentb {
+  background-image: url("../images/reading.svg");
+  background-size: cover;  
 }
 
 #entreb {
@@ -285,8 +280,8 @@ a:active {
 }
 
 #filler {
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 50px;
 }
 
 .choicesbox {
@@ -311,6 +306,19 @@ a:active {
 #bioinfo {
   display: flex;
   justify-content: center;
+
+  &:hover {
+
+    #biopersonal {
+      opacity: 1;
+      transition: height, 0.5s linear;
+    }
+
+    #bioquote {
+      opacity: 0;
+      transition: height, 0.5s linear;
+    }
+  }
 }
 
 #biotext {
@@ -329,19 +337,6 @@ a:active {
   flex-direction: column;
   justify-content: center;
   margin: 100px auto;  
-
-  &:hover {
-
-    #biopersonal {
-      opacity: 1;
-      transition: height, 0.5s linear;
-    }
-
-    #bioquote {
-      opacity: 0;
-      transition: height, 0.5s linear;
-    }
-  }
 }
 
 #biowriting {
@@ -616,47 +611,15 @@ a:active {
     right: 0;
     left: 0;
   }
-
-  .protext {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    margin: 50px 0;
-    display: flex;
-    flex-wrap: wrap;
-    font-size: 0em;
-    background-color: transparent;
-    transition: all 800ms;
-
-    .protextt{
-      width: 100%;
-      font-family: $headertext;
-    }
-
-    .protextw {
-      width: 100%;
-      padding: 10px;
-    }
-  }
   
   &:hover {
     
     .protext {
-      font-size: 1.1em;
       background-color: $thirdcolor;
       margin: 15px 0;
-      
-    }
-    
-    .protextw {
-      font-size: 0.7em;
     }
 
     .protextcont {
-      background: rgba(255,255,255,0.6);
     }
   }
 }
@@ -667,6 +630,19 @@ a:active {
   content: '';
 }
 
+.protext {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: 100px 0;
+  display: flex;
+  background-color: transparent;
+  transition: all 800ms;
+}
+
 .protextcont {
   display: flex; 
   justify-content: center;
@@ -675,8 +651,18 @@ a:active {
   text-align: center;
   width: 100%;
   margin:10px;
-  background:  rgba(255,255,255,0.0);
+  background: rgba(255,255,255,0.6);
   border-radius: $projectoverlayradius;
+  overflow: hidden;
+}
+
+.protextt{
+  width: 100%;
+  font-family: $headertext;
+}
+
+.protextw {
+  font-size: 0.7em;
 }
 
 #projectoverlay {
@@ -1056,16 +1042,14 @@ span{
 
   .project {
     width: 40%;
+  }
 
-    &:hover {
-      .protextt {
-        font-size: 0.8em;
-      }
+  .protextt {
+    font-size: 0.8em;
+  }
 
-      .protextw {
-        font-size: 0.6em !important;
-      }
-    }
+  .protextw {
+    font-size: 0.6em;
   }
 
   #resumehalf {
@@ -1077,7 +1061,7 @@ span{
   }
 
   .contacttype {
-    font-size: 2.5em;
+    font-size: 2.2em;
   }
 
   #footmessage {
@@ -1130,7 +1114,6 @@ span{
     z-index: 99;
     background: $thirdcolor;
     font-size: 0.6em;
-    padding: 10px;
 
 
     a {
@@ -1163,6 +1146,10 @@ span{
     display: none;
   }
 
+  #titlecard {
+    margin-bottom: 50px;
+  }
+
   #choices {
     display: flex;
     justify-content: space-around;
@@ -1172,6 +1159,7 @@ span{
   
   .lefttabs {
     flex-direction: row;
+    padding: 10px;
   }
 
   .menutitle {
@@ -1190,13 +1178,13 @@ span{
   }
 
   #titlecard {
-    padding-top: 4%;
+    padding-top: 0;
     width: 50%;
     margin-bottom: 0;
   }
   
   #nametitle {
-    font-size: 3em;
+    font-size: 2.5em;
   }
   
   #mobilewarning {
@@ -1205,42 +1193,39 @@ span{
 
   .languages {
     width: 100%;
-    font-size: 1em;
+    font-size: 0.8em;
   }
 
   #languagetitle {
-    margin-top: 130px;
+    margin-top: 100px;
   }
   
   #choices {
     display: flex;
     justify-content: space-around;
     width: 80%;
-    margin: 120px auto 0;
+    margin: 30px auto 0;
     align-items: center;
-  }
-
-  #bioinfo {
-    padding: 30px;
   }
   
   #biocontain {
-    width: 85%;
+    width: 90%;
     margin: 0;
     height: 420px;
   }
   
   #biowriting {
-    font-size: 2em;
+    font-size: 1.8em;
     width: 100%;
   }
   
   #quotename {
-    font-size: 1.2em;
+    font-size: 1em;
   }
 
   #biotop {
     flex-direction: row;
+    align-items: center;
   }
   
   #biotextw {
@@ -1256,10 +1241,14 @@ span{
     display: block;
   }
 
+  #biopersonaltext {
+    width: 75%;
+  }
+
   #portimage {
     display: block;
-    padding: 10px;
-    width: 30%;
+    margin: 0 15px;
+    width: 25%;
   }
 
   #thanksright a {
@@ -1297,7 +1286,7 @@ span{
   }
 
   .flexopen{
-    width: 90%;
+    width: 80%;
   }
 
   .imgtitle {
@@ -1358,7 +1347,7 @@ span{
   }
 
   #projectoverlay {
-    max-height: 800px;
+    max-height: 80vh;
     width: 80%;
     left: 55%;
   }
@@ -1371,20 +1360,32 @@ span{
     font-size: 2em;
   }  
 
+  .allovers {
+    flex-direction: row;
+  }
+
+  #overlayleft {
+    width: 50%;
+  }
+
+  #overlayright {
+    width: 46%;
+  }
+
   #overlaytitle {
-    font-size: 3em;
+    font-size: 1.3em;
   }
 
   #overlaytext {
-    font-size: 1.3em;
+    font-size: 0.8em;
   }
   
   #overlayskills {
-    font-size: 1.3em;
+    font-size: 0.8em;
   }
   
   #overlayurl a{ 
-    font-size: 1.2em;
+    font-size: 0.9em;
   }
 
   #availablehalf {
@@ -1408,7 +1409,7 @@ span{
   }
 
   .contacttype {
-    font-size: 3em;
+    font-size: 2.3em;
   }
 
   #footmessage {
@@ -1429,11 +1430,66 @@ span{
   }
 
   .menutabs {
-    font-size: 0.9em;
+    font-size: 0.6em;
   }
 
   #splashcont {
-    background-position: center;
-    background-size: 100%;
+    background-position: top center;
+    background-size: cover;
+  }
+
+  #biopersonaltext{
+    padding-right: 10px;
+  }
+
+  #portimage {
+    width: 20%;
+  }
+
+  .flexbox-slide{
+    font-size: 1em;
+
+    &:hover {
+
+      .imgtitle {
+        height: 100px;
+        overflow: hidden;
+      }
+
+      .historytitles, .historylogo {
+        height: 100px;
+      }
+    }
+  }
+
+  .imgtitle {
+  }
+
+  .historylogo img {
+      height: 100px;
+  }
+
+  .historylogoside {
+    width: 50%;
+  }
+
+  .historytitlesside {
+    width: 50%;
+  }
+
+  .project {
+    width: 20%;
+  }
+
+  #overlaytext {
+    margin: 50px 0;
+  }
+
+  .protextt {
+    font-size: 0.7em;
+  }
+
+  .protextw {
+    font-size: 0.5em;
   }
 }
