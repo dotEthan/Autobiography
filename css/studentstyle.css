@@ -3,6 +3,10 @@
   font-family: 'indie_flowerregular';
   src: url("fonts/IndieFlower-webfont.woff") format("woff"); }
 
+@font-face {
+  font-family: 'logo';
+  src: url("fonts/fredoka-one-v5-latin-regular.woff") format("woff"); }
+
 img {
   max-width: 100%;
   max-height: 100%; }
@@ -76,6 +80,9 @@ body {
   to {
     bottom: 0;
     opacity: 1; } }
+
+#ethan {
+  font-family: 'logo', serif; }
 
 #menucontain {
   position: fixed;

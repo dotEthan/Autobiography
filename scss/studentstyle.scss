@@ -3,6 +3,11 @@
   src: url('fonts/IndieFlower-webfont.woff') format('woff')
 }
 
+@font-face {
+  font-family: 'logo';
+  src: url('fonts/fredoka-one-v5-latin-regular.woff') format('woff')
+}
+
 // 16
 $rgba: rgba(13,201,247, 0.5);
 $lightblue: #0dc9f7;
@@ -107,6 +112,10 @@ body {
 @keyframes animatebottom { 
   from{ bottom:-100px; opacity:0 } 
   to{ bottom:0; opacity:1 }
+}
+
+#ethan {
+  font-family: 'logo', serif;
 }
 
 #menucontain {
