@@ -110,14 +110,15 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100vh; }
+  height: 70px; }
 
 #menu {
   display: flex;
   justify-content: center;
   padding-top: 20px;
   color: white;
-  font-family: "indie_flowerregular", cursive; }
+  font-family: "indie_flowerregular", cursive;
+  height: 70px; }
   @media screen and (min-width: 800px) {
     #menu {
       flex-direction: column;

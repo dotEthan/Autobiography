@@ -6,6 +6,10 @@
   font-family: 'Raleway';
   src: url("fonts/raleway-regular.woff") format("woff"); }
 
+@font-face {
+  font-family: 'logo';
+  src: url("fonts/fredoka-one-v5-latin-regular.woff") format("woff"); }
+
 img {
   max-width: 100%; }
 
@@ -91,18 +95,18 @@ body {
 
 #menucontain {
   position: fixed;
-  background: "transparent";
   color: white;
   width: 100%;
-  z-index: 99; }
-  @media screen and (min-width: 800px) {
-    #menucontain {
-      width: 100%;
-      height: 100px; } }
+  z-index: 99;
+  height: 70px; }
+
+#ethan {
+  position: absolute;
+  top: 0;
+  width: 100%; }
 
 #mycanvas {
-  display: block;
-  z-index: 9; }
+  display: none; }
 
 #entrebgcanvas {
   display: block;
@@ -113,27 +117,18 @@ body {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 100px; }
+  height: 70px; }
 
 #menu {
   display: flex;
   justify-content: center;
-  padding-top: 20px;
+  align-items: center;
   color: white;
   font-family: "Raleway", serif;
-  background: rgba(134, 194, 50, 0.7); }
-  @media screen and (min-width: 800px) {
-    #menu {
-      justify-content: space-between;
-      align-items: center;
-      height: 100%;
-      margin-top: 0;
-      padding-top: 0;
-      width: 90%;
-      margin-right: auto;
-      margin-left: auto;
-      border-radius: 10px 10px 0 0;
-      transition: all 1s; } }
+  background: rgba(134, 194, 50, 0.7);
+  height: 70px;
+  width: 95%;
+  margin: 0 auto; }
 
 .menunow {
   color: #e0e6ed;
@@ -143,27 +138,10 @@ body {
 
 .menutabs {
   width: 20%;
-  text-align: center; }
+  text-align: center;
+  font-size: 0.8em; }
   .menutabs a {
     color: black; }
-  @media screen and (min-width: 800px) {
-    .menutabs {
-      height: 100px;
-      width: 20%;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
-      transition: all 1s;
-      margin: 15px 0;
-      z-index: 99;
-      padding: 5px 3px; }
-      .menutabs a {
-        text-decoration: none; }
-      .menutabs:hover {
-        font-size: 1.3em; }
-        .menutabs:hover a {
-          color: #fb7e19; } }
 
 .faicon {
   font-size: 1.5em; }
@@ -175,12 +153,6 @@ body {
 
 #contactme {
   cursor: pointer; }
-
-@media screen and (min-width: 800px) {
-  #contentcontain {
-    position: absolute;
-    left: 0;
-    width: 100%; } }
 
 #splashcont {
   height: 100vh;
@@ -198,7 +170,7 @@ body {
   margin-right: auto;
   padding-top: 30px;
   width: 100%;
-  width: 40%;
+  width: 80%;
   text-align: center;
   display: flex;
   align-items: center;
@@ -211,6 +183,14 @@ body {
   font-family: "Raleway", serif;
   font-weight: bold;
   font-size: 3em; }
+
+#mobilewarning {
+  width: 80%;
+  border-radius: 15px;
+  background: rgba(255, 0, 0, 0.7);
+  margin: 14vh auto 0;
+  padding: 10px;
+  font-size: 0.8em; }
 
 .languages {
   width: 100%; }
@@ -806,3 +786,51 @@ span {
   font-size: 14px;
   color: green;
   text-align: center; }
+
+@media screen and (min-width: 768px) {
+  #entrebgcanvas {
+    display: block;
+    z-index: 7; }
+  #menucontain {
+    height: 100px; }
+  #menucontain {
+    width: 100%;
+    height: 100px; }
+  #menu {
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    margin-top: 0;
+    padding-top: 0;
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 10px 10px 0 0;
+    transition: all 1s; }
+  .menutabs {
+    height: 100px;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    transition: all 1s;
+    margin: 15px 0;
+    z-index: 99;
+    padding: 5px 3px; }
+    .menutabs a {
+      text-decoration: none; }
+    .menutabs:hover {
+      font-size: 1.3em; }
+      .menutabs:hover a {
+        color: #fb7e19; }
+  #contentcontain {
+    position: absolute;
+    left: 0;
+    width: 100%; } }
+
+@media screen and (min-width: 768px) {
+  .menutabs {
+    font-size: 1em; }
+  #nametitle {
+    font-size: 3em; } }

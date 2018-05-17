@@ -208,14 +208,12 @@ a:active {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  justify-content: center;
 }
 
 #titlecard {
   margin-bottom: 180px;
   width: 100%;
-  margin-left: auto; 
-  margin-right: auto; 
+  margin: 14vh auto 0;
   text-align: center;
   display: flex;
   flex-wrap: wrap;
@@ -227,14 +225,13 @@ a:active {
   font-family: $headertext;
   font-weight: bold;
   font-size: 1.8em;
-  margin-bottom: 20px;
 }
 
 #mobilewarning {
   width: 80%;
   border-radius: 15px;
   background: rgba(255,0,0, 0.7);
-  margin: 30px auto;
+  margin: 14vh auto 0;
   padding: 10px;
   font-size: 0.8em;
 }
@@ -246,11 +243,12 @@ a:active {
 }
 
 #languagetitle {
-  margin-top: 10px;
+  margin-top: 8vh;
+  margin-bottom: 10px;
 }
     
 #choices {
-  display: none;
+  // display: none;
 }
 
 .lego {
@@ -433,7 +431,7 @@ a:active {
   text-align: center;
   font-size: 1.5em;
   text-decoration: underline;
-  margin: 20px 0;
+  margin: 20px 0 50px;
   font-weight: bold;
   color: $thirdcolor;
   text-decoration: none;
@@ -459,6 +457,11 @@ a:active {
   flex-direction: column;
   justify-content: flex-start;
   flex-wrap: wrap;
+}
+
+#flexcontainer {
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .imgtitle {
@@ -537,6 +540,7 @@ a:active {
 .jobtitle {
   margin-bottom: 10px;
   text-align: center;
+  width: 100%;
 }
 
 .dutylist ul {
@@ -1204,7 +1208,7 @@ span{
   }
 
   #languagetitle {
-    margin-top: 20vh;
+    margin-top: 31vh;
   }
   
   #choices {
@@ -1288,96 +1292,6 @@ span{
   .protitle {
     font-size: 2.5em;
   }
-  
-  .flexbox-slider {
-    font-size: 2.5em;
-    flex-direction: row-reverse;
-    height: 500px;
-  }
-
-  .flexbox-slide {
-    width: 20%;
-    flex-direction: row;
-    padding: 10px;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    transition: width 1s;
-    overflow: hidden;
-
-    &:hover {
-
-      .imgtitle {
-        height: 100px;
-        overflow: hidden;
-      }
-
-      .historytitles, .historylogo {
-        height: 100px;
-      }
-    }
-  }
-
-  .flexopen{
-    width: 80%;
-  }
-
-  .imgtitle {
-    flex-direction: row;
-    flex-wrap: wrap;
-    height: 200px;
-  }
-  
-  .historylogo {
-    width: auto; 
-    margin: 0 auto;
-
-    img {
-      height: auto;
-    }
-  }
-  
-  .historytitles {
-    font-size: 0.28em;
-    padding: 5px;
-    width: 100%;
-    height: 70px;
-  }
-
-  .historylogoside {
-    width: 50%;
-  }
-
-  .historylogo img {
-    height: 100px;
-  }
-
-  .historytitlesside {
-    width: 50%;
-  }
-
-  .textblock {
-    width: 90%;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: 10px auto 10px;
-    height: 300px;
-  }
-
-  .historytext {
-    padding: 15px;
-    opacity: 0;
-    font-size: 0.3em;
-    height: 260px;
-  }
-
-  .hton {
-    opacity: 1;
-  }
-
-  .dutylist ul li {
-    margin-bottom: 5px;
-  }
 
   .project {
     width: 30%;
@@ -1402,7 +1316,7 @@ span{
     height: 50px;
     top: -20px;
     right: -20px;
-    font-size: 2em;
+    font-size: 1.3em;
   }  
 
   .allovers {
@@ -1503,10 +1417,6 @@ span{
     margin-top: 12vh;
   }
 
-  #languagetitle {
-    margin-top: 26vh;
-  }
-
   #choices {
     margin-top: 16vh;   
     width: 68%;    
@@ -1519,13 +1429,115 @@ span{
   #portimage {
     width: 20%;
   }
-
-  .flexbox-slide{
-    font-size: 1em;
+  
+  .flexbox-slider {
+    font-size: 2.5em;
+    flex-direction: row-reverse;
+    height: 500px;
   }
 
+  .flexbox-slide {
+    width: 20%;
+    flex-direction: row;
+    padding: 10px;
+    justify-content: center;
+    display: flex;
+    transition: width 1s;
+    overflow: hidden;
+
+    &:hover {
+
+      .imgtitle {
+        height: 100px;
+        overflow: hidden;
+        flex-direction: row;
+        margin-bottom: 20px;
+      }
+
+      .historytitles {
+        height: 100px;
+        margin-top: 0;
+        margin-left: 10px;
+
+      }
+
+      .historylogo {
+        height: 100px;
+      }
+    }
+  }
+
+  .flexopen{
+    width: 80%;
+  }
+
+  #flexcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: none;
+  }
+
+  .imgtitle {
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .historylogo {
+    width: auto; 
+    margin: 0 auto;
+
+    img {
+      height: auto;
+    }
+  }
+  
   .historytitles {
-    font-size: 0.31em;
+    font-size: 0.28em;
+    padding: 5px;
+    width: 100%;
+    height: 100px;
+    margin-top: 20px;
+    max-width: none;
+  }
+
+  .historylogoside {
+    width: 50%;
+  }
+
+  .historylogo img {
+    height: 100px;
+  }
+
+  .historytitlesside {
+    width: 50%;
+  }
+
+  .textblock {
+    width: 90%;
+    margin: 10px auto 0;
+    height: 270px;
+    display: none;
+  }
+
+  .tbon {
+    display: flex;
+  }
+
+  .historytext {
+    padding: 15px;
+    opacity: 0;
+    font-size: 0.3em;
+    margin: 0;
+  }
+
+  .hton {
+    opacity: 1;
+  }
+
+  .dutylist ul li {
+    margin-bottom: 5px;
   }
 
   .project {
@@ -1617,6 +1629,63 @@ span{
 
 @media screen and (min-width: 1600px) {
 
+  .menutabs {
+    font-size: 0.9em;
+  }
+
+  #nametitle {
+    font-size: 4em;
+  }
+
+  .flexbox-slide {
+
+    &:hover {
+      #flexcontainer {
+        flex-direction: row;
+        padding: 0;
+      }
+
+      .imgtitle {
+        flex-direction: column;
+        height: auto;
+        width: 30%;
+        margin-bottom: 0;
+      }
+
+      .historytitles {
+        margin-left: 0;
+        height: 70px;
+        width: auto;
+      }
+
+      .historylogo {
+        height: 150px;
+        width: auto;
+        max-width: none;
+
+        img {
+          height: auto;
+        }
+      }
+
+      .textblock {
+        width: 70%;
+      }
+
+      .historytext {
+        border-top: none;
+        border-left: 1px solid black;
+      }
+    }
+  }
+
+  .historytitles {
+    font-size: 0.5em;
+  }
+
+  .contacttype {
+    font-size: 3em;
+  }
 }
 
 @media screen and (min-aspect-ratio: 16/8) {

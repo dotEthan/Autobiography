@@ -46,7 +46,7 @@ function showPage() {
   $('#load').css({'display': 'none'});
   $('#contents').css({'display': 'block'});
   resizeDist();
-  party();
+  // party();
 }
 
 pageDelay(showPage);
@@ -70,7 +70,7 @@ let bioChange = document.getElementById('ageinfo');
 
 $('#studentb').click(function() {
   window.cancelAnimationFrame(animating); 
-  $('#particles-js').css({'display': 'none'});
+  // $('#particles-js').css({'display': 'none'});
   if (studentDone == 0) {
     $('#load').css({'display': 'block'});
     $('#contents').css({'display': 'none'});
@@ -89,12 +89,12 @@ $('#studentb').click(function() {
   setTextContent(asaChange, 'As a Student:');
   setTextContent(bioChange, 'I grew up in small town Ontario, than big city BC, then small town BC, then small town Manitoba, than back to BC for a couple cities and then back to Ontario. We moved a lot. It is likely one of the reasons I am able to easily adapt to the various environments life takes me to.');
   $("#personalimg").attr("src","../images/bios.jpg");
-doneResizing();
+  doneResizing();
 });
 
 $('#entreb').click(function() {
   window.cancelAnimationFrame(animating); 
-  $('#particles-js').css({'display': 'none'});
+  // $('#particles-js').css({'display': 'none'});
   if (entreDone == 0) {
     $('#load').css({'display': 'block'});
     $('#contents').css({'display': 'none'});
@@ -113,7 +113,7 @@ $('#entreb').click(function() {
   setTextContent(asaChange, 'As an Entrepreneur:');
   setTextContent(bioChange, 'I spent my 20s in China, learning a new culture, language and how to develop long term plans and put them into action. I had numerous jobs including Bar Manager, University professor, Radio Host and more. And I developed and opened a number of different entreprenerial ventures that pushed me to learn web development, leadership skills and to hone my customer service techniques.');
   $("#personalimg").attr("src","../images/bioe.jpg");
-doneResizing();
+  doneResizing();
 });
   
 $('#programmerb').click(function() {
@@ -131,8 +131,8 @@ $('#programmerb').click(function() {
   setTextContent(bioChange, 'Since returning to Canada I have opened two successful entreprenuerial ventures and learned a number of new langauges including Javascript, SCSS, React, Liquid and more. I\'ve devoted the last six months to brushing up on HTML 5, SCSS, Javascript ES6 and learning React to ensure I have a firm grasp of the tools needed to succeed in Front End Development or Javavscript programming.');
   $("#personalimg").attr("src","../images/biop.jpg");
   pageDelay(showPage);
-  $('#particles-js').css({'display': 'block'});
-doneResizing();
+  // $('#particles-js').css({'display': 'block'});
+  doneResizing();
 });
 
 //-----------------------
@@ -294,15 +294,20 @@ $('.project').click(function(e){
 // Contact Appear
 //------------------------
 
-$('#contactme, #contactmebut, #footercontact').on('click', () => {
-  $('#contactslice').show();
+$('#contactme, #contactmebut, #footercontact, #contactclose').on('click', () => {
+    var x = document.getElementById("contactslice");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
   addRemove('contactme');
 });
 
-$('#contactclose').on('click', () => {
-  $('#contactslice').hide();
-  addRemove('projectmenu');
-});
+// $('#contactclose').on('click', () => {
+//   $('#contactslice').hide();
+//   addRemove('projectmenu');
+// });
 
 //------------------------
 // Contact Form
@@ -345,7 +350,8 @@ $('#submit').click(function(e) {
 function circles() {
   const canvas = document.querySelector('#mycanvas');
   canvas.width = document.querySelector('#mycanvas').scrollWidth;
-  canvas.height = window.innerHeight;;
+  // canvas.height = window.innerHeight;
+  canvas.height = $('mycanvas').css('height');
   const c = canvas.getContext('2d');
   const topRadius = 30;
   const colorArray = [
@@ -574,102 +580,102 @@ function spirals() {
 
 }
 
-//------------------------
-// Particles
-//------------------------
+// //------------------------
+// // Particles
+// //------------------------
 
-function party() {
-  particlesJS("particles-js", {
-    "particles": {
-      "number": {
-        "value": 100,
-        "density": {
-          "enable": true,
-          "value_area": 400
-        }
-      },
-      "color": {
-        "value": "#7d1577"
-      },
-      "shape": {
-        "type": "circle",
-        "stroke": {
-          "width": 0,
-          "color": "#000"
-        }
-      },
-      "opacity": {
-        "value": 0.5,
-        "random": true,
-        "anim": {
-          "enable": false,
-          "speed": 1,
-          "opacity_min": 0.1,
-          "sync": false
-        }
-      },
-      "size": {
-        "value": 5,
-        "random": true,
-        "anim": {
-          "enable": false,
-          "speed": 20,
-          "size_min": 0.1,
-          "sync": false
-        }
-      },
-      "line_linked": {
-        "enable": true,
-        "distance": 150,
-        "color": "#0000ff",
-        "opacity": 0.5,
-        "width": 1
-      },
-      "move": {
-        "enable": true,
-        "speed": 4,
-        "direction": "none",
-        "random": false,
-        "straight": false,
-        "out_mode": "out",
-        "bounce": false,
-        "attract": {
-          "enable": false,
-          "rotateX": 600,
-          "rotateY": 1200
-        }
-      }
-    },
-    "interactivity": {
-      "detect_on": "canvas",
-      "events": {
-        "onhover": {
-          "enable": true,
-          "mode": "bubble"
-        },
-        "onclick": {
-          "enable": true,
-          "mode": "repulse"
-        },
-        "resize": true
-      },
-      "modes": {
-        "bubble": {
-          "distance": 100,
-          "size": 20,
-          "duration": 2,
-          "opacity": 2,
-          "speed": 3
-        },
-        "repulse": {
-          "distance": 100,
-          "duration": 0.4
-        }
-      }
-    },
-    "retina_detect": true
-  });
-}
+// function party() {
+//   particlesJS("particles-js", {
+//     "particles": {
+//       "number": {
+//         "value": 100,
+//         "density": {
+//           "enable": true,
+//           "value_area": 400
+//         }
+//       },
+//       "color": {
+//         "value": "#7d1577"
+//       },
+//       "shape": {
+//         "type": "circle",
+//         "stroke": {
+//           "width": 0,
+//           "color": "#000"
+//         }
+//       },
+//       "opacity": {
+//         "value": 0.5,
+//         "random": true,
+//         "anim": {
+//           "enable": false,
+//           "speed": 1,
+//           "opacity_min": 0.1,
+//           "sync": false
+//         }
+//       },
+//       "size": {
+//         "value": 5,
+//         "random": true,
+//         "anim": {
+//           "enable": false,
+//           "speed": 20,
+//           "size_min": 0.1,
+//           "sync": false
+//         }
+//       },
+//       "line_linked": {
+//         "enable": true,
+//         "distance": 150,
+//         "color": "#0000ff",
+//         "opacity": 0.5,
+//         "width": 1
+//       },
+//       "move": {
+//         "enable": true,
+//         "speed": 4,
+//         "direction": "none",
+//         "random": false,
+//         "straight": false,
+//         "out_mode": "out",
+//         "bounce": false,
+//         "attract": {
+//           "enable": false,
+//           "rotateX": 600,
+//           "rotateY": 1200
+//         }
+//       }
+//     },
+//     "interactivity": {
+//       "detect_on": "canvas",
+//       "events": {
+//         "onhover": {
+//           "enable": true,
+//           "mode": "bubble"
+//         },
+//         "onclick": {
+//           "enable": true,
+//           "mode": "repulse"
+//         },
+//         "resize": true
+//       },
+//       "modes": {
+//         "bubble": {
+//           "distance": 100,
+//           "size": 20,
+//           "duration": 2,
+//           "opacity": 2,
+//           "speed": 3
+//         },
+//         "repulse": {
+//           "distance": 100,
+//           "duration": 0.4
+//         }
+//       }
+//     },
+//     "retina_detect": true
+//   });
+// }
 
 //------------------------
 // Modernizr
@@ -677,25 +683,33 @@ function party() {
 
 function doneResizing() {
   if (Modernizr.mq('screen and (min-width:768px)')) {
+      console.log(theme);
 
-    if (theme === 'programmer') {
-      timeOut = setTimeout(party, 1000); 
-    } else if (theme === 'entre') {
+    if (theme === 'entre') {
+      console.log($('#mycanvas').css('display'));
+      $('#mycanvas').css({'display': 'block'});
       timeOut = setTimeout(spirals, 1000);
     } else if (theme === 'student') {
       timeOut = setTimeout(circles, 1000);
     }
+
     extraJ = true;
 
   } else {
+      $('#mycanvas').css({'display': 'none'});
 
-    extraJ = false;
+      if (theme === 'student') {
+        timeOut = setTimeout(circles, 1000);
+      }
+
+      extraJ = false;
 
   }
 }
 
 var id5;
 $(window).resize(function() {
+  console.log(extraJ);
   clearTimeout(id5);
   id5 = setTimeout(doneResizing, 0);
 });
@@ -726,6 +740,7 @@ $('.flexbox-slide').hover(function (e) {
     text.addClass('hton');
     image.addClass('historylogoside');
     titles.addClass('historytitlesside');
+    textBlock.addClass('tbon');
 
     for(let i=0; i<slideArray.length; i++) {
       if (slideArray[i].id !== this.id) {
@@ -754,6 +769,7 @@ $('.flexbox-slide').hover(function (e) {
     thisSlide.removeClass('flexopen');
     image.removeClass('historylogoside');
     titles.removeClass('historytitlesside');
+    textBlock.removeClass('tbon');
 
     for(let i=0; i<slideArray.length; i++) {
       if (slideArray[i].id !== this.id) {

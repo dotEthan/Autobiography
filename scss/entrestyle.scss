@@ -8,6 +8,11 @@
   src: url('fonts/raleway-regular.woff') format('woff')
 }
 
+@font-face {
+  font-family: 'logo';
+  src: url('fonts/fredoka-one-v5-latin-regular.woff') format('woff')
+}
+
 
 // $firstcolor: e66c0b;
 $rgba: rgba(13,201,247, 0.5);
@@ -38,6 +43,7 @@ $biocontainbg: grey;
 $biowritingc: black;
 $biowritings: 2.7em;
 $bioquestions: 2.5em;
+
 // fonts
 img{
   max-width: 100%;
@@ -113,6 +119,10 @@ body {
   to{ bottom:0; opacity:1 }
 }
 
+@media screen and (min-width: 576px) {
+
+}
+
 .menutop{
   position:fixed !important;
   top: 0 !important;
@@ -127,20 +137,20 @@ body {
 
 #menucontain {
   position: fixed;
-  background: $menubackground;
   color: white;
   width: 100%;
   z-index: 99;
-  
-  @media screen and (min-width: 800px) {
-    width: 100%;
-    height: 100px;
-  }
+  height: 70px;
+}
+
+#ethan {
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 #mycanvas {
-  display: block;
-  z-index: 9;
+  display: none;
 }
 
 #entrebgcanvas {
@@ -153,29 +163,20 @@ body {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 100px;
+  height: 70px;
 }
 
 #menu {
   display: flex;
   justify-content: center;
-  padding-top: $smallmenupaddingtop;
+  align-items: center;
+  // padding-top: $smallmenupaddingtop;
   color: $menutextc;
   font-family: $headertext;
   background: $secondcolorrgba;
-  
-  @media screen and (min-width: 800px) {
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-    margin-top: 0;
-    padding-top: 0;
-    width: 90%;
-    margin-right: auto;
-    margin-left: auto;
-    border-radius: 10px 10px 0 0;
-    transition: all 1s;
-  }
+  height: 70px;
+  width: 95%;
+  margin: 0 auto;
 }
 
 .menunow {
@@ -188,35 +189,10 @@ body {
 .menutabs {
   width: 20%;
   text-align: center;
+  font-size: 0.8em;
 
   a {
     color: black;
-  }
-
-  @media screen and (min-width: 800px) {
-    height: 100px;
-    width: 20%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    transition: all 1s;
-    margin: 15px 0;
-    z-index: 99;
-    padding: 5px 3px;
-
-    a {
-      text-decoration: none;
-    }
-
-    &:hover {
-      font-size: 1.3em;
-      
-      a {
-        color: $thirdcolor;
-      }
-    }
-   
   }
 }
 
@@ -237,12 +213,6 @@ body {
 }
 
 #contentcontain {
-  
-  @media screen and (min-width: 800px) {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  }
 }
   
 #splashcont {
@@ -262,7 +232,7 @@ body {
   margin-right: auto; 
   padding-top: 30px;
   width: 100%;
-  width: 40%;
+  width: 80%;
   text-align: center;
   display: flex;
   align-items: center;
@@ -276,6 +246,15 @@ body {
   font-family: $headertext;
   font-weight: bold;
   font-size: 3em;
+}
+
+#mobilewarning {
+  width: 80%;
+  border-radius: 15px;
+  background: rgba(255,0,0, 0.7);
+  margin: 14vh auto 0;
+  padding: 10px;
+  font-size: 0.8em;
 }
 
 .languages{
@@ -997,4 +976,77 @@ span{
   font-size:14px;
   color:green;
   text-align:center;
+}
+
+@media screen and (min-width: 768px) {
+
+  #entrebgcanvas {
+    display: block;
+    z-index: 7;
+  }
+
+  #menucontain {
+    height: 100px;
+  }
+
+  #menucontain {
+    width: 100%;
+    height: 100px;
+  }
+
+  #menu {
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    margin-top: 0;
+    padding-top: 0;
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 10px 10px 0 0;
+    transition: all 1s;
+  }
+
+  .menutabs {
+    height: 100px;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    transition: all 1s;
+    margin: 15px 0;
+    z-index: 99;
+    padding: 5px 3px;
+
+    a {
+      text-decoration: none;
+    }
+
+    &:hover {
+      font-size: 1.3em;
+      
+      a {
+        color: $thirdcolor;
+      }
+    }
+  }
+  
+  #contentcontain {
+    position: absolute;
+    left: 0;
+    width: 100%;
+  }
+
+}
+  
+@media screen and (min-width: 768px) {
+
+  .menutabs {
+    font-size: 1em;
+  }
+
+  #nametitle {
+    font-size: 3em;
+  }
 }
