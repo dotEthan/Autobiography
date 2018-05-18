@@ -200,14 +200,19 @@ document.addEventListener('scroll', function () {
   } else if(theme=='entre') {
     const menuDiv = $('#menucontain');
     const menu = $('#menu');
+    const ethan = $('#ethan');
     const bottomSpot = bioDist - parseInt(menuDiv.css('height'));
 
     if ($(this).scrollTop() >= bottomSpot) {
       menuDiv.removeClass('menubottom').addClass('menutop');
       menu.css({"borderRadius": "0 0 10px 10px"});
+      ethan.addClass('ethantop');
+      menu.addClass('menuswitch');
     } else if ($(this).scrollTop() < bottomSpot) {
       menuDiv.removeClass('menutop').addClass('menubottom');
       menu.css({"borderRadius": "10px 10px 0 0"});
+      ethan.removeClass('ethantop');
+      menu.removeClass('menuswitch');
     }
   } else {
     const menuTabs = $('.menutabs a');
@@ -683,10 +688,8 @@ function spirals() {
 
 function doneResizing() {
   if (Modernizr.mq('screen and (min-width:768px)')) {
-      console.log(theme);
 
     if (theme === 'entre') {
-      console.log($('#mycanvas').css('display'));
       $('#mycanvas').css({'display': 'block'});
       timeOut = setTimeout(spirals, 1000);
     } else if (theme === 'student') {
@@ -709,7 +712,6 @@ function doneResizing() {
 
 var id5;
 $(window).resize(function() {
-  console.log(extraJ);
   clearTimeout(id5);
   id5 = setTimeout(doneResizing, 0);
 });
@@ -728,8 +730,7 @@ $('.flexbox-slide').hover(function (e) {
   const image = $(this).find('.historylogo');
   const titles = $(this).find('.historytitles');
 
-  if (!extraJ) {
-
+  if (Modernizr.mq('screen and (max-width:992px)')) {
 
     textBlock.addClass('tbopen');
     text.addClass('hton');
@@ -758,7 +759,7 @@ $('.flexbox-slide').hover(function (e) {
   const image = $(this).find('.historylogo');
   const titles = $(this).find('.historytitles');
 
-  if (!extraJ) {
+  if (Modernizr.mq('screen and (max-width:992px)')) {
 
     textBlock.removeClass('tbopen');
     text.removeClass('hton');

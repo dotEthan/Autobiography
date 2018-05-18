@@ -52,10 +52,6 @@ img{
   display: block;
 }
 
-.animate {
-  transition: all 1.2s;
-}
-
 * {
   font-family: $regulartext;
   box-sizing: border-box;
@@ -234,6 +230,7 @@ a:active {
   margin: 14vh auto 0;
   padding: 10px;
   font-size: 0.8em;
+  display: none;
 }
 
 .languages{
@@ -306,19 +303,6 @@ a:active {
 #bioinfo {
   display: flex;
   justify-content: center;
-
-  &:hover {
-
-    #biopersonal {
-      opacity: 1;
-      transition: height, 0.5s linear;
-    }
-
-    #bioquote {
-      opacity: 0;
-      transition: height, 0.5s linear;
-    }
-  }
 }
 
 #biotext {
@@ -481,23 +465,21 @@ a:active {
 }
 
 .historytitles {
-  text-align: center;
   display: flex;
+  flex-direction:column;
   justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
   color: #000000;
   background: rgba(255,255,255,0.6);
   font-size: 0.8em;
   font-family: $headertext;
   max-width: 150px;
   width: 50%;
-  padding: 20px;
 }
 
 .historydates {
   font-size: 0.7em;
   width: 100%;
+  margin-top: 10px;
 }
 
 .textblock {
@@ -513,7 +495,7 @@ a:active {
 }
 
 .tbopen {
-  height: 230px;
+  height: 250px;
 }
 
 .historyicons {
@@ -524,7 +506,7 @@ a:active {
   border-top: 1px solid rgba(0,0,0,0.6);
   text-align: left;
   overflow: hidden;
-  margin: 0 5px 10px;
+  margin: 0 5px 5px;
   padding: 15px;
   font-size: 0.55em;
   width: 100%;
@@ -545,6 +527,10 @@ a:active {
 
 .dutylist ul {
   padding-left: 20px;
+}
+
+.dutylist ul li {
+  margin-bottom: 10px;
 }
 
 .nowcalled {
@@ -623,9 +609,6 @@ a:active {
     .protext {
       background-color: $thirdcolor;
       margin: 15px 0;
-    }
-
-    .protextcont {
     }
   }
 }
@@ -709,7 +692,7 @@ a:active {
   cursor: pointer;
 }
 
-#overlayleft {
+.overlayleft {
   width: 100%;
   display:flex;
   flex-direction: column;
@@ -739,15 +722,13 @@ a:active {
   font-size: 0.6em;
 }
 
-#overlayright {
-  width: 50%;
+.overlayright {
   border: 2px dashed #96858F;
   justify-content: center;
   display: flex;
   
   img {
-    max-width: 95%;
-    max-height: 70vh;
+    max-height: 20vh;
     margin: 10px;
   }
 }
@@ -764,8 +745,8 @@ a:active {
 #availablehalf {
   padding: 20px;
   width: 100%;
-  font-size: 0.9em;
-  text-align: left;
+  font-size: 0.8em;
+  text-align: center;
   display: flex;
   flex-direction: row;
   justify-content: space-around; 
@@ -795,7 +776,7 @@ a:active {
   padding: 20px;
   width: 100%;
   background-color: darken($secondcolor,10%);
-  font-size: 0.9em;
+  font-size: 0.8em;
   display: flex;
   flex-direction: row;
   justify-content: space-around;  
@@ -1017,8 +998,24 @@ span{
     padding-top: 0;
   }
 
+  .menutabs {
+    font-size: 0.8em;
+  }
+
+  #nametitle {
+    font-size: 2.5em;
+  }
+
   #mobilewarning {
     width: 60%;
+  }
+
+  #languagetitle {
+    margin-top: 27vh;
+  }
+
+  .languages {
+    font-size: 1em;
   }
 
   #biocontain {
@@ -1042,15 +1039,15 @@ span{
   }
 
   .historytext {
-    font-size: 0.65em;
-  }
-
-  .dutylist ul li {
-    margin-bottom: 10px;
+    font-size: 0.75em;
   }
 
   .project {
     width: 40%;
+  }
+
+  .overlayleft {
+    font-size: 1.3em;
   }
 
   .protextt {
@@ -1059,14 +1056,6 @@ span{
 
   .protextw {
     font-size: 0.6em;
-  }
-
-  #resumehalf {
-    padding-right: 20px;
-  }
-
-  #availablehalf {
-    padding-left: 20px;
   }
 
   .contacttype {
@@ -1158,13 +1147,6 @@ span{
   
   #titlecard {
     margin-bottom: 50px;
-  }
-
-  #choices {
-    display: flex;
-    justify-content: space-around;
-    width: 80%;
-    margin: 0 auto;
   }
   
   .lefttabs {
@@ -1258,11 +1240,7 @@ span{
     text-align: left;
   }
   
-  #asa {
-    display: block;
-  }
-
-  #ageinfo {
+  #asa, #ageinfo {
     display: block;
   }
 
@@ -1320,15 +1298,7 @@ span{
   }  
 
   .allovers {
-    flex-direction: row;
-  }
-
-  #overlayleft {
-    width: 50%;
-  }
-
-  #overlayright {
-    width: 46%;
+    padding: 25px;
   }
 
   #overlaytitle {
@@ -1347,15 +1317,6 @@ span{
     font-size: 0.9em;
   }
 
-  #availabletext {
-    width: 100%;
-  }
-
-  #resumetext {
-    width: 100%;
-  }
-
-
   #availablehalf {
     width: 40%;
     font-size: 1em;
@@ -1363,6 +1324,12 @@ span{
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
+    overflow: visible;
+  }
+
+  #availabletext {
+    width: 110%;
+    text-align: left;
   }
 
   #resumehalf {
@@ -1382,10 +1349,15 @@ span{
     }
   }
 
+  #resumetext {
+    width: 100%;
+    text-align: right;
+  }
+
   #contactclose {
-    width: 50px;
-    height: 50px;
-    font-size: 2em;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5em;
   }
 
   .contacttype {
@@ -1393,9 +1365,8 @@ span{
   }
 
   #footmessage {
-    font-size: 0.9em;
+    font-size: 0.75em;
   }
-
 }
 
 @media screen and (min-width: 992px) {
@@ -1544,6 +1515,22 @@ span{
     width: 20%;
   }
 
+  .allovers {
+    flex-direction: row;
+  }
+
+  .overlayleft {
+    width: 50%;
+  }
+
+  .overlayright{
+    margin-left: 20px;
+
+    img {
+      max-height: 40vh;
+    }
+  }
+
   #overlaytext {
     margin: 50px 0;
   }
@@ -1558,7 +1545,18 @@ span{
 
   .buttonstyle {
     font-size: 0.8em;
+    margin-top: 20px;
   }
+
+  #availablehalf {
+    font-size: 0.9em;
+    padding: 40px 0 40px 40px;
+  }
+
+  #resumehalf {
+    padding: 40px 40px 40px 30px;
+  }
+
 }
 
 
@@ -1573,7 +1571,6 @@ span{
   }
 
   #biocontain {
-    width: 80%;
     align-items: center;
     flex-direction: row;
   }
@@ -1603,18 +1600,28 @@ span{
     font-size: 0.3em;
   }
 
+  .overlayright img {
+    max-height: 50vh;
+  }
+
   .protextcont {
     font-size: 1.4em;
   }
 
   #availablehalf {
     font-size: 1em;
-    padding: 60px 0 60px 80px;
+    padding-bottom: 70px;
+    padding-top: 70px;
   }
 
   #resumehalf {
     font-size: 1em;
-    padding: 60px 80px 60px 30px;
+    padding-bottom: 70px;
+    padding-top: 70px;
+  }
+
+  .buttonstyle{
+    margin-top: 40px;
   }
 
   #contactform {
@@ -1623,18 +1630,34 @@ span{
   }
 
   #footercont {
-    width: 80%;
+    width: 90%;
+  }
+
+  .contacttype {
+    font-size: 3em;
   }
 }
 
 @media screen and (min-width: 1600px) {
 
-  .menutabs {
-    font-size: 0.9em;
-  }
-
   #nametitle {
     font-size: 4em;
+  }
+
+  #biocontain {
+    width: 80%;
+  }
+
+  #biowriting {
+    font-size: 2.6em;
+  }
+
+  #quotename {
+    font-size: 1.6em;
+  }
+
+  #biotextw {
+    font-size: 1.1em;
   }
 
   .flexbox-slide {
@@ -1670,6 +1693,7 @@ span{
 
       .textblock {
         width: 70%;
+        height: 350px;
       }
 
       .historytext {
@@ -1680,18 +1704,24 @@ span{
   }
 
   .historytitles {
-    font-size: 0.5em;
+    font-size: 0.4em;
+    padding: 15px;
+  }
+
+  .historytext {
+    font-size:0.4em;
   }
 
   .contacttype {
-    font-size: 3em;
+    font-size: 3.5em;
+  }
+
+  #footmessage {
+    font-size: 1em;
   }
 }
 
 @media screen and (min-aspect-ratio: 16/8) {
-  #ethan {
-    color: red;
-  }
 
   #titlecard {
     margin-top: 16vh;

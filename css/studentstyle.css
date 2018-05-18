@@ -21,7 +21,8 @@ img {
   display: none !important; }
 
 * {
-  font-family: "indie_flowerregular", cursive; }
+  font-family: "indie_flowerregular", cursive;
+  box-sizing: border-box; }
 
 body {
   margin: 0; }
