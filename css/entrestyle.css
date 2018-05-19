@@ -169,7 +169,7 @@ body {
   background-image: url("../images/entrebg.jpg");
   background-size: auto 100%;
   background-position: center;
-  height: 100vh;
+  background-repeat: no-repeat;
   display: flex;
   flex-wrap: wrap; }
 
@@ -285,6 +285,7 @@ body {
   text-align: center; }
 
 #asa, #ageinfo {
+  margin: 15px 0;
   display: none; }
 
 #portimage {
@@ -964,26 +965,211 @@ span {
     font-size: 0.8em; } }
 
 @media screen and (min-width: 992px) {
+  .menutabs {
+    font-size: 0.8em;
+    height: 80px;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    transition: all 1s;
+    margin: 15px 0;
+    z-index: 99;
+    padding: 5px 3px; }
+    .menutabs:hover {
+      font-size: 1.1em; }
+  #portimage {
+    width: 20%; }
   .flexbox-slider {
-    height: 500px;
-    flex-direction: row; }
+    font-size: 2.5em;
+    flex-direction: row-reverse;
+    height: 500px; }
   .flexbox-slide {
     width: 20%;
-    height: 100%;
-    justify-content: space-between; }
-  .historytitles {
-    font-size: 1.2em; }
-  .historyicons {
-    opacity: 1;
-    width: 90px;
-    height: 200px;
-    margin-right: auto;
-    margin-left: auto;
-    margin-bottom: 15px;
+    flex-direction: row;
+    padding: 10px;
+    justify-content: center;
     display: flex;
+    transition: width 1s;
+    overflow: hidden; }
+    .flexbox-slide:hover .imgtitle {
+      height: 100px;
+      overflow: hidden;
+      flex-direction: row;
+      margin-bottom: 20px; }
+    .flexbox-slide:hover .historytitles {
+      height: 100px;
+      margin-top: 0;
+      margin-left: 10px; }
+    .flexbox-slide:hover .historylogo {
+      height: 100px; }
+  .flexopen {
+    width: 80%; }
+  #flexcontainer {
+    display: flex;
+    justify-content: center;
     align-items: center;
-    position: absolute;
-    top: 100px;
-    left: 50%;
-    transform: translateX(-50%);
-    transition: opacity 0.3s; } }
+    flex-direction: column;
+    max-width: none; }
+  .imgtitle {
+    flex-direction: column;
+    height: auto; }
+  .historylogo {
+    width: auto;
+    margin: 0 auto; }
+    .historylogo img {
+      height: auto; }
+  .historytitles {
+    font-size: 0.28em;
+    padding: 5px;
+    width: 100%;
+    height: 100px;
+    margin-top: 20px;
+    max-width: none; }
+  .historylogoside {
+    width: 50%; }
+  .historylogo img {
+    height: 100px; }
+  .historytitlesside {
+    width: 50%; }
+  .textblock {
+    width: 90%;
+    margin: 10px auto 0;
+    height: 270px;
+    display: none; }
+  .tbon {
+    display: flex; }
+  .historytext {
+    padding: 15px;
+    opacity: 0;
+    font-size: 0.25em;
+    margin: 0; }
+  .hton {
+    opacity: 1; }
+  .dutylist ul li {
+    margin-bottom: 5px; }
+  .project {
+    width: 20%; }
+  .allovers {
+    flex-direction: row; }
+  .overlayleft {
+    width: 50%; }
+  .overlayright {
+    margin-left: 20px; }
+    .overlayright img {
+      max-height: 40vh; }
+  #overlaytext {
+    margin: 50px 0; }
+  .protextt {
+    font-size: 0.7em; }
+  .protextw {
+    font-size: 0.5em; }
+  .buttonstyle {
+    font-size: 0.8em;
+    margin-top: 20px; }
+  #availablehalf {
+    font-size: 0.9em;
+    padding: 40px 0 40px 40px; }
+  #resumehalf {
+    padding: 40px 40px 40px 30px; }
+  #footmessage {
+    font-size: 0.7em; } }
+
+@media screen and (min-width: 1200px) {
+  #biocontain {
+    align-items: center;
+    flex-direction: row;
+    width: 80%; }
+  #biowriting {
+    font-size: 2.1em; }
+  #quotename {
+    font-size: 1.2em; }
+  #biopersonal {
+    left: 5%; }
+  #biotextw {
+    font-size: 1em; }
+  .historytitles {
+    font-size: 0.34em; }
+  .historytext {
+    font-size: 0.3em; }
+  .overlayright img {
+    max-height: 50vh; }
+  .protextcont {
+    font-size: 1.4em; }
+  #availablehalf {
+    font-size: 1em;
+    padding: 70px 0 70px 60px; }
+  #resumehalf {
+    font-size: 1em;
+    padding: 70px 60px 70px 70px; }
+  .buttonstyle {
+    margin-top: 40px; }
+  #contactform {
+    width: 80%;
+    margin: 0 auto; }
+  #footercont {
+    width: 90%; }
+  .contacttype {
+    font-size: 3em; } }
+
+@media screen and (min-width: 1600px) {
+  .menutabs {
+    font-size: 1em; }
+  #nametitle {
+    font-size: 5em; }
+  #biocontain {
+    width: 75%;
+    margin: 60px 0; }
+  #biowriting {
+    font-size: 2.6em; }
+  #quotename {
+    font-size: 1.6em; }
+  #biotextw {
+    font-size: 1.1em; }
+  .flexbox-slide:hover #flexcontainer {
+    flex-direction: row;
+    padding: 0; }
+  .flexbox-slide:hover .imgtitle {
+    flex-direction: column;
+    height: auto;
+    width: 30%;
+    margin-bottom: 0; }
+  .flexbox-slide:hover .historytitles {
+    margin-left: 0;
+    height: 70px;
+    width: auto; }
+  .flexbox-slide:hover .historylogo {
+    height: 150px;
+    width: auto;
+    max-width: none; }
+    .flexbox-slide:hover .historylogo img {
+      height: auto; }
+  .flexbox-slide:hover .textblock {
+    width: 70%;
+    height: 350px; }
+  .flexbox-slide:hover .historytext {
+    border-top: none;
+    border-left: 1px solid black; }
+  .historytitles {
+    font-size: 0.4em;
+    padding: 15px; }
+  .historytext {
+    font-size: 0.4em; }
+  #availablehalf, #resumehalf {
+    font-size: 1.5em; }
+  .contacttype {
+    font-size: 3.5em; }
+  #footmessage {
+    font-size: 1em; } }
+
+@media screen and (min-aspect-ratio: 16 / 8) {
+  #titlecard {
+    margin-top: 16vh; }
+  #languagetitle {
+    margin-top: 29vh; }
+  #choices {
+    margin-top: 8vh; }
+  #biocontain {
+    align-items: center;
+    text-align: center; } }

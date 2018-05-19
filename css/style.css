@@ -150,15 +150,15 @@ a:active {
   background-size: auto 100%;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column; }
+  flex-direction: column;
+  justify-content: space-between; }
 
 #titlecard {
   margin-bottom: 180px;
   width: 100%;
-  margin: 14vh auto 0;
+  margin: 17vh auto 0;
   text-align: center;
   display: flex;
   flex-wrap: wrap;
@@ -174,10 +174,9 @@ a:active {
   width: 80%;
   border-radius: 15px;
   background: rgba(255, 0, 0, 0.7);
-  margin: 14vh auto 0;
+  margin: 5vh auto 0;
   padding: 10px;
-  font-size: 0.8em;
-  display: none; }
+  font-size: 0.8em; }
 
 .languages {
   width: 80%;
@@ -185,32 +184,37 @@ a:active {
   margin: 0 auto; }
 
 #languagetitle {
-  margin-top: 8vh;
+  margin-top: 4vh;
   margin-bottom: 10px; }
 
+#choices {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto 50px auto; }
+
 .lego {
-  width: 50px;
-  height: 50px;
-  margin: 30px 0;
-  cursor: pointer; }
+  width: 30px;
+  height: 30px;
+  margin: 10px 0;
+  cursor: pointer;
+  background-size: cover; }
   .lego:hover .choicesbox {
     color: #40a7f3; }
 
 #studentb {
-  background-image: url("../images/reading.svg");
-  background-size: cover; }
+  background-image: url("../images/reading.svg"); }
 
 #entreb {
-  background-image: url("../images/teacher.svg");
-  background-size: cover; }
+  background-image: url("../images/teacher.svg"); }
 
 #programmerb {
-  background-image: url("../images/learning.svg");
-  background-size: cover; }
+  background-image: url("../images/learning.svg"); }
 
 .filler {
-  width: 50px;
-  height: 50px; }
+  width: 30px;
+  height: 30px; }
 
 .choicesbox {
   margin-top: 10px;
@@ -218,7 +222,8 @@ a:active {
   align-items: flex-end;
   justify-content: center;
   font-weight: bold;
-  color: white; }
+  color: white;
+  font-size: 0.8em; }
   .choicesbox:hover {
     color: #40a7f3; }
 
@@ -321,7 +326,7 @@ a:active {
   text-align: center;
   font-size: 1.5em;
   text-decoration: underline;
-  margin: 20px 0 50px;
+  margin: 20px 0 35px;
   font-weight: bold;
   color: #40a7f3;
   text-decoration: none; }
@@ -644,9 +649,8 @@ a:active {
 #inquiryform {
   display: flex;
   flex-wrap: wrap;
-  width: 90%;
   margin: 0 auto;
-  justify-content: space-between; }
+  justify-content: center; }
 
 #titlereturn {
   width: 100%; }
@@ -668,19 +672,60 @@ a:active {
   border-radius: 25px;
   cursor: pointer; }
 
-#contactleft {
-  width: 45%;
-  display: flex;
-  flex-direction: column; }
+#returnmessage {
+  font-size: 0.7em;
+  color: green;
+  text-align: center;
+  margin-bottom: 30px; }
 
-#contactright {
-  width: 45%;
+label {
+  font-size: 0.8em; }
+
+h3 {
+  text-align: center;
+  font-size: 20px; }
+
+input {
+  width: 100%;
+  height: 35px;
+  margin: 5px 0 15px;
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px; }
+
+input[type=button] {
+  background-color: #4c4556;
+  border: 1px solid white;
+  font-Weight: bold;
+  font-size: 18px;
+  color: white;
+  border: 1px solid #4c4556; }
+  input[type=button]:hover {
+    background-color: #40a7f3;
+    border: 1px solid #4c4556; }
+
+textarea {
+  width: 100%;
+  height: 80px;
+  margin-top: 5px;
+  border-radius: 3px;
+  padding: 5px;
+  resize: none; }
+
+span {
+  color: red; }
+
+.contactinfo {
   display: flex;
-  flex-direction: column; }
+  align-items: center; }
+  .contactinfo label {
+    width: 40%;
+    margin-right: 5px; }
 
 #contactmessage {
   width: 100%;
-  margin-top: 20px; }
+  margin-top: 20px;
+  max-width: 400px; }
 
 #footer {
   display: flex;
@@ -731,60 +776,6 @@ a:active {
   .footlink a:hover {
     color: #40a7f3; }
 
-#mainform {
-  width: 960px;
-  margin: 20px auto;
-  padding-top: 20px; }
-
-#form {
-  border-radius: 2px;
-  padding: 20px 30px;
-  box-shadow: 0 0 15px;
-  font-size: 14px;
-  font-weight: bold;
-  width: 350px;
-  margin: 20px 250px 0 35px;
-  float: left; }
-
-h3 {
-  text-align: center;
-  font-size: 20px; }
-
-input {
-  width: 100%;
-  height: 35px;
-  margin-top: 5px;
-  border: 1px solid #999;
-  border-radius: 3px;
-  padding: 5px; }
-
-input[type=button] {
-  background-color: #123456;
-  border: 1px solid white;
-  font-Weight: bold;
-  font-size: 18px;
-  color: white; }
-
-textarea {
-  width: 100%;
-  height: 80px;
-  margin-top: 5px;
-  border-radius: 3px;
-  padding: 5px;
-  resize: none; }
-
-span {
-  color: red; }
-
-#note {
-  color: black;
-  font-Weight: 400; }
-
-#returnmessage {
-  font-size: 14px;
-  color: green;
-  text-align: center; }
-
 @media screen and (min-width: 576px) {
   #menucontain {
     display: flex;
@@ -830,6 +821,38 @@ span {
     font-size: 2.2em; }
   #footmessage {
     font-size: 0.7em; } }
+
+@media screen and (min-width: 480px) and (orientation: landscape) {
+  #ethan {
+    color: purple; }
+  #titlecard {
+    margin-top: 25vh; }
+  #mobilewarning {
+    margin-top: 3vh; }
+  #languagetitle {
+    margin-top: 3vh; }
+  .lego {
+    width: 30px;
+    height: 30px;
+    margin: 5px 0; }
+  .filler {
+    width: 30px;
+    height: 30px; }
+  .allovers {
+    flex-direction: row; }
+  .overlayright img {
+    max-height: 40vh; }
+  #inquiryform {
+    justify-content: space-between; }
+  #contactinfocont {
+    display: flex;
+    flex-wrap: wrap; }
+  .contactinfo {
+    width: 50%; }
+  #contactmessage {
+    margin: 20px auto; }
+  #submit {
+    margin-top: 10px; } }
 
 @media screen and (min-width: 768px) {
   #menucontain {
@@ -1027,6 +1050,8 @@ span {
     left: 7%; }
   #titlecard {
     margin-top: 12vh; }
+  #languagetitle {
+    margin-top: 28vh; }
   #choices {
     margin-top: 16vh;
     width: 68%; }
@@ -1125,7 +1150,9 @@ span {
     font-size: 0.9em;
     padding: 40px 0 40px 40px; }
   #resumehalf {
-    padding: 40px 40px 40px 30px; } }
+    padding: 40px 40px 40px 30px; }
+  #returnmessage {
+    font-size: 0.8em; } }
 
 @media screen and (min-width: 1200px) {
   .menutabs {
@@ -1135,13 +1162,13 @@ span {
     width: 60%; }
   #biocontain {
     align-items: center;
-    flex-direction: row; }
+    flex-direction: row;
+    width: 80%; }
   #biowriting {
-    font-size: 2.2em; }
+    font-size: 2.1em; }
   #quotename {
-    font-size: 1.3em; }
+    font-size: 1.2em; }
   #biopersonal {
-    width: 90%;
     left: 5%; }
   #biotextw {
     font-size: 1em; }
@@ -1155,12 +1182,10 @@ span {
     font-size: 1.4em; }
   #availablehalf {
     font-size: 1em;
-    padding-bottom: 70px;
-    padding-top: 70px; }
+    padding: 70px 0 70px 60px; }
   #resumehalf {
     font-size: 1em;
-    padding-bottom: 70px;
-    padding-top: 70px; }
+    padding: 70px 60px 70px 70px; }
   .buttonstyle {
     margin-top: 40px; }
   #contactform {
@@ -1172,16 +1197,21 @@ span {
     font-size: 3em; } }
 
 @media screen and (min-width: 1600px) {
+  .menutabs {
+    font-size: 0.85em; }
   #nametitle {
     font-size: 4em; }
   #biocontain {
-    width: 80%; }
+    width: 75%;
+    margin: 60px 0; }
   #biowriting {
     font-size: 2.6em; }
   #quotename {
     font-size: 1.6em; }
   #biotextw {
     font-size: 1.1em; }
+  #biobottom {
+    font-size: 0.8em; }
   .flexbox-slide:hover #flexcontainer {
     flex-direction: row;
     padding: 0; }
@@ -1211,16 +1241,21 @@ span {
     padding: 15px; }
   .historytext {
     font-size: 0.4em; }
+  #availablehalf, #resumehalf {
+    font-size: 1.3em; }
   .contacttype {
     font-size: 3.5em; }
   #footmessage {
     font-size: 1em; } }
 
 @media screen and (min-aspect-ratio: 16 / 8) {
+  #ethan {
+    color: red; }
   #titlecard {
     margin-top: 16vh; }
   #languagetitle {
-    margin-top: 29vh; }
+    margin-top: 29vh;
+    color: red; }
   #choices {
     margin-top: 8vh; }
   #biocontain {
