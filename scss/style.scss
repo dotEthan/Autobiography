@@ -173,7 +173,15 @@ a:active {
   cursor: pointer;
 }
 
-.lefttabs {
+menutabs a {
+  color: none;
+}
+
+.menudark {
+  color: $thirdcolor !important;
+}
+
+.menutext {
   display: flex; 
   align-items: center;
   flex-direction: column;
@@ -808,9 +816,9 @@ a:active {
 
 #inquiryform {
   display: flex;
-  flex-wrap: wrap;
-  margin: 0 auto;
+  flex-direction: column;
   justify-content: center;
+  margin: 0 auto;
 }
 
 #titlereturn {
@@ -893,13 +901,14 @@ span{
 
   label {
     width: 40%;
-    margin-right: 5px;
+    text-align: left;
+    padding: 5px;
   }
 }
 
 #contactmessage {
   width: 100%;
-  margin-top: 20px;
+  margin: 20px auto 0;
   max-width: 400px;
 }
 
@@ -965,6 +974,77 @@ span{
 
   &:hover {
     color: $thirdcolor;
+  }
+}
+
+@media screen and (orientation : landscape) {
+  #ethan {
+    color: purple;
+  }
+
+  #titlecard {
+    margin-top:70px;
+    width: 90%;
+  }  
+
+  #nametitle {
+    font-size: 1.4em;
+    padding: 10px;
+  }
+
+  #mobilewarning {
+    margin-top: 3vh;
+    width: 60%;
+    font-size: 0.6em;
+  }
+
+  #languagetitle {
+    margin-top: 5vh;
+    margin-bottom: 8vh
+  }
+
+  #choices {
+    margin-bottom: 30px;
+  }
+
+  .lego {
+    width: 30px;
+    height: 30px;
+    margin: 5px 0;
+  }
+
+  .filler {
+    width: 30px;
+    height: 30px;
+  }
+
+  .allovers {
+    flex-direction: row;
+  }
+
+  .overlayright img {
+    max-height: 40vh;
+  }
+
+  #inquiryform {
+    justify-content: space-between;
+  }
+
+  #contactinfocont {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .contactinfo {
+    width: 50%;
+  }
+
+  #contactmessage {
+    margin: 20px auto 0;
+  }
+
+  #submit {
+    margin-top: 10px;
   }
 }
 
@@ -1055,62 +1135,30 @@ span{
   }
 }
 
-@media screen and (min-width: 480px) and (orientation : landscape) {
-  #ethan {
-    color: purple;
-  }
+@media screen and (min-width: 576px) and (orientation: landscape) {
 
   #titlecard {
-    margin-top: 25vh;
-  }  
+    width: 70%;
+  }
 
-  #mobilewarning {
-    margin-top: 3vh;
+  #nametitle{
+    font-size: 1.8em;
+    padding: 5px;
   }
 
   #languagetitle {
     margin-top: 3vh;
+    margin-bottom: 3vh;
   }
 
-  .lego {
-    width: 30px;
-    height: 30px;
-    margin: 5px 0;
+  .languages {
+    font-size: 0.6em;
   }
 
-  .filler {
-    width: 30px;
-    height: 30px;
+  #mobilewarning {
+    margin-top: 0;
   }
 
-  .allovers {
-    flex-direction: row;
-  }
-
-  .overlayright img {
-    max-height: 40vh;
-  }
-
-  #inquiryform {
-    justify-content: space-between;
-  }
-
-  #contactinfocont {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .contactinfo {
-    width: 50%;
-  }
-
-  #contactmessage {
-    margin: 20px auto;
-  }
-
-  #submit {
-    margin-top: 10px;
-  }
 }
 
 @media screen and (min-width: 768px) {
@@ -1195,7 +1243,7 @@ span{
     margin-bottom: 50px;
   }
   
-  .lefttabs {
+  .menutext {
     flex-direction: row;
     padding: 10px;
   }
@@ -1219,11 +1267,11 @@ span{
   }
 
   #titlecard {
-    margin-top: 13vh;
+    margin-top: 12vh;
   }
   
   #nametitle {
-    font-size: 2.5em;
+    font-size: 3em;
   }
   
   #mobilewarning {
@@ -1243,7 +1291,7 @@ span{
     display: flex;
     justify-content: space-around;
     width: 70%;
-    margin-top: 7vh;
+    margin-top: 10vh;
     align-items: center;
   }
 
@@ -1412,6 +1460,21 @@ span{
 
   #footmessage {
     font-size: 0.75em;
+  }
+}
+
+@media screen and (min-width: 768px) and (orientation: landscape) {
+
+  #titlecard {
+    margin-top: 13vh;
+  }
+  
+  #nametitle {
+    font-size: 2.5em;
+  }
+
+  #choices {
+    margin-top: 7vh;
   }
 }
 
@@ -1675,8 +1738,8 @@ span{
     margin-top: 40px;
   }
 
-  #contactform {
-    width: 80%;
+  #contactinfocontain {
+    width: 75%;
     margin: 0 auto;
   }
 
@@ -1686,6 +1749,7 @@ span{
 
   .contacttype {
     font-size: 3em;
+    margin-bottom: 5px;
   }
 }
 
@@ -1785,16 +1849,8 @@ span{
   }
 }
 
-// LANDSCAPE
-
-// @media screen and (orientation: landscape) {
-// }
-
 @media screen and (min-aspect-ratio: 16/8) {
 
-  #ethan {
-    color: red;
-  }
 
   #titlecard {
     margin-top: 16vh;
@@ -1802,7 +1858,6 @@ span{
 
   #languagetitle {
     margin-top: 29vh;
-    color: red;
   }
 
   #choices {
@@ -1813,5 +1868,9 @@ span{
     align-items: center;
     text-align: center;
   }
+
+  #inquiryform {
+    width: 70%;
+
+  }
 }
-//WIDE SCREEN SIZE

@@ -129,11 +129,17 @@ a:active {
   font-size: 0.6em;
   cursor: pointer; }
 
-.lefttabs {
+menutabs a {
+  color: none; }
+
+.menudark {
+  color: #40a7f3 !important; }
+
+.menutext {
   display: flex;
   align-items: center;
   flex-direction: column; }
-  .lefttabs a {
+  .menutext a {
     color: black; }
 
 .faicon {
@@ -648,9 +654,9 @@ a:active {
 
 #inquiryform {
   display: flex;
-  flex-wrap: wrap;
-  margin: 0 auto;
-  justify-content: center; }
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto; }
 
 #titlereturn {
   width: 100%; }
@@ -720,11 +726,12 @@ span {
   align-items: center; }
   .contactinfo label {
     width: 40%;
-    margin-right: 5px; }
+    text-align: left;
+    padding: 5px; }
 
 #contactmessage {
   width: 100%;
-  margin-top: 20px;
+  margin: 20px auto 0;
   max-width: 400px; }
 
 #footer {
@@ -776,6 +783,47 @@ span {
   .footlink a:hover {
     color: #40a7f3; }
 
+@media screen and (orientation: landscape) {
+  #ethan {
+    color: purple; }
+  #titlecard {
+    margin-top: 70px;
+    width: 90%; }
+  #nametitle {
+    font-size: 1.4em;
+    padding: 10px; }
+  #mobilewarning {
+    margin-top: 3vh;
+    width: 60%;
+    font-size: 0.6em; }
+  #languagetitle {
+    margin-top: 5vh;
+    margin-bottom: 8vh; }
+  #choices {
+    margin-bottom: 30px; }
+  .lego {
+    width: 30px;
+    height: 30px;
+    margin: 5px 0; }
+  .filler {
+    width: 30px;
+    height: 30px; }
+  .allovers {
+    flex-direction: row; }
+  .overlayright img {
+    max-height: 40vh; }
+  #inquiryform {
+    justify-content: space-between; }
+  #contactinfocont {
+    display: flex;
+    flex-wrap: wrap; }
+  .contactinfo {
+    width: 50%; }
+  #contactmessage {
+    margin: 20px auto 0; }
+  #submit {
+    margin-top: 10px; } }
+
 @media screen and (min-width: 576px) {
   #menucontain {
     display: flex;
@@ -822,37 +870,19 @@ span {
   #footmessage {
     font-size: 0.7em; } }
 
-@media screen and (min-width: 480px) and (orientation: landscape) {
-  #ethan {
-    color: purple; }
+@media screen and (min-width: 576px) and (orientation: landscape) {
   #titlecard {
-    margin-top: 25vh; }
-  #mobilewarning {
-    margin-top: 3vh; }
+    width: 70%; }
+  #nametitle {
+    font-size: 1.8em;
+    padding: 5px; }
   #languagetitle {
-    margin-top: 3vh; }
-  .lego {
-    width: 30px;
-    height: 30px;
-    margin: 5px 0; }
-  .filler {
-    width: 30px;
-    height: 30px; }
-  .allovers {
-    flex-direction: row; }
-  .overlayright img {
-    max-height: 40vh; }
-  #inquiryform {
-    justify-content: space-between; }
-  #contactinfocont {
-    display: flex;
-    flex-wrap: wrap; }
-  .contactinfo {
-    width: 50%; }
-  #contactmessage {
-    margin: 20px auto; }
-  #submit {
-    margin-top: 10px; } }
+    margin-top: 3vh;
+    margin-bottom: 3vh; }
+  .languages {
+    font-size: 0.6em; }
+  #mobilewarning {
+    margin-top: 0; } }
 
 @media screen and (min-width: 768px) {
   #menucontain {
@@ -907,7 +937,7 @@ span {
     display: none; }
   #titlecard {
     margin-bottom: 50px; }
-  .lefttabs {
+  .menutext {
     flex-direction: row;
     padding: 10px; }
   .menutitle {
@@ -923,9 +953,9 @@ span {
     background-size: cover;
     justify-content: flex-start; }
   #titlecard {
-    margin-top: 13vh; }
+    margin-top: 12vh; }
   #nametitle {
-    font-size: 2.5em; }
+    font-size: 3em; }
   #mobilewarning {
     display: none; }
   .languages {
@@ -937,7 +967,7 @@ span {
     display: flex;
     justify-content: space-around;
     width: 70%;
-    margin-top: 7vh;
+    margin-top: 10vh;
     align-items: center; }
   .lego {
     width: 40px;
@@ -1039,6 +1069,14 @@ span {
     font-size: 2.3em; }
   #footmessage {
     font-size: 0.75em; } }
+
+@media screen and (min-width: 768px) and (orientation: landscape) {
+  #titlecard {
+    margin-top: 13vh; }
+  #nametitle {
+    font-size: 2.5em; }
+  #choices {
+    margin-top: 7vh; } }
 
 @media screen and (min-width: 992px) {
   #menucontain {
@@ -1188,13 +1226,14 @@ span {
     padding: 70px 60px 70px 70px; }
   .buttonstyle {
     margin-top: 40px; }
-  #contactform {
-    width: 80%;
+  #contactinfocontain {
+    width: 75%;
     margin: 0 auto; }
   #footercont {
     width: 90%; }
   .contacttype {
-    font-size: 3em; } }
+    font-size: 3em;
+    margin-bottom: 5px; } }
 
 @media screen and (min-width: 1600px) {
   .menutabs {
@@ -1249,15 +1288,14 @@ span {
     font-size: 1em; } }
 
 @media screen and (min-aspect-ratio: 16 / 8) {
-  #ethan {
-    color: red; }
   #titlecard {
     margin-top: 16vh; }
   #languagetitle {
-    margin-top: 29vh;
-    color: red; }
+    margin-top: 29vh; }
   #choices {
     margin-top: 8vh; }
   #biocontain {
     align-items: center;
-    text-align: center; } }
+    text-align: center; }
+  #inquiryform {
+    width: 70%; } }

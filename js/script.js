@@ -46,7 +46,6 @@ function showPage() {
   $('#load').css({'display': 'none'});
   $('#contents').css({'display': 'block'});
   resizeDist();
-  // party();
 }
 
 pageDelay(showPage);
@@ -169,17 +168,29 @@ function resizeDist() {
   projectDist = $('#projectslice').offset().top;
 }
 
-function addRemove(atClass) {
+function addRemove(atId) {
   let menuTabArray = $('.menutabs');
-  for (let i=0; i< menuTabArray.length; i++) {
+  for (let i=0; i< menuTabArray.length; i++) {    
     menuTabArray.eq(i).removeClass('menudark');
-    if (menuTabArray[i].id == atClass){
+    if (menuTabArray[i].id === atId){
       menuTabArray.eq(i).addClass('menudark');
     }
   }
 }
+
+function colorThem(atId) {
+  let leftTabArray = $('.menutext');
+  for (let i=0; i< leftTabArray.length; i++) {
+    leftTabArray.eq(i).removeClass('menudark');
+      console.log(atId);
+      console.log(leftTabArray[i].id);
+    if (leftTabArray[i].id === atId){
+      leftTabArray.eq(i).addClass('menudark');
+    }
+  }
+}
   
-// jQuery  UI Animations?
+
 document.addEventListener('scroll', function () {
 
   if(theme=='student') { 
@@ -215,16 +226,33 @@ document.addEventListener('scroll', function () {
       menu.removeClass('menuswitch');
     }
   } else {
-    const menuTabs = $('.menutabs a');
-    if ($(window).scrollTop() < bioDist) {
-      addRemove("top");
-    } else if ($(window).scrollTop() > bioDist && ($(window).scrollTop() < historyDist)) {
-      addRemove("biomenu");
-    } else if ($(window).scrollTop() > historyDist && $(window).scrollTop() < projectDist) {
-      addRemove("historymenu");
-    } else if ($(window).scrollTop() > projectDist) {
-      addRemove("projectmenu");
-    }    
+    let top = parseInt($(window).scrollTop());
+
+    if (!extraJ) {
+      top+=70 
+
+      if (top < bioDist) {
+        colorThem("top");
+      } else if (top > bioDist && top < historyDist) {
+        colorThem("biotab");
+      } else if (top > historyDist && top < projectDist) {
+        colorThem("historytab");
+      } else if (top > projectDist) {
+        colorThem("projectstab");
+      }    
+    } else {
+      top = top;
+
+      if (top < bioDist) {
+        addRemove("top");
+      } else if (top > bioDist && top < historyDist) {
+        addRemove("biomenu");
+      } else if (top > historyDist && top < projectDist) {
+        addRemove("historymenu");
+      } else if (top > projectDist) {
+        addRemove("projectmenu");
+      }    
+    }
   }
 }, true);
 
@@ -300,19 +328,16 @@ $('.project').click(function(e){
 //------------------------
 
 $('#contactme, #contactmebut, #footercontact, #contactclose').on('click', () => {
-    var x = document.getElementById("contactslice");
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
-  addRemove('contactme');
-});
+  let x = document.getElementById("contactslice");
 
-// $('#contactclose').on('click', () => {
-//   $('#contactslice').hide();
-//   addRemove('projectmenu');
-// });
+  if (x.style.display === "none" || !x.style.display) {
+      x.style.display = "block";
+  } else {
+      x.style.display = "none";
+  }
+  addRemove('contactme');
+  x.scrollIntoView(); 
+});
 
 //------------------------
 // Contact Form
@@ -714,6 +739,7 @@ var id5;
 $(window).resize(function() {
   clearTimeout(id5);
   id5 = setTimeout(doneResizing, 0);
+  resizeDist();
 });
 
 doneResizing();
