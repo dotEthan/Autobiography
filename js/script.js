@@ -78,13 +78,11 @@ $('#studentb').click(function() {
   }
   $('link[rel=stylesheet]').attr({href : '../css/studentstyle.css'}); 
   theme = "student";
-  $('#entrebgcanvas').css({'display': 'none'});
-  $('#mycanvas').css({'display': 'block'});
   setTextContent(textChange, 'has been built using lego. If you want to play with the blocks,');
   setTextContent(quoteChange, '“When I became a man I put away childish things, including the fear of childishness and the desire to be very grown up.”');
   setTextContent(quoteNameChange, '- C.S. Lewis');
   setTextContent(languageChange, 'Languages: English'); 
-  setTextContent(languageChange2, 'Languages: Lego');
+  setTextContent(languageChange2, 'Lego');
   setTextContent(asaChange, 'As a Student:');
   setTextContent(bioChange, 'I grew up in small town Ontario, than big city BC, then small town BC, then small town Manitoba, than back to BC for a couple cities and then back to Ontario. We moved a lot. It is likely one of the reasons I am able to easily adapt to the various environments life takes me to.');
   $("#personalimg").attr("src","../images/bios.jpg");
@@ -102,13 +100,11 @@ $('#entreb').click(function() {
   }
   $('link[rel=stylesheet]').attr({href : 'css/entrestyle.css'});
   theme = 'entre';
-  $('#entrebgcanvas').css({'display': 'block'});
-  $('#mycanvas').css({'display': 'block'});
   setTextContent(textChange, 'was designed and built to facilitate entrepreneurial success. If you want a leg up on the competition,');
   setTextContent(quoteChange, '“From my very first day as an entrepreneur, I\'ve felt the only mission worth pursuing in business is to make people\'s lives better.”');
   setTextContent(quoteNameChange, '- Richard Branson');
   setTextContent(languageChange, 'Languages: English, Chinese');
-  setTextContent(languageChange2, 'Languages: HTML, CSS, Wordpress');
+  setTextContent(languageChange2, 'HTML, CSS, Wordpress, Jqeury');
   setTextContent(asaChange, 'As an Entrepreneur:');
   setTextContent(bioChange, 'I spent my 20s in China, learning a new culture, language and how to develop long term plans and put them into action. I had numerous jobs including Bar Manager, University professor, Radio Host and more. And I developed and opened a number of different entreprenerial ventures that pushed me to learn web development, leadership skills and to hone my customer service techniques.');
   $("#personalimg").attr("src","../images/bioe.jpg");
@@ -118,14 +114,12 @@ $('#entreb').click(function() {
 $('#programmerb').click(function() {
   $('link[rel=stylesheet]').attr({href : 'css/style.css'}); 
   theme = 'programmer';
-  $('#entrebgcanvas').css({'display': 'none'});
-  $('#mycanvas').css({'display': 'none'});
   window.cancelAnimationFrame(animating); 
   setTextContent(textChange, 'was developed using Javascript, Jquery, HTML, and SCSS. If you want to look at the code,');
   setTextContent(quoteChange, '"The most effective debugging tool is still careful thought, coupled with judiciously placed print statements."');
   setTextContent(quoteNameChange, '- Brian W. Kernighan');
   setTextContent(languageChange, 'Languages: English, Chinese');  
-  setTextContent(languageChange2, 'Languages: Javascript, React, Jquery, HTML, CSS, SCSS, Wordpress, Liquid, Gulp, Git, npm');
+  setTextContent(languageChange2, 'Javascript, React, Jquery, HTML, CSS, SCSS, Wordpress, Liquid, Gulp, Git, npm');
   setTextContent(asaChange, 'As a Programmer:');
   setTextContent(bioChange, 'Since returning to Canada I have opened two successful entreprenuerial ventures and learned a number of new langauges including Javascript, SCSS, React, Liquid and more. I\'ve devoted the last six months to brushing up on HTML 5, SCSS, Javascript ES6 and learning React to ensure I have a firm grasp of the tools needed to succeed in Front End Development or Javavscript programming.');
   $("#personalimg").attr("src","../images/biop.jpg");
@@ -380,8 +374,7 @@ $('#submit').click(function(e) {
 function circles() {
   const canvas = document.querySelector('#mycanvas');
   canvas.width = document.querySelector('#mycanvas').scrollWidth;
-  // canvas.height = window.innerHeight;
-  canvas.height = $('mycanvas').css('height');
+  canvas.height = $('#mycanvas').css('height');
   const c = canvas.getContext('2d');
   const topRadius = 30;
   const colorArray = [
@@ -452,9 +445,10 @@ function circles() {
   function init() {
     circleArray = [];
     for (let i =0; i<30; i++) { 
+      console.log($('#mycanvas').css('height'));
       let radius = Math.random() * 10;
       let x = Math.random() * ((canvas.width - radius*2) + radius)*2;
-      let y = Math.random() * (canvas.height - radius * 2) + radius;
+      let y = Math.random() * (canvas.height - radius*2) + radius;
       let dx = (Math.random() - 0.4) * 3;
       let dy = (Math.random() - 0.4)* 3;
       circleArray.push(new Circle(x, y, dx, dy, radius));
@@ -479,7 +473,7 @@ function circles() {
 
 function spirals() {
  
-  const canvas = document.getElementById('mycanvas');
+  const canvas = document.getElementById('entrebgcanvas');
   const c = canvas.getContext('2d');
   canvas.width = innerWidth;
   canvas.height = 150;
@@ -715,18 +709,22 @@ function doneResizing() {
   if (Modernizr.mq('screen and (min-width:768px)')) {
 
     if (theme === 'entre') {
-      $('#mycanvas').css({'display': 'block'});
+      $('#mycanvas').css({'display': 'none'});
+      $('#entrebgcanvas').css({'display': 'block'});
       timeOut = setTimeout(spirals, 1000);
     } else if (theme === 'student') {
+      $('#entrebgcanvas').css({'display': 'none'});
+      $('#mycanvas').css({'display': 'block'});
       timeOut = setTimeout(circles, 1000);
     }
 
     extraJ = true;
 
   } else {
-      $('#mycanvas').css({'display': 'none'});
+      $('#entrebgcanvas').css({'display': 'none'});
 
       if (theme === 'student') {
+      $('#mycanvas').css({'display': 'block'});
         timeOut = setTimeout(circles, 1000);
       }
 

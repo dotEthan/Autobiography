@@ -152,7 +152,7 @@ menutabs a {
 
 #splashcont {
   height: 100vh;
-  background-image: url("../images/programmer.jpg");
+  background-image: url("../images/bgp.jpg");
   background-size: auto 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -421,7 +421,7 @@ menutabs a {
   opacity: 1; }
 
 .jobtitle {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   text-align: center;
   width: 100%; }
 
@@ -784,8 +784,6 @@ span {
     color: #40a7f3; }
 
 @media screen and (orientation: landscape) {
-  #ethan {
-    color: purple; }
   #titlecard {
     margin-top: 70px;
     width: 90%; }
@@ -810,15 +808,20 @@ span {
     height: 30px; }
   .allovers {
     flex-direction: row; }
+  .protextt {
+    font-size: 1.4em; }
+  .protextw {
+    font-size: 1em; }
   .overlayright img {
     max-height: 40vh; }
   #inquiryform {
     justify-content: space-between; }
   #contactinfocont {
     display: flex;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    justify-content: space-between; }
   .contactinfo {
-    width: 50%; }
+    width: 45%; }
   #contactmessage {
     margin: 20px auto 0; }
   #submit {
@@ -842,9 +845,11 @@ span {
   #mobilewarning {
     width: 60%; }
   #languagetitle {
-    margin-top: 27vh; }
+    margin-top: 14vh; }
   .languages {
     font-size: 1em; }
+  #choices {
+    margin-bottom: 14vh; }
   #biocontain {
     width: 75%; }
   #biowriting {
@@ -933,10 +938,6 @@ span {
       color: #e5e5e5; }
   #historymenu, #projectmenu, #contactme {
     border-top: 1px solid #0c74c1; }
-  #mobilewarning {
-    display: none; }
-  #titlecard {
-    margin-bottom: 50px; }
   .menutext {
     flex-direction: row;
     padding: 10px; }
@@ -953,6 +954,7 @@ span {
     background-size: cover;
     justify-content: flex-start; }
   #titlecard {
+    margin-bottom: 50px;
     margin-top: 12vh; }
   #nametitle {
     font-size: 3em; }
@@ -1065,6 +1067,8 @@ span {
     width: 40px;
     height: 40px;
     font-size: 1.5em; }
+  #inquiryform {
+    width: 80%; }
   .contacttype {
     font-size: 2.3em; }
   #footmessage {
@@ -1075,8 +1079,12 @@ span {
     margin-top: 13vh; }
   #nametitle {
     font-size: 2.5em; }
+  #languagetitle {
+    margin-top: 20vh; }
   #choices {
-    margin-top: 7vh; } }
+    margin-top: 7vh; }
+  #inquiryform {
+    width: 70%; } }
 
 @media screen and (min-width: 992px) {
   #menucontain {
@@ -1091,7 +1099,7 @@ span {
   #languagetitle {
     margin-top: 28vh; }
   #choices {
-    margin-top: 16vh;
+    margin: 10vh auto;
     width: 68%; }
   #biopersonaltext {
     padding-right: 10px; }
@@ -1196,7 +1204,7 @@ span {
   .menutabs {
     font-size: 0.7em; }
   #choices {
-    margin-top: 19vh;
+    margin-top: 9vh;
     width: 60%; }
   #biocontain {
     align-items: center;
@@ -1214,6 +1222,8 @@ span {
     font-size: 0.34em; }
   .historytext {
     font-size: 0.3em; }
+  .jobtitle {
+    margin-bottom: 25px; }
   .overlayright img {
     max-height: 50vh; }
   .protextcont {
@@ -1226,7 +1236,7 @@ span {
     padding: 70px 60px 70px 70px; }
   .buttonstyle {
     margin-top: 40px; }
-  #contactinfocontain {
+  #contactinfocont {
     width: 75%;
     margin: 0 auto; }
   #footercont {
@@ -1244,13 +1254,13 @@ span {
     width: 75%;
     margin: 60px 0; }
   #biowriting {
-    font-size: 2.6em; }
+    font-size: 3em; }
   #quotename {
     font-size: 1.6em; }
   #biotextw {
-    font-size: 1.1em; }
+    font-size: 1.3em; }
   #biobottom {
-    font-size: 0.8em; }
+    font-size: 1em; }
   .flexbox-slide:hover #flexcontainer {
     flex-direction: row;
     padding: 0; }
@@ -1271,7 +1281,7 @@ span {
       height: auto; }
   .flexbox-slide:hover .textblock {
     width: 70%;
-    height: 350px; }
+    height: 375px; }
   .flexbox-slide:hover .historytext {
     border-top: none;
     border-left: 1px solid black; }
@@ -1279,7 +1289,8 @@ span {
     font-size: 0.4em;
     padding: 15px; }
   .historytext {
-    font-size: 0.4em; }
+    font-size: 0.4em;
+    padding: 25px; }
   #availablehalf, #resumehalf {
     font-size: 1.3em; }
   .contacttype {

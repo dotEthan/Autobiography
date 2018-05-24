@@ -81,23 +81,26 @@ body {
     bottom: 0;
     opacity: 1; } }
 
-#ethan {
-  font-family: 'logo', serif;
-  padding-top: 10px; }
-
 #menucontain {
   position: fixed;
   background: #31c2fe;
   color: white;
   width: 100%;
-  z-index: 99; }
+  z-index: 99;
+  height: 70px; }
+
+#ethan {
+  display: none;
+  font-family: 'logo', serif;
+  font-size: 1.5em; }
 
 #mycanvas {
-  display: none; }
+  display: block;
+  height: 70px;
+  width: 100%; }
 
 #entrebgcanvas {
-  display: none;
-  z-index: 7; }
+  display: none; }
 
 .leftcanvas {
   width: 100%;
@@ -126,7 +129,8 @@ a {
   width: 20%;
   text-align: center;
   cursor: pointer;
-  font-size: 0.8em; }
+  font-size: 0.8em;
+  z-index: 8; }
 
 .faicon {
   font-size: 1.5; }
@@ -136,7 +140,7 @@ a {
 
 #splashcont {
   height: 100vh;
-  background-image: url("../images/body.jpg");
+  background-image: url("../images/bgs.jpg");
   background-size: auto 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -870,6 +874,10 @@ span {
     height: 80vh;
     margin-top: 10vh;
     padding-top: 0; }
+  #mycanvas {
+    display: block;
+    height: 100%;
+    width: 100%; }
   .menutabs {
     height: 60px;
     width: 60%;

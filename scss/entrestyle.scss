@@ -38,7 +38,7 @@ $menuiconsize: 1.5em;
 $menufontsize: 0.9em;
 $menubackground: 'transparent';
 $smallmenupaddingtop: 20px;
-$frontimage: url('../images/entrebg.jpg');
+$frontimage: url('../images/bge1.jpg');
 $biocontainbg: grey;
 $biowritingc: black;
 $biowritings: 2.7em;
@@ -177,6 +177,7 @@ body {
   height: 80px;
   width: 95%;
   margin: 0 auto;
+  border-radius: 10px 10px 0 0;
 }
 
 .menuclass {
@@ -217,9 +218,6 @@ body {
     text-decoration: none;
   }
 }
-
-#contentcontain {
-}
   
 #splashcont {
   height: 100vh;
@@ -229,15 +227,16 @@ body {
   background-repeat: no-repeat;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 #titlecard {
-  margin: 0 auto; 
-  padding-top: 30px;
+  margin-bottom: 180px;
   width: 100%;
-  width: 80%;
+  margin: 13vh auto 0;
+  text-align: center;
   display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
   color: white;
 }
@@ -245,6 +244,7 @@ body {
 #nametitle {
   width: 100%;              
   font-family: $headertext;
+  font-weight: bold;
   font-size: 1.8em;
 }
 
@@ -258,50 +258,74 @@ body {
 }
 
 .languages{
-  width: 100%;  
+  width: 80%; 
+  font-size: 0.6em;
+  margin: 0 auto;
 }
 
 #languagetitle {
-  margin-top: 3vh;
+  margin-top: 4vh;
   margin-bottom: 10px;
 }
     
 #choices {
-  display: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto 120px auto;
 }
 
 .lego {
-  height: 80px;
-  width: 80px;
-  background-image: url("../images/reading.svg");
-  background-size: cover;
-  margin-top: 20px;
+  width: 30px;
+  height: 30px;
+  margin: 10px 0;
   cursor: pointer;
-  padding: 25px;
-  border-radius: 5px;
+  background-size: cover;  
+
+  &:hover {
+    .choicesbox {
+      color: $thirdcolor;
+    }
+  }
+}
+
+#studentb {
+  background-image: url("../images/reading.svg");
 }
 
 #entreb {
   background-image: url("../images/teacher.svg");
-  background-size: cover;
 }
 
 #programmerb {
   background-image: url("../images/learning.svg");
-  background-size: cover;  
+}
+
+.filler {
+  width: 30px;
+  height: 30px;
 }
 
 .choicesbox {
+  margin-top: 10px;
   display: flex;
+  align-items: flex-end;
   justify-content: center;
   font-weight: bold;
   color: white;
+  font-size: 0.8em;
+
+  &:hover {
+    color: $thirdcolor;
+  }
 }
 
 .slice {
   background: $firstcolor;
   padding: 25px;
 }
+
 
 #bioinfo {
   display: flex;
@@ -323,18 +347,18 @@ body {
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
-  margin: 50px auto;
+  margin: 100px auto;  
 }
 
 #biowriting {
   width: 100%;
   color: $biowritingc;
   font-family: $headertext;
-  font-size: 0.9em;
+  font-size: 1em;
 }
 
 #quotename {
-  font-size: 0.7em;
+  font-size: 0.8em;
   text-align: right;
   margin-top: 20px;
   font-family: $headertext;
@@ -349,11 +373,12 @@ body {
   left: 0;
   flex-direction: column;
   text-align: left;
+  justify-content: center;
 }
 
 #biotop {
   display: flex;
-  flex-direction: row;
+  flex-direction: column-reverse;
 }
 
 #biotextw {
@@ -361,8 +386,12 @@ body {
   text-align: center;
 }
 
-#asa, #ageinfo {
+#asa {
   margin: 15px 0;
+  display: none;
+}
+
+#ageinfo {
   display: none;
 }
 
@@ -371,10 +400,25 @@ body {
 }
 
 #biobottom {
-  width: 80%;
+  width: 95%;
   display: flex;
   justify-content: center;
+  margin-top: 20px;
   font-size: 0.5em;
+}
+
+#thanksright {
+  width: 85%;
+  padding: 5px;
+  text-align: left;
+
+  a {
+  color: $secondcolor;
+
+    &:hover {
+      color: $thirdcolor;
+    }
+  }
 }
 
 #thanksleft {
@@ -389,7 +433,7 @@ body {
 }
 
 #historyslice {
-  background-color: $secondcolor;
+  background-color: lighten($secondcolor,5%);
 }
 
 .protitle {
@@ -398,9 +442,9 @@ body {
   text-align: center;
   font-size: 1.5em;
   text-decoration: underline;
-  margin: 20px 0 50px;
+  margin: 20px 0 35px;
   font-weight: bold;
-  color: black;
+  color: $thirdcolor;
   text-decoration: none;
 }
 
@@ -422,6 +466,7 @@ body {
   visibility: visible;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   flex-wrap: wrap;
 }
 
@@ -438,12 +483,12 @@ body {
 
 .historylogo {
   width: 50%;
-  max-width: 150px; 
+  max-width: 150px;
 
   img {
     height: 100px;
     margin: 0 auto;
-  } 
+  }
 }
 
 .historytitles {
@@ -456,12 +501,12 @@ body {
   font-family: $headertext;
   max-width: 150px;
   width: 50%;
-  padding: 2px;
 }
 
 .historydates {
   font-size: 0.7em;
   width: 100%;
+  margin-top: 10px;
 }
 
 .textblock {
@@ -473,18 +518,18 @@ body {
   overflow: hidden;
   height: 0;
   justify-content: center;
-  transition: height 1s;  
+  transition: height 1s;
 }
 
 .tbopen {
-  height: 260px;
+  height: 250px;
 }
 
 .historyicons {
   display: none;
 }
 
-.historytext {
+.historytext { 
   border-top: 1px solid rgba(0,0,0,0.6);
   text-align: left;
   overflow: hidden;
@@ -502,7 +547,7 @@ body {
 }
 
 .jobtitle {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   text-align: center;
   width: 100%;
 }
@@ -549,6 +594,7 @@ body {
 
 #projectslice {
   position: relative;
+  background: $firstcolor;
 }
 
 #projectcont {
@@ -573,6 +619,7 @@ body {
   background-color: white;
   cursor: pointer;
   transition: all 800ms;
+
 
   img{
     max-width: 100%;
@@ -620,7 +667,7 @@ body {
   text-align: center;
   width: 100%;
   margin:10px;
-  background:  rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.6);
   border-radius: $projectoverlayradius;
   overflow: hidden;
 }
@@ -630,7 +677,7 @@ body {
   font-family: $headertext;
 }
 
-.protextw{
+.protextw {
   font-size: 0.7em;
 }
 
@@ -672,7 +719,7 @@ body {
   cursor: pointer;
 }
 
-#overlayleft {
+.overlayleft {
   width: 100%;
   display:flex;
   flex-direction: column;
@@ -702,7 +749,7 @@ body {
   font-size: 0.6em;
 }
 
-#overlayright {
+.overlayright {
   border: 2px dashed #96858F;
   justify-content: center;
   display: flex;
@@ -717,8 +764,9 @@ body {
   display: flex;
   flex-wrap: wrap;
   padding: 0px;
-  background-color: lighten($secondcolor, 10%);
+  background-color: lighten($secondcolor, 5%);
   width: 100%;
+  color: white;
 }
 
 #availablehalf {
@@ -729,7 +777,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-around; 
-  align-items: center;
+  align-items: center;  
 }
 
 #availabletext, #resumetext {
@@ -743,8 +791,8 @@ body {
   border-radius: 10px;
   font-size: 0.7em;
   border: 2px solid darken($secondcolor,40%);
-  color: darken($secondcolor,40%);
   cursor: pointer;
+  color: white;
 
   &:hover {
     background-color: $thirdcolor;
@@ -758,13 +806,12 @@ body {
   font-size: 0.8em;
   display: flex;
   flex-direction: row;
-  justify-content: space-around; 
-  align-items: center;
-  color: white;
-  
+  justify-content: space-around;  
+  align-items: center;  
+
   .buttonstyle{
-    background-color: darken($secondcolor,20%);
-    border: 2px solid lighten($secondcolor,20%);
+    background-color: darken($secondcolor,10%);
+    border: 2px solid lighten($secondcolor,10%);
     color: white;
 
     &:hover {
@@ -786,10 +833,9 @@ body {
 
 #inquiryform {
   display: flex;
-  flex-wrap: wrap;
-  width: 90%;
+  flex-direction: column;
+  justify-content: center;
   margin: 0 auto;
-  justify-content: space-between;
 }
 
 #titlereturn {
@@ -814,21 +860,73 @@ body {
   cursor: pointer;
 }
 
-#contactleft {
-  width: 45%;
-  display: flex;
-  flex-direction: column;
+#returnmessage{
+  font-size: 0.7em;;
+  color:green;
+  text-align:center;
+  margin-bottom: 30px;
 }
 
-#contactright {
-  width: 45%;
+label {
+  font-size: 0.8em;
+}
+
+h3{
+  text-align:center;
+  font-size:20px;
+}
+
+input{
+  width:100%;
+  height:35px;
+  margin: 5px 0 15px;
+  border:1px solid #999;
+  border-radius:3px;
+  padding:5px;
+}
+
+input[type=button]{
+  background-color: $secondcolor;
+  border:1px solid white;
+  font-Weight:bold;
+  font-size:18px;
+  color:white;
+  border: 1px solid $secondcolor; 
+
+  &:hover {
+    background-color: $thirdcolor;
+    border: 1px solid $secondcolor; 
+  }
+}
+
+textarea{
+  width:100%;
+  height:80px;
+  margin-top:5px;
+  border-radius:3px;
+  padding:5px;
+  resize:none;
+}
+
+span{
+  color:red;
+}
+
+.contactinfo {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+
+  label {
+    width: 40%;
+    text-align: left;
+    padding: 5px;
+  }
 }
 
 #contactmessage {
   width: 100%;
-  margin-top: 20px;
+  margin: 20px auto 0;
+  max-width: 400px;
 }
 
 #footer {
@@ -852,6 +950,7 @@ body {
   color: $secondcolor;
   cursor: pointer;
 
+
   .footertext {
     font-size: .35em;
     visibility: hidden;
@@ -861,11 +960,11 @@ body {
   }
   
   &:hover {
-    color: darken($thirdcolor,5%);
+    color: $thirdcolor;
     
     .footertext {
       visibility: visible;
-      color: darken($thirdcolor,5%);
+      color: $thirdcolor;
     }
   }
 }
@@ -895,67 +994,85 @@ body {
   }
 }
 
-#third {
-  background: $thirdcolor;
-  display: none;
-}
+@media screen and (orientation : landscape) {
 
+  #titlecard {
+    margin-top:10px;
+    width: 90%;
+  }  
 
+  #nametitle {
+    font-size: 1.4em;
+    padding: 10px;
+  }
 
-#mainform{
-  width:960px;
-  margin:20px auto;
-  padding-top:20px;
-}
-#form{
-  border-radius:2px;
-  padding:20px 30px;
-  box-shadow:0 0 15px;
-  font-size:14px;
-  font-weight:bold;
-  width:350px;
-  margin:20px 250px 0 35px;
-  float:left;
+  #mobilewarning {
+    margin-top: 3vh;
+    width: 60%;
+    font-size: 0.6em;
+  }
 
-}
-h3{
-  text-align:center;
-  font-size:20px;
-}
-input{
-  width:100%;
-  height:35px;
-  margin-top:5px;
-  border:1px solid #999;
-  border-radius:3px;
-  padding:5px;
-}
-input[type=button]{
-  background-color:#123456;
-  border:1px solid white;
-  font-Weight:bold;
-  font-size:18px;
-  color:white;
-}
-textarea{
-  width:100%;
-  height:80px;
-  margin-top:5px;
-  border-radius:3px;
-  padding:5px;
-  resize:none;
-}
-span{
-  color:red;
-}
-#note{
-  color:black;
-  font-Weight:400;
-}
-#returnmessage{
-  font-size:14px;
-  color:green;
-  text-align:center;
+  #languagetitle {
+    margin-top: 5vh;
+    margin-bottom: 2vh
+  }
+
+  #choices {
+    margin-bottom: 110px;
+    margin-top: 5px;
+  }
+  .choicesbox {
+    margin-top:2px;
+  }
+
+  .lego {
+    width: 30px;
+    height: 30px;
+    margin: 5px 0;
+  }
+
+  .filler {
+    width: 30px;
+    height: 30px;
+  }
+
+  .allovers {
+    flex-direction: row;
+  }
+
+  .protextt {
+    font-size: 1.4em;
+  }
+
+  .protextw {
+    font-size: 1em;
+  }
+
+  .overlayright img {
+    max-height: 40vh;
+  }
+
+  #inquiryform {
+    justify-content: space-between;
+  }
+
+  #contactinfocont {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .contactinfo {
+    width: 45%;
+  }
+
+  #contactmessage {
+    margin: 20px auto 0;
+  }
+
+  #submit {
+    margin-top: 10px;
+  }
 }
 
 @media screen and (min-width: 576px) {
@@ -971,7 +1088,7 @@ span{
   }
 
   #languagetitle {
-    margin-top: 14vh;
+    margin-top: 4vh;
   }
 
   .languages {
@@ -1027,11 +1144,38 @@ span{
   }
 }
 
+@media screen and (min-width: 576px) and (orientation: landscape) {
+
+  #titlecard {
+    width: 70%;
+  }
+
+  #nametitle{
+    font-size: 1.8em;
+    padding: 5px;
+  }
+
+  #languagetitle {
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+  }
+
+  .languages {
+    font-size: 1em;
+  }
+
+  #mobilewarning {
+    margin-top: 0;
+  }
+
+}
+
 @media screen and (min-width: 768px) {
 
   #ethan {
     font-size: 2em;
   }
+
   #entrebgcanvas {
     display: block;
     z-index: 7;
@@ -1084,27 +1228,57 @@ span{
       }
     }
   }
+     
   
-  #contentcontain {
-    position: absolute;
-    left: 0;
-    width: 100%;
+  #splashcont {
+    align-items: center;
+    background-position: top center;
+    background-size: cover;
+    justify-content: flex-start;
   }
 
+  #titlecard {
+    margin-bottom: 50px;
+    margin-top: 12vh;
+  }
+  
   #nametitle {
     font-size: 3em;
   }
-
+  
   #mobilewarning {
     display: none;
   }
 
+  .languages {
+    width: 60%;
+    font-size: 0.8em;
+  }
+
+  #languagetitle {
+    margin-top: 31vh;
+  }
+  
   #choices {
     display: flex;
     justify-content: space-around;
-    width: 80%;
-    margin: 0 auto 150px auto;
+    width: 70%;
+    margin-top: 10vh;
     align-items: center;
+  }
+
+  .lego {
+    width: 40px;
+    height: 40px;
+  }
+
+  .filler {
+    width: 40px;
+    height: 40px;
+  }
+
+  .choicesbox {
+    font-size: 0.8em;
   }
   
   #biocontain {
@@ -1117,20 +1291,21 @@ span{
     font-size: 1.8em;
     width: 100%;
   }
-
+  
   #quotename {
     font-size: 1em;
   }
 
   #biotop {
+    flex-direction: row;
     align-items: center;
   }
-
+  
   #biotextw {
     font-size: 0.8em;
     text-align: left;
   }
-
+  
   #asa, #ageinfo {
     display: block;
   }
@@ -1145,18 +1320,17 @@ span{
     width: 25%;
   }
 
-  #thanksright {
-    width: 85%;
-    padding: 5px;
-    text-align: left;
-    
-    a {
-      color: $secondcolor;
+  #thanksright a {
+    font-size: 1.2em;
+    color: $secondcolor;
 
-      &:hover {
-        color: $thirdcolor;
-      }
+    &:hover {
+      color: $thirdcolor;
     }
+  }
+  
+  #thanksleft {
+    font-size: 1.2em;
   }
 
   .protitle {
@@ -1252,14 +1426,41 @@ span{
     font-size: 1.5em;
   }
 
+  #inquiryform {
+    width: 80%;
+  }
+
   .contacttype {
     font-size: 2.3em;
   }
 
-  #footmessage{
-    font-size: 0.8em;
+  #footmessage {
+    font-size: 0.75em;
+  }
+}
+
+@media screen and (min-width: 768px) and (orientation: landscape) {
+
+  #titlecard {
+    margin-top: 5vh;
+    margin-bottom: 0;
+  }
+  
+  #nametitle {
+    font-size: 2.5em;
   }
 
+  #languagetitle {
+    margin-top: 5vh;
+  }
+
+  #choices {
+    margin-top: 17vh;
+  }
+
+  #inquiryform {
+    width: 70%;
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -1280,6 +1481,15 @@ span{
     &:hover {
       font-size: 1.1em;
     }
+  }
+
+  #choices {
+    margin: 10vh auto;     
+    width: 68%;    
+  }
+
+  #biopersonaltext{
+    padding-right: 10px;
   }
 
   #portimage {
@@ -1384,7 +1594,7 @@ span{
   .historytext {
     padding: 15px;
     opacity: 0;
-    font-size: 0.25em;
+    font-size: 0.3em;
     margin: 0;
   }
 
@@ -1442,12 +1652,18 @@ span{
     padding: 40px 40px 40px 30px;
   }
 
-  #footmessage {
-    font-size: 0.7em;
+  #returnmessage {
+    font-size: 0.8em;
   }
+
 }
 
 @media screen and (min-width: 1200px) {
+
+  #choices {
+    margin-top: 19vh;
+    width: 60%;
+  }
 
   #biocontain {
     align-items: center;
@@ -1479,6 +1695,10 @@ span{
     font-size: 0.3em;
   }
 
+  .jobtitle {
+    margin-bottom: 25px;
+  }
+
   .overlayright img {
     max-height: 50vh;
   }
@@ -1501,8 +1721,8 @@ span{
     margin-top: 40px;
   }
 
-  #contactform {
-    width: 80%;
+  #contactinfocont {
+    width: 75%;
     margin: 0 auto;
   }
 
@@ -1512,6 +1732,7 @@ span{
 
   .contacttype {
     font-size: 3em;
+    margin-bottom: 5px;
   }
 }
 
@@ -1575,7 +1796,7 @@ span{
 
       .textblock {
         width: 70%;
-        height: 350px;
+        height: 375px;
       }
 
       .historytext {
@@ -1592,6 +1813,7 @@ span{
 
   .historytext {
     font-size:0.4em;
+    padding: 25px;
   }
 
   #availablehalf, #resumehalf {
