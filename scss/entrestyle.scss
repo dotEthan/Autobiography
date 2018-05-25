@@ -66,6 +66,14 @@ body {
   margin: 0;
 }
 
+a:link {
+  text-decoration: none;
+}   
+
+a:hover {
+  color:$thirdcolor;
+}   
+
 #load {
   position: absolute;
   left: 50%;
@@ -169,7 +177,7 @@ body {
 
 #menu {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   color: $menutextc;
   font-family: $headertext;
@@ -178,6 +186,7 @@ body {
   width: 95%;
   margin: 0 auto;
   border-radius: 10px 10px 0 0;
+  transition: all 0.5s;
 }
 
 .menuclass {
@@ -1635,7 +1644,7 @@ span{
   }
 
   .protextw {
-    font-size: 0.5em;
+    font-size: 0.55em;
   }
 
   .buttonstyle {

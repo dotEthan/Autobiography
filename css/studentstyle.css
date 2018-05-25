@@ -26,6 +26,9 @@ img {
 body {
   margin: 0; }
 
+a:link {
+  text-decoration: none; }
+
 #load {
   position: absolute;
   left: 50%;
@@ -111,19 +114,15 @@ body {
 
 #menu {
   display: flex;
-  justify-content: center;
-  padding: 10px 0;
+  justify-content: space-around;
+  padding-top: 20px;
   color: white;
   font-family: "indie_flowerregular", cursive; }
 
-a {
-  color: white; }
-
 .menunow {
-  color: #ffff00;
-  font-size: 1.2em;
-  transition: all 1s;
-  font-weight: bold; }
+  color: #ad00ad;
+  font-size: 1em;
+  transition: all 1s; }
 
 .menutabs {
   width: 20%;
@@ -131,6 +130,12 @@ a {
   cursor: pointer;
   font-size: 0.8em;
   z-index: 8; }
+  .menutabs a {
+    color: white; }
+  .menutabs:hover {
+    font-size: 0.82em; }
+    .menutabs:hover a {
+      color: white; }
 
 .faicon {
   font-size: 1.5; }
@@ -141,18 +146,18 @@ a {
 #splashcont {
   height: 100vh;
   background-image: url("../images/bgs.jpg");
-  background-size: auto 100%;
-  background-position: center;
+  background-size: cover;
+  background-position: top center;
   background-repeat: no-repeat;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  justify-content: flex-end; }
+  justify-content: space-between; }
 
 #titlecard {
   margin-bottom: 180px;
   width: 100%;
-  margin: 20vh auto 0;
+  margin: 17vh auto 0;
   text-align: center;
   display: flex;
   flex-wrap: wrap;
@@ -162,46 +167,43 @@ a {
   width: 100%;
   font-family: "indie_flowerregular", cursive;
   font-weight: bold;
-  font-size: 1.8em;
-  color: #ad00ad; }
+  font-size: 1.8em; }
 
 #mobilewarning {
   width: 80%;
   border-radius: 15px;
   background: rgba(255, 0, 0, 0.7);
-  margin: 14vh auto 0;
+  margin: 5vh auto 0;
   padding: 10px;
-  font-size: 0.8em;
-  display: none; }
+  font-size: 0.8em; }
 
 .languages {
   width: 80%;
   font-size: 0.6em;
   margin: 0 auto; }
 
+#languagetitle {
+  margin-top: 4vh;
+  margin-bottom: 10px; }
+
 #choices {
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 80%;
-  margin: 0 auto 30px auto; }
-
-.choicesbox {
-  height: 20px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  font-weight: bold;
-  color: white;
-  font-size: 0.4em; }
+  margin: 0 auto 20px auto; }
 
 .lego {
   width: 50px;
   height: 28px;
-  background-image: url("../images/legor.png");
-  background-size: cover;
   margin-top: 20px;
-  cursor: pointer; }
+  cursor: pointer;
+  background-size: cover; }
+  .lego:hover .choicesbox {
+    color: #ad00ad; }
+
+#studentb {
+  background-image: url("../images/legor.png"); }
 
 #programmerb {
   background-image: url("../images/legob.png"); }
@@ -209,9 +211,20 @@ a {
 #entreb {
   background-image: url("../images/legog.png"); }
 
+.choicesbox {
+  margin-top: 11px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  font-weight: bold;
+  color: white;
+  font-size: 0.5em; }
+  .choicesbox:hover {
+    color: #ad00ad; }
+
 .slice {
   background: #ffff00;
-  padding: 25px; }
+  padding: 3%; }
 
 #bioinfo {
   display: flex;
@@ -237,10 +250,10 @@ a {
   width: 100%;
   color: black;
   font-family: "indie_flowerregular", cursive;
-  font-size: 1.2em; }
+  font-size: 1em; }
 
 #quotename {
-  font-size: 1em;
+  font-size: 0.8em;
   text-align: right;
   margin-top: 20px;
   font-family: "indie_flowerregular", cursive; }
@@ -295,99 +308,12 @@ a {
   padding: 5px;
   text-align: right; }
 
-#projectoverlay {
-  position: fixed;
-  top: 50%;
-  left: 55%;
-  transform: translate(-50%, -50%);
-  max-height: 800px;
-  width: 80%;
-  background-color: rgba(255, 255, 255, 0.9);
-  z-index: 9999;
-  padding: 30px; }
-
-.allovers {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center; }
-
-#closeover {
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  top: -20px;
-  right: -20px;
-  font-size: 2em;
-  font-weight: bold;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: red;
-  background: white;
-  border: 1px solid grey;
-  border-radius: 25px;
-  cursor: pointer; }
-
-#overlayleft {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 15px; }
-
-#overlaytitle {
-  font-size: 3em;
-  font-family: "indie_flowerregular", cursive;
-  text-decoration: underline;
-  margin-bottom: 50px;
-  text-align: center; }
-
-#overlaytext {
-  font-size: 1.3em; }
-
-#overlayskills {
-  margin-top: 30px;
-  font-size: 1.3em;
-  margin-bottom: 30px; }
-
-#overlayright {
-  width: 50%;
-  border: 2px dashed #96858F; }
-  #overlayright img {
-    max-width: 95%;
-    max-height: 100%;
-    margin: 10px; }
-
-#portimage {
-  max-width: 100%; }
-
-#biobottom {
-  width: 80%;
-  display: flex;
-  justify-content: center;
-  margin-top: 20px; }
-
-#thanksright {
-  width: 85%;
-  padding: 5px;
-  text-align: left; }
-  #thanksright a {
-    color: #31c2fe; }
-    #thanksright a:hover {
-      color: #ad00ad; }
-
-#thanksleft {
-  width: 15%;
-  padding: 5px;
-  text-align: right; }
-
 #history {
   display: flex;
   flex-direction: column; }
 
 #historyslice {
-  background-color: white; }
+  background-color: #4acafe; }
 
 .protitle {
   font-family: "indie_flowerregular", cursive;
@@ -395,9 +321,9 @@ a {
   text-align: center;
   font-size: 1.5em;
   text-decoration: underline;
-  margin: 20px 0 50px;
+  margin: 20px 0 35px;
   font-weight: bold;
-  color: #018ec8;
+  color: #ad00ad;
   text-decoration: none; }
 
 .slider-container {
@@ -474,7 +400,7 @@ a {
   overflow: hidden;
   margin: 0 5px 5px;
   padding: 15px;
-  font-size: 0.55em;
+  font-size: 0.5em;
   width: 100%;
   background: rgba(255, 255, 255, 0.6);
   opacity: 0;
@@ -484,7 +410,7 @@ a {
   opacity: 1; }
 
 .jobtitle {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   text-align: center;
   width: 100%; }
 
@@ -598,7 +524,7 @@ a {
   z-index: 9999;
   padding: 15px;
   width: 90%;
-  max-height: 80vh; }
+  max-height: 90vh; }
 
 .allovers {
   display: flex;
@@ -610,10 +536,10 @@ a {
 #closeover {
   width: 30px;
   height: 30px;
-  position: absolute;
+  position: fixed;
   top: -10px;
   right: -10px;
-  font-size: 0.8em;
+  font-size: 1em;
   font-weight: bold;
   display: flex;
   justify-content: center;
@@ -629,8 +555,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 15px;
-  font-size: 0.9em; }
+  padding: 15px; }
 
 #overlaytitle {
   font-size: 1em;
@@ -685,7 +610,7 @@ a {
   padding: 10px;
   border-radius: 10px;
   font-size: 0.7em;
-  border: 2px solid #004663;
+  border: 2px solid #018ec8;
   cursor: pointer;
   color: white; }
   .buttonstyle:hover {
@@ -716,12 +641,15 @@ a {
   display: none;
   position: relative; }
 
+#contactform {
+  background: white; }
+
 #inquiryform {
   display: flex;
-  flex-wrap: wrap;
-  width: 90%;
+  flex-direction: column;
+  justify-content: center;
   margin: 0 auto;
-  justify-content: space-between; }
+  padding: 20px; }
 
 #titlereturn {
   width: 100%; }
@@ -730,8 +658,8 @@ a {
   width: 30px;
   height: 30px;
   position: absolute;
-  top: 40px;
-  right: 30px;
+  top: 30px;
+  right: 35px;
   font-size: 1em;
   font-weight: bold;
   display: flex;
@@ -743,19 +671,61 @@ a {
   border-radius: 25px;
   cursor: pointer; }
 
-#contactleft {
-  width: 45%;
-  display: flex;
-  flex-direction: column; }
+#returnmessage {
+  font-size: 0.7em;
+  color: green;
+  text-align: center;
+  margin-bottom: 30px; }
 
-#contactright {
-  width: 45%;
+label {
+  font-size: 0.8em; }
+
+h3 {
+  text-align: center;
+  font-size: 20px; }
+
+input {
+  width: 100%;
+  height: 35px;
+  margin: 5px 0 15px;
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px; }
+
+input[type=button] {
+  background-color: #31c2fe;
+  border: 1px solid white;
+  font-Weight: bold;
+  font-size: 18px;
+  color: white;
+  border: 1px solid #31c2fe; }
+  input[type=button]:hover {
+    background-color: #ad00ad;
+    border: 1px solid #31c2fe; }
+
+textarea {
+  width: 100%;
+  height: 80px;
+  margin-top: 5px;
+  border-radius: 3px;
+  padding: 5px;
+  resize: none; }
+
+span {
+  color: red; }
+
+.contactinfo {
   display: flex;
-  flex-direction: column; }
+  align-items: center; }
+  .contactinfo label {
+    width: 40%;
+    text-align: left;
+    padding: 5px; }
 
 #contactmessage {
   width: 100%;
-  margin-top: 20px; }
+  margin: 20px auto 0;
+  max-width: 400px; }
 
 #footer {
   display: flex;
@@ -806,67 +776,133 @@ a {
   .footlink a:hover {
     color: #ad00ad; }
 
-#mainform {
-  width: 960px;
-  margin: 20px auto;
-  padding-top: 20px; }
+@media screen and (orientation: landscape) {
+  #titlecard {
+    margin-top: 70px;
+    width: 90%; }
+  #nametitle {
+    font-size: 1.4em;
+    padding: 10px; }
+  #mobilewarning {
+    margin-top: 3vh;
+    width: 60%;
+    font-size: 0.6em; }
+  #languagetitle {
+    margin-top: 5vh;
+    margin-bottom: vh; }
+  #choices {
+    margin-bottom: 30px; }
+  #biocontain {
+    width: 90%; }
+  .historytext {
+    font-size: 0.65em; }
+  .project {
+    width: 40%; }
+  #projectoverlay {
+    max-height: 90%; }
+  .allovers {
+    flex-direction: row; }
+  .protextt {
+    font-size: 0.6em; }
+  .protextw {
+    font-size: 0.4em; }
+  .overlayright img {
+    max-height: 40vh; }
+  #inquiryform {
+    justify-content: space-between; }
+  #contactinfocont {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; }
+  .contactinfo {
+    width: 45%; }
+  #contactmessage {
+    margin: 20px auto 0; }
+  #submit {
+    margin-top: 10px; } }
 
-#form {
-  border-radius: 2px;
-  padding: 20px 30px;
-  box-shadow: 0 0 15px;
-  font-size: 14px;
-  font-weight: bold;
-  width: 350px;
-  margin: 20px 250px 0 35px;
-  float: left; }
+@media screen and (min-width: 576px) {
+  #menucontain {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+  #ethan {
+    display: block;
+    margin-left: 25px; }
+  #menu {
+    width: 100%;
+    padding-top: 0; }
+  .menutabs {
+    font-size: 0.8em; }
+  #nametitle {
+    font-size: 2.5em; }
+  #mobilewarning {
+    width: 60%; }
+  #languagetitle {
+    margin-top: 14vh; }
+  .languages {
+    font-size: 1em; }
+  #choices {
+    margin-bottom: 14vh; }
+  #biocontain {
+    width: 75%; }
+  #biowriting {
+    font-size: 1.5em; }
+  #biotextw {
+    font-size: 1em; }
+  #quotename {
+    font-size: 1.1em; }
+  #biobottom {
+    font-size: 0.7em; }
+  .historytext {
+    font-size: 0.75em; }
+  .project {
+    width: 40%; }
+  .overlayleft {
+    font-size: 1.3em; }
+  .protextt {
+    font-size: 0.8em; }
+  .protextw {
+    font-size: 0.6em; }
+  #availablehalf, #resumehalf {
+    font-size: 0.9em; }
+  .contacttype {
+    font-size: 2.2em; }
+  #footmessage {
+    font-size: 0.7em; } }
 
-h3 {
-  text-align: center;
-  font-size: 20px; }
-
-input {
-  width: 100%;
-  height: 35px;
-  margin-top: 5px;
-  border: 1px solid #999;
-  border-radius: 3px;
-  padding: 5px; }
-
-input[type=button] {
-  background-color: #123456;
-  border: 1px solid white;
-  font-Weight: bold;
-  font-size: 18px;
-  color: white; }
-
-textarea {
-  width: 100%;
-  height: 80px;
-  margin-top: 5px;
-  border-radius: 3px;
-  padding: 5px;
-  resize: none; }
-
-span {
-  color: red; }
-
-#note {
-  color: black;
-  font-Weight: 400; }
-
-#returnmessage {
-  font-size: 14px;
-  color: green;
-  text-align: center; }
+@media screen and (min-width: 576px) and (orientation: landscape) {
+  #titlecard {
+    width: 70%; }
+  #nametitle {
+    font-size: 1.8em;
+    padding: 5px; }
+  #languagetitle {
+    margin-top: 3vh;
+    margin-bottom: 3vh; }
+  .languages {
+    font-size: 0.6em; }
+  #mobilewarning {
+    margin-top: 0; }
+  .historytext {
+    font-size: 0.7em; } }
 
 @media screen and (min-width: 768px) {
   #menucontain {
-    position: fixed;
+    flex-direction: column;
+    justify-content: space-around;
     top: 0;
     left: 0;
-    width: 7%;
+    width: 10%;
     height: 100vh; }
+  #ethan {
+    background: #ffff00;
+    border-radius: 20%;
+    padding: 20px;
+    z-index: 99;
+    border: 4px solid #ad00ad;
+    color: #ad00ad;
+    font-size: 1em; }
   #menu {
     flex-direction: column;
     justify-content: center;
@@ -901,87 +937,377 @@ span {
   #contentcontain {
     position: absolute;
     left: 7%;
-    width: 93%; } }
-
-@media screen and (min-width: 992px) {
-  .slider-container {
-    margin-bottom: 20px; }
-  .flexbox-slider {
+    width: 93%; }
+  #contentcontain {
+    position: absolute;
+    left: 10%;
+    width: 90%; }
+  #splashcont {
+    align-items: center;
+    background-position: top center;
+    background-size: cover;
+    justify-content: flex-start; }
+  #titlecard {
+    margin-bottom: 50px;
+    margin-top: 12vh; }
+  #nametitle {
+    font-size: 3em; }
+  #mobilewarning {
+    display: none; }
+  .languages {
+    width: 60%;
+    font-size: 0.8em; }
+  #languagetitle {
+    margin-top: 31vh; }
+  #choices {
     display: flex;
+    justify-content: space-around;
+    width: 70%;
+    margin-top: 10vh;
+    align-items: center; }
+  .lego {
+    width: 40px;
+    height: 40px; }
+  .filler {
+    width: 40px;
+    height: 40px; }
+  .choicesbox {
+    font-size: 0.8em; }
+  #biocontain {
     width: 90%;
-    height: 500px;
-    margin-right: auto;
-    margin-left: auto; }
-  .flexbox-slide {
-    transition-property: all;
-    transition-duration: 0.3s;
-    transition-timing-function: linear;
-    transition-delay: 0s;
-    width: 20%;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-    visibility: visible;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; }
-    .flexbox-slide:hover {
-      width: 80%; }
-      .flexbox-slide:hover .historyicons {
-        opacity: 0;
-        visibility: hidden;
-        transition: visibility 0s linear 0.3s, opacity, 0.3s linear; }
-      .flexbox-slide:hover .historytext {
-        height: 200px;
-        transition: height, 0.5s linear; }
-  .textblock {
-    width: 90%;
-    margin: 10px auto 10px;
-    z-index: 2;
-    height: 500px;
-    display: flex;
+    margin: 0;
+    height: 420px; }
+  #biowriting {
+    font-size: 1.8em;
+    width: 100%; }
+  #quotename {
+    font-size: 1em; }
+  #biotop {
+    flex-direction: row;
+    align-items: center; }
+  #biotextw {
+    font-size: 0.8em;
+    text-align: left; }
+  #asa, #ageinfo {
+    display: block; }
+  #biopersonaltext {
+    width: 75%; }
+  #portimage {
+    display: block;
+    margin: 0 15px;
+    width: 25%; }
+  #thanksright a {
+    font-size: 1.2em;
+    color: #31c2fe; }
+    #thanksright a:hover {
+      color: #ad00ad; }
+  #thanksleft {
+    font-size: 1.2em; }
+  .historytext {
+    font-size: 0.7em; }
+  .protitle {
+    font-size: 2.5em; }
+  .project {
+    width: 30%;
+    margin-right: 10px; }
+    .project:hover .protext {
+      margin: 15px 0; }
+  #projectoverlay {
+    max-height: 80vh;
+    width: 80%;
+    left: 55%; }
+  #closeover {
+    width: 50px;
+    height: 50px;
+    top: -20px;
+    right: -20px;
+    font-size: 1.3em; }
+  .allovers {
+    padding: 25px; }
+  #overlaytitle {
+    font-size: 1.3em; }
+  #overlaytext {
+    font-size: 0.8em; }
+  #overlayskills {
+    font-size: 0.8em; }
+  #overlayurl a {
+    font-size: 0.9em; }
+  #availablehalf {
+    width: 40%;
+    font-size: 1em;
+    padding: 50px 0 50px 50px;
     flex-direction: column;
     justify-content: space-between;
-    position: relative; }
-  .historytitles {
-    text-align: center;
+    align-items: flex-start;
+    overflow: visible; }
+  #availabletext {
+    width: 110%;
+    text-align: left; }
+  #resumehalf {
+    width: 60%;
+    font-size: 1em;
+    padding: 50px 50px 50px 30px;
+    background: linear-gradient(to top right, transparent 50%, #01b2fb 50%) no-repeat, linear-gradient(to top right, transparent 0.1%, #01b2fb 0.1%) no-repeat;
+    background-size: 60.5% 100%, 40% 100%;
+    background-position: 0% 0%, 100% 0%;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: right;
+    align-items: flex-end; }
+    #resumehalf .buttonstyle {
+      width: auto; }
+  #resumetext {
+    width: 100%;
+    text-align: right; }
+  #contactclose {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5em; }
+  #inquiryform {
+    width: 80%; }
+  .contacttype {
+    font-size: 2.3em; }
+  #footmessage {
+    font-size: 0.75em; } }
+
+@media screen and (min-width: 768px) and (orientation: landscape) {
+  #titlecard {
+    margin-top: 13vh; }
+  #nametitle {
+    font-size: 2.5em; }
+  #languagetitle {
+    margin-top: 20vh; }
+  #choices {
+    margin-top: 7vh; } }
+
+@media screen and (min-width: 992px) {
+  #menucontain {
+    width: 7%; }
+  .menutabs {
+    font-size: 0.6em; }
+  #contentcontain {
+    width: 93%;
+    left: 7%; }
+  #titlecard {
+    margin-top: 12vh; }
+  #languagetitle {
+    margin-top: 28vh; }
+  #choices {
+    margin: 10vh auto;
+    width: 68%; }
+  #bioquote {
+    font-size: 1em; }
+  #biopersonal {
+    font-size: 1.2em; }
+  #biopersonaltext {
+    padding-right: 10px; }
+  #portimage {
+    width: 20%; }
+  .flexbox-slider {
+    font-size: 2.5em;
+    flex-direction: row-reverse;
+    height: 500px; }
+  .flexbox-slide {
+    width: 20%;
+    flex-direction: row;
+    padding: 10px;
+    justify-content: center;
+    display: flex;
+    transition: width 1s;
+    overflow: hidden; }
+    .flexbox-slide:hover .imgtitle {
+      height: 100px;
+      overflow: hidden;
+      flex-direction: row;
+      margin-bottom: 20px; }
+    .flexbox-slide:hover .historytitles {
+      height: 100px;
+      margin-top: 0;
+      margin-left: 10px; }
+    .flexbox-slide:hover .historylogo {
+      height: 100px; }
+  .flexopen {
+    width: 80%; }
+  #flexcontainer {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    color: #000000;
-    padding: 10px;
-    font-weight: bold;
-    background: rgba(255, 255, 255, 0.6);
-    height: 80px;
-    font-size: 1.2em;
-    font-family: "indie_flowerregular", cursive; }
-  .historytext {
-    padding: 0px 20px;
-    display: block;
-    text-align: left;
-    background: rgba(255, 255, 255, 0.6);
-    overflow: hidden;
-    height: 200px;
-    margin-bottom: 15px;
-    font-size: 0.8em; }
-  .historydates {
-    font-weight: normal;
-    width: 100%; }
-  .historyicons {
-    width: 90px;
-    height: 200px;
-    margin-right: auto;
-    margin-left: auto;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    position: absolute;
-    top: 100px;
-    left: 50%;
-    transform: translateX(-50%); }
+    flex-direction: column;
+    max-width: none; }
+  .imgtitle {
+    flex-direction: column;
+    height: auto; }
   .historylogo {
-    max-width: 200px;
-    margin: 0 auto 20px; }
-  .nowcalled {
-    font-size: 0.6em; } }
+    width: auto;
+    margin: 0 auto; }
+    .historylogo img {
+      height: auto; }
+  .historytitles {
+    font-size: 0.28em;
+    padding: 5px;
+    width: 100%;
+    height: 100px;
+    margin-top: 20px;
+    max-width: none; }
+  .historylogoside {
+    width: 50%; }
+  .historylogo img {
+    height: 100px; }
+  .historytitlesside {
+    width: 50%; }
+  .textblock {
+    width: 90%;
+    margin: 10px auto 0;
+    height: 270px;
+    display: none; }
+  .tbon {
+    display: flex; }
+  .historytext {
+    padding: 15px;
+    opacity: 0;
+    font-size: 0.3em;
+    margin: 0; }
+  .hton {
+    opacity: 1; }
+  .dutylist ul li {
+    margin-bottom: 5px; }
+  .allovers {
+    flex-direction: row; }
+  .overlayleft {
+    width: 50%; }
+  .overlayright {
+    margin-left: 20px; }
+    .overlayright img {
+      max-height: 40vh; }
+  #overlaytext {
+    margin: 50px 0;
+    font-size: 0.7em; }
+  .protextt {
+    font-size: 1.2em; }
+  .protextw {
+    font-size: 0.9em; }
+  .buttonstyle {
+    font-size: 0.8em;
+    margin-top: 20px; }
+  #availablehalf {
+    font-size: 1em;
+    padding: 40px 0 40px 40px; }
+  #resumehalf {
+    padding: 40px 40px 40px 30px; }
+  #returnmessage {
+    font-size: 0.8em; } }
+
+@media screen and (min-width: 1200px) {
+  .menutabs {
+    font-size: 0.7em; }
+  #choices {
+    margin-top: 9vh;
+    width: 60%; }
+  #biocontain {
+    align-items: center;
+    flex-direction: row;
+    width: 80%; }
+  #biowriting {
+    font-size: 2.1em; }
+  #quotename {
+    font-size: 1.2em; }
+  #biopersonal {
+    left: 5%; }
+  #biotextw {
+    font-size: 1em; }
+  .historytitles {
+    font-size: 0.34em; }
+  .historytext {
+    font-size: 0.3em; }
+  .jobtitle {
+    margin-bottom: 25px; }
+  .overlayright img {
+    max-height: 50vh; }
+  .project {
+    width: 20%; }
+  .protextcont {
+    font-size: 1.4em; }
+  #availablehalf {
+    font-size: 1.2em;
+    padding: 70px 0 70px 60px; }
+  #resumehalf {
+    font-size: 1.2em;
+    padding: 70px 60px 70px 70px; }
+  .buttonstyle {
+    margin-top: 40px; }
+  #contactinfocont {
+    width: 75%;
+    margin: 0 auto; }
+  #footercont {
+    width: 90%; }
+  .contacttype {
+    font-size: 3em;
+    margin-bottom: 5px; }
+  #footmessage {
+    font-size: 0.9em; } }
+
+@media screen and (min-width: 1600px) {
+  .menutabs {
+    font-size: 0.85em; }
+  #nametitle {
+    font-size: 4em; }
+  #biocontain {
+    width: 75%;
+    margin: 60px 0; }
+  #biowriting {
+    font-size: 3em; }
+  #quotename {
+    font-size: 1.6em; }
+  #biotextw {
+    font-size: 1.3em; }
+  #biobottom {
+    font-size: 1em; }
+  .flexbox-slide:hover #flexcontainer {
+    flex-direction: row;
+    padding: 0; }
+  .flexbox-slide:hover .imgtitle {
+    flex-direction: column;
+    height: auto;
+    width: 30%;
+    margin-bottom: 0; }
+  .flexbox-slide:hover .historytitles {
+    margin-left: 0;
+    height: 70px;
+    width: auto; }
+  .flexbox-slide:hover .historylogo {
+    height: 150px;
+    width: auto;
+    max-width: none; }
+    .flexbox-slide:hover .historylogo img {
+      height: auto; }
+  .flexbox-slide:hover .textblock {
+    width: 70%;
+    height: 375px; }
+  .flexbox-slide:hover .historytext {
+    border-top: none;
+    border-left: 1px solid black; }
+  .historytitles {
+    font-size: 0.4em;
+    padding: 15px; }
+  .historytext {
+    font-size: 0.4em;
+    padding: 25px; }
+  #availablehalf, #resumehalf {
+    font-size: 1.3em; }
+  .contacttype {
+    font-size: 3.5em; }
+  #footmessage {
+    font-size: 1.2em; } }
+
+@media screen and (min-width: 992px) and (min-aspect-ratio: 16 / 8) {
+  #titlecard {
+    margin-top: 16vh; }
+  #languagetitle {
+    margin-top: 29vh; }
+  #choices {
+    margin-top: 8vh; }
+  #biocontain {
+    align-items: center;
+    text-align: center; }
+  #inquiryform {
+    width: 70%; } }

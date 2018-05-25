@@ -60,19 +60,10 @@ img{
 body {
   margin: 0;
 }
+
 a:link {
-  color:$firstcolor;
   text-decoration: none;
 }    
-a:visited {
-  color:$firstcolor;
-} 
-a:hover {
-  color:$thirdcolor;
-}  
-a:active {
-  color:$firstcolor;
-}
 
 #load {
   position: absolute;
@@ -155,7 +146,7 @@ a:active {
 #menu {
   display: flex;
   justify-content: space-around;
-  padding-top: $smallmenupaddingtop;
+  padding-top: 20px;
   font-family: $headertext;
 
 }
@@ -171,10 +162,20 @@ a:active {
   text-align: center;
   font-size: 0.6em;
   cursor: pointer;
-}
 
-menutabs a {
-  color: none;
+  a {
+    color: white;
+  }
+
+  &:hover {
+    .menutitle {
+      font-size: 0.92em;
+    }
+    
+    a {
+      color: lighten($thirdcolor, 50%);
+    }
+  }
 }
 
 .menudark {
@@ -186,9 +187,6 @@ menutabs a {
   align-items: center;
   flex-direction: column;
 
-  a {
-    color: black;
-  }
 }
 
 .faicon{
@@ -205,14 +203,15 @@ menutabs a {
 #splashcont {
   height: 100vh;
   background-image: $frontimage;
-  background-size: auto 100%;
-  background-position: center;
+  background-size: cover;
+  background-position: top center;
   background-repeat: no-repeat;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-between;
 }
+
 
 #titlecard {
   margin-bottom: 180px;
@@ -1668,7 +1667,7 @@ span{
   }
 
   .protextw {
-    font-size: 0.5em;
+    font-size: 0.55em;
   }
 
   .buttonstyle {
@@ -1869,7 +1868,7 @@ span{
   }
 }
 
-@media screen and (min-aspect-ratio: 16/8) {
+@media screen and (min-width: 992px) and (min-aspect-ratio: 16/8) {
 
 
   #titlecard {

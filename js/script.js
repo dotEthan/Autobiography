@@ -165,9 +165,10 @@ function resizeDist() {
 function addRemove(atId) {
   let menuTabArray = $('.menutabs');
   for (let i=0; i< menuTabArray.length; i++) {    
-    menuTabArray.eq(i).removeClass('menudark');
     if (menuTabArray[i].id === atId){
       menuTabArray.eq(i).addClass('menudark');
+    } else {
+      menuTabArray.eq(i).removeClass('menudark');      
     }
   }
 }
@@ -176,8 +177,6 @@ function colorThem(atId) {
   let leftTabArray = $('.menutext');
   for (let i=0; i< leftTabArray.length; i++) {
     leftTabArray.eq(i).removeClass('menudark');
-      console.log(atId);
-      console.log(leftTabArray[i].id);
     if (leftTabArray[i].id === atId){
       leftTabArray.eq(i).addClass('menudark');
     }
@@ -189,16 +188,18 @@ document.addEventListener('scroll', function () {
 
   if(theme=='student') { 
     const menuTabs = $('.menutabs a');
+    let top = parseInt($(window).scrollTop());
+    if(!extraJ) top+=70;
 
-    if ($(window).scrollTop() < bioDist) {
+    if (top < bioDist) {
       menuTabs.removeClass('menunow');
-    } else if ($(window).scrollTop() > bioDist && ($(window).scrollTop() < historyDist)) {
+    } else if (top > bioDist && (top < historyDist)) {
       menuTabs.removeClass('menunow');
       $('a[href="#bioslice"]').addClass('menunow');
-    } else if ($(window).scrollTop() > historyDist && $(window).scrollTop() < projectDist) {
+    } else if (top > historyDist && top < projectDist) {
       menuTabs.removeClass('menunow');
       $('a[href="#historyslice"]').addClass('menunow');
-    } else if ($(window).scrollTop() > projectDist) {
+    } else if (top > projectDist) {
       menuTabs.removeClass('menunow');
       $('a[href="#projectslice"]').addClass('menunow');
     }

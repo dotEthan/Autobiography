@@ -26,6 +26,12 @@ img {
 body {
   margin: 0; }
 
+a:link {
+  text-decoration: none; }
+
+a:hover {
+  color: #fb7e19; }
+
 #load {
   position: absolute;
   left: 50%;
@@ -126,7 +132,7 @@ body {
 
 #menu {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   color: white;
   font-family: "Raleway", serif;
@@ -134,7 +140,8 @@ body {
   height: 80px;
   width: 95%;
   margin: 0 auto;
-  border-radius: 10px 10px 0 0; }
+  border-radius: 10px 10px 0 0;
+  transition: all 0.5s; }
 
 .menuclass {
   padding-bottom: 15px; }
@@ -1179,7 +1186,7 @@ span {
   .protextt {
     font-size: 0.7em; }
   .protextw {
-    font-size: 0.5em; }
+    font-size: 0.55em; }
   .buttonstyle {
     font-size: 0.8em;
     margin-top: 20px; }
