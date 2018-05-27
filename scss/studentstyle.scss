@@ -8,6 +8,11 @@
   src: url('fonts/fredoka-one-v5-latin-regular.woff') format('woff')
 }
 
+@font-face {
+  font-family: 'menu';
+  src: url('fonts/TitanOne-Regular.woff') format('woff')
+}
+
 // 16
 $rgba: rgba(13,201,247, 0.5);
 $lightblue: #0dc9f7;
@@ -133,16 +138,11 @@ a:link {
   display: none;
   font-family: 'logo', serif;
   font-size: 1.5em;
-}
-
-#mycanvas {
-  display: block;
-  height: 70px;
-  width: 100%;
+  z-index: 10;
 }
 
 #entrebgcanvas {
-  display: none;
+  display: block;
 }
 
 .leftcanvas {
@@ -156,45 +156,61 @@ a:link {
 #menu {
   display: flex;
   justify-content: space-around;
-  padding-top: 20px;
+  padding-top: 25px;
   color: $menutextc;
-  font-family: $headertext;
 }
 
-.menunow {
-  color: $thirdcolor;
-  font-size: 1em;
-  transition: all 1s;
+.menudark {
+  transform: scale(1.1);
+}
+
+#menutabscontain{
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .menutabs {
-  width: 20%;
   text-align: center;
   cursor: pointer;
   font-size: 0.8em;
   z-index: 8;
 
   a {
-    color: white;
+    color: black;
   }
 
-  &:hover {
-    font-size: 0.82em;
-    
-    a {
-      color: lighten($thirdcolor, 70%);
+  &:active {
+    .menutitle {
+      text-shadow: 0px 0px $thirdcolor,
+                   0px 1px 1px #404040;
+      transform: translateY(2px)
     }
   }
+
 }
 
 .faicon{
   font-size: 1.5;
+  display: none;
 }
 
-.menutitle {
-  font-size: 0.9em;
+.menutext {
+
+  &:hover {
+    transform: scale(1.1);
+  }
 }
-  
+
+
+.menutitle {
+  font-size: 1.1em;
+  font-family: menu, cursive;
+  text-shadow: 0px 2px $thirdcolor,
+               0px 3px 2px #404040;
+  color: orange;
+}  
+
 #splashcont {
   height: 100vh;
   background-image: $frontimage;
@@ -1058,21 +1074,46 @@ span{
   #menucontain {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+  }
+
+  #menutabscontain {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
   }
 
   #ethan {
     display: block;
-    margin-left: 25px;
+    order: 3;
+    font-size: 1.7em;
+  }
+
+  #biomenu {
+    order: 1;
+  }
+
+  #historymenu {
+    order: 1;
+  }
+
+  #projectmenu {
+    order: 4;
+  }
+
+  #contactme {
+    order: 4;
   }
 
   #menu {
-    width: 100%;
+    width: 90%;
+    justify-content: space-around;
     padding-top: 0;
   }
 
   .menutabs {
-    font-size: 0.8em;
+    font-size: 1em;
   }
 
   #nametitle {
@@ -1181,53 +1222,59 @@ span{
   
 @media screen and (min-width: 768px) {
   #menucontain { 
-    flex-direction: column;
-    justify-content: space-around;
-    top: 0;
-    left: 0; 
-    width: 10%;
-    height: 100vh;
+    height: 100px;
+  }
+
+  .leftcanvas {
+    height: 100px;
   }
 
   #ethan {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position:fixed;
+    top: 10px;
+    left: 40px;
     background: $firstcolor;
-    border-radius: 20%;
+    border-radius: 50%;
     padding: 20px;
     z-index: 99;
     border: 4px solid $thirdcolor;
     color: $thirdcolor;
     font-size: 1em;
+    height: 110px;
+    width: 110px;
+
+    &:hover {
+      transform: rotate(2deg);
+    }
+
+    &:active {
+      -webkit-animation: spin 1s infinite linear;
+
+      @-webkit-keyframes spin {
+        0%  {-webkit-transform: rotate(0deg);}
+        100% {-webkit-transform: rotate(360deg);}   
+      }
+    }
   }
 
-  #menu {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-    margin-top: 10vh;
-    padding-top: 0;
-  }
-
-  #mycanvas {
-    display: block;
-    height: 100%;
-    width: 100%;
+  #menutabscontain{
+    padding-left: 120px;
   }
 
   .menutabs {
     height: 60px;
-    width: 60%;
     display: flex;
     justify-content: center;
-    flex-direction: column;
     align-items: center;
     transition: all 1s;
     margin: 15px 0;
     z-index: 99;
-    background: rgba(43,142,181,0.8);
     padding: 5px 3px;
     border-radius: 10px;
-    font-size: 0.8em;
+    font-size: 1em;
 
 
     a {
@@ -1235,25 +1282,12 @@ span{
     }
 
     &:hover {
-      font-size: 1.1em;
       
       a {
         color: $firstcolor;
       }
     }
   }
-
-  #contentcontain {
-    position: absolute;
-    left: 7%;
-    width: 93%;
-  }
-  
-  #contentcontain {
-    position: absolute;
-    left: 10%;
-    width: 90%;
-  }   
   
   #splashcont {
     align-items: center;
@@ -1490,17 +1524,28 @@ span{
 
 @media screen and (min-width: 992px) {
 
-  #menucontain {
-    width: 7%;
+  #ethan {
+    font-size: 1.4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .menutabs {
-    font-size: 0.6em;
+
+    &:active {
+      .menutitle {
+        text-shadow: 0px 0px $thirdcolor,
+                     0px 1px 3px #404040;
+        transform: translateY(2px)
+      }
+    }
   }
 
-  #contentcontain {
-    width: 93%;
-    left: 7%;
+  .menutitle {
+    font-size: 2em;
+    text-shadow: 0px 3px $thirdcolor,
+                 0px 4px 5px #404040;
   }
 
   #titlecard {
@@ -1692,8 +1737,11 @@ span{
 }
 
 @media screen and (min-width: 1200px) {
-  .menutabs {
-    font-size: 0.7em;
+
+  .menutitle {
+    font-size: 2em;
+    text-shadow: 0px 4px $thirdcolor,
+                 0px 5px black;
   }
 
   #choices {
@@ -1782,8 +1830,8 @@ span{
 
 @media screen and (min-width: 1600px) {
 
-  .menutabs {
-    font-size: 0.85em;
+  .menutitle {
+    font-size: 2.1em;
   }
 
   #nametitle {

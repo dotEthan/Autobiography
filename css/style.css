@@ -89,11 +89,8 @@ a:link {
 
 #ethan {
   display: none;
-  font-family: 'logo', serif;
+  font-family: "Merriweather", serif;
   font-size: 1.5em; }
-
-#mycanvas {
-  display: none; }
 
 #entrebgcanvas {
   display: none;
@@ -112,6 +109,12 @@ a:link {
   font-size: 1.2em;
   transition: all 1s;
   font-weight: bold; }
+
+#menutabscontain {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; }
 
 .menutabs {
   width: 20%;
@@ -1237,6 +1240,8 @@ span {
     margin-bottom: 5px; } }
 
 @media screen and (min-width: 1600px) {
+  #ethan {
+    font-size: 2em; }
   .menutabs {
     font-size: 0.85em; }
   #nametitle {

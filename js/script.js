@@ -24,7 +24,7 @@ $('#namemotto').typeWrite({content:'Student, Programmer, Entrepreneur'});
 
 /// /USING?
 
-let bioDist, historyDist, projectDist;
+let bioDist, historyDist, projectDist, contactDist;
 let studentDone = 0,
 entreDone = 0;
 let timeOut;
@@ -160,6 +160,7 @@ function resizeDist() {
   historyDist = $('#historyslice').offset().top;
   bioDist = $('#bioslice').offset().top;
   projectDist = $('#projectslice').offset().top;
+  contactDist = parseInt($('#projectslice').offset().top) + parseInt($('#projectslice').css('height'));
 }
 
 function addRemove(atId) {
@@ -187,22 +188,21 @@ function colorThem(atId) {
 document.addEventListener('scroll', function () {
 
   if(theme=='student') { 
-    const menuTabs = $('.menutabs a');
-    let top = parseInt($(window).scrollTop());
-    if(!extraJ) top+=70;
+    const menuTabs = $('.menutext a');
+    let top = parseInt($(window).scrollTop())+70;
 
     if (top < bioDist) {
-      menuTabs.removeClass('menunow');
-    } else if (top > bioDist && (top < historyDist)) {
-      menuTabs.removeClass('menunow');
-      $('a[href="#bioslice"]').addClass('menunow');
+      colorThem("top");
+    } else if (top > bioDist && top < historyDist) {
+      colorThem("biotab");
     } else if (top > historyDist && top < projectDist) {
-      menuTabs.removeClass('menunow');
-      $('a[href="#historyslice"]').addClass('menunow');
-    } else if (top > projectDist) {
-      menuTabs.removeClass('menunow');
-      $('a[href="#projectslice"]').addClass('menunow');
+      colorThem("historytab");
+    } else if (top > projectDist && top < contactDist) {
+      colorThem("projectstab");
+    } else if (top > contactDist) {
+      colorThem("contacttab");
     }
+
   } else if(theme=='entre') {
     const menuDiv = $('#menucontain');
     const menu = $('#menu');
@@ -330,7 +330,6 @@ $('#contactme, #contactmebut, #footercontact, #contactclose').on('click', () => 
   } else {
       x.style.display = "none";
   }
-  addRemove('contactme');
   x.scrollIntoView(); 
 });
 
@@ -373,9 +372,9 @@ $('#submit').click(function(e) {
 //------------------------
 
 function circles() {
-  const canvas = document.querySelector('#mycanvas');
-  canvas.width = document.querySelector('#mycanvas').scrollWidth;
-  canvas.height = $('#mycanvas').css('height');
+  const canvas = document.querySelector('#entrebgcanvas');
+  canvas.width = document.querySelector('#entrebgcanvas').scrollWidth;
+  canvas.height = (extraJ) ? 70 : 100;
   const c = canvas.getContext('2d');
   const topRadius = 30;
   const colorArray = [
@@ -396,8 +395,8 @@ function circles() {
   })
 
   window.addEventListener('resize', function() {
-    canvas.width = document.querySelector('#mycanvas').offsetWidth;
-    canvas.height = document.querySelector('#mycanvas').offsetHeight;
+    canvas.width = document.querySelector('#entrebgcanvas').offsetWidth;
+    canvas.height = document.querySelector('#entrebgcanvas').offsetHeight;
     init();
   });
 
@@ -421,7 +420,7 @@ function circles() {
     }
 
     this.update = function() {
-      if (this.y + this.radius > innerHeight || this.y - this.radius <= 0) {
+      if (this.y + this.radius > canvas.height || this.y - this.radius <= 0) {
         this.dy = -this.dy;
       }
       if (this.x + this.radius > canvas.width|| this.x - this.radius <= 0) {
@@ -446,7 +445,6 @@ function circles() {
   function init() {
     circleArray = [];
     for (let i =0; i<30; i++) { 
-      console.log($('#mycanvas').css('height'));
       let radius = Math.random() * 10;
       let x = Math.random() * ((canvas.width - radius*2) + radius)*2;
       let y = Math.random() * (canvas.height - radius*2) + radius;
@@ -710,12 +708,10 @@ function doneResizing() {
   if (Modernizr.mq('screen and (min-width:768px)')) {
 
     if (theme === 'entre') {
-      $('#mycanvas').css({'display': 'none'});
       $('#entrebgcanvas').css({'display': 'block'});
       timeOut = setTimeout(spirals, 1000);
     } else if (theme === 'student') {
-      $('#entrebgcanvas').css({'display': 'none'});
-      $('#mycanvas').css({'display': 'block'});
+      $('#entrebgcanvas').css({'display': 'block'});
       timeOut = setTimeout(circles, 1000);
     }
 
@@ -725,7 +721,7 @@ function doneResizing() {
       $('#entrebgcanvas').css({'display': 'none'});
 
       if (theme === 'student') {
-      $('#mycanvas').css({'display': 'block'});
+      $('#entrebgcanvas').css({'display': 'block'});
         timeOut = setTimeout(circles, 1000);
       }
 

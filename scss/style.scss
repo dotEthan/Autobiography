@@ -126,12 +126,9 @@ a:link {
 
 #ethan {
   display: none;
-  font-family: 'logo', serif;
+  font-family: $headertext;
+  // font-family: 'logo', serif;
   font-size: 1.5em;
-}
-
-#mycanvas {
-  display: none;
 }
 
 #entrebgcanvas {
@@ -155,6 +152,13 @@ a:link {
   font-size: 1.2em;
   transition: all 1s;
   font-weight: bold;
+}
+
+#menutabscontain{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .menutabs {
@@ -1772,6 +1776,10 @@ span{
 }
 
 @media screen and (min-width: 1600px) {
+
+  #ethan{
+    font-size: 2em;
+  }
 
   .menutabs {
     font-size: 0.85em;

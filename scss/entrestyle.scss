@@ -158,10 +158,6 @@ a:hover {
   top: 0;
 }
 
-#mycanvas {
-  display: none;
-}
-
 #entrebgcanvas {
   display: none;
   z-index: 7;
@@ -203,6 +199,13 @@ a:hover {
   font-size: 1.2em;
   transition: all 1s;
   font-weight: bold;
+}
+
+#menutabscontain{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .menutabs {
