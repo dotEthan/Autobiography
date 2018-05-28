@@ -114,6 +114,7 @@ $('#entreb').click(function() {
 $('#programmerb').click(function() {
   $('link[rel=stylesheet]').attr({href : 'css/style.css'}); 
   theme = 'programmer';
+  $('#entrebgcanvas').css("display", "none");
   window.cancelAnimationFrame(animating); 
   setTextContent(textChange, 'was developed using Javascript, Jquery, HTML, and SCSS. If you want to look at the code,');
   setTextContent(quoteChange, '"The most effective debugging tool is still careful thought, coupled with judiciously placed print statements."');
@@ -124,7 +125,6 @@ $('#programmerb').click(function() {
   setTextContent(bioChange, 'Since returning to Canada I have opened two successful entreprenuerial ventures and learned a number of new langauges including Javascript, SCSS, React, Liquid and more. I\'ve devoted the last six months to brushing up on HTML 5, SCSS, Javascript ES6 and learning React to ensure I have a firm grasp of the tools needed to succeed in Front End Development or Javavscript programming.');
   $("#personalimg").attr("src","../images/biop.jpg");
   pageDelay(showPage);
-  // $('#particles-js').css({'display': 'block'});
   doneResizing();
 });
 
@@ -699,6 +699,20 @@ function spirals() {
 //     "retina_detect": true
 //   });
 // }
+
+// drawer
+
+$('#choicestab').click( drawer);
+
+function drawer(e) {
+  if(extraJ) {
+    $('#choices').toggleClass('choicesh');
+  } else {
+    $('#choices').toggleClass('choiceso');
+    $('#choicescont').toggleClass('choicesconto');
+  }
+
+}
 
 //------------------------
 // Modernizr

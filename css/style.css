@@ -134,7 +134,8 @@ a:link {
 .menutext {
   display: flex;
   align-items: center;
-  flex-direction: column; }
+  flex-direction: column;
+  color: white; }
 
 .faicon {
   font-size: 1.5em; }
@@ -187,19 +188,61 @@ a:link {
   margin-top: 4vh;
   margin-bottom: 10px; }
 
+#choicescont {
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  transition: all 1s; }
+
+#splashcont .choicesconto {
+  height: 30px; }
+
+#choicestab {
+  height: 30px;
+  width: 30%;
+  margin: 0 auto;
+  background: #4c4556;
+  border: 3px solid #40a7f3;
+  border-radius: 10px 10px 0 0;
+  border-bottom: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 5px;
+  color: white;
+  font-size: 0.9em; }
+
+#choicescont .choiceso {
+  height: 0; }
+
 #choices {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
   width: 80%;
-  margin: 0 auto 50px auto; }
+  margin: 0 auto;
+  background: #4c4556;
+  border: 3px solid #40a7f3;
+  border-radius: 10px 10px 0 0;
+  border-bottom: none;
+  height: 70px;
+  overflow: hidden;
+  transition: all 1s; }
+
+#legocont {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
 
 .lego {
-  width: 30px;
-  height: 30px;
-  margin: 10px 0;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
-  background-size: cover; }
+  background-size: cover;
+  transform: translateY(-5px); }
   .lego:hover .choicesbox {
     color: #40a7f3; }
 
@@ -213,19 +256,24 @@ a:link {
   background-image: url("../images/learning.svg"); }
 
 .filler {
-  width: 30px;
-  height: 30px; }
+  width: 20px;
+  height: 20px; }
 
 .choicesbox {
-  margin-top: 10px;
+  margin-top: 5px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
   font-weight: bold;
   color: white;
-  font-size: 0.8em; }
+  font-size: 0.6em; }
   .choicesbox:hover {
     color: #40a7f3; }
+
+#cheatsheet {
+  font-size: 0.7em;
+  color: white;
+  padding: 5px; }
 
 .slice {
   background: #e5e5e5;
@@ -785,21 +833,11 @@ span {
     font-size: 1.4em;
     padding: 10px; }
   #mobilewarning {
-    margin-top: 3vh;
+    margin-top: 1vh;
     width: 60%;
     font-size: 0.6em; }
   #languagetitle {
-    margin-top: 5vh;
-    margin-bottom: 8vh; }
-  #choices {
-    margin-bottom: 30px; }
-  .lego {
-    width: 30px;
-    height: 30px;
-    margin: 5px 0; }
-  .filler {
-    width: 30px;
-    height: 30px; }
+    margin-top: 5vh; }
   .allovers {
     flex-direction: row; }
   .protextt {
@@ -842,8 +880,6 @@ span {
     margin-top: 14vh; }
   .languages {
     font-size: 1em; }
-  #choices {
-    margin-bottom: 14vh; }
   #biocontain {
     width: 75%; }
   #biowriting {
@@ -892,12 +928,16 @@ span {
     width: 10%;
     height: 100vh; }
   #ethan {
-    margin-left: 40px;
+    position: absolute;
+    top: 60px;
+    left: 0;
     margin-bottom: 150px;
-    background: #40a7f3;
+    background: #4c4556;
     border-radius: 25%;
     padding: 20px;
-    z-index: 99; }
+    z-index: 99;
+    color: #e5e5e5;
+    border: 5px solid #40a7f3; }
   .leftcanvas {
     height: 100vh;
     width: 100%;
@@ -907,10 +947,11 @@ span {
     display: block; }
   #menu {
     flex-direction: column;
-    justify-content: center;
-    align-items: center; }
+    justify-content: space-between;
+    align-items: center;
+    height: 90vh; }
   .menutabs {
-    width: 120%;
+    width: 110%;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -926,6 +967,11 @@ span {
       background: #0c74c1; }
       .menutabs:hover a {
         color: #e5e5e5; }
+  #menutabscontain {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%; }
   .menudark {
     background: #0c74c1; }
     .menudark a {
@@ -946,7 +992,7 @@ span {
     align-items: center;
     background-position: top center;
     background-size: cover;
-    justify-content: flex-start; }
+    justify-content: space-between; }
   #titlecard {
     margin-bottom: 50px;
     margin-top: 12vh; }
@@ -959,20 +1005,38 @@ span {
     font-size: 0.8em; }
   #languagetitle {
     margin-top: 31vh; }
+  #choicescont {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    position: absolute;
+    right: 0;
+    top: 50vh;
+    transform: translateY(-50%);
+    height: auto; }
+  #choicestab {
+    flex-direction: column;
+    align-items: center;
+    border: 4px solid #40a7f3;
+    border-radius: 10px 10px 0 0;
+    border-bottom: none;
+    transform-origin: right bottom;
+    transform: rotate(270deg) translateX(65px);
+    width: 100px; }
   #choices {
-    display: flex;
-    justify-content: space-around;
-    width: 70%;
-    margin-top: 10vh;
-    align-items: center; }
-  .lego {
-    width: 40px;
-    height: 40px; }
-  .filler {
-    width: 40px;
-    height: 40px; }
-  .choicesbox {
-    font-size: 0.8em; }
+    flex-direction: column;
+    border: 4px solid #40a7f3;
+    border-radius: 10px 0 0 10px;
+    border-right: none;
+    height: 300px;
+    width: 150px;
+    transition: all 1s;
+    justify-content: flex-start; }
+  #choicescont .choicesh {
+    width: 0; }
+  #legocont {
+    flex-direction: column;
+    height: 200px; }
   #biocontain {
     width: 90%;
     margin: 0;
@@ -1075,8 +1139,6 @@ span {
     font-size: 2.5em; }
   #languagetitle {
     margin-top: 20vh; }
-  #choices {
-    margin-top: 7vh; }
   #inquiryform {
     width: 70%; } }
 
@@ -1092,9 +1154,6 @@ span {
     margin-top: 12vh; }
   #languagetitle {
     margin-top: 28vh; }
-  #choices {
-    margin: 10vh auto;
-    width: 68%; }
   #biopersonaltext {
     padding-right: 10px; }
   #portimage {
@@ -1197,9 +1256,6 @@ span {
 @media screen and (min-width: 1200px) {
   .menutabs {
     font-size: 0.7em; }
-  #choices {
-    margin-top: 9vh;
-    width: 60%; }
   #biocontain {
     align-items: center;
     flex-direction: row;
@@ -1299,8 +1355,6 @@ span {
     margin-top: 16vh; }
   #languagetitle {
     margin-top: 29vh; }
-  #choices {
-    margin-top: 8vh; }
   #biocontain {
     align-items: center;
     text-align: center; }
