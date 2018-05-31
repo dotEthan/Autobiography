@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Just+Another+Hand|Lobster|Open+Sans" rel="stylesheet"> 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="apple-touch-icon" href="images/icon.png">
 
   
 </head>
@@ -69,27 +70,36 @@
         <div id="choicescont">
           <div id="choicestab">Timeline</div>
           <div id="choices">
-            <div id="legocont">
-              <div id="studentb" class="lego">
-                <div class="filler"></div>
-                <div class="choicesbox">
-                  Student
+            <div id="choicesoptcont">
+              <div id="legocont">
+                <div id="studentb" class="lego">
+                  <div class="filler"></div>
+                  <div class="choicesbox">
+                    Student
+                  </div>
+                </div>
+                <div id="entreb" class="lego">
+                  <div class="filler"></div>
+                  <div class="choicesbox">
+                    Entrepreneur
+                  </div>
+                </div>
+                <div id="programmerb" class="lego">
+                  <div class="filler"></div>
+                  <div class="choicesbox">
+                    Programmer
+                  </div>
                 </div>
               </div>
-              <div id="entreb" class="lego">
-                <div class="filler"></div>
-                <div class="choicesbox">
-                  Entrepreneur
-                </div>
-              </div>
-              <div id="programmerb" class="lego">
-                <div class="filler"></div>
-                <div class="choicesbox">
-                  Programmer
-                </div>
-              </div>
-            </div>
-            <div id="cheatsheet">Why so complex?</div>
+              <div id="cheatsheet"><a href="#">Why three sites?</a></div>
+            </div>  
+            <div id="cheatsheetexp">
+            <div id="cheatsheetexpclose">X</div>
+            <div id="cheatsheetexptitle">What's the Deal?</div>
+            Every life is made up of the same basic structure, like an HTML sheet laying out the bones and systems of a person. It is the events of our life and people we meet along the way that add extra styling and functionality. 
+            <br/>
+            <br/>
+            I created this site to try and express the way life changes how people view you even though what makes you, you, stays mostly unchanged underneath the outer veneer. I have worn many hats throughout my life, but my drive has always been the same, to help those around me live a better life.</div>
           </div>
         </div>
       </div>
@@ -439,6 +449,19 @@
         </div>
         <div class="protitle">Projects</div>
         <div id="projectcont">
+          <div id="portfolio" class="project">
+            <img alt="Ethan's Logo" src="images/portfolio.png">
+            <div class="protext">
+              <div class="protextcont">
+                <div class="protextt">
+                  Portfolio Website
+                </div>
+                <div class="protextw">
+                  This website. Welcome!
+                </div>
+              </div>
+            </div>
+          </div>
           <div id="freggie" class="project">
             <img alt="Freggie Logo" src="images/freggie169.png">
             <div class="protext">
@@ -461,19 +484,6 @@
                 </div>
                 <div class="protextw">
                   Medical research company.
-                </div>
-              </div>
-            </div>
-          </div>
-          <div id="portfolio" class="project">
-            <img alt="Ethan's Logo" src="images/Portfolio.png">
-            <div class="protext">
-              <div class="protextcont">
-                <div class="protextt">
-                  Portfolio Website
-                </div>
-                <div class="protextw">
-                  This website. Welcome!
                 </div>
               </div>
             </div>
@@ -554,6 +564,20 @@
             <a href="#contactslice"><button id="contactmebut" class="buttonstyle">Contact Me</button></a>
           </div>
         </div>
+        <div id="blogcenter">
+          <div id="blogcont">
+            <div id="blogtitle">What I'm doing today:</div>
+            <div id="blogdata">
+              <div id="blogdate">April 1, 2018:</div>
+              <div id="blogtext">Getting while the getting's good.</div>
+            </div>
+          </div>
+          <div id="when">Date:
+            <select id="dates"> 
+              <option value="today"></option> 
+            </select>
+          </div>
+        </div>
         <div id="resumehalf">
           <div id="resumetext">
             Download my resume in PDF format.
@@ -574,15 +598,15 @@
               </div>
               <div id='contactinfocont'>
                 <div class="contactinfo">
-                  <label>Name: <span>*</span></label>
+                  <label>Name: <span class="required">*</span></label>
                   <input type="text" id="name" placeholder="Name"/>
                 </div>
                 <div class="contactinfo">
-                  <label>Email: <span>*</span></label>
+                  <label>Email: <span class="required">*</span></label>
                   <input type="text" id="email" placeholder="Email"/>
                 </div>
                 <div class="contactinfo">
-                  <label>Contact No: <span></span></label>
+                  <label>Contact No: <span class="required"></span></label>
                   <input type="text" id="phone" placeholder="10 digit Mobile no."/>
                 </div>
               </div>
@@ -646,6 +670,7 @@
   </div>
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+  <script src="js/jquery-csv.js"></script>
   <script  src="js/modernizr-custom.js"></script>
   <script  src="js/script.js"></script>
 

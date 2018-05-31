@@ -700,20 +700,6 @@ function spirals() {
 //   });
 // }
 
-// drawer
-
-$('#choicestab').click( drawer);
-
-function drawer(e) {
-  if(extraJ) {
-    $('#choices').toggleClass('choicesh');
-  } else {
-    $('#choices').toggleClass('choiceso');
-    $('#choicescont').toggleClass('choicesconto');
-  }
-
-}
-
 //------------------------
 // Modernizr
 //------------------------
@@ -816,3 +802,93 @@ $('.flexbox-slide').hover(function (e) {
   }
 
 }); 
+
+// drawer
+
+let open = false;
+$('#choicestab').click(drawer);
+
+function endH(e) {
+  console.log(open);
+  if(e.propertyName === "height" && open) $('#choicesoptcont').toggleClass('cocon');
+}
+
+function endO(e) {
+  console.log(open);
+  if(e.propertyName === "opacity" && !open) {
+      $('#choices').toggleClass('choiceso');
+      $('#choicescont').toggleClass('choicesconto');
+  }
+}
+
+function drawer(e) {
+  console.log("now");
+  if(extraJ) {
+    $('#choices').toggleClass('choicesh');
+  } else {
+    if ($('#choices').css("height") === "3px") {
+      $('#choices').toggleClass('choiceso');
+      $('#choicescont').toggleClass('choicesconto');
+      $('#choices')[0].addEventListener('transitionend', endH);
+      open = true;
+    } else if ($('#choices').css("height") === "70px") {
+      $('#choicesoptcont').toggleClass('cocon');
+      $('#choices')[0].addEventListener('transitionend', endO);
+      open = false;
+    }
+  }
+}
+
+$('#cheatsheet').click(showExplain);
+$('#cheatsheetexpclose').click(showExplain);
+
+function showExplain() {
+  $('#cheatsheetexp').toggleClass('csopen');
+}
+
+// CSV
+
+(function() {
+    $.ajax({
+        type: "GET",
+        url: "doing.txt",
+        dataType: "text",
+        success: function(data) {processData(data);}
+     });
+}());
+
+let lines = [];
+
+function processData(allText) {
+    let allTextLines = allText.split(/\r\n|\n/);
+    let headers = allTextLines[0].split(',');
+
+
+    for (let i=1; i<allTextLines.length; i++) {
+        let data = allTextLines[i].split(',');
+        if (data.length == headers.length) {
+
+            let tarr = [];
+            for (let j=0; j<headers.length; j++) {
+                tarr.push([headers[j], data[j]]);
+            }
+            lines.push(tarr);
+        }
+    }
+}
+
+console.log(lines[0].length);
+
+// blog picker
+
+let select = $("#dates"); 
+let options = ["1", "2", "3", "4", "5"]; 
+
+
+for(let i=0, len = options.length; i<len; i++) {
+    let opt = options[i];
+    let el = document.createElement("option");
+    el.textContent = opt;
+    el.value = opt;
+    select.append(el);
+}

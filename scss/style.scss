@@ -1,16 +1,16 @@
 @font-face {
   font-family: 'Merriweather';
-  src: url('fonts/Merriweather-webfont.woff') format('woff')
+  src: url('fonts/Merriweather-webfont.woff') format('woff');
 }
 
 @font-face {
-  font-family: 'Monserrat';
-  src: url('fonts/Montserrat-Regular.woff') format('woff')
+  font-family: 'Montserrat';
+  src: url('fonts/Montserrat-Regular.woff') format('woff');
 }
 
 @font-face {
   font-family: 'logo';
-  src: url('fonts/fredoka-one-v5-latin-regular.woff') format('woff')
+  src: url('fonts/fredoka-one-v5-latin-regular.woff') format('woff');
 }
 
 $limecolor: #bff073;
@@ -36,7 +36,7 @@ $fifthcolor: #888;
 
 $projectoverlayradius: 5px;
 $headertext:'Merriweather', serif;
-$regulartext: 'Monserrat', sans-serif;
+$regulartext: 'Montserrat', sans-serif;
 $menutextc: white;
 $menuiconsize: 1.5em;
 $menufontsize: 0.9em;
@@ -252,18 +252,18 @@ a:link {
 
 #languagetitle {
   margin-top: 4vh;
-  margin-bottom: 10px;
+  margin-bottom: 4px;
 }
 
 #choicescont {
   display: flex;
   flex-direction: column; 
-  height: 100px;
-  transition: all 1s;
+  height: 30px;
+  transition: height 0.5s;
 }
 
 #splashcont .choicesconto{
-  height: 30px;
+  height: 100px;
 }
 
 #choicestab {
@@ -279,11 +279,11 @@ a:link {
   justify-content:center;
   padding-bottom: 5px;
   color: white;
-  font-size: 0.9em;
+  font-size: 0.8em;
 }
 
 #choicescont .choiceso {
-  height: 0;
+  height: 70px;
 }
     
 #choices {
@@ -297,9 +297,23 @@ a:link {
   border: 3px solid $thirdcolor;
   border-radius: 10px 10px 0 0;
   border-bottom: none;
-  height: 70px;
+  height: 0;
   overflow: hidden;
-  transition: all 1s;
+  transition: height 0.5s;
+
+  .cocon {
+    opacity: 1;
+  }
+}
+
+#choicesoptcont {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+  opacity: 0;
+  transition: opacity 0.3s; 
 }
 
 #legocont {
@@ -310,8 +324,8 @@ a:link {
   align-items: center;
 }
 .lego {
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   cursor: pointer;
   background-size: cover; 
   transform: translateY(-5px);
@@ -336,8 +350,8 @@ a:link {
 }
 
 .filler {
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
 }
 
 .choicesbox {
@@ -354,10 +368,48 @@ a:link {
   }
 }
 
-#cheatsheet {
+#cheatsheet a {
   font-size: 0.7em;
   color: white;
   padding: 5px;
+
+  &:hover {
+    color: $thirdcolor;
+  }
+}
+
+#choices .csopen {
+  display: flex;
+}
+
+#cheatsheetexp {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  top: 50%;
+  right: 50%;
+  width: 80vw;
+  background: rgba(255,255,255,0.8);
+  transform: translate(50%,-50%);
+  z-index: 99;
+  padding: 25px;
+  font-size: 0.8em;
+  border: 3px solid $thirdcolor;
+  border-radius: 25px;
+}
+
+#cheatsheetexpclose {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+}
+
+#cheatsheetexptitle {
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: $secondcolor;
 }
 
 .slice {
@@ -806,6 +858,7 @@ a:link {
   background-color: lighten($secondcolor, 5%);
   width: 100%;
   color: white;
+  position: relative;
 }
 
 #availablehalf {
@@ -836,6 +889,36 @@ a:link {
   &:hover {
     background-color: $thirdcolor;
   }
+}
+
+#availabletext {
+  width: 80%;
+  text-align: left;
+}
+
+#blogcenter {
+  background: $firstcolor;
+}
+
+#blogcont {
+  padding: 25px 30px;
+  color: black;
+  text-align: left;
+  font-size: 0.8em;
+}
+
+#blogtitle {
+  font-family: $headertext;
+  font-size: 1.1em;
+}
+
+#blogdata {
+  margin-top: 5px;
+  padding: 10px;
+}
+
+#blogdate {
+  margin-bottom: 5px;
 }
 
 #resumehalf {
@@ -947,7 +1030,7 @@ textarea{
   resize:none;
 }
 
-span{
+.required {
   color:red;
 }
 
@@ -1047,13 +1130,13 @@ span{
   }
 
   #mobilewarning {
-    margin-top: 1vh;
+    margin-top: 0vh;
     width: 60%;
     font-size: 0.6em;
   }
 
   #languagetitle {
-    margin-top: 5vh;
+    margin-top: 3vh;
   }
 
   .allovers {
@@ -1252,8 +1335,6 @@ span{
     width: 110%;
     display: flex;
     justify-content: center;
-    flex-direction: column;
-    align-items: center;
     transition: all 1s;
     z-index: 99;
     background: $thirdcolor;
@@ -1294,13 +1375,14 @@ span{
   }
 
   .menutext {
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding: 10px;
   }
 
   .menutitle {
-    margin-left: 5px;
-    margin-top: 0;
+    margin-top: 5px;
   }
   
   #contentcontain {
@@ -1358,6 +1440,7 @@ span{
     transform-origin: right bottom;
     transform: rotate(270deg) translateX(65px);
     width: 100px;
+    padding-bottom: 0;
   }
 
   #choices {
@@ -1493,8 +1576,39 @@ span{
   }
 
   #availabletext {
-    width: 110%;
+    width: 80%;
     text-align: left;
+  }
+
+  #blogcenter {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    width: 23%;
+    border-radius: 10px;
+    border: 3px solid lighten($secondcolor, 20%);
+  }
+
+  #blogcont {
+    padding: 25px 30px;
+    color: black;
+    text-align: left;
+  }
+
+  #blogtitle {
+    font-family: $headertext;
+    font-size: 1.1em;
+  }
+
+  #blogdata {
+    margin-top: 5px;
+    padding: 10px;
+  }
+
+  #blogdate {
+    margin-bottom: 5px;
   }
 
   #resumehalf {
