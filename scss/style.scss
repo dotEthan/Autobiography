@@ -304,6 +304,10 @@ a:link {
   .cocon {
     opacity: 1;
   }
+
+  // .choicesWidth {
+  //   width: 
+  // }
 }
 
 #choicesoptcont {
@@ -898,26 +902,44 @@ a:link {
 
 #blogcenter {
   background: $firstcolor;
-}
-
-#blogcont {
-  padding: 25px 30px;
   color: black;
-  text-align: left;
-  font-size: 0.8em;
-}
-
-#blogtitle {
-  font-family: $headertext;
-  font-size: 1.1em;
-}
-
-#blogdata {
-  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 10px;
 }
 
+#blogcentercont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#blogtitle {
+  font-family: $regulartext;
+  font-size: 1.1em;
+  text-align: left;
+  width: 85%;
+  margin-bottom: 15px;
+}
+
+#blogcont {
+  text-align: left;
+  font-size: 0.8em;
+  border: 1px solid darken($firstcolor, 20%);
+  border-radius: 20px;
+  width: 85%;
+  margin-bottom: 15px;
+  padding: 20px;
+}
+
 #blogdate {
+  margin-bottom: 7px;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+#blogdata {
   margin-bottom: 5px;
 }
 
@@ -1429,7 +1451,16 @@ textarea{
     top:50vh;
     transform: translateY(-50%);
     height: auto;
+
+    .choicesh {
+      width: 150px;
+      height: 300px;
+    }
   }
+
+  // #splashcont .choicesconto{
+  //   width: 150px;
+  // }
 
   #choicestab {
     flex-direction: column;
@@ -1449,13 +1480,9 @@ textarea{
     border-radius: 10px 0 0 10px;
     border-right: none;
     height: 300px;
-    width: 150px;
+    width: 0;
     transition: all 1s;
     justify-content: flex-start;
-  }
-
-  #choicescont .choicesh {
-    width: 0;
   }
 
   #legocont {
@@ -1586,29 +1613,11 @@ textarea{
     top: 50%;
     transform: translate(-50%, -50%);
     background: white;
-    width: 23%;
+    width: 30%;
     border-radius: 10px;
     border: 3px solid lighten($secondcolor, 20%);
-  }
-
-  #blogcont {
-    padding: 25px 30px;
-    color: black;
-    text-align: left;
-  }
-
-  #blogtitle {
-    font-family: $headertext;
-    font-size: 1.1em;
-  }
-
-  #blogdata {
-    margin-top: 5px;
     padding: 10px;
-  }
-
-  #blogdate {
-    margin-bottom: 5px;
+    font-size: 0.8em;
   }
 
   #resumehalf {
@@ -1629,7 +1638,7 @@ textarea{
   }
 
   #resumetext {
-    width: 100%;
+    width: 50%;
     text-align: right;
   }
 
@@ -1854,6 +1863,18 @@ textarea{
     padding: 40px 0 40px 40px;
   }
 
+  #blogcenter {
+    font-size: 1em;
+  }
+
+  #blogtitle {
+    width: 95%;
+  }
+
+  #blogcont {
+    padding: 15px;
+  }
+
   #resumehalf {
     padding: 40px 40px 40px 30px;
   }
@@ -2030,6 +2051,10 @@ textarea{
 
   #availablehalf, #resumehalf {
     font-size: 1.3em;
+  }
+
+  #blogcenter {
+    font-size: 1.2em;
   }
 
   .contacttype {

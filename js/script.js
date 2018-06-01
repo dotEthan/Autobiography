@@ -809,33 +809,39 @@ let open = false;
 $('#choicestab').click(drawer);
 
 function endH(e) {
-  console.log(open);
-  if(e.propertyName === "height" && open) $('#choicesoptcont').toggleClass('cocon');
+  // console.log('open');
+  if((e.propertyName === "width" || e.propertyName === 'height') && open) $('#choicesoptcont').toggleClass('cocon');
 }
 
-function endO(e) {
-  console.log(open);
-  if(e.propertyName === "opacity" && !open) {
+function endO(e) { 
+  // console.log('close');
+  if(e.propertyName === "opacity" && !extraJ) {
       $('#choices').toggleClass('choiceso');
       $('#choicescont').toggleClass('choicesconto');
+  } else if(e.propertyName === "opacity" && extraJ) {
+    $('#choices').toggleClass('choicesh');
   }
 }
 
-function drawer(e) {
-  console.log("now");
-  if(extraJ) {
-    $('#choices').toggleClass('choicesh');
-  } else {
-    if ($('#choices').css("height") === "3px") {
-      $('#choices').toggleClass('choiceso');
-      $('#choicescont').toggleClass('choicesconto');
-      $('#choices')[0].addEventListener('transitionend', endH);
-      open = true;
-    } else if ($('#choices').css("height") === "70px") {
-      $('#choicesoptcont').toggleClass('cocon');
-      $('#choices')[0].addEventListener('transitionend', endO);
-      open = false;
-    }
+function drawer() {
+  if (extraJ && !open) {
+    $('#choices').toggleClass('choicesh'); 
+    $('#choices')[0].addEventListener('transitionend', endH);
+    open = true;
+  } else if (extraJ && open) {
+    console.log(extraJ + " " + open); 
+    $('#choicesoptcont').toggleClass('cocon');
+    $('#choices')[0].addEventListener('transitionend', endO);
+    open = false;
+  } else if (!extraJ && $('#choices').css("height") === "3px") {
+    $('#choices').toggleClass('choiceso');
+    $('#choicescont').toggleClass('choicesconto');
+    $('#choices')[0].addEventListener('transitionend', endH);
+    open = true;
+  } else if (!extraJ && $('#choices').css("height") === "70px") {
+    $('#choicesoptcont').toggleClass('cocon');
+    $('#choices')[0].addEventListener('transitionend', endO);
+    open = false;
   }
 }
 
@@ -848,6 +854,9 @@ function showExplain() {
 
 // CSV
 
+let lines = [];
+let blogDay;
+
 (function() {
     $.ajax({
         type: "GET",
@@ -857,38 +866,30 @@ function showExplain() {
      });
 }());
 
-let lines = [];
-
 function processData(allText) {
-    let allTextLines = allText.split(/\r\n|\n/);
-    let headers = allTextLines[0].split(',');
+  const allTextLines = allText.split(/\r\n|\n/);
+  const headers = allTextLines[0].split(',');
+  const text = allTextLines[1].split(',');
+  const headersS = headers.map(item => item = item.replace("_", " "));
+  const dates = $("#dates"); 
 
+  for(let i=text.length-1; i>0; i--) {
+    const day = headersS[i];
+    let date = document.createElement("option");
+    date.textContent = day;
+    date.value = day;
+    dates.append(date);
+  }
 
-    for (let i=1; i<allTextLines.length; i++) {
-        let data = allTextLines[i].split(',');
-        if (data.length == headers.length) {
+  $('#blogday').text(headersS[headersS.length-1]);
+  $('#blogtext').text(text[text.length-1]);
+  $('option').addClass('blogoption');
 
-            let tarr = [];
-            for (let j=0; j<headers.length; j++) {
-                tarr.push([headers[j], data[j]]);
-            }
-            lines.push(tarr);
-        }
-    }
-}
-
-console.log(lines[0].length);
-
-// blog picker
-
-let select = $("#dates"); 
-let options = ["1", "2", "3", "4", "5"]; 
-
-
-for(let i=0, len = options.length; i<len; i++) {
-    let opt = options[i];
-    let el = document.createElement("option");
-    el.textContent = opt;
-    el.value = opt;
-    select.append(el);
+  $('#dates').change ((e) => {
+      const day = e.target.value;
+      const index = headersS.indexOf(day);
+      if(day === "choose") return;
+      $('#blogday').text(day);
+      $('#blogtext').text(text[index]);
+  })
 }

@@ -1,2 +1,2 @@
-May_26,May_27,May_28,May_29,May_30,May_31
-"Fixing bugs in history slides and menu.","asd af dlskafj","asd af dlskafj","asd af dasdfsadflskafj","asd afasdfasdf dlskafj","Building a 'What am I Doing Now?' portion of my portfolio site and further styling and working on the drawer."
+May_26,May_27,May_28,May_29,May_30,May_31,April_01
+Fixing bugs in history slides and menu and working on a bit of leetcode.,More Leetcode. Working with Binary Search Trees. Never played with them before. Interesting stuff!,Leet Code doing some more easy code practice. Getting the hang of pseudocode and maping out the problem. Can't believe I wasn't maping out before.,Leet Code. Working on a medium probelm called city scapes. Actually gives me an idea for a game...,Building a 'What am I Doing Now?' portion of my portfolio site and further styling and working on the drawer.,Building mini-blog JS functionality. Will also get the drawer working on desktops.
