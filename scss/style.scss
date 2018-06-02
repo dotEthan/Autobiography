@@ -167,7 +167,7 @@ a:link {
   cursor: pointer;
 
   a {
-    color: white;
+    width: 100%;
   }
 
   &:hover {
@@ -190,8 +190,7 @@ a:link {
   align-items: center;
   flex-direction: column;
   color: white;
-
-
+  padding: 5px;
 }
 
 .faicon{
@@ -258,12 +257,12 @@ a:link {
 #choicescont {
   display: flex;
   flex-direction: column; 
-  height: 30px;
+  height: 100px;
   transition: height 0.5s;
 }
 
 #splashcont .choicesconto{
-  height: 100px;
+  height: 30px;
 }
 
 #choicestab {
@@ -280,10 +279,11 @@ a:link {
   padding-bottom: 5px;
   color: white;
   font-size: 0.8em;
+  cursor: pointer;
 }
 
 #choicescont .choiceso {
-  height: 70px;
+  height: 0;
 }
     
 #choices {
@@ -297,17 +297,13 @@ a:link {
   border: 3px solid $thirdcolor;
   border-radius: 10px 10px 0 0;
   border-bottom: none;
-  height: 0;
+  height: 70px;
   overflow: hidden;
   transition: height 0.5s;
 
   .cocon {
-    opacity: 1;
+    opacity: 0;
   }
-
-  // .choicesWidth {
-  //   width: 
-  // }
 }
 
 #choicesoptcont {
@@ -316,7 +312,7 @@ a:link {
   display: flex;
   flex-direction: column;
   margin-bottom: 5px;
-  opacity: 0;
+  opacity: 1;
   transition: opacity 0.3s; 
 }
 
@@ -327,6 +323,7 @@ a:link {
   justify-content:space-around;
   align-items: center;
 }
+
 .lego {
   width: 15px;
   height: 15px;
@@ -906,7 +903,7 @@ a:link {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px;
+  padding: 20px;
 }
 
 #blogcentercont {
@@ -941,6 +938,11 @@ a:link {
 
 #blogdata {
   margin-bottom: 5px;
+}
+
+#blogtext {
+  width: 90%;
+  margin: 0 auto;
 }
 
 #resumehalf {
@@ -1400,7 +1402,8 @@ textarea{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 10px;
+    width: 100%;
+    color: black;
   }
 
   .menutitle {
@@ -1453,14 +1456,10 @@ textarea{
     height: auto;
 
     .choicesh {
-      width: 150px;
+      width: 0px;
       height: 300px;
     }
   }
-
-  // #splashcont .choicesconto{
-  //   width: 150px;
-  // }
 
   #choicestab {
     flex-direction: column;
@@ -1480,7 +1479,7 @@ textarea{
     border-radius: 10px 0 0 10px;
     border-right: none;
     height: 300px;
-    width: 0;
+    width: 150px;
     transition: all 1s;
     justify-content: flex-start;
   }
@@ -1865,6 +1864,7 @@ textarea{
 
   #blogcenter {
     font-size: 1em;
+    width: 30%;
   }
 
   #blogtitle {

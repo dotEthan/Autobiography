@@ -30,7 +30,7 @@ entreDone = 0;
 let timeOut;
 let animating;
 let theme = "programmer";
-let extraJ;
+let large;
 
 //-----------------------
 //Loading
@@ -122,7 +122,7 @@ $('#programmerb').click(function() {
   setTextContent(languageChange, 'Languages: English, Chinese');  
   setTextContent(languageChange2, 'Javascript, React, Jquery, HTML, CSS, SCSS, Wordpress, Liquid, Gulp, Git, npm');
   setTextContent(asaChange, 'As a Programmer:');
-  setTextContent(bioChange, 'Since returning to Canada I have opened two successful entreprenuerial ventures and learned a number of new langauges including Javascript, SCSS, React, Liquid and more. I\'ve devoted the last six months to brushing up on HTML 5, SCSS, Javascript ES6 and learning React to ensure I have a firm grasp of the tools needed to succeed in Front End Development or Javavscript programming.');
+  setTextContent(bioChange, 'Since returning to Canada I have opened two successful entreprenuerial ventures and learned a number of new langauges including Javascript, SCSS, React, Liquid and more. I\'ve devoted the last six months to brushing up on HTML 5, SCSS, Javascript ES6 and learning React to ensure I have a firm grasp of the tools needed to succeed as a Front End Development or Javavscript programming.');
   $("#personalimg").attr("src","../images/biop.jpg");
   pageDelay(showPage);
   doneResizing();
@@ -223,7 +223,7 @@ document.addEventListener('scroll', function () {
   } else {
     let top = parseInt($(window).scrollTop());
 
-    if (!extraJ) {
+    if (!large) {
       top+=70 
 
       if (top < bioDist) {
@@ -374,7 +374,7 @@ $('#submit').click(function(e) {
 function circles() {
   const canvas = document.querySelector('#entrebgcanvas');
   canvas.width = document.querySelector('#entrebgcanvas').scrollWidth;
-  canvas.height = (extraJ) ? 70 : 100;
+  canvas.height = (large) ? 70 : 100;
   const c = canvas.getContext('2d');
   const topRadius = 30;
   const colorArray = [
@@ -715,7 +715,7 @@ function doneResizing() {
       timeOut = setTimeout(circles, 1000);
     }
 
-    extraJ = true;
+    large = true;
 
   } else {
       $('#entrebgcanvas').css({'display': 'none'});
@@ -725,7 +725,7 @@ function doneResizing() {
         timeOut = setTimeout(circles, 1000);
       }
 
-      extraJ = false;
+      large = false;
 
   }
 }
@@ -805,40 +805,43 @@ $('.flexbox-slide').hover(function (e) {
 
 // drawer
 
-let open = false;
+let open = true;
 $('#choicestab').click(drawer);
 
 function endH(e) {
-  // console.log('open');
+  console.log('open');
   if((e.propertyName === "width" || e.propertyName === 'height') && open) $('#choicesoptcont').toggleClass('cocon');
 }
 
 function endO(e) { 
-  // console.log('close');
-  if(e.propertyName === "opacity" && !extraJ) {
+  console.log('close');
+  if(e.propertyName === "opacity" && !large && !open) {
       $('#choices').toggleClass('choiceso');
       $('#choicescont').toggleClass('choicesconto');
-  } else if(e.propertyName === "opacity" && extraJ) {
+  } else if(e.propertyName === "opacity" && large && !open) {
     $('#choices').toggleClass('choicesh');
   }
 }
 
 function drawer() {
-  if (extraJ && !open) {
+  if (large && !open) {
+    console.log(1);
     $('#choices').toggleClass('choicesh'); 
     $('#choices')[0].addEventListener('transitionend', endH);
     open = true;
-  } else if (extraJ && open) {
-    console.log(extraJ + " " + open); 
+  } else if (large && open) {
+    console.log(2);
     $('#choicesoptcont').toggleClass('cocon');
     $('#choices')[0].addEventListener('transitionend', endO);
     open = false;
-  } else if (!extraJ && $('#choices').css("height") === "3px") {
+  } else if (!large && !open && $('#choices').css("height") === "3px") {
+    console.log(3);
     $('#choices').toggleClass('choiceso');
     $('#choicescont').toggleClass('choicesconto');
     $('#choices')[0].addEventListener('transitionend', endH);
     open = true;
-  } else if (!extraJ && $('#choices').css("height") === "70px") {
+  } else if (!large && open && $('#choices').css("height") === "70px") {
+    console.log(4);
     $('#choicesoptcont').toggleClass('cocon');
     $('#choices')[0].addEventListener('transitionend', endO);
     open = false;
@@ -872,8 +875,8 @@ function processData(allText) {
   const text = allTextLines[1].split(',');
   const headersS = headers.map(item => item = item.replace("_", " "));
   const dates = $("#dates"); 
-
-  for(let i=text.length-1; i>0; i--) {
+  
+  for(let i=text.length-1; i>=0; i--) {
     const day = headersS[i];
     let date = document.createElement("option");
     date.textContent = day;

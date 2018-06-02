@@ -122,7 +122,7 @@ a:link {
   font-size: 0.6em;
   cursor: pointer; }
   .menutabs a {
-    color: white; }
+    width: 100%; }
   .menutabs:hover .menutitle {
     font-size: 0.92em; }
   .menutabs:hover a {
@@ -135,7 +135,8 @@ a:link {
   display: flex;
   align-items: center;
   flex-direction: column;
-  color: white; }
+  color: white;
+  padding: 5px; }
 
 .faicon {
   font-size: 1.5em; }
@@ -191,11 +192,11 @@ a:link {
 #choicescont {
   display: flex;
   flex-direction: column;
-  height: 30px;
+  height: 100px;
   transition: height 0.5s; }
 
 #splashcont .choicesconto {
-  height: 100px; }
+  height: 30px; }
 
 #choicestab {
   height: 30px;
@@ -210,10 +211,11 @@ a:link {
   justify-content: center;
   padding-bottom: 5px;
   color: white;
-  font-size: 0.8em; }
+  font-size: 0.8em;
+  cursor: pointer; }
 
 #choicescont .choiceso {
-  height: 70px; }
+  height: 0; }
 
 #choices {
   display: flex;
@@ -226,11 +228,11 @@ a:link {
   border: 3px solid #40a7f3;
   border-radius: 10px 10px 0 0;
   border-bottom: none;
-  height: 0;
+  height: 70px;
   overflow: hidden;
   transition: height 0.5s; }
   #choices .cocon {
-    opacity: 1; }
+    opacity: 0; }
 
 #choicesoptcont {
   width: 100%;
@@ -238,7 +240,7 @@ a:link {
   display: flex;
   flex-direction: column;
   margin-bottom: 5px;
-  opacity: 0;
+  opacity: 1;
   transition: opacity 0.3s; }
 
 #legocont {
@@ -723,7 +725,7 @@ a:link {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px; }
+  padding: 20px; }
 
 #blogcentercont {
   display: flex;
@@ -753,6 +755,10 @@ a:link {
 
 #blogdata {
   margin-bottom: 5px; }
+
+#blogtext {
+  width: 90%;
+  margin: 0 auto; }
 
 #resumehalf {
   padding: 20px;
@@ -1065,7 +1071,8 @@ textarea {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 10px; }
+    width: 100%;
+    color: black; }
   .menutitle {
     margin-top: 5px; }
   #contentcontain {
@@ -1099,7 +1106,7 @@ textarea {
     transform: translateY(-50%);
     height: auto; }
     #choicescont .choicesh {
-      width: 150px;
+      width: 0px;
       height: 300px; }
   #choicestab {
     flex-direction: column;
@@ -1117,7 +1124,7 @@ textarea {
     border-radius: 10px 0 0 10px;
     border-right: none;
     height: 300px;
-    width: 0;
+    width: 150px;
     transition: all 1s;
     justify-content: flex-start; }
   #legocont {
@@ -1346,7 +1353,8 @@ textarea {
     font-size: 0.9em;
     padding: 40px 0 40px 40px; }
   #blogcenter {
-    font-size: 1em; }
+    font-size: 1em;
+    width: 30%; }
   #blogtitle {
     width: 95%; }
   #blogcont {
