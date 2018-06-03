@@ -91,7 +91,6 @@ $('#studentb').click(function() {
 
 $('#entreb').click(function() {
   window.cancelAnimationFrame(animating); 
-  // $('#particles-js').css({'display': 'none'});
   if (entreDone == 0) {
     $('#load').css({'display': 'block'});
     $('#contents').css({'display': 'none'});
@@ -104,7 +103,7 @@ $('#entreb').click(function() {
   setTextContent(quoteChange, '“From my very first day as an entrepreneur, I\'ve felt the only mission worth pursuing in business is to make people\'s lives better.”');
   setTextContent(quoteNameChange, '- Richard Branson');
   setTextContent(languageChange, 'Languages: English, Chinese');
-  setTextContent(languageChange2, 'HTML, CSS, Wordpress, Jqeury');
+  setTextContent(languageChange2, 'HTML, CSS, Wordpress, Jqeury, Photoshop');
   setTextContent(asaChange, 'As an Entrepreneur:');
   setTextContent(bioChange, 'I spent my 20s in China, learning a new culture, language and how to develop long term plans and put them into action. I had numerous jobs including Bar Manager, University professor, Radio Host and more. And I developed and opened a number of different entreprenerial ventures that pushed me to learn web development, leadership skills and to hone my customer service techniques.');
   $("#personalimg").attr("src","../images/bioe.jpg");
@@ -120,7 +119,7 @@ $('#programmerb').click(function() {
   setTextContent(quoteChange, '"The most effective debugging tool is still careful thought, coupled with judiciously placed print statements."');
   setTextContent(quoteNameChange, '- Brian W. Kernighan');
   setTextContent(languageChange, 'Languages: English, Chinese');  
-  setTextContent(languageChange2, 'Javascript, React, Jquery, HTML, CSS, SCSS, Wordpress, Liquid, Gulp, Git, npm');
+  setTextContent(languageChange2, 'Javascript, React, Jquery, HTML, CSS, SCSS, Wordpress, Liquid, Photoshop');
   setTextContent(asaChange, 'As a Programmer:');
   setTextContent(bioChange, 'Since returning to Canada I have opened two successful entreprenuerial ventures and learned a number of new langauges including Javascript, SCSS, React, Liquid and more. I\'ve devoted the last six months to brushing up on HTML 5, SCSS, Javascript ES6 and learning React to ensure I have a firm grasp of the tools needed to succeed as a Front End Development or Javavscript programming.');
   $("#personalimg").attr("src","../images/biop.jpg");
@@ -382,6 +381,7 @@ function circles() {
     '#00ff00',
     '#0000ff',
     '#ff00ff',
+    '#ffff00',
   ]
 
   let mouse = {
@@ -404,7 +404,7 @@ function circles() {
     this.x = x;
     this.y = y;
     this.dx = dx;
-    this.dy = dx;
+    this.dy = dy;
     this.radius = radius;
     this.minRadius = radius;
     this.color = colorArray[Math.floor(Math.random() * colorArray.length)];
@@ -426,6 +426,7 @@ function circles() {
       if (this.x + this.radius > canvas.width|| this.x - this.radius <= 0) {
         this.dx = -this.dx;
       }
+
       this.x+=this.dx;
       this.y+=this.dy;
 
@@ -444,14 +445,23 @@ function circles() {
   let circleArray = [];
   function init() {
     circleArray = [];
-    for (let i =0; i<30; i++) { 
-      let radius = Math.random() * 10;
-      let x = Math.random() * ((canvas.width - radius*2) + radius)*2;
+    for (let i =0; i<15; i++) { 
+      let radius = (Math.random() + 0.3) * 10;
+      let x = Math.random() * ((canvas.width - radius*2) + radius*2);
       let y = Math.random() * (canvas.height - radius*2) + radius;
-      let dx = (Math.random() - 0.4) * 3;
-      let dy = (Math.random() - 0.4)* 3;
+      let dx = Math.floor(Math.random() * 3) + 0.6;
+      let dy = Math.floor(Math.random() * 2) + 0.8;
       circleArray.push(new Circle(x, y, dx, dy, radius));
     }
+  }
+
+  function add() {
+    let radius = (Math.random() + 0.3) * 10;
+    let x = Math.random() * ((canvas.width - radius*2) + radius*2);
+    let y = Math.random() * (canvas.height - radius*2) + radius;
+    let dx = Math.floor(Math.random() * 3) + 0.6;
+    let dy = Math.floor(Math.random() * 2) + 0.8;
+    circleArray.push(new Circle(x, y, dx, dy, radius));    
   }
 
   function animate() {
@@ -568,6 +578,19 @@ function spirals() {
     bioCenter3 = new Array( bioDiv1.width() * 0.695, bioDiv1.height() / 1.8 );
     bioCenter4 = new Array( bioDiv1.width() * 0.964, bioDiv1.height() / 1.8 );
 
+    const tabArr = $('.menutabs');
+    console.log(tabArr);
+    const arrC = tabArr.map(tab => {
+      // console.log(tab);
+      let x = 0;
+      let y = 9;
+      let arr = [[x,y]];
+      return arr;
+    });
+    // console.log(arrC);
+    
+
+
 
     for(let i=0; i < numDots; i++) {
       dotArray1.push(new Dot(bioCenter1[0], bioCenter1[1]));
@@ -602,103 +625,6 @@ function spirals() {
   animate();
 
 }
-
-// //------------------------
-// // Particles
-// //------------------------
-
-// function party() {
-//   particlesJS("particles-js", {
-//     "particles": {
-//       "number": {
-//         "value": 100,
-//         "density": {
-//           "enable": true,
-//           "value_area": 400
-//         }
-//       },
-//       "color": {
-//         "value": "#7d1577"
-//       },
-//       "shape": {
-//         "type": "circle",
-//         "stroke": {
-//           "width": 0,
-//           "color": "#000"
-//         }
-//       },
-//       "opacity": {
-//         "value": 0.5,
-//         "random": true,
-//         "anim": {
-//           "enable": false,
-//           "speed": 1,
-//           "opacity_min": 0.1,
-//           "sync": false
-//         }
-//       },
-//       "size": {
-//         "value": 5,
-//         "random": true,
-//         "anim": {
-//           "enable": false,
-//           "speed": 20,
-//           "size_min": 0.1,
-//           "sync": false
-//         }
-//       },
-//       "line_linked": {
-//         "enable": true,
-//         "distance": 150,
-//         "color": "#0000ff",
-//         "opacity": 0.5,
-//         "width": 1
-//       },
-//       "move": {
-//         "enable": true,
-//         "speed": 4,
-//         "direction": "none",
-//         "random": false,
-//         "straight": false,
-//         "out_mode": "out",
-//         "bounce": false,
-//         "attract": {
-//           "enable": false,
-//           "rotateX": 600,
-//           "rotateY": 1200
-//         }
-//       }
-//     },
-//     "interactivity": {
-//       "detect_on": "canvas",
-//       "events": {
-//         "onhover": {
-//           "enable": true,
-//           "mode": "bubble"
-//         },
-//         "onclick": {
-//           "enable": true,
-//           "mode": "repulse"
-//         },
-//         "resize": true
-//       },
-//       "modes": {
-//         "bubble": {
-//           "distance": 100,
-//           "size": 20,
-//           "duration": 2,
-//           "opacity": 2,
-//           "speed": 3
-//         },
-//         "repulse": {
-//           "distance": 100,
-//           "duration": 0.4
-//         }
-//       }
-//     },
-//     "retina_detect": true
-//   });
-// }
 
 //------------------------
 // Modernizr
@@ -809,12 +735,10 @@ let open = true;
 $('#choicestab').click(drawer);
 
 function endH(e) {
-  console.log('open');
   if((e.propertyName === "width" || e.propertyName === 'height') && open) $('#choicesoptcont').toggleClass('cocon');
 }
 
 function endO(e) { 
-  console.log('close');
   if(e.propertyName === "opacity" && !large && !open) {
       $('#choices').toggleClass('choiceso');
       $('#choicescont').toggleClass('choicesconto');
@@ -825,23 +749,19 @@ function endO(e) {
 
 function drawer() {
   if (large && !open) {
-    console.log(1);
     $('#choices').toggleClass('choicesh'); 
     $('#choices')[0].addEventListener('transitionend', endH);
     open = true;
   } else if (large && open) {
-    console.log(2);
     $('#choicesoptcont').toggleClass('cocon');
     $('#choices')[0].addEventListener('transitionend', endO);
     open = false;
   } else if (!large && !open && $('#choices').css("height") === "3px") {
-    console.log(3);
     $('#choices').toggleClass('choiceso');
     $('#choicescont').toggleClass('choicesconto');
     $('#choices')[0].addEventListener('transitionend', endH);
     open = true;
   } else if (!large && open && $('#choices').css("height") === "70px") {
-    console.log(4);
     $('#choicesoptcont').toggleClass('cocon');
     $('#choices')[0].addEventListener('transitionend', endO);
     open = false;

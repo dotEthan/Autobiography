@@ -215,7 +215,7 @@ a:link {
   justify-content: center;
   padding-bottom: 5px;
   color: white;
-  font-size: 0.8em;
+  font-size: 0.6em;
   cursor: pointer; }
 
 #choicescont .choiceso {
@@ -1215,7 +1215,7 @@ span {
     align-items: flex-start;
     overflow: visible; }
   #availabletext {
-    width: 110%;
+    width: 80%;
     text-align: left; }
   #blogcenter {
     position: absolute;
