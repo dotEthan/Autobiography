@@ -199,6 +199,7 @@ a:link {
 
   &:hover {
     transform: scale(1.1);
+    transform-origin: center bottom;
   }
 }
 
@@ -215,7 +216,7 @@ a:link {
   height: 100vh;
   background-image: $frontimage;
   background-size: cover;
-  background-position: top center;
+  background-position: center;
   background-repeat: no-repeat;
   display: flex;
   flex-wrap: wrap;
@@ -240,35 +241,20 @@ a:link {
   font-size: 1.8em;
 }
 
-#mobilewarning {
-  width: 80%;
-  border-radius: 15px;
-  background: rgba(255,0,0, 0.7);
-  margin: 5vh auto 0;
-  padding: 10px;
-  font-size: 0.8em;
-}
-
-.languages{
-  width: 80%; 
-  font-size: 0.6em;
-  margin: 0 auto;
-}
-
-#languagetitle {
-  margin-top: 4vh;
-  margin-bottom: 10px;
+#motto {
+  display: none;
 }
 
 #choicescont {
   display: flex;
   flex-direction: column; 
+  justify-content: flex-end;
   height: 100px;
   transition: height 0.5s;
 }
 
 #splashcont .choicesconto{
-  height: 30px;
+  height: 100px;
 }
 
 #choicestab {
@@ -284,7 +270,7 @@ a:link {
   justify-content:center;
   padding-bottom: 5px;
   color: white;
-  font-size: 0.6em;
+  font-size: 0.8em;
   cursor: pointer;
 }
 

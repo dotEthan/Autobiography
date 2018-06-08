@@ -81,8 +81,8 @@ $('#studentb').click(function() {
   setTextContent(textChange, 'has been built using lego. If you want to play with the blocks,');
   setTextContent(quoteChange, '“When I became a man I put away childish things, including the fear of childishness and the desire to be very grown up.”');
   setTextContent(quoteNameChange, '- C.S. Lewis');
-  setTextContent(languageChange, 'Languages: English'); 
-  setTextContent(languageChange2, 'Lego');
+  // setTextContent(languageChange, 'Languages: English'); 
+  // setTextContent(languageChange2, 'Lego');
   setTextContent(asaChange, 'As a Student:');
   setTextContent(bioChange, 'I grew up in small town Ontario, than big city BC, then small town BC, then small town Manitoba, than back to BC for a couple cities and then back to Ontario. We moved a lot. It is likely one of the reasons I am able to easily adapt to the various environments life takes me to.');
   $("#personalimg").attr("src","../images/bios.jpg");
@@ -102,8 +102,8 @@ $('#entreb').click(function() {
   setTextContent(textChange, 'was designed and built to facilitate entrepreneurial success. If you want a leg up on the competition,');
   setTextContent(quoteChange, '“From my very first day as an entrepreneur, I\'ve felt the only mission worth pursuing in business is to make people\'s lives better.”');
   setTextContent(quoteNameChange, '- Richard Branson');
-  setTextContent(languageChange, 'Languages: English, Chinese');
-  setTextContent(languageChange2, 'HTML, CSS, Wordpress, Jqeury, Photoshop');
+  // setTextContent(languageChange, 'Languages: English, Chinese');
+  // setTextContent(languageChange2, 'HTML, CSS, Wordpress, Jqeury');
   setTextContent(asaChange, 'As an Entrepreneur:');
   setTextContent(bioChange, 'I spent my 20s in China, learning a new culture, language and how to develop long term plans and put them into action. I had numerous jobs including Bar Manager, University professor, Radio Host and more. And I developed and opened a number of different entreprenerial ventures that pushed me to learn web development, leadership skills and to hone my customer service techniques.');
   $("#personalimg").attr("src","../images/bioe.jpg");
@@ -118,8 +118,8 @@ $('#programmerb').click(function() {
   setTextContent(textChange, 'was developed using Javascript, Jquery, HTML, and SCSS. If you want to look at the code,');
   setTextContent(quoteChange, '"The most effective debugging tool is still careful thought, coupled with judiciously placed print statements."');
   setTextContent(quoteNameChange, '- Brian W. Kernighan');
-  setTextContent(languageChange, 'Languages: English, Chinese');  
-  setTextContent(languageChange2, 'Javascript, React, Jquery, HTML, CSS, SCSS, Wordpress, Liquid, Photoshop');
+  // setTextContent(languageChange, 'Languages: English, Chinese');  
+  // setTextContent(languageChange2, 'Javascript, React, Jquery, HTML, CSS, SCSS, Wordpress, Liquid, Photoshop');
   setTextContent(asaChange, 'As a Programmer:');
   setTextContent(bioChange, 'Since returning to Canada I have opened two successful entreprenuerial ventures and learned a number of new langauges including Javascript, SCSS, React, Liquid and more. I\'ve devoted the last six months to brushing up on HTML 5, SCSS, Javascript ES6 and learning React to ensure I have a firm grasp of the tools needed to succeed as a Front End Development or Javavscript programming.');
   $("#personalimg").attr("src","../images/biop.jpg");
@@ -186,7 +186,7 @@ function colorThem(atId) {
 
 document.addEventListener('scroll', function () {
 
-  if(theme=='student') { 
+  if(theme==='student') { 
     const menuTabs = $('.menutext a');
     let top = parseInt($(window).scrollTop())+70;
 
@@ -202,23 +202,14 @@ document.addEventListener('scroll', function () {
       colorThem("contacttab");
     }
 
-  } else if(theme=='entre') {
-    const menuDiv = $('#menucontain');
-    const menu = $('#menu');
-    const ethan = $('#ethan');
-    const bottomSpot = bioDist - parseInt(menuDiv.css('height'));
+  } else if(theme==='entre') {
 
-    if ($(this).scrollTop() >= bottomSpot) {
-      menuDiv.removeClass('menubottom').addClass('menutop');
-      menu.css({"borderRadius": "0 0 10px 10px"});
-      ethan.addClass('ethantop');
-      menu.addClass('menuswitch');
-    } else if ($(this).scrollTop() < bottomSpot) {
-      menuDiv.removeClass('menutop').addClass('menubottom');
-      menu.css({"borderRadius": "10px 10px 0 0"});
-      ethan.removeClass('ethantop');
-      menu.removeClass('menuswitch');
+    if ($(this).scrollTop() === 0) {
+      $('#menu').removeClass('menuscroll');
+    } else {
+      $('#menu').addClass('menuscroll');
     }
+
   } else {
     let top = parseInt($(window).scrollTop());
 
@@ -382,7 +373,8 @@ function circles() {
     '#0000ff',
     '#ff00ff',
     '#ffff00',
-  ]
+    '#ad00ad'
+  ];
 
   let mouse = {
     x: undefined,
@@ -480,151 +472,150 @@ function circles() {
 // Spinning balls
 //------------------------
 
-function spirals() {
+// function spirals() {
  
-  const canvas = document.getElementById('entrebgcanvas');
-  const c = canvas.getContext('2d');
-  canvas.width = innerWidth;
-  canvas.height = 150;
-  const numDots = 5;
-  const outDistance = randomInt(20, 40);
-  const inDistance = 5;
+//   const canvas = document.getElementById('entrebgcanvas');
+//   const c = canvas.getContext('2d');
+//   canvas.width = innerWidth;
+//   canvas.height = 150;
+//   const numDots = 5;
+//   const outDistance = randomInt(20, 40);
+//   const inDistance = 5;
   
-  const mouse = {
-    x: innerWidth/2,
-    y: innerHeight/2
-  };
+//   const mouse = {
+//     x: innerWidth/2,
+//     y: innerHeight/2
+//   };
 
-  const colorArray = [
-    $('#studentb').css( "background-color" ),
-    $('#availableslice').css( "background-color" ),
-    $('#third').css( "background-color" ),
-    $('#inscriberslide').css( "background-color" ),
-    $('#teachingslide').css( "background-color" )
-  ];
+//   const colorArray = [
+//     $('#studentb').css( "background-color" ),
+//     $('#availableslice').css( "background-color" ),
+//     $('#third').css( "background-color" ),
+//     $('#inscriberslide').css( "background-color" ),
+//     $('#teachingslide').css( "background-color" )
+//   ];
   
-  addEventListener('mousemove', event => {
-    mouse.x = event.clientX; //Changeing?
-    mouse.y = event.clientY;
+//   addEventListener('mousemove', event => {
+//     mouse.x = event.clientX; //Changeing?
+//     mouse.y = event.clientY;
     
-  });
+//   });
   
-  addEventListener('resize', () => {
-    canvas.width = innerWidth;
-    canvas.height = 150;
-    init();
-  });
+//   addEventListener('resize', () => {
+//     canvas.width = innerWidth;
+//     canvas.height = 150;
+//     init();
+//   });
   
   
-  function randomColor() {
-    return colorArray[Math.floor(Math.random() * colorArray.length)];
-  }
+//   function randomColor() {
+//     return colorArray[Math.floor(Math.random() * colorArray.length)];
+//   }
   
-  function randomInt(min,max) {
-    return Math.floor(Math.random() * (max-min+1) + min);
-  }
+//   function randomInt(min,max) {
+//     return Math.floor(Math.random() * (max-min+1) + min);
+//   }
   
-  function Dot(x, y) {
-    this.x = x;
-    this.y = y;
-    this.radius = randomInt(3,7);
-    this.color = randomColor();
-    this.radians = Math.random() * Math.PI*2;
-    this.velocity = randomInt(15, 40)/1000;
-    this.distance = randomInt(30, 50);
-    let origDist = JSON.parse(JSON.stringify(this.distance))
+//   function Dot(x, y) {
+//     this.x = x;
+//     this.y = y;
+//     this.radius = randomInt(3,7);
+//     this.color = randomColor();
+//     this.radians = Math.random() * Math.PI*2;
+//     this.velocity = randomInt(15, 40)/1000;
+//     this.distance = randomInt(30, 50);
+//     let origDist = JSON.parse(JSON.stringify(this.distance))
     
-    this.update = () => {
-      let scrollTop     = $(window).scrollTop(),
-          elementOffset = $('#menu').offset().top,
-          eleDistance      = (elementOffset - scrollTop);
+//     this.update = () => {
+//       let scrollTop     = $(window).scrollTop(),
+//           elementOffset = $('#menu').offset().top,
+//           eleDistance      = (elementOffset - scrollTop);
 
-      if (mouse.y - (eleDistance + y) < 30 && mouse.y - (eleDistance + y) > -60 && mouse.x - x < 40 && x - mouse.x < 40) {
-        if (this.distance > inDistance) {
-          this.distance = this.distance - 2;
-        }
-      } else {
-        if (this.distance < origDist) {
-          this.distance++;
-        }
-      }
+//       if (mouse.y - (eleDistance + y) < 30 && mouse.y - (eleDistance + y) > -60 && mouse.x - x < 40 && x - mouse.x < 40) {
+//         if (this.distance > inDistance) {
+//           this.distance = this.distance - 2;
+//         }
+//       } else {
+//         if (this.distance < origDist) {
+//           this.distance++;
+//         }
+//       }
       
-      this.radians += this.velocity;
-      this.x = x + Math.cos(this.radians) * this.distance;
-      this.y = y + Math.sin(this.radians) * this.distance;
+//       this.radians += this.velocity;
+//       this.x = x + Math.cos(this.radians) * this.distance;
+//       this.y = y + Math.sin(this.radians) * this.distance;
       
-      this.draw();
-    };
+//       this.draw();
+//     };
     
-    this.draw = () => {
-      c.beginPath();
-      c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-      c.fillStyle = this.color;
-      c.fill();
-      c.closePath();
-    }
-  }
+//     this.draw = () => {
+//       c.beginPath();
+//       c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+//       c.fillStyle = this.color;
+//       c.fill();
+//       c.closePath();
+//     }
+//   }
   
-  let dotArray1,dotArray2,dotArray3,dotArray4, bioCenter1, bioCenter2, bioCenter3, bioCenter4;
-  const bioDiv1 = $('#menu');
+//   let dotArray1,dotArray2,dotArray3,dotArray4, bioCenter1, bioCenter2, bioCenter3, bioCenter4;
+//   const bioDiv1 = $('#menu');
 
-  function init() {
-    dotArray1 = [];
-    dotArray2 = [];
-    dotArray3 = [];
-    dotArray4 = []; 
-    bioCenter1 = new Array( bioDiv1.width() * 0.16, bioDiv1.height() / 1.8 );
-    bioCenter2 = new Array( bioDiv1.width() * 0.426, bioDiv1.height() / 1.8 );
-    bioCenter3 = new Array( bioDiv1.width() * 0.695, bioDiv1.height() / 1.8 );
-    bioCenter4 = new Array( bioDiv1.width() * 0.964, bioDiv1.height() / 1.8 );
+//   function init() {
+//     dotArray1 = [];
+//     dotArray2 = [];
+//     dotArray3 = [];
+//     dotArray4 = []; 
+//     bioCenter1 = new Array( bioDiv1.width() * 0.16, bioDiv1.height() / 1.8 );
+//     bioCenter2 = new Array( bioDiv1.width() * 0.426, bioDiv1.height() / 1.8 );
+//     bioCenter3 = new Array( bioDiv1.width() * 0.695, bioDiv1.height() / 1.8 );
+//     bioCenter4 = new Array( bioDiv1.width() * 0.964, bioDiv1.height() / 1.8 );
 
-    const tabArr = $('.menutabs');
-    console.log(tabArr);
-    const arrC = tabArr.map(tab => {
-      // console.log(tab);
-      let x = 0;
-      let y = 9;
-      let arr = [[x,y]];
-      return arr;
-    });
-    // console.log(arrC);
+//     const tabArr = $('.menutabs');
+//     const arrC = tabArr.map(tab => {
+//       // console.log(tab);
+//       let x = 0;
+//       let y = 9;
+//       let arr = [[x,y]];
+//       return arr;
+//     });
+//     // console.log(arrC);
     
 
 
 
-    for(let i=0; i < numDots; i++) {
-      dotArray1.push(new Dot(bioCenter1[0], bioCenter1[1]));
-      dotArray2.push(new Dot(bioCenter2[0], bioCenter2[1]));
-      dotArray3.push(new Dot(bioCenter3[0], bioCenter3[1]));
-      dotArray4.push(new Dot(bioCenter4[0], bioCenter4[1]));
-    }
-  }
+//     for(let i=0; i < numDots; i++) {
+//       dotArray1.push(new Dot(bioCenter1[0], bioCenter1[1]));
+//       dotArray2.push(new Dot(bioCenter2[0], bioCenter2[1]));
+//       dotArray3.push(new Dot(bioCenter3[0], bioCenter3[1]));
+//       dotArray4.push(new Dot(bioCenter4[0], bioCenter4[1]));
+//     }
+//   }
   
-  function animate() {
-    requestAnimationFrame(animate);
-    c.clearRect(0,0,canvas.width, canvas.height);
+//   function animate() {
+//     requestAnimationFrame(animate);
+//     c.clearRect(0,0,canvas.width, canvas.height);
 
-    dotArray1.forEach(singleDot => {
-      singleDot.update();
-    });
+//     dotArray1.forEach(singleDot => {
+//       singleDot.update();
+//     });
 
-    dotArray2.forEach(singleDot => {
-      singleDot.update();
-    });
+//     dotArray2.forEach(singleDot => {
+//       singleDot.update();
+//     });
 
-    dotArray3.forEach(singleDot => {
-      singleDot.update();
-    });
+//     dotArray3.forEach(singleDot => {
+//       singleDot.update();
+//     });
 
-    dotArray4.forEach(singleDot => {
-      singleDot.update();
-    });
-  }
+//     dotArray4.forEach(singleDot => {
+//       singleDot.update();
+//     });
+//   }
   
-  init();
-  animate();
+//   init();
+//   animate();
 
-}
+// }
 
 //------------------------
 // Modernizr
@@ -748,6 +739,7 @@ function endO(e) {
 }
 
 function drawer() {
+  console.log(open);
   if (large && !open) {
     $('#choices').toggleClass('choicesh'); 
     $('#choices')[0].addEventListener('transitionend', endH);
@@ -761,7 +753,7 @@ function drawer() {
     $('#choicescont').toggleClass('choicesconto');
     $('#choices')[0].addEventListener('transitionend', endH);
     open = true;
-  } else if (!large && open && $('#choices').css("height") === "70px") {
+  } else if (!large && open && $('#choices').css("height") === "55px") {
     $('#choicesoptcont').toggleClass('cocon');
     $('#choices')[0].addEventListener('transitionend', endO);
     open = false;

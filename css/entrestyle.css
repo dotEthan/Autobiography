@@ -87,45 +87,31 @@ a:hover {
     bottom: 0;
     opacity: 1; } }
 
-.menutop {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important; }
-
-.menubottom {
-  position: absolute !important;
-  bottom: 0 !important;
-  left: 0 !important; }
-
 #menucontain {
   position: fixed;
+  top: 0;
+  left: 0;
   color: white;
   width: 100%;
   z-index: 99;
-  height: 80px; }
+  height: 70px; }
 
 #ethan {
-  position: absolute;
-  bottom: 5px;
-  left: 0;
-  width: 100%;
   font-family: "logo", serif;
   font-size: 1.5em;
-  z-index: 1; }
-
-.ethantop {
-  top: 0; }
+  z-index: 1;
+  transition: color 0.5s; }
 
 #entrebgcanvas {
   display: none;
   z-index: 7; }
 
 .leftcanvas {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 80px; }
+  display: none; }
+
+#menucontain .menuscroll {
+  border-bottom: 1px solid #585858;
+  background: #717171; }
 
 #menu {
   display: flex;
@@ -133,19 +119,10 @@ a:hover {
   align-items: center;
   color: white;
   font-family: "Raleway", serif;
-  background: rgba(134, 194, 50, 0.7);
-  height: 80px;
-  width: 95%;
-  margin: 0 auto;
-  border-radius: 10px 10px 0 0;
+  height: 70px;
+  width: 100%;
+  border-bottom: 1px dashed #585858;
   transition: all 0.5s; }
-
-.menuclass {
-  padding-bottom: 15px; }
-
-.menuswitch {
-  padding-bottom: 0;
-  padding-top: 15px; }
 
 .menunow {
   color: #e0e6ed;
@@ -154,21 +131,23 @@ a:hover {
   font-weight: bold; }
 
 #menutabscontain {
-  width: 100%;
+  width: 65%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between; }
 
 .menutabs {
-  width: 20%;
+  padding: 2px;
   text-align: center;
-  font-size: 0.7em;
+  font-size: 0.8em;
   z-index: 99; }
   .menutabs a {
-    color: black; }
+    color: white; }
+    .menutabs a:hover {
+      color: #fb7e19; }
 
 .faicon {
-  font-size: 1.5em; }
+  display: none; }
 
 .menutitle {
   font-size: 0.9em; }
@@ -177,21 +156,22 @@ a:hover {
 
 #splashcont {
   height: 100vh;
-  background-image: url("../images/bge1.jpg");
-  background-size: auto 100%;
+  background-image: url("../images/entresm.jpg");
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  justify-content: space-between; }
+  justify-content: flex-end; }
 
 #titlecard {
   margin-bottom: 180px;
   width: 100%;
-  margin: 13vh auto 0;
+  margin: 0 auto 3vh;
   text-align: center;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   color: white; }
 
@@ -201,37 +181,24 @@ a:hover {
   font-weight: bold;
   font-size: 1.8em; }
 
-#mobilewarning {
-  width: 80%;
-  border-radius: 15px;
-  background: rgba(255, 0, 0, 0.7);
-  margin: 5vh auto 0;
-  padding: 10px;
-  font-size: 0.8em; }
-
-.languages {
-  width: 80%;
-  font-size: 0.6em;
-  margin: 0 auto; }
-
-#languagetitle {
-  margin-top: 4vh;
-  margin-bottom: 10px; }
-
 #choicescont {
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
   height: 100px;
-  transition: height 0.5s; }
+  transition: height 0.5s;
+  display: absolute;
+  top: 0;
+  left: 0; }
 
 #splashcont .choicesconto {
-  height: 30px; }
+  height: 100px; }
 
 #choicestab {
   height: 30px;
   width: 30%;
   margin: 0 auto;
-  background: #86C232;
+  background: #717171;
   border: 3px solid #fb7e19;
   border-radius: 10px 10px 0 0;
   border-bottom: none;
@@ -253,7 +220,7 @@ a:hover {
   align-items: center;
   width: 80%;
   margin: 0 auto;
-  background: #86C232;
+  background: #717171;
   border: 3px solid #fb7e19;
   border-radius: 10px 10px 0 0;
   border-bottom: none;
@@ -347,7 +314,7 @@ a:hover {
 #cheatsheetexptitle {
   margin-bottom: 10px;
   font-weight: bold;
-  color: #86C232; }
+  color: #717171; }
 
 .slice {
   background: #e0e6ed;
@@ -426,7 +393,7 @@ a:hover {
   padding: 5px;
   text-align: left; }
   #thanksright a {
-    color: #86C232; }
+    color: #717171; }
     #thanksright a:hover {
       color: #fb7e19; }
 
@@ -440,7 +407,7 @@ a:hover {
   flex-direction: column; }
 
 #historyslice {
-  background-color: #93ce40; }
+  background-color: #7e7e7e; }
 
 .protitle {
   font-family: "Raleway", serif;
@@ -550,7 +517,7 @@ a:hover {
 .nowcalled {
   font-size: 0.9em; }
   .nowcalled a {
-    color: #86C232; }
+    color: #717171; }
     .nowcalled a:hover {
       color: #fb7e19; }
 
@@ -714,7 +681,7 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
   padding: 0px;
-  background-color: #93ce40;
+  background-color: #7e7e7e;
   width: 100%;
   color: white;
   position: relative; }
@@ -734,11 +701,11 @@ a:hover {
   padding: 5px; }
 
 .buttonstyle {
-  background-color: #86C232;
+  background-color: #717171;
   padding: 10px;
   border-radius: 10px;
   font-size: 0.7em;
-  border: 2px solid #162008;
+  border: 2px solid #0b0b0b;
   cursor: pointer;
   color: white; }
   .buttonstyle:hover {
@@ -788,15 +755,15 @@ a:hover {
 #resumehalf {
   padding: 20px;
   width: 100%;
-  background-color: #6a9928;
+  background-color: #585858;
   font-size: 0.8em;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center; }
   #resumehalf .buttonstyle {
-    background-color: #6a9928;
-    border: 2px solid #9ed354;
+    background-color: #585858;
+    border: 2px solid #8b8b8b;
     color: white; }
     #resumehalf .buttonstyle:hover {
       background-color: #fb7e19; }
@@ -858,15 +825,15 @@ input {
   padding: 5px; }
 
 input[type=button] {
-  background-color: #86C232;
+  background-color: #717171;
   border: 1px solid white;
   font-Weight: bold;
   font-size: 18px;
   color: white;
-  border: 1px solid #86C232; }
+  border: 1px solid #717171; }
   input[type=button]:hover {
     background-color: #fb7e19;
-    border: 1px solid #86C232; }
+    border: 1px solid #717171; }
 
 textarea {
   width: 100%;
@@ -908,7 +875,7 @@ span {
   width: 35%;
   text-align: center;
   font-size: 2em;
-  color: #86C232;
+  color: #717171;
   cursor: pointer; }
   .contacttype .footertext {
     font-size: .35em;
@@ -936,25 +903,25 @@ span {
   color: black; }
 
 .footlink a {
-  color: #86C232;
+  color: #717171;
   font-weight: bold; }
   .footlink a:hover {
     color: #fb7e19; }
 
 @media screen and (orientation: landscape) {
-  #titlecard {
-    margin-top: 10px;
-    width: 90%; }
-  #nametitle {
-    font-size: 1.4em;
-    padding: 10px; }
-  #mobilewarning {
-    margin-top: 3vh;
-    width: 60%;
+  #choices {
+    width: 50%;
+    height: 55px; }
+  #choicescont {
+    height: 80px; }
+  #choicestab {
+    width: 20%;
+    height: 25px;
     font-size: 0.6em; }
-  #languagetitle {
-    margin-top: 5vh;
-    margin-bottom: 2vh; }
+  .choicesbox {
+    margin-top: 0; }
+  #cheatsheet {
+    font-size: 0.6em; }
   .allovers {
     flex-direction: row; }
   .protextt {
@@ -980,13 +947,6 @@ span {
   #nametitle {
     font-size: 2.5em;
     margin-top: 10vh; }
-  #mobilewarning {
-    width: 60%;
-    margin-top: 18vh; }
-  #languagetitle {
-    margin-top: 4vh; }
-  .languages {
-    font-size: 1em; }
   #biocontain {
     width: 75%; }
   #biowriting {
@@ -1017,14 +977,7 @@ span {
     width: 70%; }
   #nametitle {
     font-size: 1.8em;
-    padding: 5px; }
-  #languagetitle {
-    margin-top: 3vh;
-    margin-bottom: 3vh; }
-  .languages {
-    font-size: 1em; }
-  #mobilewarning {
-    margin-top: 0; } }
+    padding: 5px; } }
 
 @media screen and (min-width: 768px) {
   #ethan {
@@ -1043,11 +996,11 @@ span {
     height: 100%;
     margin-top: 0;
     padding-top: 0;
-    width: 90%;
+    width: 100%;
     margin-right: auto;
     margin-left: auto;
-    border-radius: 10px 10px 0 0;
-    transition: all 1s; }
+    transition: all 1s;
+    background: rgba(71, 71, 71, 0.3); }
   .menutabs {
     font-size: 1em;
     height: 100px;
@@ -1076,13 +1029,6 @@ span {
     margin-top: 12vh; }
   #nametitle {
     font-size: 3em; }
-  #mobilewarning {
-    display: none; }
-  .languages {
-    width: 60%;
-    font-size: 0.8em; }
-  #languagetitle {
-    margin-top: 31vh; }
   #choicescont {
     flex-direction: row;
     align-items: center;
@@ -1142,7 +1088,7 @@ span {
     width: 25%; }
   #thanksright a {
     font-size: 1.2em;
-    color: #86C232; }
+    color: #717171; }
     #thanksright a:hover {
       color: #fb7e19; }
   #thanksleft {
@@ -1193,14 +1139,14 @@ span {
     background: white;
     width: 30%;
     border-radius: 10px;
-    border: 3px solid #b5dd7d;
+    border: 3px solid #a4a4a4;
     padding: 10px;
     font-size: 0.8em; }
   #resumehalf {
     width: 60%;
     font-size: 1em;
     padding: 50px 50px 50px 30px;
-    background: linear-gradient(to top right, transparent 50%, #6a9928 50%) no-repeat, linear-gradient(to top right, transparent 0.1%, #6a9928 0.1%) no-repeat;
+    background: linear-gradient(to top right, transparent 50%, #585858 50%) no-repeat, linear-gradient(to top right, transparent 0.1%, #585858 0.1%) no-repeat;
     background-size: 60.5% 100%, 40% 100%;
     background-position: 0% 0%, 100% 0%;
     flex-direction: column;
@@ -1229,8 +1175,6 @@ span {
     margin-bottom: 0; }
   #nametitle {
     font-size: 2.5em; }
-  #languagetitle {
-    margin-top: 5vh; }
   #inquiryform {
     width: 70%; } }
 
@@ -1451,8 +1395,6 @@ span {
 @media screen and (min-aspect-ratio: 16 / 8) {
   #titlecard {
     margin-top: 16vh; }
-  #languagetitle {
-    margin-top: 29vh; }
   #biocontain {
     align-items: center;
     text-align: center; } }

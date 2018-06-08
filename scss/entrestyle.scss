@@ -13,7 +13,7 @@
   src: url('fonts/JosefinSlab-Bold.woff') format('woff')
 }
 
-
+ 
 // $firstcolor: e66c0b;
 $rgba: rgba(13,201,247, 0.5);
 $lightblue: #0dc9f7;
@@ -24,7 +24,7 @@ $red: #ed1c24;
 $thirdcolorrgba: rgba(237,28,36, 0.8);
 $secondcolorrgba: rgba(134, 194, 50, 0.7);
 $firstcolor: #e0e6ed;
-$secondcolor: #86C232;
+$secondcolor: #717171;
 $thirdcolor: #fb7e19;
 $fourthcolor: #6B7A8F;
 $fifthcolor: #F7C331;
@@ -38,7 +38,6 @@ $menuiconsize: 1.5em;
 $menufontsize: 0.9em;
 $menubackground: 'transparent';
 $smallmenupaddingtop: 20px;
-$frontimage: url('../images/bge1.jpg');
 $biocontainbg: grey;
 $biowritingc: black;
 $biowritings: 2.7em;
@@ -124,38 +123,21 @@ a:hover {
   to{ bottom:0; opacity:1 }
 }
 
-.menutop {
-  position:fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-}
-
-.menubottom {
-  position:absolute !important;
-  bottom: 0 !important;
-  left: 0 !important;
-}
-
 #menucontain {
   position: fixed;
+  top: 0;
+  left: 0;
   color: white;
   width: 100%;
   z-index: 99;
-  height: 80px;
+  height: 70px;
 }
 
 #ethan {
-  position: absolute;
-  bottom: 5px;
-  left: 0;
-  width: 100%;
   font-family: "logo", serif;
   font-size: 1.5em;
   z-index: 1;
-}
-
-.ethantop {
-  top: 0;
+  transition: color 0.5s;
 }
 
 #entrebgcanvas {
@@ -164,11 +146,12 @@ a:hover {
 }
 
 .leftcanvas {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 80px;
+  display: none;
+}
+
+#menucontain .menuscroll {
+  border-bottom: 1px solid darken($secondcolor, 10%);
+  background: $secondcolor;
 }
 
 #menu {
@@ -177,21 +160,10 @@ a:hover {
   align-items: center;
   color: $menutextc;
   font-family: $headertext;
-  background: $secondcolorrgba;
-  height: 80px;
-  width: 95%;
-  margin: 0 auto;
-  border-radius: 10px 10px 0 0;
+  height: 70px;
+  width: 100%;
+  border-bottom: 1px dashed darken($secondcolor, 10%);
   transition: all 0.5s;
-}
-
-.menuclass {
-  padding-bottom: 15px;  
-}
-
-.menuswitch {
-  padding-bottom: 0;
-  padding-top: 15px;
 }
 
 .menunow {
@@ -202,25 +174,29 @@ a:hover {
 }
 
 #menutabscontain{
-  width: 100%;
+  width: 65%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
 .menutabs {
-  width: 20%;
+  padding: 2px;
   text-align: center;
-  font-size: 0.7em;
+  font-size: 0.8em;
   z-index: 99;
 
   a {
-    color: black;
+    color: white;
+
+    &:hover {
+      color: $thirdcolor;
+    }
   }
 }
 
 .faicon {
-  font-size: $menuiconsize;
+  display: none;
 }
 
 .menutitle {
@@ -233,22 +209,23 @@ a:hover {
   
 #splashcont {
   height: 100vh;
-  background-image: $frontimage;
-  background-size: auto 100%;
+  background-image: url('../images/entresm.jpg');
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 #titlecard {
   margin-bottom: 180px;
   width: 100%;
-  margin: 13vh auto 0;
+  margin: 0 auto 3vh;
   text-align: center;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   color: white;
 }
@@ -260,35 +237,19 @@ a:hover {
   font-size: 1.8em;
 }
 
-#mobilewarning {
-  width: 80%;
-  border-radius: 15px;
-  background: rgba(255,0,0, 0.7);
-  margin: 5vh auto 0;
-  padding: 10px;
-  font-size: 0.8em;
-}
-
-.languages{
-  width: 80%; 
-  font-size: 0.6em;
-  margin: 0 auto;
-}
-
-#languagetitle {
-  margin-top: 4vh;
-  margin-bottom: 10px;
-}
-
 #choicescont {
   display: flex;
   flex-direction: column; 
+  justify-content: flex-end;
   height: 100px;
   transition: height 0.5s;
+  display: absolute;
+  top: 0;
+  left:0;
 }
 
 #splashcont .choicesconto{
-  height: 30px;
+  height: 100px;
 }
 
 #choicestab {
@@ -1163,25 +1124,27 @@ span{
 
 @media screen and (orientation : landscape) {
 
-  #titlecard {
-    margin-top:10px;
-    width: 90%;
-  }  
-
-  #nametitle {
-    font-size: 1.4em;
-    padding: 10px;
+  #choices {
+    width: 50%;
+    height: 55px;
   }
 
-  #mobilewarning {
-    margin-top: 3vh;
-    width: 60%;
+  #choicescont {
+    height: 80px;
+  }
+
+  #choicestab {
+    width: 20%;
+    height: 25px;
     font-size: 0.6em;
   }
 
-  #languagetitle {
-    margin-top: 5vh;
-    margin-bottom: 2vh
+  .choicesbox {
+    margin-top:0;
+  }
+
+  #cheatsheet {
+    font-size: 0.6em;
   }
 
   .allovers {
@@ -1228,19 +1191,6 @@ span{
   #nametitle {
     font-size: 2.5em;
     margin-top: 10vh;
-  }
-
-  #mobilewarning {
-    width: 60%;
-    margin-top: 18vh;
-  }
-
-  #languagetitle {
-    margin-top: 4vh;
-  }
-
-  .languages {
-    font-size: 1em;
   }
 
   #biocontain {
@@ -1302,20 +1252,6 @@ span{
     font-size: 1.8em;
     padding: 5px;
   }
-
-  #languagetitle {
-    margin-top: 3vh;
-    margin-bottom: 3vh;
-  }
-
-  .languages {
-    font-size: 1em;
-  }
-
-  #mobilewarning {
-    margin-top: 0;
-  }
-
 }
 
 @media screen and (min-width: 768px) {
@@ -1344,11 +1280,11 @@ span{
     height: 100%;
     margin-top: 0;
     padding-top: 0;
-    width: 90%;
+    width: 100%;
     margin-right: auto;
     margin-left: auto;
-    border-radius: 10px 10px 0 0;
     transition: all 1s;
+    background: rgba(71,71,71,0.3);
   }
 
   .menutabs {
@@ -1394,19 +1330,6 @@ span{
     font-size: 3em;
   }
   
-  #mobilewarning {
-    display: none;
-  }
-
-  .languages {
-    width: 60%;
-    font-size: 0.8em;
-  }
-
-  #languagetitle {
-    margin-top: 31vh;
-  }
-
   #choicescont {
     flex-direction:row;
     align-items:center;
@@ -1632,10 +1555,6 @@ span{
   
   #nametitle {
     font-size: 2.5em;
-  }
-
-  #languagetitle {
-    margin-top: 5vh;
   }
 
   #inquiryform {
@@ -2020,10 +1939,6 @@ span{
 
   #titlecard {
     margin-top: 16vh;
-  }
-
-  #languagetitle {
-    margin-top: 29vh;
   }
 
   #biocontain {
