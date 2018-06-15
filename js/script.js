@@ -443,6 +443,8 @@ function circles() {
       let y = Math.random() * (canvas.height - radius*2) + radius;
       let dx = Math.floor(Math.random() * 3) + 0.6;
       let dy = Math.floor(Math.random() * 2) + 0.8;
+      dx *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
+      dy *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
       circleArray.push(new Circle(x, y, dx, dy, radius));
     }
   }
@@ -785,24 +787,23 @@ function processData(allText) {
   const allTextLines = allText.split(/\r\n|\n/);
   const headers = allTextLines[0].split(',');
   const text = allTextLines[1].split(',');
-  const headersS = headers.map(item => item = item.replace("_", " "));
   const dates = $("#dates"); 
   
   for(let i=text.length-1; i>=0; i--) {
-    const day = headersS[i];
+    const day = headers[i];
     let date = document.createElement("option");
     date.textContent = day;
     date.value = day;
     dates.append(date);
   }
 
-  $('#blogday').text(headersS[headersS.length-1]);
+  $('#blogday').text(headers[headers.length-1]);
   $('#blogtext').text(text[text.length-1]);
   $('option').addClass('blogoption');
 
   $('#dates').change ((e) => {
       const day = e.target.value;
-      const index = headersS.indexOf(day);
+      const index = headers.indexOf(day);
       if(day === "choose") return;
       $('#blogday').text(day);
       $('#blogtext').text(text[index]);

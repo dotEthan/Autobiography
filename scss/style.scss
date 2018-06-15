@@ -41,7 +41,7 @@ $menutextc: white;
 $menuiconsize: 1.5em;
 $menufontsize: 0.9em;
 $smallmenupaddingtop: 20px;
-$frontimage: url('../images/bgp.jpg');
+$frontimage: url('../images/bgp1.jpg');
 $biowritingc: black;
 $biowritings: 2.7em;
 $bioquestions: 2.5em;
@@ -889,6 +889,7 @@ a:link {
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  width: 100%;
 }
 
 #blogcentercont {

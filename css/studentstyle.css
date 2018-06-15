@@ -922,13 +922,6 @@ span {
   #nametitle {
     font-size: 1.4em;
     padding: 10px; }
-  #mobilewarning {
-    margin-top: 3vh;
-    width: 60%;
-    font-size: 0.6em; }
-  #languagetitle {
-    margin-top: 5vh;
-    margin-bottom: vh; }
   #biocontain {
     width: 90%; }
   .historytext {
@@ -988,12 +981,6 @@ span {
     font-size: 1em; }
   #nametitle {
     font-size: 2.5em; }
-  #mobilewarning {
-    width: 60%; }
-  #languagetitle {
-    margin-top: 14vh; }
-  .languages {
-    font-size: 1em; }
   #biocontain {
     width: 75%; }
   #biowriting {
@@ -1027,13 +1014,6 @@ span {
   #nametitle {
     font-size: 1.8em;
     padding: 5px; }
-  #languagetitle {
-    margin-top: 3vh;
-    margin-bottom: 3vh; }
-  .languages {
-    font-size: 0.6em; }
-  #mobilewarning {
-    margin-top: 0; }
   .historytext {
     font-size: 0.7em; } }
 
@@ -1094,13 +1074,6 @@ span {
     margin-top: 12vh; }
   #nametitle {
     font-size: 3em; }
-  #mobilewarning {
-    display: none; }
-  .languages {
-    width: 60%;
-    font-size: 0.8em; }
-  #languagetitle {
-    margin-top: 31vh; }
   #choicescont {
     flex-direction: row;
     align-items: center;
@@ -1247,9 +1220,7 @@ span {
   #titlecard {
     margin-top: 13vh; }
   #nametitle {
-    font-size: 2.5em; }
-  #languagetitle {
-    margin-top: 20vh; } }
+    font-size: 2.5em; } }
 
 @media screen and (min-width: 992px) {
   #ethan {
@@ -1265,8 +1236,6 @@ span {
     text-shadow: 0px 3px #ad00ad, 0px 4px 5px #404040; }
   #titlecard {
     margin-top: 12vh; }
-  #languagetitle {
-    margin-top: 28vh; }
   #bioquote {
     font-size: 1em; }
   #biopersonal {

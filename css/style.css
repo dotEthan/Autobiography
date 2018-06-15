@@ -148,7 +148,7 @@ a:link {
 
 #splashcont {
   height: 100vh;
-  background-image: url("../images/bgp.jpg");
+  background-image: url("../images/bgp1.jpg");
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
@@ -712,7 +712,8 @@ a:link {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px; }
+  padding: 20px;
+  width: 100%; }
 
 #blogcentercont {
   display: flex;

@@ -1154,17 +1154,6 @@ span{
     padding: 10px;
   }
 
-  #mobilewarning {
-    margin-top: 3vh;
-    width: 60%;
-    font-size: 0.6em;
-  }
-
-  #languagetitle {
-    margin-top: 5vh;
-    margin-bottom: vh
-  }
-
   #biocontain {
     width: 90%;
   }
@@ -1271,18 +1260,6 @@ span{
     font-size: 2.5em;
   }
 
-  #mobilewarning {
-    width: 60%;
-  }
-
-  #languagetitle {
-    margin-top: 14vh;
-  }
-
-  .languages {
-    font-size: 1em;
-  }
-
   #biocontain {
     width: 75%;
   }
@@ -1345,19 +1322,6 @@ span{
   #nametitle{
     font-size: 1.8em;
     padding: 5px;
-  }
-
-  #languagetitle {
-    margin-top: 3vh;
-    margin-bottom: 3vh;
-  }
-
-  .languages {
-    font-size: 0.6em;
-  }
-
-  #mobilewarning {
-    margin-top: 0;
   }
 
   .historytext {
@@ -1450,19 +1414,6 @@ span{
   
   #nametitle {
     font-size: 3em;
-  }
-  
-  #mobilewarning {
-    display: none;
-  }
-
-  .languages {
-    width: 60%;
-    font-size: 0.8em;
-  }
-
-  #languagetitle {
-    margin-top: 31vh;
   }
 
   #choicescont {
@@ -1694,10 +1645,6 @@ span{
     font-size: 2.5em;
   }
   
-  #languagetitle {
-    margin-top: 20vh;
-  }
-
 }
 
 @media screen and (min-width: 992px) {
@@ -1729,11 +1676,7 @@ span{
   #titlecard {
     margin-top: 12vh;
   }
-
-  #languagetitle {
-    margin-top: 28vh;
-  }
-
+  
   #bioquote {
     font-size: 1em;
   }
