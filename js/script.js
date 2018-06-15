@@ -69,7 +69,6 @@ let bioChange = document.getElementById('ageinfo');
 
 $('#studentb').click(function() {
   window.cancelAnimationFrame(animating); 
-  // $('#particles-js').css({'display': 'none'});
   if (studentDone == 0) {
     $('#load').css({'display': 'block'});
     $('#contents').css({'display': 'none'});
@@ -809,3 +808,16 @@ function processData(allText) {
       $('#blogtext').text(text[index]);
   })
 }
+
+
+//-------------------
+// desktop Icons
+//-------------------
+
+$('.mottoitems').click(showOver);
+
+function showOver() {
+  console.log(this.id);
+  $('#' + this.id + "over").toggleClass('motto--over--open');
+}
+

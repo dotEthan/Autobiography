@@ -65,6 +65,18 @@ a:link {
   text-decoration: none;
 }    
 
+.pink {
+  color: #f9245e;
+}
+
+.yellow {
+  color: #e7db60;
+}
+
+.green {
+  color: #a6e22b;
+}
+
 #load {
   position: absolute;
   left: 50%;
@@ -206,6 +218,7 @@ a:link {
   
 #splashcont {
   height: 100vh;
+  padding-top: 130px;
   background-image: $frontimage;
   background-size: cover;
   background-position: top center;
@@ -218,17 +231,110 @@ a:link {
 
 
 #titlecard {
-  margin-bottom: 180px;
   width: 100%;
-  margin: 17vh auto 0;
+  margin: 0 auto;
   text-align: center;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
   color: white;
+  align-items: center;
+  flex-grow: 1;
 }
 
 #motto {
+  width: 80%;
+  margin-bottom: 60px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.mottoitems--sm {
+  width: 20%;
+  padding: 5px;
+  cursor: pointer;
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    img {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.mottoitems__text {
+  font-size: 0.7em;
+  margin-top: 5px;
+}
+
+.motto--over--each {
+  position: fixed;
+  bottom: 100px;
+  left: 10%;
+  width: 0;
+  height: 0;
   display: none;
+  flex-direction: column;
+  text-align: left;
+  font-size: 0.45em;
+  line-height: 1.4em;
+  transition: width 1s;
+  overflow: hidden;
+}
+
+.motto--over--open {
+  // top: 100px;
+  display: flex;
+//   flex-direction: column;
+  width: 80%;
+  height: 50vh;
+}
+
+#sublime {
+  top: 90px;
+  // left: 9%;
+}
+
+#theme {
+  top: 97px;
+  // left: 9.9%;
+}
+
+.editor--content--text {
+  text-indent: 5em each-line;
+}
+
+.editor--title {
+  padding: 5px;
+  background: white;
+  height: 25px;
+  color: black;
+  display: flex;
+  padding: 5px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.editor--content {
+  background: #282923;
+  display: flex;
+  padding: 10px 5px;
+}
+
+.editor--content--nums {
+  width: 10%;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.editor--status {
+  background: #abb1ba;
+  height: 15px;
 }
 
 #nametitle {
@@ -239,7 +345,7 @@ a:link {
 }
 
 #choicescont {
-  display: flex;
+  display: none;
   flex-direction: column; 
   justify-content: flex-end;
   height: 100px;
@@ -1407,6 +1513,7 @@ textarea{
     background-position: top center;
     background-size: cover;
     justify-content: space-between;
+    padding-top: 0;
   }
 
   #titlecard {
@@ -1422,13 +1529,9 @@ textarea{
     display: none;
   }
 
-  .languages {
-    width: 60%;
-    font-size: 0.8em;
-  }
-
-  #languagetitle {
-    margin-top: 31vh;
+  #motto {
+    width: 100%;
+    // background: url(../images/osbar.png) no-repeat;
   }
 
   #choicescont {
