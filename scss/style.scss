@@ -273,10 +273,8 @@ a:link {
 
 .motto--over--each {
   position: fixed;
-  bottom: 100px;
+  bottom: 150px;
   left: 10%;
-  width: 0;
-  height: 0;
   display: none;
   flex-direction: column;
   text-align: left;
@@ -284,37 +282,32 @@ a:link {
   line-height: 1.4em;
   transition: width 1s;
   overflow: hidden;
+  border: 1px solid #abb1ba;
 }
 
-.motto--over--open {
-  // top: 100px;
+.motto--over__open {
   display: flex;
-//   flex-direction: column;
   width: 80%;
-  height: 50vh;
 }
 
 #sublime {
   top: 90px;
-  // left: 9%;
 }
 
 #theme {
   top: 97px;
-  // left: 9.9%;
 }
 
 .editor--content--text {
   text-indent: 5em each-line;
 }
 
-.editor--title {
+.over--title {
   padding: 5px;
   background: white;
-  height: 25px;
+  height: 20px;
   color: black;
   display: flex;
-  padding: 5px;
   align-items: center;
   justify-content: space-between;
 }
@@ -337,6 +330,40 @@ a:link {
   height: 15px;
 }
 
+.over--content {
+  height: 30vh;
+  background: white;
+  border: 1px solid #abb1ba;
+  border-right: none;
+  border-left: none;
+  display: flex;
+}
+
+.over--content--each {
+  margin: 8px;
+  color: black;
+  font-size: 1.3em;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  img {
+    margin-bottom: 5px;
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.over--status {
+  background: white;
+  height: 15px;
+  color: black;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+}
+
 #nametitle {
   width: 100%;              
   font-family: $headertext;
@@ -344,12 +371,18 @@ a:link {
   font-size: 1.8em;
 }
 
-#choicescont {
+.choicescont {
   display: none;
   flex-direction: column; 
   justify-content: flex-end;
-  height: 100px;
-  transition: height 0.5s;
+  position: fixed;
+  top: 200px;
+  left: 15%;
+  width: 70%;
+}
+
+.choices__open {
+  display: flex;
 }
 
 #splashcont .choicesconto{
@@ -357,23 +390,10 @@ a:link {
 }
 
 #choicestab {
-  height: 30px;
-  width: 30%;
-  margin: 0 auto;
-  background: $secondcolor;
-  border: 3px solid $thirdcolor; 
-  border-radius: 10px 10px 0 0;
-  border-bottom: none;
-  display: flex;
-  align-items: flex-end;
-  justify-content:center;
-  padding-bottom: 5px;
-  color: white;
-  font-size: 0.7em;
-  cursor: pointer;
+  display: none;
 }
 
-#choicescont .choiceso {
+.choicescont .choiceso {
   height: 0;
 }
     
@@ -384,10 +404,6 @@ a:link {
   align-items: center;
   width: 80%;
   margin: 0 auto;
-  background: $secondcolor;
-  border: 3px solid $thirdcolor;
-  border-radius: 10px 10px 0 0;
-  border-bottom: none;
   height: 70px;
   overflow: hidden;
   transition: height 0.5s;
@@ -452,7 +468,7 @@ a:link {
   align-items: flex-end;
   justify-content: center;
   font-weight: bold;
-  color: white;
+  color: black;
   font-size: 0.6em;
 
   &:hover {
@@ -1234,25 +1250,22 @@ textarea{
 
 @media screen and (orientation : landscape) {
 
-
-  #titlecard {
-    margin-top:70px;
-    width: 90%;
-  }  
+  #splashcont {
+    padding-top: 80px;
+  }
 
   #nametitle {
     font-size: 1.4em;
     padding: 10px;
   }
 
-  #mobilewarning {
-    margin-top: 0vh;
-    width: 60%;
-    font-size: 0.6em;
+  #motto {
+    margin-bottom: 20px;
+    width: 45%;
   }
 
-  #languagetitle {
-    margin-top: 3vh;
+  .motto--over__open {
+    width: 60%;
   }
 
   .allovers {
@@ -1534,7 +1547,7 @@ textarea{
     // background: url(../images/osbar.png) no-repeat;
   }
 
-  #choicescont {
+  .choicescont {
     flex-direction:row;
     align-items:center;
     justify-content:flex-end;

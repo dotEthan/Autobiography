@@ -818,6 +818,6 @@ $('.mottoitems').click(showOver);
 
 function showOver() {
   console.log(this.id);
-  $('#' + this.id + "over").toggleClass('motto--over--open');
+  $('#' + this.id + "over").toggleClass('motto--over__open');
 }
 
