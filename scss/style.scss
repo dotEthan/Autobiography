@@ -281,35 +281,33 @@ a:link {
   margin-top: 5px;
 }
 
-.motto__over__each {
+#motto__over {
   position: absolute;
-  bottom: 150px;
-  left: 10%;
+  bottom: 90px;
+  width: 90%;
+  display:flex;
+  flex-wrap: wrap;
+}
+
+.motto__over__each {
   display: none;
   flex-direction: column;
   text-align: left;
   font-size: 0.45em;
   line-height: 1.4em;
-  transition: width 1s;
-  overflow: hidden;
+  transition: all 1s;
   border: 1px solid #abb1ba;
+  width: 100%;
 }
 
 .motto__over__open {
   display: flex;
-  width: 80%;
+  width: 50%;
+  flex-grow: 1;
 }
 
-#sublime {
-  top: 90px;
-}
-
-#theme {
-  top: 97px;
-}
-
-.editor--content--text {
-  text-indent: 5em each-line;
+.theme__each {
+  cursor: pointer;
 }
 
 .over--title {
@@ -347,10 +345,11 @@ a:link {
   border-right: none;
   border-left: none;
   display: flex;
+  justify-content: space-around;
+  padding: 10px;
 }
 
 .over--content--each {
-  margin: 8px;
   color: black;
   font-size: 1.3em;
   font-weight: bold;
@@ -1274,13 +1273,20 @@ textarea{
     width: 45%;
   }
 
+  #motto__over {
+    bottom: 60px;
+  }
+
   .motto__over__open {
-    width: 60%;
+    width:90%;
   }
 
   .motto__over__each {
-    left: 20%;
     bottom: 20vh;
+  }
+
+  .top {
+    z-index:99;
   }
 
   .allovers {
@@ -1400,18 +1406,17 @@ textarea{
 @media screen and (min-width: 576px) and (orientation: landscape) {
 
   #titlecard {
-    width: 70%;
+    width: 90%;
   }
 
   #nametitle{
     font-size: 1.8em;
     padding: 5px;
   }
-
-  .motto__over__each {
-    bottom: 22vh;
+  
+  #motto__over {
+    bottom: 70px;
   }
-
 }
 
 @media screen and (min-width: 768px) {
@@ -1540,6 +1545,10 @@ textarea{
     margin-bottom: 50px;
   }
 
+  .mottoitems--sm {
+    width: 18%;
+  }
+
   .mottoitems__imgsm {
     display:none;
   }
@@ -1550,7 +1559,7 @@ textarea{
   }
 
   .mottoitems__img {
-    height: 90px;
+    height: 85px;
   }
 
   .mottoitems__text {
@@ -1559,10 +1568,36 @@ textarea{
     transform: translateY(-15px);
   }
 
-  .motto__over__each {
+  #motto__over {
     position: absolute;
-    top:0;
-    left:0;
+    bottom: 150px;
+    left: 0;
+    height: 50vh;
+  }
+
+  .motto__over__each {
+    bottom: 18vh;
+    margin: 10px;
+    width: auto;
+    // height: 100px;
+  }
+
+  .motto__over__open {
+
+  }
+
+  .over--title {
+    height: 30px;  }
+
+  .editor--content {
+  }
+
+  .editor--status {
+    height: 30px;
+  }
+
+  .over--content {
+    height: 15vh;
   }
 
   #biocontain {

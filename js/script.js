@@ -67,7 +67,7 @@ let languageChange = document.getElementById('languagetitle');
 let languageChange2 = document.getElementById('languagetitlec');
 let bioChange = document.getElementById('ageinfo');
 
-$('#studentb').click(function() {
+$('#studentb, #studentpro').click(function() {
   window.cancelAnimationFrame(animating); 
   if (studentDone == 0) {
     $('#load').css({'display': 'block'});
@@ -88,7 +88,7 @@ $('#studentb').click(function() {
   doneResizing();
 });
 
-$('#entreb').click(function() {
+$('#entreb, #entrepro').click(function() {
   window.cancelAnimationFrame(animating); 
   if (entreDone == 0) {
     $('#load').css({'display': 'block'});
@@ -109,7 +109,7 @@ $('#entreb').click(function() {
   doneResizing();
 });
   
-$('#programmerb').click(function() {
+$('#programmerb, #programmerpro').click(function() {
   $('link[rel=stylesheet]').attr({href : 'css/style.css'}); 
   theme = 'programmer';
   $('#entrebgcanvas').css("display", "none");
@@ -636,15 +636,14 @@ function doneResizing() {
     large = true;
 
   } else {
-      $('#entrebgcanvas').css({'display': 'none'});
+    $('#entrebgcanvas').css({'display': 'none'});
 
-      if (theme === 'student') {
-      $('#entrebgcanvas').css({'display': 'block'});
-        timeOut = setTimeout(circles, 1000);
-      }
+    if (theme === 'student') {
+    $('#entrebgcanvas').css({'display': 'block'});
+      timeOut = setTimeout(circles, 1000);
+    }
 
-      large = false;
-
+    large = false;
   }
 }
 
@@ -740,7 +739,6 @@ function endO(e) {
 }
 
 function drawer() {
-  console.log(open);
   if (large && !open) {
     $('#choices').toggleClass('choicesh'); 
     $('#choices')[0].addEventListener('transitionend', endH);
@@ -815,9 +813,16 @@ function processData(allText) {
 //-------------------
 
 $('.mottoitems').click(showOver);
-
 function showOver() {
-  console.log(this.id);
-  $('#' + this.id + "over").toggleClass('motto--over__open');
+  let classNames = $('#' + this.id + "over")[0].className;
+  if (classNames.includes('motto__over__open')) {
+    $('#' + this.id + "over").removeClass('motto__over__open');
+  } else {
+    if (!large) {
+      $('.motto__over__each').removeClass('motto__over__open');
+      $('#' + this.id + "over").addClass('motto__over__open');
+    } else {
+      $('#' + this.id + "over").addClass('motto__over__open');
+    }
+  }
 }
-
