@@ -206,8 +206,7 @@ a:link {
 }
 
 .faicon{
-  font-size: 1.5em;
-
+  display: none;
 }
 
 .menutitle {
@@ -248,22 +247,33 @@ a:link {
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
+  position: relative;
 }
 
 .mottoitems--sm {
   width: 20%;
   padding: 5px;
-  cursor: pointer;
   display: flex; 
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.mottoitems__img {
+  cursor: pointer;
 
   &:hover {
-    img {
-      transform: scale(1.05);
-    }
+    transform: scale(1.05); 
   }
+
+}
+
+.mottoitems__imgsm {
+  display: block;
+}
+
+.mottoitems__imglg {
+  display: none;
 }
 
 .mottoitems__text {
@@ -271,8 +281,8 @@ a:link {
   margin-top: 5px;
 }
 
-.motto--over--each {
-  position: fixed;
+.motto__over__each {
+  position: absolute;
   bottom: 150px;
   left: 10%;
   display: none;
@@ -285,7 +295,7 @@ a:link {
   border: 1px solid #abb1ba;
 }
 
-.motto--over__open {
+.motto__over__open {
   display: flex;
   width: 80%;
 }
@@ -1264,8 +1274,13 @@ textarea{
     width: 45%;
   }
 
-  .motto--over__open {
+  .motto__over__open {
     width: 60%;
+  }
+
+  .motto__over__each {
+    left: 20%;
+    bottom: 20vh;
   }
 
   .allovers {
@@ -1333,18 +1348,6 @@ textarea{
     font-size: 2.5em;
   }
 
-  #mobilewarning {
-    width: 60%;
-  }
-
-  #languagetitle {
-    margin-top: 14vh;
-  }
-
-  .languages {
-    font-size: 1em;
-  }
-
   #biocontain {
     width: 75%;
   }
@@ -1405,17 +1408,8 @@ textarea{
     padding: 5px;
   }
 
-  #languagetitle {
-    margin-top: 3vh;
-    margin-bottom: 3vh;
-  }
-
-  .languages {
-    font-size: 0.6em;
-  }
-
-  #mobilewarning {
-    margin-top: 0;
+  .motto__over__each {
+    bottom: 22vh;
   }
 
 }
@@ -1468,6 +1462,7 @@ textarea{
     z-index: 99;
     background: $thirdcolor;
     font-size: 0.6em;
+    padding: 10px;
 
 
     a {
@@ -1530,65 +1525,44 @@ textarea{
   }
 
   #titlecard {
-    margin-bottom: 50px;
-    margin-top: 12vh;
+    margin: 0;
   }
   
   #nametitle {
     font-size: 3em;
   }
-  
-  #mobilewarning {
-    display: none;
-  }
 
   #motto {
-    width: 100%;
-    // background: url(../images/osbar.png) no-repeat;
+    width: 80%;
+    background: url(../images/menubar.png) no-repeat;
+    background-size: contain;
+    background-position: bottom center;
+    margin-bottom: 50px;
   }
 
-  .choicescont {
-    flex-direction:row;
-    align-items:center;
-    justify-content:flex-end;
-    position:absolute;
-    right: 0;
-    top:50vh;
-    transform: translateY(-50%);
-    height: auto;
-
-    .choicesh {
-      width: 0px;
-      height: 300px;
-    }
+  .mottoitems__imgsm {
+    display:none;
   }
 
-  #choicestab {
-    flex-direction: column;
-    align-items:center;
-    border:4px solid $thirdcolor;
-    border-radius: 10px 10px 0 0;
-    border-bottom: none;
-    transform-origin: right bottom;
-    transform: rotate(270deg) translateX(65px);
-    width: 100px;
-    padding-bottom: 0;
+  .mottoitems__imglg {
+    width: 75px;
+    display: block;
   }
 
-  #choices {
-    flex-direction: column;
-    border:4px solid $thirdcolor;
-    border-radius: 10px 0 0 10px;
-    border-right: none;
-    height: 300px;
-    width: 150px;
-    transition: all 1s;
-    justify-content: flex-start;
+  .mottoitems__img {
+    height: 90px;
   }
 
-  #legocont {
-    flex-direction: column;
-    height: 200px;
+  .mottoitems__text {
+    color: white;
+    z-index: 99;
+    transform: translateY(-15px);
+  }
+
+  .motto__over__each {
+    position: absolute;
+    top:0;
+    left:0;
   }
 
   #biocontain {
