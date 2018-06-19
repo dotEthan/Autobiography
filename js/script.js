@@ -811,18 +811,52 @@ function processData(allText) {
 //-------------------
 // desktop Icons
 //-------------------
+let openArr = [];
 
 $('.mottoitems').click(showOver);
 function showOver() {
-  let classNames = $('#' + this.id + "over")[0].className;
-  if (classNames.includes('motto__over__open')) {
-    $('#' + this.id + "over").removeClass('motto__over__open');
+  const classNames = $('#' + this.id + "over")[0].className;
+  const openArrL = openArr.length;
+
+  if (!large) {
+    $('.motto__over__each').removeClass('motto__over__open--one');
+    $('#' + this.id + "over").addClass('motto__over__open--one');
   } else {
-    if (!large) {
-      $('.motto__over__each').removeClass('motto__over__open');
-      $('#' + this.id + "over").addClass('motto__over__open');
-    } else {
-      $('#' + this.id + "over").addClass('motto__over__open');
+    if (openArr.includes(this.id)) {
+      openArr.splice(openArr.indexOf(this.id),1);
+      if (openArrL === 2) {
+        $('#' + this.id + "over").removeClass('motto__over__open--multi');
+        $('#' + openArr[0] + "over").removeClass('motto__over__open--multi').addClass('motto__over__open--one');
+      } else if (openArrL > 2) {
+        $('#' + this.id + "over").removeClass('motto__over__open--multi');
+      } else {
+        $('#' + this.id + "over").removeClass('motto__over__open--one');        
+      }
+    } else { //does not include 
+      if (openArrL === 0) {
+        openArr.push(this.id);
+        $('#' + this.id + "over").addClass('motto__over__open--one');        
+      } else if (openArrL === 1) {
+        $('#' + openArr[0] + "over").removeClass('motto__over__open--one').addClass('motto__over__open--multi');
+        openArr.push(this.id);
+        $('#' + this.id + "over").addClass('motto__over__open--multi');  
+      } else {
+        openArr.push(this.id);
+        $('#' + this.id + "over").addClass('motto__over__open--multi');  
+      }
     }
+    //   console.log('');
+    //   openArr.push(this.id);
+    //   $('#' + this.id + "over").addClass('motto__over__open--one');
+    // } else if (openArr.length === 1) { 
+    //   console.log('');
+    //   $('#' + openArr[0] + "over").removeClass('motto__over__open--one');
+    //   $('#' + openArr[0] + "over").addClass('motto__over__open--multi');
+    //   openArr.push(this.id);
+    //   $('#' + this.id + "over").addClass('motto__over__open--multi');
+    // } else {
+    //   console.log('else');
+    //   $('#' + this.id + "over").removeClass('motto__over__open--multi');
+    // }
   }
 }

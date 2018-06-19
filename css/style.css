@@ -226,7 +226,7 @@ a:link {
   border: 1px solid #abb1ba;
   width: 100%; }
 
-.motto__over__open {
+.motto__over__open--one {
   display: flex;
   width: 50%;
   flex-grow: 1; }
@@ -1022,7 +1022,7 @@ textarea {
     width: 45%; }
   #motto__over {
     bottom: 60px; }
-  .motto__over__open {
+  .motto__over__open--one {
     width: 90%; }
   .motto__over__each {
     bottom: 20vh; }
@@ -1201,11 +1201,29 @@ textarea {
     position: absolute;
     bottom: 150px;
     left: 0;
-    height: 50vh; }
+    height: 60vh;
+    justify-content: center; }
+  #motto__over__contain {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center; }
   .motto__over__each {
-    bottom: 18vh;
     margin: 10px;
-    width: auto; }
+    width: auto;
+    height: 25vh;
+    font-size: 0.7em; }
+  .motto__over__open--one {
+    height: auto;
+    width: 50%;
+    flex-grow: 0; }
+  .motto__over__open--multi {
+    display: flex;
+    width: 45%; }
+  .editor--content {
+    flex-grow: 1; }
   .over--title {
     height: 30px; }
   .editor--status {
