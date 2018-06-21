@@ -660,7 +660,7 @@ doneResizing();
 // History Hover
 //------------------------
 
-$('.flexbox-slide').hover(function (e) {
+$('.flexbox-slide').hover(function () {
   const thisSlide = $(this);
   const slideArray = $('.flexbox-slide');
   const textBlock = $(this).find('.textblock');
@@ -766,7 +766,9 @@ function showExplain() {
   $('#cheatsheetexp').toggleClass('csopen');
 }
 
+//-------------------
 // CSV
+//-------------------
 
 let lines = [];
 let blogDay;
@@ -812,51 +814,55 @@ function processData(allText) {
 // desktop Icons
 //-------------------
 let openArr = [];
+let click = 0;
+$('.over__title__close').click(closeEle);
+
+function closeEle() {
+  const ele = this.parentNode.parentNode.id;
+  $(`#${ele}`).removeClass('motto__over__open--one');
+  console.log(ele);
+}
 
 $('.mottoitems').click(showOver);
+
 function showOver() {
-  const classNames = $('#' + this.id + "over")[0].className;
+  const eleId = this.id;
+  const classNames = $(`#${eleId}over`)[0].className;
   const openArrL = openArr.length;
 
   if (!large) {
-    $('.motto__over__each').removeClass('motto__over__open--one');
-    $('#' + this.id + "over").addClass('motto__over__open--one');
+    if($(`#${eleId}over`).hasClass('motto__over__open--one')) {
+      $(`#${eleId}over`).removeClass('motto__over__open--one');
+    } else {
+      $('.motto__over__each').removeClass('motto__over__open--one');
+      $(`#${eleId}over`).addClass('motto__over__open--one');
+    }
   } else {
-    if (openArr.includes(this.id)) {
-      openArr.splice(openArr.indexOf(this.id),1);
+    if (openArr.includes(eleId)) {
+      openArr.splice(openArr.indexOf(eleId),1);
       if (openArrL === 2) {
-        $('#' + this.id + "over").removeClass('motto__over__open--multi');
+        $(`#${eleId}over`).removeClass('motto__over__open--multi');
         $('#' + openArr[0] + "over").removeClass('motto__over__open--multi').addClass('motto__over__open--one');
       } else if (openArrL > 2) {
-        $('#' + this.id + "over").removeClass('motto__over__open--multi');
+        $(`#${eleId}over`).removeClass('motto__over__open--multi');
       } else {
-        $('#' + this.id + "over").removeClass('motto__over__open--one');        
+        $(`#${eleId}over`).removeClass('motto__over__open--one');        
       }
-    } else { //does not include 
+    } else {  
+      console.log(click);
+      $(`#${eleId}over`).css('order', click+1);
       if (openArrL === 0) {
-        openArr.push(this.id);
-        $('#' + this.id + "over").addClass('motto__over__open--one');        
+        openArr.push(eleId);   
+        $(`#${eleId}over`).addClass('motto__over__open--one');   
       } else if (openArrL === 1) {
         $('#' + openArr[0] + "over").removeClass('motto__over__open--one').addClass('motto__over__open--multi');
-        openArr.push(this.id);
+        openArr.push(eleId);
         $('#' + this.id + "over").addClass('motto__over__open--multi');  
       } else {
-        openArr.push(this.id);
-        $('#' + this.id + "over").addClass('motto__over__open--multi');  
+        openArr.push(eleId);
+        $(`#${eleId}over`).addClass('motto__over__open--multi');  
       }
+      click++;
     }
-    //   console.log('');
-    //   openArr.push(this.id);
-    //   $('#' + this.id + "over").addClass('motto__over__open--one');
-    // } else if (openArr.length === 1) { 
-    //   console.log('');
-    //   $('#' + openArr[0] + "over").removeClass('motto__over__open--one');
-    //   $('#' + openArr[0] + "over").addClass('motto__over__open--multi');
-    //   openArr.push(this.id);
-    //   $('#' + this.id + "over").addClass('motto__over__open--multi');
-    // } else {
-    //   console.log('else');
-    //   $('#' + this.id + "over").removeClass('motto__over__open--multi');
-    // }
   }
 }
