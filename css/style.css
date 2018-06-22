@@ -157,7 +157,7 @@ a:link {
 
 #splashcont {
   height: 100vh;
-  padding-top: 130px;
+  padding-top: 23vh;
   background-image: url("../images/bgp1.jpg");
   background-size: cover;
   background-position: top center;
@@ -180,13 +180,13 @@ a:link {
 
 #motto {
   width: 80%;
-  margin-bottom: 60px;
+  margin-bottom: 10vh;
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
   position: relative; }
 
-.mottoitems--sm {
+.motto__items--sm {
   width: 20%;
   padding: 5px;
   display: flex;
@@ -194,29 +194,30 @@ a:link {
   justify-content: center;
   align-items: center; }
 
-.mottoitems__img {
+.motto__items__img {
   cursor: pointer; }
-  .mottoitems__img:hover {
+  .motto__items__img:hover {
     transform: scale(1.05); }
 
-.mottoitems__img--sm {
+.motto__items__img--sm {
   display: block; }
 
-.mottoitems__img--lg {
+.motto__items__img--lg {
   display: none; }
 
-.mottoitems__text {
+.motto__items__text {
   font-size: 0.7em;
-  margin-top: 5px; }
+  margin-top: 5px;
+  cursor: pointer; }
 
-#motto__over {
+.motto__over {
   position: absolute;
-  bottom: 90px;
-  width: 90%;
+  bottom: 28vh;
+  width: 70%;
   display: flex;
   flex-wrap: wrap; }
 
-#motto__over__contain {
+.motto__over__contain {
   width: 100%; }
 
 .motto__over__each {
@@ -247,7 +248,7 @@ a:link {
   padding: 5px; }
 
 .over__title__close {
-  width: 20px;
+  width: 25px;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -258,12 +259,14 @@ a:link {
     background: #eee; }
 
 .editor__content {
+  height: 27vh;
   background: #282923;
   display: flex;
-  padding: 10px 5px; }
+  padding: 10px 5px 10px 0;
+  overflow: hidden; }
 
 .editor__content__nums {
-  width: 10%;
+  width: 20px;
   padding: 0 10px;
   display: flex;
   flex-direction: column; }
@@ -276,13 +279,12 @@ a:link {
   height: 15px; }
 
 .over__content {
-  height: 30vh;
+  height: 27vh;
   background: white;
   border: 1px solid #abb1ba;
   border-right: none;
   border-left: none;
   display: flex;
-  justify-content: space-around;
   padding: 10px; }
 
 .over__content__each {
@@ -292,7 +294,15 @@ a:link {
   display: flex;
   flex-direction: column;
   align-items: center; }
-  .over__content__each img {
+
+.theme__each__icon {
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 55px;
+  height: 55px; }
+  .theme__each__icon img {
     margin-bottom: 5px;
     width: 30px;
     height: 30px; }
@@ -1037,12 +1047,13 @@ textarea {
   #motto {
     margin-bottom: 20px;
     width: 45%; }
-  #motto__over {
-    bottom: 60px; }
-  .motto__over__open--one {
-    width: 90%; }
+  .motto__over {
+    width: 50%; }
+  .over__content__each {
+    font-size: 2.2em; }
   .motto__over__each {
-    bottom: 20vh; }
+    bottom: 20vh;
+    font-size: 0.25em; }
   .top {
     z-index: 99; }
   .allovers {
@@ -1081,6 +1092,13 @@ textarea {
     font-size: 0.8em; }
   #nametitle {
     font-size: 2.5em; }
+  .editor__content {
+    font-size: 1.8em;
+    line-height: 1.2em; }
+  .editor__content__nums {
+    width: 25px; }
+  .editor__content--indented {
+    margin-left: 10px; }
   #biocontain {
     width: 75%; }
   #biowriting {
@@ -1111,9 +1129,7 @@ textarea {
     width: 90%; }
   #nametitle {
     font-size: 1.8em;
-    padding: 5px; }
-  #motto__over {
-    bottom: 70px; } }
+    padding: 5px; } }
 
 @media screen and (min-width: 768px) {
   #menucontain {
@@ -1189,10 +1205,10 @@ textarea {
     align-items: center;
     background-position: top center;
     background-size: cover;
-    justify-content: space-between;
-    padding-top: 0; }
+    justify-content: space-between; }
   #titlecard {
-    margin: 0; }
+    margin: 0;
+    position: relative; }
   #nametitle {
     font-size: 3em; }
   #motto {
@@ -1201,27 +1217,32 @@ textarea {
     background-size: contain;
     background-position: bottom center;
     margin-bottom: 50px; }
-  .mottoitems--sm {
-    width: 18%; }
-  .mottoitems__img--sm {
+  .motto__items--sm {
+    width: auto; }
+    .motto__items--sm:hover .motto__items__text {
+      background: rgba(64, 167, 243, 0.9); }
+  .motto__items__img--sm {
     display: none; }
-  .mottoitems__img--lg {
+  .motto__items__img--lg {
     width: 75px;
     display: block; }
-  .mottoitems__img {
+  .motto__items__img {
     height: 85px; }
-  .mottoitems__text {
+  .motto__items__text {
     color: white;
     z-index: 99;
-    transform: translateY(-15px); }
-  #motto__over {
+    transform: translateY(-10px);
+    background: rgba(64, 167, 243, 0.4);
+    padding: 5px;
+    border-radius: 6px; }
+  .motto__over {
     position: absolute;
-    bottom: 150px;
+    top: 10vh;
+    bottom: 20vh;
     left: 7%;
-    height: 60vh;
     justify-content: center;
     width: 90%; }
-  #motto__over__contain {
+  .motto__over__contain {
     width: auto;
     position: relative;
     display: flex;
@@ -1240,11 +1261,14 @@ textarea {
     font-size: 0.48em; }
   .motto__over__open--multi {
     display: flex;
-    width: 25vw;
+    width: 30vw;
     height: 20vh;
-    font-size: 0.4em; }
+    font-size: 0.4em;
+    min-width: 280px; }
   .over__title {
     height: 20px; }
+  .editor__content__nums {
+    width: 30px; }
   .editor--content {
     flex-grow: 1; }
   .editor--status {
@@ -1252,6 +1276,11 @@ textarea {
   .over--content {
     height: 15vh;
     flex-grow: 1; }
+  .over__content__each {
+    font-size: 1.5em; }
+  .theme__each__icon img {
+    width: 35px;
+    height: 35px; }
   #biocontain {
     width: 90%;
     margin: 0;
@@ -1359,20 +1388,26 @@ textarea {
     font-size: 0.75em; } }
 
 @media screen and (min-width: 768px) and (orientation: landscape) {
+  #splashcont {
+    padding-top: 0; }
   #titlecard {
     margin-top: 13vh; }
   #nametitle {
     font-size: 2.5em; }
   #languagetitle {
     margin-top: 20vh; }
-  .motto__over__open--one {
-    height: 30vh; }
   .motto__over__open--multi {
-    height: 30vh; }
+    height: 33vh;
+    min-width: 230px; }
+  .over__content__each {
+    font-size: 1.5em; }
+  .editor__content {
+    font-size: 1.3em;
+    line-height: 1.3em; }
   #inquiryform {
     width: 70%; } }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 992px) and (orientation: landscape) {
   #menucontain {
     width: 7%; }
   .menutabs {
@@ -1380,10 +1415,10 @@ textarea {
   #contentcontain {
     width: 93%;
     left: 7%; }
-  #titlecard {
-    margin-top: 12vh; }
-  #languagetitle {
-    margin-top: 28vh; }
+  .motto__over {
+    top: 5vh; }
+  .motto__over__open--multi {
+    height: 25vh; }
   #biopersonaltext {
     padding-right: 10px; }
   #portimage {
@@ -1493,6 +1528,10 @@ textarea {
 @media screen and (min-width: 1200px) {
   .menutabs {
     font-size: 0.7em; }
+  .motto__over {
+    top: 0; }
+  .editor__content {
+    font-size: 1.4em; }
   #biocontain {
     align-items: center;
     flex-direction: row;
@@ -1539,6 +1578,14 @@ textarea {
     font-size: 0.85em; }
   #nametitle {
     font-size: 4em; }
+  .motto__over__each {
+    font-size: 0.55em; }
+  .theme__each__icon {
+    width: 85px;
+    height: 85px; }
+    .theme__each__icon img {
+      width: 65px;
+      height: 65px; }
   #biocontain {
     width: 75%;
     margin: 60px 0; }

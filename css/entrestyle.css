@@ -30,7 +30,7 @@ a:link {
   text-decoration: none; }
 
 a:hover {
-  color: #fb7e19; }
+  color: #78D16C; }
 
 #load {
   position: absolute;
@@ -110,8 +110,8 @@ a:hover {
   display: none; }
 
 #menucontain .menuscroll {
-  border-bottom: 1px solid #585858;
-  background: #717171; }
+  border-bottom: 1px solid #639a9d;
+  background: #82AEB1; }
 
 #menu {
   display: flex;
@@ -121,11 +121,11 @@ a:hover {
   font-family: "Raleway", serif;
   height: 70px;
   width: 100%;
-  border-bottom: 1px dashed #585858;
+  border-bottom: 1px dashed #639a9d;
   transition: all 0.5s; }
 
 .menunow {
-  color: #e0e6ed;
+  color: #668586;
   font-size: 1.2em;
   transition: all 1s;
   font-weight: bold; }
@@ -144,7 +144,7 @@ a:hover {
   .menutabs a {
     color: white; }
     .menutabs a:hover {
-      color: #fb7e19; }
+      color: #78D16C; }
 
 .faicon {
   display: none; }
@@ -198,8 +198,8 @@ a:hover {
   height: 30px;
   width: 30%;
   margin: 0 auto;
-  background: #717171;
-  border: 3px solid #fb7e19;
+  background: #82AEB1;
+  border: 3px solid #78D16C;
   border-radius: 10px 10px 0 0;
   border-bottom: none;
   display: flex;
@@ -220,8 +220,8 @@ a:hover {
   align-items: center;
   width: 80%;
   margin: 0 auto;
-  background: #717171;
-  border: 3px solid #fb7e19;
+  background: #82AEB1;
+  border: 3px solid #78D16C;
   border-radius: 10px 10px 0 0;
   border-bottom: none;
   height: 70px;
@@ -253,7 +253,7 @@ a:hover {
   background-size: cover;
   transform: translateY(-5px); }
   .lego:hover .choicesbox {
-    color: #fb7e19; }
+    color: #78D16C; }
 
 #studentb {
   background-image: url("../images/reading.svg"); }
@@ -277,14 +277,14 @@ a:hover {
   color: white;
   font-size: 0.6em; }
   .choicesbox:hover {
-    color: #fb7e19; }
+    color: #78D16C; }
 
 #cheatsheet a {
   font-size: 0.7em;
   color: white;
   padding: 5px; }
   #cheatsheet a:hover {
-    color: #fb7e19; }
+    color: #78D16C; }
 
 #choices .csopen {
   display: flex; }
@@ -302,7 +302,7 @@ a:hover {
   z-index: 99;
   padding: 25px;
   font-size: 0.8em;
-  border: 3px solid #fb7e19;
+  border: 3px solid #78D16C;
   border-radius: 25px; }
 
 #cheatsheetexpclose {
@@ -314,10 +314,10 @@ a:hover {
 #cheatsheetexptitle {
   margin-bottom: 10px;
   font-weight: bold;
-  color: #717171; }
+  color: #82AEB1; }
 
 .slice {
-  background: #e0e6ed;
+  background: #668586;
   padding: 25px; }
 
 #bioinfo {
@@ -393,9 +393,9 @@ a:hover {
   padding: 5px;
   text-align: left; }
   #thanksright a {
-    color: #717171; }
+    color: #82AEB1; }
     #thanksright a:hover {
-      color: #fb7e19; }
+      color: #78D16C; }
 
 #thanksleft {
   width: 15%;
@@ -407,7 +407,7 @@ a:hover {
   flex-direction: column; }
 
 #historyslice {
-  background-color: #7e7e7e; }
+  background-color: #92b8bb; }
 
 .protitle {
   font-family: "Raleway", serif;
@@ -417,7 +417,7 @@ a:hover {
   text-decoration: underline;
   margin: 20px 0 35px;
   font-weight: bold;
-  color: #fb7e19;
+  color: #78D16C;
   text-decoration: none; }
 
 .slider-container {
@@ -517,28 +517,28 @@ a:hover {
 .nowcalled {
   font-size: 0.9em; }
   .nowcalled a {
-    color: #717171; }
+    color: #82AEB1; }
     .nowcalled a:hover {
-      color: #fb7e19; }
+      color: #78D16C; }
 
 #inscriberslide {
-  background: #6B7A8F; }
+  background: #A1ACD1; }
 
 #teachingslide {
-  background: #F7C331; }
+  background: #87F5FB; }
 
 #englishslide {
-  background: #6B7A8F; }
+  background: #A1ACD1; }
 
 #freggieslide {
-  background: #F7C331; }
+  background: #87F5FB; }
 
 #winterslide {
-  background: #6B7A8F; }
+  background: #A1ACD1; }
 
 #projectslice {
   position: relative;
-  background: #e0e6ed; }
+  background: #668586; }
 
 #projectcont {
   width: 90%;
@@ -570,7 +570,7 @@ a:hover {
     right: 0;
     left: 0; }
   .project:hover .protext {
-    background-color: #fb7e19;
+    background-color: #78D16C;
     margin: 15px 0; }
 
 .project:after {
@@ -666,7 +666,7 @@ a:hover {
   font-size: 0.7em; }
 
 #overlayurl a {
-  color: #fb7e19;
+  color: #78D16C;
   font-size: 0.6em; }
 
 .overlayright {
@@ -681,7 +681,7 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
   padding: 0px;
-  background-color: #7e7e7e;
+  background-color: #92b8bb;
   width: 100%;
   color: white;
   position: relative; }
@@ -701,18 +701,18 @@ a:hover {
   padding: 5px; }
 
 .buttonstyle {
-  background-color: #717171;
+  background-color: #82AEB1;
   padding: 10px;
   border-radius: 10px;
   font-size: 0.7em;
-  border: 2px solid #0b0b0b;
+  border: 2px solid #283e3f;
   cursor: pointer;
   color: white; }
   .buttonstyle:hover {
-    background-color: #fb7e19; }
+    background-color: #78D16C; }
 
 #blogcenter {
-  background: #e0e6ed;
+  background: #668586;
   color: black;
   display: flex;
   flex-direction: column;
@@ -734,7 +734,7 @@ a:hover {
 #blogcont {
   text-align: left;
   font-size: 0.8em;
-  border: 1px solid #9fb2c8;
+  border: 1px solid #3a4c4c;
   border-radius: 20px;
   width: 85%;
   margin-bottom: 15px;
@@ -755,18 +755,18 @@ a:hover {
 #resumehalf {
   padding: 20px;
   width: 100%;
-  background-color: #585858;
+  background-color: #639a9d;
   font-size: 0.8em;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center; }
   #resumehalf .buttonstyle {
-    background-color: #585858;
-    border: 2px solid #8b8b8b;
+    background-color: #639a9d;
+    border: 2px solid #a1c2c5;
     color: white; }
     #resumehalf .buttonstyle:hover {
-      background-color: #fb7e19; }
+      background-color: #78D16C; }
 
 #update {
   font-size: 0.6em;
@@ -825,15 +825,15 @@ input {
   padding: 5px; }
 
 input[type=button] {
-  background-color: #717171;
+  background-color: #82AEB1;
   border: 1px solid white;
   font-Weight: bold;
   font-size: 18px;
   color: white;
-  border: 1px solid #717171; }
+  border: 1px solid #82AEB1; }
   input[type=button]:hover {
-    background-color: #fb7e19;
-    border: 1px solid #717171; }
+    background-color: #78D16C;
+    border: 1px solid #82AEB1; }
 
 textarea {
   width: 100%;
@@ -863,7 +863,7 @@ span {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  background-color: #e0e6ed !important;
+  background-color: #668586 !important;
   align-items: center; }
 
 #footercont {
@@ -875,7 +875,7 @@ span {
   width: 35%;
   text-align: center;
   font-size: 2em;
-  color: #717171;
+  color: #82AEB1;
   cursor: pointer; }
   .contacttype .footertext {
     font-size: .35em;
@@ -884,10 +884,10 @@ span {
     font-family: "Raleway", serif;
     margin-top: 5px; }
   .contacttype:hover {
-    color: #fb7e19; }
+    color: #78D16C; }
     .contacttype:hover .footertext {
       visibility: visible;
-      color: #fb7e19; }
+      color: #78D16C; }
 
 .fi {
   display: flex;
@@ -903,10 +903,10 @@ span {
   color: black; }
 
 .footlink a {
-  color: #717171;
+  color: #82AEB1;
   font-weight: bold; }
   .footlink a:hover {
-    color: #fb7e19; }
+    color: #78D16C; }
 
 @media screen and (orientation: landscape) {
   #choices {
@@ -1018,7 +1018,7 @@ span {
     .menutabs:hover {
       font-size: 1.3em; }
       .menutabs:hover a {
-        color: #fb7e19; }
+        color: #78D16C; }
   #splashcont {
     align-items: center;
     background-position: top center;
@@ -1044,7 +1044,7 @@ span {
   #choicestab {
     flex-direction: column;
     align-items: center;
-    border: 4px solid #fb7e19;
+    border: 4px solid #78D16C;
     border-radius: 10px 10px 0 0;
     border-bottom: none;
     transform-origin: right bottom;
@@ -1053,7 +1053,7 @@ span {
     padding-bottom: 0; }
   #choices {
     flex-direction: column;
-    border: 4px solid #fb7e19;
+    border: 4px solid #78D16C;
     border-radius: 10px 0 0 10px;
     border-right: none;
     height: 300px;
@@ -1088,9 +1088,9 @@ span {
     width: 25%; }
   #thanksright a {
     font-size: 1.2em;
-    color: #717171; }
+    color: #82AEB1; }
     #thanksright a:hover {
-      color: #fb7e19; }
+      color: #78D16C; }
   #thanksleft {
     font-size: 1.2em; }
   .protitle {
@@ -1139,14 +1139,14 @@ span {
     background: white;
     width: 30%;
     border-radius: 10px;
-    border: 3px solid #a4a4a4;
+    border: 3px solid #c1d7d8;
     padding: 10px;
     font-size: 0.8em; }
   #resumehalf {
     width: 60%;
     font-size: 1em;
     padding: 50px 50px 50px 30px;
-    background: linear-gradient(to top right, transparent 50%, #585858 50%) no-repeat, linear-gradient(to top right, transparent 0.1%, #585858 0.1%) no-repeat;
+    background: linear-gradient(to top right, transparent 50%, #639a9d 50%) no-repeat, linear-gradient(to top right, transparent 0.1%, #639a9d 0.1%) no-repeat;
     background-size: 60.5% 100%, 40% 100%;
     background-position: 0% 0%, 100% 0%;
     flex-direction: column;

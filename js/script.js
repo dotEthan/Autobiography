@@ -819,49 +819,33 @@ $('.over__title__close').click(closeEle);
 
 function closeEle() {
   const ele = this.parentNode.parentNode.id;
-  $(`#${ele}`).removeClass('motto__over__open--one');
-  console.log(ele);
+  $(`#${ele}`).removeClass('motto__over__open--one motto__over__open--multi');
+  openArr.splice(openArr.indexOf(ele.split('_')[0]));
+  console.log(openArr);
 }
 
-$('.mottoitems').click(showOver);
+$('.motto__items').click(showOver);
 
 function showOver() {
   const eleId = this.id;
-  const classNames = $(`#${eleId}over`)[0].className;
+  const classNames = $(`#${eleId}_over`)[0].className;
   const openArrL = openArr.length;
-
   if (!large) {
-    if($(`#${eleId}over`).hasClass('motto__over__open--one')) {
-      $(`#${eleId}over`).removeClass('motto__over__open--one');
+    if($(`#${eleId}_over`).hasClass('motto__over__open--one')) {
+      $(`#${eleId}_over`).removeClass('motto__over__open--one');
     } else {
       $('.motto__over__each').removeClass('motto__over__open--one');
-      $(`#${eleId}over`).addClass('motto__over__open--one');
+      $(`#${eleId}_over`).addClass('motto__over__open--one');
     }
   } else {
     if (openArr.includes(eleId)) {
       openArr.splice(openArr.indexOf(eleId),1);
-      if (openArrL === 2) {
-        $(`#${eleId}over`).removeClass('motto__over__open--multi');
-        $('#' + openArr[0] + "over").removeClass('motto__over__open--multi').addClass('motto__over__open--one');
-      } else if (openArrL > 2) {
-        $(`#${eleId}over`).removeClass('motto__over__open--multi');
-      } else {
-        $(`#${eleId}over`).removeClass('motto__over__open--one');        
-      }
+      console.log(openArr.length);
+      $(`#${eleId}_over`).removeClass('motto__over__open--multi');
     } else {  
-      console.log(click);
-      $(`#${eleId}over`).css('order', click+1);
-      if (openArrL === 0) {
-        openArr.push(eleId);   
-        $(`#${eleId}over`).addClass('motto__over__open--one');   
-      } else if (openArrL === 1) {
-        $('#' + openArr[0] + "over").removeClass('motto__over__open--one').addClass('motto__over__open--multi');
-        openArr.push(eleId);
-        $('#' + this.id + "over").addClass('motto__over__open--multi');  
-      } else {
-        openArr.push(eleId);
-        $(`#${eleId}over`).addClass('motto__over__open--multi');  
-      }
+      openArr.push(eleId);
+      $(`#${eleId}_over`).css('order', click+1);
+      $(`#${eleId}_over`).addClass('motto__over__open--multi');  
       click++;
     }
   }
