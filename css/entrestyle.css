@@ -30,7 +30,7 @@ a:link {
   text-decoration: none; }
 
 a:hover {
-  color: #78D16C; }
+  color: #4c4556; }
 
 #load {
   position: absolute;
@@ -110,8 +110,8 @@ a:hover {
   display: none; }
 
 #menucontain .menuscroll {
-  border-bottom: 1px solid #639a9d;
-  background: #82AEB1; }
+  border-bottom: 1px solid #678f1d;
+  background: #86ba25; }
 
 #menu {
   display: flex;
@@ -121,30 +121,35 @@ a:hover {
   font-family: "Raleway", serif;
   height: 70px;
   width: 100%;
-  border-bottom: 1px dashed #639a9d;
+  border-bottom: 1px dashed #678f1d;
   transition: all 0.5s; }
 
 .menunow {
-  color: #668586;
+  color: #e5e5e5;
   font-size: 1.2em;
   transition: all 1s;
   font-weight: bold; }
+
+#menu__left, #menu__right {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around; }
 
 #menutabscontain {
   width: 65%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between; }
+  justify-content: space-around; }
 
 .menutabs {
   padding: 2px;
   text-align: center;
-  font-size: 0.8em;
-  z-index: 99; }
+  font-size: 0.6em; }
   .menutabs a {
     color: white; }
     .menutabs a:hover {
-      color: #78D16C; }
+      color: #4c4556; }
 
 .faicon {
   display: none; }
@@ -155,7 +160,7 @@ a:hover {
     text-decoration: none; }
 
 #splashcont {
-  height: 100vh;
+  height: 85vh;
   background-image: url("../images/entresm.jpg");
   background-size: cover;
   background-position: center;
@@ -163,7 +168,8 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  justify-content: flex-end; }
+  justify-content: flex-end;
+  margin-bottom: 15vh; }
 
 #titlecard {
   margin-bottom: 180px;
@@ -181,36 +187,27 @@ a:hover {
   font-weight: bold;
   font-size: 1.8em; }
 
-#choicescont {
+#choices__contain {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  height: 100px;
+  height: 15vh;
+  width: 100%;
   transition: height 0.5s;
-  display: absolute;
-  top: 0;
+  position: absolute;
+  bottom: 0;
   left: 0; }
 
-#splashcont .choicesconto {
+#splashcont .choices__containo {
   height: 100px; }
 
-#choicestab {
-  height: 30px;
-  width: 30%;
-  margin: 0 auto;
-  background: #82AEB1;
-  border: 3px solid #78D16C;
-  border-radius: 10px 10px 0 0;
-  border-bottom: none;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding-bottom: 5px;
-  color: white;
-  font-size: 0.8em;
-  cursor: pointer; }
+#motto, .motto__over {
+  display: none; }
 
-#choicescont .choiceso {
+#choicestab {
+  display: none; }
+
+#choices__contain .choiceso {
   height: 0; }
 
 #choices {
@@ -218,13 +215,11 @@ a:hover {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
-  background: #82AEB1;
-  border: 3px solid #78D16C;
-  border-radius: 10px 10px 0 0;
+  background: #e5e5e5;
   border-bottom: none;
-  height: 70px;
+  height: 20vh;
   overflow: hidden;
   transition: height 0.5s; }
   #choices .cocon {
@@ -247,13 +242,14 @@ a:hover {
   align-items: center; }
 
 .lego {
-  width: 15px;
-  height: 15px;
+  width: 100%;
+  height: 100%;
   cursor: pointer;
   background-size: cover;
-  transform: translateY(-5px); }
+  transform: translateY(-5px);
+  border: 1px solid #cccccc; }
   .lego:hover .choicesbox {
-    color: #78D16C; }
+    color: #4c4556; }
 
 #studentb {
   background-image: url("../images/reading.svg"); }
@@ -274,50 +270,19 @@ a:hover {
   align-items: flex-end;
   justify-content: center;
   font-weight: bold;
-  color: white;
+  color: black;
   font-size: 0.6em; }
   .choicesbox:hover {
-    color: #78D16C; }
+    color: #4c4556; }
 
-#cheatsheet a {
-  font-size: 0.7em;
-  color: white;
-  padding: 5px; }
-  #cheatsheet a:hover {
-    color: #78D16C; }
-
-#choices .csopen {
-  display: flex; }
+#cheatsheet {
+  display: none; }
 
 #cheatsheetexp {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  position: fixed;
-  top: 50%;
-  right: 50%;
-  width: 80vw;
-  background: rgba(255, 255, 255, 0.8);
-  transform: translate(50%, -50%);
-  z-index: 99;
-  padding: 25px;
-  font-size: 0.8em;
-  border: 3px solid #78D16C;
-  border-radius: 25px; }
-
-#cheatsheetexpclose {
-  position: fixed;
-  right: 20px;
-  top: 20px;
-  cursor: pointer; }
-
-#cheatsheetexptitle {
-  margin-bottom: 10px;
-  font-weight: bold;
-  color: #82AEB1; }
+  display: none; }
 
 .slice {
-  background: #668586;
+  background: #e5e5e5;
   padding: 25px; }
 
 #bioinfo {
@@ -393,9 +358,9 @@ a:hover {
   padding: 5px;
   text-align: left; }
   #thanksright a {
-    color: #82AEB1; }
+    color: #86ba25; }
     #thanksright a:hover {
-      color: #78D16C; }
+      color: #4c4556; }
 
 #thanksleft {
   width: 15%;
@@ -407,7 +372,7 @@ a:hover {
   flex-direction: column; }
 
 #historyslice {
-  background-color: #92b8bb; }
+  background-color: #95cf29; }
 
 .protitle {
   font-family: "Raleway", serif;
@@ -417,7 +382,7 @@ a:hover {
   text-decoration: underline;
   margin: 20px 0 35px;
   font-weight: bold;
-  color: #78D16C;
+  color: #4c4556;
   text-decoration: none; }
 
 .slider-container {
@@ -517,28 +482,28 @@ a:hover {
 .nowcalled {
   font-size: 0.9em; }
   .nowcalled a {
-    color: #82AEB1; }
+    color: #86ba25; }
     .nowcalled a:hover {
-      color: #78D16C; }
+      color: #4c4556; }
 
 #inscriberslide {
-  background: #A1ACD1; }
+  background: #efa91c; }
 
 #teachingslide {
-  background: #87F5FB; }
+  background: #177b9a; }
 
 #englishslide {
-  background: #A1ACD1; }
+  background: #efa91c; }
 
 #freggieslide {
-  background: #87F5FB; }
+  background: #177b9a; }
 
 #winterslide {
-  background: #A1ACD1; }
+  background: #efa91c; }
 
 #projectslice {
   position: relative;
-  background: #668586; }
+  background: #e5e5e5; }
 
 #projectcont {
   width: 90%;
@@ -570,7 +535,7 @@ a:hover {
     right: 0;
     left: 0; }
   .project:hover .protext {
-    background-color: #78D16C;
+    background-color: #4c4556;
     margin: 15px 0; }
 
 .project:after {
@@ -666,7 +631,7 @@ a:hover {
   font-size: 0.7em; }
 
 #overlayurl a {
-  color: #78D16C;
+  color: #4c4556;
   font-size: 0.6em; }
 
 .overlayright {
@@ -681,7 +646,7 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
   padding: 0px;
-  background-color: #92b8bb;
+  background-color: #95cf29;
   width: 100%;
   color: white;
   position: relative; }
@@ -701,18 +666,18 @@ a:hover {
   padding: 5px; }
 
 .buttonstyle {
-  background-color: #82AEB1;
+  background-color: #86ba25;
   padding: 10px;
   border-radius: 10px;
   font-size: 0.7em;
-  border: 2px solid #283e3f;
+  border: 2px solid #0b1003;
   cursor: pointer;
   color: white; }
   .buttonstyle:hover {
-    background-color: #78D16C; }
+    background-color: #4c4556; }
 
 #blogcenter {
-  background: #668586;
+  background: #e5e5e5;
   color: black;
   display: flex;
   flex-direction: column;
@@ -734,7 +699,7 @@ a:hover {
 #blogcont {
   text-align: left;
   font-size: 0.8em;
-  border: 1px solid #3a4c4c;
+  border: 1px solid #b2b2b2;
   border-radius: 20px;
   width: 85%;
   margin-bottom: 15px;
@@ -755,18 +720,18 @@ a:hover {
 #resumehalf {
   padding: 20px;
   width: 100%;
-  background-color: #639a9d;
+  background-color: #678f1d;
   font-size: 0.8em;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center; }
   #resumehalf .buttonstyle {
-    background-color: #639a9d;
-    border: 2px solid #a1c2c5;
+    background-color: #678f1d;
+    border: 2px solid #a1d83a;
     color: white; }
     #resumehalf .buttonstyle:hover {
-      background-color: #78D16C; }
+      background-color: #4c4556; }
 
 #update {
   font-size: 0.6em;
@@ -825,15 +790,15 @@ input {
   padding: 5px; }
 
 input[type=button] {
-  background-color: #82AEB1;
+  background-color: #86ba25;
   border: 1px solid white;
   font-Weight: bold;
   font-size: 18px;
   color: white;
-  border: 1px solid #82AEB1; }
+  border: 1px solid #86ba25; }
   input[type=button]:hover {
-    background-color: #78D16C;
-    border: 1px solid #82AEB1; }
+    background-color: #4c4556;
+    border: 1px solid #86ba25; }
 
 textarea {
   width: 100%;
@@ -863,7 +828,7 @@ span {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  background-color: #668586 !important;
+  background-color: #e5e5e5 !important;
   align-items: center; }
 
 #footercont {
@@ -875,7 +840,7 @@ span {
   width: 35%;
   text-align: center;
   font-size: 2em;
-  color: #82AEB1;
+  color: #86ba25;
   cursor: pointer; }
   .contacttype .footertext {
     font-size: .35em;
@@ -884,10 +849,10 @@ span {
     font-family: "Raleway", serif;
     margin-top: 5px; }
   .contacttype:hover {
-    color: #78D16C; }
+    color: #4c4556; }
     .contacttype:hover .footertext {
       visibility: visible;
-      color: #78D16C; }
+      color: #4c4556; }
 
 .fi {
   display: flex;
@@ -903,21 +868,12 @@ span {
   color: black; }
 
 .footlink a {
-  color: #82AEB1;
+  color: #86ba25;
   font-weight: bold; }
   .footlink a:hover {
-    color: #78D16C; }
+    color: #4c4556; }
 
 @media screen and (orientation: landscape) {
-  #choices {
-    width: 50%;
-    height: 55px; }
-  #choicescont {
-    height: 80px; }
-  #choicestab {
-    width: 20%;
-    height: 25px;
-    font-size: 0.6em; }
   .choicesbox {
     margin-top: 0; }
   #cheatsheet {
@@ -982,9 +938,6 @@ span {
 @media screen and (min-width: 768px) {
   #ethan {
     font-size: 2em; }
-  #entrebgcanvas {
-    display: block;
-    z-index: 7; }
   #menucontain {
     height: 100px; }
   #menucontain {
@@ -1018,7 +971,7 @@ span {
     .menutabs:hover {
       font-size: 1.3em; }
       .menutabs:hover a {
-        color: #78D16C; }
+        color: #4c4556; }
   #splashcont {
     align-items: center;
     background-position: top center;
@@ -1029,40 +982,6 @@ span {
     margin-top: 12vh; }
   #nametitle {
     font-size: 3em; }
-  #choicescont {
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
-    position: absolute;
-    right: 0;
-    top: 50vh;
-    transform: translateY(-50%);
-    height: auto; }
-    #choicescont .choicesh {
-      width: 0px;
-      height: 300px; }
-  #choicestab {
-    flex-direction: column;
-    align-items: center;
-    border: 4px solid #78D16C;
-    border-radius: 10px 10px 0 0;
-    border-bottom: none;
-    transform-origin: right bottom;
-    transform: rotate(270deg) translateX(65px);
-    width: 100px;
-    padding-bottom: 0; }
-  #choices {
-    flex-direction: column;
-    border: 4px solid #78D16C;
-    border-radius: 10px 0 0 10px;
-    border-right: none;
-    height: 300px;
-    width: 150px;
-    transition: all 1s;
-    justify-content: flex-start; }
-  #legocont {
-    flex-direction: column;
-    height: 200px; }
   #biocontain {
     width: 90%;
     margin: 0;
@@ -1088,9 +1007,9 @@ span {
     width: 25%; }
   #thanksright a {
     font-size: 1.2em;
-    color: #82AEB1; }
+    color: #86ba25; }
     #thanksright a:hover {
-      color: #78D16C; }
+      color: #4c4556; }
   #thanksleft {
     font-size: 1.2em; }
   .protitle {
@@ -1139,14 +1058,14 @@ span {
     background: white;
     width: 30%;
     border-radius: 10px;
-    border: 3px solid #c1d7d8;
+    border: 3px solid #b5e065;
     padding: 10px;
     font-size: 0.8em; }
   #resumehalf {
     width: 60%;
     font-size: 1em;
     padding: 50px 50px 50px 30px;
-    background: linear-gradient(to top right, transparent 50%, #639a9d 50%) no-repeat, linear-gradient(to top right, transparent 0.1%, #639a9d 0.1%) no-repeat;
+    background: linear-gradient(to top right, transparent 50%, #678f1d 50%) no-repeat, linear-gradient(to top right, transparent 0.1%, #678f1d 0.1%) no-repeat;
     background-size: 60.5% 100%, 40% 100%;
     background-position: 0% 0%, 100% 0%;
     flex-direction: column;

@@ -93,14 +93,13 @@ a:link {
   background: #31c2fe;
   color: white;
   width: 100%;
-  z-index: 99;
-  height: 70px; }
+  z-index: 99; }
 
 #menu {
   display: flex;
   justify-content: space-around;
-  padding-top: 25px;
-  color: white; }
+  color: white;
+  height: 70px; }
 
 #entrebgcanvas {
   display: block; }
@@ -114,14 +113,15 @@ a:link {
   z-index: 0; }
 
 #ethan {
-  display: block;
   font-family: 'logo', serif;
   font-size: 1em;
   z-index: 10;
-  flex-order: 2;
   position: absolute;
   left: 50%;
-  transform: translateX(-50%); }
+  transform: translateX(-50%);
+  height: 70px;
+  display: flex;
+  align-items: center; }
 
 .menudark {
   transform: scale(1.08); }
@@ -142,8 +142,7 @@ a:link {
   text-align: center;
   cursor: pointer;
   font-size: 0.6em;
-  width: 48%;
-  line-height: 2.2em; }
+  width: 48%; }
   .menutabs a {
     color: black; }
   .menutabs:active .menutitle {
@@ -278,6 +277,10 @@ a:link {
 
 #entreb {
   background-image: url("../images/legog.png"); }
+
+.filler {
+  width: 75%;
+  height: 30px; }
 
 .choicesbox {
   margin-top: 17px;

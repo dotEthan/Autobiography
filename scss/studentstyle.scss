@@ -131,14 +131,13 @@ a:link {
   color: white;
   width: 100%;
   z-index: 99;
-  height: 70px;
 }
 
 #menu {
   display: flex;
   justify-content: space-around;
-  padding-top: 25px;
   color: $menutextc;
+  height: 70px;
 }
 
 #entrebgcanvas {
@@ -155,15 +154,15 @@ a:link {
 }
 
 #ethan {
-  display: block;
   font-family: 'logo', serif;
   font-size: 1em;
   z-index: 10;
-  flex-order: 2;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-
+  height: 70px;
+  display: flex;
+  align-items: center;
 }
 
 .menudark {
@@ -189,7 +188,6 @@ a:link {
   cursor: pointer;
   font-size: 0.6em;
   width: 48%;
-  line-height: 2.2em;
 
   a {
     color: black;
@@ -361,6 +359,11 @@ a:link {
 
 #entreb {
   background-image: url("../images/legog.png");
+}
+
+.filler {
+  width: 75%;
+  height: 30px;
 }
 
 .choicesbox {

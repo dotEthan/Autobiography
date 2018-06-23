@@ -28,11 +28,11 @@ $secondcolorrgba: rgba(134, 194, 50, 0.7);
 // $thirdcolor: #fb7e19;
 // $fourthcolor: #6B7A8F;
 // $fifthcolor: #F7C331;
-$firstcolor: #668586;
-$secondcolor: #82AEB1;
-$thirdcolor: #78D16C;
-$fourthcolor: #A1ACD1;
-$fifthcolor: #87F5FB;
+$firstcolor: #e5e5e5;
+$secondcolor: #86ba25;
+$thirdcolor: #4c4556;
+$fourthcolor: #efa91c;
+$fifthcolor: #177b9a;
 
 $projectoverlayradius: 5px;
 // $headertext: 'Open-Sans', sans-serif;
@@ -178,18 +178,25 @@ a:hover {
   font-weight: bold;
 }
 
+#menu__left, #menu__right {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
 #menutabscontain{
   width: 65%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .menutabs {
   padding: 2px;
   text-align: center;
-  font-size: 0.8em;
-  z-index: 99;
+  font-size: 0.6em;
+  // width: 48%;
 
   a {
     color: white;
@@ -213,7 +220,7 @@ a:hover {
 }
   
 #splashcont {
-  height: 100vh;
+  height: 85vh;
   background-image: url('../images/entresm.jpg');
   background-size: cover;
   background-position: center;
@@ -222,6 +229,7 @@ a:hover {
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: flex-end;
+  margin-bottom: 15vh;
 }
 
 #titlecard {
@@ -242,39 +250,32 @@ a:hover {
   font-size: 1.8em;
 }
 
-#choicescont {
+#choices__contain {
   display: flex;
   flex-direction: column; 
   justify-content: flex-end;
-  height: 100px;
+  height: 15vh;
+  width: 100%;
   transition: height 0.5s;
-  display: absolute;
-  top: 0;
+  position: absolute;
+  bottom: 0;
   left:0;
+
 }
 
-#splashcont .choicesconto{
+#splashcont .choices__containo{
   height: 100px;
+}
+
+#motto, .motto__over {
+  display: none;
 }
 
 #choicestab {
-  height: 30px;
-  width: 30%;
-  margin: 0 auto;
-  background: $secondcolor;
-  border: 3px solid $thirdcolor; 
-  border-radius: 10px 10px 0 0;
-  border-bottom: none;
-  display: flex;
-  align-items: flex-end;
-  justify-content:center;
-  padding-bottom: 5px;
-  color: white;
-  font-size: 0.8em;
-  cursor: pointer;
+  display: none;
 }
 
-#choicescont .choiceso {
+#choices__contain .choiceso {
   height: 0;
 }
     
@@ -283,13 +284,11 @@ a:hover {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
-  background: $secondcolor;
-  border: 3px solid $thirdcolor;
-  border-radius: 10px 10px 0 0;
+  background: $firstcolor;
   border-bottom: none;
-  height: 70px;
+  height: 20vh;
   overflow: hidden;
   transition: height 0.5s;
 
@@ -317,11 +316,12 @@ a:hover {
 }
 
 .lego {
-  width: 15px;
-  height: 15px;
+  width: 100%;
+  height: 100%;
   cursor: pointer;
   background-size: cover; 
   transform: translateY(-5px);
+  border: 1px solid darken($firstcolor, 10%);
 
   &:hover {
     .choicesbox {
@@ -353,7 +353,7 @@ a:hover {
   align-items: flex-end;
   justify-content: center;
   font-weight: bold;
-  color: white;
+  color: black;
   font-size: 0.6em;
 
   &:hover {
@@ -361,48 +361,12 @@ a:hover {
   }
 }
 
-#cheatsheet a {
-  font-size: 0.7em;
-  color: white;
-  padding: 5px;
-
-  &:hover {
-    color: $thirdcolor;
-  }
-}
-
-#choices .csopen {
-  display: flex;
+#cheatsheet {
+  display: none;
 }
 
 #cheatsheetexp {
   display: none;
-  flex-direction: column;
-  justify-content: center;
-  position: fixed;
-  top: 50%;
-  right: 50%;
-  width: 80vw;
-  background: rgba(255,255,255,0.8);
-  transform: translate(50%,-50%);
-  z-index: 99;
-  padding: 25px;
-  font-size: 0.8em;
-  border: 3px solid $thirdcolor;
-  border-radius: 25px;
-}
-
-#cheatsheetexpclose {
-  position: fixed;
-  right: 20px;
-  top: 20px;
-  cursor: pointer;
-}
-
-#cheatsheetexptitle {
-  margin-bottom: 10px;
-  font-weight: bold;
-  color: $secondcolor;
 }
 
 .slice {
@@ -1129,21 +1093,6 @@ span{
 
 @media screen and (orientation : landscape) {
 
-  #choices {
-    width: 50%;
-    height: 55px;
-  }
-
-  #choicescont {
-    height: 80px;
-  }
-
-  #choicestab {
-    width: 20%;
-    height: 25px;
-    font-size: 0.6em;
-  }
-
   .choicesbox {
     margin-top:0;
   }
@@ -1265,11 +1214,6 @@ span{
     font-size: 2em;
   }
 
-  #entrebgcanvas {
-    display: block;
-    z-index: 7;
-  }
-
   #menucontain {
     height: 100px;
   }
@@ -1333,50 +1277,6 @@ span{
   
   #nametitle {
     font-size: 3em;
-  }
-  
-  #choicescont {
-    flex-direction:row;
-    align-items:center;
-    justify-content:flex-end;
-    position:absolute;
-    right: 0;
-    top:50vh;
-    transform: translateY(-50%);
-    height: auto;
-
-    .choicesh {
-      width: 0px;
-      height: 300px;
-    }
-  }
-
-  #choicestab {
-    flex-direction: column;
-    align-items:center;
-    border:4px solid $thirdcolor;
-    border-radius: 10px 10px 0 0;
-    border-bottom: none;
-    transform-origin: right bottom;
-    transform: rotate(270deg) translateX(65px);
-    width: 100px;
-    padding-bottom: 0;
-  }
-
-  #choices {
-    flex-direction: column;
-    border:4px solid $thirdcolor;
-    border-radius: 10px 0 0 10px;
-    border-right: none;
-    height: 300px;
-    width: 150px;
-    transition: all 1s;
-    justify-content: flex-start;
-  }
-
-  #legocont {
-    flex-direction: column;
-    height: 200px;
   }
 
   

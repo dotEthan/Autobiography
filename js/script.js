@@ -96,6 +96,7 @@ $('#entreb, #entrepro').click(function() {
     pageDelay(showPage);
     entreDone++;
   }
+  $('#entrebgcanvas').css("display", "none");
   $('link[rel=stylesheet]').attr({href : 'css/entrestyle.css'});
   theme = 'entre';
   setTextContent(textChange, 'was designed and built to facilitate entrepreneurial success. If you want a leg up on the competition,');
@@ -834,25 +835,36 @@ $('.motto__items').click(showOver);
 
 function showOver() {
   const eleId = this.id;
-  const classNames = $(`#${eleId}_over`)[0].className;
+  const classNames = $(`#${eleId}__over`)[0].className;
   const openArrL = openArr.length;
+  console.log(openArr);
+
   if (!large) {
-    if($(`#${eleId}_over`).hasClass('motto__over__open--one')) {
-      $(`#${eleId}_over`).removeClass('motto__over__open--one');
+    if(openArr.includes(eleId)) {
+      $(`#${eleId}__over`).removeClass('motto__over__open--one');
+      openArr.splice(openArr.indexOf(eleId),1);
     } else {
+      if (!$('motto__over').hasClass('motto__over--open')) {
+        $('.motto__over').addClass('motto__over--open');
+      } 
       $('.motto__over__each').removeClass('motto__over__open--one');
-      $(`#${eleId}_over`).addClass('motto__over__open--one');
+      openArr = [];
+      $(`#${eleId}__over`).addClass('motto__over__open--one');
+      openArr.push(eleId);
     }
   } else {
     if (openArr.includes(eleId)) {
       openArr.splice(openArr.indexOf(eleId),1);
-      console.log(openArr.length);
-      $(`#${eleId}_over`).removeClass('motto__over__open--multi');
+      $(`#${eleId}__over`).removeClass('motto__over__open--multi');
     } else {  
+      if (!$('motto__over').hasClass('motto__over--open')) {
+        $('.motto__over').addClass('motto__over--open');
+      } 
       openArr.push(eleId);
-      $(`#${eleId}_over`).css('order', click+1);
-      $(`#${eleId}_over`).addClass('motto__over__open--multi');  
+      $(`#${eleId}__over`).css('order', click+1);
+      $(`#${eleId}__over`).addClass('motto__over__open--multi');  
       click++;
     }
   }
+  if(openArr.length === 0) $('.motto__over').removeClass('motto__over--open');
 }
