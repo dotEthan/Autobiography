@@ -321,125 +321,8 @@ a:link {
   font-weight: bold;
   font-size: 1.8em; }
 
-.choicescont {
-  display: none;
-  flex-direction: column;
-  justify-content: flex-end;
-  position: fixed;
-  top: 200px;
-  left: 15%;
-  width: 70%; }
-
-.choices__open {
-  display: flex; }
-
-#splashcont .choicesconto {
-  height: 100px; }
-
-#choicestab {
+#choices__contain {
   display: none; }
-
-.choicescont .choiceso {
-  height: 0; }
-
-#choices {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  width: 80%;
-  margin: 0 auto;
-  height: 70px;
-  overflow: hidden;
-  transition: height 0.5s; }
-  #choices .cocon {
-    opacity: 0; }
-
-#choicesoptcont {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 5px;
-  opacity: 1;
-  transition: opacity 0.3s; }
-
-#legocont {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center; }
-
-.lego {
-  width: 15px;
-  height: 15px;
-  cursor: pointer;
-  background-size: cover;
-  transform: translateY(-5px); }
-  .lego:hover .choicesbox {
-    color: #40a7f3; }
-
-#studentb {
-  background-image: url("../images/reading.svg"); }
-
-#entreb {
-  background-image: url("../images/teacher.svg"); }
-
-#programmerb {
-  background-image: url("../images/learning.svg"); }
-
-.filler {
-  width: 15px;
-  height: 15px; }
-
-.choicesbox {
-  margin-top: 5px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  font-weight: bold;
-  color: black;
-  font-size: 0.6em; }
-  .choicesbox:hover {
-    color: #40a7f3; }
-
-#cheatsheet a {
-  font-size: 0.7em;
-  color: white;
-  padding: 5px; }
-  #cheatsheet a:hover {
-    color: #40a7f3; }
-
-#choices .csopen {
-  display: flex; }
-
-#cheatsheetexp {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  position: fixed;
-  top: 50%;
-  right: 50%;
-  width: 80vw;
-  background: rgba(255, 255, 255, 0.8);
-  transform: translate(50%, -50%);
-  z-index: 99;
-  padding: 25px;
-  font-size: 0.8em;
-  border: 3px solid #40a7f3;
-  border-radius: 25px; }
-
-#cheatsheetexpclose {
-  position: fixed;
-  right: 20px;
-  top: 20px;
-  cursor: pointer; }
-
-#cheatsheetexptitle {
-  margin-bottom: 10px;
-  font-weight: bold;
-  color: #4c4556; }
 
 .slice {
   background: #e5e5e5;
@@ -1162,6 +1045,12 @@ textarea {
     justify-content: space-between;
     align-items: center;
     height: 90vh; }
+  #menu__left, #menu__right {
+    width: 110%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; }
   .menutabs {
     width: 110%;
     display: flex;
@@ -1239,7 +1128,6 @@ textarea {
     position: absolute;
     top: 10vh;
     bottom: 20vh;
-    left: 7%;
     justify-content: center;
     width: 90%; }
   .motto__over__contain {

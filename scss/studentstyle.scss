@@ -134,11 +134,11 @@ a:link {
   height: 70px;
 }
 
-#ethan {
-  display: none;
-  font-family: 'logo', serif;
-  font-size: 1.5em;
-  z-index: 10;
+#menu {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 25px;
+  color: $menutextc;
 }
 
 #entrebgcanvas {
@@ -151,13 +151,19 @@ a:link {
   top: 0;
   left: 0;
   height: 70px;
+  z-index:0;
 }
 
-#menu {
-  display: flex;
-  justify-content: space-around;
-  padding-top: 25px;
-  color: $menutextc;
+#ethan {
+  display: block;
+  font-family: 'logo', serif;
+  font-size: 1em;
+  z-index: 10;
+  flex-order: 2;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
 }
 
 .menudark {
@@ -165,16 +171,25 @@ a:link {
 }
 
 #menutabscontain{
-  width: 90%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
+  z-index: 99;
+}
+
+#menu__left, #menu__right {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .menutabs {
   text-align: center;
   cursor: pointer;
-  font-size: 0.8em;
-  z-index: 8;
+  font-size: 0.6em;
+  width: 48%;
+  line-height: 2.2em;
 
   a {
     color: black;
@@ -187,11 +202,9 @@ a:link {
       transform: translateY(2px)
     }
   }
-
 }
 
 .faicon{
-  font-size: 1.5;
   display: none;
 }
 
@@ -245,21 +258,26 @@ a:link {
   display: none;
 }
 
-#choicescont {
+.motto__over {
+  display: none;
+}
+
+#choices__contain {
   display: flex;
   flex-direction: column; 
   justify-content: flex-end;
-  height: 100px;
+  height: 113px;
   transition: height 0.5s;
 }
 
-#splashcont .choicesconto{
-  height: 100px;
+#splashcont .choices__containo{
+  height: 33px;
 }
 
 #choicestab {
-  height: 30px;
+  height: 33px;
   width: 30%;
+  max-width: 150px;
   margin: 0 auto;
   background: $secondcolor;
   border: 3px solid $thirdcolor; 
@@ -274,7 +292,7 @@ a:link {
   cursor: pointer;
 }
 
-#choicescont .choiceso {
+#choices__contain .choiceso {
   height: 0px;
 }
     
@@ -284,12 +302,13 @@ a:link {
   justify-content: space-around;
   align-items: center;
   width: 80%;
+  max-width: 400px;
   margin: 0 auto;
   background: $secondcolor;
   border: 3px solid $thirdcolor;
   border-radius: 10px 10px 0 0;
   border-bottom: none;
-  height: 70px;
+  height: 80px;
   overflow: hidden;
   transition: height 0.5s;
 
@@ -314,14 +333,16 @@ a:link {
   display: flex;
   justify-content:space-around;
   align-items: center;
+  padding-top: 5px;
 }
 
 .lego {
-  width: 15px;
-  height: 15px;
+  width: 23%;
+  height: 40px;
   cursor: pointer;
-  background-size: cover; 
-  transform: translateY(-5px);
+  background-size: contain; 
+  background-repeat: no-repeat;
+  background-position: center;
 
   &:hover {
     .choicesbox {
@@ -343,27 +364,13 @@ a:link {
 }
 
 .choicesbox {
-  margin-top: 11px;
+  margin-top: 17px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
   font-weight: bold;
   color: white;
   font-size: 0.5em;
-
-  &:hover {
-    color: $thirdcolor;
-  }
-}
-
-.choicesbox {
-  margin-top: 5px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  font-weight: bold;
-  color: white;
-  font-size: 0.6em;
 
   &:hover {
     color: $thirdcolor;
@@ -406,6 +413,7 @@ a:link {
   right: 20px;
   top: 20px;
   cursor: pointer;
+  color: red;
 }
 
 #cheatsheetexptitle {
@@ -1145,13 +1153,21 @@ span{
 
 
   #titlecard {
-    margin-top:70px;
+    margin-top:80px;
     width: 90%;
   }  
 
   #nametitle {
     font-size: 1.4em;
-    padding: 10px;
+    padding: 15px;
+  }
+
+  .lego {
+    height: 30px;
+  }
+
+  .choicesbox {
+    margin-top: 10px;
   }
 
   #biocontain {
@@ -1211,49 +1227,21 @@ span{
 
 @media screen and (min-width: 576px) {
 
-  #menucontain {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  #menutabscontain {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
-  }
 
   #ethan {
-    display: block;
-    order: 3;
     font-size: 1.7em;
   }
 
-  #biomenu {
-    order: 1;
-  }
-
-  #historymenu {
-    order: 1;
-  }
-
-  #projectmenu {
-    order: 4;
-  }
-
-  #contactme {
-    order: 4;
-  }
-
   #menu {
-    width: 90%;
-    justify-content: space-around;
-    padding-top: 0;
+    padding-top: 20px;
   }
 
   .menutabs {
     font-size: 1em;
+  }
+
+  .choicesbox {
+    font-size: 0.7em;
   }
 
   #nametitle {
@@ -1324,6 +1312,10 @@ span{
     padding: 5px;
   }
 
+  .choicesbox {
+    font-size: 0.55em;
+  }
+
   .historytext {
     font-size: 0.7em;
   }
@@ -1332,8 +1324,20 @@ span{
 
   
 @media screen and (min-width: 768px) {
+  
   #menucontain { 
     height: 100px;
+    justify-content: flex-end;
+    display:flex;
+  }
+
+  .menutabs {
+    width: auto;
+  }
+
+  #menu {
+    width:80%;
+    padding-top: 0;
   }
 
   .leftcanvas {
@@ -1344,18 +1348,18 @@ span{
     display: flex;
     align-items: center;
     justify-content: center;
-    position:fixed;
+    position:absolute;
     top: 10px;
     left: 40px;
     background: $firstcolor;
     border-radius: 50%;
     padding: 20px;
-    z-index: 99;
     border: 4px solid $thirdcolor;
     color: $thirdcolor;
     font-size: 1em;
     height: 110px;
     width: 110px;
+    transform: none;
 
     &:hover {
       transform: rotate(2deg);
@@ -1371,34 +1375,25 @@ span{
     }
   }
 
-  #menutabscontain{
-    padding-left: 120px;
+  #menu__left, #menu__right {
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  #menutabscontain {
+    justify-content: center;
   }
 
   .menutabs {
-    height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: all 1s;
-    margin: 15px 0;
-    z-index: 99;
-    padding: 5px 3px;
-    border-radius: 10px;
-    font-size: 1em;
-
-
-    a {
-      text-decoration: none;
-    }
-
-    &:hover {
-      
-      a {
-        color: $firstcolor;
-      }
-    }
-  }
+    font-size: 1.2em;
+}
   
   #splashcont {
     align-items: center;
@@ -1416,7 +1411,7 @@ span{
     font-size: 3em;
   }
 
-  #choicescont {
+  #choices__contain {
     flex-direction:row;
     align-items:center;
     justify-content:flex-end;
@@ -1453,6 +1448,11 @@ span{
     width: 150px;
     transition: all 1s;
     justify-content: flex-start;
+  }
+
+  .lego {
+    width: 75px;
+    height: 50px;
   }
 
   #legocont {
@@ -1651,9 +1651,6 @@ span{
 
   #ethan {
     font-size: 1.4em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 
   .menutabs {
@@ -1668,7 +1665,7 @@ span{
   }
 
   .menutitle {
-    font-size: 2em;
+    font-size: 1.4em;
     text-shadow: 0px 3px $thirdcolor,
                  0px 4px 5px #404040;
   }
@@ -1863,6 +1860,12 @@ span{
     font-size: 0.8em;
   }
 
+}
+
+@media screen and (min-width: 992px) and (orientation: landscape) {
+  #titlecard {
+    margin-top: 20vh;
+  } 
 }
 
 @media screen and (min-width: 1200px) {

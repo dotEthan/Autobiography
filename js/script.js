@@ -720,7 +720,9 @@ $('.flexbox-slide').hover(function () {
 
 }); 
 
+//----------------
 // drawer
+//----------------
 
 let open = true;
 $('#choicestab').click(drawer);
@@ -732,27 +734,32 @@ function endH(e) {
 function endO(e) { 
   if(e.propertyName === "opacity" && !large && !open) {
       $('#choices').toggleClass('choiceso');
-      $('#choicescont').toggleClass('choicesconto');
+      $('#choices__contain').toggleClass('choices__containo');
   } else if(e.propertyName === "opacity" && large && !open) {
     $('#choices').toggleClass('choicesh');
   }
 }
 
 function drawer() {
+  console.log($('#choices').css("height"));
   if (large && !open) {
+    console.log('large and closed');
     $('#choices').toggleClass('choicesh'); 
     $('#choices')[0].addEventListener('transitionend', endH);
     open = true;
   } else if (large && open) {
+    console.log('large and open');
     $('#choicesoptcont').toggleClass('cocon');
     $('#choices')[0].addEventListener('transitionend', endO);
     open = false;
   } else if (!large && !open && $('#choices').css("height") === "3px") {
+    console.log('small and closed');
     $('#choices').toggleClass('choiceso');
-    $('#choicescont').toggleClass('choicesconto');
+    $('#choices__contain').toggleClass('choices__containo');
     $('#choices')[0].addEventListener('transitionend', endH);
     open = true;
-  } else if (!large && open && $('#choices').css("height") === "55px") {
+  } else if (!large && open && $('#choices').css("height") === "80px") {
+    console.log('small and open');
     $('#choicesoptcont').toggleClass('cocon');
     $('#choices')[0].addEventListener('transitionend', endO);
     open = false;
@@ -821,7 +828,6 @@ function closeEle() {
   const ele = this.parentNode.parentNode.id;
   $(`#${ele}`).removeClass('motto__over__open--one motto__over__open--multi');
   openArr.splice(openArr.indexOf(ele.split('_')[0]));
-  console.log(openArr);
 }
 
 $('.motto__items').click(showOver);
