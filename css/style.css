@@ -88,13 +88,13 @@ a:link {
     bottom: 0;
     opacity: 1; } }
 
-#menu {
+.menu {
   display: flex;
   justify-content: space-around;
   font-family: "Merriweather", serif;
   height: 70px; }
 
-#menucontain {
+.menucontain {
   position: fixed;
   background: #4c4556;
   color: white;
@@ -159,6 +159,9 @@ a:link {
   margin-left: 0;
   margin-top: 5px; }
 
+#alert {
+  display: none; }
+
 #splashcont {
   height: 100vh;
   padding-top: 23vh;
@@ -183,6 +186,12 @@ a:link {
   flex-grow: 1; }
 
 #motto {
+  display: none; }
+
+#motto--sm {
+  display: none; }
+
+#desktop {
   width: 80%;
   margin-bottom: 10vh;
   display: flex;
@@ -190,7 +199,7 @@ a:link {
   align-items: flex-end;
   position: relative; }
 
-.motto__items--sm {
+.desktop__items--sm {
   width: 20%;
   padding: 5px;
   display: flex;
@@ -198,36 +207,36 @@ a:link {
   justify-content: center;
   align-items: center; }
 
-.motto__items__img {
+.desktop__items__img {
   cursor: pointer; }
-  .motto__items__img:hover {
+  .desktop__items__img:hover {
     transform: scale(1.05); }
 
-.motto__items__img--sm {
+.desktop__items__img--sm {
   display: block; }
 
-.motto__items__img--lg {
+.desktop__items__img--lg {
   display: none; }
 
-.motto__items__text {
+.desktop__items__text {
   font-size: 0.7em;
   margin-top: 5px;
   cursor: pointer; }
 
-.motto__over {
+.desktop__over {
   position: absolute;
   bottom: 28vh;
   width: 70%;
   display: none;
   flex-wrap: wrap; }
 
-.motto__over--open {
+.desktop__over--open {
   display: flex; }
 
-.motto__over__contain {
+.desktop__over__contain {
   width: 100%; }
 
-.motto__over__each {
+.desktop__over__each {
   display: none;
   flex-direction: column;
   text-align: left;
@@ -235,7 +244,7 @@ a:link {
   line-height: 1.4em;
   border: 1px solid #abb1ba; }
 
-.motto__over__open--one {
+.desktop__over__open--one {
   display: flex;
   width: 100%;
   flex-grow: 1; }
@@ -271,6 +280,9 @@ a:link {
   display: flex;
   padding: 10px 5px 10px 0;
   overflow: hidden; }
+
+.editor__content a {
+  color: white; }
 
 .editor__content__nums {
   width: 20px;
@@ -934,14 +946,14 @@ textarea {
   #nametitle {
     font-size: 1.4em;
     padding: 10px; }
-  #motto {
+  #desktop {
     margin-bottom: 20px;
     width: 45%; }
-  .motto__over {
+  .desktop__over {
     width: 50%; }
   .over__content__each {
     font-size: 2.2em; }
-  .motto__over__each {
+  .desktop__over__each {
     bottom: 20vh;
     font-size: 0.25em; }
   .top {
@@ -968,14 +980,14 @@ textarea {
     margin-top: 10px; } }
 
 @media screen and (min-width: 576px) {
-  #menucontain {
+  .menucontain {
     display: flex;
     align-items: center;
     justify-content: space-between; }
   #ethan {
     display: block;
     margin-left: 25px; }
-  #menu {
+  .menu {
     width: 100%;
     padding-top: 0; }
   .menutabs {
@@ -1022,7 +1034,7 @@ textarea {
     padding: 5px; } }
 
 @media screen and (min-width: 768px) {
-  #menucontain {
+  .menucontain {
     flex-direction: column;
     justify-content: space-around;
     top: 0;
@@ -1046,7 +1058,7 @@ textarea {
     top: 0;
     left: 0;
     display: block; }
-  #menu {
+  .menu {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -1106,36 +1118,36 @@ textarea {
     position: relative; }
   #nametitle {
     font-size: 3em; }
-  #motto {
+  #desktop {
     width: 80%;
     background: url(../images/menubar.png) no-repeat;
     background-size: contain;
     background-position: bottom center;
     margin-bottom: 50px; }
-  .motto__items--sm {
+  .desktop__items--sm {
     width: auto; }
-    .motto__items--sm:hover .motto__items__text {
+    .desktop__items--sm:hover .desktop__items__text {
       background: rgba(64, 167, 243, 0.9); }
-  .motto__items__img--sm {
+  .desktop__items__img--sm {
     display: none; }
-  .motto__items__img--lg {
+  .desktop__items__img--lg {
     width: 75px;
     display: block; }
-  .motto__items__img {
+  .desktop__items__img {
     height: 85px; }
-  .motto__items__text {
+  .desktop__items__text {
     color: white;
     z-index: 99;
     transform: translateY(-20px);
     background: rgba(64, 167, 243, 0.4);
     padding: 5px;
     border-radius: 6px; }
-  .motto__over {
+  .desktop__over {
     position: relative;
     justify-content: center;
     width: 90%;
     bottom: 0; }
-  .motto__over__contain {
+  .desktop__over__contain {
     width: auto;
     position: relative;
     display: flex;
@@ -1143,17 +1155,17 @@ textarea {
     align-items: center;
     justify-content: center;
     margin: auto; }
-  .motto__over__each {
+  .desktop__over__each {
     margin: 5px;
     width: auto;
     font-size: 0.48em;
     max-width: 350px; }
-  .motto__over__open--one {
+  .desktop__over__open--one {
     flex-grow: 1;
     width: 20vw;
     height: 30vh;
     font-size: 0.48em; }
-  .motto__over__open--multi {
+  .desktop__over__open--multi {
     display: flex;
     width: 30vw;
     height: 20vh;
@@ -1290,7 +1302,7 @@ textarea {
     font-size: 2.5em; }
   #languagetitle {
     margin-top: 20vh; }
-  .motto__over__open--multi {
+  .desktop__over__open--multi {
     height: 33vh;
     min-width: 230px; }
   .over__content__each {
@@ -1302,14 +1314,14 @@ textarea {
     width: 70%; } }
 
 @media screen and (min-width: 992px) and (orientation: landscape) {
-  #menucontain {
+  .menucontain {
     width: 7%; }
   .menutabs {
     font-size: 0.6em; }
   #contentcontain {
     width: 93%;
     left: 7%; }
-  .motto__over__open--multi {
+  .desktop__over__open--multi {
     height: 25vh; }
   #biopersonaltext {
     padding-right: 10px; }
@@ -1468,7 +1480,7 @@ textarea {
     font-size: 0.85em; }
   #nametitle {
     font-size: 4em; }
-  .motto__over__each {
+  .desktop__over__each {
     font-size: 0.55em;
     max-width: 450px; }
   .theme__each__icon {

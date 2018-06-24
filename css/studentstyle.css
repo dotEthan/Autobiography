@@ -88,14 +88,14 @@ a:link {
     bottom: 0;
     opacity: 1; } }
 
-#menucontain {
+.menucontain {
   position: fixed;
   background: #31c2fe;
   color: white;
   width: 100%;
   z-index: 99; }
 
-#menu {
+.menu {
   display: flex;
   justify-content: space-around;
   color: white;
@@ -162,6 +162,9 @@ a:link {
   text-shadow: 0px 2px #ad00ad, 0px 3px 2px #404040;
   color: orange; }
 
+#alert {
+  display: none; }
+
 #splashcont {
   height: 100vh;
   background-image: url("../images/bgs.jpg");
@@ -191,7 +194,13 @@ a:link {
 #motto {
   display: none; }
 
-.motto__over {
+#motto--sm {
+  display: none; }
+
+#desktop {
+  display: none; }
+
+.desktop__over {
   display: none; }
 
 #choices__contain {
@@ -292,6 +301,9 @@ a:link {
   font-size: 0.5em; }
   .choicesbox:hover {
     color: #ad00ad; }
+
+.textbox {
+  display: none; }
 
 #cheatsheet a {
   font-size: 0.7em;
@@ -970,7 +982,7 @@ span {
 @media screen and (min-width: 576px) {
   #ethan {
     font-size: 1.7em; }
-  #menu {
+  .menu {
     padding-top: 20px; }
   .menutabs {
     font-size: 1em; }
@@ -1017,13 +1029,13 @@ span {
     font-size: 0.7em; } }
 
 @media screen and (min-width: 768px) {
-  #menucontain {
+  .menucontain {
     height: 100px;
     justify-content: flex-end;
     display: flex; }
   .menutabs {
     width: auto; }
-  #menu {
+  .menu {
     width: 80%;
     padding-top: 0; }
   .leftcanvas {

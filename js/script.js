@@ -4,23 +4,8 @@
 
 // Call everything same order?
 // Programmer mobile animation doesn't stop when you go to student then back.
+// ALL CLASSES. No text change function
 
-
-
-//------------------------
-// Typewrite
-//------------------------
-
-(function($){$.fn.typeWrite=function(s){
-  let o={content:$(this).text(),delay:50,t:this,i:0};
-  if(s){$.extend(o,s);}o.t.text('');
-  let i=setInterval(function() {
-      o.t.text(o.t.text()+o.content.charAt(o.i++));    
-      if(o.i==o.content.length){clearInterval(i);}}
-  ,o.delay);
-return o.t;  
-};})(jQuery);
-$('#namemotto').typeWrite({content:'Student, Programmer, Entrepreneur'});
 
 /// /USING?
 
@@ -63,8 +48,6 @@ let textChange = document.getElementById('sitebuild');
 let quoteChange = document.getElementById('biowriting');
 let asaChange = document.getElementById('asa');
 let quoteNameChange = document.getElementById('quotename');
-let languageChange = document.getElementById('languagetitle');
-let languageChange2 = document.getElementById('languagetitlec');
 let bioChange = document.getElementById('ageinfo');
 
 $('#studentb, #studentpro').click(function() {
@@ -80,8 +63,6 @@ $('#studentb, #studentpro').click(function() {
   setTextContent(textChange, 'has been built using lego. If you want to play with the blocks,');
   setTextContent(quoteChange, '“When I became a man I put away childish things, including the fear of childishness and the desire to be very grown up.”');
   setTextContent(quoteNameChange, '- C.S. Lewis');
-  // setTextContent(languageChange, 'Languages: English'); 
-  // setTextContent(languageChange2, 'Lego');
   setTextContent(asaChange, 'As a Student:');
   setTextContent(bioChange, 'I grew up in small town Ontario, than big city BC, then small town BC, then small town Manitoba, than back to BC for a couple cities and then back to Ontario. We moved a lot. It is likely one of the reasons I am able to easily adapt to the various environments life takes me to.');
   $("#personalimg").attr("src","../images/bios.jpg");
@@ -102,8 +83,6 @@ $('#entreb, #entrepro').click(function() {
   setTextContent(textChange, 'was designed and built to facilitate entrepreneurial success. If you want a leg up on the competition,');
   setTextContent(quoteChange, '“From my very first day as an entrepreneur, I\'ve felt the only mission worth pursuing in business is to make people\'s lives better.”');
   setTextContent(quoteNameChange, '- Richard Branson');
-  // setTextContent(languageChange, 'Languages: English, Chinese');
-  // setTextContent(languageChange2, 'HTML, CSS, Wordpress, Jqeury');
   setTextContent(asaChange, 'As an Entrepreneur:');
   setTextContent(bioChange, 'I spent my 20s in China, learning a new culture, language and how to develop long term plans and put them into action. I had numerous jobs including Bar Manager, University professor, Radio Host and more. And I developed and opened a number of different entreprenerial ventures that pushed me to learn web development, leadership skills and to hone my customer service techniques.');
   $("#personalimg").attr("src","../images/bioe.jpg");
@@ -118,8 +97,6 @@ $('#programmerb, #programmerpro').click(function() {
   setTextContent(textChange, 'was developed using Javascript, Jquery, HTML, and SCSS. If you want to look at the code,');
   setTextContent(quoteChange, '"The most effective debugging tool is still careful thought, coupled with judiciously placed print statements."');
   setTextContent(quoteNameChange, '- Brian W. Kernighan');
-  // setTextContent(languageChange, 'Languages: English, Chinese');  
-  // setTextContent(languageChange2, 'Javascript, React, Jquery, HTML, CSS, SCSS, Wordpress, Liquid, Photoshop');
   setTextContent(asaChange, 'As a Programmer:');
   setTextContent(bioChange, 'Since returning to Canada I have opened two successful entreprenuerial ventures and learned a number of new langauges including Javascript, SCSS, React, Liquid and more. I\'ve devoted the last six months to brushing up on HTML 5, SCSS, Javascript ES6 and learning React to ensure I have a firm grasp of the tools needed to succeed as a Front End Development or Javavscript programming.');
   $("#personalimg").attr("src","../images/biop.jpg");
@@ -205,9 +182,11 @@ document.addEventListener('scroll', function () {
   } else if(theme==='entre') {
 
     if ($(this).scrollTop() === 0) {
-      $('#menu').removeClass('menuscroll');
+      $('.menu').removeClass('menuscroll');
+      $('.menucontain').removeClass('menuup');
     } else {
-      $('#menu').addClass('menuscroll');
+      $('.menu').addClass('menuscroll');
+      $('.menucontain').addClass('menuup');
     }
 
   } else {
@@ -827,11 +806,11 @@ $('.over__title__close').click(closeEle);
 
 function closeEle() {
   const ele = this.parentNode.parentNode.id;
-  $(`#${ele}`).removeClass('motto__over__open--one motto__over__open--multi');
+  $(`#${ele}`).removeClass('desktop__over__open--one desktop__over__open--multi');
   openArr.splice(openArr.indexOf(ele.split('_')[0]));
 }
 
-$('.motto__items').click(showOver);
+$('.desktop__items').click(showOver);
 
 function showOver() {
   const eleId = this.id;
@@ -841,30 +820,30 @@ function showOver() {
 
   if (!large) {
     if(openArr.includes(eleId)) {
-      $(`#${eleId}__over`).removeClass('motto__over__open--one');
+      $(`#${eleId}__over`).removeClass('desktop__over__open--one');
       openArr.splice(openArr.indexOf(eleId),1);
     } else {
-      if (!$('motto__over').hasClass('motto__over--open')) {
-        $('.motto__over').addClass('motto__over--open');
+      if (!$('desktop__over').hasClass('desktop__over--open')) {
+        $('.desktop__over').addClass('desktop__over--open');
       } 
-      $('.motto__over__each').removeClass('motto__over__open--one');
+      $('.desktop__over__each').removeClass('desktop__over__open--one');
       openArr = [];
-      $(`#${eleId}__over`).addClass('motto__over__open--one');
+      $(`#${eleId}__over`).addClass('desktop__over__open--one');
       openArr.push(eleId);
     }
   } else {
     if (openArr.includes(eleId)) {
       openArr.splice(openArr.indexOf(eleId),1);
-      $(`#${eleId}__over`).removeClass('motto__over__open--multi');
+      $(`#${eleId}__over`).removeClass('desktop__over__open--multi');
     } else {  
-      if (!$('motto__over').hasClass('motto__over--open')) {
-        $('.motto__over').addClass('motto__over--open');
+      if (!$('desktop__over').hasClass('desktop__over--open')) {
+        $('.desktop__over').addClass('desktop__over--open');
       } 
       openArr.push(eleId);
       $(`#${eleId}__over`).css('order', click+1);
-      $(`#${eleId}__over`).addClass('motto__over__open--multi');  
+      $(`#${eleId}__over`).addClass('desktop__over__open--multi');  
       click++;
     }
   }
-  if(openArr.length === 0) $('.motto__over').removeClass('motto__over--open');
+  if(openArr.length === 0) $('.desktop__over').removeClass('desktop__over--open');
 }

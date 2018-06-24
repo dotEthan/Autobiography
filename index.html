@@ -19,8 +19,8 @@
 <body> 
   <div id="load" class="animate-bottom"></div>
   <div id="contents">
-    <div id="menucontain">
-      <div id ="menu">
+    <div id="menu__contain" class="menucontain">
+      <div class="menu">
         <div id="ethan">.ethan</div>  
         <canvas id="entrebgcanvas" class="leftcanvas"></canvas>
         <div id="menutabscontain">
@@ -64,12 +64,27 @@
       </div>
     </div>
     <div id="contentcontain">
+      <div id="alert">
+        <div class="alert__item">
+          <a href="mailto:estrauss2018@gmail.com">estrauss2018@gmail.com</a>
+        </div>
+        <div class="alert__item">
+          <a href="#">Download Resume</a>
+        </div>
+        <div class="alert__item">
+          <a href="https://www.linkedin.com/in/estrauss2018/">LinkedIn.com</a>
+        </div>
+      </div>
       <div id="splashcont">
         <div id="titlecard">
-          <div id="nametitle">Ethan Strauss</div>
-          <div class="motto__over">
-            <div class="motto__over__contain">
-              <div id="sublime__over" class="motto__over__each hidden">
+          <div id="namotto">
+            <div id="motto">A Name You Can Trust</div>
+            <div id="nametitle">Ethan Strauss</div>
+            <div id="motto--sm">First Class Web Developer</div>
+          </div>
+          <div class="desktop__over">
+            <div class="desktop__over__contain">
+              <div id="sublime__over" class="desktop__over__each hidden">
                 <div class="over__title">
                   <div class="over__title__text">
                     Sublime Text Lite
@@ -95,12 +110,12 @@
                   <div class="editor__content__text">
                     <span class="pink">let</span> <span class="white">ethan</span> = {<br />
                     <div class="editor__content--indented">
-                      <span class="green">name</span>: <span class="white">"Ethan Strauss"</span>,<br />
-                      <span class="green">profession</span>: "Programmer",<br />
-                      <span class="green">Languages</span>: ["HTML5", "CSS3", "JavaScript", "Jquery", "React", "SCSS", "Liquid"],<br />
-                      <span class="green">Traits</span>: [ "Fast Learner", "Hard Worker", "Endlessly Curious" ],<br />
-                      <span class="green">LinkedIn</span>: "http://www.linkedin.com/me",<br />
-                      <span class="green">Resume</span>: "resume.pdf"<br />
+                      <span class="green">name</span>: <span class="white">'Ethan Strauss'</span>,<br />
+                      <span class="green">profession</span>: 'Programmer',<br />
+                      <span class="green">Languages</span>: ['HTML5', 'CSS3', 'JavaScript', 'Jquery', 'React', 'SCSS', 'Liquid'],<br />
+                      <span class="green">Traits</span>: [ 'Fast Learner', 'Hard Worker', 'Endlessly Curious' ],<br />
+                      <span class="green">LinkedIn</span>: '<a href="https://www.linkedin.com/in/estrauss2018/">http://www.linkedin.com/me</a>',<br />
+                      <span class="green">Resume</span>: 'resume.pdf'<br />
                     </div>
                     };
                   </div>
@@ -108,7 +123,7 @@
                 <div class="editor__status">
                 </div>
               </div>
-              <div id="theme__over" class="motto__over__each hidden">
+              <div id="theme__over" class="desktop__over__each hidden">
                 <div class="over__title">
                   <div class="over__title__text">
                     Themes
@@ -141,7 +156,7 @@
                   4 Items
                 </div>
               </div>
-              <div id="personal__over" class="motto__over__each hidden">
+              <div id="personal__over" class="desktop__over__each hidden">
                 <div class="over__title">
                   <div class="over__title__text">
                     Personal 
@@ -168,7 +183,7 @@
                   3 Items
                 </div>
               </div>
-              <div id="trash__over" class="motto__over__each hidden">
+              <div id="trash__over" class="desktop__over__each hidden">
                 <div class="over__title">
                   <div class="over__title__text">
                     Recycling
@@ -197,34 +212,34 @@
               </div>
             </div>
           </div>
-          <div id="motto">
-            <div id="sublime" class="motto__items motto__items--sm">
-              <div class="motto__items__img">
-                <img class="motto__items__img--sm" alt="Small text editor icon" src="./images/sublimesm.png">
-                <img class="motto__items__img--lg" alt="Large text editor icon" src="./images/sublimelg.png">
+          <div id="desktop">
+            <div id="sublime" class="desktop__items desktop__items--sm">
+              <div class="desktop__items__img">
+                <img class="desktop__items__img--sm" alt="Small text editor icon" src="./images/sublimesm.png">
+                <img class="desktop__items__img--lg" alt="Large text editor icon" src="./images/sublimelg.png">
               </div>
-              <div class="motto__items__text">Editor</div>
+              <div class="desktop__items__text">Editor</div>
             </div>
-            <div id="theme" class="motto__items motto__items--sm">
-              <div class="motto__items__img">
-                <img class="motto__items__img--sm" alt="Small Website Theme icon" src="./images/themesm.png">
-                <img class="motto__items__img--lg" alt="Large Website Theme icon" src="./images/themelg.png">
+            <div id="theme" class="desktop__items desktop__items--sm">
+              <div class="desktop__items__img">
+                <img class="desktop__items__img--sm" alt="Small Website Theme icon" src="./images/themesm.png">
+                <img class="desktop__items__img--lg" alt="Large Website Theme icon" src="./images/themelg.png">
               </div>
-              <div class="motto__items__text">Themes</div>
+              <div class="desktop__items__text">Themes</div>
             </div>
-            <div id="personal" class="motto__items motto__items--sm">
-              <div class="motto__items__img">
-                <img class="motto__items__img--sm" alt="Small Personal Folder icon" src="./images/foldersm.png">
-                <img class="motto__items__img--lg" alt="Large Personal Folder icon" src="./images/folderlg.png">
+            <div id="personal" class="desktop__items desktop__items--sm">
+              <div class="desktop__items__img">
+                <img class="desktop__items__img--sm" alt="Small Personal Folder icon" src="./images/foldersm.png">
+                <img class="desktop__items__img--lg" alt="Large Personal Folder icon" src="./images/folderlg.png">
               </div>
-              <div class="motto__items__text">Personal</div>
+              <div class="desktop__items__text">Personal</div>
             </div>
-            <div id="trash" class="motto__items motto__items--sm">
-              <div class="motto__items__img">
-                <img class="motto__items__img--sm" alt="Small Trash Can icon" src="./images/trashsm.png">
-                <img class="motto__items__img--lg" alt="Large Trash Can icon" src="./images/trashlg1.png">
+            <div id="trash" class="desktop__items desktop__items--sm">
+              <div class="desktop__items__img">
+                <img class="desktop__items__img--sm" alt="Small Trash Can icon" src="./images/trashsm.png">
+                <img class="desktop__items__img--lg" alt="Large Trash Can icon" src="./images/trashlg1.png">
               </div>
-              <div class="motto__items__text">Recycling</div>
+              <div class="desktop__items__text">Recycling</div>
             </div>
           </div>
         </div>
@@ -233,22 +248,31 @@
           <div id="choices">
             <div id="choicesoptcont">
               <div id="legocont">
-                <div class="lego">
+                <div id="student" class="lego">
                   <div id="studentb" class="filler"></div>
                   <div class="choicesbox">
                     Student
                   </div>
+                  <div class="textbox">
+                    Creativity, imagination and joy identify the spirity of a student. A never ending desire to learn more and better understand the world around them.
+                  </div>
                 </div>
-                <div class="lego">
+                <div id="entre" class="lego">
                   <div id="entreb" class="filler"></div>
                   <div class="choicesbox">
                     Entrepreneur
                   </div>
+                  <div class="textbox">
+                    Entrepreneurs are often driven by either the urge to help or the need to succeed, usually some mix of the two.
+                  </div>
                 </div>
-                <div class="lego">
+                <div id="programmer" class="lego">
                   <div id="programmerb" class="filler"></div>
                   <div class="choicesbox">
                     Programmer
+                  </div>
+                  <div class="textbox">
+                    Programmers solve modern problems that are helping bring accessibility, ease of living and more to people around the globe
                   </div>
                 </div>
               </div>

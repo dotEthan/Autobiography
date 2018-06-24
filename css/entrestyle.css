@@ -87,14 +87,16 @@ a:hover {
     bottom: 0;
     opacity: 1; } }
 
-#menucontain {
+.menucontain {
   position: fixed;
-  top: 0;
+  top: 20px;
   left: 0;
   color: white;
   width: 100%;
   z-index: 99;
-  height: 70px; }
+  background: #86ba25;
+  transition: all 0.5s;
+  border-bottom: 1px solid #77a521; }
 
 #ethan {
   font-family: "logo", serif;
@@ -109,19 +111,20 @@ a:hover {
 .leftcanvas {
   display: none; }
 
-#menucontain .menuscroll {
-  border-bottom: 1px solid #678f1d;
-  background: #86ba25; }
+.menucontain .menuscroll {
+  height: 70px; }
 
-#menu {
+.menuup {
+  top: 0; }
+
+.menu {
   display: flex;
   justify-content: space-around;
   align-items: center;
   color: white;
   font-family: "Raleway", serif;
-  height: 70px;
+  height: 50px;
   width: 100%;
-  border-bottom: 1px dashed #678f1d;
   transition: all 0.5s; }
 
 .menunow {
@@ -160,7 +163,7 @@ a:hover {
     text-decoration: none; }
 
 #splashcont {
-  height: 85vh;
+  height: 75vh;
   background-image: url("../images/entresm.jpg");
   background-size: cover;
   background-position: center;
@@ -169,29 +172,62 @@ a:hover {
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: flex-end;
-  margin-bottom: 15vh; }
+  margin-bottom: 25vh; }
+
+#alert {
+  position: fixed;
+  width: 100%;
+  height: 20px;
+  font-size: 0.4em;
+  background: #4c4556;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around; }
+
+.alert__item a {
+  color: white;
+  text-decoration: underline; }
 
 #titlecard {
-  margin-bottom: 180px;
-  width: 100%;
-  margin: 0 auto 3vh;
-  text-align: center;
   display: flex;
+  flex-direction: column;
+  text-align: center;
   justify-content: center;
-  flex-wrap: wrap;
-  color: white; }
+  color: white;
+  margin: 0 auto;
+  text-align: left;
+  width: 100%; }
+
+#namotto {
+  background: linear-gradient(rgba(255, 255, 255, 0), white 50%);
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  padding: 20px; }
+
+#motto {
+  color: #86ba25;
+  font-size: 1em; }
+
+#motto--sm {
+  color: black;
+  font-size: 0.7em; }
 
 #nametitle {
-  width: 100%;
   font-family: "Raleway", serif;
   font-weight: bold;
-  font-size: 1.8em; }
+  font-size: 1.8em;
+  color: black; }
 
 #choices__contain {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  height: 15vh;
+  height: 25vh;
   width: 100%;
   transition: height 0.5s;
   position: absolute;
@@ -201,7 +237,7 @@ a:hover {
 #splashcont .choices__containo {
   height: 100px; }
 
-#motto, .motto__over {
+#desktop, .desktop__over {
   display: none; }
 
 #choicestab {
@@ -217,9 +253,9 @@ a:hover {
   align-items: center;
   width: 100%;
   margin: 0 auto;
-  background: #e5e5e5;
+  background: white;
   border-bottom: none;
-  height: 20vh;
+  height: 25vh;
   overflow: hidden;
   transition: height 0.5s; }
   #choices .cocon {
@@ -230,7 +266,6 @@ a:hover {
   height: 100%;
   display: flex;
   flex-direction: column;
-  margin-bottom: 5px;
   opacity: 1;
   transition: opacity 0.3s; }
 
@@ -243,16 +278,22 @@ a:hover {
 
 .lego {
   width: 100%;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
-  background-size: cover;
-  transform: translateY(-5px);
-  border: 1px solid #cccccc; }
+  padding: 5px; }
   .lego:hover .choicesbox {
     color: #4c4556; }
 
 #studentb {
   background-image: url("../images/reading.svg"); }
+
+#entre {
+  border: 1px solid #cccccc;
+  border-top: none;
+  border-bottom: none; }
 
 #entreb {
   background-image: url("../images/teacher.svg"); }
@@ -271,9 +312,12 @@ a:hover {
   justify-content: center;
   font-weight: bold;
   color: black;
-  font-size: 0.6em; }
+  font-size: 0.7em; }
   .choicesbox:hover {
     color: #4c4556; }
+
+.textbox {
+  font-size: 0.4em; }
 
 #cheatsheet {
   display: none; }
@@ -454,7 +498,7 @@ a:hover {
   display: none; }
 
 .historytext {
-  border-top: 1px solid rgba(0, 0, 0, 0.6);
+  border-top: 1px solid #aaa;
   text-align: left;
   overflow: hidden;
   margin: 0 5px 5px;
@@ -938,15 +982,11 @@ span {
 @media screen and (min-width: 768px) {
   #ethan {
     font-size: 2em; }
-  #menucontain {
-    height: 100px; }
-  #menucontain {
-    width: 100%;
-    height: 100px; }
-  #menu {
+  .menucontain {
+    width: 100%; }
+  .menu {
     justify-content: space-between;
     align-items: center;
-    height: 100%;
     margin-top: 0;
     padding-top: 0;
     width: 100%;
@@ -1310,10 +1350,3 @@ span {
     font-size: 3.5em; }
   #footmessage {
     font-size: 1em; } }
-
-@media screen and (min-aspect-ratio: 16 / 8) {
-  #titlecard {
-    margin-top: 16vh; }
-  #biocontain {
-    align-items: center;
-    text-align: center; } }

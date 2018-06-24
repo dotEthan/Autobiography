@@ -125,7 +125,7 @@ a:link {
   to{ bottom:0; opacity:1 }
 }
 
-#menucontain {
+.menucontain {
   position: fixed;
   background: $menubackground;
   color: white;
@@ -133,7 +133,7 @@ a:link {
   z-index: 99;
 }
 
-#menu {
+.menu{
   display: flex;
   justify-content: space-around;
   color: $menutextc;
@@ -223,6 +223,10 @@ a:link {
   color: orange;
 }  
 
+#alert {
+  display:none;
+}
+
 #splashcont {
   height: 100vh;
   background-image: $frontimage;
@@ -256,7 +260,15 @@ a:link {
   display: none;
 }
 
-.motto__over {
+#motto--sm {
+  display: none;
+}
+
+#desktop {
+  display: none;
+}
+
+.desktop__over {
   display: none;
 }
 
@@ -378,6 +390,10 @@ a:link {
   &:hover {
     color: $thirdcolor;
   }
+}
+
+.textbox {
+  display: none;
 }
 
 #cheatsheet a {
@@ -1235,7 +1251,7 @@ span{
     font-size: 1.7em;
   }
 
-  #menu {
+  .menu{
     padding-top: 20px;
   }
 
@@ -1328,7 +1344,7 @@ span{
   
 @media screen and (min-width: 768px) {
   
-  #menucontain { 
+  .menucontain { 
     height: 100px;
     justify-content: flex-end;
     display:flex;
@@ -1338,7 +1354,7 @@ span{
     width: auto;
   }
 
-  #menu {
+  .menu{
     width:80%;
     padding-top: 0;
   }

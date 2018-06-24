@@ -128,14 +128,16 @@ a:hover {
   to{ bottom:0; opacity:1 }
 }
 
-#menucontain {
+.menucontain {
   position: fixed;
-  top: 0;
+  top: 20px;
   left: 0;
   color: white;
   width: 100%;
   z-index: 99;
-  height: 70px;
+  background: $secondcolor;
+  transition: all 0.5s;
+  border-bottom: 1px solid darken($secondcolor, 5%);
 }
 
 #ethan {
@@ -154,20 +156,22 @@ a:hover {
   display: none;
 }
 
-#menucontain .menuscroll {
-  border-bottom: 1px solid darken($secondcolor, 10%);
-  background: $secondcolor;
+.menucontain .menuscroll {
+  height: 70px;
 }
 
-#menu {
+.menuup {
+  top:0;
+}
+
+.menu{
   display: flex;
   justify-content: space-around;
   align-items: center;
   color: $menutextc;
   font-family: $headertext;
-  height: 70px;
+  height: 50px;
   width: 100%;
-  border-bottom: 1px dashed darken($secondcolor, 10%);
   transition: all 0.5s;
 }
 
@@ -196,7 +200,6 @@ a:hover {
   padding: 2px;
   text-align: center;
   font-size: 0.6em;
-  // width: 48%;
 
   a {
     color: white;
@@ -220,7 +223,7 @@ a:hover {
 }
   
 #splashcont {
-  height: 85vh;
+  height: 75vh;
   background-image: url('../images/entresm.jpg');
   background-size: cover;
   background-position: center;
@@ -229,32 +232,70 @@ a:hover {
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: flex-end;
-  margin-bottom: 15vh;
+  margin-bottom: 25vh;
+}
+
+#alert {
+  position: fixed;
+  width: 100%;
+  height: 20px;
+  font-size: 0.4em;
+  background: $thirdcolor;
+  color: white;
+  display: flex;
+  align-items:center;
+  justify-content: space-around;
+}
+
+.alert__item a {
+  color: white;
+  text-decoration: underline;
 }
 
 #titlecard {
-  margin-bottom: 180px;
-  width: 100%;
-  margin: 0 auto 3vh;
-  text-align: center;
   display: flex;
+  flex-direction: column;
+  text-align: center;
   justify-content: center;
-  flex-wrap: wrap;
   color: white;
+  margin: 0 auto;
+  text-align: left;
+  width: 100%;
 }
 
-#nametitle {
-  width: 100%;              
+#namotto {
+  background: linear-gradient(rgba(white,0), white 50%);
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+
+#motto {
+  color: $secondcolor;
+  font-size: 1em;
+}
+
+#motto--sm {
+  color: black;
+  font-size: 0.7em;
+}
+
+#nametitle {          
   font-family: $headertext;
   font-weight: bold;
   font-size: 1.8em;
+  color: black;
 }
 
 #choices__contain {
   display: flex;
   flex-direction: column; 
   justify-content: flex-end;
-  height: 15vh;
+  height: 25vh;
   width: 100%;
   transition: height 0.5s;
   position: absolute;
@@ -267,7 +308,7 @@ a:hover {
   height: 100px;
 }
 
-#motto, .motto__over {
+#desktop, .desktop__over {
   display: none;
 }
 
@@ -286,9 +327,9 @@ a:hover {
   align-items: center;
   width: 100%;
   margin: 0 auto;
-  background: $firstcolor;
+  background: white;
   border-bottom: none;
-  height: 20vh;
+  height: 25vh;
   overflow: hidden;
   transition: height 0.5s;
 
@@ -302,7 +343,6 @@ a:hover {
   height: 100%;
   display: flex;
   flex-direction: column;
-  margin-bottom: 5px;
   opacity: 1;
   transition: opacity 0.3s; 
 }
@@ -317,11 +357,12 @@ a:hover {
 
 .lego {
   width: 100%;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
-  background-size: cover; 
-  transform: translateY(-5px);
-  border: 1px solid darken($firstcolor, 10%);
+  padding: 5px;
 
   &:hover {
     .choicesbox {
@@ -332,6 +373,12 @@ a:hover {
 
 #studentb {
   background-image: url("../images/reading.svg");
+}
+
+#entre {
+  border: 1px solid darken($firstcolor, 10%);
+  border-top: none;
+  border-bottom: none;  
 }
 
 #entreb {
@@ -354,11 +401,15 @@ a:hover {
   justify-content: center;
   font-weight: bold;
   color: black;
-  font-size: 0.6em;
+  font-size: 0.7em;
 
   &:hover {
     color: $thirdcolor;
   }
+}
+
+.textbox {
+  font-size: 0.4em;
 }
 
 #cheatsheet {
@@ -578,7 +629,7 @@ a:hover {
 }
 
 .historytext { 
-  border-top: 1px solid rgba(0,0,0,0.6);
+  border-top: 1px solid #aaa;
   text-align: left;
   overflow: hidden;
   margin: 0 5px 5px;
@@ -1214,19 +1265,13 @@ span{
     font-size: 2em;
   }
 
-  #menucontain {
-    height: 100px;
-  }
-
-  #menucontain {
+  .menucontain {
     width: 100%;
-    height: 100px;
   }
 
-  #menu {
+  .menu{
     justify-content: space-between;
     align-items: center;
-    height: 100%;
     margin-top: 0;
     padding-top: 0;
     width: 100%;
@@ -1842,12 +1887,4 @@ span{
 
 @media screen and (min-aspect-ratio: 16/8) {
 
-  #titlecard {
-    margin-top: 16vh;
-  }
-
-  #biocontain {
-    align-items: center;
-    text-align: center;
-  }
 }
