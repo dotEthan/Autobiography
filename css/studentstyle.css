@@ -260,7 +260,7 @@ a:link {
   opacity: 1;
   transition: opacity 0.3s; }
 
-#legocont {
+#iconcont {
   width: 100%;
   height: 100%;
   display: flex;
@@ -268,26 +268,26 @@ a:link {
   align-items: center;
   padding-top: 5px; }
 
-.lego {
+.icon {
   width: 23%;
   height: 40px;
   cursor: pointer;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center; }
-  .lego:hover .choicesbox {
+  .icon:hover .choicesbox {
     color: #ad00ad; }
 
 #studentb {
-  background-image: url("../images/legor.png"); }
+  background-image: url("../images/iconr.png"); }
 
 #programmerb {
-  background-image: url("../images/legob.png"); }
+  background-image: url("../images/iconb.png"); }
 
 #entreb {
-  background-image: url("../images/legog.png"); }
+  background-image: url("../images/icong.png"); }
 
-.filler {
+.icon__pic {
   width: 75%;
   height: 30px; }
 
@@ -946,7 +946,7 @@ span {
   #nametitle {
     font-size: 1.4em;
     padding: 15px; }
-  .lego {
+  .icon {
     height: 30px; }
   .choicesbox {
     margin-top: 10px; }
@@ -1120,10 +1120,10 @@ span {
     width: 150px;
     transition: all 1s;
     justify-content: flex-start; }
-  .lego {
+  .icon {
     width: 75px;
     height: 50px; }
-  #legocont {
+  #iconcont {
     flex-direction: column;
     height: 200px; }
   #biocontain {

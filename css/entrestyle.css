@@ -197,21 +197,21 @@ a:hover {
   color: white;
   margin: 0 auto;
   text-align: left;
-  width: 100%; }
+  width: 100%;
+  background: linear-gradient(rgba(255, 255, 255, 0), white 50%); }
 
 #namotto {
-  background: linear-gradient(rgba(255, 255, 255, 0), white 50%);
   height: 40vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
   width: 100%;
-  padding: 20px; }
+  padding: 5%; }
 
 #motto {
   color: #86ba25;
-  font-size: 1em; }
+  font-size: 0.8em; }
 
 #motto--sm {
   color: black;
@@ -220,7 +220,7 @@ a:hover {
 #nametitle {
   font-family: "Raleway", serif;
   font-weight: bold;
-  font-size: 1.8em;
+  font-size: 1.6em;
   color: black; }
 
 #choices__contain {
@@ -269,14 +269,14 @@ a:hover {
   opacity: 1;
   transition: opacity 0.3s; }
 
-#legocont {
+#iconcont {
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center; }
 
-.lego {
+.icon {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -284,11 +284,11 @@ a:hover {
   align-items: center;
   cursor: pointer;
   padding: 5px; }
-  .lego:hover .choicesbox {
+  .icon:hover .choicesbox {
     color: #4c4556; }
 
 #studentb {
-  background-image: url("../images/reading.svg"); }
+  background-image: url("../images/entres.png"); }
 
 #entre {
   border: 1px solid #cccccc;
@@ -296,14 +296,17 @@ a:hover {
   border-bottom: none; }
 
 #entreb {
-  background-image: url("../images/teacher.svg"); }
+  background-image: url("../images/entree.png"); }
 
 #programmerb {
-  background-image: url("../images/learning.svg"); }
+  background-image: url("../images/entrep.png"); }
 
-.filler {
+.icon__pic {
   width: 15px;
-  height: 15px; }
+  height: 15px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center; }
 
 .choicesbox {
   margin-top: 5px;
@@ -918,10 +921,31 @@ span {
     color: #4c4556; }
 
 @media screen and (orientation: landscape) {
+  #titlecard {
+    align-items: flex-end;
+    justify-content: flex-end;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), white 50%); }
+  #namotto {
+    height: 100%;
+    width: 50%;
+    align-items: flex-start;
+    padding-bottom: 15vh;
+    padding-left: 8%; }
+  .icon__pic {
+    width: 30px;
+    height: 30px; }
+  .icon {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around; }
+  .icon__text {
+    width: 70%;
+    text-align: left;
+    padding: 5px;
+    font-size: 0.8em; }
   .choicesbox {
-    margin-top: 0; }
-  #cheatsheet {
-    font-size: 0.6em; }
+    justify-content: flex-start; }
   .allovers {
     flex-direction: row; }
   .protextt {
@@ -944,9 +968,6 @@ span {
     margin-top: 10px; } }
 
 @media screen and (min-width: 576px) {
-  #nametitle {
-    font-size: 2.5em;
-    margin-top: 10vh; }
   #biocontain {
     width: 75%; }
   #biowriting {
@@ -973,11 +994,8 @@ span {
     font-size: 0.7em; } }
 
 @media screen and (min-width: 576px) and (orientation: landscape) {
-  #titlecard {
-    width: 70%; }
-  #nametitle {
-    font-size: 1.8em;
-    padding: 5px; } }
+  .icon__text {
+    font-size: 1.1em; } }
 
 @media screen and (min-width: 768px) {
   #ethan {
@@ -1017,9 +1035,6 @@ span {
     background-position: top center;
     background-size: cover;
     justify-content: flex-start; }
-  #titlecard {
-    margin-bottom: 50px;
-    margin-top: 12vh; }
   #nametitle {
     font-size: 3em; }
   #biocontain {
@@ -1129,9 +1144,6 @@ span {
     font-size: 0.75em; } }
 
 @media screen and (min-width: 768px) and (orientation: landscape) {
-  #titlecard {
-    margin-top: 5vh;
-    margin-bottom: 0; }
   #nametitle {
     font-size: 2.5em; }
   #inquiryform {

@@ -261,22 +261,22 @@ a:hover {
   margin: 0 auto;
   text-align: left;
   width: 100%;
+  background: linear-gradient(rgba(white,0), white 50%);
 }
 
 #namotto {
-  background: linear-gradient(rgba(white,0), white 50%);
   height: 40vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
   width: 100%;
-  padding: 20px;
+  padding: 5%;
 }
 
 #motto {
   color: $secondcolor;
-  font-size: 1em;
+  font-size: 0.8em;
 }
 
 #motto--sm {
@@ -287,7 +287,7 @@ a:hover {
 #nametitle {          
   font-family: $headertext;
   font-weight: bold;
-  font-size: 1.8em;
+  font-size: 1.6em;
   color: black;
 }
 
@@ -347,7 +347,7 @@ a:hover {
   transition: opacity 0.3s; 
 }
 
-#legocont {
+#iconcont {
   width: 100%;
   height: 100%;
   display: flex;
@@ -355,7 +355,7 @@ a:hover {
   align-items: center;
 }
 
-.lego {
+.icon {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -372,7 +372,7 @@ a:hover {
 }
 
 #studentb {
-  background-image: url("../images/reading.svg");
+  background-image: url("../images/entres.png");
 }
 
 #entre {
@@ -382,16 +382,19 @@ a:hover {
 }
 
 #entreb {
-  background-image: url("../images/teacher.svg");
+  background-image: url("../images/entree.png");
 }
 
 #programmerb {
-  background-image: url("../images/learning.svg");
+  background-image: url("../images/entrep.png");
 }
 
-.filler {
+.icon__pic {
   width: 15px;
   height: 15px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .choicesbox {
@@ -1144,12 +1147,42 @@ span{
 
 @media screen and (orientation : landscape) {
 
-  .choicesbox {
-    margin-top:0;
+  #titlecard {
+    align-items: flex-end;
+    justify-content: flex-end;
+    height: 100%;
+    background: linear-gradient(to right, rgba(white,0), white 50%);
   }
 
-  #cheatsheet {
-    font-size: 0.6em;
+  #namotto {
+    height: 100%;
+    width: 50%;
+    align-items: flex-start;
+    padding-bottom: 15vh;
+    padding-left: 8%;
+  }
+
+  .icon__pic {
+    width: 30px;
+    height: 30px;
+  }
+
+
+  .icon {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .icon__text {
+    width: 70%;
+    text-align: left;
+    padding: 5px;
+    font-size: 0.8em;
+  }
+  
+  .choicesbox {
+    justify-content: flex-start;
   }
 
   .allovers {
@@ -1193,10 +1226,6 @@ span{
 
 @media screen and (min-width: 576px) {
 
-  #nametitle {
-    font-size: 2.5em;
-    margin-top: 10vh;
-  }
 
   #biocontain {
     width: 75%;
@@ -1249,14 +1278,9 @@ span{
 
 @media screen and (min-width: 576px) and (orientation: landscape) {
 
-  #titlecard {
-    width: 70%;
-  }
-
-  #nametitle{
-    font-size: 1.8em;
-    padding: 5px;
-  }
+  .icon__text {
+    font-size: 1.1em;
+  }  
 }
 
 @media screen and (min-width: 768px) {
@@ -1313,11 +1337,6 @@ span{
     background-position: top center;
     background-size: cover;
     justify-content: flex-start;
-  }
-
-  #titlecard {
-    margin-bottom: 50px;
-    margin-top: 12vh;
   }
   
   #nametitle {
@@ -1497,11 +1516,6 @@ span{
 }
 
 @media screen and (min-width: 768px) and (orientation: landscape) {
-
-  #titlecard {
-    margin-top: 5vh;
-    margin-bottom: 0;
-  }
   
   #nametitle {
     font-size: 2.5em;
