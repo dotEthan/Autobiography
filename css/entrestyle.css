@@ -332,6 +332,10 @@ a:hover {
   background: #e5e5e5;
   padding: 25px; }
 
+.anchor {
+  margin-top: -70px;
+  position: absolute; }
+
 #bioinfo {
   display: flex;
   justify-content: center; }
@@ -1041,6 +1045,8 @@ span {
     font-size: 1.5em; }
   .choicesbox {
     justify-content: flex-start; }
+  .anchor {
+    margin-top: -100px; }
   #biocontain {
     width: 90%;
     margin: 0;

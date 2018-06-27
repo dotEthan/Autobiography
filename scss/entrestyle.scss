@@ -428,6 +428,11 @@ a:hover {
   padding: 25px;
 }
 
+.anchor {
+  margin-top: -70px;
+  position: absolute;
+}
+
 
 #bioinfo {
   display: flex;
@@ -1351,6 +1356,10 @@ span{
   
   .choicesbox {
     justify-content: flex-start;
+  }
+
+  .anchor {
+    margin-top: -100px;
   }
 
   #biocontain {

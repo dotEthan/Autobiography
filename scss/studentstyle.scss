@@ -459,6 +459,10 @@ a:link {
   padding: 3%;
 }
 
+.anchor {
+  margin-top: -70px;
+  position: absolute;
+}
 
 #bioinfo {
   display: flex;
@@ -963,6 +967,7 @@ a:link {
   border-radius: 20px 20px 0 0;
   border-bottom: none;
   width: 85%;
+  background-position: center;
 }
 
 #blogdate {
@@ -999,6 +1004,7 @@ a:link {
 
 .blogoption {
   background: $secondcolor;
+  background-position: center;
 }
 
 #resumehalf {
@@ -1520,6 +1526,10 @@ span{
     top: 0;
     left: -150%;
     right: auto;
+  }
+
+  .anchor {
+    margin-top: -100px;
   }
   
   #biocontain {

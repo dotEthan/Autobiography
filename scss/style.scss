@@ -47,6 +47,7 @@ $biowritings: 2.7em;
 $bioquestions: 2.5em;
 
 // fonts
+
 img{
   max-width: 100%;
   display: block;
@@ -442,6 +443,10 @@ a:link {
   padding: 25px;
 }
 
+.anchor {
+  margin-top: -70px;
+  position: absolute;
+}
 
 #bioinfo {
   display: flex;
@@ -480,8 +485,12 @@ a:link {
   font-family: $headertext;
 }
 
-#biopersonal {
-  display:flex;
+#biobio .unhidden {
+  display: flex !important;
+}
+
+.biopersonal {
+  display: none;
   align-items: center;
   position: absolute;
   top: 50%;
@@ -1033,12 +1042,12 @@ a:link {
 }
 
 #contactclose {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   position: absolute; 
   top: 40px;
   right: 30px;
-  font-size: 1em;
+  font-size: 0.8em;
   font-weight: bold;
   display: flex;
   justify-content: center;
@@ -1590,6 +1599,10 @@ textarea{
     height: 35px;
   }
 
+  .anchor {
+    margin-top: 0px;
+  }
+
   #biocontain {
     width: 90%;
     margin: 0;
@@ -1619,7 +1632,7 @@ textarea{
     display: block;
   }
 
-  #biopersonaltext {
+  .biopersonaltext {
     width: 75%;
   }
 
@@ -1821,7 +1834,7 @@ textarea{
     height: 25vh;
   }
 
-  #biopersonaltext{
+  .biopersonaltext{
     padding-right: 10px;
   }
 
@@ -2031,7 +2044,7 @@ textarea{
     font-size: 1.2em;
   }
 
-  #biopersonal {
+  .biopersonal {
     left: 5%;
   }
 

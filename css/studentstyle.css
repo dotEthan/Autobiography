@@ -359,6 +359,10 @@ a:link {
   background: #ffff00;
   padding: 3%; }
 
+.anchor {
+  margin-top: -70px;
+  position: absolute; }
+
 #bioinfo {
   display: flex;
   justify-content: center; }
@@ -776,7 +780,8 @@ a:link {
   border: 1px solid #999900;
   border-radius: 20px 20px 0 0;
   border-bottom: none;
-  width: 85%; }
+  width: 85%;
+  background-position: center; }
 
 #blogdate {
   margin-bottom: 7px;
@@ -805,7 +810,8 @@ a:link {
   text-align-last: center; }
 
 .blogoption {
-  background: #31c2fe; }
+  background: #31c2fe;
+  background-position: center; }
 
 #resumehalf {
   padding: 20px;
@@ -1162,6 +1168,8 @@ span {
     top: 0;
     left: -150%;
     right: auto; }
+  .anchor {
+    margin-top: -100px; }
   #biocontain {
     width: 90%;
     margin: 0;

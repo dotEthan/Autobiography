@@ -108,25 +108,26 @@ $('#programmer, #programmerpro').click(function() {
 //Text Fade
 //-----------------------
 
-$(biopersonal).stop().animate({
+$("#biobio").stop().animate({
   'opacity': 0
 }, 0);
 
 $('#biocontain').hover(function () {
-    $(bioquote).stop().animate({
+    $("#bioquote").stop().animate({
         'opacity': 0
-    }, 1500);
-    $(biopersonal).stop().animate({
+    }, 1000);
+    $('#biobio').addClass("unhidden");
+    $("#biobio").stop().animate({
         'opacity': 1
     }, 1000);
 }, function () {
-    $(bioquote).stop().animate({
+    $("#bioquote").stop().animate({
         'opacity': 1
     }, 1000);
-    $(biopersonal).stop().animate({
+    $('#biobio').removeClass("unhidden");
+    $("#biobio").stop().animate({
         'opacity': 0
     }, 1000);
-
 }); 
 
 //-----------------------
