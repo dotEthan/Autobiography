@@ -748,8 +748,7 @@ a:link {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
-  width: 100%; }
+  padding: 20px; }
 
 #blogcentercont {
   display: flex;
@@ -767,10 +766,9 @@ a:link {
   text-align: left;
   font-size: 0.8em;
   border: 1px solid #b2b2b2;
-  border-radius: 20px;
-  width: 85%;
-  margin-bottom: 15px;
-  padding: 20px; }
+  border-radius: 20px 20px 0 0;
+  border-bottom: none;
+  width: 85%; }
 
 #blogdate {
   margin-bottom: 7px;
@@ -778,11 +776,28 @@ a:link {
   font-size: 0.9em; }
 
 #blogdata {
-  margin-bottom: 5px; }
+  margin-bottom: 5px;
+  padding: 20px; }
 
 #blogtext {
   width: 90%;
   margin: 0 auto; }
+
+#blogwhen {
+  width: 85%;
+  margin: 0 auto 20px;
+  border-radius: 10px; }
+
+#dates {
+  background: #4c4556;
+  width: 100%;
+  height: 40px;
+  border-radius: 0 0 20px 20px;
+  color: white;
+  text-align-last: center; }
+
+.blogoption {
+  background: #4c4556; }
 
 #resumehalf {
   padding: 20px;

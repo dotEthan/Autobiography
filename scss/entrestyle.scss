@@ -130,7 +130,7 @@ a:hover {
 
 .menucontain {
   position: fixed;
-  top: 20px;
+  top: 4vh;
   left: 0;
   color: white;
   width: 100%;
@@ -238,7 +238,7 @@ a:hover {
 #alert {
   position: fixed;
   width: 100%;
-  height: 20px;
+  height: 4vh;
   font-size: 0.4em;
   background: $thirdcolor;
   color: white;
@@ -902,6 +902,7 @@ a:hover {
   }
 }
 
+
 #blogcenter {
   background: $firstcolor;
   color: black;
@@ -929,10 +930,9 @@ a:hover {
   text-align: left;
   font-size: 0.8em;
   border: 1px solid darken($firstcolor, 20%);
-  border-radius: 20px;
+  border-radius: 20px 20px 0 0;
+  border-bottom: none;
   width: 85%;
-  margin-bottom: 15px;
-  padding: 20px;
 }
 
 #blogdate {
@@ -943,11 +943,32 @@ a:hover {
 
 #blogdata {
   margin-bottom: 5px;
+  padding: 20px;
 }
 
 #blogtext {
   width: 90%;
   margin: 0 auto;
+}
+
+#blogwhen {
+  width: 85%;
+  margin: 0 auto 20px;
+  border-radius: 10px;
+
+}
+
+#dates {
+  background: $secondcolor;
+  width: 100%;
+  height: 40px;
+  border-radius: 0 0 20px 20px;
+  color: white;
+  text-align-last: center;
+}
+
+.blogoption {
+  background: $secondcolor;
 }
 
 #resumehalf {
@@ -1158,8 +1179,9 @@ span{
     height: 100%;
     width: 50%;
     align-items: flex-start;
-    padding-bottom: 15vh;
+    justify-content: center;
     padding-left: 8%;
+    margin-top: 75px;
   }
 
   .icon__pic {
@@ -1289,61 +1311,48 @@ span{
     font-size: 2em;
   }
 
-  .menucontain {
-    width: 100%;
+  .menu {
+    height: 75px;
   }
-
-  .menu{
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 0;
-    padding-top: 0;
-    width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-    transition: all 1s;
-    background: rgba(71,71,71,0.3);
-  }
-
-  .menutabs {
-    font-size: 1em;
+  
+  .menucontain .menuscroll {
     height: 100px;
-    width: 20%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    transition: all 1s;
-    margin: 15px 0;
-    z-index: 99;
-    padding: 5px 3px;
+  }
 
-    a {
-      text-decoration: none;
-    }
-
-    &:hover {
-      font-size: 1.3em;
-      
-      a {
-        color: $thirdcolor;
-      }
-    }
+  .menutitle {
+    font-size: 1.5em;
   }
      
-  
-  #splashcont {
-    align-items: center;
-    background-position: top center;
-    background-size: cover;
-    justify-content: flex-start;
-  }
-  
-  #nametitle {
-    font-size: 3em;
+  #namotto {
+    font-size: 1.5em;
   }
 
+  #alert {
+    font-size: 0.65em;
+  }
+
+  .icon__pic {
+    width: 50px;
+    height: 50px;
+  }
+
+  .icon {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .icon__text {
+    width: 60%;
+    text-align: left;
+    padding: 5px;
+    font-size: 1.5em;
+  }
   
+  .choicesbox {
+    justify-content: flex-start;
+  }
+
   #biocontain {
     width: 90%;
     margin: 0;
@@ -1517,10 +1526,6 @@ span{
 
 @media screen and (min-width: 768px) and (orientation: landscape) {
   
-  #nametitle {
-    font-size: 2.5em;
-  }
-
   #inquiryform {
     width: 70%;
   }
@@ -1805,11 +1810,20 @@ span{
 @media screen and (min-width: 1600px) {
 
   .menutabs {
-    font-size: 1em;
+    font-size: 0.75em;
   }
 
-  #nametitle {
-    font-size: 5em;
+  #namotto {
+    font-size: 2.5em;
+  }
+
+  .icon__pic {
+    width: 75px;
+    height: 75px;
+  }
+
+  .icon__text {
+    font-size: 2.3em;
   }
 
   #biocontain {

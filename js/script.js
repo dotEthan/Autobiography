@@ -50,7 +50,7 @@ let asaChange = document.getElementById('asa');
 let quoteNameChange = document.getElementById('quotename');
 let bioChange = document.getElementById('ageinfo');
 
-$('#studentb, #studentpro').click(function() {
+$('#student, #studentpro').click(function() {
   window.cancelAnimationFrame(animating); 
   if (studentDone == 0) {
     $('#load').css({'display': 'block'});
@@ -69,7 +69,7 @@ $('#studentb, #studentpro').click(function() {
   doneResizing();
 });
 
-$('#entreb, #entrepro').click(function() {
+$('#entre, #entrepro').click(function() {
   window.cancelAnimationFrame(animating); 
   if (entreDone == 0) {
     $('#load').css({'display': 'block'});
@@ -89,7 +89,7 @@ $('#entreb, #entrepro').click(function() {
   doneResizing();
 });
   
-$('#programmerb, #programmerpro').click(function() {
+$('#programmer, #programmerpro').click(function() {
   $('link[rel=stylesheet]').attr({href : 'css/style.css'}); 
   theme = 'programmer';
   $('#entrebgcanvas').css("display", "none");
@@ -603,28 +603,13 @@ function circles() {
 //------------------------
 
 function doneResizing() {
-  if (Modernizr.mq('screen and (min-width:768px)')) {
 
-    if (theme === 'entre') {
-      $('#entrebgcanvas').css({'display': 'block'});
-      timeOut = setTimeout(spirals, 1000);
-    } else if (theme === 'student') {
-      $('#entrebgcanvas').css({'display': 'block'});
-      timeOut = setTimeout(circles, 1000);
-    }
-
-    large = true;
-
-  } else {
-    $('#entrebgcanvas').css({'display': 'none'});
-
-    if (theme === 'student') {
+  if (theme === 'student') {
     $('#entrebgcanvas').css({'display': 'block'});
-      timeOut = setTimeout(circles, 1000);
-    }
-
-    large = false;
+    timeOut = setTimeout(circles, 1000);
   }
+
+  (Modernizr.mq('screen and (min-width:768px)')) ? large = true : large = false;
 }
 
 var id5;
@@ -723,23 +708,19 @@ function endO(e) {
 function drawer() {
   console.log($('#choices').css("height"));
   if (large && !open) {
-    console.log('large and closed');
     $('#choices').toggleClass('choicesh'); 
     $('#choices')[0].addEventListener('transitionend', endH);
     open = true;
   } else if (large && open) {
-    console.log('large and open');
     $('#choicesoptcont').toggleClass('cocon');
     $('#choices')[0].addEventListener('transitionend', endO);
     open = false;
-  } else if (!large && !open && $('#choices').css("height") === "3px") {
-    console.log('small and closed');
+  } else if (!large && !open) {
     $('#choices').toggleClass('choiceso');
     $('#choices__contain').toggleClass('choices__containo');
     $('#choices')[0].addEventListener('transitionend', endH);
     open = true;
-  } else if (!large && open && $('#choices').css("height") === "80px") {
-    console.log('small and open');
+  } else if (!large && open) {
     $('#choicesoptcont').toggleClass('cocon');
     $('#choices')[0].addEventListener('transitionend', endO);
     open = false;
@@ -796,10 +777,10 @@ function processData(allText) {
   })
 }
 
-
 //-------------------
 // desktop Icons
 //-------------------
+
 let openArr = [];
 let click = 0;
 $('.over__title__close').click(closeEle);
@@ -847,3 +828,7 @@ function showOver() {
   }
   if(openArr.length === 0) $('.desktop__over').removeClass('desktop__over--open');
 }
+
+//-------------------
+// Dropdown List
+//-------------------

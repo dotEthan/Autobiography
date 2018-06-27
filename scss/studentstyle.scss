@@ -246,6 +246,7 @@ a:link {
   text-align: center;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   color: white;
 }
 
@@ -285,8 +286,8 @@ a:link {
 }
 
 #choicestab {
-  height: 33px;
-  width: 30%;
+  height: 23px;
+  width: 20%;
   max-width: 150px;
   margin: 0 auto;
   background: $secondcolor;
@@ -298,7 +299,7 @@ a:link {
   justify-content:center;
   padding-bottom: 5px;
   color: white;
-  font-size: 0.8em;
+  font-size: 0.5em;
   cursor: pointer;
 }
 
@@ -311,14 +312,14 @@ a:link {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  width: 80%;
+  width: 70%;
   max-width: 400px;
   margin: 0 auto;
   background: $secondcolor;
   border: 3px solid $thirdcolor;
   border-radius: 10px 10px 0 0;
   border-bottom: none;
-  height: 80px;
+  height: 65px;
   overflow: hidden;
   transition: height 0.5s;
 
@@ -330,9 +331,9 @@ a:link {
 #choicesoptcont {
   width: 100%;
   height: 100%;
+  margin: 5px 0;
   display: flex;
   flex-direction: column;
-  margin-bottom: 5px;
   opacity: 1;
   transition: opacity 0.3s; 
 }
@@ -347,12 +348,13 @@ a:link {
 }
 
 .icon {
-  width: 23%;
-  height: 40px;
+  width: 45px;
+  height: 35px;
   cursor: pointer;
   background-size: contain; 
   background-repeat: no-repeat;
   background-position: center;
+  position: relative;
 
   &:hover {
     .choicesbox {
@@ -362,30 +364,36 @@ a:link {
 }
 
 #studentb {
-  background-image: url("../images/iconr.png");
+  background-image: url("../images/legor.png");
 }
 
 #programmerb {
-  background-image: url("../images/iconb.png");
+  background-image: url("../images/legob.png");
 }
 
 #entreb {
-  background-image: url("../images/icong.png");
+  background-image: url("../images/legog.png");
 }
 
 .icon__pic {
-  width: 75%;
-  height: 30px;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .choicesbox {
-  margin-top: 17px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
   display: flex;
   align-items: flex-end;
   justify-content: center;
   font-weight: bold;
   color: white;
-  font-size: 0.5em;
+  font-size: 0.4em;
+  transform: translate(-50%,-22%);
 
   &:hover {
     color: $thirdcolor;
@@ -397,7 +405,7 @@ a:link {
 }
 
 #cheatsheet a {
-  font-size: 0.7em;
+  font-size: 0.6em;
   color: white;
   padding: 5px;
 
@@ -427,12 +435,17 @@ a:link {
   border-radius: 25px;
 }
 
+#cheatsheet__cont {
+  position: relative;
+}
+
 #cheatsheetexpclose {
   position: fixed;
   right: 20px;
-  top: 20px;
+  top: 10px;
   cursor: pointer;
-  color: red;
+  color: $thirdcolor;
+  font-size: 1.5em;
 }
 
 #cheatsheetexptitle {
@@ -832,7 +845,7 @@ a:link {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: red;
+  color: $thirdcolor;;
   background: white;
   border: 1px solid grey;
   border-radius: 25px;
@@ -947,10 +960,9 @@ a:link {
   text-align: left;
   font-size: 0.8em;
   border: 1px solid darken($firstcolor, 20%);
-  border-radius: 20px;
+  border-radius: 20px 20px 0 0;
+  border-bottom: none;
   width: 85%;
-  margin-bottom: 15px;
-  padding: 20px;
 }
 
 #blogdate {
@@ -961,11 +973,32 @@ a:link {
 
 #blogdata {
   margin-bottom: 5px;
+  padding: 20px;
 }
 
 #blogtext {
   width: 90%;
   margin: 0 auto;
+}
+
+#blogwhen {
+  width: 85%;
+  margin: 0 auto 20px;
+  border-radius: 10px;
+
+}
+
+#dates {
+  background: $secondcolor;
+  width: 100%;
+  height: 40px;
+  border-radius: 0 0 20px 20px;
+  color: white;
+  text-align-last: center;
+}
+
+.blogoption {
+  background: $secondcolor;
 }
 
 #resumehalf {
@@ -1027,7 +1060,7 @@ a:link {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: red;
+  color: $thirdcolor;;
   background: white;
   border: 1px solid grey;
   border-radius: 25px;
@@ -1172,21 +1205,22 @@ span{
 
 
   #titlecard {
-    margin-top:80px;
+    margin-top:70px;
+    padding-top: 5vh;
     width: 90%;
   }  
 
   #nametitle {
-    font-size: 1.4em;
+    font-size: 1.6em;
     padding: 15px;
+  }
+
+  #choices {
+    width: 50%;
   }
 
   .icon {
     height: 30px;
-  }
-
-  .choicesbox {
-    margin-top: 10px;
   }
 
   #biocontain {
@@ -1251,16 +1285,16 @@ span{
     font-size: 1.7em;
   }
 
-  .menu{
-    padding-top: 20px;
-  }
-
   .menutabs {
     font-size: 1em;
   }
 
+  .icon {
+    width: 60px;
+  }
+
   .choicesbox {
-    font-size: 0.7em;
+    font-size: 0.6em;
   }
 
   #nametitle {
@@ -1322,17 +1356,12 @@ span{
 
 @media screen and (min-width: 576px) and (orientation: landscape) {
 
-  #titlecard {
-    width: 70%;
-  }
-
   #nametitle{
     font-size: 1.8em;
-    padding: 5px;
   }
 
   .choicesbox {
-    font-size: 0.55em;
+    font-size: 0.4em;
   }
 
   .historytext {
@@ -1357,6 +1386,7 @@ span{
   .menu{
     width:80%;
     padding-top: 0;
+    height:100px; 
   }
 
   .leftcanvas {
@@ -1442,7 +1472,6 @@ span{
 
     .choicesh {
       width: 0px;
-      height: 300px;
     }
   }
 
@@ -1456,6 +1485,7 @@ span{
     transform: rotate(270deg) translateX(65px);
     width: 100px;
     padding-bottom: 0;
+    font-size: 0.7em;
   }
 
   #choices {
@@ -1463,10 +1493,14 @@ span{
     border:4px solid $thirdcolor;
     border-radius: 10px 0 0 10px;
     border-right: none;
-    height: 300px;
-    width: 150px;
+    height: 260px;
+    width: 120px;
     transition: all 1s;
     justify-content: flex-start;
+  }
+
+  #choicesoptcont {
+    justify-content: center;
   }
 
   .icon {
@@ -1477,6 +1511,15 @@ span{
   #iconcont {
     flex-direction: column;
     height: 200px;
+  }
+
+  #cheatsheetexp {
+    position: absolute;
+    width: 50vw;
+    transform: none;
+    top: 0;
+    left: -150%;
+    right: auto;
   }
   
   #biocontain {
@@ -1655,13 +1698,13 @@ span{
 }
 
 @media screen and (min-width: 768px) and (orientation: landscape) {
-
-  #titlecard {
-    margin-top: 13vh;
-  }
   
   #nametitle {
     font-size: 2.5em;
+  }
+
+  .choicesbox {
+    font-size: 0.6em;
   }
   
 }
@@ -1977,7 +2020,7 @@ span{
 @media screen and (min-width: 1600px) {
 
   .menutitle {
-    font-size: 2.1em;
+    font-size: 1.8em;
   }
 
   #nametitle {
@@ -2077,26 +2120,7 @@ span{
 
 @media screen and (min-width: 992px) and (min-aspect-ratio: 16/8) {
 
-
-  #titlecard {
-    margin-top: 16vh;
-  }
-
-  #languagetitle {
-    margin-top: 29vh;
-  }
-
-  #choices {
-    margin-top: 8vh;
-  }
-
-  #biocontain {
-    align-items: center;
-    text-align: center;
-  }
-
   #inquiryform {
     width: 70%;
-
   }
 }
