@@ -31,8 +31,8 @@ $secondcolorrgba: rgba(134, 194, 50, 0.7);
 $firstcolor: #e5e5e5;
 $secondcolor: #86ba25;
 $thirdcolor: #4c4556;
-$fourthcolor: #efa91c;
-$fifthcolor: #177b9a;
+$fourthcolor: #222;
+$fifthcolor: #ccc;
 
 $projectoverlayradius: 5px;
 // $headertext: 'Open-Sans', sans-serif;
@@ -471,7 +471,7 @@ a:hover {
   font-family: $headertext;
 }
 
-#biopersonal {
+.biopersonal{
   display:flex;
   align-items: center;
   position: absolute;
@@ -481,6 +481,10 @@ a:hover {
   flex-direction: column;
   text-align: left;
   justify-content: center;
+}
+
+#nature {
+  display: none;
 }
 
 #biotop {
@@ -1759,7 +1763,7 @@ span{
     font-size: 1.2em;
   }
 
-  #biopersonal {
+  .biopersonal{
     left: 5%;
   }
 

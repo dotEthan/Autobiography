@@ -9,7 +9,9 @@
   <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
   <script src="../particles.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Just+Another+Hand|Lobster|Open+Sans" rel="stylesheet"> 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">  
+  <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
   <link rel="stylesheet" href="css/style.css">
   <link rel="apple-touch-icon" href="images/icon.png">
 
@@ -112,8 +114,9 @@
                     <div class="editor__content--indented">
                       <span class="green">name</span>: <span class="white">'Ethan Strauss'</span>,<br />
                       <span class="green">profession</span>: 'Front End Developer',<br />
-                      <span class="green">Languages</span>: [ 'HTML5', 'CSS3', 'JavaScript', 'Jquery', 'React', 'SCSS', 'Liquid' ],<br />
-                      <span class="green">Currently Learning</span>: [ 'React' ],<br />
+                      <span class="green">Languages</span>: [ 'HTML5', 'CSS3', 'JavaScript', 'Jquery', 'React', 'SCSS', 'Pug', 'Liquid' ],<br />
+                      <span class="green">Currently Learning</span>: [ 'becoming a React expert' ],<br />
+                      <span class="green">Learning Next</span>: [ 'NodeJS' ],<br />
                       <span class="green">Traits</span>: [ 'Fast Learner', 'Hard Worker', 'Endlessly Curious' ],<br />
                       <span class="green">LinkedIn</span>: '<a href="https://www.linkedin.com/in/estrauss2018/">http://www.linkedin.com/me</a>',<br />
                       <span class="green">Resume</span>: 'resume.pdf'<br />
@@ -136,19 +139,19 @@
                 <div class="over__content">
                   <div id="studentpro" class="over__content__each theme__each">
                     <div class="theme__each__icon">
-                      <img alt="resume icon for downloading" src="./images/studenticon.png">
+                      <img alt="Student Theme Icon" src="./images/studenticon.png">
                       Student
                     </div>
                   </div>
                   <div id="entrepro" class="over__content__each theme__each">
                     <div class="theme__each__icon">
-                      <img alt="resume icon for downloading" src="./images/entreicon.png">
+                      <img alt="Entrepreneur Theme Icon" src="./images/entreicon.png">
                       Entrepreneur
                     </div>
                   </div>
                   <div id="programmerpro" class="over__content__each theme__each">
                     <div class="theme__each__icon">
-                      <img alt="resume icon for downloading" src="./images/programmericon.png">
+                      <img alt="Programmer Theme Icon" src="./images/programmericon.png">
                       Programmer
                     </div>
                   </div>
@@ -173,9 +176,9 @@
                       Resume.pdf
                     </div>
                   </div>
-                  <div class="over__content__each">
+                  <div id="coop" class="over__content__each">
                     <div class="theme__each__icon">
-                      <img alt="resume icon for downloading" src="./images/cooplg.png">
+                      <img alt="Slide show of my dog Cooper icon" src="./images/cooplg.png">
                       Cooper.exe
                     </div>
                   </div>
@@ -195,21 +198,38 @@
                 </div>
                 <div class="over__content">
                   <div class="over__content__each">
-                    <div class="theme__each__icon">
+                    <div class="theme__each__icon trash__stuff">
                       <img alt="resume icon for downloading" src="./images/resume.png">
-                      Resume.pdf
+                      Bank Info
                     </div>
                   </div>
-                  <div class="over__content__each">
+                  <div class="over__content__each trash__stuff">
                     <div class="theme__each__icon">
-                      <img alt="resume icon for downloading" src="./images/cooplg.png">
-                      Cooper.exe
+                      <img alt="Slide show of my dog Cooper icon" src="./images/resume.png">
+                      myetherwallet
                     </div>
                   </div>
                 </div>
                 <div class="over__status">
                   2 Items
                 </div>
+              </div>
+            </div>
+          </div>
+          <div class="slide__contain">
+            <div class="coop__close">X</div>
+            <div class="slide">
+              <div class="slide__slide">
+                <img class="slide__slide__img" src="./images/cooper1.jpg" alt="picture of my dog Cooper">
+              </div>  
+              <div class="slide__slide">
+                <img class="slide__slide__img" src="./images/cooper2.jpg" alt="picture of my dog Cooper">
+              </div>
+              <div class="slide__slide">
+                <img src="./images/cooper3.jpg" alt="picture of my dog Cooper">
+              </div>
+              <div class="slide__slide">
+                <img src="./images/cooper2.jpg" alt="picture of my dog Cooper">
               </div>
             </div>
           </div>
@@ -302,6 +322,14 @@
         <span id="bioanchor" class="anchor"></span>
         <div id="bioinfo">
           <div id="biotext">
+            <div id="nature">
+              <div id="giraffe">
+                <img src="../images/giraffe.png" alt="picture of a cute giraffe">
+              </div>
+              <div id="deer">
+                <img src="../images/deer.png" alt="picture of a cute deer">
+              </div>
+            </div>
             <div id="biocontain">
               <div id="bioquote">
                 <div id="biowriting">
@@ -327,7 +355,7 @@
                     Special Thanks to:
                   </div>
                   <div id="thanksright">
-                    <a href="https://www.codecademy.com">Codecademy.com</a>, <a href="https://www.freecodecamp.com">freecodecamp.com</a>, <a href="https://www.codepen.io">Codepen.io</a>, <a href="https://www.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647">Jon Duckett</a>, <a href="https://github.com/getify/You-Dont-Know-JS">Kyle Simpson</a>, <a href="https://eloquentjavascript.net/"> Marijn Haverbeke</a>, <a href="https://javascript30.com/">Wes Bos</a>, <a href="https://adventofcode.com/">Advent of Coding</a>, <a href="https://www.reddit.com/r/learnjavascript">Reddit</a>, <a href="https://stackoverflow.com/">Stackoverflow</a>
+                    <a href="https://www.codecademy.com">Codecademy.com</a>, <a href="https://www.freecodecamp.com">freecodecamp.com</a>, <a href="https://www.codepen.io">Codepen.io</a>, <a href="https://www.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647">Jon Duckett</a>, <a href="https://github.com/getify/You-Dont-Know-JS">Kyle Simpson</a>, <a href="https://javascript30.com/">Wes Bos</a>, <a href="https://css-tricks.com">Chris Coyier</a>, <a href="https://adventofcode.com/">Advent of Coding</a>, <a href="https://www.reddit.com/r/learnjavascript">Reddit</a>, <a href="https://stackoverflow.com/">Stackoverflow</a>
                     <br><br>
                     And the hundreds of other who helped answer my endless questions...
                   </div>
@@ -346,7 +374,7 @@
               <div id="flexcontainer">
                 <div class="imgtitle">
                   <div class="historylogo">
-                    <img src="images/inscriber.jpg" alt="Slide Image">
+                    <img src="images/inscriber.jpg" alt="Inscriber Logo">
                   </div>
                   <div class="historytitles">
                     <div>Inscriber Technology</div>
@@ -354,7 +382,7 @@
                   </div>
                 </div>
                 <div class="textblock">
-                  <div class="historyicons"><img src="../images/support.png"></div>
+                  <div class="historyicons"><img src="../images/support.png" alt="Icon to represent support history"></div>
                   <div class="historytext">
                     <div class="jobtitle">Title: <b>Customer Service Technician</b></div>
                     <div class="duties">Duties: </div>
@@ -375,7 +403,7 @@
               <div id="flexcontainer">
                 <div class="imgtitle">
                   <div class="historylogo">
-                  <img src="images/china.jpg" alt="Slide Image">
+                  <img src="images/china.jpg" alt="Chinese Flag Logo">
                   </div>
                   <div class="historytitles">
                     <div>Chinese Universities</div>
@@ -383,7 +411,7 @@
                   </div>
                 </div>
                 <div class="textblock">
-                  <div class="historyicons"><img src="../images/teacher.png"></div>
+                  <div class="historyicons"><img src="../images/teacher.png" alt="Icon to represent teaching history"></div>
                   <div class="historytext">
                     <div class="jobtitle">Title: English Professor</div>
                     <div class="duties">Duties: </div>
@@ -404,7 +432,7 @@
               <div id="flexcontainer">
                 <div class="imgtitle">
                   <div class="historylogo">
-                    <img src="images/english.jpg" alt="Slide Image">
+                    <img src="images/english.jpg" alt="Ethan's English School Logo">
                   </div>
                   <div class="historytitles">
                     <div>Ethan's English School</div>
@@ -412,7 +440,7 @@
                   </div>
                 </div>
                 <div class="textblock">
-                  <div class="historyicons"><img src="../images/onlineteacher.png"></div>
+                  <div class="historyicons"><img src="../images/onlineteacher.png" alt="Icon to represent online teaching history"></div>
                   <div class="historytext">
                     <div class="jobtitle">Title: Founder, CEO, Web Developer, and Teacher</div>
                     <div class="duties">Duties: </div>
@@ -432,7 +460,7 @@
               <div id="flexcontainer">
                 <div class="imgtitle">
                   <div class="historylogo">
-                    <img src="images/freggie.jpg" alt="Slide Image">
+                    <img src="images/freggie.jpg" alt="Freggie Logo">
                   </div>
                   <div class="historytitles">
                     Freggie Delivery
@@ -440,7 +468,7 @@
                   </div>
                 </div>
                 <div class="textblock">
-                  <div class="historyicons"><img src="../images/chef.png"></div>
+                  <div class="historyicons"><img src="../images/chef.png" alt="Icon to represent chef working history"></div>
                   <div class="historytext">
                     <div class="jobtitle">Title: Founder, CEO & Chef</div>
                     <div class="duties">Duties: </div>
@@ -459,7 +487,7 @@
               <div id="flexcontainer">
                 <div class="imgtitle">
                   <div class="historylogo">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/694606/eff-9.jpg" alt="Slide Image">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/694606/eff-9.jpg" alt="Winter Garden's Logo">
                   </div>
                   <div class="historytitles">
                     <div class="htname">Winter Gardens</div>
@@ -467,7 +495,7 @@
                   </div>
                 </div>
                 <div class="textblock">
-                  <div class="historyicons"><img src="../images/manager.png"></div>
+                  <div class="historyicons"><img src="../images/manager.png" alt="Icon to represent Winter Gardens history"></div>
                   <div class="historytext">
                     <div class="jobtitle">Title: Co-Founder & CTO</div>
                     <div class="duties">Duties: </div>
@@ -648,7 +676,7 @@
         <div class="protitle">Projects</div>
         <div id="projectcont">
           <div id="portfolio" class="project">
-            <img alt="Ethan's Logo" src="images/portfolio.png">
+            <img alt="Ethan's Portfolio Page Logo" src="images/portfolio.png">
             <div class="protext">
               <div class="protextcont">
                 <div class="protextt">
@@ -700,7 +728,7 @@
             </div>
           </div>
           <div id="easylife" class="project">
-            <img alt="Easy Life IndustriesLogo" src="images/easylife.png">
+            <img alt="Easy Life Industries Logo" src="images/easylife.png">
             <div class="protext">
               <div class="protextcont">
                 <div class="protextt">
@@ -801,20 +829,20 @@
               </div>
               <div id='contactinfocont'>
                 <div class="contactinfo">
-                  <label>Name: <span class="required">*</span></label>
+                  <label for="name">Name: <span class="required">*</span></label>
                   <input type="text" id="name" placeholder="Name"/>
                 </div>
                 <div class="contactinfo">
-                  <label>Email: <span class="required">*</span></label>
+                  <label for="email">Email: <span class="required">*</span></label>
                   <input type="text" id="email" placeholder="Email"/>
                 </div>
                 <div class="contactinfo">
-                  <label>Contact No: <span class="required"></span></label>
+                  <label for="phone">Contact No: <span class="required"></span></label>
                   <input type="text" id="phone" placeholder="10 digit Mobile no."/>
                 </div>
               </div>
               <div id="contactmessage">
-                <label>Message:</label>
+                <label for="inquiry">Message:</label>
                 <textarea id="inquiry" placeholder="Message......."></textarea>
                 <input type="button" id="submit" value="Send Message"/>
               </div>
@@ -876,6 +904,7 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
   <script src="js/jquery-csv.js"></script>
   <script  src="js/modernizr-custom.js"></script>
+  <script type="text/javascript" src="slick/slick.min.js"></script>
   <script  src="js/script.js"></script>
 
 </body>

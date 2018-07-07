@@ -279,7 +279,7 @@ a:link {
   background: #282923;
   display: flex;
   padding: 10px 5px 10px 0;
-  overflow: hidden; }
+  overflow-Y: scroll; }
 
 .editor__content a {
   color: white; }
@@ -312,7 +312,9 @@ a:link {
   font-weight: bold;
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  cursor: pointer;
+  margin-right: 10px; }
 
 .theme__each__icon {
   margin: 5px;
@@ -333,6 +335,43 @@ a:link {
   display: flex;
   align-items: center;
   padding: 2px; }
+
+.slide__contain {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  background: black;
+  z-index: 99;
+  width: 90%;
+  max-width: 650px; }
+
+.slide {
+  max-width: 600px;
+  width: 80%;
+  margin: auto; }
+
+.slide--open {
+  display: block; }
+
+.coop__close {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  background: grey;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.7em;
+  cursor: pointer; }
+
+.slide__slide {
+  max-width: 600px; }
 
 #nametitle {
   width: 100%;
@@ -383,11 +422,8 @@ a:link {
   margin-top: 20px;
   font-family: "Merriweather", serif; }
 
-#biobio .unhidden {
-  display: flex !important; }
-
 .biopersonal {
-  display: none;
+  display: block;
   align-items: center;
   position: absolute;
   top: 50%;
@@ -395,7 +431,15 @@ a:link {
   left: 0;
   flex-direction: column;
   text-align: left;
-  justify-content: center; }
+  justify-content: center;
+  height: 0px;
+  overflow: hidden; }
+
+.unhidden {
+  height: auto; }
+
+#nature {
+  display: none; }
 
 #biotop {
   display: flex;

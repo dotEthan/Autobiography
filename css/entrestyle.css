@@ -368,7 +368,7 @@ a:hover {
   margin-top: 20px;
   font-family: "Raleway", serif; }
 
-#biopersonal {
+.biopersonal {
   display: flex;
   align-items: center;
   position: absolute;
@@ -378,6 +378,9 @@ a:hover {
   flex-direction: column;
   text-align: left;
   justify-content: center; }
+
+#nature {
+  display: none; }
 
 #biotop {
   display: flex;
@@ -538,19 +541,19 @@ a:hover {
       color: #4c4556; }
 
 #inscriberslide {
-  background: #efa91c; }
+  background: #222; }
 
 #teachingslide {
-  background: #177b9a; }
+  background: #ccc; }
 
 #englishslide {
-  background: #efa91c; }
+  background: #222; }
 
 #freggieslide {
-  background: #177b9a; }
+  background: #ccc; }
 
 #winterslide {
-  background: #efa91c; }
+  background: #222; }
 
 #projectslice {
   position: relative;
@@ -1287,7 +1290,7 @@ span {
     font-size: 2.1em; }
   #quotename {
     font-size: 1.2em; }
-  #biopersonal {
+  .biopersonal {
     left: 5%; }
   #biotextw {
     font-size: 1em; }

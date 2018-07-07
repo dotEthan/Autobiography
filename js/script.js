@@ -124,10 +124,10 @@ $('#biocontain').hover(function () {
     $("#bioquote").stop().animate({
         'opacity': 1
     }, 1000);
-    $('#biobio').removeClass("unhidden");
     $("#biobio").stop().animate({
         'opacity': 0
     }, 1000);
+    setTimeout($('#biobio').removeClass("unhidden"), 1000);
 }); 
 
 //-----------------------
@@ -707,7 +707,6 @@ function endO(e) {
 }
 
 function drawer() {
-  console.log($('#choices').css("height"));
   if (large && !open) {
     $('#choices').toggleClass('choicesh'); 
     $('#choices')[0].addEventListener('transitionend', endH);
@@ -798,7 +797,6 @@ function showOver() {
   const eleId = this.id;
   const classNames = $(`#${eleId}__over`)[0].className;
   const openArrL = openArr.length;
-  console.log(openArr);
 
   if (!large) {
     if(openArr.includes(eleId)) {
@@ -831,5 +829,26 @@ function showOver() {
 }
 
 //-------------------
-// Dropdown List
+// Slick Slide
 //-------------------
+
+
+$('#coop').click((e) => {
+  $('.slide__contain').toggleClass('slide--open');
+  $('.slide').slick({
+    accessibility: true,
+    autoplay:true,
+    autoplaySpeed:10000,
+    speed:600,
+    slidesToShow:1,
+    slidesToScroll:1,
+  });
+});
+
+$('.coop__close').click(() => {
+  $('.slide__contain').removeClass('slide--open');
+});
+
+$('.trash__stuff').click(() => {
+  window.alert('Please contact the Website Administrator to have items in trash restored to desktop. Thank you.');
+});

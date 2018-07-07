@@ -19,14 +19,6 @@ $lightblue: #0dc9f7;
 $grey: #7f7f7f;
 $orange: #f05b47;
 $red: #ed1c24;
-// $thirdcolorrgba: rgba(237,28,36, 0.8);
-// $firstcolor: #e5e5e5;
-// $secondcolor: #333D51;
-// $thirdcolor: #D1E8E2;
-// $fourthcolor: #934A5F;
-// $fifthcolor: #C2B4D6;
-
-// $firstcolor: #bff073;
 $thirdcolorrgba: rgba(64, 167, 243, 0.8);
 $firstcolor: #e5e5e5;
 $secondcolor: #4c4556;
@@ -360,7 +352,7 @@ a:link {
   background: #282923;
   display: flex;
   padding: 10px 5px 10px 0;
-  overflow: hidden;
+  overflow-Y: scroll;
 }
 
 .editor__content a {
@@ -400,6 +392,8 @@ a:link {
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
+  margin-right: 10px;
 }
 
 .theme__each__icon {
@@ -425,6 +419,48 @@ a:link {
   display: flex;
   align-items: center;
   padding: 2px;
+}
+
+.slide__contain {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  background: black;
+  z-index: 99;
+  width: 90%;
+  max-width: 650px;
+}
+
+.slide {
+  max-width: 600px;
+  width: 80%;
+  margin: auto;
+}
+
+.slide--open {
+  display: block;
+}
+
+.coop__close {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  background: grey;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.7em;
+  cursor: pointer;
+}
+
+.slide__slide {
+  max-width: 600px;
 }
 
 #nametitle {
@@ -485,12 +521,8 @@ a:link {
   font-family: $headertext;
 }
 
-#biobio .unhidden {
-  display: flex !important;
-}
-
 .biopersonal {
-  display: none;
+  display: block;
   align-items: center;
   position: absolute;
   top: 50%;
@@ -499,6 +531,16 @@ a:link {
   flex-direction: column;
   text-align: left;
   justify-content: center;
+  height: 0px;
+  overflow: hidden;
+}
+
+.unhidden {
+  height: auto;
+}
+
+#nature {
+  display: none;
 }
 
 #biotop {
@@ -1597,6 +1639,7 @@ textarea{
   .theme__each__icon img {
     width: 35px;
     height: 35px;
+
   }
 
   .anchor {
