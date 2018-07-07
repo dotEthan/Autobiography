@@ -1191,6 +1191,10 @@ textarea{
   color: $secondcolor;
   cursor: pointer;
 
+  a {
+    color: $secondcolor;
+  }
+
 
   .footertext {
     font-size: .35em;
@@ -1202,6 +1206,10 @@ textarea{
   
   &:hover {
     color: $thirdcolor;
+
+    a {
+      color: $thirdcolor;
+    }
     
     .footertext {
       visibility: visible;
@@ -1215,6 +1223,11 @@ textarea{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+}
+
+.footericon a {
+  color: $secondcolor;
 }
 
 #footmessage{
@@ -1416,6 +1429,14 @@ textarea{
     left: 0; 
     width: 10%;
     height: 100vh;
+  }
+
+  #menu__right a, #menu__left a {
+    width: 110%;
+  }
+
+  .menutitle {
+    font-size: 0.9em;
   }
 
   #ethan {
@@ -1862,16 +1883,13 @@ textarea{
 
   .menutabs {
     font-size: 0.6em;
+    width: 110%;
   }
 
   #contentcontain {
     width: 93%;
     left: 7%;
   }
-
-  // .desktop__over {
-  //   top: 5vh;
-  // }
 
   .desktop__over__open--multi {
     height: 25vh;
@@ -1882,7 +1900,7 @@ textarea{
   }
 
   #portimage {
-    width: 20%;
+    width: 100%;
   }
   
   .flexbox-slider {

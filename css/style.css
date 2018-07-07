@@ -975,6 +975,8 @@ textarea {
   font-size: 2em;
   color: #4c4556;
   cursor: pointer; }
+  .contacttype a {
+    color: #4c4556; }
   .contacttype .footertext {
     font-size: .35em;
     visibility: hidden;
@@ -983,6 +985,8 @@ textarea {
     margin-top: 5px; }
   .contacttype:hover {
     color: #40a7f3; }
+    .contacttype:hover a {
+      color: #40a7f3; }
     .contacttype:hover .footertext {
       visibility: visible;
       color: #40a7f3; }
@@ -992,6 +996,9 @@ textarea {
   flex-direction: column;
   justify-content: center;
   align-items: center; }
+
+.footericon a {
+  color: #4c4556; }
 
 #footmessage {
   font-size: 0.6em;
@@ -1107,6 +1114,10 @@ textarea {
     left: 0;
     width: 10%;
     height: 100vh; }
+  #menu__right a, #menu__left a {
+    width: 110%; }
+  .menutitle {
+    font-size: 0.9em; }
   #ethan {
     position: absolute;
     top: 60px;
@@ -1385,7 +1396,8 @@ textarea {
   .menucontain {
     width: 7%; }
   .menutabs {
-    font-size: 0.6em; }
+    font-size: 0.6em;
+    width: 110%; }
   #contentcontain {
     width: 93%;
     left: 7%; }
@@ -1394,7 +1406,7 @@ textarea {
   .biopersonaltext {
     padding-right: 10px; }
   #portimage {
-    width: 20%; }
+    width: 100%; }
   .flexbox-slider {
     font-size: 2.5em;
     flex-direction: row-reverse;

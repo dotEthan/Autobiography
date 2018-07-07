@@ -113,10 +113,10 @@ $("#biobio").stop().animate({
 }, 0);
 
 $('#biocontain').hover(function () {
+    $('#biobio').addClass("unhidden");
     $("#bioquote").stop().animate({
         'opacity': 0
     }, 1000);
-    $('#biobio').addClass("unhidden");
     $("#biobio").stop().animate({
         'opacity': 1
     }, 1000);

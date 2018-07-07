@@ -204,6 +204,9 @@ a:link {
 .desktop__over {
   display: none; }
 
+.slide__contain {
+  display: none; }
+
 #choices__contain {
   display: flex;
   flex-direction: column;
