@@ -174,11 +174,13 @@ a:link {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  a {
+    width: 48%;
+  }
 }
 
-
 .menutabs {
-  width: 48%;
   text-align: center;
   font-size: 0.6em;
   cursor: pointer;
@@ -635,9 +637,17 @@ a:link {
   flex-direction: column;
   justify-content: flex-start;
   flex-wrap: wrap;
+  transition: max-height 1s;
+  max-height: 100px;
+  height: auto;
 }
 
-#flexcontainer {
+.open {
+  max-height: 500px;
+  transition: max-height 1s;
+}
+
+.flexcontainer {
   max-width: 500px;
   margin: 0 auto;
 }
@@ -645,15 +655,15 @@ a:link {
 .imgtitle {
   display: flex;
   justify-content: space-around;
-  height: 100px;
 }
 
 .historylogo {
   width: 50%;
   max-width: 150px;
+  display:flex; 
+  align-items: center;
 
   img {
-    height: 100px;
     margin: 0 auto;
   }
 }
@@ -717,6 +727,7 @@ a:link {
   margin-bottom: 15px;
   text-align: center;
   width: 100%;
+  font-weight: bold;
 }
 
 .dutylist ul {
@@ -978,7 +989,6 @@ a:link {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
 }
 
 #blogcentercont {
@@ -1070,6 +1080,7 @@ a:link {
 #contactslice {
   display: none;
   position: relative;
+  border-bottom: 1px dashed $thirdcolor;
 }
 
 #inquiryform {
@@ -1328,11 +1339,6 @@ textarea{
     justify-content: space-between;
   }
 
-  #ethan {
-    display: block;
-    margin-left: 25px;
-  }
-
   .menu{
     width: 100%;
     padding-top: 0;
@@ -1442,6 +1448,7 @@ textarea{
   #ethan {
     position: absolute;
     top: 60px;
+    left: 85px;
     margin-bottom: 150px;
     background: $secondcolor;
     border-radius: 25%;
@@ -1449,6 +1456,7 @@ textarea{
     z-index: 99;
     color: $firstcolor;
     border: 5px solid $thirdcolor;
+    height: 100px;
   }
 
   .leftcanvas {
@@ -1910,32 +1918,24 @@ textarea{
   }
 
   .flexbox-slide {
-    width: 20%;
+    max-height: 500px;
+    flex: 1;
     flex-direction: row;
     padding: 10px;
     justify-content: center;
     display: flex;
-    transition: width 1s;
     overflow: hidden;
+    transition: flex 1s;
 
-    &:hover {
+    &.open {
+      flex: 6;
+      padding: 50px;
 
-      .imgtitle {
-        height: 100px;
-        overflow: hidden;
-        flex-direction: row;
-        margin-bottom: 20px;
-      }
+      &:hover {
 
-      .historytitles {
-        height: 100px;
-        margin-top: 0;
-        margin-left: 10px;
-
-      }
-
-      .historylogo {
-        height: 100px;
+        .imgtitle {
+          border: none;
+        }
       }
     }
   }
@@ -1944,12 +1944,11 @@ textarea{
     width: 80%;
   }
 
-  #flexcontainer {
+  .flexcontainer {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    max-width: none;
   }
 
   .imgtitle {
@@ -1957,6 +1956,10 @@ textarea{
     height: auto;
   }
   
+  .itopen {
+    flex-direction: row;
+  }
+
   .historylogo {
     width: auto; 
     margin: 0 auto;
@@ -1971,7 +1974,6 @@ textarea{
     padding: 5px;
     width: 100%;
     height: 100px;
-    margin-top: 20px;
     max-width: none;
   }
 
@@ -1989,13 +1991,14 @@ textarea{
 
   .textblock {
     width: 90%;
-    margin: 10px auto 0;
-    height: 270px;
-    display: none;
+    margin: 0 auto 0;
+    height: 0px;
+    display: flex;
+    transition: height 1s;
   }
 
   .tbon {
-    display: flex;
+    height: 270px;
   }
 
   .historytext {
@@ -2068,6 +2071,10 @@ textarea{
     padding: 15px;
   }
 
+  #blogdata {
+    padding: 0px;
+  }
+
   #resumehalf {
     padding: 40px 40px 40px 30px;
   }
@@ -2082,10 +2089,6 @@ textarea{
   .menutabs {
     font-size: 0.7em;
   }
-
-  // .desktop__over {
-  //   top: 0;
-  // }
 
   .editor__content {
     font-size: 1.4em;
@@ -2118,7 +2121,7 @@ textarea{
   }
 
   .historytext {
-    font-size: 0.3em;
+    font-size: 0.35em;
   }
 
   .jobtitle {
@@ -2212,57 +2215,55 @@ textarea{
     font-size: 1em
   }
 
-  .flexbox-slide {
+  .flexcontainer {
+    flex-direction: row;
+    max-width: none;
+  }
 
-    &:hover {
-      #flexcontainer {
-        flex-direction: row;
-        padding: 0;
-      }
+  .fcon {
+    justify-content: flex-start;
+    width: 100%;    
+  }
 
-      .imgtitle {
-        flex-direction: column;
-        height: auto;
-        width: 30%;
-        margin-bottom: 0;
-      }
+  .historylogo {
+    margin: 0;
+    width: 150px;
+  }
 
-      .historytitles {
-        margin-left: 0;
-        height: 70px;
-        width: auto;
-      }
+  .historylogoside {
+    width: 150px;
+  }
 
-      .historylogo {
-        height: 150px;
-        width: auto;
-        max-width: none;
-
-        img {
-          height: auto;
-        }
-      }
-
-      .textblock {
-        width: 70%;
-        height: 375px;
-      }
-
-      .historytext {
-        border-top: none;
-        border-left: 1px solid black;
-      }
-    }
+  .historytitlesside {
+    width: 150px;
   }
 
   .historytitles {
     font-size: 0.4em;
     padding: 15px;
+    width: 150px;
   }
 
   .historytext {
     font-size:0.4em;
     padding: 25px;
+    border-top: none;
+    border-left: 1px solid black;
+  }
+
+  .textblock {
+    width: 0px;
+    height: 400px;
+    margin: 0;
+    transition: width 1s;
+  }
+
+  .tbon {
+    width: 500px;
+  }
+
+  .itopen {
+    flex-direction: column;
   }
 
   #availablehalf, #resumehalf {

@@ -216,15 +216,17 @@ a:hover {
 
 .menutitle {
   font-size: $menufontsize;
+  color: white;
 
   a {
     text-decoration: none;
+    color: white;
   }
 }
   
 #splashcont {
   height: 75vh;
-  background-image: url('../images/entresm.jpg');
+  background-image: url('../images/bge2.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -261,7 +263,7 @@ a:hover {
   margin: 0 auto;
   text-align: left;
   width: 100%;
-  background: linear-gradient(rgba(white,0), white 50%);
+  background: linear-gradient(rgba(white,0) 10%, white 40%);
 }
 
 #namotto {
@@ -583,9 +585,17 @@ a:hover {
   flex-direction: column;
   justify-content: flex-start;
   flex-wrap: wrap;
+  transition: max-height 1s;
+  max-height: 100px;
+  height: auto;
 }
 
-#flexcontainer {
+.open {
+  max-height: 500px;
+  transition: max-height 1s;
+}
+
+.flexcontainer {
   max-width: 500px;
   margin: 0 auto;
 }
@@ -593,22 +603,22 @@ a:hover {
 .imgtitle {
   display: flex;
   justify-content: space-around;
-  height: 100px;
 }
 
 .historylogo {
   width: 50%;
   max-width: 150px;
+  display:flex; 
+  align-items: center;
 
   img {
-    height: 100px;
     margin: 0 auto;
   }
 }
 
 .historytitles {
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   justify-content: center;
   color: #000000;
   background: rgba(255,255,255,0.6);
@@ -665,6 +675,7 @@ a:hover {
   margin-bottom: 15px;
   text-align: center;
   width: 100%;
+  font-weight: bold;
 }
 
 .dutylist ul {
@@ -1014,6 +1025,7 @@ a:hover {
 #contactslice {
   display: none;
   position: relative;
+  border-bottom: 1px dashed $thirdcolor;
 }
 
 #inquiryform {
@@ -1135,6 +1147,10 @@ span{
   color: $secondcolor;
   cursor: pointer;
 
+  a {
+    color: $secondcolor;
+  }
+
 
   .footertext {
     font-size: .35em;
@@ -1146,6 +1162,10 @@ span{
   
   &:hover {
     color: $thirdcolor;
+
+    a {
+      color: $thirdcolor;
+    }
     
     .footertext {
       visibility: visible;
@@ -1185,7 +1205,7 @@ span{
     align-items: flex-end;
     justify-content: flex-end;
     height: 100%;
-    background: linear-gradient(to right, rgba(white,0), white 50%);
+    background: linear-gradient(to right, rgba(white,0) 35%, white 55%);
   }
 
   #namotto {
@@ -1583,32 +1603,24 @@ span{
   }
 
   .flexbox-slide {
-    width: 20%;
+    max-height: 500px;
+    flex: 1;
     flex-direction: row;
     padding: 10px;
     justify-content: center;
     display: flex;
-    transition: width 1s;
     overflow: hidden;
+    transition: flex 1s;
 
-    &:hover {
+    &.open {
+      flex: 6;
+      padding: 50px;
 
-      .imgtitle {
-        height: 100px;
-        overflow: hidden;
-        flex-direction: row;
-        margin-bottom: 20px;
-      }
+      &:hover {
 
-      .historytitles {
-        height: 100px;
-        margin-top: 0;
-        margin-left: 10px;
-
-      }
-
-      .historylogo {
-        height: 100px;
+        .imgtitle {
+          border: none;
+        }
       }
     }
   }
@@ -1617,17 +1629,20 @@ span{
     width: 80%;
   }
 
-  #flexcontainer {
+  .flexcontainer {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    max-width: none;
   }
 
   .imgtitle {
     flex-direction: column;
     height: auto;
+  }
+  
+  .itopen {
+    flex-direction: row;
   }
   
   .historylogo {
@@ -1644,7 +1659,6 @@ span{
     padding: 5px;
     width: 100%;
     height: 100px;
-    margin-top: 20px;
     max-width: none;
   }
 
@@ -1662,13 +1676,14 @@ span{
 
   .textblock {
     width: 90%;
-    margin: 10px auto 0;
-    height: 270px;
-    display: none;
+    margin: 0 auto 0;
+    height: 0px;
+    display: flex;
+    transition: height 1s;
   }
 
   .tbon {
-    display: flex;
+    height: 270px;
   }
 
   .historytext {
@@ -1860,57 +1875,55 @@ span{
     font-size: 1.1em;
   }
 
-  .flexbox-slide {
+  .flexcontainer {
+    flex-direction: row;
+    max-width: none;
+  }
 
-    &:hover {
-      #flexcontainer {
-        flex-direction: row;
-        padding: 0;
-      }
+  .fcon {
+    justify-content: flex-start;
+    width: 100%;    
+  }
 
-      .imgtitle {
-        flex-direction: column;
-        height: auto;
-        width: 30%;
-        margin-bottom: 0;
-      }
+  .historylogo {
+    margin: 0;
+    width: 150px;
+  }
 
-      .historytitles {
-        margin-left: 0;
-        height: 70px;
-        width: auto;
-      }
+  .historylogoside {
+    width: 150px;
+  }
 
-      .historylogo {
-        height: 150px;
-        width: auto;
-        max-width: none;
-
-        img {
-          height: auto;
-        }
-      }
-
-      .textblock {
-        width: 70%;
-        height: 375px;
-      }
-
-      .historytext {
-        border-top: none;
-        border-left: 1px solid black;
-      }
-    }
+  .historytitlesside {
+    width: 150px;
   }
 
   .historytitles {
     font-size: 0.4em;
     padding: 15px;
+    width: 150px;
   }
 
   .historytext {
     font-size:0.4em;
     padding: 25px;
+    border-top: none;
+    border-left: 1px solid black;
+  }
+
+  .textblock {
+    width: 0px;
+    height: 400px;
+    margin: 0;
+    transition: width 1s;
+  }
+
+  .tbon {
+    width: 500px;
+  }
+
+  .itopen {
+    flex-direction: column;
   }
 
   #availablehalf, #resumehalf {

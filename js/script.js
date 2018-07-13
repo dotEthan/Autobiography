@@ -623,68 +623,123 @@ $(window).resize(function() {
 doneResizing();
 
 //------------------------ 
-// History Hover
+// History click
 //------------------------
 
-$('.flexbox-slide').hover(function () {
-  const thisSlide = $(this);
+$('.flexbox-slide').click((e) => {
+  const thisSlide = e.currentTarget;
   const slideArray = $('.flexbox-slide');
-  const textBlock = $(this).find('.textblock');
-  const text = $(this).find('.historytext');
-  const image = $(this).find('.historylogo');
-  const titles = $(this).find('.historytitles');
+  const textBlock = thisSlide.querySelector('.textblock');
+  const text = thisSlide.querySelector('.historytext');
+  const image = thisSlide.querySelector('.historylogo');
+  const titles = thisSlide.querySelector('.historytitles');
+  const imgtitle = thisSlide.querySelector('.imgtitle');
+  const flexcont = thisSlide.querySelector('.flexcontainer');
+
+  if (thisSlide.classList.contains('open')) {
+    thisSlide.classList.remove('open');
+  } else if ($('.flexbox-slide').hasClass('open')) {
+    removeAll();
+     $('.flexbox-slide').removeClass('open');
+      thisSlide.classList.toggle('open');
+  }else {
+      thisSlide.classList.toggle('open');
+  }
 
   if (Modernizr.mq('screen and (max-width:992px)')) {
 
-    textBlock.addClass('tbopen');
-    text.addClass('hton');
+    textBlock.classList.toggle('tbopen');
+    text.classList.toggle('hton');
 
   } else {
 
-    thisSlide.addClass('flexopen');
-    text.addClass('hton');
-    image.addClass('historylogoside');
-    titles.addClass('historytitlesside');
-    textBlock.addClass('tbon');
+    if (Modernizr.mq('screen and (max-width:1600px)')) {
+      flexcont.classList.toggle('fcon');
+    }
+
+    text.classList.toggle('hton');
+    image.classList.toggle('historylogoside');
+    titles.classList.toggle('historytitlesside');
+    textBlock.classList.toggle('tbon');
+    imgtitle.classList.toggle('itopen');
 
     for(let i=0; i<slideArray.length; i++) {
-      if (slideArray[i].id !== this.id) {
+      if (slideArray[i].id !== thisSlide.id) {
         slideArray[i].style.fontSize = '0.8em';
       }
     }
-
   }
 
-}, function () {
-  const thisSlide = $(this);
-  const slideArray = $('.flexbox-slide');
-  const textBlock = $(this).find('.textblock');
-  const text = $(this).find('.historytext');
-  const image = $(this).find('.historylogo');
-  const titles = $(this).find('.historytitles');
-
-  if (Modernizr.mq('screen and (max-width:992px)')) {
-
-    textBlock.removeClass('tbopen');
-    text.removeClass('hton');
-
-  } else {
-
-    text.removeClass('hton');
-    thisSlide.removeClass('flexopen');
-    image.removeClass('historylogoside');
-    titles.removeClass('historytitlesside');
-    textBlock.removeClass('tbon');
-
-    for(let i=0; i<slideArray.length; i++) {
-      if (slideArray[i].id !== this.id) {
-        slideArray[i].style.fontSize = '1em';
-      }
-    }
-
+  function removeAll() {
+    if($('.textblock').hasClass('tbon')) $('.textblock').removeClass('tbon');
+    if($('.textblock').hasClass('tbopen')) $('.textblock').removeClass('tbopen');
+    if($('.textblock').hasClass('tbon')) $('.textblock').removeClass('tbon');
+    if($('.historytext').hasClass('hton')) $('.historytext').removeClass('hton');
+    if($('.historylogo').hasClass('historylogoside')) $('.historylogo').removeClass('historylogoside');
+    if($('.historytitles').hasClass('historytitlesside')) $('.historytitles').removeClass('historytitlesside');
+    if($('.imgtitle').hasClass('itopen')) $('.imgtitle').removeClass('itopen');
   }
+});
 
-}); 
+// $('.flexbox-slide').hover(function () {
+//   const thisSlide = $(this);
+//   const slideArray = $('.flexbox-slide');
+//   const textBlock = $(this).find('.textblock');
+//   const text = $(this).find('.historytext');
+//   const image = $(this).find('.historylogo');
+//   const titles = $(this).find('.historytitles');
+
+//   if (Modernizr.mq('screen and (max-width:992px)')) {
+
+//     textBlock.addClass('tbopen');
+//     text.addClass('hton');
+
+//   } else {
+
+//     thisSlide.addClass('flexopen');
+//     text.addClass('hton');
+//     image.addClass('historylogoside');
+//     titles.addClass('historytitlesside');
+//     textBlock.addClass('tbon');
+
+//     for(let i=0; i<slideArray.length; i++) {
+//       if (slideArray[i].id !== this.id) {
+//         slideArray[i].style.fontSize = '0.8em';
+//       }
+//     }
+
+//   }
+
+// }, function () {
+//   const thisSlide = $(this);
+//   const slideArray = $('.flexbox-slide');
+//   const textBlock = $(this).find('.textblock');
+//   const text = $(this).find('.historytext');
+//   const image = $(this).find('.historylogo');
+//   const titles = $(this).find('.historytitles');
+
+//   if (Modernizr.mq('screen and (max-width:992px)')) {
+
+//     textBlock.removeClass('tbopen');
+//     text.removeClass('hton');
+
+//   } else {
+
+//     text.removeClass('hton');
+//     thisSlide.removeClass('flexopen');
+//     image.removeClass('historylogoside');
+//     titles.removeClass('historytitlesside');
+//     textBlock.removeClass('tbon');
+
+//     for(let i=0; i<slideArray.length; i++) {
+//       if (slideArray[i].id !== this.id) {
+//         slideArray[i].style.fontSize = '1em';
+//       }
+//     }
+
+//   }
+
+// }); 
 
 //----------------
 // drawer
