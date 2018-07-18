@@ -318,10 +318,10 @@ a:link {
   margin-right: 10px; }
 
 .theme__each__icon {
-  margin: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
   width: 55px;
   height: 55px; }
   .theme__each__icon img {
@@ -1428,9 +1428,13 @@ textarea {
     display: flex;
     overflow: hidden;
     transition: flex 1s; }
+    .flexbox-slide:hover .clickinform {
+      display: block; }
     .flexbox-slide.open {
       flex: 6;
       padding: 50px; }
+      .flexbox-slide.open:hover .clickinform {
+        display: none; }
       .flexbox-slide.open:hover .imgtitle {
         border: none; }
   .flexopen {
@@ -1440,6 +1444,14 @@ textarea {
     justify-content: center;
     align-items: center;
     flex-direction: column; }
+  .clickinform {
+    display: none;
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.4em;
+    color: #4c4c4c; }
   .imgtitle {
     flex-direction: column;
     height: auto; }

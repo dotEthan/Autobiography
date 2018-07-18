@@ -332,7 +332,7 @@ a:link {
   display: none;
   flex-direction: column;
   justify-content: center;
-  position: fixed;
+  position: absolute;
   top: 50%;
   right: 50%;
   width: 80vw;
@@ -400,6 +400,14 @@ a:link {
   bottom: 0;
   width: 20%; }
 
+#tree {
+  position: absolute;
+  right: -5%;
+  bottom: -1%;
+  width: auto; }
+  #tree img {
+    height: 150px; }
+
 #deer {
   width: 20%;
   position: absolute;
@@ -416,6 +424,7 @@ a:link {
   font-size: 0.8em;
   text-align: right;
   margin-top: 20px;
+  margin-right: 100px;
   font-family: "indie_flowerregular", cursive; }
 
 .biopersonal {
@@ -506,7 +515,8 @@ a:link {
   flex-wrap: wrap;
   transition: max-height 1s;
   max-height: 100px;
-  height: auto; }
+  height: auto;
+  cursor: pointer; }
 
 .open {
   max-height: 500px;
@@ -515,6 +525,9 @@ a:link {
 .flexcontainer {
   max-width: 500px;
   margin: 0 auto; }
+
+.clickinform {
+  display: none; }
 
 .imgtitle {
   display: flex;
@@ -1197,13 +1210,15 @@ span {
   #iconcont {
     flex-direction: column;
     height: 200px; }
+  #tree img {
+    height: 500px; }
   #cheatsheetexp {
     position: absolute;
-    width: 50vw;
+    width: 30vw;
     transform: none;
-    top: 0;
-    left: -150%;
-    right: auto; }
+    top: 150px;
+    right: 150px;
+    height: 250px; }
   .anchor {
     margin-top: -100px; }
   #biocontain {
@@ -1215,6 +1230,8 @@ span {
     width: 100%; }
   #quotename {
     font-size: 1em; }
+  #tree {
+    height: 350px; }
   #biotop {
     flex-direction: row;
     align-items: center; }
@@ -1334,7 +1351,8 @@ span {
   #titlecard {
     margin-top: 12vh; }
   #bioquote {
-    font-size: 1em; }
+    font-size: 1em;
+    width: 90%; }
   .biopersonal {
     font-size: 1.2em; }
   #biopersonaltext {
@@ -1354,9 +1372,13 @@ span {
     display: flex;
     overflow: hidden;
     transition: flex 1s; }
+    .flexbox-slide:hover .clickinform {
+      display: block; }
     .flexbox-slide.open {
       flex: 6;
       padding: 50px; }
+      .flexbox-slide.open:hover .clickinform {
+        display: none; }
       .flexbox-slide.open:hover .imgtitle {
         border: none; }
   .flexopen {
@@ -1366,6 +1388,14 @@ span {
     justify-content: center;
     align-items: center;
     flex-direction: column; }
+  .clickinform {
+    display: none;
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.4em;
+    color: #4c4c4c; }
   .imgtitle {
     flex-direction: column;
     height: auto; }

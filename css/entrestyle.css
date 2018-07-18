@@ -464,7 +464,11 @@ a:hover {
   flex-wrap: wrap;
   transition: max-height 1s;
   max-height: 100px;
-  height: auto; }
+  height: auto;
+  cursor: pointer; }
+
+.clickinform {
+  display: none; }
 
 .open {
   max-height: 500px;
@@ -1075,6 +1079,8 @@ span {
   #biowriting {
     font-size: 1.8em;
     width: 100%; }
+  #tree {
+    height: 350px; }
   #quotename {
     font-size: 1em; }
   #biotop {
@@ -1210,9 +1216,13 @@ span {
     display: flex;
     overflow: hidden;
     transition: flex 1s; }
+    .flexbox-slide:hover .clickinform {
+      display: block; }
     .flexbox-slide.open {
       flex: 6;
       padding: 50px; }
+      .flexbox-slide.open:hover .clickinform {
+        display: none; }
       .flexbox-slide.open:hover .imgtitle {
         border: none; }
   .flexopen {
@@ -1222,6 +1232,14 @@ span {
     justify-content: center;
     align-items: center;
     flex-direction: column; }
+  .clickinform {
+    display: none;
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.4em;
+    color: #4c4c4c; }
   .imgtitle {
     flex-direction: column;
     height: auto; }

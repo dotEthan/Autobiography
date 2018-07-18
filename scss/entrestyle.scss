@@ -588,6 +588,11 @@ a:hover {
   transition: max-height 1s;
   max-height: 100px;
   height: auto;
+  cursor: pointer
+}
+
+.clickinform {
+  display: none;
 }
 
 .open {
@@ -1398,9 +1403,13 @@ span{
   
   #biowriting {
     font-size: 1.8em;
-    width: 100%;
+    width: 100%; 
   }
   
+  #tree {
+    height: 350px;
+  }
+
   #quotename {
     font-size: 1em;
   }
@@ -1612,11 +1621,22 @@ span{
     overflow: hidden;
     transition: flex 1s;
 
+    &:hover {
+      .clickinform {
+        display: block;
+      }
+    }
+
+
     &.open {
       flex: 6;
       padding: 50px;
 
       &:hover {
+
+        .clickinform {
+          display: none;
+        }
 
         .imgtitle {
           border: none;
@@ -1634,6 +1654,16 @@ span{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+  }
+
+  .clickinform {
+    display: none; 
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.4em;
+    color: #4c4c4c;
   }
 
   .imgtitle {

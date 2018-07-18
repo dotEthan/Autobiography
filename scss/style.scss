@@ -399,10 +399,10 @@ a:link {
 }
 
 .theme__each__icon {
-  margin: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
   width: 55px;
   height: 55px;
 
@@ -652,6 +652,8 @@ a:link {
   margin: 0 auto;
 }
 
+
+
 .imgtitle {
   display: flex;
   justify-content: space-around;
@@ -660,7 +662,7 @@ a:link {
 .historylogo {
   width: 50%;
   max-width: 150px;
-  display:flex; 
+  display: flex; 
   align-items: center;
 
   img {
@@ -670,7 +672,7 @@ a:link {
 
 .historytitles {
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   justify-content: center;
   color: #000000;
   background: rgba(255,255,255,0.6);
@@ -1927,11 +1929,21 @@ textarea{
     overflow: hidden;
     transition: flex 1s;
 
+    &:hover {
+      .clickinform {
+        display: block;
+      }
+    }
+
     &.open {
       flex: 6;
       padding: 50px;
 
       &:hover {
+
+        .clickinform {
+          display: none;
+        }
 
         .imgtitle {
           border: none;
@@ -1949,6 +1961,16 @@ textarea{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+  }
+
+  .clickinform {
+    display: none; 
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.4em;
+    color: #4c4c4c;
   }
 
   .imgtitle {
