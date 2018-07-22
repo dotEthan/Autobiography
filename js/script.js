@@ -670,6 +670,10 @@ $('.flexbox-slide').click((e) => {
     }
   }
 
+  function textResize(current) {
+    
+  }
+
   function removeAll() {
     if($('.textblock').hasClass('tbon')) $('.textblock').removeClass('tbon');
     if($('.textblock').hasClass('tbopen')) $('.textblock').removeClass('tbopen');

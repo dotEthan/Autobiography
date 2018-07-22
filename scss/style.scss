@@ -676,7 +676,7 @@ a:link {
   justify-content: center;
   color: #000000;
   background: rgba(255,255,255,0.6);
-  font-size: 0.8em;
+  font-size: 0.7em;
   font-family: $headertext;
   max-width: 150px;
   width: 50%;
@@ -1457,8 +1457,9 @@ textarea{
     padding: 20px;
     z-index: 99;
     color: $firstcolor;
-    border: 5px solid $thirdcolor;
+    // border: 5px solid $thirdcolor;
     height: 100px;
+    box-shadow: -4px 4px 0px lighten($secondcolor, 10%);
   }
 
   .leftcanvas {
