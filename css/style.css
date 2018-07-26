@@ -96,7 +96,7 @@ a:link {
 
 .menucontain {
   position: fixed;
-  background: #4c4556;
+  background: #554a65;
   color: white;
   width: 100%;
   z-index: 99; }
@@ -143,7 +143,7 @@ a:link {
   cursor: pointer; }
 
 .menudark {
-  color: #40a7f3 !important; }
+  color: #2283c9 !important; }
 
 .menutext {
   display: flex;
@@ -158,7 +158,8 @@ a:link {
 .menutitle {
   font-size: 0.9em;
   margin-left: 0;
-  margin-top: 5px; }
+  margin-top: 5px;
+  color: #e5e5e5; }
 
 #alert {
   display: none; }
@@ -472,9 +473,9 @@ a:link {
   padding: 5px;
   text-align: left; }
   #thanksright a {
-    color: #4c4556; }
+    color: #2283c9; }
     #thanksright a:hover {
-      color: #40a7f3; }
+      text-decoration: underline; }
 
 #thanksleft {
   width: 15%;
@@ -486,7 +487,7 @@ a:link {
   flex-direction: column; }
 
 #historyslice {
-  background-color: #595064; }
+  background-color: #615574; }
 
 .protitle {
   font-family: "Merriweather", serif;
@@ -494,10 +495,13 @@ a:link {
   text-align: center;
   font-size: 1.5em;
   text-decoration: underline;
-  margin: 20px 0 35px;
+  margin: 35px 0 50px;
   font-weight: bold;
-  color: #40a7f3;
+  color: #2283c9;
   text-decoration: none; }
+
+.history--title {
+  color: #e5e5e5; }
 
 .slider-container {
   margin-bottom: 20px; }
@@ -519,7 +523,10 @@ a:link {
   flex-wrap: wrap;
   transition: max-height 1s;
   max-height: 100px;
-  height: auto; }
+  height: auto;
+  cursor: pointer; }
+  .flexbox-slide .clickinform {
+    display: none; }
 
 .open {
   max-height: 500px;
@@ -604,9 +611,9 @@ a:link {
 .nowcalled {
   font-size: 0.9em; }
   .nowcalled a {
-    color: #4c4556; }
+    color: #554a65; }
     .nowcalled a:hover {
-      color: #40a7f3; }
+      color: #2283c9; }
 
 #inscriberslide {
   background: #8a96a5; }
@@ -657,7 +664,7 @@ a:link {
     right: 0;
     left: 0; }
   .project:hover .protext {
-    background-color: #40a7f3;
+    background-color: #2283c9;
     margin: 15px 0; }
 
 .project:after {
@@ -738,22 +745,22 @@ a:link {
   justify-content: center;
   padding: 15px; }
 
-#overlaytitle {
+.overlaytitle {
   font-size: 1em;
   font-family: "Merriweather", serif;
   text-decoration: underline;
   margin-bottom: 10px;
   text-align: center; }
 
-#overlaytext {
+.overlaytext {
   font-size: 0.7em; }
 
-#overlayskills {
+.overlayskills {
   margin: 10px 0;
   font-size: 0.7em; }
 
-#overlayurl a {
-  color: #40a7f3;
+.overlayurl a {
+  color: #2283c9;
   font-size: 0.6em; }
 
 .overlayright {
@@ -768,7 +775,7 @@ a:link {
   display: flex;
   flex-wrap: wrap;
   padding: 0px;
-  background-color: #595064;
+  background-color: #615574;
   width: 100%;
   color: white;
   position: relative; }
@@ -788,7 +795,7 @@ a:link {
   padding: 5px; }
 
 .buttonstyle {
-  background-color: #4c4556;
+  background-color: #554a65;
   padding: 10px;
   border-radius: 10px;
   font-size: 0.7em;
@@ -796,7 +803,7 @@ a:link {
   cursor: pointer;
   color: white; }
   .buttonstyle:hover {
-    background-color: #40a7f3; }
+    background-color: #2283c9; }
 
 #availabletext {
   width: 80%;
@@ -848,7 +855,7 @@ a:link {
   border-radius: 10px; }
 
 #dates {
-  background: #4c4556;
+  background: #554a65;
   width: 100%;
   height: 40px;
   border-radius: 0 0 20px 20px;
@@ -856,23 +863,24 @@ a:link {
   text-align-last: center; }
 
 .blogoption {
-  background: #4c4556; }
+  background: #554a65;
+  cursor: pointer; }
 
 #resumehalf {
   padding: 20px;
   width: 100%;
-  background-color: #332e3a;
+  background-color: #3c3448;
   font-size: 0.8em;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center; }
   #resumehalf .buttonstyle {
-    background-color: #332e3a;
-    border: 2px solid #655c72;
+    background-color: #3c3448;
+    border: 2px solid #6e6082;
     color: white; }
     #resumehalf .buttonstyle:hover {
-      background-color: #40a7f3; }
+      background-color: #2283c9; }
 
 #update {
   font-size: 0.6em;
@@ -882,7 +890,7 @@ a:link {
 #contactslice {
   display: none;
   position: relative;
-  border-bottom: 1px dashed #40a7f3; }
+  border-bottom: 1px dashed #2283c9; }
 
 #inquiryform {
   display: flex;
@@ -923,24 +931,21 @@ h3 {
   text-align: center;
   font-size: 20px; }
 
-input {
+#submit {
   width: 100%;
   height: 35px;
   margin: 5px 0 15px;
-  border: 1px solid #999;
   border-radius: 3px;
-  padding: 5px; }
-
-input[type=button] {
-  background-color: #4c4556;
+  padding: 5px;
+  background-color: #554a65;
   border: 1px solid white;
   font-Weight: bold;
   font-size: 18px;
   color: white;
-  border: 1px solid #4c4556; }
-  input[type=button]:hover {
-    background-color: #40a7f3;
-    border: 1px solid #4c4556; }
+  border: 1px solid #554a65; }
+  #submit:hover {
+    background-color: #2283c9;
+    border: 1px solid #554a65; }
 
 textarea {
   width: 100%;
@@ -982,10 +987,10 @@ textarea {
   width: 35%;
   text-align: center;
   font-size: 2em;
-  color: #4c4556;
+  color: #554a65;
   cursor: pointer; }
   .contacttype a {
-    color: #4c4556; }
+    color: #554a65; }
   .contacttype .footertext {
     font-size: .35em;
     visibility: hidden;
@@ -993,12 +998,12 @@ textarea {
     font-family: "Merriweather", serif;
     margin-top: 5px; }
   .contacttype:hover {
-    color: #40a7f3; }
+    color: #2283c9; }
     .contacttype:hover a {
-      color: #40a7f3; }
+      color: #2283c9; }
     .contacttype:hover .footertext {
       visibility: visible;
-      color: #40a7f3; }
+      color: #2283c9; }
 
 .fi {
   display: flex;
@@ -1007,20 +1012,23 @@ textarea {
   align-items: center; }
 
 .footericon a {
-  color: #4c4556; }
+  color: #554a65; }
 
 #footmessage {
   font-size: 0.6em;
   margin-top: 10px; }
 
+.attri {
+  font-size: 0.6em; }
+
 #sitebuild {
   color: black; }
 
 .footlink a {
-  color: #4c4556;
+  color: #554a65;
   font-weight: bold; }
   .footlink a:hover {
-    color: #40a7f3; }
+    color: #2283c9; }
 
 @media screen and (orientation: landscape) {
   #splashcont {
@@ -1122,20 +1130,18 @@ textarea {
     height: 100vh; }
   #menu__right a, #menu__left a {
     width: 110%; }
-  .menutitle {
-    font-size: 0.9em; }
   #ethan {
     position: absolute;
     top: 60px;
     left: 85px;
     margin-bottom: 150px;
-    background: #4c4556;
+    background: #554a65;
     border-radius: 25%;
     padding: 20px;
     z-index: 99;
     color: #e5e5e5;
-    height: 100px;
-    box-shadow: -4px 4px 0px #655c72; }
+    border: 5px solid #2283c9;
+    height: 100px; }
   .leftcanvas {
     height: 100vh;
     width: 100%;
@@ -1160,14 +1166,14 @@ textarea {
     justify-content: center;
     transition: all 1s;
     z-index: 99;
-    background: #40a7f3;
+    background: #2283c9;
     font-size: 0.6em;
     padding: 10px; }
     .menutabs a {
       color: black;
       text-decoration: none; }
     .menutabs:hover {
-      background: #0c74c1; }
+      background: #1b679d; }
       .menutabs:hover a {
         color: #e5e5e5; }
   #menutabscontain {
@@ -1176,11 +1182,11 @@ textarea {
     justify-content: flex-end;
     height: 100%; }
   .menudark {
-    background: #0c74c1; }
+    background: #1b679d; }
     .menudark a {
       color: #e5e5e5; }
   #historymenu, #projectmenu, #contactme {
-    border-top: 1px solid #0c74c1; }
+    border-top: 1px solid #1b679d; }
   .menutext {
     flex-direction: column;
     align-items: center;
@@ -1188,7 +1194,8 @@ textarea {
     width: 100%;
     color: black; }
   .menutitle {
-    margin-top: 5px; }
+    margin-top: 5px;
+    font-size: 1.1em; }
   #contentcontain {
     position: absolute;
     left: 10%;
@@ -1212,7 +1219,7 @@ textarea {
   .desktop__items--sm {
     width: auto; }
     .desktop__items--sm:hover .desktop__items__text {
-      background: rgba(64, 167, 243, 0.9); }
+      background: rgba(34, 131, 201, 0.9); }
   .desktop__items__img--sm {
     display: none; }
   .desktop__items__img--lg {
@@ -1224,7 +1231,7 @@ textarea {
     color: white;
     z-index: 99;
     transform: translateY(-20px);
-    background: rgba(64, 167, 243, 0.4);
+    background: rgba(34, 131, 201, 0.4);
     padding: 5px;
     border-radius: 6px; }
   .desktop__over {
@@ -1298,10 +1305,7 @@ textarea {
     margin: 0 15px;
     width: 25%; }
   #thanksright a {
-    font-size: 1.2em;
-    color: #4c4556; }
-    #thanksright a:hover {
-      color: #40a7f3; }
+    font-size: 1.2em; }
   #thanksleft {
     font-size: 1.2em; }
   .protitle {
@@ -1323,13 +1327,13 @@ textarea {
     font-size: 1.3em; }
   .allovers {
     padding: 25px; }
-  #overlaytitle {
+  .overlaytitle {
     font-size: 1.3em; }
-  #overlaytext {
+  .overlaytext {
     font-size: 0.8em; }
-  #overlayskills {
+  .overlayskills {
     font-size: 0.8em; }
-  #overlayurl a {
+  .overlayurl a {
     font-size: 0.9em; }
   #availablehalf {
     width: 40%;
@@ -1350,14 +1354,14 @@ textarea {
     background: white;
     width: 30%;
     border-radius: 10px;
-    border: 3px solid #7e738e;
+    border: 3px solid #87799c;
     padding: 10px;
     font-size: 0.8em; }
   #resumehalf {
     width: 60%;
     font-size: 1em;
     padding: 50px 50px 50px 30px;
-    background: linear-gradient(to top right, transparent 50%, #332e3a 50%) no-repeat, linear-gradient(to top right, transparent 0.1%, #332e3a 0.1%) no-repeat;
+    background: linear-gradient(to top right, transparent 50%, #3c3448 50%) no-repeat, linear-gradient(to top right, transparent 0.1%, #3c3448 0.1%) no-repeat;
     background-size: 60.5% 100%, 40% 100%;
     background-position: 0% 0%, 100% 0%;
     flex-direction: column;
@@ -1501,7 +1505,7 @@ textarea {
     margin-left: 20px; }
     .overlayright img {
       max-height: 40vh; }
-  #overlaytext {
+  .overlaytext {
     margin: 50px 0; }
   .protextt {
     font-size: 0.7em; }

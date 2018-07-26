@@ -619,7 +619,7 @@ a:link {
   text-align: center;
   font-size: 1.5em;
   text-decoration: underline;
-  margin: 20px 0 35px;
+  margin: 35px 0 50px;
   font-weight: bold;
   color: $thirdcolor;
   text-decoration: none;
@@ -918,7 +918,7 @@ a:link {
   padding: 15px;
 }
 
-#overlaytitle{
+.overlaytitle{
   font-size: 1em;
   font-family: $headertext;
   text-decoration: underline;
@@ -926,16 +926,16 @@ a:link {
   text-align: center;
 }
 
-#overlaytext {
+.overlaytext {
   font-size: 0.7em;
 }
 
-#overlayskills {
+.overlayskills {
   margin: 10px 0;
   font-size: 0.7em;
 }
 
-#overlayurl a {
+.overlayurl a {
   color: $thirdcolor;
   font-size: 0.6em;
 }
@@ -1255,6 +1255,10 @@ span{
 #footmessage{
   font-size: 0.6em;
   margin-top: 10px;
+}
+
+.attri {
+  font-size: 0.6em;
 }
 
 #sitebuild {
@@ -1696,19 +1700,19 @@ span{
     padding: 25px;
   }
 
-  #overlaytitle {
+  .overlaytitle {
     font-size: 1.3em;
   }
 
-  #overlaytext {
+  .overlaytext {
     font-size: 0.8em;
   }
   
-  #overlayskills {
+  .overlayskills {
     font-size: 0.8em;
   }
   
-  #overlayurl a{ 
+  .overlayurl a{ 
     font-size: 0.9em;
   }
 
@@ -1982,7 +1986,7 @@ span{
     }
   }
 
-  #overlaytext {
+  .overlaytext {
     margin: 50px 0;
     font-size: 0.7em;
   }

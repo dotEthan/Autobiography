@@ -490,7 +490,7 @@ a:link {
   text-align: center;
   font-size: 1.5em;
   text-decoration: underline;
-  margin: 20px 0 35px;
+  margin: 35px 0 50px;
   font-weight: bold;
   color: #ad00ad;
   text-decoration: none; }
@@ -738,21 +738,21 @@ a:link {
   justify-content: center;
   padding: 15px; }
 
-#overlaytitle {
+.overlaytitle {
   font-size: 1em;
   font-family: "indie_flowerregular", cursive;
   text-decoration: underline;
   margin-bottom: 10px;
   text-align: center; }
 
-#overlaytext {
+.overlaytext {
   font-size: 0.7em; }
 
-#overlayskills {
+.overlayskills {
   margin: 10px 0;
   font-size: 0.7em; }
 
-#overlayurl a {
+.overlayurl a {
   color: #ad00ad;
   font-size: 0.6em; }
 
@@ -1012,6 +1012,9 @@ span {
 #footmessage {
   font-size: 0.6em;
   margin-top: 10px; }
+
+.attri {
+  font-size: 0.6em; }
 
 #sitebuild {
   color: black; }
@@ -1274,13 +1277,13 @@ span {
     font-size: 1.3em; }
   .allovers {
     padding: 25px; }
-  #overlaytitle {
+  .overlaytitle {
     font-size: 1.3em; }
-  #overlaytext {
+  .overlaytext {
     font-size: 0.8em; }
-  #overlayskills {
+  .overlayskills {
     font-size: 0.8em; }
-  #overlayurl a {
+  .overlayurl a {
     font-size: 0.9em; }
   #availablehalf {
     width: 40%;
@@ -1443,7 +1446,7 @@ span {
     margin-left: 20px; }
     .overlayright img {
       max-height: 40vh; }
-  #overlaytext {
+  .overlaytext {
     margin: 50px 0;
     font-size: 0.7em; }
   .protextt {

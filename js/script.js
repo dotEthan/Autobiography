@@ -636,24 +636,24 @@ $('.flexbox-slide').click((e) => {
   const imgtitle = thisSlide.querySelector('.imgtitle');
   const flexcont = thisSlide.querySelector('.flexcontainer');
 
-  if (thisSlide.classList.contains('open')) {
+  if (thisSlide.classList.contains('open')) { // This already open
     thisSlide.classList.remove('open');
-  } else if ($('.flexbox-slide').hasClass('open')) {
+  } else if ($('.flexbox-slide').hasClass('open')) { // Another open
     removeAll();
      $('.flexbox-slide').removeClass('open');
       thisSlide.classList.toggle('open');
-  }else {
-      thisSlide.classList.toggle('open');
+  } else {
+      thisSlide.classList.toggle('open'); // None open
   }
 
-  if (Modernizr.mq('screen and (max-width:992px)')) {
+  if (Modernizr.mq('screen and (max-width:992px)')) { // Small
 
     textBlock.classList.toggle('tbopen');
     text.classList.toggle('hton');
 
-  } else {
+  } else { // Large
 
-    if (Modernizr.mq('screen and (max-width:1600px)')) {
+    if (Modernizr.mq('screen and (max-width:1600px)')) { // Extra large
       flexcont.classList.toggle('fcon');
     }
 
@@ -663,15 +663,15 @@ $('.flexbox-slide').click((e) => {
     textBlock.classList.toggle('tbon');
     imgtitle.classList.toggle('itopen');
 
+
+  }
+
+  function textResize(current) {
     for(let i=0; i<slideArray.length; i++) {
       if (slideArray[i].id !== thisSlide.id) {
         slideArray[i].style.fontSize = '0.8em';
       }
     }
-  }
-
-  function textResize(current) {
-    
   }
 
   function removeAll() {

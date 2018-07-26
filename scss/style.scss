@@ -21,8 +21,8 @@ $orange: #f05b47;
 $red: #ed1c24;
 $thirdcolorrgba: rgba(64, 167, 243, 0.8);
 $firstcolor: #e5e5e5;
-$secondcolor: #4c4556;
-$thirdcolor: #40a7f3;
+$secondcolor: #554a65;   //#4c4556
+$thirdcolor: #2283c9;
 $fourthcolor: #8a96a5;
 $fifthcolor: #888;
 
@@ -206,6 +206,7 @@ a:link {
   font-size: 0.9em;
   margin-left: 0;
   margin-top: 5px;
+  color: $firstcolor;
 }
 
 #alert {
@@ -582,10 +583,10 @@ a:link {
   text-align: left;
 
   a {
-  color: $secondcolor;
+  color: $thirdcolor;
 
     &:hover {
-      color: $thirdcolor;
+      text-decoration: underline;
     }
   }
 }
@@ -611,10 +612,14 @@ a:link {
   text-align: center;
   font-size: 1.5em;
   text-decoration: underline;
-  margin: 20px 0 35px;
+  margin: 35px 0 50px;
   font-weight: bold;
   color: $thirdcolor;
   text-decoration: none;
+}
+
+.history--title {
+  color: $firstcolor;
 }
 
 .slider-container {
@@ -640,6 +645,11 @@ a:link {
   transition: max-height 1s;
   max-height: 100px;
   height: auto;
+  cursor: pointer;
+
+  .clickinform {
+    display: none;
+  }
 }
 
 .open {
@@ -681,6 +691,8 @@ a:link {
   max-width: 150px;
   width: 50%;
 }
+
+
 
 .historydates {
   font-size: 0.7em;
@@ -907,7 +919,7 @@ a:link {
   padding: 15px;
 }
 
-#overlaytitle{
+.overlaytitle{
   font-size: 1em;
   font-family: $headertext;
   text-decoration: underline;
@@ -915,16 +927,16 @@ a:link {
   text-align: center;
 }
 
-#overlaytext {
+.overlaytext {
   font-size: 0.7em;
 }
 
-#overlayskills {
+.overlayskills {
   margin: 10px 0;
   font-size: 0.7em;
 }
 
-#overlayurl a {
+.overlayurl a {
   color: $thirdcolor;
   font-size: 0.6em;
 }
@@ -1036,7 +1048,6 @@ a:link {
   width: 85%;
   margin: 0 auto 20px;
   border-radius: 10px;
-
 }
 
 #dates {
@@ -1050,6 +1061,7 @@ a:link {
 
 .blogoption {
   background: $secondcolor;
+  cursor: pointer;
 }
 
 #resumehalf {
@@ -1130,16 +1142,12 @@ h3{
   font-size:20px;
 }
 
-input{
+#submit {
   width:100%;
   height:35px;
   margin: 5px 0 15px;
-  border:1px solid #999;
   border-radius:3px;
   padding:5px;
-}
-
-input[type=button]{
   background-color: $secondcolor;
   border:1px solid white;
   font-Weight:bold;
@@ -1246,6 +1254,10 @@ textarea{
 #footmessage{
   font-size: 0.6em;
   margin-top: 10px;
+}
+
+.attri {
+  font-size: 0.6em;
 }
 
 #sitebuild {
@@ -1443,10 +1455,6 @@ textarea{
     width: 110%;
   }
 
-  .menutitle {
-    font-size: 0.9em;
-  }
-
   #ethan {
     position: absolute;
     top: 60px;
@@ -1457,9 +1465,9 @@ textarea{
     padding: 20px;
     z-index: 99;
     color: $firstcolor;
-    // border: 5px solid $thirdcolor;
+    border: 5px solid $thirdcolor;
     height: 100px;
-    box-shadow: -4px 4px 0px lighten($secondcolor, 10%);
+    // box-shadow: -4px 4px 0px lighten($secondcolor, 10%);
   }
 
   .leftcanvas {
@@ -1503,7 +1511,7 @@ textarea{
     }
 
     &:hover {
-      background: darken($thirdcolor, 20%);
+      background: darken($thirdcolor, 10%);
       
       a {
         color: $firstcolor;
@@ -1519,7 +1527,7 @@ textarea{
   }
 
   .menudark {
-    background: darken($thirdcolor, 20%);
+    background: darken($thirdcolor, 10%);
         
         a {
           color: $firstcolor;
@@ -1527,7 +1535,7 @@ textarea{
   }
 
   #historymenu, #projectmenu, #contactme {
-    border-top: 1px solid darken($thirdcolor, 20%);
+    border-top: 1px solid darken($thirdcolor, 10%);
   }
 
   .menutext {
@@ -1540,6 +1548,7 @@ textarea{
 
   .menutitle {
     margin-top: 5px;
+    font-size: 1.1em;
   }
   
   #contentcontain {
@@ -1719,11 +1728,6 @@ textarea{
 
   #thanksright a {
     font-size: 1.2em;
-    color: $secondcolor;
-
-    &:hover {
-      color: $thirdcolor;
-    }
   }
   
   #thanksleft {
@@ -1764,19 +1768,19 @@ textarea{
     padding: 25px;
   }
 
-  #overlaytitle {
+  .overlaytitle {
     font-size: 1.3em;
   }
 
-  #overlaytext {
+  .overlaytext {
     font-size: 0.8em;
   }
   
-  #overlayskills {
+  .overlayskills {
     font-size: 0.8em;
   }
   
-  #overlayurl a{ 
+  .overlayurl a{ 
     font-size: 0.9em;
   }
 
@@ -2059,7 +2063,7 @@ textarea{
     }
   }
 
-  #overlaytext {
+  .overlaytext {
     margin: 50px 0;
   }
 

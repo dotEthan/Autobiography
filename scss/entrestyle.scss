@@ -279,11 +279,13 @@ a:hover {
 #motto {
   color: $secondcolor;
   font-size: 0.8em;
+  margin: 0;
 }
 
 #motto--sm {
   color: black;
   font-size: 0.7em;
+  margin: 0;
 }
 
 #nametitle {          
@@ -291,6 +293,7 @@ a:hover {
   font-weight: bold;
   font-size: 1.6em;
   color: black;
+  margin: 10px 0;
 }
 
 #choices__contain {
@@ -559,7 +562,7 @@ a:hover {
   text-align: center;
   font-size: 1.5em;
   text-decoration: underline;
-  margin: 20px 0 35px;
+  margin: 35px 0 50px;
   font-weight: bold;
   color: $thirdcolor;
   text-decoration: none;
@@ -858,7 +861,7 @@ a:hover {
   padding: 15px;
 }
 
-#overlaytitle{
+.overlaytitle{
   font-size: 1em;
   font-family: $headertext;
   text-decoration: underline;
@@ -866,16 +869,16 @@ a:hover {
   text-align: center;
 }
 
-#overlaytext {
+.overlayurl {
   font-size: 0.7em;
 }
 
-#overlayskills {
+.overlayskills {
   margin: 10px 0;
   font-size: 0.7em;
 }
 
-#overlayurl a {
+.overlayurl a {
   color: $thirdcolor;
   font-size: 0.6em;
 }
@@ -1060,6 +1063,10 @@ a:hover {
   border: 1px solid grey;
   border-radius: 25px;
   cursor: pointer;
+
+  &:hover {
+    background: $thirdcolor;
+  }
 }
 
 #returnmessage{
@@ -1189,6 +1196,10 @@ span{
 #footmessage{
   font-size: 0.6em;
   margin-top: 10px;
+}
+
+.attri {
+  font-size: 0.6em;
 }
 
 #sitebuild {
@@ -1485,19 +1496,19 @@ span{
     padding: 25px;
   }
 
-  #overlaytitle {
+  .overlaytitle {
     font-size: 1.3em;
   }
 
-  #overlaytext {
+  .overlayurl {
     font-size: 0.8em;
   }
   
-  #overlayskills {
+  .overlayskills {
     font-size: 0.8em;
   }
   
-  #overlayurl a{ 
+  .overlayurl a{ 
     font-size: 0.9em;
   }
 
@@ -1555,6 +1566,10 @@ span{
     width: 40px;
     height: 40px;
     font-size: 1.5em;
+
+    &:hover {
+      background: $thirdcolor;
+    }
   }
 
   #inquiryform {
@@ -1751,7 +1766,7 @@ span{
     }
   }
 
-  #overlaytext {
+  .overlayurl {
     margin: 50px 0;
   }
 
