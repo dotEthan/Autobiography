@@ -1063,10 +1063,6 @@ a:hover {
   border: 1px solid grey;
   border-radius: 25px;
   cursor: pointer;
-
-  &:hover {
-    background: $thirdcolor;
-  }
 }
 
 #returnmessage{
@@ -1566,10 +1562,6 @@ span{
     width: 40px;
     height: 40px;
     font-size: 1.5em;
-
-    &:hover {
-      background: $thirdcolor;
-    }
   }
 
   #inquiryform {

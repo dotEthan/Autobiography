@@ -858,8 +858,6 @@ a:hover {
   border: 1px solid grey;
   border-radius: 25px;
   cursor: pointer; }
-  #contactclose:hover {
-    background: #4c4556; }
 
 #returnmessage {
   font-size: 0.7em;
@@ -1181,8 +1179,6 @@ span {
     width: 40px;
     height: 40px;
     font-size: 1.5em; }
-    #contactclose:hover {
-      background: #4c4556; }
   #inquiryform {
     width: 80%; }
   .contacttype {

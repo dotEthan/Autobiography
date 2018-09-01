@@ -14,20 +14,20 @@
 }
 
 $limecolor: #bff073;
-$rgba: rgba(13,201,247, 0.5);
+$rgba: rgba(13, 201, 247, 0.5);
 $lightblue: #0dc9f7;
 $grey: #7f7f7f;
 $orange: #f05b47;
 $red: #ed1c24;
 $thirdcolorrgba: rgba(64, 167, 243, 0.8);
 $firstcolor: #e5e5e5;
-$secondcolor: #554a65;   //#4c4556
+$secondcolor: #554a65; //#4c4556
 $thirdcolor: #2283c9;
 $fourthcolor: #8a96a5;
 $fifthcolor: #888;
 
 $projectoverlayradius: 5px;
-$headertext:'Merriweather', serif;
+$headertext: 'Merriweather', serif;
 $regulartext: 'Montserrat', sans-serif;
 $menutextc: white;
 $menuiconsize: 1.5em;
@@ -40,7 +40,7 @@ $bioquestions: 2.5em;
 
 // fonts
 
-img{
+img {
   max-width: 100%;
   display: block;
 }
@@ -56,7 +56,7 @@ body {
 
 a:link {
   text-decoration: none;
-}    
+}
 
 .pink {
   color: #f9245e;
@@ -88,13 +88,21 @@ a:link {
 }
 
 @-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 #contents {
@@ -107,25 +115,36 @@ a:link {
   -webkit-animation-name: animatebottom;
   -webkit-animation-duration: 1s;
   animation-name: animatebottom;
-  animation-duration: 1s
+  animation-duration: 1s;
 }
 
 @-webkit-keyframes animatebottom {
-  from { bottom:-100px; opacity:0 } 
-  to { bottom:0px; opacity:1 }
+  from {
+    bottom: -100px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0px;
+    opacity: 1;
+  }
 }
 
-@keyframes animatebottom { 
-  from{ bottom:-100px; opacity:0 } 
-  to{ bottom:0; opacity:1 }
+@keyframes animatebottom {
+  from {
+    bottom: -100px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
 }
 
-.menu{
+.menu {
   display: flex;
   justify-content: space-around;
   font-family: $headertext;
   height: 70px;
-
 }
 
 .menucontain {
@@ -162,14 +181,15 @@ a:link {
   font-weight: bold;
 }
 
-#menutabscontain{
+#menutabscontain {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-#menu__left, #menu__right {
+#menu__left,
+#menu__right {
   width: 40%;
   display: flex;
   align-items: center;
@@ -191,14 +211,14 @@ a:link {
 }
 
 .menutext {
-  display: flex; 
+  display: flex;
   align-items: center;
   flex-direction: column;
   color: white;
   padding: 5px;
 }
 
-.faicon{
+.faicon {
   display: none;
 }
 
@@ -210,9 +230,9 @@ a:link {
 }
 
 #alert {
-  display:none;
+  display: none;
 }
-  
+
 #splashcont {
   height: 100vh;
   padding-top: 23vh;
@@ -225,7 +245,6 @@ a:link {
   flex-direction: column;
   justify-content: space-between;
 }
-
 
 #titlecard {
   width: 100%;
@@ -240,7 +259,7 @@ a:link {
 }
 
 #motto {
-  display:none;
+  display: none;
 }
 
 #motto--sm {
@@ -259,7 +278,7 @@ a:link {
 .desktop__items--sm {
   width: 20%;
   padding: 5px;
-  display: flex; 
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -269,9 +288,8 @@ a:link {
   cursor: pointer;
 
   &:hover {
-    transform: scale(1.05); 
+    transform: scale(1.05);
   }
-
 }
 
 .desktop__items__img--sm {
@@ -292,7 +310,7 @@ a:link {
   position: absolute;
   bottom: 28vh;
   width: 70%;
-  display:none;
+  display: none;
   flex-wrap: wrap;
 }
 
@@ -355,7 +373,7 @@ a:link {
   background: #282923;
   display: flex;
   padding: 10px 5px 10px 0;
-  overflow-Y: scroll;
+  overflow-y: scroll;
 }
 
 .editor__content a {
@@ -412,7 +430,6 @@ a:link {
     width: 30px;
     height: 30px;
   }
-
 }
 
 .over__status {
@@ -467,7 +484,7 @@ a:link {
 }
 
 #nametitle {
-  width: 100%;              
+  width: 100%;
   font-family: $headertext;
   font-weight: bold;
   font-size: 1.8em;
@@ -494,20 +511,20 @@ a:link {
 
 #biotext {
   width: 100%;
-  display:flex;
+  display: flex;
   justify-content: center;
   flex-direction: row;
   align-items: center;
 }
 
 #biocontain {
-  display: flex; 
+  display: flex;
   width: 100%;
-  position:relative;
+  position: relative;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
-  margin: 100px auto;  
+  margin: 100px auto;
 }
 
 #biowriting {
@@ -583,7 +600,7 @@ a:link {
   text-align: left;
 
   a {
-  color: $thirdcolor;
+    color: $thirdcolor;
 
     &:hover {
       text-decoration: underline;
@@ -603,7 +620,7 @@ a:link {
 }
 
 #historyslice {
-  background-color: lighten($secondcolor,5%);
+  background-color: lighten($secondcolor, 5%);
 }
 
 .protitle {
@@ -633,7 +650,7 @@ a:link {
   margin-left: auto;
   flex-direction: column-reverse;
 }
-  
+
 .flexbox-slide {
   position: relative;
   overflow: hidden;
@@ -662,8 +679,6 @@ a:link {
   margin: 0 auto;
 }
 
-
-
 .imgtitle {
   display: flex;
   justify-content: space-around;
@@ -672,7 +687,7 @@ a:link {
 .historylogo {
   width: 50%;
   max-width: 150px;
-  display: flex; 
+  display: flex;
   align-items: center;
 
   img {
@@ -685,14 +700,12 @@ a:link {
   flex-direction: column;
   justify-content: center;
   color: #000000;
-  background: rgba(255,255,255,0.6);
+  background: rgba(255, 255, 255, 0.6);
   font-size: 0.7em;
   font-family: $headertext;
   max-width: 150px;
   width: 50%;
 }
-
-
 
 .historydates {
   font-size: 0.7em;
@@ -720,15 +733,15 @@ a:link {
   display: none;
 }
 
-.historytext { 
-  border-top: 1px solid rgba(0,0,0,0.6);
+.historytext {
+  border-top: 1px solid rgba(0, 0, 0, 0.6);
   text-align: left;
   overflow: hidden;
   margin: 0 5px 5px;
   padding: 15px;
   font-size: 0.55em;
   width: 100%;
-  background: rgba(255,255,255,0.6);
+  background: rgba(255, 255, 255, 0.6);
   opacity: 0;
   transition: opacity 1s;
 }
@@ -754,7 +767,7 @@ a:link {
 
 .nowcalled {
   font-size: 0.9em;
-  
+
   a {
     color: $secondcolor;
 
@@ -798,8 +811,8 @@ a:link {
   margin-right: auto;
   margin-left: auto;
 }
-  
-.project{
+
+.project {
   width: 80%;
   margin-bottom: 50px;
   position: relative;
@@ -812,8 +825,7 @@ a:link {
   cursor: pointer;
   transition: all 800ms;
 
-
-  img{
+  img {
     max-width: 100%;
     max-height: 100%;
     position: absolute;
@@ -822,9 +834,8 @@ a:link {
     right: 0;
     left: 0;
   }
-  
+
   &:hover {
-    
     .protext {
       background-color: $thirdcolor;
       margin: 15px 0;
@@ -832,7 +843,7 @@ a:link {
   }
 }
 
-.project:after{
+.project:after {
   padding-top: 56.25%;
   display: block;
   content: '';
@@ -852,19 +863,19 @@ a:link {
 }
 
 .protextcont {
-  display: flex; 
+  display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   text-align: center;
   width: 100%;
-  margin:10px;
-  background: rgba(255,255,255,0.6);
+  margin: 10px;
+  background: rgba(255, 255, 255, 0.6);
   border-radius: $projectoverlayradius;
   overflow: hidden;
 }
 
-.protextt{
+.protextt {
   width: 100%;
   font-family: $headertext;
 }
@@ -875,10 +886,10 @@ a:link {
 
 #projectoverlay {
   position: fixed;
-  top:50%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(255,255,255,0.9);
+  background-color: rgba(255, 255, 255, 0.9);
   z-index: 9999;
   padding: 15px;
   width: 90%;
@@ -886,7 +897,7 @@ a:link {
 }
 
 .allovers {
-  display: flex; 
+  display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -896,7 +907,7 @@ a:link {
 #closeover {
   width: 30px;
   height: 30px;
-  position: absolute; 
+  position: absolute;
   top: -10px;
   right: -10px;
   font-size: 0.8em;
@@ -913,13 +924,13 @@ a:link {
 
 .overlayleft {
   width: 100%;
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 15px;
 }
 
-.overlaytitle{
+.overlaytitle {
   font-size: 1em;
   font-family: $headertext;
   text-decoration: underline;
@@ -942,10 +953,10 @@ a:link {
 }
 
 .overlayright {
-  border: 2px dashed #96858F;
+  border: 2px dashed #96858f;
   justify-content: center;
   display: flex;
-  
+
   img {
     max-height: 20vh;
     margin: 10px;
@@ -969,21 +980,22 @@ a:link {
   text-align: center;
   display: flex;
   flex-direction: row;
-  justify-content: space-around; 
-  align-items: center;  
+  justify-content: space-around;
+  align-items: center;
 }
 
-#availabletext, #resumetext {
+#availabletext,
+#resumetext {
   width: 70%;
   padding: 5px;
 }
 
-.buttonstyle{
+.buttonstyle {
   background-color: $secondcolor;
   padding: 10px;
   border-radius: 10px;
   font-size: 0.7em;
-  border: 2px solid darken($secondcolor,40%);
+  border: 2px solid darken($secondcolor, 40%);
   cursor: pointer;
   color: white;
 
@@ -1067,16 +1079,16 @@ a:link {
 #resumehalf {
   padding: 20px;
   width: 100%;
-  background-color: darken($secondcolor,10%);
+  background-color: darken($secondcolor, 10%);
   font-size: 0.8em;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;  
-  align-items: center;  
+  justify-content: space-around;
+  align-items: center;
 
-  .buttonstyle{
-    background-color: darken($secondcolor,10%);
-    border: 2px solid lighten($secondcolor,10%);
+  .buttonstyle {
+    background-color: darken($secondcolor, 10%);
+    border: 2px solid lighten($secondcolor, 10%);
     color: white;
 
     &:hover {
@@ -1085,9 +1097,9 @@ a:link {
   }
 }
 
-#update{
+#update {
   font-size: 0.6em;
-  margin-right:10px;
+  margin-right: 10px;
   margin-bottom: 5px;
 }
 
@@ -1111,7 +1123,7 @@ a:link {
 #contactclose {
   width: 25px;
   height: 25px;
-  position: absolute; 
+  position: absolute;
   top: 40px;
   right: 30px;
   font-size: 0.8em;
@@ -1126,10 +1138,10 @@ a:link {
   cursor: pointer;
 }
 
-#returnmessage{
-  font-size: 0.7em;;
-  color:green;
-  text-align:center;
+#returnmessage {
+  font-size: 0.7em;
+  color: green;
+  text-align: center;
   margin-bottom: 30px;
 }
 
@@ -1137,41 +1149,41 @@ label {
   font-size: 0.8em;
 }
 
-h3{
-  text-align:center;
-  font-size:20px;
+h3 {
+  text-align: center;
+  font-size: 20px;
 }
 
 #submit {
-  width:100%;
-  height:35px;
+  width: 100%;
+  height: 35px;
   margin: 5px 0 15px;
-  border-radius:3px;
-  padding:5px;
+  border-radius: 3px;
+  padding: 5px;
   background-color: $secondcolor;
-  border:1px solid white;
-  font-Weight:bold;
-  font-size:18px;
-  color:white;
-  border: 1px solid $secondcolor; 
+  border: 1px solid white;
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
+  border: 1px solid $secondcolor;
 
   &:hover {
     background-color: $thirdcolor;
-    border: 1px solid $secondcolor; 
+    border: 1px solid $secondcolor;
   }
 }
 
-textarea{
-  width:100%;
-  height:80px;
-  margin-top:5px;
-  border-radius:3px;
-  padding:5px;
-  resize:none;
+textarea {
+  width: 100%;
+  height: 80px;
+  margin-top: 5px;
+  border-radius: 3px;
+  padding: 5px;
+  resize: none;
 }
 
 .required {
-  color:red;
+  color: red;
 }
 
 .contactinfo {
@@ -1202,10 +1214,10 @@ textarea{
 #footercont {
   display: flex;
   width: 100%;
-  justify-content: space-around;  
+  justify-content: space-around;
 }
-  
-.contacttype{
+
+.contacttype {
   width: 35%;
   text-align: center;
   font-size: 2em;
@@ -1216,22 +1228,21 @@ textarea{
     color: $secondcolor;
   }
 
-
   .footertext {
-    font-size: .35em;
+    font-size: 0.35em;
     visibility: hidden;
     font-weight: bold;
     font-family: $headertext;
     margin-top: 5px;
   }
-  
+
   &:hover {
     color: $thirdcolor;
 
     a {
       color: $thirdcolor;
     }
-    
+
     .footertext {
       visibility: visible;
       color: $thirdcolor;
@@ -1244,14 +1255,13 @@ textarea{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 }
 
 .footericon a {
   color: $secondcolor;
 }
 
-#footmessage{
+#footmessage {
   font-size: 0.6em;
   margin-top: 10px;
 }
@@ -1264,7 +1274,7 @@ textarea{
   color: black;
 }
 
-.footlink a{
+.footlink a {
   color: $secondcolor;
   font-weight: bold;
 
@@ -1273,8 +1283,7 @@ textarea{
   }
 }
 
-@media screen and (orientation : landscape) {
-
+@media screen and (orientation: landscape) {
   #splashcont {
     padding-top: 80px;
   }
@@ -1303,7 +1312,7 @@ textarea{
   }
 
   .top {
-    z-index:99;
+    z-index: 99;
   }
 
   .allovers {
@@ -1346,14 +1355,13 @@ textarea{
 }
 
 @media screen and (min-width: 576px) {
-
   .menucontain {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
-  .menu{
+  .menu {
     width: 100%;
     padding-top: 0;
   }
@@ -1429,29 +1437,28 @@ textarea{
 }
 
 @media screen and (min-width: 576px) and (orientation: landscape) {
-
   #titlecard {
     width: 90%;
   }
 
-  #nametitle{
+  #nametitle {
     font-size: 1.8em;
     padding: 5px;
   }
 }
 
 @media screen and (min-width: 768px) {
-  
   .menucontain {
     flex-direction: column;
     justify-content: space-around;
     top: 0;
-    left: 0; 
+    left: 0;
     width: 10%;
     height: 100vh;
   }
 
-  #menu__right a, #menu__left a {
+  #menu__right a,
+  #menu__left a {
     width: 110%;
   }
 
@@ -1479,14 +1486,15 @@ textarea{
     display: block;
   }
 
-  .menu{
+  .menu {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     height: 90vh;
   }
 
-  #menu__left, #menu__right {
+  #menu__left,
+  #menu__right {
     width: 110%;
     display: flex;
     flex-direction: column;
@@ -1504,7 +1512,6 @@ textarea{
     font-size: 0.6em;
     padding: 10px;
 
-
     a {
       color: black;
       text-decoration: none;
@@ -1512,7 +1519,7 @@ textarea{
 
     &:hover {
       background: darken($thirdcolor, 10%);
-      
+
       a {
         color: $firstcolor;
       }
@@ -1528,13 +1535,15 @@ textarea{
 
   .menudark {
     background: darken($thirdcolor, 10%);
-        
-        a {
-          color: $firstcolor;
-        }
+
+    a {
+      color: $firstcolor;
+    }
   }
 
-  #historymenu, #projectmenu, #contactme {
+  #historymenu,
+  #projectmenu,
+  #contactme {
     border-top: 1px solid darken($thirdcolor, 10%);
   }
 
@@ -1550,13 +1559,13 @@ textarea{
     margin-top: 5px;
     font-size: 1.1em;
   }
-  
+
   #contentcontain {
     position: absolute;
     left: 10%;
     width: 90%;
-  }   
-  
+  }
+
   #splashcont {
     align-items: center;
     background-position: top center;
@@ -1566,9 +1575,9 @@ textarea{
 
   #titlecard {
     margin: 0;
-    position: relative
+    position: relative;
   }
-  
+
   #nametitle {
     font-size: 3em;
   }
@@ -1586,13 +1595,13 @@ textarea{
 
     &:hover {
       .desktop__items__text {
-        background: rgba($thirdcolor,0.9);
+        background: rgba($thirdcolor, 0.9);
       }
     }
   }
 
   .desktop__items__img--sm {
-    display:none;
+    display: none;
   }
 
   .desktop__items__img--lg {
@@ -1608,7 +1617,7 @@ textarea{
     color: white;
     z-index: 99;
     transform: translateY(-20px);
-    background: rgba($thirdcolor,0.4);
+    background: rgba($thirdcolor, 0.4);
     padding: 5px;
     border-radius: 6px;
   }
@@ -1619,7 +1628,7 @@ textarea{
     width: 90%;
     bottom: 0;
   }
- 
+
   .desktop__over__contain {
     width: auto;
     position: relative;
@@ -1648,12 +1657,12 @@ textarea{
     display: flex;
     width: 30vw;
     height: 20vh;
-    font-size:0.4em;
+    font-size: 0.4em;
     min-width: 280px;
   }
 
   .over__title {
-    height: 20px;  
+    height: 20px;
   }
 
   .editor__content__nums {
@@ -1680,7 +1689,6 @@ textarea{
   .theme__each__icon img {
     width: 35px;
     height: 35px;
-
   }
 
   .anchor {
@@ -1692,12 +1700,12 @@ textarea{
     margin: 0;
     height: 420px;
   }
-  
+
   #biowriting {
     font-size: 1.8em;
     width: 100%;
   }
-  
+
   #quotename {
     font-size: 1em;
   }
@@ -1706,13 +1714,14 @@ textarea{
     flex-direction: row;
     align-items: center;
   }
-  
+
   #biotextw {
     font-size: 0.8em;
     text-align: left;
   }
-  
-  #asa, #ageinfo {
+
+  #asa,
+  #ageinfo {
     display: block;
   }
 
@@ -1729,7 +1738,7 @@ textarea{
   #thanksright a {
     font-size: 1.2em;
   }
-  
+
   #thanksleft {
     font-size: 1.2em;
   }
@@ -1743,7 +1752,6 @@ textarea{
     margin-right: 10px;
 
     &:hover {
-
       .protext {
         margin: 15px 0;
       }
@@ -1762,7 +1770,7 @@ textarea{
     top: -20px;
     right: -20px;
     font-size: 1.3em;
-  }  
+  }
 
   .allovers {
     padding: 25px;
@@ -1775,12 +1783,12 @@ textarea{
   .overlaytext {
     font-size: 0.8em;
   }
-  
+
   .overlayskills {
     font-size: 0.8em;
   }
-  
-  .overlayurl a{ 
+
+  .overlayurl a {
     font-size: 0.9em;
   }
 
@@ -1816,7 +1824,18 @@ textarea{
     width: 60%;
     font-size: 1em;
     padding: 50px 50px 50px 30px;
-    background: linear-gradient(to top right, transparent 50%, darken($secondcolor,10%) 50%) no-repeat, linear-gradient(to top right, transparent 0.1%, darken($secondcolor,10%) 0.1%) no-repeat;
+    background: linear-gradient(
+          to top right,
+          transparent 50%,
+          darken($secondcolor, 10%) 50%
+        )
+        no-repeat,
+      linear-gradient(
+          to top right,
+          transparent 0.1%,
+          darken($secondcolor, 10%) 0.1%
+        )
+        no-repeat;
     background-size: 60.5% 100%, 40% 100%;
     background-position: 0% 0%, 100% 0%;
     flex-direction: column;
@@ -1854,19 +1873,18 @@ textarea{
 }
 
 @media screen and (min-width: 768px) and (orientation: landscape) {
-
   #splashcont {
     padding-top: 0;
   }
 
   #titlecard {
-    margin-top:13vh;
+    margin-top: 13vh;
   }
-  
+
   #nametitle {
     font-size: 2.5em;
   }
-  
+
   #languagetitle {
     margin-top: 20vh;
   }
@@ -1881,7 +1899,7 @@ textarea{
   }
 
   .editor__content {
-    font-size:1.3em;
+    font-size: 1.3em;
     line-height: 1.3em;
   }
 
@@ -1891,7 +1909,6 @@ textarea{
 }
 
 @media screen and (min-width: 992px) and (orientation: landscape) {
-
   .menucontain {
     width: 7%;
   }
@@ -1910,14 +1927,14 @@ textarea{
     height: 25vh;
   }
 
-  .biopersonaltext{
+  .biopersonaltext {
     padding-right: 10px;
   }
 
   #portimage {
     width: 100%;
   }
-  
+
   .flexbox-slider {
     font-size: 2.5em;
     flex-direction: row-reverse;
@@ -1945,7 +1962,6 @@ textarea{
       padding: 50px;
 
       &:hover {
-
         .clickinform {
           display: none;
         }
@@ -1957,7 +1973,7 @@ textarea{
     }
   }
 
-  .flexopen{
+  .flexopen {
     width: 80%;
   }
 
@@ -1969,9 +1985,9 @@ textarea{
   }
 
   .clickinform {
-    display: none; 
+    display: none;
     position: absolute;
-    bottom: 25px;
+    top: 25px;
     left: 50%;
     transform: translateX(-50%);
     font-size: 0.4em;
@@ -1982,20 +1998,20 @@ textarea{
     flex-direction: column;
     height: auto;
   }
-  
+
   .itopen {
     flex-direction: row;
   }
 
   .historylogo {
-    width: auto; 
+    width: auto;
     margin: 0 auto;
 
     img {
       height: auto;
     }
   }
-  
+
   .historytitles {
     font-size: 0.28em;
     padding: 5px;
@@ -2055,7 +2071,7 @@ textarea{
     width: 50%;
   }
 
-  .overlayright{
+  .overlayright {
     margin-left: 20px;
 
     img {
@@ -2109,7 +2125,6 @@ textarea{
   #returnmessage {
     font-size: 0.8em;
   }
-
 }
 
 @media screen and (min-width: 1200px) {
@@ -2173,7 +2188,7 @@ textarea{
     padding: 70px 60px 70px 70px;
   }
 
-  .buttonstyle{
+  .buttonstyle {
     margin-top: 40px;
   }
 
@@ -2193,8 +2208,7 @@ textarea{
 }
 
 @media screen and (min-width: 1600px) {
-
-  #ethan{
+  #ethan {
     font-size: 2em;
   }
 
@@ -2239,7 +2253,7 @@ textarea{
   }
 
   #biobottom {
-    font-size: 1em
+    font-size: 1em;
   }
 
   .flexcontainer {
@@ -2249,7 +2263,7 @@ textarea{
 
   .fcon {
     justify-content: flex-start;
-    width: 100%;    
+    width: 100%;
   }
 
   .historylogo {
@@ -2272,7 +2286,7 @@ textarea{
   }
 
   .historytext {
-    font-size:0.4em;
+    font-size: 0.4em;
     padding: 25px;
     border-top: none;
     border-left: 1px solid black;
@@ -2293,7 +2307,8 @@ textarea{
     flex-direction: column;
   }
 
-  #availablehalf, #resumehalf {
+  #availablehalf,
+  #resumehalf {
     font-size: 1.3em;
   }
 
@@ -2311,8 +2326,6 @@ textarea{
 }
 
 @media screen and (min-width: 992px) and (min-aspect-ratio: 16/8) {
-
-
   #titlecard {
     margin-top: 16vh;
   }
@@ -2328,6 +2341,5 @@ textarea{
 
   #inquiryform {
     width: 70%;
-
   }
 }
