@@ -1,13 +1,13 @@
 @font-face {
-  font-family: 'Merriweather';
+  font-family: "Merriweather";
   src: url("fonts/Merriweather-webfont.woff") format("woff"); }
 
 @font-face {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   src: url("fonts/Montserrat-Regular.woff") format("woff"); }
 
 @font-face {
-  font-family: 'logo';
+  font-family: "logo";
   src: url("fonts/fredoka-one-v5-latin-regular.woff") format("woff"); }
 
 img {
@@ -129,12 +129,14 @@ a:link {
   flex-wrap: wrap;
   justify-content: space-between; }
 
-#menu__left, #menu__right {
+#menu__left,
+#menu__right {
   width: 40%;
   display: flex;
   align-items: center;
   justify-content: center; }
-  #menu__left a, #menu__right a {
+  #menu__left a,
+  #menu__right a {
     width: 48%; }
 
 .menutabs {
@@ -281,7 +283,7 @@ a:link {
   background: #282923;
   display: flex;
   padding: 10px 5px 10px 0;
-  overflow-Y: scroll; }
+  overflow-y: scroll; }
 
 .editor__content a {
   color: white; }
@@ -670,7 +672,7 @@ a:link {
 .project:after {
   padding-top: 56.25%;
   display: block;
-  content: ''; }
+  content: ""; }
 
 .protext {
   width: 100%;
@@ -764,7 +766,7 @@ a:link {
   font-size: 0.6em; }
 
 .overlayright {
-  border: 2px dashed #96858F;
+  border: 2px dashed #96858f;
   justify-content: center;
   display: flex; }
   .overlayright img {
@@ -790,7 +792,8 @@ a:link {
   justify-content: space-around;
   align-items: center; }
 
-#availabletext, #resumetext {
+#availabletext,
+#resumetext {
   width: 70%;
   padding: 5px; }
 
@@ -939,7 +942,7 @@ h3 {
   padding: 5px;
   background-color: #554a65;
   border: 1px solid white;
-  font-Weight: bold;
+  font-weight: bold;
   font-size: 18px;
   color: white;
   border: 1px solid #554a65; }
@@ -992,7 +995,7 @@ textarea {
   .contacttype a {
     color: #554a65; }
   .contacttype .footertext {
-    font-size: .35em;
+    font-size: 0.35em;
     visibility: hidden;
     font-weight: bold;
     font-family: "Merriweather", serif;
@@ -1128,7 +1131,8 @@ textarea {
     left: 0;
     width: 10%;
     height: 100vh; }
-  #menu__right a, #menu__left a {
+  #menu__right a,
+  #menu__left a {
     width: 110%; }
   #ethan {
     position: absolute;
@@ -1154,7 +1158,8 @@ textarea {
     justify-content: space-between;
     align-items: center;
     height: 90vh; }
-  #menu__left, #menu__right {
+  #menu__left,
+  #menu__right {
     width: 110%;
     display: flex;
     flex-direction: column;
@@ -1166,14 +1171,14 @@ textarea {
     justify-content: center;
     transition: all 1s;
     z-index: 99;
-    background: #2283c9;
+    background: #1b679d;
     font-size: 0.6em;
     padding: 10px; }
     .menutabs a {
       color: black;
       text-decoration: none; }
     .menutabs:hover {
-      background: #1b679d; }
+      background: #2283c9; }
       .menutabs:hover a {
         color: #e5e5e5; }
   #menutabscontain {
@@ -1185,8 +1190,10 @@ textarea {
     background: #1b679d; }
     .menudark a {
       color: #e5e5e5; }
-  #historymenu, #projectmenu, #contactme {
-    border-top: 1px solid #1b679d; }
+  #historymenu,
+  #projectmenu,
+  #contactme {
+    border-top: 1px solid #2283c9; }
   .menutext {
     flex-direction: column;
     align-items: center;
@@ -1296,7 +1303,8 @@ textarea {
   #biotextw {
     font-size: 0.8em;
     text-align: left; }
-  #asa, #ageinfo {
+  #asa,
+  #ageinfo {
     display: block; }
   .biopersonaltext {
     width: 75%; }
@@ -1451,7 +1459,7 @@ textarea {
   .clickinform {
     display: none;
     position: absolute;
-    bottom: 25px;
+    top: 25px;
     left: 50%;
     transform: translateX(-50%);
     font-size: 0.4em;
@@ -1633,7 +1641,8 @@ textarea {
     width: 500px; }
   .itopen {
     flex-direction: column; }
-  #availablehalf, #resumehalf {
+  #availablehalf,
+  #resumehalf {
     font-size: 1.3em; }
   #blogcenter {
     font-size: 1.2em; }

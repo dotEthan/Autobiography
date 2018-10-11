@@ -1,25 +1,31 @@
 {
-  "name": "portfolio",
-  "version": "1.0.0",
-  "description": "Portfolio website",
+  "name": "Autobiography",
+  "version": "0.9.0",
+  "description": "Autobiography website",
   "main": "index.js",
   "scripts": {
     "start": "gulp"
-},
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Uberche/porfolioweb.git"
+    "url": "git+https://github.com/dotEthan/Autobiography.git"
   },
   "keywords": [
-    "portfolio"
+    "Ego Project"
   ],
   "author": "Ethan Strauss",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Uberche/porfolioweb/issues"
+    "url": "https://github.com/Uberche/Autobiography/issues"
   },
-  "homepage": "https://github.com/Uberche/porfolioweb#readme",
+  "homepage": "https://github.com/Uberche/Autobiography#readme",
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "browser-sync": "^2.26.0",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^4.0.1"
+  },
+  "dependencies": {
+    "handlebars": "^4.0.12",
+    "sass": "^1.14.1"
   }
 }

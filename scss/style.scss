@@ -1,16 +1,16 @@
 @font-face {
-  font-family: 'Merriweather';
-  src: url('fonts/Merriweather-webfont.woff') format('woff');
+  font-family: "Merriweather";
+  src: url("fonts/Merriweather-webfont.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'Montserrat';
-  src: url('fonts/Montserrat-Regular.woff') format('woff');
+  font-family: "Montserrat";
+  src: url("fonts/Montserrat-Regular.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'logo';
-  src: url('fonts/fredoka-one-v5-latin-regular.woff') format('woff');
+  font-family: "logo";
+  src: url("fonts/fredoka-one-v5-latin-regular.woff") format("woff");
 }
 
 $limecolor: #bff073;
@@ -27,13 +27,13 @@ $fourthcolor: #8a96a5;
 $fifthcolor: #888;
 
 $projectoverlayradius: 5px;
-$headertext: 'Merriweather', serif;
-$regulartext: 'Montserrat', sans-serif;
+$headertext: "Merriweather", serif;
+$regulartext: "Montserrat", sans-serif;
 $menutextc: white;
 $menuiconsize: 1.5em;
 $menufontsize: 0.9em;
 $smallmenupaddingtop: 20px;
-$frontimage: url('../images/bgp1.jpg');
+$frontimage: url("../images/bgp1.jpg");
 $biowritingc: black;
 $biowritings: 2.7em;
 $bioquestions: 2.5em;
@@ -846,7 +846,7 @@ a:link {
 .project:after {
   padding-top: 56.25%;
   display: block;
-  content: '';
+  content: "";
 }
 
 .protext {
@@ -1508,7 +1508,7 @@ textarea {
     justify-content: center;
     transition: all 1s;
     z-index: 99;
-    background: $thirdcolor;
+    background: darken($thirdcolor, 10%);
     font-size: 0.6em;
     padding: 10px;
 
@@ -1518,7 +1518,7 @@ textarea {
     }
 
     &:hover {
-      background: darken($thirdcolor, 10%);
+      background: $thirdcolor;
 
       a {
         color: $firstcolor;
@@ -1544,7 +1544,7 @@ textarea {
   #historymenu,
   #projectmenu,
   #contactme {
-    border-top: 1px solid darken($thirdcolor, 10%);
+    border-top: 1px solid $thirdcolor;
   }
 
   .menutext {
