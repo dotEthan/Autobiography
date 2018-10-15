@@ -93,6 +93,16 @@ a:link {
   justify-content: space-around;
   font-family: "Merriweather", serif;
   height: 70px; }
+  @media screen and (min-width: 576px) {
+    .menu {
+      width: 100%;
+      padding-top: 0; } }
+  @media screen and (min-width: 768px) {
+    .menu {
+      flex-direction: column;
+      justify-content: space-between;
+      height: 90vh;
+      position: relative; } }
 
 .menucontain {
   position: fixed;
@@ -100,6 +110,20 @@ a:link {
   color: white;
   width: 100%;
   z-index: 99; }
+  @media screen and (min-width: 576px) {
+    .menucontain {
+      display: flex;
+      align-items: center;
+      justify-content: space-between; } }
+  @media screen and (min-width: 768px) {
+    .menucontain {
+      flex-direction: column;
+      justify-content: space-around;
+      width: 10%;
+      height: 100vh; } }
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    .menucontain {
+      width: 7%; } }
 
 #ethan {
   font-family: "Merriweather", serif;
@@ -110,6 +134,22 @@ a:link {
   height: 70px;
   display: flex;
   align-items: center; }
+  @media screen and (min-width: 768px) {
+    #ethan {
+      position: relative;
+      left: 15%;
+      width: 110%;
+      transform: translate3d(0, 0, 0);
+      background: #554a65;
+      border-radius: 25%;
+      padding: 40px 20px;
+      z-index: 99;
+      color: #e5e5e5;
+      border: 2px solid #6e6082;
+      box-shadow: -4px 4px 0px #6e6082; } }
+  @media screen and (min-width: 1600px) {
+    #ethan {
+      font-size: 1.7em; } }
 
 #entrebgcanvas {
   display: none;
@@ -117,6 +157,14 @@ a:link {
 
 .leftcanvas {
   display: none; }
+  @media screen and (min-width: 768px) {
+    .leftcanvas {
+      height: 100vh;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block; } }
 
 .menunow {
   font-size: 1.2em;
@@ -128,6 +176,11 @@ a:link {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between; }
+  @media screen and (min-width: 768px) {
+    #menutabscontain {
+      flex-direction: column;
+      justify-content: flex-end;
+      height: 100%; } }
 
 #menu__left,
 #menu__right {
@@ -138,14 +191,66 @@ a:link {
   #menu__left a,
   #menu__right a {
     width: 48%; }
+    @media screen and (min-width: 768px) {
+      #menu__left a,
+      #menu__right a {
+        width: 110%; } }
+  @media screen and (min-width: 768px) {
+    #menu__left,
+    #menu__right {
+      display: flex;
+      flex-direction: column;
+      width: 110%; } }
 
 .menutabs {
   text-align: center;
   font-size: 0.6em;
   cursor: pointer; }
+  @media screen and (min-width: 576px) {
+    .menutabs {
+      font-size: 0.8em; } }
+  @media screen and (min-width: 1600px) {
+    .menutabs {
+      font-size: 0.85em; } }
+  @media screen and (min-width: 768px) {
+    .menutabs {
+      width: 110%;
+      display: flex;
+      justify-content: center;
+      transition: all 1s;
+      z-index: 99;
+      background: #1b679d;
+      font-size: 0.6em;
+      padding: 5px; }
+      .menutabs a {
+        color: black;
+        text-decoration: none; }
+      .menutabs:hover {
+        background: #2283c9; }
+        .menutabs:hover a {
+          color: #e5e5e5; } }
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    .menutabs {
+      font-size: 0.6em;
+      width: 110%; } }
+  @media screen and (min-width: 1200px) {
+    .menutabs {
+      font-size: 0.7em; } }
+  @media screen and (min-width: 1600px) {
+    .menutabs {
+      font-size: 0.85em; } }
 
-.menudark {
-  color: #2283c9 !important; }
+@media screen and (min-width: 768px) {
+  .menudark {
+    background: #1b679d; }
+    .menudark a {
+      color: #e5e5e5; } }
+
+@media screen and (min-width: 768px) {
+  #historymenu,
+  #projectmenu,
+  #contactme {
+    border-top: 1px solid #175888; } }
 
 .menutext {
   display: flex;
@@ -153,6 +258,13 @@ a:link {
   flex-direction: column;
   color: white;
   padding: 5px; }
+  @media screen and (min-width: 768px) {
+    .menutext {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      color: black; } }
 
 .faicon {
   display: none; }
@@ -162,6 +274,21 @@ a:link {
   margin-left: 0;
   margin-top: 5px;
   color: #e5e5e5; }
+  @media screen and (min-width: 768px) {
+    .menutitle {
+      margin-top: 5px;
+      font-size: 1.1em; } }
+
+@media screen and (min-width: 768px) {
+  #contentcontain {
+    position: absolute;
+    left: 10%;
+    width: 90%; } }
+
+@media screen and (min-width: 992px) and (orientation: landscape) {
+  #contentcontain {
+    width: 93%;
+    left: 7%; } }
 
 #alert {
   display: none; }
@@ -169,7 +296,7 @@ a:link {
 #splashcont {
   height: 100vh;
   padding-top: 23vh;
-  background-image: url("../images/bgp1.jpg");
+  background-image: url("/images/bgp.jpg");
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
@@ -177,6 +304,19 @@ a:link {
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-between; }
+  @media screen and (orientation: landscape) {
+    #splashcont {
+      padding-top: 80px; } }
+  @media screen and (min-width: 768px) {
+    #splashcont {
+      align-items: center;
+      background-position: top center;
+      background-size: cover;
+      justify-content: space-between;
+      position: relative; } }
+  @media screen and (min-width: 768px) and (orientation: landscape) {
+    #splashcont {
+      padding-top: 0; } }
 
 #titlecard {
   width: 100%;
@@ -188,6 +328,18 @@ a:link {
   color: white;
   align-items: center;
   flex-grow: 1; }
+  @media screen and (min-width: 576px) and (orientation: landscape) {
+    #titlecard {
+      width: 90%; } }
+  @media screen and (min-width: 768px) {
+    #titlecard {
+      margin: 0; } }
+  @media screen and (min-width: 768px) and (orientation: landscape) {
+    #titlecard {
+      margin-top: 13vh; } }
+  @media screen and (min-width: 992px) and (min-aspect-ratio: 16 / 8) {
+    #titlecard {
+      margin-top: 16vh; } }
 
 #motto {
   display: none; }
@@ -202,6 +354,17 @@ a:link {
   justify-content: space-around;
   align-items: flex-end;
   position: relative; }
+  @media screen and (orientation: landscape) {
+    #desktop {
+      margin-bottom: 20px;
+      width: 45%; } }
+  @media screen and (min-width: 768px) {
+    #desktop {
+      width: 80%;
+      background: url(../images/menubar.png) no-repeat;
+      background-size: contain;
+      background-position: bottom center;
+      margin-bottom: 50px; } }
 
 .desktop__items--sm {
   width: 20%;
@@ -210,22 +373,45 @@ a:link {
   flex-direction: column;
   justify-content: center;
   align-items: center; }
+  @media screen and (min-width: 768px) {
+    .desktop__items--sm {
+      width: auto; }
+      .desktop__items--sm:hover .desktop__items__text {
+        background: rgba(34, 131, 201, 0.9); } }
 
 .desktop__items__img {
   cursor: pointer; }
+  @media screen and (min-width: 768px) {
+    .desktop__items__img {
+      height: 85px; } }
   .desktop__items__img:hover {
     transform: scale(1.05); }
 
 .desktop__items__img--sm {
   display: block; }
+  @media screen and (min-width: 768px) {
+    .desktop__items__img--sm {
+      display: none; } }
 
 .desktop__items__img--lg {
   display: none; }
+  @media screen and (min-width: 768px) {
+    .desktop__items__img--lg {
+      width: 75px;
+      display: block; } }
 
 .desktop__items__text {
   font-size: 0.7em;
   margin-top: 5px;
   cursor: pointer; }
+  @media screen and (min-width: 768px) {
+    .desktop__items__text {
+      color: white;
+      z-index: 99;
+      transform: translateY(-20px);
+      background: rgba(34, 131, 201, 0.4);
+      padding: 5px;
+      border-radius: 6px; } }
 
 .desktop__over {
   position: absolute;
@@ -233,12 +419,30 @@ a:link {
   width: 70%;
   display: none;
   flex-wrap: wrap; }
+  @media screen and (orientation: landscape) {
+    .desktop__over {
+      width: 50%; } }
+  @media screen and (min-width: 768px) {
+    .desktop__over {
+      position: relative;
+      justify-content: center;
+      width: 90%;
+      bottom: 0; } }
 
 .desktop__over--open {
   display: flex; }
 
 .desktop__over__contain {
   width: 100%; }
+  @media screen and (min-width: 768px) {
+    .desktop__over__contain {
+      width: auto;
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      margin: auto; } }
 
 .desktop__over__each {
   display: none;
@@ -247,11 +451,48 @@ a:link {
   font-size: 0.45em;
   line-height: 1.4em;
   border: 1px solid #abb1ba; }
+  @media screen and (orientation: landscape) {
+    .desktop__over__each {
+      bottom: 20vh;
+      font-size: 0.25em; } }
+  @media screen and (min-width: 768px) {
+    .desktop__over__each {
+      margin: 5px;
+      width: auto;
+      font-size: 0.48em;
+      max-width: 350px; } }
+  @media screen and (min-width: 1600px) {
+    .desktop__over__each {
+      font-size: 0.55em;
+      max-width: 450px; } }
 
 .desktop__over__open--one {
   display: flex;
   width: 100%;
   flex-grow: 1; }
+  @media screen and (min-width: 768px) {
+    .desktop__over__open--one {
+      flex-grow: 1;
+      width: 20vw;
+      height: 30vh;
+      font-size: 0.48em; } }
+
+@media screen and (min-width: 768px) {
+  .desktop__over__open--multi {
+    display: flex;
+    width: 30vw;
+    height: 20vh;
+    font-size: 0.4em;
+    min-width: 280px; } }
+
+@media screen and (min-width: 768px) and (orientation: landscape) {
+  .desktop__over__open--multi {
+    height: 33vh;
+    min-width: 230px; } }
+
+@media screen and (min-width: 992px) and (orientation: landscape) {
+  .desktop__over__open--multi {
+    height: 25vh; } }
 
 .theme__each {
   cursor: pointer; }
@@ -263,6 +504,9 @@ a:link {
   display: flex;
   align-items: center;
   justify-content: space-between; }
+  @media screen and (min-width: 768px) {
+    .over__title {
+      height: 20px; } }
 
 .over__title__text {
   padding: 5px; }
@@ -284,6 +528,20 @@ a:link {
   display: flex;
   padding: 10px 5px 10px 0;
   overflow-y: scroll; }
+  @media screen and (min-width: 576px) {
+    .editor__content {
+      font-size: 1.8em;
+      line-height: 1.2em; } }
+  @media screen and (min-width: 768px) {
+    .editor__content {
+      flex-grow: 1; } }
+  @media screen and (min-width: 768px) and (orientation: landscape) {
+    .editor__content {
+      font-size: 1.3em;
+      line-height: 1.3em; } }
+  @media screen and (min-width: 1200px) {
+    .editor__content {
+      font-size: 1.4em; } }
 
 .editor__content a {
   color: white; }
@@ -293,13 +551,25 @@ a:link {
   padding: 0 10px;
   display: flex;
   flex-direction: column; }
+  @media screen and (min-width: 576px) {
+    .editor__content__nums {
+      width: 25px; } }
+  @media screen and (min-width: 768px) {
+    .editor__content__nums {
+      width: 30px; } }
 
 .editor__content--indented {
   margin-left: 5px; }
+  @media screen and (min-width: 576px) {
+    .editor__content--indented {
+      margin-left: 10px; } }
 
 .editor__status {
   background: #abb1ba;
   height: 15px; }
+  @media screen and (min-width: 768px) {
+    .editor__status {
+      height: 20px; } }
 
 .over__content {
   height: 27vh;
@@ -309,6 +579,10 @@ a:link {
   border-left: none;
   display: flex;
   padding: 10px; }
+  @media screen and (min-width: 768px) {
+    .over__content {
+      height: 15vh;
+      flex-grow: 1; } }
 
 .over__content__each {
   color: black;
@@ -319,6 +593,15 @@ a:link {
   align-items: center;
   cursor: pointer;
   margin-right: 10px; }
+  @media screen and (orientation: landscape) {
+    .over__content__each {
+      font-size: 2.2em; } }
+  @media screen and (min-width: 768px) {
+    .over__content__each {
+      font-size: 1.5em; } }
+  @media screen and (min-width: 768px) and (orientation: landscape) {
+    .over__content__each {
+      font-size: 1.5em; } }
 
 .theme__each__icon {
   display: flex;
@@ -326,11 +609,24 @@ a:link {
   align-items: center;
   justify-content: flex-start;
   width: 55px;
-  height: 55px; }
+  height: 55px;
+  text-align: center; }
+  @media screen and (min-width: 1600px) {
+    .theme__each__icon {
+      width: 85px;
+      height: 85px; } }
   .theme__each__icon img {
     margin-bottom: 5px;
     width: 30px;
     height: 30px; }
+    @media screen and (min-width: 768px) {
+      .theme__each__icon img {
+        width: 35px;
+        height: 35px; } }
+    @media screen and (min-width: 1600px) {
+      .theme__each__icon img {
+        width: 65px;
+        height: 65px; } }
 
 .over__status {
   background: white;
@@ -382,6 +678,26 @@ a:link {
   font-family: "Merriweather", serif;
   font-weight: bold;
   font-size: 1.8em; }
+  @media screen and (orientation: landscape) {
+    #nametitle {
+      font-size: 1.4em;
+      padding: 10px; } }
+  @media screen and (min-width: 576px) {
+    #nametitle {
+      font-size: 2.5em; } }
+  @media screen and (min-width: 576px) and (orientation: landscape) {
+    #nametitle {
+      font-size: 1.8em;
+      padding: 5px; } }
+  @media screen and (min-width: 768px) {
+    #nametitle {
+      font-size: 3em; } }
+  @media screen and (min-width: 768px) and (orientation: landscape) {
+    #nametitle {
+      font-size: 2.5em; } }
+  @media screen and (min-width: 1600px) {
+    #nametitle {
+      font-size: 4em; } }
 
 #choices__contain {
   display: none; }
@@ -393,6 +709,9 @@ a:link {
 .anchor {
   margin-top: -70px;
   position: absolute; }
+  @media screen and (min-width: 768px) {
+    .anchor {
+      margin-top: 0px; } }
 
 #bioinfo {
   display: flex;
@@ -413,18 +732,64 @@ a:link {
   flex-direction: column;
   justify-content: center;
   margin: 100px auto; }
+  @media screen and (min-width: 576px) {
+    #biocontain {
+      width: 75%; } }
+  @media screen and (min-width: 768px) {
+    #biocontain {
+      width: 90%;
+      margin: 0;
+      height: 420px; } }
+  @media screen and (min-width: 1200px) {
+    #biocontain {
+      align-items: center;
+      flex-direction: row;
+      width: 80%; } }
+  @media screen and (min-width: 1600px) {
+    #biocontain {
+      width: 75%;
+      margin: 60px 0; } }
+  @media screen and (min-width: 992px) and (min-aspect-ratio: 16 / 8) {
+    #biocontain {
+      align-items: center;
+      text-align: center; } }
 
 #biowriting {
   width: 100%;
   color: black;
   font-family: "Merriweather", serif;
   font-size: 1em; }
+  @media screen and (min-width: 576px) {
+    #biowriting {
+      font-size: 1.5em; } }
+  @media screen and (min-width: 768px) {
+    #biowriting {
+      font-size: 1.8em;
+      width: 100%; } }
+  @media screen and (min-width: 1200px) {
+    #biowriting {
+      font-size: 2.1em; } }
+  @media screen and (min-width: 1600px) {
+    #biowriting {
+      font-size: 3em; } }
 
 #quotename {
   font-size: 0.8em;
   text-align: right;
   margin-top: 20px;
   font-family: "Merriweather", serif; }
+  @media screen and (min-width: 576px) {
+    #quotename {
+      font-size: 1.1em; } }
+  @media screen and (min-width: 768px) {
+    #quotename {
+      font-size: 1em; } }
+  @media screen and (min-width: 1200px) {
+    #quotename {
+      font-size: 1.2em; } }
+  @media screen and (min-width: 1600px) {
+    #quotename {
+      font-size: 1.6em; } }
 
 .biopersonal {
   display: block;
@@ -438,6 +803,9 @@ a:link {
   justify-content: center;
   height: 0px;
   overflow: hidden; }
+  @media screen and (min-width: 1200px) {
+    .biopersonal {
+      left: 5%; } }
 
 .unhidden {
   height: auto; }
@@ -448,20 +816,59 @@ a:link {
 #biotop {
   display: flex;
   flex-direction: column-reverse; }
+  @media screen and (min-width: 768px) {
+    #biotop {
+      flex-direction: row;
+      align-items: center; } }
 
 #biotextw {
   font-size: 0.8em;
   text-align: center; }
+  @media screen and (min-width: 576px) {
+    #biotextw {
+      font-size: 1em; } }
+  @media screen and (min-width: 768px) {
+    #biotextw {
+      font-size: 0.8em;
+      text-align: left; } }
+  @media screen and (min-width: 1200px) {
+    #biotextw {
+      font-size: 1em; } }
+  @media screen and (min-width: 1600px) {
+    #biotextw {
+      font-size: 1.3em; } }
 
 #asa {
   margin: 15px 0;
   display: none; }
+  @media screen and (min-width: 768px) {
+    #asa {
+      display: block; } }
 
 #ageinfo {
   display: none; }
+  @media screen and (min-width: 768px) {
+    #ageinfo {
+      display: block; } }
+
+@media screen and (min-width: 768px) {
+  .biopersonaltext {
+    width: 75%; } }
+
+@media screen and (min-width: 992px) and (orientation: landscape) {
+  .biopersonaltext {
+    padding-right: 10px; } }
 
 #portimage {
   display: none; }
+  @media screen and (min-width: 768px) {
+    #portimage {
+      display: block;
+      margin: 0 15px;
+      width: 25%; } }
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    #portimage {
+      width: 100%; } }
 
 #biobottom {
   width: 95%;
@@ -469,11 +876,20 @@ a:link {
   justify-content: center;
   margin-top: 20px;
   font-size: 0.5em; }
+  @media screen and (min-width: 576px) {
+    #biobottom {
+      font-size: 0.7em; } }
+  @media screen and (min-width: 1600px) {
+    #biobottom {
+      font-size: 1em; } }
 
 #thanksright {
   width: 85%;
   padding: 5px;
   text-align: left; }
+  @media screen and (min-width: 768px) {
+    #thanksright {
+      font-size: 1.2em; } }
   #thanksright a {
     color: #2283c9; }
     #thanksright a:hover {
@@ -483,6 +899,9 @@ a:link {
   width: 15%;
   padding: 5px;
   text-align: right; }
+  @media screen and (min-width: 768px) {
+    #thanksleft {
+      font-size: 1.2em; } }
 
 #history {
   display: flex;
@@ -501,6 +920,9 @@ a:link {
   font-weight: bold;
   color: #2283c9;
   text-decoration: none; }
+  @media screen and (min-width: 768px) {
+    .protitle {
+      font-size: 2.5em; } }
 
 .history--title {
   color: #e5e5e5; }
@@ -514,6 +936,11 @@ a:link {
   margin-right: auto;
   margin-left: auto;
   flex-direction: column-reverse; }
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    .flexbox-slider {
+      font-size: 2.5em;
+      flex-direction: row-reverse;
+      height: 500px; } }
 
 .flexbox-slide {
   position: relative;
@@ -527,8 +954,41 @@ a:link {
   max-height: 100px;
   height: auto;
   cursor: pointer; }
-  .flexbox-slide .clickinform {
-    display: none; }
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    .flexbox-slide {
+      max-height: 500px;
+      flex: 1;
+      flex-direction: row;
+      padding: 10px;
+      justify-content: center;
+      display: flex;
+      overflow: hidden;
+      transition: flex 1s; }
+      .flexbox-slide:hover .clickinform {
+        display: block; }
+      .flexbox-slide.open {
+        flex: 6;
+        padding: 50px; }
+        .flexbox-slide.open:hover .clickinform {
+          display: none; }
+        .flexbox-slide.open:hover .imgtitle {
+          border: none; } }
+
+.clickinform {
+  display: none; }
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    .clickinform {
+      display: none;
+      position: absolute;
+      top: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.3em;
+      color: #4c4c4c;
+      width: 100%; } }
+  @media screen and (min-width: 1600px) {
+    .clickinform {
+      font-size: 0.4em; } }
 
 .open {
   max-height: 500px;
@@ -537,18 +997,69 @@ a:link {
 .flexcontainer {
   max-width: 500px;
   margin: 0 auto; }
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    .flexcontainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column; } }
+  @media screen and (min-width: 1600px) {
+    .flexcontainer {
+      flex-direction: row;
+      max-width: none; } }
 
 .imgtitle {
   display: flex;
   justify-content: space-around; }
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    .imgtitle {
+      flex-direction: column;
+      height: auto;
+      max-width: 150px; } }
+
+@media screen and (min-width: 992px) and (orientation: landscape) {
+  .itopen {
+    flex-direction: row;
+    max-width: none; } }
+
+@media screen and (min-width: 1600px) {
+  .itopen {
+    flex-direction: column; } }
 
 .historylogo {
   width: 50%;
   max-width: 150px;
   display: flex;
   align-items: center; }
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    .historylogo {
+      width: auto;
+      margin: 0 auto; } }
+  @media screen and (min-width: 1600px) {
+    .historylogo {
+      margin: 0;
+      width: 150px; } }
   .historylogo img {
     margin: 0 auto; }
+    @media screen and (min-width: 992px) and (orientation: landscape) {
+      .historylogo img {
+        height: 100px; } }
+
+@media screen and (min-width: 992px) and (orientation: landscape) {
+  .historylogoside {
+    width: 50%; } }
+
+@media screen and (min-width: 1600px) {
+  .historylogoside {
+    width: 150px; } }
+
+@media screen and (min-width: 992px) and (orientation: landscape) {
+  .historytitlesside {
+    width: 50%; } }
+
+@media screen and (min-width: 1600px) {
+  .historytitlesside {
+    width: 150px; } }
 
 .historytitles {
   display: flex;
@@ -560,6 +1071,21 @@ a:link {
   font-family: "Merriweather", serif;
   max-width: 150px;
   width: 50%; }
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    .historytitles {
+      font-size: 0.28em;
+      padding: 5px;
+      width: 100%;
+      height: 100px;
+      max-width: none; } }
+  @media screen and (min-width: 1200px) {
+    .historytitles {
+      font-size: 0.34em; } }
+  @media screen and (min-width: 1600px) {
+    .historytitles {
+      font-size: 0.4em;
+      padding: 15px;
+      width: 150px; } }
 
 .historydates {
   font-size: 0.7em;
@@ -576,6 +1102,27 @@ a:link {
   height: 0;
   justify-content: center;
   transition: height 1s; }
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    .textblock {
+      width: 90%;
+      margin: 0 auto 0;
+      height: 0px;
+      display: flex;
+      transition: height 1s; } }
+  @media screen and (min-width: 1600px) {
+    .textblock {
+      width: 0px;
+      height: 400px;
+      margin: 0;
+      transition: width 1s; } }
+
+@media screen and (min-width: 992px) and (orientation: landscape) {
+  .tbon {
+    height: 270px; } }
+
+@media screen and (min-width: 1600px) {
+  .tbon {
+    width: 500px; } }
 
 .tbopen {
   height: 250px; }
@@ -589,26 +1136,58 @@ a:link {
   overflow: hidden;
   margin: 0 5px 5px;
   padding: 15px;
-  font-size: 0.55em;
+  font-size: 0.54em;
   width: 100%;
   background: rgba(255, 255, 255, 0.6);
   opacity: 0;
   transition: opacity 1s; }
+  @media screen and (min-width: 576px) {
+    .historytext {
+      font-size: 0.75em; } }
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    .historytext {
+      padding: 15px;
+      opacity: 0;
+      font-size: 0.3em;
+      margin: 0; } }
+  @media screen and (min-width: 1200px) {
+    .historytext {
+      font-size: 0.35em; } }
+  @media screen and (min-width: 1600px) {
+    .historytext {
+      font-size: 0.4em;
+      padding: 25px;
+      border-top: none;
+      border-left: 1px solid black; } }
 
 .hton {
   opacity: 1; }
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    .hton {
+      opacity: 1; } }
+
+@media screen and (min-width: 1600px) {
+  .fcon {
+    justify-content: flex-start;
+    width: 100%; } }
 
 .jobtitle {
   margin-bottom: 15px;
   text-align: center;
   width: 100%;
   font-weight: bold; }
+  @media screen and (min-width: 1200px) {
+    .jobtitle {
+      margin-bottom: 25px; } }
 
 .dutylist ul {
   padding-left: 20px; }
 
 .dutylist ul li {
   margin-bottom: 10px; }
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    .dutylist ul li {
+      margin-bottom: 5px; } }
 
 .nowcalled {
   font-size: 0.9em; }
@@ -657,6 +1236,21 @@ a:link {
   background-color: white;
   cursor: pointer;
   transition: all 800ms; }
+  @media screen and (min-width: 576px) {
+    .project {
+      width: 40%; } }
+  @media screen and (min-width: 768px) {
+    .project {
+      width: 30%;
+      margin-right: 10px; }
+      .project:hover .protext {
+        margin: 15px 0; } }
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    .project {
+      width: 20%; } }
+  .project:hover .protext {
+    background-color: #2283c9;
+    margin: 15px 0; }
   .project img {
     max-width: 100%;
     max-height: 100%;
@@ -665,9 +1259,6 @@ a:link {
     bottom: 0;
     right: 0;
     left: 0; }
-  .project:hover .protext {
-    background-color: #2283c9;
-    margin: 15px 0; }
 
 .project:after {
   padding-top: 56.25%;
@@ -697,13 +1288,34 @@ a:link {
   background: rgba(255, 255, 255, 0.6);
   border-radius: 5px;
   overflow: hidden; }
+  @media screen and (min-width: 1200px) {
+    .protextcont {
+      font-size: 1.4em; } }
 
 .protextt {
   width: 100%;
   font-family: "Merriweather", serif; }
+  @media screen and (orientation: landscape) {
+    .protextt {
+      font-size: 1.4em; } }
+  @media screen and (min-width: 576px) {
+    .protextt {
+      font-size: 0.8em; } }
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    .protextt {
+      font-size: 0.7em; } }
 
 .protextw {
   font-size: 0.7em; }
+  @media screen and (orientation: landscape) {
+    .protextw {
+      font-size: 1em; } }
+  @media screen and (min-width: 576px) {
+    .protextw {
+      font-size: 0.6em; } }
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    .protextw {
+      font-size: 0.55em; } }
 
 #projectoverlay {
   position: fixed;
@@ -715,6 +1327,14 @@ a:link {
   padding: 15px;
   width: 90%;
   max-height: 80vh; }
+  @media screen and (min-width: 768px) {
+    #projectoverlay {
+      height: 90vh;
+      width: 80%;
+      left: 55%; } }
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    #projectoverlay {
+      max-height: 70vh; } }
 
 .allovers {
   display: flex;
@@ -722,6 +1342,15 @@ a:link {
   align-items: center;
   text-align: center;
   flex-direction: column-reverse; }
+  @media screen and (orientation: landscape) {
+    .allovers {
+      flex-direction: row; } }
+  @media screen and (min-width: 768px) {
+    .allovers {
+      padding: 25px; } }
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    .allovers {
+      flex-direction: row; } }
 
 #closeover {
   width: 30px;
@@ -739,6 +1368,13 @@ a:link {
   border: 1px solid grey;
   border-radius: 25px;
   cursor: pointer; }
+  @media screen and (min-width: 768px) {
+    #closeover {
+      width: 50px;
+      height: 50px;
+      top: -20px;
+      right: -20px;
+      font-size: 1.3em; } }
 
 .overlayleft {
   width: 100%;
@@ -746,6 +1382,12 @@ a:link {
   flex-direction: column;
   justify-content: center;
   padding: 15px; }
+  @media screen and (min-width: 576px) {
+    .overlayleft {
+      font-size: 1.3em; } }
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    .overlayleft {
+      width: 50%; } }
 
 .overlaytitle {
   font-size: 1em;
@@ -753,25 +1395,52 @@ a:link {
   text-decoration: underline;
   margin-bottom: 10px;
   text-align: center; }
+  @media screen and (min-width: 768px) {
+    .overlaytitle {
+      font-size: 1.3em; } }
 
 .overlaytext {
   font-size: 0.7em; }
+  @media screen and (min-width: 768px) {
+    .overlaytext {
+      font-size: 0.8em; } }
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    .overlaytext {
+      margin: 50px 0; } }
 
 .overlayskills {
   margin: 10px 0;
   font-size: 0.7em; }
+  @media screen and (min-width: 768px) {
+    .overlayskills {
+      font-size: 0.8em; } }
 
 .overlayurl a {
   color: #2283c9;
   font-size: 0.6em; }
+  @media screen and (min-width: 768px) {
+    .overlayurl a {
+      font-size: 0.9em; } }
 
 .overlayright {
   border: 2px dashed #96858f;
   justify-content: center;
   display: flex; }
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    .overlayright {
+      margin-left: 20px; } }
   .overlayright img {
     max-height: 20vh;
     margin: 10px; }
+    @media screen and (orientation: landscape) {
+      .overlayright img {
+        max-height: 40vh; } }
+    @media screen and (min-width: 992px) and (orientation: landscape) {
+      .overlayright img {
+        max-height: 50vh; } }
+    @media screen and (min-width: 1200px) {
+      .overlayright img {
+        max-height: 65vh; } }
 
 #availableslice {
   display: flex;
@@ -791,11 +1460,36 @@ a:link {
   flex-direction: row;
   justify-content: space-around;
   align-items: center; }
+  @media screen and (min-width: 768px) {
+    #availablehalf {
+      width: 40%;
+      font-size: 1em;
+      padding: 50px 0 50px 50px;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      overflow: visible; } }
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    #availablehalf {
+      font-size: 0.9em;
+      padding: 40px 0 40px 40px; } }
+  @media screen and (min-width: 1200px) {
+    #availablehalf {
+      font-size: 1em;
+      padding: 70px 0 70px 60px; } }
+  @media screen and (min-width: 1600px) {
+    #availablehalf {
+      font-size: 1.3em; } }
 
 #availabletext,
 #resumetext {
   width: 70%;
   padding: 5px; }
+
+@media screen and (min-width: 768px) {
+  #resumetext {
+    width: 50%;
+    text-align: right; } }
 
 .buttonstyle {
   background-color: #554a65;
@@ -805,24 +1499,53 @@ a:link {
   border: 2px solid black;
   cursor: pointer;
   color: white; }
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    .buttonstyle {
+      font-size: 0.8em;
+      margin-top: 20px; } }
+  @media screen and (min-width: 1200px) {
+    .buttonstyle {
+      margin-top: 40px; } }
   .buttonstyle:hover {
     background-color: #2283c9; }
 
 #availabletext {
   width: 80%;
   text-align: left; }
+  @media screen and (min-width: 768px) {
+    #availabletext {
+      width: 80%;
+      text-align: left; } }
 
 #blogcenter {
   background: #e5e5e5;
   color: black;
   display: flex;
   flex-direction: column;
-  align-items: center; }
-
-#blogcentercont {
-  display: flex;
-  flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  max-height: 250px; }
+  @media screen and (min-width: 768px) {
+    #blogcenter {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      width: 30%;
+      border-radius: 10px;
+      border: 3px solid #87799c;
+      padding: 10px;
+      font-size: 0.8em; } }
+  @media screen and (min-width: 768px) and (orientation: landscape) {
+    #blogcenter {
+      max-height: 400px; } }
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    #blogcenter {
+      font-size: 1em;
+      width: 30%; } }
+  @media screen and (min-width: 1600px) {
+    #blogcenter {
+      font-size: 1.2em; } }
 
 #blogtitle {
   font-family: "Montserrat", sans-serif;
@@ -830,6 +1553,9 @@ a:link {
   text-align: left;
   width: 85%;
   margin-bottom: 15px; }
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    #blogtitle {
+      width: 95%; } }
 
 #blogcont {
   text-align: left;
@@ -838,6 +1564,9 @@ a:link {
   border-radius: 20px 20px 0 0;
   border-bottom: none;
   width: 85%; }
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    #blogcont {
+      padding: 15px; } }
 
 #blogdate {
   margin-bottom: 7px;
@@ -847,6 +1576,9 @@ a:link {
 #blogdata {
   margin-bottom: 5px;
   padding: 20px; }
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    #blogdata {
+      padding: 0px; } }
 
 #blogtext {
   width: 90%;
@@ -878,6 +1610,30 @@ a:link {
   flex-direction: row;
   justify-content: space-around;
   align-items: center; }
+  @media screen and (min-width: 768px) {
+    #resumehalf {
+      width: 60%;
+      font-size: 1em;
+      padding: 50px 50px 50px 30px;
+      background: linear-gradient(to top right, transparent 50%, #3c3448 50%) no-repeat, linear-gradient(to top right, transparent 0.1%, #3c3448 0.1%) no-repeat;
+      background-size: 60.5% 100%, 40% 100%;
+      background-position: 0% 0%, 100% 0%;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: right;
+      align-items: flex-end; }
+      #resumehalf .buttonstyle {
+        width: auto; } }
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    #resumehalf {
+      padding: 40px 40px 40px 30px; } }
+  @media screen and (min-width: 1200px) {
+    #resumehalf {
+      font-size: 1em;
+      padding: 70px 60px 70px 70px; } }
+  @media screen and (min-width: 1600px) {
+    #resumehalf {
+      font-size: 1.3em; } }
   #resumehalf .buttonstyle {
     background-color: #3c3448;
     border: 2px solid #6e6082;
@@ -900,6 +1656,18 @@ a:link {
   flex-direction: column;
   justify-content: center;
   margin: 0 auto; }
+  @media screen and (orientation: landscape) {
+    #inquiryform {
+      justify-content: space-between; } }
+  @media screen and (min-width: 768px) {
+    #inquiryform {
+      width: 80%; } }
+  @media screen and (min-width: 768px) and (orientation: landscape) {
+    #inquiryform {
+      width: 70%; } }
+  @media screen and (min-width: 992px) and (min-aspect-ratio: 16 / 8) {
+    #inquiryform {
+      width: 70%; } }
 
 #titlereturn {
   width: 100%; }
@@ -920,12 +1688,20 @@ a:link {
   border: 1px solid grey;
   border-radius: 25px;
   cursor: pointer; }
+  @media screen and (min-width: 768px) {
+    #contactclose {
+      width: 40px;
+      height: 40px;
+      font-size: 1.5em; } }
 
 #returnmessage {
   font-size: 0.7em;
   color: green;
   text-align: center;
   margin-bottom: 30px; }
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    #returnmessage {
+      font-size: 0.8em; } }
 
 label {
   font-size: 0.8em; }
@@ -949,6 +1725,9 @@ h3 {
   #submit:hover {
     background-color: #2283c9;
     border: 1px solid #554a65; }
+  @media screen and (orientation: landscape) {
+    #submit {
+      margin-top: 10px; } }
 
 textarea {
   width: 100%;
@@ -964,15 +1743,32 @@ textarea {
 .contactinfo {
   display: flex;
   align-items: center; }
+  @media screen and (orientation: landscape) {
+    .contactinfo {
+      width: 45%; } }
   .contactinfo label {
     width: 40%;
     text-align: left;
     padding: 5px; }
 
+@media screen and (orientation: landscape) {
+  #contactinfocont {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; } }
+
+@media screen and (min-width: 1200px) {
+  #contactinfocont {
+    width: 75%;
+    margin: 0 auto; } }
+
 #contactmessage {
   width: 100%;
   margin: 20px auto 0;
   max-width: 400px; }
+  @media screen and (orientation: landscape) {
+    #contactmessage {
+      margin: 20px auto 0; } }
 
 #footer {
   display: flex;
@@ -985,6 +1781,9 @@ textarea {
   display: flex;
   width: 100%;
   justify-content: space-around; }
+  @media screen and (min-width: 1200px) {
+    #footercont {
+      width: 90%; } }
 
 .contacttype {
   width: 35%;
@@ -992,6 +1791,19 @@ textarea {
   font-size: 2em;
   color: #554a65;
   cursor: pointer; }
+  @media screen and (min-width: 576px) {
+    .contacttype {
+      font-size: 2.2em; } }
+  @media screen and (min-width: 768px) {
+    .contacttype {
+      font-size: 2.3em; } }
+  @media screen and (min-width: 1200px) {
+    .contacttype {
+      font-size: 3em;
+      margin-bottom: 5px; } }
+  @media screen and (min-width: 1600px) {
+    .contacttype {
+      font-size: 3.5em; } }
   .contacttype a {
     color: #554a65; }
   .contacttype .footertext {
@@ -1020,6 +1832,15 @@ textarea {
 #footmessage {
   font-size: 0.6em;
   margin-top: 10px; }
+  @media screen and (min-width: 576px) {
+    #footmessage {
+      font-size: 0.7em; } }
+  @media screen and (min-width: 768px) {
+    #footmessage {
+      font-size: 0.75em; } }
+  @media screen and (min-width: 1600px) {
+    #footmessage {
+      font-size: 1em; } }
 
 .attri {
   font-size: 0.6em; }
@@ -1032,632 +1853,3 @@ textarea {
   font-weight: bold; }
   .footlink a:hover {
     color: #2283c9; }
-
-@media screen and (orientation: landscape) {
-  #splashcont {
-    padding-top: 80px; }
-  #nametitle {
-    font-size: 1.4em;
-    padding: 10px; }
-  #desktop {
-    margin-bottom: 20px;
-    width: 45%; }
-  .desktop__over {
-    width: 50%; }
-  .over__content__each {
-    font-size: 2.2em; }
-  .desktop__over__each {
-    bottom: 20vh;
-    font-size: 0.25em; }
-  .top {
-    z-index: 99; }
-  .allovers {
-    flex-direction: row; }
-  .protextt {
-    font-size: 1.4em; }
-  .protextw {
-    font-size: 1em; }
-  .overlayright img {
-    max-height: 40vh; }
-  #inquiryform {
-    justify-content: space-between; }
-  #contactinfocont {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; }
-  .contactinfo {
-    width: 45%; }
-  #contactmessage {
-    margin: 20px auto 0; }
-  #submit {
-    margin-top: 10px; } }
-
-@media screen and (min-width: 576px) {
-  .menucontain {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; }
-  .menu {
-    width: 100%;
-    padding-top: 0; }
-  .menutabs {
-    font-size: 0.8em; }
-  #nametitle {
-    font-size: 2.5em; }
-  .editor__content {
-    font-size: 1.8em;
-    line-height: 1.2em; }
-  .editor__content__nums {
-    width: 25px; }
-  .editor__content--indented {
-    margin-left: 10px; }
-  #biocontain {
-    width: 75%; }
-  #biowriting {
-    font-size: 1.5em; }
-  #biotextw {
-    font-size: 1em; }
-  #quotename {
-    font-size: 1.1em; }
-  #biobottom {
-    font-size: 0.7em; }
-  .historytext {
-    font-size: 0.75em; }
-  .project {
-    width: 40%; }
-  .overlayleft {
-    font-size: 1.3em; }
-  .protextt {
-    font-size: 0.8em; }
-  .protextw {
-    font-size: 0.6em; }
-  .contacttype {
-    font-size: 2.2em; }
-  #footmessage {
-    font-size: 0.7em; } }
-
-@media screen and (min-width: 576px) and (orientation: landscape) {
-  #titlecard {
-    width: 90%; }
-  #nametitle {
-    font-size: 1.8em;
-    padding: 5px; } }
-
-@media screen and (min-width: 768px) {
-  .menucontain {
-    flex-direction: column;
-    justify-content: space-around;
-    top: 0;
-    left: 0;
-    width: 10%;
-    height: 100vh; }
-  #menu__right a,
-  #menu__left a {
-    width: 110%; }
-  #ethan {
-    position: absolute;
-    top: 60px;
-    left: 85px;
-    margin-bottom: 150px;
-    background: #554a65;
-    border-radius: 25%;
-    padding: 20px;
-    z-index: 99;
-    color: #e5e5e5;
-    border: 5px solid #2283c9;
-    height: 100px; }
-  .leftcanvas {
-    height: 100vh;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block; }
-  .menu {
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    height: 90vh; }
-  #menu__left,
-  #menu__right {
-    width: 110%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center; }
-  .menutabs {
-    width: 110%;
-    display: flex;
-    justify-content: center;
-    transition: all 1s;
-    z-index: 99;
-    background: #1b679d;
-    font-size: 0.6em;
-    padding: 10px; }
-    .menutabs a {
-      color: black;
-      text-decoration: none; }
-    .menutabs:hover {
-      background: #2283c9; }
-      .menutabs:hover a {
-        color: #e5e5e5; }
-  #menutabscontain {
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    height: 100%; }
-  .menudark {
-    background: #1b679d; }
-    .menudark a {
-      color: #e5e5e5; }
-  #historymenu,
-  #projectmenu,
-  #contactme {
-    border-top: 1px solid #2283c9; }
-  .menutext {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    color: black; }
-  .menutitle {
-    margin-top: 5px;
-    font-size: 1.1em; }
-  #contentcontain {
-    position: absolute;
-    left: 10%;
-    width: 90%; }
-  #splashcont {
-    align-items: center;
-    background-position: top center;
-    background-size: cover;
-    justify-content: space-between; }
-  #titlecard {
-    margin: 0;
-    position: relative; }
-  #nametitle {
-    font-size: 3em; }
-  #desktop {
-    width: 80%;
-    background: url(../images/menubar.png) no-repeat;
-    background-size: contain;
-    background-position: bottom center;
-    margin-bottom: 50px; }
-  .desktop__items--sm {
-    width: auto; }
-    .desktop__items--sm:hover .desktop__items__text {
-      background: rgba(34, 131, 201, 0.9); }
-  .desktop__items__img--sm {
-    display: none; }
-  .desktop__items__img--lg {
-    width: 75px;
-    display: block; }
-  .desktop__items__img {
-    height: 85px; }
-  .desktop__items__text {
-    color: white;
-    z-index: 99;
-    transform: translateY(-20px);
-    background: rgba(34, 131, 201, 0.4);
-    padding: 5px;
-    border-radius: 6px; }
-  .desktop__over {
-    position: relative;
-    justify-content: center;
-    width: 90%;
-    bottom: 0; }
-  .desktop__over__contain {
-    width: auto;
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    margin: auto; }
-  .desktop__over__each {
-    margin: 5px;
-    width: auto;
-    font-size: 0.48em;
-    max-width: 350px; }
-  .desktop__over__open--one {
-    flex-grow: 1;
-    width: 20vw;
-    height: 30vh;
-    font-size: 0.48em; }
-  .desktop__over__open--multi {
-    display: flex;
-    width: 30vw;
-    height: 20vh;
-    font-size: 0.4em;
-    min-width: 280px; }
-  .over__title {
-    height: 20px; }
-  .editor__content__nums {
-    width: 30px; }
-  .editor--content {
-    flex-grow: 1; }
-  .editor--status {
-    height: 20px; }
-  .over--content {
-    height: 15vh;
-    flex-grow: 1; }
-  .over__content__each {
-    font-size: 1.5em; }
-  .theme__each__icon img {
-    width: 35px;
-    height: 35px; }
-  .anchor {
-    margin-top: 0px; }
-  #biocontain {
-    width: 90%;
-    margin: 0;
-    height: 420px; }
-  #biowriting {
-    font-size: 1.8em;
-    width: 100%; }
-  #quotename {
-    font-size: 1em; }
-  #biotop {
-    flex-direction: row;
-    align-items: center; }
-  #biotextw {
-    font-size: 0.8em;
-    text-align: left; }
-  #asa,
-  #ageinfo {
-    display: block; }
-  .biopersonaltext {
-    width: 75%; }
-  #portimage {
-    display: block;
-    margin: 0 15px;
-    width: 25%; }
-  #thanksright a {
-    font-size: 1.2em; }
-  #thanksleft {
-    font-size: 1.2em; }
-  .protitle {
-    font-size: 2.5em; }
-  .project {
-    width: 30%;
-    margin-right: 10px; }
-    .project:hover .protext {
-      margin: 15px 0; }
-  #projectoverlay {
-    max-height: 80vh;
-    width: 80%;
-    left: 55%; }
-  #closeover {
-    width: 50px;
-    height: 50px;
-    top: -20px;
-    right: -20px;
-    font-size: 1.3em; }
-  .allovers {
-    padding: 25px; }
-  .overlaytitle {
-    font-size: 1.3em; }
-  .overlaytext {
-    font-size: 0.8em; }
-  .overlayskills {
-    font-size: 0.8em; }
-  .overlayurl a {
-    font-size: 0.9em; }
-  #availablehalf {
-    width: 40%;
-    font-size: 1em;
-    padding: 50px 0 50px 50px;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-    overflow: visible; }
-  #availabletext {
-    width: 80%;
-    text-align: left; }
-  #blogcenter {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background: white;
-    width: 30%;
-    border-radius: 10px;
-    border: 3px solid #87799c;
-    padding: 10px;
-    font-size: 0.8em; }
-  #resumehalf {
-    width: 60%;
-    font-size: 1em;
-    padding: 50px 50px 50px 30px;
-    background: linear-gradient(to top right, transparent 50%, #3c3448 50%) no-repeat, linear-gradient(to top right, transparent 0.1%, #3c3448 0.1%) no-repeat;
-    background-size: 60.5% 100%, 40% 100%;
-    background-position: 0% 0%, 100% 0%;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: right;
-    align-items: flex-end; }
-    #resumehalf .buttonstyle {
-      width: auto; }
-  #resumetext {
-    width: 50%;
-    text-align: right; }
-  #contactclose {
-    width: 40px;
-    height: 40px;
-    font-size: 1.5em; }
-  #inquiryform {
-    width: 80%; }
-  .contacttype {
-    font-size: 2.3em; }
-  #footmessage {
-    font-size: 0.75em; } }
-
-@media screen and (min-width: 768px) and (orientation: landscape) {
-  #splashcont {
-    padding-top: 0; }
-  #titlecard {
-    margin-top: 13vh; }
-  #nametitle {
-    font-size: 2.5em; }
-  #languagetitle {
-    margin-top: 20vh; }
-  .desktop__over__open--multi {
-    height: 33vh;
-    min-width: 230px; }
-  .over__content__each {
-    font-size: 1.5em; }
-  .editor__content {
-    font-size: 1.3em;
-    line-height: 1.3em; }
-  #inquiryform {
-    width: 70%; } }
-
-@media screen and (min-width: 992px) and (orientation: landscape) {
-  .menucontain {
-    width: 7%; }
-  .menutabs {
-    font-size: 0.6em;
-    width: 110%; }
-  #contentcontain {
-    width: 93%;
-    left: 7%; }
-  .desktop__over__open--multi {
-    height: 25vh; }
-  .biopersonaltext {
-    padding-right: 10px; }
-  #portimage {
-    width: 100%; }
-  .flexbox-slider {
-    font-size: 2.5em;
-    flex-direction: row-reverse;
-    height: 500px; }
-  .flexbox-slide {
-    max-height: 500px;
-    flex: 1;
-    flex-direction: row;
-    padding: 10px;
-    justify-content: center;
-    display: flex;
-    overflow: hidden;
-    transition: flex 1s; }
-    .flexbox-slide:hover .clickinform {
-      display: block; }
-    .flexbox-slide.open {
-      flex: 6;
-      padding: 50px; }
-      .flexbox-slide.open:hover .clickinform {
-        display: none; }
-      .flexbox-slide.open:hover .imgtitle {
-        border: none; }
-  .flexopen {
-    width: 80%; }
-  .flexcontainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; }
-  .clickinform {
-    display: none;
-    position: absolute;
-    top: 25px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 0.4em;
-    color: #4c4c4c; }
-  .imgtitle {
-    flex-direction: column;
-    height: auto; }
-  .itopen {
-    flex-direction: row; }
-  .historylogo {
-    width: auto;
-    margin: 0 auto; }
-    .historylogo img {
-      height: auto; }
-  .historytitles {
-    font-size: 0.28em;
-    padding: 5px;
-    width: 100%;
-    height: 100px;
-    max-width: none; }
-  .historylogoside {
-    width: 50%; }
-  .historylogo img {
-    height: 100px; }
-  .historytitlesside {
-    width: 50%; }
-  .textblock {
-    width: 90%;
-    margin: 0 auto 0;
-    height: 0px;
-    display: flex;
-    transition: height 1s; }
-  .tbon {
-    height: 270px; }
-  .historytext {
-    padding: 15px;
-    opacity: 0;
-    font-size: 0.3em;
-    margin: 0; }
-  .hton {
-    opacity: 1; }
-  .dutylist ul li {
-    margin-bottom: 5px; }
-  .project {
-    width: 20%; }
-  .allovers {
-    flex-direction: row; }
-  .overlayleft {
-    width: 50%; }
-  .overlayright {
-    margin-left: 20px; }
-    .overlayright img {
-      max-height: 40vh; }
-  .overlaytext {
-    margin: 50px 0; }
-  .protextt {
-    font-size: 0.7em; }
-  .protextw {
-    font-size: 0.55em; }
-  .buttonstyle {
-    font-size: 0.8em;
-    margin-top: 20px; }
-  #availablehalf {
-    font-size: 0.9em;
-    padding: 40px 0 40px 40px; }
-  #blogcenter {
-    font-size: 1em;
-    width: 30%; }
-  #blogtitle {
-    width: 95%; }
-  #blogcont {
-    padding: 15px; }
-  #blogdata {
-    padding: 0px; }
-  #resumehalf {
-    padding: 40px 40px 40px 30px; }
-  #returnmessage {
-    font-size: 0.8em; } }
-
-@media screen and (min-width: 1200px) {
-  .menutabs {
-    font-size: 0.7em; }
-  .editor__content {
-    font-size: 1.4em; }
-  #biocontain {
-    align-items: center;
-    flex-direction: row;
-    width: 80%; }
-  #biowriting {
-    font-size: 2.1em; }
-  #quotename {
-    font-size: 1.2em; }
-  .biopersonal {
-    left: 5%; }
-  #biotextw {
-    font-size: 1em; }
-  .historytitles {
-    font-size: 0.34em; }
-  .historytext {
-    font-size: 0.35em; }
-  .jobtitle {
-    margin-bottom: 25px; }
-  .overlayright img {
-    max-height: 50vh; }
-  .protextcont {
-    font-size: 1.4em; }
-  #availablehalf {
-    font-size: 1em;
-    padding: 70px 0 70px 60px; }
-  #resumehalf {
-    font-size: 1em;
-    padding: 70px 60px 70px 70px; }
-  .buttonstyle {
-    margin-top: 40px; }
-  #contactinfocont {
-    width: 75%;
-    margin: 0 auto; }
-  #footercont {
-    width: 90%; }
-  .contacttype {
-    font-size: 3em;
-    margin-bottom: 5px; } }
-
-@media screen and (min-width: 1600px) {
-  #ethan {
-    font-size: 2em; }
-  .menutabs {
-    font-size: 0.85em; }
-  #nametitle {
-    font-size: 4em; }
-  .desktop__over__each {
-    font-size: 0.55em;
-    max-width: 450px; }
-  .theme__each__icon {
-    width: 85px;
-    height: 85px; }
-    .theme__each__icon img {
-      width: 65px;
-      height: 65px; }
-  #biocontain {
-    width: 75%;
-    margin: 60px 0; }
-  #biowriting {
-    font-size: 3em; }
-  #quotename {
-    font-size: 1.6em; }
-  #biotextw {
-    font-size: 1.3em; }
-  #biobottom {
-    font-size: 1em; }
-  .flexcontainer {
-    flex-direction: row;
-    max-width: none; }
-  .fcon {
-    justify-content: flex-start;
-    width: 100%; }
-  .historylogo {
-    margin: 0;
-    width: 150px; }
-  .historylogoside {
-    width: 150px; }
-  .historytitlesside {
-    width: 150px; }
-  .historytitles {
-    font-size: 0.4em;
-    padding: 15px;
-    width: 150px; }
-  .historytext {
-    font-size: 0.4em;
-    padding: 25px;
-    border-top: none;
-    border-left: 1px solid black; }
-  .textblock {
-    width: 0px;
-    height: 400px;
-    margin: 0;
-    transition: width 1s; }
-  .tbon {
-    width: 500px; }
-  .itopen {
-    flex-direction: column; }
-  #availablehalf,
-  #resumehalf {
-    font-size: 1.3em; }
-  #blogcenter {
-    font-size: 1.2em; }
-  .contacttype {
-    font-size: 3.5em; }
-  #footmessage {
-    font-size: 1em; } }
-
-@media screen and (min-width: 992px) and (min-aspect-ratio: 16 / 8) {
-  #titlecard {
-    margin-top: 16vh; }
-  #languagetitle {
-    margin-top: 29vh; }
-  #biocontain {
-    align-items: center;
-    text-align: center; }
-  #inquiryform {
-    width: 70%; } }

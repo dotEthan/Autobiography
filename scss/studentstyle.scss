@@ -1,39 +1,39 @@
 @font-face {
-  font-family: 'indie_flowerregular';
-  src: url('fonts/IndieFlower-webfont.woff') format('woff')
+  font-family: "indie_flowerregular";
+  src: url("fonts/IndieFlower-webfont.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'logo';
-  src: url('fonts/fredoka-one-v5-latin-regular.woff') format('woff')
+  font-family: "logo";
+  src: url("fonts/fredoka-one-v5-latin-regular.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'menu';
-  src: url('fonts/TitanOne-Regular.woff') format('woff')
+  font-family: "menu";
+  src: url("fonts/TitanOne-Regular.woff") format("woff");
 }
 
 // 16
-$rgba: rgba(13,201,247, 0.5);
+$rgba: rgba(13, 201, 247, 0.5);
 $lightblue: #0dc9f7;
 $grey: #7f7f7f;
 $orange: #f05b47;
 $red: #ed1c24;
 
-$thirdcolorrgba: rgba(173,0,173, 0.8);
+$thirdcolorrgba: rgba(173, 0, 173, 0.8);
 $firstcolor: #ffff00;
 $secondcolor: #31c2fe; //#20c928;
 $thirdcolor: #ad00ad;
 $fourthcolor: #f05b47;
 
 $projectoverlayradius: 5px;
-$headertext:'indie_flowerregular', cursive;
+$headertext: "indie_flowerregular", cursive;
 $regulartext: $headertext;
 $menutextc: white;
 $menubackground: $secondcolor;
 $smallmenupaddingtop: 20px;
-$frontimage: url('../images/bgs.jpg');
-$darkslice: #9099A2;
+$frontimage: url("../images/bgs.jpg");
+$darkslice: #9099a2;
 $topc: $secondcolor;
 $bottomc: $secondcolor;
 $biocontainbg: grey;
@@ -44,7 +44,7 @@ $bioquestionc: $secondcolor;
 $footercolor: darken($firstcolor, 20%);
 
 // fonts
-img{
+img {
   max-width: 100%;
   max-height: 100%;
 }
@@ -72,8 +72,7 @@ body {
 
 a:link {
   text-decoration: none;
-}    
-
+}
 
 #load {
   position: absolute;
@@ -93,13 +92,21 @@ a:link {
 }
 
 @-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 #contents {
@@ -112,17 +119,29 @@ a:link {
   -webkit-animation-name: animatebottom;
   -webkit-animation-duration: 1s;
   animation-name: animatebottom;
-  animation-duration: 1s
+  animation-duration: 1s;
 }
 
 @-webkit-keyframes animatebottom {
-  from { bottom:-100px; opacity:0 } 
-  to { bottom:0px; opacity:1 }
+  from {
+    bottom: -100px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0px;
+    opacity: 1;
+  }
 }
 
-@keyframes animatebottom { 
-  from{ bottom:-100px; opacity:0 } 
-  to{ bottom:0; opacity:1 }
+@keyframes animatebottom {
+  from {
+    bottom: -100px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
 }
 
 .menucontain {
@@ -133,11 +152,12 @@ a:link {
   z-index: 99;
 }
 
-  #menu__right a, #menu__left a {
-    width: 45%;
-  }
+#menu__right a,
+#menu__left a {
+  width: 45%;
+}
 
-.menu{
+.menu {
   display: flex;
   justify-content: space-around;
   color: $menutextc;
@@ -154,11 +174,11 @@ a:link {
   top: 0;
   left: 0;
   height: 70px;
-  z-index:0;
+  z-index: 0;
 }
 
 #ethan {
-  font-family: 'logo', serif;
+  font-family: "logo", serif;
   font-size: 1em;
   z-index: 10;
   position: absolute;
@@ -173,14 +193,15 @@ a:link {
   transform: scale(1.08);
 }
 
-#menutabscontain{
+#menutabscontain {
   width: 100%;
   display: flex;
   justify-content: space-between;
   z-index: 99;
 }
 
-#menu__left, #menu__right {
+#menu__left,
+#menu__right {
   width: 40%;
   display: flex;
   align-items: center;
@@ -198,36 +219,32 @@ a:link {
 
   &:active {
     .menutitle {
-      text-shadow: 0px 0px $thirdcolor,
-                   0px 1px 1px #404040;
-      transform: translateY(2px)
+      text-shadow: 0px 0px $thirdcolor, 0px 1px 1px #404040;
+      transform: translateY(2px);
     }
   }
 }
 
-.faicon{
+.faicon {
   display: none;
 }
 
 .menutext {
-
   &:hover {
     transform: scale(1.1);
     transform-origin: center bottom;
   }
 }
 
-
 .menutitle {
   font-size: 1.1em;
   font-family: menu, cursive;
-  text-shadow: 0px 2px $thirdcolor,
-               0px 3px 2px #404040;
+  text-shadow: 0px 2px $thirdcolor, 0px 3px 2px #404040;
   color: orange;
-}  
+}
 
 #alert {
-  display:none;
+  display: none;
 }
 
 #splashcont {
@@ -251,10 +268,11 @@ a:link {
   flex-wrap: wrap;
   justify-content: center;
   color: white;
+  height: 100%;
 }
 
 #nametitle {
-  width: 100%;              
+  width: 100%;
   font-family: $headertext;
   font-weight: bold;
   font-size: 1.8em;
@@ -282,13 +300,13 @@ a:link {
 
 #choices__contain {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   justify-content: flex-end;
   height: 113px;
   transition: height 0.5s;
 }
 
-#splashcont .choices__containo{
+#splashcont .choices__containo {
   height: 33px;
 }
 
@@ -298,12 +316,12 @@ a:link {
   max-width: 150px;
   margin: 0 auto;
   background: $secondcolor;
-  border: 3px solid $thirdcolor; 
+  border: 3px solid $thirdcolor;
   border-radius: 10px 10px 0 0;
   border-bottom: none;
   display: flex;
   align-items: flex-end;
-  justify-content:center;
+  justify-content: center;
   padding-bottom: 5px;
   color: white;
   font-size: 0.5em;
@@ -313,7 +331,7 @@ a:link {
 #choices__contain .choiceso {
   height: 0px;
 }
-    
+
 #choices {
   display: flex;
   flex-direction: column;
@@ -342,14 +360,14 @@ a:link {
   display: flex;
   flex-direction: column;
   opacity: 1;
-  transition: opacity 0.3s; 
+  transition: opacity 0.3s;
 }
 
 #iconcont {
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content:space-around;
+  justify-content: space-around;
   align-items: center;
   padding-top: 5px;
 }
@@ -358,7 +376,7 @@ a:link {
   width: 45px;
   height: 35px;
   cursor: pointer;
-  background-size: contain; 
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   position: relative;
@@ -400,7 +418,7 @@ a:link {
   font-weight: bold;
   color: white;
   font-size: 0.4em;
-  transform: translate(-50%,-22%);
+  transform: translate(-50%, -22%);
 
   &:hover {
     color: $thirdcolor;
@@ -421,11 +439,7 @@ a:link {
   }
 }
 
-#choices .csopen {
-  display: flex;
-}
-
-#cheatsheetexp {
+.themeexp {
   display: none;
   flex-direction: column;
   justify-content: center;
@@ -433,13 +447,17 @@ a:link {
   top: 50%;
   right: 50%;
   width: 80vw;
-  background: rgba(255,255,255,0.8);
-  transform: translate(50%,-50%);
+  background: rgba(255, 255, 255, 0.8);
+  transform: translate(50%, -50%);
   z-index: 99;
   padding: 25px;
   font-size: 0.8em;
   border: 3px solid $thirdcolor;
   border-radius: 25px;
+
+  &.csopen {
+    display: flex;
+  }
 }
 
 #cheatsheet__cont {
@@ -447,9 +465,9 @@ a:link {
 }
 
 #cheatsheetexpclose {
-  position: fixed;
+  position: absolute;
   right: 20px;
-  top: 10px;
+  top: -10%;
   cursor: pointer;
   color: $thirdcolor;
   font-size: 1.5em;
@@ -478,7 +496,7 @@ a:link {
 
 #biotext {
   width: 100%;
-  display:flex;
+  display: flex;
   justify-content: center;
   flex-direction: row;
   align-items: center;
@@ -486,13 +504,13 @@ a:link {
 }
 
 #biocontain {
-  display: flex; 
+  display: flex;
   width: 100%;
-  position:relative;
+  position: relative;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
-  margin: 100px auto;  
+  margin: 100px auto;
 }
 
 #nature {
@@ -504,15 +522,15 @@ a:link {
 #giraffe {
   position: absolute;
   left: 2%;
-  bottom: 0; 
-  width: 20%; 
+  bottom: 0;
+  width: 20%;
 }
 
 #tree {
   position: absolute;
   right: -5%;
-  bottom: -1%; 
-  width: auto; 
+  bottom: -1%;
+  width: auto;
 
   img {
     height: 150px;
@@ -542,7 +560,7 @@ a:link {
 }
 
 .biopersonal {
-  display:flex;
+  display: flex;
   align-items: center;
   position: absolute;
   top: 50%;
@@ -590,7 +608,7 @@ a:link {
   text-align: left;
 
   a {
-  color: $secondcolor;
+    color: $secondcolor;
 
     &:hover {
       color: $thirdcolor;
@@ -610,7 +628,7 @@ a:link {
 }
 
 #historyslice {
-  background-color: lighten($secondcolor,5%);
+  background-color: lighten($secondcolor, 5%);
 }
 
 .protitle {
@@ -636,7 +654,7 @@ a:link {
   margin-left: auto;
   flex-direction: column-reverse;
 }
-  
+
 .flexbox-slide {
   position: relative;
   overflow: hidden;
@@ -669,6 +687,7 @@ a:link {
   display: flex;
   justify-content: space-around;
   height: 100px;
+  width: 150px;
 }
 
 .historylogo {
@@ -683,10 +702,10 @@ a:link {
 
 .historytitles {
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   justify-content: center;
   color: #000000;
-  background: rgba(255,255,255,0.6);
+  background: rgba(255, 255, 255, 0.6);
   font-size: 0.8em;
   font-family: $headertext;
   max-width: 150px;
@@ -719,15 +738,15 @@ a:link {
   display: none;
 }
 
-.historytext { 
-  border-top: 1px solid rgba(0,0,0,0.6);
+.historytext {
+  border-top: 1px solid rgba(0, 0, 0, 0.6);
   text-align: left;
   overflow: hidden;
   margin: 0 5px 5px;
   padding: 15px;
   font-size: 0.5em;
   width: 100%;
-  background: rgba(255,255,255,0.6);
+  background: rgba(255, 255, 255, 0.6);
   opacity: 0;
   transition: opacity 1s;
 }
@@ -753,7 +772,7 @@ a:link {
 
 .nowcalled {
   font-size: 0.9em;
-  
+
   a {
     color: $secondcolor;
 
@@ -797,8 +816,8 @@ a:link {
   margin-right: auto;
   margin-left: auto;
 }
-  
-.project{
+
+.project {
   width: 80%;
   margin-bottom: 50px;
   position: relative;
@@ -811,8 +830,7 @@ a:link {
   cursor: pointer;
   transition: all 800ms;
 
-
-  img{
+  img {
     max-width: 100%;
     max-height: 100%;
     position: absolute;
@@ -821,9 +839,8 @@ a:link {
     right: 0;
     left: 0;
   }
-  
+
   &:hover {
-    
     .protext {
       background-color: $thirdcolor;
       margin: 15px 0;
@@ -831,10 +848,10 @@ a:link {
   }
 }
 
-.project:after{
+.project:after {
   padding-top: 56.25%;
   display: block;
-  content: '';
+  content: "";
 }
 
 .protext {
@@ -851,19 +868,19 @@ a:link {
 }
 
 .protextcont {
-  display: flex; 
+  display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   text-align: center;
   width: 100%;
-  margin:10px;
-  background: rgba(255,255,255,0.6);
+  margin: 10px;
+  background: rgba(255, 255, 255, 0.6);
   border-radius: $projectoverlayradius;
   overflow: hidden;
 }
 
-.protextt{
+.protextt {
   width: 100%;
   font-family: $headertext;
 }
@@ -874,10 +891,10 @@ a:link {
 
 #projectoverlay {
   position: fixed;
-  top:50%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(255,255,255,0.9);
+  background-color: rgba(255, 255, 255, 0.9);
   z-index: 9999;
   padding: 15px;
   width: 90%;
@@ -885,7 +902,7 @@ a:link {
 }
 
 .allovers {
-  display: flex; 
+  display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -895,7 +912,7 @@ a:link {
 #closeover {
   width: 30px;
   height: 30px;
-  position: fixed; 
+  position: fixed;
   top: -10px;
   right: -10px;
   font-size: 1em;
@@ -903,7 +920,7 @@ a:link {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: $thirdcolor;;
+  color: $thirdcolor;
   background: white;
   border: 1px solid grey;
   border-radius: 25px;
@@ -912,13 +929,13 @@ a:link {
 
 .overlayleft {
   width: 100%;
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 15px;
 }
 
-.overlaytitle{
+.overlaytitle {
   font-size: 1em;
   font-family: $headertext;
   text-decoration: underline;
@@ -941,10 +958,10 @@ a:link {
 }
 
 .overlayright {
-  border: 2px dashed #96858F;
+  border: 2px dashed #96858f;
   justify-content: center;
   display: flex;
-  
+
   img {
     max-height: 20vh;
     margin: 10px;
@@ -968,21 +985,22 @@ a:link {
   text-align: center;
   display: flex;
   flex-direction: row;
-  justify-content: space-around; 
-  align-items: center;  
+  justify-content: space-around;
+  align-items: center;
 }
 
-#availabletext, #resumetext {
+#availabletext,
+#resumetext {
   width: 70%;
   padding: 5px;
 }
 
-.buttonstyle{
+.buttonstyle {
   background-color: $secondcolor;
   padding: 10px;
   border-radius: 10px;
   font-size: 0.7em;
-  border: 2px solid darken($secondcolor,20%);
+  border: 2px solid darken($secondcolor, 20%);
   cursor: pointer;
   color: white;
 
@@ -1044,7 +1062,6 @@ a:link {
   width: 85%;
   margin: 0 auto 20px;
   border-radius: 10px;
-
 }
 
 #dates {
@@ -1064,16 +1081,16 @@ a:link {
 #resumehalf {
   padding: 20px;
   width: 100%;
-  background-color: darken($secondcolor,10%);
+  background-color: darken($secondcolor, 10%);
   font-size: 0.8em;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;  
-  align-items: center;  
+  justify-content: space-around;
+  align-items: center;
 
-  .buttonstyle{
-    background-color: darken($secondcolor,10%);
-    border: 2px solid lighten($secondcolor,10%);
+  .buttonstyle {
+    background-color: darken($secondcolor, 10%);
+    border: 2px solid lighten($secondcolor, 10%);
     color: white;
 
     &:hover {
@@ -1082,9 +1099,9 @@ a:link {
   }
 }
 
-#update{
+#update {
   font-size: 0.6em;
-  margin-right:10px;
+  margin-right: 10px;
   margin-bottom: 5px;
 }
 
@@ -1113,7 +1130,7 @@ a:link {
 #contactclose {
   width: 30px;
   height: 30px;
-  position: absolute; 
+  position: absolute;
   top: 30px;
   right: 35px;
   font-size: 1em;
@@ -1121,17 +1138,17 @@ a:link {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: $thirdcolor;;
+  color: $thirdcolor;
   background: white;
   border: 1px solid grey;
   border-radius: 25px;
   cursor: pointer;
 }
 
-#returnmessage{
-  font-size: 0.7em;;
-  color:green;
-  text-align:center;
+#returnmessage {
+  font-size: 0.7em;
+  color: green;
+  text-align: center;
   margin-bottom: 30px;
 }
 
@@ -1139,45 +1156,45 @@ label {
   font-size: 0.8em;
 }
 
-h3{
-  text-align:center;
-  font-size:20px;
+h3 {
+  text-align: center;
+  font-size: 20px;
 }
 
-input{
-  width:100%;
-  height:35px;
+input {
+  width: 100%;
+  height: 35px;
   margin: 5px 0 15px;
-  border:1px solid #999;
-  border-radius:3px;
-  padding:5px;
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px;
 }
 
-input[type=button]{
+input[type="button"] {
   background-color: $secondcolor;
-  border:1px solid white;
-  font-Weight:bold;
-  font-size:18px;
-  color:white;
-  border: 1px solid $secondcolor; 
+  border: 1px solid white;
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
+  border: 1px solid $secondcolor;
 
   &:hover {
     background-color: $thirdcolor;
-    border: 1px solid $secondcolor; 
+    border: 1px solid $secondcolor;
   }
 }
 
-textarea{
-  width:100%;
-  height:80px;
-  margin-top:5px;
-  border-radius:3px;
-  padding:5px;
-  resize:none;
+textarea {
+  width: 100%;
+  height: 80px;
+  margin-top: 5px;
+  border-radius: 3px;
+  padding: 5px;
+  resize: none;
 }
 
-span{
-  color:red;
+span {
+  color: red;
 }
 
 .contactinfo {
@@ -1208,10 +1225,10 @@ span{
 #footercont {
   display: flex;
   width: 100%;
-  justify-content: space-around;  
+  justify-content: space-around;
 }
-  
-.contacttype{
+
+.contacttype {
   width: 35%;
   text-align: center;
   font-size: 2em;
@@ -1222,22 +1239,21 @@ span{
     color: $secondcolor;
   }
 
-
   .footertext {
-    font-size: .35em;
+    font-size: 0.35em;
     visibility: hidden;
     font-weight: bold;
     font-family: $headertext;
     margin-top: 5px;
   }
-  
+
   &:hover {
     color: $thirdcolor;
 
     a {
       color: $thirdcolor;
     }
-    
+
     .footertext {
       visibility: visible;
       color: $thirdcolor;
@@ -1252,7 +1268,7 @@ span{
   align-items: center;
 }
 
-#footmessage{
+#footmessage {
   font-size: 0.6em;
   margin-top: 10px;
 }
@@ -1265,7 +1281,7 @@ span{
   color: black;
 }
 
-.footlink a{
+.footlink a {
   color: $secondcolor;
   font-weight: bold;
 
@@ -1274,14 +1290,12 @@ span{
   }
 }
 
-@media screen and (orientation : landscape) {
-
-
+@media screen and (orientation: landscape) {
   #titlecard {
-    margin-top:70px;
+    margin-top: 70px;
     padding-top: 5vh;
     width: 90%;
-  }  
+  }
 
   #nametitle {
     font-size: 1.6em;
@@ -1300,7 +1314,7 @@ span{
     width: 90%;
   }
 
-  .historytext{
+  .historytext {
     font-size: 0.65em;
   }
 
@@ -1352,8 +1366,6 @@ span{
 }
 
 @media screen and (min-width: 576px) {
-
-
   #ethan {
     font-size: 1.7em;
   }
@@ -1414,7 +1426,8 @@ span{
     font-size: 0.6em;
   }
 
-  #availablehalf, #resumehalf {
+  #availablehalf,
+  #resumehalf {
     font-size: 0.9em;
   }
 
@@ -1428,8 +1441,7 @@ span{
 }
 
 @media screen and (min-width: 576px) and (orientation: landscape) {
-
-  #nametitle{
+  #nametitle {
     font-size: 1.8em;
   }
 
@@ -1440,26 +1452,23 @@ span{
   .historytext {
     font-size: 0.7em;
   }
-
 }
 
-  
 @media screen and (min-width: 768px) {
-  
-  .menucontain { 
+  .menucontain {
     height: 100px;
     justify-content: flex-end;
-    display:flex;
+    display: flex;
   }
 
   .menutabs {
     width: auto;
   }
 
-  .menu{
-    width:80%;
+  .menu {
+    width: 80%;
     padding-top: 0;
-    height:100px; 
+    height: 100px;
   }
 
   .leftcanvas {
@@ -1470,7 +1479,7 @@ span{
     display: flex;
     align-items: center;
     justify-content: center;
-    position:absolute;
+    position: absolute;
     top: 10px;
     left: 40px;
     background: $firstcolor;
@@ -1491,13 +1500,18 @@ span{
       -webkit-animation: spin 1s infinite linear;
 
       @-webkit-keyframes spin {
-        0%  {-webkit-transform: rotate(0deg);}
-        100% {-webkit-transform: rotate(360deg);}   
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
       }
     }
   }
 
-  #menu__left, #menu__right {
+  #menu__left,
+  #menu__right {
     width: 40%;
     display: flex;
     flex-direction: row;
@@ -1515,8 +1529,8 @@ span{
     align-items: center;
     transition: all 1s;
     font-size: 1.2em;
-}
-  
+  }
+
   #splashcont {
     align-items: center;
     background-position: top center;
@@ -1528,18 +1542,18 @@ span{
     margin-bottom: 50px;
     margin-top: 12vh;
   }
-  
+
   #nametitle {
     font-size: 3em;
   }
 
   #choices__contain {
-    flex-direction:row;
-    align-items:center;
-    justify-content:flex-end;
-    position:absolute;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    position: absolute;
     right: 0;
-    top:50vh;
+    top: 50vh;
     transform: translateY(-50%);
     height: auto;
 
@@ -1550,8 +1564,8 @@ span{
 
   #choicestab {
     flex-direction: column;
-    align-items:center;
-    border:4px solid $thirdcolor;
+    align-items: center;
+    border: 4px solid $thirdcolor;
     border-radius: 10px 10px 0 0;
     border-bottom: none;
     transform-origin: right bottom;
@@ -1563,7 +1577,7 @@ span{
 
   #choices {
     flex-direction: column;
-    border:4px solid $thirdcolor;
+    border: 4px solid $thirdcolor;
     border-radius: 10px 0 0 10px;
     border-right: none;
     height: 260px;
@@ -1592,50 +1606,54 @@ span{
     }
   }
 
-  #cheatsheetexp {
+  .themeexp {
     position: absolute;
     width: 30vw;
     transform: none;
     top: 150px;
     right: 150px;
     height: 250px;
+
+    &.csopen {
+      display: flex;
+    }
   }
 
   .anchor {
     margin-top: -100px;
   }
-  
+
   #biocontain {
     width: 90%;
     margin: 0;
     height: 420px;
   }
-  
+
   #biowriting {
     font-size: 1.8em;
     width: 100%;
   }
-  
+
   #quotename {
     font-size: 1em;
   }
-  
+
   #tree {
     height: 350px;
   }
-
 
   #biotop {
     flex-direction: row;
     align-items: center;
   }
-  
+
   #biotextw {
     font-size: 0.8em;
     text-align: left;
   }
-  
-  #asa, #ageinfo {
+
+  #asa,
+  #ageinfo {
     display: block;
   }
 
@@ -1657,7 +1675,7 @@ span{
       color: $thirdcolor;
     }
   }
-  
+
   #thanksleft {
     font-size: 1.2em;
   }
@@ -1675,7 +1693,6 @@ span{
     margin-right: 10px;
 
     &:hover {
-
       .protext {
         margin: 15px 0;
       }
@@ -1694,7 +1711,7 @@ span{
     top: -20px;
     right: -20px;
     font-size: 1.3em;
-  }  
+  }
 
   .allovers {
     padding: 25px;
@@ -1707,12 +1724,12 @@ span{
   .overlaytext {
     font-size: 0.8em;
   }
-  
+
   .overlayskills {
     font-size: 0.8em;
   }
-  
-  .overlayurl a{ 
+
+  .overlayurl a {
     font-size: 0.9em;
   }
 
@@ -1748,7 +1765,18 @@ span{
     width: 60%;
     font-size: 1em;
     padding: 50px 50px 50px 30px;
-    background: linear-gradient(to top right, transparent 50%, darken($secondcolor,10%) 50%) no-repeat, linear-gradient(to top right, transparent 0.1%, darken($secondcolor,10%) 0.1%) no-repeat;
+    background: linear-gradient(
+          to top right,
+          transparent 50%,
+          darken($secondcolor, 10%) 50%
+        )
+        no-repeat,
+      linear-gradient(
+          to top right,
+          transparent 0.1%,
+          darken($secondcolor, 10%) 0.1%
+        )
+        no-repeat;
     background-size: 60.5% 100%, 40% 100%;
     background-position: 0% 0%, 100% 0%;
     flex-direction: column;
@@ -1786,7 +1814,6 @@ span{
 }
 
 @media screen and (min-width: 768px) and (orientation: landscape) {
-  
   #nametitle {
     font-size: 2.5em;
   }
@@ -1794,57 +1821,53 @@ span{
   .choicesbox {
     font-size: 0.6em;
   }
-  
 }
 
 @media screen and (min-width: 992px) {
-
   #ethan {
     font-size: 1.4em;
   }
 
   .menutabs {
-
     &:active {
       .menutitle {
-        text-shadow: 0px 0px $thirdcolor,
-                     0px 1px 3px #404040;
-        transform: translateY(2px)
+        text-shadow: 0px 0px $thirdcolor, 0px 1px 3px #404040;
+        transform: translateY(2px);
       }
     }
   }
 
-  #menu__right a, #menu__left a {
+  #menu__right a,
+  #menu__left a {
     width: auto;
   }
 
   .menutitle {
     font-size: 1.4em;
-    text-shadow: 0px 3px $thirdcolor,
-                 0px 4px 5px #404040;
+    text-shadow: 0px 3px $thirdcolor, 0px 4px 5px #404040;
   }
 
   #titlecard {
     margin-top: 12vh;
   }
-  
+
   #bioquote {
     font-size: 1em;
     width: 90%;
   }
 
-  .biopersonal{
+  .biopersonal {
     font-size: 1.2em;
   }
 
-  #biopersonaltext{
+  #biopersonaltext {
     padding-right: 10px;
   }
 
   #portimage {
     width: 20%;
   }
-  
+
   .flexbox-slider {
     font-size: 2.5em;
     flex-direction: row-reverse;
@@ -1872,7 +1895,6 @@ span{
       padding: 50px;
 
       &:hover {
-
         .clickinform {
           display: none;
         }
@@ -1884,7 +1906,7 @@ span{
     }
   }
 
-  .flexopen{
+  .flexopen {
     width: 80%;
   }
 
@@ -1896,7 +1918,7 @@ span{
   }
 
   .clickinform {
-    display: none; 
+    display: none;
     position: absolute;
     bottom: 25px;
     left: 50%;
@@ -1909,20 +1931,20 @@ span{
     flex-direction: column;
     height: auto;
   }
-  
+
   .itopen {
     flex-direction: row;
   }
 
   .historylogo {
-    width: auto; 
+    width: auto;
     margin: 0 auto;
 
     img {
       height: auto;
     }
   }
-  
+
   .historytitles {
     font-size: 0.3em;
     padding: 5px;
@@ -1978,7 +2000,7 @@ span{
     width: 50%;
   }
 
-  .overlayright{
+  .overlayright {
     margin-left: 20px;
 
     img {
@@ -2029,25 +2051,22 @@ span{
   #returnmessage {
     font-size: 0.8em;
   }
-
 }
 
 @media screen and (min-width: 992px) and (orientation: landscape) {
   #titlecard {
     margin-top: 20vh;
-  } 
+  }
 }
 
 @media screen and (min-width: 1200px) {
-
   #ethan {
     left: 10%;
   }
 
   .menutitle {
     font-size: 2em;
-    text-shadow: 0px 4px $thirdcolor,
-                 0px 5px black;
+    text-shadow: 0px 4px $thirdcolor, 0px 5px black;
   }
 
   #biocontain {
@@ -2064,7 +2083,7 @@ span{
     font-size: 1.2em;
   }
 
-  .biopersonal{
+  .biopersonal {
     left: 5%;
   }
 
@@ -2106,7 +2125,7 @@ span{
     padding: 70px 60px 70px 70px;
   }
 
-  .buttonstyle{
+  .buttonstyle {
     margin-top: 40px;
   }
 
@@ -2126,11 +2145,10 @@ span{
 
   #footmessage {
     font-size: 0.9em;
-  }  
+  }
 }
 
 @media screen and (min-width: 1600px) {
-
   .menutitle {
     font-size: 1.8em;
   }
@@ -2157,7 +2175,7 @@ span{
   }
 
   #biobottom {
-    font-size: 1em
+    font-size: 1em;
   }
 
   .flexcontainer {
@@ -2167,7 +2185,7 @@ span{
 
   .fcon {
     justify-content: flex-start;
-    width: 100%;    
+    width: 100%;
   }
 
   .historylogo {
@@ -2190,7 +2208,7 @@ span{
   }
 
   .historytext {
-    font-size:0.4em;
+    font-size: 0.4em;
     padding: 25px;
     border-top: none;
     border-left: 1px solid black;
@@ -2211,7 +2229,8 @@ span{
     flex-direction: column;
   }
 
-  #availablehalf, #resumehalf {
+  #availablehalf,
+  #resumehalf {
     font-size: 1.3em;
   }
 
@@ -2229,7 +2248,6 @@ span{
 }
 
 @media screen and (min-width: 992px) and (min-aspect-ratio: 16/8) {
-
   #inquiryform {
     width: 70%;
   }

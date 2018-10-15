@@ -1,13 +1,13 @@
 @font-face {
-  font-family: 'indie_flowerregular';
+  font-family: "indie_flowerregular";
   src: url("fonts/IndieFlower-webfont.woff") format("woff"); }
 
 @font-face {
-  font-family: 'logo';
+  font-family: "logo";
   src: url("fonts/fredoka-one-v5-latin-regular.woff") format("woff"); }
 
 @font-face {
-  font-family: 'menu';
+  font-family: "menu";
   src: url("fonts/TitanOne-Regular.woff") format("woff"); }
 
 img {
@@ -95,7 +95,8 @@ a:link {
   width: 100%;
   z-index: 99; }
 
-#menu__right a, #menu__left a {
+#menu__right a,
+#menu__left a {
   width: 45%; }
 
 .menu {
@@ -116,7 +117,7 @@ a:link {
   z-index: 0; }
 
 #ethan {
-  font-family: 'logo', serif;
+  font-family: "logo", serif;
   font-size: 1em;
   z-index: 10;
   position: absolute;
@@ -135,7 +136,8 @@ a:link {
   justify-content: space-between;
   z-index: 99; }
 
-#menu__left, #menu__right {
+#menu__left,
+#menu__right {
   width: 40%;
   display: flex;
   align-items: center;
@@ -186,7 +188,8 @@ a:link {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  color: white; }
+  color: white;
+  height: 100%; }
 
 #nametitle {
   width: 100%;
@@ -325,10 +328,7 @@ a:link {
   #cheatsheet a:hover {
     color: #ad00ad; }
 
-#choices .csopen {
-  display: flex; }
-
-#cheatsheetexp {
+.themeexp {
   display: none;
   flex-direction: column;
   justify-content: center;
@@ -343,14 +343,16 @@ a:link {
   font-size: 0.8em;
   border: 3px solid #ad00ad;
   border-radius: 25px; }
+  .themeexp.csopen {
+    display: flex; }
 
 #cheatsheet__cont {
   position: relative; }
 
 #cheatsheetexpclose {
-  position: fixed;
+  position: absolute;
   right: 20px;
-  top: 10px;
+  top: -10%;
   cursor: pointer;
   color: #ad00ad;
   font-size: 1.5em; }
@@ -532,7 +534,8 @@ a:link {
 .imgtitle {
   display: flex;
   justify-content: space-around;
-  height: 100px; }
+  height: 100px;
+  width: 150px; }
 
 .historylogo {
   width: 50%;
@@ -663,7 +666,7 @@ a:link {
 .project:after {
   padding-top: 56.25%;
   display: block;
-  content: ''; }
+  content: ""; }
 
 .protext {
   width: 100%;
@@ -757,7 +760,7 @@ a:link {
   font-size: 0.6em; }
 
 .overlayright {
-  border: 2px dashed #96858F;
+  border: 2px dashed #96858f;
   justify-content: center;
   display: flex; }
   .overlayright img {
@@ -783,7 +786,8 @@ a:link {
   justify-content: space-around;
   align-items: center; }
 
-#availabletext, #resumetext {
+#availabletext,
+#resumetext {
   width: 70%;
   padding: 5px; }
 
@@ -934,14 +938,14 @@ input {
   border-radius: 3px;
   padding: 5px; }
 
-input[type=button] {
+input[type="button"] {
   background-color: #31c2fe;
   border: 1px solid white;
-  font-Weight: bold;
+  font-weight: bold;
   font-size: 18px;
   color: white;
   border: 1px solid #31c2fe; }
-  input[type=button]:hover {
+  input[type="button"]:hover {
     background-color: #ad00ad;
     border: 1px solid #31c2fe; }
 
@@ -990,7 +994,7 @@ span {
   .contacttype a {
     color: #31c2fe; }
   .contacttype .footertext {
-    font-size: .35em;
+    font-size: 0.35em;
     visibility: hidden;
     font-weight: bold;
     font-family: "indie_flowerregular", cursive;
@@ -1097,7 +1101,8 @@ span {
     font-size: 0.8em; }
   .protextw {
     font-size: 0.6em; }
-  #availablehalf, #resumehalf {
+  #availablehalf,
+  #resumehalf {
     font-size: 0.9em; }
   .contacttype {
     font-size: 2.2em; }
@@ -1150,7 +1155,8 @@ span {
       -webkit-transform: rotate(0deg); }
     100% {
       -webkit-transform: rotate(360deg); } }
-  #menu__left, #menu__right {
+  #menu__left,
+  #menu__right {
     width: 40%;
     display: flex;
     flex-direction: row;
@@ -1215,13 +1221,15 @@ span {
     height: 200px; }
   #tree img {
     height: 500px; }
-  #cheatsheetexp {
+  .themeexp {
     position: absolute;
     width: 30vw;
     transform: none;
     top: 150px;
     right: 150px;
     height: 250px; }
+    .themeexp.csopen {
+      display: flex; }
   .anchor {
     margin-top: -100px; }
   #biocontain {
@@ -1241,7 +1249,8 @@ span {
   #biotextw {
     font-size: 0.8em;
     text-align: left; }
-  #asa, #ageinfo {
+  #asa,
+  #ageinfo {
     display: block; }
   #biopersonaltext {
     width: 75%; }
@@ -1346,7 +1355,8 @@ span {
   .menutabs:active .menutitle {
     text-shadow: 0px 0px #ad00ad, 0px 1px 3px #404040;
     transform: translateY(2px); }
-  #menu__right a, #menu__left a {
+  #menu__right a,
+  #menu__left a {
     width: auto; }
   .menutitle {
     font-size: 1.4em;
@@ -1571,7 +1581,8 @@ span {
     width: 500px; }
   .itopen {
     flex-direction: column; }
-  #availablehalf, #resumehalf {
+  #availablehalf,
+  #resumehalf {
     font-size: 1.3em; }
   #blogcenter {
     font-size: 1.2em; }

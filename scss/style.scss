@@ -33,7 +33,7 @@ $menutextc: white;
 $menuiconsize: 1.5em;
 $menufontsize: 0.9em;
 $smallmenupaddingtop: 20px;
-$frontimage: url("../images/bgp1.jpg");
+$frontimage: url("/images/bgp.jpg");
 $biowritingc: black;
 $biowritings: 2.7em;
 $bioquestions: 2.5em;
@@ -145,6 +145,18 @@ a:link {
   justify-content: space-around;
   font-family: $headertext;
   height: 70px;
+
+  @media screen and (min-width: 576px) {
+    width: 100%;
+    padding-top: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    flex-direction: column;
+    justify-content: space-between;
+    height: 90vh;
+    position: relative;
+  }
 }
 
 .menucontain {
@@ -153,6 +165,23 @@ a:link {
   color: white;
   width: 100%;
   z-index: 99;
+
+  @media screen and (min-width: 576px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  @media screen and (min-width: 768px) {
+    flex-direction: column;
+    justify-content: space-around;
+    width: 10%;
+    height: 100vh;
+  }
+
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    width: 7%;
+  }
 }
 
 #ethan {
@@ -164,6 +193,24 @@ a:link {
   height: 70px;
   display: flex;
   align-items: center;
+
+  @media screen and (min-width: 768px) {
+    position: relative;
+    left: 15%;
+    width: 110%;
+    transform: translate3d(0, 0, 0);
+    background: $secondcolor;
+    border-radius: 25%;
+    padding: 40px 20px;
+    z-index: 99;
+    color: $firstcolor;
+    border: 2px solid lighten($secondcolor, 10%);
+    box-shadow: -4px 4px 0px lighten($secondcolor, 10%);
+  }
+
+  @media screen and (min-width: 1600px) {
+    font-size: 1.7em;
+  }
 }
 
 #entrebgcanvas {
@@ -173,6 +220,15 @@ a:link {
 
 .leftcanvas {
   display: none;
+
+  @media screen and (min-width: 768px) {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+  }
 }
 
 .menunow {
@@ -186,6 +242,12 @@ a:link {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+  }
 }
 
 #menu__left,
@@ -197,6 +259,16 @@ a:link {
 
   a {
     width: 48%;
+
+    @media screen and (min-width: 768px) {
+      width: 110%;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    width: 110%;
   }
 }
 
@@ -204,10 +276,69 @@ a:link {
   text-align: center;
   font-size: 0.6em;
   cursor: pointer;
+
+  @media screen and (min-width: 576px) {
+    font-size: 0.8em;
+  }
+
+  @media screen and (min-width: 1600px) {
+    font-size: 0.85em;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 110%;
+    display: flex;
+    justify-content: center;
+    transition: all 1s;
+    z-index: 99;
+    background: darken($thirdcolor, 10%);
+    font-size: 0.6em;
+    padding: 5px;
+
+    a {
+      color: black;
+      text-decoration: none;
+    }
+
+    &:hover {
+      background: $thirdcolor;
+
+      a {
+        color: $firstcolor;
+      }
+    }
+  }
+
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    font-size: 0.6em;
+    width: 110%;
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 0.7em;
+  }
+
+  @media screen and (min-width: 1600px) {
+    font-size: 0.85em;
+  }
 }
 
 .menudark {
-  color: $thirdcolor !important;
+  @media screen and (min-width: 768px) {
+    background: darken($thirdcolor, 10%);
+
+    a {
+      color: $firstcolor;
+    }
+  }
+}
+
+#historymenu,
+#projectmenu,
+#contactme {
+  @media screen and (min-width: 768px) {
+    border-top: 1px solid darken($thirdcolor, 15%);
+  }
 }
 
 .menutext {
@@ -216,6 +347,14 @@ a:link {
   flex-direction: column;
   color: white;
   padding: 5px;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    color: black;
+  }
 }
 
 .faicon {
@@ -227,6 +366,24 @@ a:link {
   margin-left: 0;
   margin-top: 5px;
   color: $firstcolor;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 5px;
+    font-size: 1.1em;
+  }
+}
+
+#contentcontain {
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    left: 10%;
+    width: 90%;
+  }
+
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    width: 93%;
+    left: 7%;
+  }
 }
 
 #alert {
@@ -244,6 +401,22 @@ a:link {
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-between;
+
+  @media screen and (orientation: landscape) {
+    padding-top: 80px;
+  }
+
+  @media screen and (min-width: 768px) {
+    align-items: center;
+    background-position: top center;
+    background-size: cover;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  @media screen and (min-width: 768px) and (orientation: landscape) {
+    padding-top: 0;
+  }
 }
 
 #titlecard {
@@ -256,6 +429,22 @@ a:link {
   color: white;
   align-items: center;
   flex-grow: 1;
+
+  @media screen and (min-width: 576px) and (orientation: landscape) {
+    width: 90%;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin: 0;
+  }
+
+  @media screen and (min-width: 768px) and (orientation: landscape) {
+    margin-top: 13vh;
+  }
+
+  @media screen and (min-width: 992px) and (min-aspect-ratio: 16/8) {
+    margin-top: 16vh;
+  }
 }
 
 #motto {
@@ -273,6 +462,19 @@ a:link {
   justify-content: space-around;
   align-items: flex-end;
   position: relative;
+
+  @media screen and (orientation: landscape) {
+    margin-bottom: 20px;
+    width: 45%;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 80%;
+    background: url(../images/menubar.png) no-repeat;
+    background-size: contain;
+    background-position: bottom center;
+    margin-bottom: 50px;
+  }
 }
 
 .desktop__items--sm {
@@ -282,10 +484,24 @@ a:link {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media screen and (min-width: 768px) {
+    width: auto;
+
+    &:hover {
+      .desktop__items__text {
+        background: rgba($thirdcolor, 0.9);
+      }
+    }
+  }
 }
 
 .desktop__items__img {
   cursor: pointer;
+
+  @media screen and (min-width: 768px) {
+    height: 85px;
+  }
 
   &:hover {
     transform: scale(1.05);
@@ -294,16 +510,34 @@ a:link {
 
 .desktop__items__img--sm {
   display: block;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
 }
 
 .desktop__items__img--lg {
   display: none;
+
+  @media screen and (min-width: 768px) {
+    width: 75px;
+    display: block;
+  }
 }
 
 .desktop__items__text {
   font-size: 0.7em;
   margin-top: 5px;
   cursor: pointer;
+
+  @media screen and (min-width: 768px) {
+    color: white;
+    z-index: 99;
+    transform: translateY(-20px);
+    background: rgba($thirdcolor, 0.4);
+    padding: 5px;
+    border-radius: 6px;
+  }
 }
 
 .desktop__over {
@@ -312,6 +546,17 @@ a:link {
   width: 70%;
   display: none;
   flex-wrap: wrap;
+
+  @media screen and (orientation: landscape) {
+    width: 50%;
+  }
+
+  @media screen and (min-width: 768px) {
+    position: relative;
+    justify-content: center;
+    width: 90%;
+    bottom: 0;
+  }
 }
 
 .desktop__over--open {
@@ -320,6 +565,16 @@ a:link {
 
 .desktop__over__contain {
   width: 100%;
+
+  @media screen and (min-width: 768px) {
+    width: auto;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+  }
 }
 
 .desktop__over__each {
@@ -329,12 +584,55 @@ a:link {
   font-size: 0.45em;
   line-height: 1.4em;
   border: 1px solid #abb1ba;
+
+  @media screen and (orientation: landscape) {
+    bottom: 20vh;
+    font-size: 0.25em;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin: 5px;
+    width: auto;
+    font-size: 0.48em;
+    max-width: 350px;
+  }
+
+  @media screen and (min-width: 1600px) {
+    font-size: 0.55em;
+    max-width: 450px;
+  }
 }
 
 .desktop__over__open--one {
   display: flex;
   width: 100%;
   flex-grow: 1;
+
+  @media screen and (min-width: 768px) {
+    flex-grow: 1;
+    width: 20vw;
+    height: 30vh;
+    font-size: 0.48em;
+  }
+}
+
+.desktop__over__open--multi {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    width: 30vw;
+    height: 20vh;
+    font-size: 0.4em;
+    min-width: 280px;
+  }
+
+  @media screen and (min-width: 768px) and (orientation: landscape) {
+    height: 33vh;
+    min-width: 230px;
+  }
+
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    height: 25vh;
+  }
 }
 
 .theme__each {
@@ -348,6 +646,10 @@ a:link {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media screen and (min-width: 768px) {
+    height: 20px;
+  }
 }
 
 .over__title__text {
@@ -374,6 +676,24 @@ a:link {
   display: flex;
   padding: 10px 5px 10px 0;
   overflow-y: scroll;
+
+  @media screen and (min-width: 576px) {
+    font-size: 1.8em;
+    line-height: 1.2em;
+  }
+
+  @media screen and (min-width: 768px) {
+    flex-grow: 1;
+  }
+
+  @media screen and (min-width: 768px) and (orientation: landscape) {
+    font-size: 1.3em;
+    line-height: 1.3em;
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 1.4em;
+  }
 }
 
 .editor__content a {
@@ -385,15 +705,31 @@ a:link {
   padding: 0 10px;
   display: flex;
   flex-direction: column;
+
+  @media screen and (min-width: 576px) {
+    width: 25px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 30px;
+  }
 }
 
 .editor__content--indented {
   margin-left: 5px;
+
+  @media screen and (min-width: 576px) {
+    margin-left: 10px;
+  }
 }
 
 .editor__status {
   background: #abb1ba;
   height: 15px;
+
+  @media screen and (min-width: 768px) {
+    height: 20px;
+  }
 }
 
 .over__content {
@@ -404,6 +740,11 @@ a:link {
   border-left: none;
   display: flex;
   padding: 10px;
+
+  @media screen and (min-width: 768px) {
+    height: 15vh;
+    flex-grow: 1;
+  }
 }
 
 .over__content__each {
@@ -415,6 +756,18 @@ a:link {
   align-items: center;
   cursor: pointer;
   margin-right: 10px;
+
+  @media screen and (orientation: landscape) {
+    font-size: 2.2em;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 1.5em;
+  }
+
+  @media screen and (min-width: 768px) and (orientation: landscape) {
+    font-size: 1.5em;
+  }
 }
 
 .theme__each__icon {
@@ -424,11 +777,27 @@ a:link {
   justify-content: flex-start;
   width: 55px;
   height: 55px;
+  text-align: center;
+
+  @media screen and (min-width: 1600px) {
+    width: 85px;
+    height: 85px;
+  }
 
   img {
     margin-bottom: 5px;
     width: 30px;
     height: 30px;
+
+    @media screen and (min-width: 768px) {
+      width: 35px;
+      height: 35px;
+    }
+
+    @media screen and (min-width: 1600px) {
+      width: 65px;
+      height: 65px;
+    }
   }
 }
 
@@ -488,6 +857,32 @@ a:link {
   font-family: $headertext;
   font-weight: bold;
   font-size: 1.8em;
+
+  @media screen and (orientation: landscape) {
+    font-size: 1.4em;
+    padding: 10px;
+  }
+
+  @media screen and (min-width: 576px) {
+    font-size: 2.5em;
+  }
+
+  @media screen and (min-width: 576px) and (orientation: landscape) {
+    font-size: 1.8em;
+    padding: 5px;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 3em;
+  }
+
+  @media screen and (min-width: 768px) and (orientation: landscape) {
+    font-size: 2.5em;
+  }
+
+  @media screen and (min-width: 1600px) {
+    font-size: 4em;
+  }
 }
 
 #choices__contain {
@@ -502,6 +897,10 @@ a:link {
 .anchor {
   margin-top: -70px;
   position: absolute;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 0px;
+  }
 }
 
 #bioinfo {
@@ -525,6 +924,32 @@ a:link {
   flex-direction: column;
   justify-content: center;
   margin: 100px auto;
+
+  @media screen and (min-width: 576px) {
+    width: 75%;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 90%;
+    margin: 0;
+    height: 420px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    align-items: center;
+    flex-direction: row;
+    width: 80%;
+  }
+
+  @media screen and (min-width: 1600px) {
+    width: 75%;
+    margin: 60px 0;
+  }
+
+  @media screen and (min-width: 992px) and (min-aspect-ratio: 16/8) {
+    align-items: center;
+    text-align: center;
+  }
 }
 
 #biowriting {
@@ -532,6 +957,23 @@ a:link {
   color: $biowritingc;
   font-family: $headertext;
   font-size: 1em;
+
+  @media screen and (min-width: 576px) {
+    font-size: 1.5em;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 1.8em;
+    width: 100%;
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 2.1em;
+  }
+
+  @media screen and (min-width: 1600px) {
+    font-size: 3em;
+  }
 }
 
 #quotename {
@@ -539,6 +981,22 @@ a:link {
   text-align: right;
   margin-top: 20px;
   font-family: $headertext;
+
+  @media screen and (min-width: 576px) {
+    font-size: 1.1em;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 1em;
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 1.2em;
+  }
+
+  @media screen and (min-width: 1600px) {
+    font-size: 1.6em;
+  }
 }
 
 .biopersonal {
@@ -553,6 +1011,10 @@ a:link {
   justify-content: center;
   height: 0px;
   overflow: hidden;
+
+  @media screen and (min-width: 1200px) {
+    left: 5%;
+  }
 }
 
 .unhidden {
@@ -566,24 +1028,74 @@ a:link {
 #biotop {
   display: flex;
   flex-direction: column-reverse;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+  }
 }
 
 #biotextw {
   font-size: 0.8em;
   text-align: center;
+
+  @media screen and (min-width: 576px) {
+    font-size: 1em;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 0.8em;
+    text-align: left;
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 1em;
+  }
+
+  @media screen and (min-width: 1600px) {
+    font-size: 1.3em;
+  }
 }
 
 #asa {
   margin: 15px 0;
   display: none;
+
+  @media screen and (min-width: 768px) {
+    display: block;
+  }
 }
 
 #ageinfo {
   display: none;
+
+  @media screen and (min-width: 768px) {
+    display: block;
+  }
+}
+
+.biopersonaltext {
+  @media screen and (min-width: 768px) {
+    width: 75%;
+  }
+
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    padding-right: 10px;
+  }
 }
 
 #portimage {
   display: none;
+
+  @media screen and (min-width: 768px) {
+    display: block;
+    margin: 0 15px;
+    width: 25%;
+  }
+
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    width: 100%;
+  }
 }
 
 #biobottom {
@@ -592,12 +1104,24 @@ a:link {
   justify-content: center;
   margin-top: 20px;
   font-size: 0.5em;
+
+  @media screen and (min-width: 576px) {
+    font-size: 0.7em;
+  }
+
+  @media screen and (min-width: 1600px) {
+    font-size: 1em;
+  }
 }
 
 #thanksright {
   width: 85%;
   padding: 5px;
   text-align: left;
+
+  @media screen and (min-width: 768px) {
+    font-size: 1.2em;
+  }
 
   a {
     color: $thirdcolor;
@@ -612,6 +1136,10 @@ a:link {
   width: 15%;
   padding: 5px;
   text-align: right;
+
+  @media screen and (min-width: 768px) {
+    font-size: 1.2em;
+  }
 }
 
 #history {
@@ -633,6 +1161,10 @@ a:link {
   font-weight: bold;
   color: $thirdcolor;
   text-decoration: none;
+
+  @media screen and (min-width: 768px) {
+    font-size: 2.5em;
+  }
 }
 
 .history--title {
@@ -649,6 +1181,12 @@ a:link {
   margin-right: auto;
   margin-left: auto;
   flex-direction: column-reverse;
+
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    font-size: 2.5em;
+    flex-direction: row-reverse;
+    height: 500px;
+  }
 }
 
 .flexbox-slide {
@@ -664,8 +1202,55 @@ a:link {
   height: auto;
   cursor: pointer;
 
-  .clickinform {
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    max-height: 500px;
+    flex: 1;
+    flex-direction: row;
+    padding: 10px;
+    justify-content: center;
+    display: flex;
+    overflow: hidden;
+    transition: flex 1s;
+
+    &:hover {
+      .clickinform {
+        display: block;
+      }
+    }
+
+    &.open {
+      flex: 6;
+      padding: 50px;
+
+      &:hover {
+        .clickinform {
+          display: none;
+        }
+
+        .imgtitle {
+          border: none;
+        }
+      }
+    }
+  }
+}
+
+.clickinform {
+  display: none;
+
+  @media screen and (min-width: 992px) and (orientation: landscape) {
     display: none;
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.3em;
+    color: #4c4c4c;
+    width: 100%;
+  }
+
+  @media screen and (min-width: 1600px) {
+    font-size: 0.4em;
   }
 }
 
@@ -677,11 +1262,40 @@ a:link {
 .flexcontainer {
   max-width: 500px;
   margin: 0 auto;
+
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  @media screen and (min-width: 1600px) {
+    flex-direction: row;
+    max-width: none;
+  }
 }
 
 .imgtitle {
   display: flex;
   justify-content: space-around;
+
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    flex-direction: column;
+    height: auto;
+    max-width: 150px;
+  }
+}
+
+.itopen {
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    flex-direction: row;
+    max-width: none;
+  }
+
+  @media screen and (min-width: 1600px) {
+    flex-direction: column;
+  }
 }
 
 .historylogo {
@@ -690,8 +1304,42 @@ a:link {
   display: flex;
   align-items: center;
 
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    width: auto;
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: 1600px) {
+    margin: 0;
+    width: 150px;
+  }
+
   img {
     margin: 0 auto;
+
+    @media screen and (min-width: 992px) and (orientation: landscape) {
+      height: 100px;
+    }
+  }
+}
+
+.historylogoside {
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    width: 50%;
+  }
+
+  @media screen and (min-width: 1600px) {
+    width: 150px;
+  }
+}
+
+.historytitlesside {
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    width: 50%;
+  }
+
+  @media screen and (min-width: 1600px) {
+    width: 150px;
   }
 }
 
@@ -705,6 +1353,24 @@ a:link {
   font-family: $headertext;
   max-width: 150px;
   width: 50%;
+
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    font-size: 0.28em;
+    padding: 5px;
+    width: 100%;
+    height: 100px;
+    max-width: none;
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 0.34em;
+  }
+
+  @media screen and (min-width: 1600px) {
+    font-size: 0.4em;
+    padding: 15px;
+    width: 150px;
+  }
 }
 
 .historydates {
@@ -723,6 +1389,31 @@ a:link {
   height: 0;
   justify-content: center;
   transition: height 1s;
+
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    width: 90%;
+    margin: 0 auto 0;
+    height: 0px;
+    display: flex;
+    transition: height 1s;
+  }
+
+  @media screen and (min-width: 1600px) {
+    width: 0px;
+    height: 400px;
+    margin: 0;
+    transition: width 1s;
+  }
+}
+
+.tbon {
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    height: 270px;
+  }
+
+  @media screen and (min-width: 1600px) {
+    width: 500px;
+  }
 }
 
 .tbopen {
@@ -739,15 +1430,48 @@ a:link {
   overflow: hidden;
   margin: 0 5px 5px;
   padding: 15px;
-  font-size: 0.55em;
+  font-size: 0.54em;
   width: 100%;
   background: rgba(255, 255, 255, 0.6);
   opacity: 0;
   transition: opacity 1s;
+
+  @media screen and (min-width: 576px) {
+    font-size: 0.75em;
+  }
+
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    padding: 15px;
+    opacity: 0;
+    font-size: 0.3em;
+    margin: 0;
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 0.35em;
+  }
+
+  @media screen and (min-width: 1600px) {
+    font-size: 0.4em;
+    padding: 25px;
+    border-top: none;
+    border-left: 1px solid black;
+  }
 }
 
 .hton {
   opacity: 1;
+
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    opacity: 1;
+  }
+}
+
+.fcon {
+  @media screen and (min-width: 1600px) {
+    justify-content: flex-start;
+    width: 100%;
+  }
 }
 
 .jobtitle {
@@ -755,6 +1479,10 @@ a:link {
   text-align: center;
   width: 100%;
   font-weight: bold;
+
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 25px;
+  }
 }
 
 .dutylist ul {
@@ -763,6 +1491,10 @@ a:link {
 
 .dutylist ul li {
   margin-bottom: 10px;
+
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    margin-bottom: 5px;
+  }
 }
 
 .nowcalled {
@@ -825,6 +1557,32 @@ a:link {
   cursor: pointer;
   transition: all 800ms;
 
+  @media screen and (min-width: 576px) {
+    width: 40%;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 30%;
+    margin-right: 10px;
+
+    &:hover {
+      .protext {
+        margin: 15px 0;
+      }
+    }
+  }
+
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    width: 20%;
+  }
+
+  &:hover {
+    .protext {
+      background-color: $thirdcolor;
+      margin: 15px 0;
+    }
+  }
+
   img {
     max-width: 100%;
     max-height: 100%;
@@ -833,13 +1591,6 @@ a:link {
     bottom: 0;
     right: 0;
     left: 0;
-  }
-
-  &:hover {
-    .protext {
-      background-color: $thirdcolor;
-      margin: 15px 0;
-    }
   }
 }
 
@@ -873,15 +1624,43 @@ a:link {
   background: rgba(255, 255, 255, 0.6);
   border-radius: $projectoverlayradius;
   overflow: hidden;
+
+  @media screen and (min-width: 1200px) {
+    font-size: 1.4em;
+  }
 }
 
 .protextt {
   width: 100%;
   font-family: $headertext;
+
+  @media screen and (orientation: landscape) {
+    font-size: 1.4em;
+  }
+
+  @media screen and (min-width: 576px) {
+    font-size: 0.8em;
+  }
+
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    font-size: 0.7em;
+  }
 }
 
 .protextw {
   font-size: 0.7em;
+
+  @media screen and (orientation: landscape) {
+    font-size: 1em;
+  }
+
+  @media screen and (min-width: 576px) {
+    font-size: 0.6em;
+  }
+
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    font-size: 0.55em;
+  }
 }
 
 #projectoverlay {
@@ -894,6 +1673,16 @@ a:link {
   padding: 15px;
   width: 90%;
   max-height: 80vh;
+
+  @media screen and (min-width: 768px) {
+    height: 90vh;
+    width: 80%;
+    left: 55%;
+  }
+
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    max-height: 70vh;
+  }
 }
 
 .allovers {
@@ -902,6 +1691,18 @@ a:link {
   align-items: center;
   text-align: center;
   flex-direction: column-reverse;
+
+  @media screen and (orientation: landscape) {
+    flex-direction: row;
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: 25px;
+  }
+
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    flex-direction: row;
+  }
 }
 
 #closeover {
@@ -920,6 +1721,14 @@ a:link {
   border: 1px solid grey;
   border-radius: 25px;
   cursor: pointer;
+
+  @media screen and (min-width: 768px) {
+    width: 50px;
+    height: 50px;
+    top: -20px;
+    right: -20px;
+    font-size: 1.3em;
+  }
 }
 
 .overlayleft {
@@ -928,6 +1737,14 @@ a:link {
   flex-direction: column;
   justify-content: center;
   padding: 15px;
+
+  @media screen and (min-width: 576px) {
+    font-size: 1.3em;
+  }
+
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    width: 50%;
+  }
 }
 
 .overlaytitle {
@@ -936,20 +1753,40 @@ a:link {
   text-decoration: underline;
   margin-bottom: 10px;
   text-align: center;
+
+  @media screen and (min-width: 768px) {
+    font-size: 1.3em;
+  }
 }
 
 .overlaytext {
   font-size: 0.7em;
+
+  @media screen and (min-width: 768px) {
+    font-size: 0.8em;
+  }
+
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    margin: 50px 0;
+  }
 }
 
 .overlayskills {
   margin: 10px 0;
   font-size: 0.7em;
+
+  @media screen and (min-width: 768px) {
+    font-size: 0.8em;
+  }
 }
 
 .overlayurl a {
   color: $thirdcolor;
   font-size: 0.6em;
+
+  @media screen and (min-width: 768px) {
+    font-size: 0.9em;
+  }
 }
 
 .overlayright {
@@ -957,9 +1794,25 @@ a:link {
   justify-content: center;
   display: flex;
 
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    margin-left: 20px;
+  }
+
   img {
     max-height: 20vh;
     margin: 10px;
+
+    @media screen and (orientation: landscape) {
+      max-height: 40vh;
+    }
+
+    @media screen and (min-width: 992px) and (orientation: landscape) {
+      max-height: 50vh;
+    }
+
+    @media screen and (min-width: 1200px) {
+      max-height: 65vh;
+    }
   }
 }
 
@@ -982,12 +1835,43 @@ a:link {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+
+  @media screen and (min-width: 768px) {
+    width: 40%;
+    font-size: 1em;
+    padding: 50px 0 50px 50px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    overflow: visible;
+  }
+
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    font-size: 0.9em;
+    padding: 40px 0 40px 40px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 1em;
+    padding: 70px 0 70px 60px;
+  }
+
+  @media screen and (min-width: 1600px) {
+    font-size: 1.3em;
+  }
 }
 
 #availabletext,
 #resumetext {
   width: 70%;
   padding: 5px;
+}
+
+#resumetext {
+  @media screen and (min-width: 768px) {
+    width: 50%;
+    text-align: right;
+  }
 }
 
 .buttonstyle {
@@ -999,6 +1883,15 @@ a:link {
   cursor: pointer;
   color: white;
 
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    font-size: 0.8em;
+    margin-top: 20px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-top: 40px;
+  }
+
   &:hover {
     background-color: $thirdcolor;
   }
@@ -1007,6 +1900,11 @@ a:link {
 #availabletext {
   width: 80%;
   text-align: left;
+
+  @media screen and (min-width: 768px) {
+    width: 80%;
+    text-align: left;
+  }
 }
 
 #blogcenter {
@@ -1015,12 +1913,33 @@ a:link {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
+  max-height: 250px;
 
-#blogcentercont {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    width: 30%;
+    border-radius: 10px;
+    border: 3px solid lighten($secondcolor, 20%);
+    padding: 10px;
+    font-size: 0.8em;
+  }
+
+  @media screen and (min-width: 768px) and (orientation: landscape) {
+    max-height: 400px;
+  }
+
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    font-size: 1em;
+    width: 30%;
+  }
+
+  @media screen and (min-width: 1600px) {
+    font-size: 1.2em;
+  }
 }
 
 #blogtitle {
@@ -1029,6 +1948,10 @@ a:link {
   text-align: left;
   width: 85%;
   margin-bottom: 15px;
+
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    width: 95%;
+  }
 }
 
 #blogcont {
@@ -1038,6 +1961,10 @@ a:link {
   border-radius: 20px 20px 0 0;
   border-bottom: none;
   width: 85%;
+
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    padding: 15px;
+  }
 }
 
 #blogdate {
@@ -1049,6 +1976,10 @@ a:link {
 #blogdata {
   margin-bottom: 5px;
   padding: 20px;
+
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    padding: 0px;
+  }
 }
 
 #blogtext {
@@ -1086,6 +2017,47 @@ a:link {
   justify-content: space-around;
   align-items: center;
 
+  @media screen and (min-width: 768px) {
+    width: 60%;
+    font-size: 1em;
+    padding: 50px 50px 50px 30px;
+    background: linear-gradient(
+          to top right,
+          transparent 50%,
+          darken($secondcolor, 10%) 50%
+        )
+        no-repeat,
+      linear-gradient(
+          to top right,
+          transparent 0.1%,
+          darken($secondcolor, 10%) 0.1%
+        )
+        no-repeat;
+    background-size: 60.5% 100%, 40% 100%;
+    background-position: 0% 0%, 100% 0%;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: right;
+    align-items: flex-end;
+
+    .buttonstyle {
+      width: auto;
+    }
+  }
+
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    padding: 40px 40px 40px 30px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 1em;
+    padding: 70px 60px 70px 70px;
+  }
+
+  @media screen and (min-width: 1600px) {
+    font-size: 1.3em;
+  }
+
   .buttonstyle {
     background-color: darken($secondcolor, 10%);
     border: 2px solid lighten($secondcolor, 10%);
@@ -1114,6 +2086,22 @@ a:link {
   flex-direction: column;
   justify-content: center;
   margin: 0 auto;
+
+  @media screen and (orientation: landscape) {
+    justify-content: space-between;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 80%;
+  }
+
+  @media screen and (min-width: 768px) and (orientation: landscape) {
+    width: 70%;
+  }
+
+  @media screen and (min-width: 992px) and (min-aspect-ratio: 16/8) {
+    width: 70%;
+  }
 }
 
 #titlereturn {
@@ -1136,6 +2124,12 @@ a:link {
   border: 1px solid grey;
   border-radius: 25px;
   cursor: pointer;
+
+  @media screen and (min-width: 768px) {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5em;
+  }
 }
 
 #returnmessage {
@@ -1143,6 +2137,10 @@ a:link {
   color: green;
   text-align: center;
   margin-bottom: 30px;
+
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    font-size: 0.8em;
+  }
 }
 
 label {
@@ -1171,6 +2169,10 @@ h3 {
     background-color: $thirdcolor;
     border: 1px solid $secondcolor;
   }
+
+  @media screen and (orientation: landscape) {
+    margin-top: 10px;
+  }
 }
 
 textarea {
@@ -1190,6 +2192,10 @@ textarea {
   display: flex;
   align-items: center;
 
+  @media screen and (orientation: landscape) {
+    width: 45%;
+  }
+
   label {
     width: 40%;
     text-align: left;
@@ -1197,10 +2203,27 @@ textarea {
   }
 }
 
+#contactinfocont {
+  @media screen and (orientation: landscape) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 75%;
+    margin: 0 auto;
+  }
+}
+
 #contactmessage {
   width: 100%;
   margin: 20px auto 0;
   max-width: 400px;
+
+  @media screen and (orientation: landscape) {
+    margin: 20px auto 0;
+  }
 }
 
 #footer {
@@ -1215,6 +2238,10 @@ textarea {
   display: flex;
   width: 100%;
   justify-content: space-around;
+
+  @media screen and (min-width: 1200px) {
+    width: 90%;
+  }
 }
 
 .contacttype {
@@ -1223,6 +2250,23 @@ textarea {
   font-size: 2em;
   color: $secondcolor;
   cursor: pointer;
+
+  @media screen and (min-width: 576px) {
+    font-size: 2.2em;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 2.3em;
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 3em;
+    margin-bottom: 5px;
+  }
+
+  @media screen and (min-width: 1600px) {
+    font-size: 3.5em;
+  }
 
   a {
     color: $secondcolor;
@@ -1264,6 +2308,18 @@ textarea {
 #footmessage {
   font-size: 0.6em;
   margin-top: 10px;
+
+  @media screen and (min-width: 576px) {
+    font-size: 0.7em;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 0.75em;
+  }
+
+  @media screen and (min-width: 1600px) {
+    font-size: 1em;
+  }
 }
 
 .attri {
@@ -1280,1066 +2336,5 @@ textarea {
 
   &:hover {
     color: $thirdcolor;
-  }
-}
-
-@media screen and (orientation: landscape) {
-  #splashcont {
-    padding-top: 80px;
-  }
-
-  #nametitle {
-    font-size: 1.4em;
-    padding: 10px;
-  }
-
-  #desktop {
-    margin-bottom: 20px;
-    width: 45%;
-  }
-
-  .desktop__over {
-    width: 50%;
-  }
-
-  .over__content__each {
-    font-size: 2.2em;
-  }
-
-  .desktop__over__each {
-    bottom: 20vh;
-    font-size: 0.25em;
-  }
-
-  .top {
-    z-index: 99;
-  }
-
-  .allovers {
-    flex-direction: row;
-  }
-
-  .protextt {
-    font-size: 1.4em;
-  }
-
-  .protextw {
-    font-size: 1em;
-  }
-
-  .overlayright img {
-    max-height: 40vh;
-  }
-
-  #inquiryform {
-    justify-content: space-between;
-  }
-
-  #contactinfocont {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-
-  .contactinfo {
-    width: 45%;
-  }
-
-  #contactmessage {
-    margin: 20px auto 0;
-  }
-
-  #submit {
-    margin-top: 10px;
-  }
-}
-
-@media screen and (min-width: 576px) {
-  .menucontain {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .menu {
-    width: 100%;
-    padding-top: 0;
-  }
-
-  .menutabs {
-    font-size: 0.8em;
-  }
-
-  #nametitle {
-    font-size: 2.5em;
-  }
-
-  .editor__content {
-    font-size: 1.8em;
-    line-height: 1.2em;
-  }
-
-  .editor__content__nums {
-    width: 25px;
-  }
-
-  .editor__content--indented {
-    margin-left: 10px;
-  }
-
-  #biocontain {
-    width: 75%;
-  }
-
-  #biowriting {
-    font-size: 1.5em;
-  }
-
-  #biotextw {
-    font-size: 1em;
-  }
-
-  #quotename {
-    font-size: 1.1em;
-  }
-
-  #biobottom {
-    font-size: 0.7em;
-  }
-
-  .historytext {
-    font-size: 0.75em;
-  }
-
-  .project {
-    width: 40%;
-  }
-
-  .overlayleft {
-    font-size: 1.3em;
-  }
-
-  .protextt {
-    font-size: 0.8em;
-  }
-
-  .protextw {
-    font-size: 0.6em;
-  }
-
-  .contacttype {
-    font-size: 2.2em;
-  }
-
-  #footmessage {
-    font-size: 0.7em;
-  }
-}
-
-@media screen and (min-width: 576px) and (orientation: landscape) {
-  #titlecard {
-    width: 90%;
-  }
-
-  #nametitle {
-    font-size: 1.8em;
-    padding: 5px;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .menucontain {
-    flex-direction: column;
-    justify-content: space-around;
-    top: 0;
-    left: 0;
-    width: 10%;
-    height: 100vh;
-  }
-
-  #menu__right a,
-  #menu__left a {
-    width: 110%;
-  }
-
-  #ethan {
-    position: absolute;
-    top: 60px;
-    left: 85px;
-    margin-bottom: 150px;
-    background: $secondcolor;
-    border-radius: 25%;
-    padding: 20px;
-    z-index: 99;
-    color: $firstcolor;
-    border: 5px solid $thirdcolor;
-    height: 100px;
-    // box-shadow: -4px 4px 0px lighten($secondcolor, 10%);
-  }
-
-  .leftcanvas {
-    height: 100vh;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-  }
-
-  .menu {
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    height: 90vh;
-  }
-
-  #menu__left,
-  #menu__right {
-    width: 110%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .menutabs {
-    width: 110%;
-    display: flex;
-    justify-content: center;
-    transition: all 1s;
-    z-index: 99;
-    background: darken($thirdcolor, 10%);
-    font-size: 0.6em;
-    padding: 10px;
-
-    a {
-      color: black;
-      text-decoration: none;
-    }
-
-    &:hover {
-      background: $thirdcolor;
-
-      a {
-        color: $firstcolor;
-      }
-    }
-  }
-
-  #menutabscontain {
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    height: 100%;
-  }
-
-  .menudark {
-    background: darken($thirdcolor, 10%);
-
-    a {
-      color: $firstcolor;
-    }
-  }
-
-  #historymenu,
-  #projectmenu,
-  #contactme {
-    border-top: 1px solid $thirdcolor;
-  }
-
-  .menutext {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    color: black;
-  }
-
-  .menutitle {
-    margin-top: 5px;
-    font-size: 1.1em;
-  }
-
-  #contentcontain {
-    position: absolute;
-    left: 10%;
-    width: 90%;
-  }
-
-  #splashcont {
-    align-items: center;
-    background-position: top center;
-    background-size: cover;
-    justify-content: space-between;
-  }
-
-  #titlecard {
-    margin: 0;
-    position: relative;
-  }
-
-  #nametitle {
-    font-size: 3em;
-  }
-
-  #desktop {
-    width: 80%;
-    background: url(../images/menubar.png) no-repeat;
-    background-size: contain;
-    background-position: bottom center;
-    margin-bottom: 50px;
-  }
-
-  .desktop__items--sm {
-    width: auto;
-
-    &:hover {
-      .desktop__items__text {
-        background: rgba($thirdcolor, 0.9);
-      }
-    }
-  }
-
-  .desktop__items__img--sm {
-    display: none;
-  }
-
-  .desktop__items__img--lg {
-    width: 75px;
-    display: block;
-  }
-
-  .desktop__items__img {
-    height: 85px;
-  }
-
-  .desktop__items__text {
-    color: white;
-    z-index: 99;
-    transform: translateY(-20px);
-    background: rgba($thirdcolor, 0.4);
-    padding: 5px;
-    border-radius: 6px;
-  }
-
-  .desktop__over {
-    position: relative;
-    justify-content: center;
-    width: 90%;
-    bottom: 0;
-  }
-
-  .desktop__over__contain {
-    width: auto;
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-  }
-
-  .desktop__over__each {
-    margin: 5px;
-    width: auto;
-    font-size: 0.48em;
-    max-width: 350px;
-  }
-
-  .desktop__over__open--one {
-    flex-grow: 1;
-    width: 20vw;
-    height: 30vh;
-    font-size: 0.48em;
-  }
-
-  .desktop__over__open--multi {
-    display: flex;
-    width: 30vw;
-    height: 20vh;
-    font-size: 0.4em;
-    min-width: 280px;
-  }
-
-  .over__title {
-    height: 20px;
-  }
-
-  .editor__content__nums {
-    width: 30px;
-  }
-
-  .editor--content {
-    flex-grow: 1;
-  }
-
-  .editor--status {
-    height: 20px;
-  }
-
-  .over--content {
-    height: 15vh;
-    flex-grow: 1;
-  }
-
-  .over__content__each {
-    font-size: 1.5em;
-  }
-
-  .theme__each__icon img {
-    width: 35px;
-    height: 35px;
-  }
-
-  .anchor {
-    margin-top: 0px;
-  }
-
-  #biocontain {
-    width: 90%;
-    margin: 0;
-    height: 420px;
-  }
-
-  #biowriting {
-    font-size: 1.8em;
-    width: 100%;
-  }
-
-  #quotename {
-    font-size: 1em;
-  }
-
-  #biotop {
-    flex-direction: row;
-    align-items: center;
-  }
-
-  #biotextw {
-    font-size: 0.8em;
-    text-align: left;
-  }
-
-  #asa,
-  #ageinfo {
-    display: block;
-  }
-
-  .biopersonaltext {
-    width: 75%;
-  }
-
-  #portimage {
-    display: block;
-    margin: 0 15px;
-    width: 25%;
-  }
-
-  #thanksright a {
-    font-size: 1.2em;
-  }
-
-  #thanksleft {
-    font-size: 1.2em;
-  }
-
-  .protitle {
-    font-size: 2.5em;
-  }
-
-  .project {
-    width: 30%;
-    margin-right: 10px;
-
-    &:hover {
-      .protext {
-        margin: 15px 0;
-      }
-    }
-  }
-
-  #projectoverlay {
-    max-height: 80vh;
-    width: 80%;
-    left: 55%;
-  }
-
-  #closeover {
-    width: 50px;
-    height: 50px;
-    top: -20px;
-    right: -20px;
-    font-size: 1.3em;
-  }
-
-  .allovers {
-    padding: 25px;
-  }
-
-  .overlaytitle {
-    font-size: 1.3em;
-  }
-
-  .overlaytext {
-    font-size: 0.8em;
-  }
-
-  .overlayskills {
-    font-size: 0.8em;
-  }
-
-  .overlayurl a {
-    font-size: 0.9em;
-  }
-
-  #availablehalf {
-    width: 40%;
-    font-size: 1em;
-    padding: 50px 0 50px 50px;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-    overflow: visible;
-  }
-
-  #availabletext {
-    width: 80%;
-    text-align: left;
-  }
-
-  #blogcenter {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background: white;
-    width: 30%;
-    border-radius: 10px;
-    border: 3px solid lighten($secondcolor, 20%);
-    padding: 10px;
-    font-size: 0.8em;
-  }
-
-  #resumehalf {
-    width: 60%;
-    font-size: 1em;
-    padding: 50px 50px 50px 30px;
-    background: linear-gradient(
-          to top right,
-          transparent 50%,
-          darken($secondcolor, 10%) 50%
-        )
-        no-repeat,
-      linear-gradient(
-          to top right,
-          transparent 0.1%,
-          darken($secondcolor, 10%) 0.1%
-        )
-        no-repeat;
-    background-size: 60.5% 100%, 40% 100%;
-    background-position: 0% 0%, 100% 0%;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: right;
-    align-items: flex-end;
-
-    .buttonstyle {
-      width: auto;
-    }
-  }
-
-  #resumetext {
-    width: 50%;
-    text-align: right;
-  }
-
-  #contactclose {
-    width: 40px;
-    height: 40px;
-    font-size: 1.5em;
-  }
-
-  #inquiryform {
-    width: 80%;
-  }
-
-  .contacttype {
-    font-size: 2.3em;
-  }
-
-  #footmessage {
-    font-size: 0.75em;
-  }
-}
-
-@media screen and (min-width: 768px) and (orientation: landscape) {
-  #splashcont {
-    padding-top: 0;
-  }
-
-  #titlecard {
-    margin-top: 13vh;
-  }
-
-  #nametitle {
-    font-size: 2.5em;
-  }
-
-  #languagetitle {
-    margin-top: 20vh;
-  }
-
-  .desktop__over__open--multi {
-    height: 33vh;
-    min-width: 230px;
-  }
-
-  .over__content__each {
-    font-size: 1.5em;
-  }
-
-  .editor__content {
-    font-size: 1.3em;
-    line-height: 1.3em;
-  }
-
-  #inquiryform {
-    width: 70%;
-  }
-}
-
-@media screen and (min-width: 992px) and (orientation: landscape) {
-  .menucontain {
-    width: 7%;
-  }
-
-  .menutabs {
-    font-size: 0.6em;
-    width: 110%;
-  }
-
-  #contentcontain {
-    width: 93%;
-    left: 7%;
-  }
-
-  .desktop__over__open--multi {
-    height: 25vh;
-  }
-
-  .biopersonaltext {
-    padding-right: 10px;
-  }
-
-  #portimage {
-    width: 100%;
-  }
-
-  .flexbox-slider {
-    font-size: 2.5em;
-    flex-direction: row-reverse;
-    height: 500px;
-  }
-
-  .flexbox-slide {
-    max-height: 500px;
-    flex: 1;
-    flex-direction: row;
-    padding: 10px;
-    justify-content: center;
-    display: flex;
-    overflow: hidden;
-    transition: flex 1s;
-
-    &:hover {
-      .clickinform {
-        display: block;
-      }
-    }
-
-    &.open {
-      flex: 6;
-      padding: 50px;
-
-      &:hover {
-        .clickinform {
-          display: none;
-        }
-
-        .imgtitle {
-          border: none;
-        }
-      }
-    }
-  }
-
-  .flexopen {
-    width: 80%;
-  }
-
-  .flexcontainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  .clickinform {
-    display: none;
-    position: absolute;
-    top: 25px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 0.4em;
-    color: #4c4c4c;
-  }
-
-  .imgtitle {
-    flex-direction: column;
-    height: auto;
-  }
-
-  .itopen {
-    flex-direction: row;
-  }
-
-  .historylogo {
-    width: auto;
-    margin: 0 auto;
-
-    img {
-      height: auto;
-    }
-  }
-
-  .historytitles {
-    font-size: 0.28em;
-    padding: 5px;
-    width: 100%;
-    height: 100px;
-    max-width: none;
-  }
-
-  .historylogoside {
-    width: 50%;
-  }
-
-  .historylogo img {
-    height: 100px;
-  }
-
-  .historytitlesside {
-    width: 50%;
-  }
-
-  .textblock {
-    width: 90%;
-    margin: 0 auto 0;
-    height: 0px;
-    display: flex;
-    transition: height 1s;
-  }
-
-  .tbon {
-    height: 270px;
-  }
-
-  .historytext {
-    padding: 15px;
-    opacity: 0;
-    font-size: 0.3em;
-    margin: 0;
-  }
-
-  .hton {
-    opacity: 1;
-  }
-
-  .dutylist ul li {
-    margin-bottom: 5px;
-  }
-
-  .project {
-    width: 20%;
-  }
-
-  .allovers {
-    flex-direction: row;
-  }
-
-  .overlayleft {
-    width: 50%;
-  }
-
-  .overlayright {
-    margin-left: 20px;
-
-    img {
-      max-height: 40vh;
-    }
-  }
-
-  .overlaytext {
-    margin: 50px 0;
-  }
-
-  .protextt {
-    font-size: 0.7em;
-  }
-
-  .protextw {
-    font-size: 0.55em;
-  }
-
-  .buttonstyle {
-    font-size: 0.8em;
-    margin-top: 20px;
-  }
-
-  #availablehalf {
-    font-size: 0.9em;
-    padding: 40px 0 40px 40px;
-  }
-
-  #blogcenter {
-    font-size: 1em;
-    width: 30%;
-  }
-
-  #blogtitle {
-    width: 95%;
-  }
-
-  #blogcont {
-    padding: 15px;
-  }
-
-  #blogdata {
-    padding: 0px;
-  }
-
-  #resumehalf {
-    padding: 40px 40px 40px 30px;
-  }
-
-  #returnmessage {
-    font-size: 0.8em;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .menutabs {
-    font-size: 0.7em;
-  }
-
-  .editor__content {
-    font-size: 1.4em;
-  }
-
-  #biocontain {
-    align-items: center;
-    flex-direction: row;
-    width: 80%;
-  }
-
-  #biowriting {
-    font-size: 2.1em;
-  }
-
-  #quotename {
-    font-size: 1.2em;
-  }
-
-  .biopersonal {
-    left: 5%;
-  }
-
-  #biotextw {
-    font-size: 1em;
-  }
-
-  .historytitles {
-    font-size: 0.34em;
-  }
-
-  .historytext {
-    font-size: 0.35em;
-  }
-
-  .jobtitle {
-    margin-bottom: 25px;
-  }
-
-  .overlayright img {
-    max-height: 50vh;
-  }
-
-  .protextcont {
-    font-size: 1.4em;
-  }
-
-  #availablehalf {
-    font-size: 1em;
-    padding: 70px 0 70px 60px;
-  }
-
-  #resumehalf {
-    font-size: 1em;
-    padding: 70px 60px 70px 70px;
-  }
-
-  .buttonstyle {
-    margin-top: 40px;
-  }
-
-  #contactinfocont {
-    width: 75%;
-    margin: 0 auto;
-  }
-
-  #footercont {
-    width: 90%;
-  }
-
-  .contacttype {
-    font-size: 3em;
-    margin-bottom: 5px;
-  }
-}
-
-@media screen and (min-width: 1600px) {
-  #ethan {
-    font-size: 2em;
-  }
-
-  .menutabs {
-    font-size: 0.85em;
-  }
-
-  #nametitle {
-    font-size: 4em;
-  }
-
-  .desktop__over__each {
-    font-size: 0.55em;
-    max-width: 450px;
-  }
-
-  .theme__each__icon {
-    width: 85px;
-    height: 85px;
-
-    img {
-      width: 65px;
-      height: 65px;
-    }
-  }
-
-  #biocontain {
-    width: 75%;
-    margin: 60px 0;
-  }
-
-  #biowriting {
-    font-size: 3em;
-  }
-
-  #quotename {
-    font-size: 1.6em;
-  }
-
-  #biotextw {
-    font-size: 1.3em;
-  }
-
-  #biobottom {
-    font-size: 1em;
-  }
-
-  .flexcontainer {
-    flex-direction: row;
-    max-width: none;
-  }
-
-  .fcon {
-    justify-content: flex-start;
-    width: 100%;
-  }
-
-  .historylogo {
-    margin: 0;
-    width: 150px;
-  }
-
-  .historylogoside {
-    width: 150px;
-  }
-
-  .historytitlesside {
-    width: 150px;
-  }
-
-  .historytitles {
-    font-size: 0.4em;
-    padding: 15px;
-    width: 150px;
-  }
-
-  .historytext {
-    font-size: 0.4em;
-    padding: 25px;
-    border-top: none;
-    border-left: 1px solid black;
-  }
-
-  .textblock {
-    width: 0px;
-    height: 400px;
-    margin: 0;
-    transition: width 1s;
-  }
-
-  .tbon {
-    width: 500px;
-  }
-
-  .itopen {
-    flex-direction: column;
-  }
-
-  #availablehalf,
-  #resumehalf {
-    font-size: 1.3em;
-  }
-
-  #blogcenter {
-    font-size: 1.2em;
-  }
-
-  .contacttype {
-    font-size: 3.5em;
-  }
-
-  #footmessage {
-    font-size: 1em;
-  }
-}
-
-@media screen and (min-width: 992px) and (min-aspect-ratio: 16/8) {
-  #titlecard {
-    margin-top: 16vh;
-  }
-
-  #languagetitle {
-    margin-top: 29vh;
-  }
-
-  #biocontain {
-    align-items: center;
-    text-align: center;
-  }
-
-  #inquiryform {
-    width: 70%;
   }
 }

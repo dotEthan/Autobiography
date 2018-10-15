@@ -1,13 +1,13 @@
 @font-face {
-  font-family: 'Lato';
+  font-family: "Lato";
   src: url("fonts/lato-regular.woff") format("woff"); }
 
 @font-face {
-  font-family: 'Raleway';
+  font-family: "Raleway";
   src: url("fonts/raleway-regular.woff") format("woff"); }
 
 @font-face {
-  font-family: 'logo';
+  font-family: "logo";
   src: url("fonts/JosefinSlab-Bold.woff") format("woff"); }
 
 img {
@@ -133,7 +133,8 @@ a:hover {
   transition: all 1s;
   font-weight: bold; }
 
-#menu__left, #menu__right {
+#menu__left,
+#menu__right {
   width: 50%;
   display: flex;
   align-items: center;
@@ -166,7 +167,7 @@ a:hover {
 
 #splashcont {
   height: 75vh;
-  background-image: url("../images/bge2.jpg");
+  background-image: url("/images/bge.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -242,7 +243,8 @@ a:hover {
 #splashcont .choices__containo {
   height: 100px; }
 
-#desktop, .desktop__over {
+#desktop,
+.desktop__over {
   display: none; }
 
 #choicestab {
@@ -615,7 +617,7 @@ a:hover {
 .project:after {
   padding-top: 56.25%;
   display: block;
-  content: ''; }
+  content: ""; }
 
 .protext {
   width: 100%;
@@ -709,7 +711,7 @@ a:hover {
   font-size: 0.6em; }
 
 .overlayright {
-  border: 2px dashed #96858F;
+  border: 2px dashed #96858f;
   justify-content: center;
   display: flex; }
   .overlayright img {
@@ -735,7 +737,8 @@ a:hover {
   justify-content: space-around;
   align-items: center; }
 
-#availabletext, #resumetext {
+#availabletext,
+#resumetext {
   width: 70%;
   padding: 5px; }
 
@@ -880,14 +883,14 @@ input {
   border-radius: 3px;
   padding: 5px; }
 
-input[type=button] {
+input[type="button"] {
   background-color: #86ba25;
   border: 1px solid white;
-  font-Weight: bold;
+  font-weight: bold;
   font-size: 18px;
   color: white;
   border: 1px solid #86ba25; }
-  input[type=button]:hover {
+  input[type="button"]:hover {
     background-color: #4c4556;
     border: 1px solid #86ba25; }
 
@@ -936,7 +939,7 @@ span {
   .contacttype a {
     color: #86ba25; }
   .contacttype .footertext {
-    font-size: .35em;
+    font-size: 0.35em;
     visibility: hidden;
     font-weight: bold;
     font-family: "Raleway", serif;
@@ -1095,7 +1098,8 @@ span {
   #biotextw {
     font-size: 0.8em;
     text-align: left; }
-  #asa, #ageinfo {
+  #asa,
+  #ageinfo {
     display: block; }
   #biopersonaltext {
     width: 75%; }
@@ -1409,7 +1413,8 @@ span {
     width: 500px; }
   .itopen {
     flex-direction: column; }
-  #availablehalf, #resumehalf {
+  #availablehalf,
+  #resumehalf {
     font-size: 1.5em; }
   #blogcenter {
     font-size: 1.2em; }
