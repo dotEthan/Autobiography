@@ -148,8 +148,8 @@ a:link {
   position: fixed;
   background: $menubackground;
   color: white;
-  width: 100%;
   z-index: 99;
+  width: 100%;
 }
 
 #menu__right a,
@@ -162,6 +162,7 @@ a:link {
   justify-content: space-around;
   color: $menutextc;
   height: 70px;
+  width: 100%;
 }
 
 #entrebgcanvas {
@@ -257,6 +258,7 @@ a:link {
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
 }
 
 #titlecard {
@@ -304,6 +306,11 @@ a:link {
   justify-content: flex-end;
   height: 113px;
   transition: height 0.5s;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate3d(-50%, 0, 0);
+  width: 80%;
 }
 
 #splashcont .choices__containo {
@@ -347,10 +354,6 @@ a:link {
   height: 65px;
   overflow: hidden;
   transition: height 0.5s;
-
-  .cocon {
-    opacity: 0;
-  }
 }
 
 #choicesoptcont {
@@ -361,6 +364,10 @@ a:link {
   flex-direction: column;
   opacity: 1;
   transition: opacity 0.3s;
+
+  &.cocon {
+    opacity: 0;
+  }
 }
 
 #iconcont {
@@ -439,7 +446,7 @@ a:link {
   }
 }
 
-.themeexp {
+.theme__exp {
   display: none;
   flex-direction: column;
   justify-content: center;
@@ -687,7 +694,6 @@ a:link {
   display: flex;
   justify-content: space-around;
   height: 100px;
-  width: 150px;
 }
 
 .historylogo {
@@ -1013,6 +1019,7 @@ a:link {
   background: $firstcolor;
   color: black;
   display: flex;
+  flex: 1;
   flex-direction: column;
   align-items: center;
   padding: 20px;
@@ -1548,18 +1555,16 @@ span {
   }
 
   #choices__contain {
+    display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-end;
     position: absolute;
     right: 0;
+    left: auto;
     top: 50vh;
     transform: translateY(-50%);
     height: auto;
-
-    .choicesh {
-      width: 0px;
-    }
+    width: auto;
   }
 
   #choicestab {
@@ -1569,10 +1574,11 @@ span {
     border-radius: 10px 10px 0 0;
     border-bottom: none;
     transform-origin: right bottom;
-    transform: rotate(270deg) translateX(65px);
-    width: 100px;
+    transform: rotate(270deg) translateX(80px);
+    width: 115px;
+    height: 35px;
     padding-bottom: 0;
-    font-size: 0.7em;
+    font-size: 0.9em;
   }
 
   #choices {
@@ -1581,9 +1587,14 @@ span {
     border-radius: 10px 0 0 10px;
     border-right: none;
     height: 260px;
-    width: 120px;
+    width: 175px;
     transition: all 1s;
     justify-content: flex-start;
+    margin: 0;
+
+    &.choicesh {
+      width: 0px;
+    }
   }
 
   #choicesoptcont {
@@ -1591,8 +1602,8 @@ span {
   }
 
   .icon {
-    width: 75px;
-    height: 50px;
+    width: 100px;
+    height: 67px;
   }
 
   #iconcont {
@@ -1813,13 +1824,17 @@ span {
   }
 }
 
-@media screen and (min-width: 768px) and (orientation: landscape) {
+@media screen and (min-width: 768px) {
   #nametitle {
     font-size: 2.5em;
   }
 
   .choicesbox {
-    font-size: 0.6em;
+    font-size: 0.8em;
+  }
+
+  #cheatsheet {
+    font-size: 1.2em;
   }
 }
 

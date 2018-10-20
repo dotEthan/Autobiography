@@ -303,7 +303,8 @@ a:link {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  justify-content: space-between; }
+  justify-content: space-between;
+  position: relative; }
   @media screen and (orientation: landscape) {
     #splashcont {
       padding-top: 80px; } }
@@ -327,19 +328,17 @@ a:link {
   justify-content: space-between;
   color: white;
   align-items: center;
-  flex-grow: 1; }
-  @media screen and (min-width: 576px) and (orientation: landscape) {
-    #titlecard {
-      width: 90%; } }
+  flex-grow: 1;
+  height: 100%; }
   @media screen and (min-width: 768px) {
     #titlecard {
       margin: 0; } }
   @media screen and (min-width: 768px) and (orientation: landscape) {
     #titlecard {
-      margin-top: 13vh; } }
+      margin-top: 10vh; } }
   @media screen and (min-width: 992px) and (min-aspect-ratio: 16 / 8) {
     #titlecard {
-      margin-top: 16vh; } }
+      margin-top: 3vh; } }
 
 #motto {
   display: none; }
@@ -417,8 +416,9 @@ a:link {
   position: absolute;
   bottom: 28vh;
   width: 70%;
-  display: none;
-  flex-wrap: wrap; }
+  visibility: hidden;
+  flex-wrap: wrap;
+  display: flex; }
   @media screen and (orientation: landscape) {
     .desktop__over {
       width: 50%; } }
@@ -430,7 +430,7 @@ a:link {
       bottom: 0; } }
 
 .desktop__over--open {
-  display: flex; }
+  visibility: visible; }
 
 .desktop__over__contain {
   width: 100%; }
@@ -438,11 +438,12 @@ a:link {
     .desktop__over__contain {
       width: auto;
       position: relative;
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       align-items: center;
       justify-content: center;
-      margin: auto; } }
+      margin: auto;
+      height: 50vh; } }
 
 .desktop__over__each {
   display: none;
@@ -578,6 +579,7 @@ a:link {
   border-right: none;
   border-left: none;
   display: flex;
+  flex-wrap: wrap;
   padding: 10px; }
   @media screen and (min-width: 768px) {
     .over__content {
@@ -698,6 +700,36 @@ a:link {
   @media screen and (min-width: 1600px) {
     #nametitle {
       font-size: 4em; } }
+
+.theme__exp {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  width: 75%;
+  background: #e5e5e5;
+  border-radius: 15px;
+  border: 2px solid #554a65;
+  font-size: 0.6em;
+  display: none; }
+  .theme__exp.csopen {
+    display: block; }
+
+#cheatsheet__cont {
+  position: relative;
+  padding: 15px;
+  text-align: left; }
+
+#cheatsheetexpclose {
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  cursor: pointer; }
+
+#cheatsheetexptitle {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+  text-align: center; }
 
 #choices__contain {
   display: none; }

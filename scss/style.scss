@@ -401,6 +401,7 @@ a:link {
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
 
   @media screen and (orientation: landscape) {
     padding-top: 80px;
@@ -429,21 +430,18 @@ a:link {
   color: white;
   align-items: center;
   flex-grow: 1;
-
-  @media screen and (min-width: 576px) and (orientation: landscape) {
-    width: 90%;
-  }
+  height: 100%;
 
   @media screen and (min-width: 768px) {
     margin: 0;
   }
 
   @media screen and (min-width: 768px) and (orientation: landscape) {
-    margin-top: 13vh;
+    margin-top: 10vh;
   }
 
   @media screen and (min-width: 992px) and (min-aspect-ratio: 16/8) {
-    margin-top: 16vh;
+    margin-top: 3vh;
   }
 }
 
@@ -544,8 +542,9 @@ a:link {
   position: absolute;
   bottom: 28vh;
   width: 70%;
-  display: none;
+  visibility: hidden;
   flex-wrap: wrap;
+  display: flex;
 
   @media screen and (orientation: landscape) {
     width: 50%;
@@ -560,7 +559,7 @@ a:link {
 }
 
 .desktop__over--open {
-  display: flex;
+  visibility: visible;
 }
 
 .desktop__over__contain {
@@ -569,11 +568,12 @@ a:link {
   @media screen and (min-width: 768px) {
     width: auto;
     position: relative;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
     justify-content: center;
     margin: auto;
+    height: 50vh;
   }
 }
 
@@ -739,6 +739,7 @@ a:link {
   border-right: none;
   border-left: none;
   display: flex;
+  flex-wrap: wrap;
   padding: 10px;
 
   @media screen and (min-width: 768px) {
@@ -883,6 +884,42 @@ a:link {
   @media screen and (min-width: 1600px) {
     font-size: 4em;
   }
+}
+
+.theme__exp {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  width: 75%;
+  background: $firstcolor;
+  border-radius: 15px;
+  border: 2px solid $secondcolor;
+  font-size: 0.6em;
+  display: none;
+
+  &.csopen {
+    display: block;
+  }
+}
+
+#cheatsheet__cont {
+  position: relative;
+  padding: 15px;
+  text-align: left;
+}
+
+#cheatsheetexpclose {
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  cursor: pointer;
+}
+
+#cheatsheetexptitle {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 #choices__contain {

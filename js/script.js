@@ -589,151 +589,6 @@ function circles() {
 }
 
 //------------------------
-// Spinning balls
-//------------------------
-
-// function spirals() {
-
-//   const canvas = document.getElementById('entrebgcanvas');
-//   const c = canvas.getContext('2d');
-//   canvas.width = innerWidth;
-//   canvas.height = 150;
-//   const numDots = 5;
-//   const outDistance = randomInt(20, 40);
-//   const inDistance = 5;
-
-//   const mouse = {
-//     x: innerWidth/2,
-//     y: innerHeight/2
-//   };
-
-//   const colorArray = [
-//     $('#studentb').css( "background-color" ),
-//     $('#availableslice').css( "background-color" ),
-//     $('#third').css( "background-color" ),
-//     $('#inscriberslide').css( "background-color" ),
-//     $('#teachingslide').css( "background-color" )
-//   ];
-
-//   addEventListener('mousemove', event => {
-//     mouse.x = event.clientX; //Changeing?
-//     mouse.y = event.clientY;
-
-//   });
-
-//   addEventListener('resize', () => {
-//     canvas.width = innerWidth;
-//     canvas.height = 150;
-//     init();
-//   });
-
-//   function randomColor() {
-//     return colorArray[Math.floor(Math.random() * colorArray.length)];
-//   }
-
-//   function randomInt(min,max) {
-//     return Math.floor(Math.random() * (max-min+1) + min);
-//   }
-
-//   function Dot(x, y) {
-//     this.x = x;
-//     this.y = y;
-//     this.radius = randomInt(3,7);
-//     this.color = randomColor();
-//     this.radians = Math.random() * Math.PI*2;
-//     this.velocity = randomInt(15, 40)/1000;
-//     this.distance = randomInt(30, 50);
-//     let origDist = JSON.parse(JSON.stringify(this.distance))
-
-//     this.update = () => {
-//       let scrollTop     = $(window).scrollTop(),
-//           elementOffset = $('#menu').offset().top,
-//           eleDistance      = (elementOffset - scrollTop);
-
-//       if (mouse.y - (eleDistance + y) < 30 && mouse.y - (eleDistance + y) > -60 && mouse.x - x < 40 && x - mouse.x < 40) {
-//         if (this.distance > inDistance) {
-//           this.distance = this.distance - 2;
-//         }
-//       } else {
-//         if (this.distance < origDist) {
-//           this.distance++;
-//         }
-//       }
-
-//       this.radians += this.velocity;
-//       this.x = x + Math.cos(this.radians) * this.distance;
-//       this.y = y + Math.sin(this.radians) * this.distance;
-
-//       this.draw();
-//     };
-
-//     this.draw = () => {
-//       c.beginPath();
-//       c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-//       c.fillStyle = this.color;
-//       c.fill();
-//       c.closePath();
-//     }
-//   }
-
-//   let dotArray1,dotArray2,dotArray3,dotArray4, bioCenter1, bioCenter2, bioCenter3, bioCenter4;
-//   const bioDiv1 = $('#menu');
-
-//   function init() {
-//     dotArray1 = [];
-//     dotArray2 = [];
-//     dotArray3 = [];
-//     dotArray4 = [];
-//     bioCenter1 = new Array( bioDiv1.width() * 0.16, bioDiv1.height() / 1.8 );
-//     bioCenter2 = new Array( bioDiv1.width() * 0.426, bioDiv1.height() / 1.8 );
-//     bioCenter3 = new Array( bioDiv1.width() * 0.695, bioDiv1.height() / 1.8 );
-//     bioCenter4 = new Array( bioDiv1.width() * 0.964, bioDiv1.height() / 1.8 );
-
-//     const tabArr = $('.menutabs');
-//     const arrC = tabArr.map(tab => {
-//       // console.log(tab);
-//       let x = 0;
-//       let y = 9;
-//       let arr = [[x,y]];
-//       return arr;
-//     });
-//     // console.log(arrC);
-
-//     for(let i=0; i < numDots; i++) {
-//       dotArray1.push(new Dot(bioCenter1[0], bioCenter1[1]));
-//       dotArray2.push(new Dot(bioCenter2[0], bioCenter2[1]));
-//       dotArray3.push(new Dot(bioCenter3[0], bioCenter3[1]));
-//       dotArray4.push(new Dot(bioCenter4[0], bioCenter4[1]));
-//     }
-//   }
-
-//   function animate() {
-//     requestAnimationFrame(animate);
-//     c.clearRect(0,0,canvas.width, canvas.height);
-
-//     dotArray1.forEach(singleDot => {
-//       singleDot.update();
-//     });
-
-//     dotArray2.forEach(singleDot => {
-//       singleDot.update();
-//     });
-
-//     dotArray3.forEach(singleDot => {
-//       singleDot.update();
-//     });
-
-//     dotArray4.forEach(singleDot => {
-//       singleDot.update();
-//     });
-//   }
-
-//   init();
-//   animate();
-
-// }
-
-//------------------------
 // Modernizr
 //------------------------
 
@@ -834,37 +689,45 @@ let open = true;
 $("#choicestab").click(drawer);
 
 function endH(e) {
-  if ((e.propertyName === "width" || e.propertyName === "height") && open)
+  console.log(`That's are ${e.propertyName}`);
+  // Not Open
+  if (e.propertyName === "width" || e.propertyName === "height") {
     $("#choicesoptcont").toggleClass("cocon");
+    open = true;
+  }
 }
 
 function endO(e) {
-  if (e.propertyName === "opacity" && !large && !open) {
+  console.log(`this is ${e.propertyName}`);
+  // Open
+  if (e.propertyName === "opacity" && !large) {
     $("#choices").toggleClass("choiceso");
     $("#choices__contain").toggleClass("choices__containo");
-  } else if (e.propertyName === "opacity" && large && !open) {
+    open = false;
+  } else if (e.propertyName === "opacity" && large) {
     $("#choices").toggleClass("choicesh");
+    open = false;
   }
 }
 
 function drawer() {
   if (large && !open) {
-    $("#choices").toggleClass("choicesh");
-    $("#choices")[0].addEventListener("transitionend", endH);
-    open = true;
+    console.log("large and not open");
+    $("#choices").toggleClass("choicesh"); // Open drawer
+    $("#choices")[0].addEventListener("transitionend", endH); // Turn on Icons
   } else if (large && open) {
-    $("#choicesoptcont").toggleClass("cocon");
-    $("#choices")[0].addEventListener("transitionend", endO);
-    open = false;
+    console.log("large and open");
+    $("#choicesoptcont").toggleClass("cocon"); // Turn off Icons
+    $("#choices")[0].addEventListener("transitionend", endO); // Close Drawer
   } else if (!large && !open) {
-    $("#choices").toggleClass("choiceso");
-    $("#choices__contain").toggleClass("choices__containo");
-    $("#choices")[0].addEventListener("transitionend", endH);
-    open = true;
+    console.log("small and not open");
+    $("#choices").toggleClass("choiceso"); // Open Drawer
+    $("#choices__contain").toggleClass("choices__containo"); // Open Drawer
+    $("#choices")[0].addEventListener("transitionend", endH); // Turns on icons
   } else if (!large && open) {
-    $("#choicesoptcont").toggleClass("cocon");
-    $("#choices")[0].addEventListener("transitionend", endO);
-    open = false;
+    console.log("small and open");
+    $("#choicesoptcont").toggleClass("cocon"); // Turns off icons
+    $("#choices")[0].addEventListener("transitionend", endO); // Closes
   }
 }
 
