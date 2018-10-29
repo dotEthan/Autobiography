@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "Merriweather";
-  src: url("fonts/Merriweather-webfont.woff") format("woff");
+  font-family: "Raleway";
+  src: url("fonts/raleway-regular.woff") format("woff");
 }
 
 @font-face {
@@ -28,7 +28,7 @@ $fourthcolor: #8a96a5;
 $fifthcolor: #888;
 
 $projectoverlayradius: 5px;
-$headertext: "Merriweather", serif;
+$headertext: "Raleway", serif;
 $regulartext: "Montserrat", sans-serif;
 $menutextc: white;
 $menuiconsize: 1.5em;
@@ -1711,24 +1711,42 @@ a:link {
   padding: 15px;
   width: 90%;
   max-height: 80vh;
+  display: none;
+  border: 2px dashed $thirdcolor;
+  height: 90vh;
+
+  &.show{
+    display: block;
+  }
 
   @media screen and (min-width: 768px) {
     height: 90vh;
-    width: 80%;
+    width: 60%;
     left: 55%;
   }
 
   @media screen and (min-width: 992px) and (orientation: landscape) {
-    max-height: 70vh;
+    max-height: 75vh;
   }
+
 }
 
 .allovers {
-  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%,-50%,0);
+  display: none;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  text-align: left;
   flex-direction: column-reverse;
+  width: 100%;
+  padding: 15px;
+
+  &.show{
+    display: flex;
+  }
 
   @media screen and (orientation: landscape) {
     flex-direction: row;
@@ -1754,11 +1772,19 @@ a:link {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: red;
+  color: $thirdcolor;
   background: white;
-  border: 1px solid grey;
+  border: 3px solid $secondcolor;
   border-radius: 25px;
   cursor: pointer;
+  z-index: 2;
+  transition: all .5s linear;
+
+  &:hover {
+    // background: #ddd;
+    color: $secondcolor;
+    border: 3px solid $thirdcolor;
+  }
 
   @media screen and (min-width: 768px) {
     width: 50px;
@@ -1773,62 +1799,101 @@ a:link {
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   padding: 15px;
+  font-size: .7em;
 
   @media screen and (min-width: 576px) {
-    font-size: 1.3em;
+    font-size: .8em;
   }
 
   @media screen and (min-width: 992px) and (orientation: landscape) {
     width: 50%;
+    line-height: 1.1em;
+    font-size: .9em;
   }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 1.4em;
+  }
+
 }
 
 .overlaytitle {
   font-size: 1em;
   font-family: $headertext;
-  text-decoration: underline;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   text-align: center;
+  line-height: 1.3em;
 
   @media screen and (min-width: 768px) {
     font-size: 1.3em;
   }
 }
 
+.overlayurl {
+  font-size: 0.5em;  
+  text-align: center;
+  text-decoration: underline;
+
+  &a {
+    color: $thirdcolor;
+
+    @media screen and (min-width: 768px) {
+      font-size: 1em;
+    }
+  }
+}
+
 .overlaytext {
-  font-size: 0.7em;
+  font-size: 0.8em;
+  margin: 15px 0 5px;
+
+  .overlaytext--sm {
+    font-size: 0.85em;
+    margin-bottom: 20px;
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 25%;
+      border-bottom: 1px dashed $secondcolor;
+    }
+  }
 
   @media screen and (min-width: 768px) {
     font-size: 0.8em;
+    margin: 25px 0 5px;
   }
 
-  @media screen and (min-width: 992px) and (orientation: landscape) {
-    margin: 50px 0;
+  @media screen and (min-width: 1200px) {
+    margin: 50px 0 5px;
   }
 }
 
 .overlayskills {
-  margin: 10px 0;
-  font-size: 0.7em;
-
-  @media screen and (min-width: 768px) {
-    font-size: 0.8em;
-  }
-}
-
-.overlayurl a {
-  color: $thirdcolor;
   font-size: 0.6em;
+  position: relative;
+  margin-top: 20px;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 25%;
+    border-top: 1px dashed $secondcolor;
+  }
 
   @media screen and (min-width: 768px) {
-    font-size: 0.9em;
+    font-size: 0.7em;
   }
 }
 
 .overlayright {
-  border: 2px dashed #96858f;
+  border: 2px dashed $secondcolor;
   justify-content: center;
   display: flex;
 
@@ -1837,8 +1902,9 @@ a:link {
   }
 
   img {
-    max-height: 20vh;
-    margin: 10px;
+    max-height: 30vh;
+    margin: 15px;
+    max-width: 450px;
 
     @media screen and (orientation: landscape) {
       max-height: 40vh;
@@ -1850,6 +1916,10 @@ a:link {
 
     @media screen and (min-width: 1200px) {
       max-height: 65vh;
+    }
+
+    @media screen and (min-width: 1600px) {
+      max-height: 50vh;
     }
   }
 }

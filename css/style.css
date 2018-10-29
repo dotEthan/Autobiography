@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "Merriweather";
-  src: url("fonts/Merriweather-webfont.woff") format("woff"); }
+  font-family: "Raleway";
+  src: url("fonts/raleway-regular.woff") format("woff"); }
 
 @font-face {
   font-family: "Montserrat";
@@ -91,7 +91,7 @@ a:link {
 .menu {
   display: flex;
   justify-content: space-around;
-  font-family: "Merriweather", serif;
+  font-family: "Raleway", serif;
   height: 70px; }
   @media screen and (min-width: 576px) {
     .menu {
@@ -126,7 +126,7 @@ a:link {
       width: 7%; } }
 
 #ethan {
-  font-family: "Merriweather", serif;
+  font-family: "Raleway", serif;
   font-size: 1em;
   position: absolute;
   left: 50%;
@@ -677,7 +677,7 @@ a:link {
 
 #nametitle {
   width: 100%;
-  font-family: "Merriweather", serif;
+  font-family: "Raleway", serif;
   font-weight: bold;
   font-size: 1.8em; }
   @media screen and (orientation: landscape) {
@@ -789,7 +789,7 @@ a:link {
 #biowriting {
   width: 100%;
   color: black;
-  font-family: "Merriweather", serif;
+  font-family: "Raleway", serif;
   font-size: 1em; }
   @media screen and (min-width: 576px) {
     #biowriting {
@@ -809,7 +809,7 @@ a:link {
   font-size: 0.8em;
   text-align: right;
   margin-top: 20px;
-  font-family: "Merriweather", serif; }
+  font-family: "Raleway", serif; }
   @media screen and (min-width: 576px) {
     #quotename {
       font-size: 1.1em; } }
@@ -943,7 +943,7 @@ a:link {
   background-color: #615574; }
 
 .protitle {
-  font-family: "Merriweather", serif;
+  font-family: "Raleway", serif;
   width: 100%;
   text-align: center;
   font-size: 1.5em;
@@ -1100,7 +1100,7 @@ a:link {
   color: #000000;
   background: rgba(255, 255, 255, 0.6);
   font-size: 0.7em;
-  font-family: "Merriweather", serif;
+  font-family: "Raleway", serif;
   max-width: 150px;
   width: 50%; }
   @media screen and (min-width: 992px) and (orientation: landscape) {
@@ -1326,7 +1326,7 @@ a:link {
 
 .protextt {
   width: 100%;
-  font-family: "Merriweather", serif; }
+  font-family: "Raleway", serif; }
   @media screen and (orientation: landscape) {
     .protextt {
       font-size: 1.4em; } }
@@ -1358,22 +1358,35 @@ a:link {
   z-index: 9999;
   padding: 15px;
   width: 90%;
-  max-height: 80vh; }
+  max-height: 80vh;
+  display: none;
+  border: 2px dashed #2283c9;
+  height: 90vh; }
+  #projectoverlay.show {
+    display: block; }
   @media screen and (min-width: 768px) {
     #projectoverlay {
       height: 90vh;
-      width: 80%;
+      width: 60%;
       left: 55%; } }
   @media screen and (min-width: 992px) and (orientation: landscape) {
     #projectoverlay {
-      max-height: 70vh; } }
+      max-height: 75vh; } }
 
 .allovers {
-  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  display: none;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  flex-direction: column-reverse; }
+  text-align: left;
+  flex-direction: column-reverse;
+  width: 100%;
+  padding: 15px; }
+  .allovers.show {
+    display: flex; }
   @media screen and (orientation: landscape) {
     .allovers {
       flex-direction: row; } }
@@ -1395,11 +1408,16 @@ a:link {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: red;
+  color: #2283c9;
   background: white;
-  border: 1px solid grey;
+  border: 3px solid #554a65;
   border-radius: 25px;
-  cursor: pointer; }
+  cursor: pointer;
+  z-index: 2;
+  transition: all .5s linear; }
+  #closeover:hover {
+    color: #554a65;
+    border: 3px solid #2283c9; }
   @media screen and (min-width: 768px) {
     #closeover {
       width: 50px;
@@ -1412,58 +1430,88 @@ a:link {
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 15px; }
+  padding: 15px;
+  font-size: .7em; }
   @media screen and (min-width: 576px) {
     .overlayleft {
-      font-size: 1.3em; } }
+      font-size: .8em; } }
   @media screen and (min-width: 992px) and (orientation: landscape) {
     .overlayleft {
-      width: 50%; } }
+      width: 50%;
+      line-height: 1.1em;
+      font-size: .9em; } }
+  @media screen and (min-width: 1200px) {
+    .overlayleft {
+      font-size: 1.4em; } }
 
 .overlaytitle {
   font-size: 1em;
-  font-family: "Merriweather", serif;
-  text-decoration: underline;
-  margin-bottom: 10px;
-  text-align: center; }
+  font-family: "Raleway", serif;
+  margin-bottom: 5px;
+  text-align: center;
+  line-height: 1.3em; }
   @media screen and (min-width: 768px) {
     .overlaytitle {
       font-size: 1.3em; } }
 
+.overlayurl {
+  font-size: 0.5em;
+  text-align: center;
+  text-decoration: underline; }
+  .overlayurla {
+    color: #2283c9; }
+    @media screen and (min-width: 768px) {
+      .overlayurla {
+        font-size: 1em; } }
+
 .overlaytext {
-  font-size: 0.7em; }
+  font-size: 0.8em;
+  margin: 15px 0 5px; }
+  .overlaytext .overlaytext--sm {
+    font-size: 0.85em;
+    margin-bottom: 20px;
+    position: relative; }
+    .overlaytext .overlaytext--sm:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 25%;
+      border-bottom: 1px dashed #554a65; }
   @media screen and (min-width: 768px) {
     .overlaytext {
-      font-size: 0.8em; } }
-  @media screen and (min-width: 992px) and (orientation: landscape) {
+      font-size: 0.8em;
+      margin: 25px 0 5px; } }
+  @media screen and (min-width: 1200px) {
     .overlaytext {
-      margin: 50px 0; } }
+      margin: 50px 0 5px; } }
 
 .overlayskills {
-  margin: 10px 0;
-  font-size: 0.7em; }
+  font-size: 0.6em;
+  position: relative;
+  margin-top: 20px; }
+  .overlayskills:after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 25%;
+    border-top: 1px dashed #554a65; }
   @media screen and (min-width: 768px) {
     .overlayskills {
-      font-size: 0.8em; } }
-
-.overlayurl a {
-  color: #2283c9;
-  font-size: 0.6em; }
-  @media screen and (min-width: 768px) {
-    .overlayurl a {
-      font-size: 0.9em; } }
+      font-size: 0.7em; } }
 
 .overlayright {
-  border: 2px dashed #96858f;
+  border: 2px dashed #554a65;
   justify-content: center;
   display: flex; }
   @media screen and (min-width: 992px) and (orientation: landscape) {
     .overlayright {
       margin-left: 20px; } }
   .overlayright img {
-    max-height: 20vh;
-    margin: 10px; }
+    max-height: 30vh;
+    margin: 15px;
+    max-width: 450px; }
     @media screen and (orientation: landscape) {
       .overlayright img {
         max-height: 40vh; } }
@@ -1473,6 +1521,9 @@ a:link {
     @media screen and (min-width: 1200px) {
       .overlayright img {
         max-height: 65vh; } }
+    @media screen and (min-width: 1600px) {
+      .overlayright img {
+        max-height: 50vh; } }
 
 #availableslice {
   display: flex;
@@ -1842,7 +1893,7 @@ textarea {
     font-size: 0.35em;
     visibility: hidden;
     font-weight: bold;
-    font-family: "Merriweather", serif;
+    font-family: "Raleway", serif;
     margin-top: 5px; }
   .contacttype:hover {
     color: #2283c9; }

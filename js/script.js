@@ -50,7 +50,7 @@ let asaChange = document.getElementById("asa");
 let quoteNameChange = document.getElementById("quotename");
 let bioChange = document.getElementById("ageinfo");
 
-$("#student, #studentpro").click(function() {
+$("#student, #studentpro").click(function () {
   window.cancelAnimationFrame(animating);
   if (studentDone == 0) {
     $("#load").css({ display: "block" });
@@ -78,7 +78,7 @@ $("#student, #studentpro").click(function() {
   doneResizing();
 });
 
-$("#entre, #entrepro").click(function() {
+$("#entre, #entrepro").click(function () {
   window.cancelAnimationFrame(animating);
   if (entreDone == 0) {
     $("#load").css({ display: "block" });
@@ -107,7 +107,7 @@ $("#entre, #entrepro").click(function() {
   doneResizing();
 });
 
-$("#programmer, #programmerpro").click(function() {
+$("#programmer, #programmerpro").click(function () {
   $("link[rel=stylesheet]").attr({ href: "css/style.css" });
   theme = "programmer";
   $("#entrebgcanvas").css("display", "none");
@@ -145,7 +145,7 @@ $("#biobio")
   );
 
 $("#biocontain").hover(
-  function() {
+  function () {
     $("#biobio").addClass("unhidden");
     $("#bioquote")
       .stop()
@@ -164,7 +164,7 @@ $("#biocontain").hover(
         1000
       );
   },
-  function() {
+  function () {
     $("#bioquote")
       .stop()
       .animate(
@@ -188,6 +188,7 @@ $("#biocontain").hover(
 //-----------------------
 // Scrolling Position
 //-----------------------
+
 function resizeDist() {
   historyDist = $("#historyslice").offset().top;
   bioDist = $("#bioslice").offset().top;
@@ -197,7 +198,8 @@ function resizeDist() {
     parseInt($("#projectslice").css("height"));
 }
 
-function addRemove(atId) {
+
+function addRemoveScroll(atId) {
   let menuTabArray = $(".menutabs");
   for (let i = 0; i < menuTabArray.length; i++) {
     if (menuTabArray[i].id === atId) {
@@ -220,7 +222,7 @@ function colorThem(atId) {
 
 document.addEventListener(
   "scroll",
-  function() {
+  function () {
     if (theme === "student") {
       const menuTabs = $(".menutext a");
       let top = parseInt($(window).scrollTop()) + 70;
@@ -263,13 +265,13 @@ document.addEventListener(
         top = top;
 
         if (top < bioDist) {
-          addRemove("top");
+          addRemoveScroll("top");
         } else if (top > bioDist && top < historyDist) {
-          addRemove("biomenu");
+          addRemoveScroll("biomenu");
         } else if (top > historyDist && top < projectDist) {
-          addRemove("historymenu");
+          addRemoveScroll("historymenu");
         } else if (top > projectDist) {
-          addRemove("projectmenu");
+          addRemoveScroll("projectmenu");
         }
       }
     }
@@ -280,141 +282,51 @@ document.addEventListener(
 //------------------------
 // Project Overlay
 //------------------------
+const overlayContain = document.getElementById('projectoverlay');
+const allElem = document.querySelectorAll('.allovers');
+let overlayOpen = false;
 
-function changeOverlay(theme) {
-  if (theme == "freggie") {
-    $("#freggieover")
-      .show()
-      .siblings(".allovers")
-      .hide();
-  } else if (theme == "winter") {
-    $("#winterover")
-      .show()
-      .siblings(".allovers")
-      .hide();
-  } else if (theme == "portfolio") {
-    $("#portfolioover")
-      .show()
-      .siblings(".allovers")
-      .hide();
-  } else if (theme == "uffda") {
-    $("#uffdaover")
-      .show()
-      .siblings(".allovers")
-      .hide();
-  } else if (theme == "easylife") {
-    $("#easyover")
-      .show()
-      .siblings(".allovers")
-      .hide();
-  } else if (theme == "sanatio") {
-    $("#sanatioover")
-      .show()
-      .siblings(".allovers")
-      .hide();
-  } else if (theme == "ese") {
-    $("#ethansover")
-      .show()
-      .siblings(".allovers")
-      .hide();
-  } else {
-    $("#javascriptover")
-      .show()
-      .siblings(".allovers")
-      .hide();
-  }
-}
-
-$("#projectoverlay").hide();
-
-function PopupCenter(url, title, w, h) {
-  // Fixes dual-screen position                         Most browsers      Firefox
-  var dualScreenLeft =
-    window.screenLeft != undefined ? window.screenLeft : window.screenX;
-  var dualScreenTop =
-    window.screenTop != undefined ? window.screenTop : window.screenY;
-
-  var width = window.innerWidth
-    ? window.innerWidth
-    : document.documentElement.clientWidth
-      ? document.documentElement.clientWidth
-      : screen.width;
-  var height = window.innerHeight
-    ? window.innerHeight
-    : document.documentElement.clientHeight
-      ? document.documentElement.clientHeight
-      : screen.height;
-
-  var left = width / 2 - w / 2 + dualScreenLeft;
-  var top = height / 2 - h / 2 + dualScreenTop;
-  var newWindow = window.open(
-    url,
-    title,
-    "scrollbars=yes, width=" +
-      w +
-      ", height=" +
-      h +
-      ", top=" +
-      top +
-      ", left=" +
-      left
-  );
-
-  if (window.focus) {
-    newWindow.focus();
-  }
-}
-
-$("#closeover").click(function() {
-  $("#projectoverlay").hide();
+$("#closeover").click(function () {
+  addRemove(overlayContain, 'show');
+  removeAll(allElem, 'show');
+  overlayOpen = false;
 });
 
-$(".project").click(function(e) {
-  let par = $(e.target).parent();
-  if (
-    par[0].id == "freggie" ||
-    par[0].id == "winter" ||
-    par[0].id == "portfolio" ||
-    par[0].id == "uffda" ||
-    par[0].id == "easylife" ||
-    par[0].id == "sanatio" ||
-    par[0].id == "ese" ||
-    par[0].id == "js"
-  ) {
-    changeOverlay(par[0].id);
-    $("#projectoverlay").show();
-  } else {
-    let parPar = par.parent();
-    if (
-      parPar[0].id == "freggie" ||
-      parPar[0].id == "winter" ||
-      parPar[0].id == "portfolio" ||
-      parPar[0].id == "uffda" ||
-      parPar[0].id == "easylife" ||
-      parPar[0].id == "sanatio" ||
-      parPar[0].id == "ese" ||
-      parPar[0].id == "js"
-    ) {
-      changeOverlay(parPar[0].id);
-      $("#projectoverlay").show();
-    } else {
-      let parParPar = parPar.parent();
-      if (
-        parParPar[0].id == "freggie" ||
-        parParPar[0].id == "winter" ||
-        parParPar[0].id == "portfolio" ||
-        parParPar[0].id == "uffda" ||
-        parParPar[0].id == "easylife" ||
-        parParPar[0].id == "sanatio" ||
-        parParPar[0].id == "ese" ||
-        parParPar[0].id == "js"
-      ) {
-        changeOverlay(parParPar[0].id);
-        $("#projectoverlay").show();
+$('.project').click(openProjectOverlay);
+
+function openProjectOverlay(e) {
+  const origElem = e.currentTarget.id;
+  const allElemL = allElem.length;
+
+  for (let i = 0; i < allElemL; i++) {
+    if (allElem[i].id === `${origElem}over`) {
+      if (!allElem[i].classList.contains('show') && overlayOpen) {
+        addRemove(allElem[i], 'show', 'add');
+      } else if (!allElem[i].classList.contains('show')) {
+        addRemove(allElem[i], 'show', 'add');
+        addRemove(overlayContain, 'show', 'add');
+        overlayOpen = true;
+      } else {
+        addRemove(allElem[i], 'show', 'remove');
+        addRemove(overlayContain, 'show', 'remove');
+        overlayOpen = false;
       }
+    } else {
+      addRemove(allElem[i], 'show', 'remove');
     }
   }
-});
+}
+
+function removeAll(elem, name) {
+  const elemL = elem.length;
+  for (let i = 0; i < elemL; i++) {
+    elem[i].classList.remove(name);
+  }
+}
+
+function addRemove(elem, name, action) {
+  (action === 'add') ? elem.classList.add(name) : elem.classList.remove(name);
+}
 
 //------------------------
 // Contact Appear
@@ -438,7 +350,7 @@ $("#contactme, #contactmebut, #footercontact, #contactclose").on(
 // Contact Form
 //------------------------
 
-$("#submit").click(function(e) {
+$("#submit").click(function (e) {
   let fname = $("#name").val();
   let phone = $("#phone").val();
   let email = $("#email").val();
@@ -459,7 +371,7 @@ $("#submit").click(function(e) {
         email1: email,
         inquiry1: inquiry
       },
-      function(data) {
+      function (data) {
         $("#returnmessage").append(data); // Append returned message to message paragraph.
 
         if (data == "Your Query has been received, We will contact you soon.") {
@@ -494,12 +406,12 @@ function circles() {
     y: undefined
   };
 
-  window.addEventListener("mousemove", function(e) {
+  window.addEventListener("mousemove", function (e) {
     mouse.x = e.x;
     mouse.y = e.y;
   });
 
-  window.addEventListener("resize", function() {
+  window.addEventListener("resize", function () {
     canvas.width = document.querySelector("#entrebgcanvas").offsetWidth;
     canvas.height = document.querySelector("#entrebgcanvas").offsetHeight;
     init();
@@ -514,7 +426,7 @@ function circles() {
     this.minRadius = radius;
     this.color = colorArray[Math.floor(Math.random() * colorArray.length)];
 
-    this.draw = function() {
+    this.draw = function () {
       if (this.radius <= 0) {
         this.radius = this.minRadius;
       }
@@ -524,7 +436,7 @@ function circles() {
       c.fill();
     };
 
-    this.update = function() {
+    this.update = function () {
       if (this.y + this.radius > canvas.height || this.y - this.radius <= 0) {
         this.dy = -this.dy;
       }
@@ -604,7 +516,7 @@ function doneResizing() {
 }
 
 var id5;
-$(window).resize(function() {
+$(window).resize(function () {
   clearTimeout(id5);
   id5 = setTimeout(doneResizing, 0);
   resizeDist();
@@ -656,14 +568,6 @@ $(".flexbox-slide").click(e => {
     titles.classList.toggle("historytitlesside");
     textBlock.classList.toggle("tbon");
     imgtitle.classList.toggle("itopen");
-  }
-
-  function textResize(current) {
-    for (let i = 0; i < slideArray.length; i++) {
-      if (slideArray[i].id !== thisSlide.id) {
-        slideArray[i].style.fontSize = "0.8em";
-      }
-    }
   }
 
   function removeAll() {
@@ -797,7 +701,7 @@ function showOver() {
 // Close Overlays with Esc
 //-------------------
 
-document.onkeydown = function(evt) {
+document.onkeydown = function (evt) {
   evt = evt || window.event;
   var isEscape = false;
   if ("key" in evt) {
