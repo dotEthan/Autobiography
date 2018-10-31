@@ -287,12 +287,16 @@ const allElem = document.querySelectorAll('.allovers');
 let overlayOpen = false;
 
 $("#closeover").click(function () {
-  addRemove(overlayContain, 'show');
+  addRemove(overlayContain, 'show', 'remove');
   removeAll(allElem, 'show');
   overlayOpen = false;
 });
 
 $('.project').click(openProjectOverlay);
+$('.over__title__close').click(function (e) {
+  const elem = $('.editor');
+  addRemove(elem[0], 'open', 'remove');
+});
 
 function openProjectOverlay(e) {
   const origElem = e.currentTarget.id;
@@ -320,7 +324,7 @@ function openProjectOverlay(e) {
 function removeAll(elem, name) {
   const elemL = elem.length;
   for (let i = 0; i < elemL; i++) {
-    elem[i].classList.remove(name);
+    if (elem[i].classList.contains(name)) elem[i].classList.remove(name);
   }
 }
 
@@ -571,17 +575,20 @@ $(".flexbox-slide").click(e => {
   }
 
   function removeAll() {
-    if ($(".textblock").hasClass("tbon")) $(".textblock").removeClass("tbon");
+    if ($(".textblock").hasClass("tbon"))
+      $(".textblock").removeClass("tbon");
     if ($(".textblock").hasClass("tbopen"))
       $(".textblock").removeClass("tbopen");
-    if ($(".textblock").hasClass("tbon")) $(".textblock").removeClass("tbon");
+    if ($(".textblock").hasClass("tbon"))
+      $(".textblock").removeClass("tbon");
     if ($(".historytext").hasClass("hton"))
       $(".historytext").removeClass("hton");
     if ($(".historylogo").hasClass("historylogoside"))
       $(".historylogo").removeClass("historylogoside");
     if ($(".historytitles").hasClass("historytitlesside"))
       $(".historytitles").removeClass("historytitlesside");
-    if ($(".imgtitle").hasClass("itopen")) $(".imgtitle").removeClass("itopen");
+    if ($(".imgtitle").hasClass("itopen"))
+      $(".imgtitle").removeClass("itopen");
   }
 });
 
@@ -590,49 +597,52 @@ $(".flexbox-slide").click(e => {
 //----------------
 
 let open = true;
+
 $("#choicestab").click(drawer);
 
-function endH(e) {
-  console.log(`That's are ${e.propertyName}`);
-  // Not Open
-  if (e.propertyName === "width" || e.propertyName === "height") {
-    $("#choicesoptcont").toggleClass("cocon");
-    open = true;
-  }
+function endLo(e) {
+  console.log(e.propertyName);
+  if (e.propertyName === "opacity") $("#choices").toggleClass("choicesh");
+  $("#choices")[0].removeEventListener("transitionend", endLo);
 }
 
-function endO(e) {
-  console.log(`this is ${e.propertyName}`);
-  // Open
-  if (e.propertyName === "opacity" && !large) {
+function endLno(e) {
+  console.log(e.propertyName);
+  if (e.propertyName === "width") $("#choicesoptcont").toggleClass("cocoff");
+  $("#choices")[0].removeEventListener("transitionend", endLno);
+}
+
+function endSno(e) {
+  // console.log(e.propertyName);
+  if (e.propertyName === "height") $("#choicesoptcont").toggleClass("cocoff");
+  $("#choices")[0].removeEventListener("transitionend", endSno);
+}
+
+function endSo(e) {
+  console.log(e.propertyName);
+  if (e.propertyName === "opacity") {
     $("#choices").toggleClass("choiceso");
     $("#choices__contain").toggleClass("choices__containo");
-    open = false;
-  } else if (e.propertyName === "opacity" && large) {
-    $("#choices").toggleClass("choicesh");
-    open = false;
   }
+  $("#choices")[0].removeEventListener("transitionend", endSo);
 }
 
 function drawer() {
   if (large && !open) {
-    console.log("large and not open");
     $("#choices").toggleClass("choicesh"); // Open drawer
-    $("#choices")[0].addEventListener("transitionend", endH); // Turn on Icons
+    $("#choices")[0].addEventListener("transitionend", endLno); // Turn on Icons
   } else if (large && open) {
-    console.log("large and open");
-    $("#choicesoptcont").toggleClass("cocon"); // Turn off Icons
-    $("#choices")[0].addEventListener("transitionend", endO); // Close Drawer
+    $("#choicesoptcont").toggleClass("cocoff"); // Turn off Icons
+    $("#choices")[0].addEventListener("transitionend", endLo); // Close Drawer
   } else if (!large && !open) {
-    console.log("small and not open");
     $("#choices").toggleClass("choiceso"); // Open Drawer
     $("#choices__contain").toggleClass("choices__containo"); // Open Drawer
-    $("#choices")[0].addEventListener("transitionend", endH); // Turns on icons
+    $("#choices")[0].addEventListener("transitionend", endSno); // Turns on icons
   } else if (!large && open) {
-    console.log("small and open");
-    $("#choicesoptcont").toggleClass("cocon"); // Turns off icons
-    $("#choices")[0].addEventListener("transitionend", endO); // Closes
+    $("#choicesoptcont").toggleClass("cocoff"); // Turns off icons
+    $("#choices")[0].addEventListener("transitionend", endSo); // Closes
   }
+  open = !open;
 }
 
 $("#cheatsheet").click(showExplain);
@@ -641,6 +651,12 @@ $("#cheatsheetexpclose").click(showExplain);
 
 function showExplain() {
   $("#cheatsheetexp").toggleClass("csopen");
+}
+
+$('#sublime').click(openSublime);
+
+function openSublime() {
+  $('#sublime__over').toggleClass('open');
 }
 
 //-------------------
@@ -716,31 +732,6 @@ document.onkeydown = function (evt) {
 
     if ($("#projectoverlay").is(":visible")) $("#projectoverlay").hide();
     if ($("#cheatsheetexp").is(":visible")) $("#cheatsheetexp").hide();
+    // if ($("#sublime__over").classList.contains('open')) $("#sublime__over").classList.remove('open');
   }
 };
-
-//-------------------
-// Slick Slide
-//-------------------
-
-$("#coop").click(e => {
-  $(".slide__contain").toggleClass("slide--open");
-  $(".slide").slick({
-    accessibility: true,
-    autoplay: true,
-    autoplaySpeed: 10000,
-    speed: 600,
-    slidesToShow: 1,
-    slidesToScroll: 1
-  });
-});
-
-$(".coop__close").click(() => {
-  $(".slide__contain").removeClass("slide--open");
-});
-
-$(".trash__stuff").click(() => {
-  window.alert(
-    "Please contact the Website Administrator to have items in trash restored to desktop. Thank you."
-  );
-});

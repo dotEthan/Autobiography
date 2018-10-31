@@ -13,7 +13,7 @@
   src: url("fonts/JosefinSlab-Bold.woff") format("woff");
 }
 
-// $firstcolor: e66c0b;
+// $firstcolor: e66c0b; 
 $rgba: rgba(13, 201, 247, 0.5);
 $lightblue: #0dc9f7;
 $grey: #7f7f7f;
@@ -35,7 +35,7 @@ $fifthcolor: #ccc;
 
 $projectoverlayradius: 5px;
 // $headertext: 'Open-Sans', sans-serif;
-$headertext: "Raleway", serif;
+$headertext: "raleway", serif;
 $regulartext: "Lato", sans-serif;
 $menutextc: white;
 $menuiconsize: 1.5em;
@@ -335,6 +335,10 @@ a:hover {
 
 #desktop,
 .desktop__over {
+  display: none;
+}
+
+.editor {
   display: none;
 }
 
@@ -842,15 +846,54 @@ a:hover {
   z-index: 9999;
   padding: 15px;
   width: 90%;
-  max-height: 80vh;
+  height: 80vh;
+  display: none;
+  border: 2px dashed $thirdcolor;
+
+  &.show{
+    display: block;
+  }
+
+  @media screen and (min-width: 768px) {
+    height: 90vh;
+    width: 60%;
+    left: 55%;
+  }
+
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    max-height: 75vh;
+  }
+
 }
 
 .allovers {
-  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%,-50%,0);
+  display: none;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  text-align: left;
   flex-direction: column-reverse;
+  width: 100%;
+  padding: 15px;
+
+  &.show{
+    display: flex;
+  }
+
+  @media screen and (orientation: landscape) {
+    flex-direction: row;
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: 25px;
+  }
+
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    flex-direction: row;
+  }
 }
 
 #closeover {
@@ -864,41 +907,123 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: red;
+  color: $thirdcolor;
   background: white;
-  border: 1px solid grey;
+  border: 2px solid $secondcolor;
   border-radius: 25px;
   cursor: pointer;
+  z-index: 2;
+  transition: all .3s linear;
+
+  &:hover {
+    color: $secondcolor;
+    border: 2px solid $thirdcolor;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 50px;
+    height: 50px;
+    top: -20px;
+    right: -20px;
+    font-size: 1.3em;
+  }
 }
 
 .overlayleft {
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   padding: 15px;
+  font-size: .7em;
+
+  @media screen and (min-width: 576px) {
+    font-size: .8em;
+  }
+
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    width: 50%;
+    line-height: 1.1em;
+    font-size: .9em;
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 1.4em;
+  }
+
 }
 
 .overlaytitle {
   font-size: 1em;
   font-family: $headertext;
-  text-decoration: underline;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   text-align: center;
+  line-height: 1.3em;
+
+  @media screen and (min-width: 768px) {
+    font-size: 1.3em;
+  }
 }
 
 .overlayurl {
-  font-size: 0.7em;
+  font-size: 0.5em;  
+  text-align: center;
+  text-decoration: underline;
+
+  &a {
+    color: $thirdcolor;
+
+    @media screen and (min-width: 768px) {
+      font-size: 1em;
+    }
+  }
+}
+
+.overlaytext {
+  font-size: 0.8em;
+  margin: 15px 0 5px;
+
+  .overlaytext--sm {
+    font-size: 0.85em;
+    margin-bottom: 20px;
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 25%;
+      border-bottom: 1px dashed $secondcolor;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 0.8em;
+    margin: 25px 0 5px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin: 50px 0 5px;
+  }
 }
 
 .overlayskills {
-  margin: 10px 0;
-  font-size: 0.7em;
-}
-
-.overlayurl a {
-  color: $thirdcolor;
   font-size: 0.6em;
+  position: relative;
+  margin-top: 20px;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 25%;
+    border-top: 1px dashed $secondcolor;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 0.7em;
+  }
 }
 
 .overlayright {
@@ -1482,12 +1607,6 @@ span {
         margin: 15px 0;
       }
     }
-  }
-
-  #projectoverlay {
-    max-height: 80vh;
-    width: 80%;
-    left: 55%;
   }
 
   #closeover {

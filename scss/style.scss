@@ -8,12 +8,8 @@
   src: url("fonts/Montserrat-Regular.woff") format("woff");
 }
 
-@font-face {
-  font-family: "logo";
-  src: url("fonts/fredoka-one-v5-latin-regular.woff") format("woff");
-}
-
 $black: #222;
+$white: #ded;
 $limecolor: #bff073;
 $rgba: rgba(13, 201, 247, 0.5);
 $lightblue: #0dc9f7;
@@ -468,7 +464,7 @@ a:link {
   }
 
   @media screen and (min-width: 768px) {
-    width: 80%;
+    width: 60%;
     background: url(../images/menubar.png) no-repeat;
     background-size: contain;
     background-position: bottom center;
@@ -604,6 +600,21 @@ a:link {
   }
 }
 
+.editor {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%,-50%,0);
+  font-size: .55em;
+  text-align: left;
+  color: #ded;
+
+  &.open { 
+    display:block;
+  }
+}
+
 .desktop__over__open--one {
   display: flex;
   width: 100%;
@@ -653,7 +664,7 @@ a:link {
   }
 }
 
-.over__title__text {
+.over__title__text{
   padding: 5px;
 }
 
@@ -742,6 +753,7 @@ a:link {
   display: flex;
   flex-wrap: wrap;
   padding: 10px;
+  overflow-Y: scroll;
 
   @media screen and (min-width: 768px) {
     height: 15vh;
@@ -803,6 +815,10 @@ a:link {
   }
 }
 
+.desktop__link {
+  color: $black;
+}
+
 .over__status {
   background: white;
   height: 15px;
@@ -810,48 +826,6 @@ a:link {
   display: flex;
   align-items: center;
   padding: 2px;
-}
-
-.slide__contain {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: none;
-  background: black;
-  z-index: 99;
-  width: 90%;
-  max-width: 650px;
-}
-
-.slide {
-  max-width: 600px;
-  width: 80%;
-  margin: auto;
-}
-
-.slide--open {
-  display: block;
-}
-
-.coop__close {
-  position: absolute;
-  right: 5px;
-  top: 5px;
-  background: grey;
-  border-radius: 50%;
-  width: 15px;
-  height: 15px;
-  color: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 0.7em;
-  cursor: pointer;
-}
-
-.slide__slide {
-  max-width: 600px;
 }
 
 #nametitle {
@@ -888,6 +862,7 @@ a:link {
 }
 
 .theme__exp {
+  display: none;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -897,30 +872,62 @@ a:link {
   border-radius: 15px;
   border: 2px solid $secondcolor;
   font-size: 0.6em;
-  display: none;
+
+  @media screen and (orientation: 'landscape') {
+    width: 40vw;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 35vw;
+    font-size: .7em;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 30vw;
+    font-size: .8em;
+  }
+
+  @media screen and (min-width: 1600px) {
+    width: 25vw;
+    font-size: 1em;
+  }
 
   &.csopen {
     display: block;
   }
 }
 
-#cheatsheet__cont {
+.theme__exp__contain {
   position: relative;
   padding: 15px;
   text-align: left;
+
+  @media screen and (min-width: 768px) {
+    padding: 20px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    padding: 25px;
+  }
+
+  @media screen and (min-width: 1600px) {
+    padding: 30px;
+  }
 }
 
-#cheatsheetexpclose {
+.theme__exp__close {
   position: absolute;
   right: 5%;
   top: 5%;
   cursor: pointer;
+  color: $thirdcolor;
 }
 
-#cheatsheetexptitle {
+.theme__exp__title{
   font-size: 1.4em;
   margin-bottom: 10px;
   text-align: center;
+  color: $secondcolor;
 }
 
 #choices__contain {
@@ -1248,7 +1255,7 @@ a:link {
     justify-content: center;
     display: flex;
     overflow: hidden;
-    transition: flex 1s;
+    transition: all 1s;
 
     &:hover {
       .clickinform {
@@ -1259,6 +1266,7 @@ a:link {
     &.open {
       flex: 6;
       padding: 50px;
+      transition: all 1s ease-in-out;
 
       &:hover {
         .clickinform {
@@ -1294,7 +1302,7 @@ a:link {
 
 .open {
   max-height: 500px;
-  transition: max-height 1s;
+  transition: all 1s ease-in-out;
 }
 
 .flexcontainer {
@@ -1361,26 +1369,6 @@ a:link {
   }
 }
 
-.historylogoside {
-  @media screen and (min-width: 992px) and (orientation: landscape) {
-    width: 50%;
-  }
-
-  @media screen and (min-width: 1600px) {
-    width: 150px;
-  }
-}
-
-.historytitlesside {
-  @media screen and (min-width: 992px) and (orientation: landscape) {
-    width: 50%;
-  }
-
-  @media screen and (min-width: 1600px) {
-    width: 150px;
-  }
-}
-
 .historytitles {
   display: flex;
   flex-direction: column;
@@ -1407,6 +1395,26 @@ a:link {
   @media screen and (min-width: 1600px) {
     font-size: 0.4em;
     padding: 15px;
+    width: 150px;
+  }
+}
+
+.historylogoside {
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    width: 50%;
+  }
+
+  @media screen and (min-width: 1600px) {
+    width: 150px;
+  }
+}
+
+.historytitlesside {
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    width: 50%;
+  }
+
+  @media screen and (min-width: 1600px) {
     width: 150px;
   }
 }
@@ -1451,6 +1459,7 @@ a:link {
 
   @media screen and (min-width: 1600px) {
     width: 500px;
+    height: auto;
   }
 }
 
@@ -1485,9 +1494,9 @@ a:link {
     margin: 0;
   }
 
-  @media screen and (min-width: 1200px) {
-    font-size: 0.35em;
-  }
+  // @media screen and (min-width: 1200px) {
+  //   font-size: 0.3em;
+  // }
 
   @media screen and (min-width: 1600px) {
     font-size: 0.4em;
@@ -1710,10 +1719,9 @@ a:link {
   z-index: 9999;
   padding: 15px;
   width: 90%;
-  max-height: 80vh;
+  height: 80vh;
   display: none;
   border: 2px dashed $thirdcolor;
-  height: 90vh;
 
   &.show{
     display: block;
@@ -1774,16 +1782,15 @@ a:link {
   align-items: center;
   color: $thirdcolor;
   background: white;
-  border: 3px solid $secondcolor;
+  border: 2px solid $secondcolor;
   border-radius: 25px;
   cursor: pointer;
   z-index: 2;
-  transition: all .5s linear;
+  transition: all .3s linear;
 
   &:hover {
-    // background: #ddd;
     color: $secondcolor;
-    border: 3px solid $thirdcolor;
+    border: 2px solid $thirdcolor;
   }
 
   @media screen and (min-width: 768px) {
@@ -2022,6 +2029,8 @@ a:link {
   flex-direction: column;
   align-items: center;
   max-height: 250px;
+  width: 100%;
+  padding: 10px;
 
   @media screen and (min-width: 768px) {
     position: absolute;
@@ -2032,7 +2041,6 @@ a:link {
     width: 30%;
     border-radius: 10px;
     border: 3px solid lighten($secondcolor, 20%);
-    padding: 10px;
     font-size: 0.8em;
   }
 

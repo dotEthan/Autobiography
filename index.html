@@ -81,54 +81,6 @@
           </div>
           <div class="desktop__over">
             <div class="desktop__over__contain">
-              <div id="sublime__over" class="desktop__over__each hidden">
-                <div class="over__title">
-                  <div class="over__title__text">
-                    Sublime Text Lite
-                  </div>
-                  <div class="over__title__close">
-                    X
-                  </div>
-                </div>
-                <div class="editor__content">
-                  <div class="editor__content__nums">
-                    <span>1</span>
-                    <span>2</span>
-                    <span>3</span>
-                    <span>4</span>
-                    <span>5</span>
-                    <span>6</span>
-                    <span>7</span>
-                    <span>8</span>
-                    <span>9</span>
-                    <span>10</span>
-                    <span>11</span>
-                    <span>12</span>
-                    <span>13</span>
-                    <span>14</span>
-                    <span>15</span>
-                    <span>16</span>
-                  </div>
-                  <div class="editor__content__text">
-                    <span class="pink">let</span> <span class="white">ethan</span> = {<br />
-                    <div class="editor__content--indented">
-                      <span class="green">name</span>: <span class="white">'Ethan Strauss'</span>,<br />
-                      <span class="green">profession</span>: 'Front End Developer',<br />
-                      <span class="green">Languages</span>: [ 'HTML5', 'CSS3', 'JavaScript', 'Jquery', 'React', 'SCSS',
-                      'Pug', 'Liquid' ],<br />
-                      <span class="green">Currently Learning</span>: [ 'becoming a React expert' ],<br />
-                      <span class="green">Learning Next</span>: [ 'NodeJS' ],<br />
-                      <span class="green">Traits</span>: [ 'Fast Learner', 'Hard Worker', 'Endlessly Curious' ],<br />
-                      <span class="green">LinkedIn</span>: '<a href="https://www.linkedin.com/in/estrauss2018/">https://www.linkedin.com/in/estrauss2018/</a>',<br />
-                      <span class="green">Twitter</span>: '<a href="https://twitter.com/EthanStrauss3">https://twitter.com/EthanStrauss3</a>',<br />
-                      <span class="green">Resume</span>: <a href="https://www.ethanstrauss.com/docs/resume.pdf">'resume.pdf'</a><br />
-                    </div>
-                    };
-                  </div>
-                </div>
-                <div class="editor__status">
-                </div>
-              </div>
               <div id="theme__over" class="desktop__over__each hidden">
                 <div class="over__title">
                   <div class="over__title__text">
@@ -182,14 +134,14 @@
                     <a href="https://www.ethanstrauss.com/docs/resume.pdf">
                       <div class="theme__each__icon">
                         <img alt="resume icon for downloading" src="./images/resume.png">
-                        Resume.pdf
+                        <span class="desktop__link">Resume.pdf</span>
                       </div>
                     </a>
                   </div>
-                  <div id="coop" class="over__content__each">
+                  <div id="sublime" class="over__content__each">
                     <div class="theme__each__icon">
-                      <img alt="Slide show of my dog Cooper icon" src="./images/cooplg.png">
-                      Cooper.exe
+                      <img class="desktop__items__img" alt="Large text editor icon" src="./images/sublimesm.png">
+                      Sublime.exe
                     </div>
                   </div>
                 </div>
@@ -226,31 +178,7 @@
               </div>
             </div>
           </div>
-          <div class="slide__contain">
-            <div class="coop__close">X</div>
-            <div class="slide">
-              <div class="slide__slide">
-                <img class="slide__slide__img" src="./images/cooper1.jpg" alt="picture of my dog Cooper">
-              </div>
-              <div class="slide__slide">
-                <img class="slide__slide__img" src="./images/cooper2.jpg" alt="picture of my dog Cooper">
-              </div>
-              <div class="slide__slide">
-                <img src="./images/cooper3.jpg" alt="picture of my dog Cooper">
-              </div>
-              <div class="slide__slide">
-                <img src="./images/cooper2.jpg" alt="picture of my dog Cooper">
-              </div>
-            </div>
-          </div>
           <div id="desktop">
-            <div id="sublime" class="desktop__items desktop__items--sm">
-              <div class="desktop__items__img">
-                <img class="desktop__items__img--sm" alt="Small text editor icon" src="./images/sublimesm.png">
-                <img class="desktop__items__img--lg" alt="Large text editor icon" src="./images/sublimelg.png">
-              </div>
-              <div class="desktop__items__text">Editor</div>
-            </div>
             <div id="theme" class="desktop__items desktop__items--sm">
               <div class="desktop__items__img">
                 <img class="desktop__items__img--sm" alt="Small Website Theme icon" src="./images/themesm.png">
@@ -274,10 +202,58 @@
             </div>
           </div>
         </div>
+        <div id="sublime__over" class="editor">
+          <div class="over__title">
+            <div class="over__title__text">
+              Sublime Text Lite
+            </div>
+            <div class="over__title__close">
+              X
+            </div>
+          </div>
+          <div class="editor__content">
+            <div class="editor__content__nums">
+              <span>1</span>
+              <span>2</span>
+              <span>3</span>
+              <span>4</span>
+              <span>5</span>
+              <span>6</span>
+              <span>7</span>
+              <span>8</span>
+              <span>9</span>
+              <span>10</span>
+              <span>11</span>
+              <span>12</span>
+              <span>13</span>
+              <span>14</span>
+              <span>15</span>
+              <span>16</span>
+            </div>
+            <div class="editor__content__text">
+              <span class="pink">let</span> <span class="white">ethan</span> = {<br />
+              <div class="editor__content--indented">
+                <span class="green">name</span>: <span class="white">{ given: 'Ethan', family: 'Strauss' }</span>,<br />
+                <span class="green">profession</span>: 'Front End Developer',<br />
+                <span class="green">Languages</span>: [ 'HTML5', 'CSS3', 'JavaScript', 'Jquery', 'React', 'SCSS',
+                'Gulp', 'Liquid', 'PostCSS' ],<br />
+                <span class="green">Currently Learning</span>: 'becoming a React expert',<br />
+                <span class="green">Learning Next</span>: [ 'NodeJS', Webpack ],<br />
+                <span class="green">Traits</span>: [ 'Fast Learner', 'Hard Worker', 'Endlessly Curious' ],<br />
+                <span class="green">LinkedIn</span>: '<a href="https://www.linkedin.com/in/estrauss2018/">https://www.linkedin.com/in/estrauss2018/</a>',<br />
+                <span class="green">Twitter</span>: '<a href="https://twitter.com/EthanStrauss3">https://twitter.com/EthanStrauss3</a>',<br />
+                <span class="green">Resume</span>: <a href="https://www.ethanstrauss.com/docs/resume.pdf">'resume.pdf'</a><br />
+              </div>
+              };
+            </div>
+          </div>
+          <div class="editor__status">
+          </div>
+        </div>
         <div id="cheatsheetexp" class="theme__exp">
-          <div id="cheatsheet__cont">
-            <div id="cheatsheetexpclose">X</div>
-            <div id="cheatsheetexptitle">What's the Deal?</div>
+          <div id="cheatsheet__cont" class="theme__exp__contain">
+            <div id="cheatsheetexpclose" class="theme__exp__close">X</div>
+            <div id="cheatsheetexptitle" class="theme__exp__title">What's the Deal?</div>
             Every life is made up of the same basic structure, like an HTML sheet laying out the bones and systems
             of a person. It is the events of our life and people we meet along the way that add extra styling and
             functionality.
@@ -704,7 +680,7 @@
               </div>
             </div>
             <div class="overlayright">
-              <img alt="programming page screenshot" src="images/freggiesmpage.jpg">
+              <img alt="programming page screenshot" src="https://res.cloudinary.com/dotethan/image/upload/f_auto,fl_lossy,q_auto/Portfolio/pagesmjs.jpg">
             </div>
           </div>
           <div id="leover" class="allovers">

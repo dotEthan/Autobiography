@@ -122,7 +122,7 @@ a:hover {
   justify-content: space-around;
   align-items: center;
   color: white;
-  font-family: "Raleway", serif;
+  font-family: "raleway", serif;
   height: 50px;
   width: 100%;
   transition: all 0.5s; }
@@ -223,7 +223,7 @@ a:hover {
   margin: 0; }
 
 #nametitle {
-  font-family: "Raleway", serif;
+  font-family: "raleway", serif;
   font-weight: bold;
   font-size: 1.6em;
   color: black;
@@ -245,6 +245,9 @@ a:hover {
 
 #desktop,
 .desktop__over {
+  display: none; }
+
+.editor {
   display: none; }
 
 #choicestab {
@@ -369,14 +372,14 @@ a:hover {
 #biowriting {
   width: 100%;
   color: black;
-  font-family: "Raleway", serif;
+  font-family: "raleway", serif;
   font-size: 1em; }
 
 #quotename {
   font-size: 0.8em;
   text-align: right;
   margin-top: 20px;
-  font-family: "Raleway", serif; }
+  font-family: "raleway", serif; }
 
 .biopersonal {
   display: flex;
@@ -439,7 +442,7 @@ a:hover {
   background-color: #95cf29; }
 
 .protitle {
-  font-family: "Raleway", serif;
+  font-family: "raleway", serif;
   width: 100%;
   text-align: center;
   font-size: 1.5em;
@@ -502,7 +505,7 @@ a:hover {
   color: #000000;
   background: rgba(255, 255, 255, 0.6);
   font-size: 0.8em;
-  font-family: "Raleway", serif;
+  font-family: "raleway", serif;
   max-width: 150px;
   width: 50%; }
 
@@ -645,7 +648,7 @@ a:hover {
 
 .protextt {
   width: 100%;
-  font-family: "Raleway", serif; }
+  font-family: "raleway", serif; }
 
 .protextw {
   font-size: 0.7em; }
@@ -659,14 +662,43 @@ a:hover {
   z-index: 9999;
   padding: 15px;
   width: 90%;
-  max-height: 80vh; }
+  height: 80vh;
+  display: none;
+  border: 2px dashed #4c4556; }
+  #projectoverlay.show {
+    display: block; }
+  @media screen and (min-width: 768px) {
+    #projectoverlay {
+      height: 90vh;
+      width: 60%;
+      left: 55%; } }
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    #projectoverlay {
+      max-height: 75vh; } }
 
 .allovers {
-  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  display: none;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  flex-direction: column-reverse; }
+  text-align: left;
+  flex-direction: column-reverse;
+  width: 100%;
+  padding: 15px; }
+  .allovers.show {
+    display: flex; }
+  @media screen and (orientation: landscape) {
+    .allovers {
+      flex-direction: row; } }
+  @media screen and (min-width: 768px) {
+    .allovers {
+      padding: 25px; } }
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    .allovers {
+      flex-direction: row; } }
 
 #closeover {
   width: 30px;
@@ -679,36 +711,98 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: red;
+  color: #4c4556;
   background: white;
-  border: 1px solid grey;
+  border: 2px solid #86ba25;
   border-radius: 25px;
-  cursor: pointer; }
+  cursor: pointer;
+  z-index: 2;
+  transition: all .3s linear; }
+  #closeover:hover {
+    color: #86ba25;
+    border: 2px solid #4c4556; }
+  @media screen and (min-width: 768px) {
+    #closeover {
+      width: 50px;
+      height: 50px;
+      top: -20px;
+      right: -20px;
+      font-size: 1.3em; } }
 
 .overlayleft {
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 15px; }
+  padding: 15px;
+  font-size: .7em; }
+  @media screen and (min-width: 576px) {
+    .overlayleft {
+      font-size: .8em; } }
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    .overlayleft {
+      width: 50%;
+      line-height: 1.1em;
+      font-size: .9em; } }
+  @media screen and (min-width: 1200px) {
+    .overlayleft {
+      font-size: 1.4em; } }
 
 .overlaytitle {
   font-size: 1em;
-  font-family: "Raleway", serif;
-  text-decoration: underline;
-  margin-bottom: 10px;
-  text-align: center; }
+  font-family: "raleway", serif;
+  margin-bottom: 5px;
+  text-align: center;
+  line-height: 1.3em; }
+  @media screen and (min-width: 768px) {
+    .overlaytitle {
+      font-size: 1.3em; } }
 
 .overlayurl {
-  font-size: 0.7em; }
+  font-size: 0.5em;
+  text-align: center;
+  text-decoration: underline; }
+  .overlayurla {
+    color: #4c4556; }
+    @media screen and (min-width: 768px) {
+      .overlayurla {
+        font-size: 1em; } }
+
+.overlaytext {
+  font-size: 0.8em;
+  margin: 15px 0 5px; }
+  .overlaytext .overlaytext--sm {
+    font-size: 0.85em;
+    margin-bottom: 20px;
+    position: relative; }
+    .overlaytext .overlaytext--sm:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 25%;
+      border-bottom: 1px dashed #86ba25; }
+  @media screen and (min-width: 768px) {
+    .overlaytext {
+      font-size: 0.8em;
+      margin: 25px 0 5px; } }
+  @media screen and (min-width: 1200px) {
+    .overlaytext {
+      margin: 50px 0 5px; } }
 
 .overlayskills {
-  margin: 10px 0;
-  font-size: 0.7em; }
-
-.overlayurl a {
-  color: #4c4556;
-  font-size: 0.6em; }
+  font-size: 0.6em;
+  position: relative;
+  margin-top: 20px; }
+  .overlayskills:after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 25%;
+    border-top: 1px dashed #86ba25; }
+  @media screen and (min-width: 768px) {
+    .overlayskills {
+      font-size: 0.7em; } }
 
 .overlayright {
   border: 2px dashed #96858f;
@@ -942,7 +1036,7 @@ span {
     font-size: 0.35em;
     visibility: hidden;
     font-weight: bold;
-    font-family: "Raleway", serif;
+    font-family: "raleway", serif;
     margin-top: 5px; }
   .contacttype:hover {
     color: #4c4556; }
@@ -1121,10 +1215,6 @@ span {
     margin-right: 10px; }
     .project:hover .protext {
       margin: 15px 0; }
-  #projectoverlay {
-    max-height: 80vh;
-    width: 80%;
-    left: 55%; }
   #closeover {
     width: 50px;
     height: 50px;

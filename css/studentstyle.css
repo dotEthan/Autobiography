@@ -211,6 +211,9 @@ a:link {
 .desktop__over {
   display: none; }
 
+.editor {
+  display: none; }
+
 .slide__contain {
   display: none; }
 
@@ -225,9 +228,8 @@ a:link {
   left: 50%;
   transform: translate3d(-50%, 0, 0);
   width: 80%; }
-
-#splashcont .choices__containo {
-  height: 33px; }
+  #choices__contain.choices__containo {
+    height: 33px; }
 
 #choicestab {
   height: 23px;
@@ -273,7 +275,7 @@ a:link {
   flex-direction: column;
   opacity: 1;
   transition: opacity 0.3s; }
-  #choicesoptcont.cocon {
+  #choicesoptcont.cocoff {
     opacity: 0; }
 
 #iconcont {
@@ -337,37 +339,59 @@ a:link {
 
 .theme__exp {
   display: none;
-  flex-direction: column;
-  justify-content: center;
   position: absolute;
   top: 50%;
   right: 50%;
-  width: 80vw;
+  width: 75%;
   background: rgba(255, 255, 255, 0.8);
   transform: translate(50%, -50%);
   z-index: 99;
-  padding: 25px;
   font-size: 0.8em;
   border: 3px solid #ad00ad;
-  border-radius: 25px; }
+  border-radius: 25px;
+  text-align: left; }
+  @media screen and (orientation: landscape) {
+    .theme__exp {
+      width: 70vw; } }
+  @media screen and (min-width: 768px) {
+    .theme__exp {
+      width: 40vw;
+      right: 35%; } }
+  @media screen and (min-width: 1200px) {
+    .theme__exp {
+      width: 30vw; } }
   .theme__exp.csopen {
-    display: flex; }
+    display: block; }
 
-#cheatsheet__cont {
-  position: relative; }
+.theme__exp__contain {
+  position: relative;
+  padding: 15px;
+  text-align: left; }
+  @media screen and (min-width: 768px) {
+    .theme__exp__contain {
+      padding: 20px; } }
+  @media screen and (min-width: 1200px) {
+    .theme__exp__contain {
+      padding: 25px; } }
+  @media screen and (min-width: 1600px) {
+    .theme__exp__contain {
+      padding: 30px; } }
 
-#cheatsheetexpclose {
+.theme__exp__close {
   position: absolute;
-  right: 20px;
-  top: -10%;
+  right: 2vw;
+  top: 2vw;
   cursor: pointer;
   color: #ad00ad;
   font-size: 1.5em; }
+  .theme__exp__close:hover {
+    color: #31c2fe; }
 
-#cheatsheetexptitle {
+.theme__exp__title {
   margin-bottom: 10px;
-  font-weight: bold;
-  color: #31c2fe; }
+  font-size: 1.4em;
+  color: #31c2fe;
+  text-align: center; }
 
 .slice {
   background: #ffff00;
@@ -657,6 +681,15 @@ a:link {
   background-color: white;
   cursor: pointer;
   transition: all 800ms; }
+  @media screen and (orientation: landscape) {
+    .project {
+      width: 40%; } }
+  @media screen and (min-width: 576px) {
+    .project {
+      width: 40%; } }
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    .project {
+      width: 20%; } }
   .project img {
     max-width: 100%;
     max-height: 100%;
@@ -714,19 +747,40 @@ a:link {
   z-index: 9999;
   padding: 15px;
   width: 90%;
-  max-height: 90vh; }
+  height: 80vh;
+  display: none;
+  border: 2px dashed #ad00ad; }
+  #projectoverlay.show {
+    display: block; }
 
 .allovers {
-  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  display: none;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  flex-direction: column-reverse; }
+  text-align: left;
+  flex-direction: column-reverse;
+  width: 100%;
+  padding: 15px; }
+  .allovers.show {
+    display: flex; }
+  @media screen and (orientation: landscape) {
+    .allovers {
+      flex-direction: row; } }
+  @media screen and (min-width: 768px) {
+    .allovers {
+      padding: 25px; } }
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    .allovers {
+      flex-direction: row; } }
 
 #closeover {
   width: 30px;
   height: 30px;
-  position: fixed;
+  position: absolute;
   top: -10px;
   right: -10px;
   font-size: 1em;
@@ -736,34 +790,96 @@ a:link {
   align-items: center;
   color: #ad00ad;
   background: white;
-  border: 1px solid grey;
+  border: 2px solid #31c2fe;
   border-radius: 25px;
-  cursor: pointer; }
+  cursor: pointer;
+  z-index: 2;
+  transition: all .3s linear; }
+  #closeover:hover {
+    color: #31c2fe;
+    border: 2px solid #ad00ad; }
+  @media screen and (min-width: 768px) {
+    #closeover {
+      width: 50px;
+      height: 50px;
+      top: -20px;
+      right: -20px;
+      font-size: 1.3em; } }
 
 .overlayleft {
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 15px; }
+  padding: 15px;
+  font-size: .7em; }
+  @media screen and (min-width: 576px) {
+    .overlayleft {
+      font-size: .8em; } }
+  @media screen and (min-width: 992px) and (orientation: landscape) {
+    .overlayleft {
+      width: 50%;
+      line-height: 1.1em;
+      font-size: .9em; } }
+  @media screen and (min-width: 1200px) {
+    .overlayleft {
+      font-size: 1.4em; } }
 
 .overlaytitle {
   font-size: 1em;
   font-family: "indie_flowerregular", cursive;
-  text-decoration: underline;
-  margin-bottom: 10px;
-  text-align: center; }
+  margin-bottom: 5px;
+  text-align: center;
+  line-height: 1.3em; }
+  @media screen and (min-width: 768px) {
+    .overlaytitle {
+      font-size: 1.3em; } }
+
+.overlayurl {
+  font-size: 0.5em;
+  text-align: center;
+  text-decoration: underline; }
+  .overlayurla {
+    color: #ad00ad; }
+    @media screen and (min-width: 768px) {
+      .overlayurla {
+        font-size: 1em; } }
 
 .overlaytext {
-  font-size: 0.7em; }
+  font-size: 0.8em;
+  margin: 15px 0 5px; }
+  .overlaytext .overlaytext--sm {
+    font-size: 0.85em;
+    margin-bottom: 20px;
+    position: relative; }
+    .overlaytext .overlaytext--sm:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 25%;
+      border-bottom: 1px dashed #31c2fe; }
+  @media screen and (min-width: 768px) {
+    .overlaytext {
+      font-size: 0.8em;
+      margin: 25px 0 5px; } }
+  @media screen and (min-width: 1200px) {
+    .overlaytext {
+      margin: 50px 0 5px; } }
 
 .overlayskills {
-  margin: 10px 0;
-  font-size: 0.7em; }
-
-.overlayurl a {
-  color: #ad00ad;
-  font-size: 0.6em; }
+  font-size: 0.6em;
+  position: relative;
+  margin-top: 20px; }
+  .overlayskills:after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 25%;
+    border-top: 1px dashed #31c2fe; }
+  @media screen and (min-width: 768px) {
+    .overlayskills {
+      font-size: 0.7em; } }
 
 .overlayright {
   border: 2px dashed #96858f;
@@ -1052,8 +1168,6 @@ span {
     width: 90%; }
   .historytext {
     font-size: 0.65em; }
-  .project {
-    width: 40%; }
   #projectoverlay {
     max-height: 90%; }
   .allovers {
@@ -1100,8 +1214,6 @@ span {
     font-size: 0.7em; }
   .historytext {
     font-size: 0.75em; }
-  .project {
-    width: 40%; }
   .overlayleft {
     font-size: 1.3em; }
   .protextt {
@@ -1524,8 +1636,6 @@ span {
     margin-bottom: 25px; }
   .overlayright img {
     max-height: 50vh; }
-  .project {
-    width: 20%; }
   .protextcont {
     font-size: 1.4em; }
   #availablehalf {
