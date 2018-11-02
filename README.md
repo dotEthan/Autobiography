@@ -1,4 +1,5 @@
 # .ethan
+[http://www.ethanstrauss.com](http://www.ethanstrauss.com)
 
 It started as an idea for a portfolio page that mimicked the [CSS Zen Garden](http://www.csszengarden.com/) idea of using one HTML and many themes, much the way a person, like myself, is built of many events throughout their life. Now we've gone a bit silly, but you get the idea. One HTML, three CSS.
 
@@ -24,9 +25,6 @@ I didn't do nearly enough design, which led to very long production times and a 
 
 Setting up everything before you start. Design it fully, create the spec for how your code will be set up (functional vs OO), CSS naming scheme, etc. 
 
-## Deployment
-
-[http://www.ethanstrauss.com](http://www.ethanstrauss.com)
 ## Built With
 
 * [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
