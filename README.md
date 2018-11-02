@@ -27,9 +27,15 @@ Setting up everything before you start. Design it fully, create the spec for how
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* HTML
+* CSS
+* JavaScript
+* Jquery
+* Modernizr
+* Font Awesome
+* Gulp
+* Babel
+* PostCSS
 
 ## Author
 
