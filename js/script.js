@@ -248,7 +248,7 @@ document.addEventListener(
       }
     } else {
       let top = parseInt($(window).scrollTop());
-
+      console.log(top);
       if (!large) {
         top += 70;
 
@@ -601,25 +601,21 @@ let open = true;
 $("#choicestab").click(drawer);
 
 function endLo(e) {
-  console.log(e.propertyName);
   if (e.propertyName === "opacity") $("#choices").toggleClass("choicesh");
   $("#choices")[0].removeEventListener("transitionend", endLo);
 }
 
 function endLno(e) {
-  console.log(e.propertyName);
   if (e.propertyName === "width") $("#choicesoptcont").toggleClass("cocoff");
   $("#choices")[0].removeEventListener("transitionend", endLno);
 }
 
 function endSno(e) {
-  // console.log(e.propertyName);
   if (e.propertyName === "height") $("#choicesoptcont").toggleClass("cocoff");
   $("#choices")[0].removeEventListener("transitionend", endSno);
 }
 
 function endSo(e) {
-  console.log(e.propertyName);
   if (e.propertyName === "opacity") {
     $("#choices").toggleClass("choiceso");
     $("#choices__contain").toggleClass("choices__containo");

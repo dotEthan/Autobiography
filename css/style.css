@@ -329,9 +329,6 @@ a:link {
   @media screen and (min-width: 768px) {
     #titlecard {
       margin: 0; } }
-  @media screen and (min-width: 768px) and (orientation: landscape) {
-    #titlecard {
-      margin-top: 10vh; } }
   @media screen and (min-width: 992px) and (min-aspect-ratio: 16 / 8) {
     #titlecard {
       margin-top: 3vh; } }
@@ -1262,12 +1259,14 @@ a:link {
   position: relative;
   overflow: hidden;
   display: inline-block;
-  background-size: cover;
-  background-repeat: no-repeat;
   border-radius: 10px;
   background-color: white;
   cursor: pointer;
   transition: all 800ms; }
+  .project:after {
+    padding-top: 56.25%;
+    display: block;
+    content: ""; }
   @media screen and (min-width: 576px) {
     .project {
       width: 40%; } }
@@ -1291,11 +1290,6 @@ a:link {
     bottom: 0;
     right: 0;
     left: 0; }
-
-.project:after {
-  padding-top: 56.25%;
-  display: block;
-  content: ""; }
 
 .protext {
   width: 100%;

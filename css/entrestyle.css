@@ -30,7 +30,7 @@ a:link {
   text-decoration: none; }
 
 a:hover {
-  color: #4c4556; }
+  color: #2ba8e5; }
 
 #load {
   position: absolute;
@@ -150,10 +150,26 @@ a:hover {
   padding: 2px;
   text-align: center;
   font-size: 0.6em; }
+  .menutabs:hover {
+    transition: all .5s;
+    transform: scale(1.2); }
   .menutabs a {
     color: white; }
-    .menutabs a:hover {
-      color: #4c4556; }
+  @media screen and (min-width: 992px) {
+    .menutabs {
+      font-size: 0.8em;
+      height: 80px;
+      width: 20%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      margin: 15px 0;
+      z-index: 99;
+      padding: 5px 3px; } }
+  @media screen and (min-width: 1600px) {
+    .menutabs {
+      font-size: 0.75em; } }
 
 .faicon {
   display: none; }
@@ -167,7 +183,7 @@ a:hover {
 
 #splashcont {
   height: 75vh;
-  background-image: url("/images/bge.jpg");
+  background-image: url("/images/bgesm.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -176,13 +192,18 @@ a:hover {
   flex-direction: column;
   justify-content: flex-end;
   margin-bottom: 25vh; }
+  @media screen and (orientation: landscape) {
+    #splashcont {
+      background-image: url("/images/bge2.jpeg");
+      background-size: cover;
+      background-position: top; } }
 
 #alert {
   position: fixed;
   width: 100%;
   height: 4vh;
   font-size: 0.4em;
-  background: #4c4556;
+  background: #2ba8e5;
   color: white;
   display: flex;
   align-items: center;
@@ -202,6 +223,12 @@ a:hover {
   text-align: left;
   width: 100%;
   background: linear-gradient(rgba(255, 255, 255, 0) 10%, white 40%); }
+  @media screen and (orientation: landscape) {
+    #titlecard {
+      align-items: flex-end;
+      justify-content: flex-end;
+      height: 100%;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0) 35%, white 55%); } }
 
 #namotto {
   height: 40vh;
@@ -211,6 +238,20 @@ a:hover {
   align-items: center;
   width: 100%;
   padding: 5%; }
+  @media screen and (orientation: landscape) {
+    #namotto {
+      height: 100%;
+      width: 50%;
+      align-items: flex-start;
+      justify-content: center;
+      padding-left: 14%;
+      margin-top: 75px; } }
+  @media screen and (min-width: 768px) {
+    #namotto {
+      font-size: 1.5em; } }
+  @media screen and (min-width: 1600px) {
+    #namotto {
+      font-size: 2.5em; } }
 
 #motto {
   color: #86ba25;
@@ -295,7 +336,7 @@ a:hover {
   cursor: pointer;
   padding: 5px; }
   .icon:hover .choicesbox {
-    color: #4c4556; }
+    color: #2ba8e5; }
 
 #studentb {
   background-image: url("../images/entres.png"); }
@@ -327,7 +368,7 @@ a:hover {
   color: black;
   font-size: 0.7em; }
   .choicesbox:hover {
-    color: #4c4556; }
+    color: #2ba8e5; }
 
 .textbox {
   font-size: 0.4em; }
@@ -427,7 +468,7 @@ a:hover {
   #thanksright a {
     color: #86ba25; }
     #thanksright a:hover {
-      color: #4c4556; }
+      color: #2ba8e5; }
 
 #thanksleft {
   width: 15%;
@@ -449,7 +490,7 @@ a:hover {
   text-decoration: underline;
   margin: 35px 0 50px;
   font-weight: bold;
-  color: #4c4556;
+  color: #2ba8e5;
   text-decoration: none; }
 
 .slider-container {
@@ -563,7 +604,7 @@ a:hover {
   .nowcalled a {
     color: #86ba25; }
     .nowcalled a:hover {
-      color: #4c4556; }
+      color: #2ba8e5; }
 
 #inscriberslide {
   background: #222; }
@@ -614,7 +655,7 @@ a:hover {
     right: 0;
     left: 0; }
   .project:hover .protext {
-    background-color: #4c4556;
+    background-color: #2ba8e5;
     margin: 15px 0; }
 
 .project:after {
@@ -664,7 +705,7 @@ a:hover {
   width: 90%;
   height: 80vh;
   display: none;
-  border: 2px dashed #4c4556; }
+  border: 2px dashed #2ba8e5; }
   #projectoverlay.show {
     display: block; }
   @media screen and (min-width: 768px) {
@@ -711,7 +752,7 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #4c4556;
+  color: #2ba8e5;
   background: white;
   border: 2px solid #86ba25;
   border-radius: 25px;
@@ -720,7 +761,7 @@ a:hover {
   transition: all .3s linear; }
   #closeover:hover {
     color: #86ba25;
-    border: 2px solid #4c4556; }
+    border: 2px solid #2ba8e5; }
   @media screen and (min-width: 768px) {
     #closeover {
       width: 50px;
@@ -762,7 +803,7 @@ a:hover {
   text-align: center;
   text-decoration: underline; }
   .overlayurla {
-    color: #4c4556; }
+    color: #2ba8e5; }
     @media screen and (min-width: 768px) {
       .overlayurla {
         font-size: 1em; } }
@@ -845,7 +886,7 @@ a:hover {
   cursor: pointer;
   color: white; }
   .buttonstyle:hover {
-    background-color: #4c4556; }
+    background-color: #2ba8e5; }
 
 #blogcenter {
   background: #e5e5e5;
@@ -918,7 +959,7 @@ a:hover {
     border: 2px solid #a1d83a;
     color: white; }
     #resumehalf .buttonstyle:hover {
-      background-color: #4c4556; }
+      background-color: #2ba8e5; }
 
 #update {
   font-size: 0.6em;
@@ -928,7 +969,7 @@ a:hover {
 #contactslice {
   display: none;
   position: relative;
-  border-bottom: 1px dashed #4c4556; }
+  border-bottom: 1px dashed #2ba8e5; }
 
 #inquiryform {
   display: flex;
@@ -985,7 +1026,7 @@ input[type="button"] {
   color: white;
   border: 1px solid #86ba25; }
   input[type="button"]:hover {
-    background-color: #4c4556;
+    background-color: #2ba8e5;
     border: 1px solid #86ba25; }
 
 textarea {
@@ -1039,12 +1080,12 @@ span {
     font-family: "raleway", serif;
     margin-top: 5px; }
   .contacttype:hover {
-    color: #4c4556; }
+    color: #2ba8e5; }
     .contacttype:hover a {
-      color: #4c4556; }
+      color: #2ba8e5; }
     .contacttype:hover .footertext {
       visibility: visible;
-      color: #4c4556; }
+      color: #2ba8e5; }
 
 .fi {
   display: flex;
@@ -1066,21 +1107,9 @@ span {
   color: #86ba25;
   font-weight: bold; }
   .footlink a:hover {
-    color: #4c4556; }
+    color: #2ba8e5; }
 
 @media screen and (orientation: landscape) {
-  #titlecard {
-    align-items: flex-end;
-    justify-content: flex-end;
-    height: 100%;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0) 35%, white 55%); }
-  #namotto {
-    height: 100%;
-    width: 50%;
-    align-items: flex-start;
-    justify-content: center;
-    padding-left: 8%;
-    margin-top: 75px; }
   .icon__pic {
     width: 30px;
     height: 30px; }
@@ -1155,8 +1184,6 @@ span {
     height: 100px; }
   .menutitle {
     font-size: 1.5em; }
-  #namotto {
-    font-size: 1.5em; }
   #alert {
     font-size: 0.65em; }
   .icon__pic {
@@ -1205,7 +1232,7 @@ span {
     font-size: 1.2em;
     color: #86ba25; }
     #thanksright a:hover {
-      color: #4c4556; }
+      color: #2ba8e5; }
   #thanksleft {
     font-size: 1.2em; }
   .protitle {
@@ -1285,20 +1312,6 @@ span {
     width: 70%; } }
 
 @media screen and (min-width: 992px) {
-  .menutabs {
-    font-size: 0.8em;
-    height: 80px;
-    width: 20%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    transition: all 1s;
-    margin: 15px 0;
-    z-index: 99;
-    padding: 5px 3px; }
-    .menutabs:hover {
-      font-size: 1.1em; }
   #biopersonaltext {
     padding-right: 10px; }
   #portimage {
@@ -1454,10 +1467,6 @@ span {
     margin-bottom: 5px; } }
 
 @media screen and (min-width: 1600px) {
-  .menutabs {
-    font-size: 0.75em; }
-  #namotto {
-    font-size: 2.5em; }
   .icon__pic {
     width: 75px;
     height: 75px; }

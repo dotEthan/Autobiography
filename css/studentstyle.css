@@ -675,21 +675,32 @@ a:link {
   position: relative;
   overflow: hidden;
   display: inline-block;
-  background-size: cover;
-  background-repeat: no-repeat;
   border-radius: 10px;
   background-color: white;
   cursor: pointer;
   transition: all 800ms; }
+  .project:after {
+    padding-top: 56.25%;
+    display: block;
+    content: ""; }
   @media screen and (orientation: landscape) {
     .project {
       width: 40%; } }
   @media screen and (min-width: 576px) {
     .project {
       width: 40%; } }
+  @media screen and (min-width: 768px) {
+    .project {
+      width: 30%;
+      margin-right: 10px; }
+      .project:hover .protext {
+        margin: 15px 0; } }
   @media screen and (min-width: 992px) and (orientation: landscape) {
     .project {
       width: 20%; } }
+  .project:hover .protext {
+    background-color: #ad00ad;
+    margin: 15px 0; }
   .project img {
     max-width: 100%;
     max-height: 100%;
@@ -698,14 +709,6 @@ a:link {
     bottom: 0;
     right: 0;
     left: 0; }
-  .project:hover .protext {
-    background-color: #ad00ad;
-    margin: 15px 0; }
-
-.project:after {
-  padding-top: 56.25%;
-  display: block;
-  content: ""; }
 
 .protext {
   width: 100%;
@@ -1392,11 +1395,6 @@ span {
     font-size: 0.7em; }
   .protitle {
     font-size: 2.5em; }
-  .project {
-    width: 30%;
-    margin-right: 10px; }
-    .project:hover .protext {
-      margin: 15px 0; }
   #projectoverlay {
     max-height: 80vh;
     width: 80%;
