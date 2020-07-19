@@ -124,7 +124,7 @@ $("#programmer, #programmerpro").click(function () {
   setTextContent(asaChange, "As a Programmer:");
   setTextContent(
     bioChange,
-    "Since returning to Canada I have opened two successful entrepreneurial ventures and learned a number of new langauges including Javascript, SCSS, React, Liquid and more. I've devoted the last six months to brushing up on HTML 5, SCSS, Javascript ES6 and learning React to ensure I have a firm grasp of the tools needed to succeed as a Front End Development or Javavscript programming."
+    "Since returning to Canada I have opened two successful entreprenuerial ventures and retooled my skillset to take into account the changes in the Web Development industry. This included learning Angular, React, SCSS, Webpack, NPM, and more. The last year and a half I've spent working as a software developer/team lead on an Angular product for Capco, a fintech consultancy company."
   );
   $("#personalimg").attr("src", "../images/biop.jpg");
   pageDelay(showPage);
