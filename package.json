@@ -25,7 +25,7 @@
     "gulp-sass": "^4.0.1"
   },
   "dependencies": {
-    "handlebars": "^4.3.0",
+    "handlebars": "^4.7.7",
     "sass": "^1.14.1"
   }
 }
