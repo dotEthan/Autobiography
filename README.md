@@ -5,7 +5,7 @@ It started as an idea for a portfolio page that mimicked the [CSS Zen Garden](ht
 
 ### Status
 
-Functionally complete and working.
+Functionally complete and working. It no longer builds or runs locally as the dependencies haven't been updated in 5 years, one day I may fix that. 
 
 ## Overview and Thoughts
 
